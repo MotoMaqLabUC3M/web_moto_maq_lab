@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Patrocinador</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="internal-page">
+    <header class="main-header scrolled">
+        <div class="container header-content">
+            <div class="logo">MOTO MAQLAB <span>UC3M</span></div>
+            <nav class="navbar" id="mainNav">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
+                    <li><a href="events.html">Eventos</a></li>
+                    <li><a href="equipo.html">Equipo</a></li>
+                    <li><a href="patrocinadores.html" class="active">Patrocinadores</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="page-header-spacer"></div>
+        <section style="padding:60px 0; background:#fff; color:#111;">
+            <div class="container" id="sponsorContainer">
+                <!-- Filled by JS -->
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <div class="logo">MOTO MAQLAB <span>UC3M</span></div>
+                <p>Equipo de competición universitaria — Born to be Engineers.</p>
+            </div>
+        </div>
+    </footer>
+
+<script>
+// Map of sponsor data
+const SPONSORS = {
+    maqlab: {
+        id: 'maqlab',
+        name: 'Maqlab',
+        img: 'fotos/patros/Maqlab.jpeg',
+        short: 'Lab/Research partner de la UC3M y motor de innovación.',
+        desc: 'Maqlab colabora con el equipo aportando recursos de investigación y conocimiento en materiales y procesos de fabricación. Trabajamos con Maqlab para validar prototipos y ensayar nuevas técnicas de fabricación de piezas compuestas.'
+    },
+    altair: {
+        id: 'altair',
+        name: 'Altair',
+        img: 'fotos/patros/altair.png',
+        short: 'Plataforma de simulación y optimización multifísica.',
+        desc: 'Altair nos aporta herramientas avanzadas de simulación multifísica y optimización. Aplicamos sus soluciones para optimizar diseños estructurales y el rendimiento aerodinámico de nuestras piezas.'
+    },
+    gurit: { id:'gurit', name:'Gurit', img:'fotos/patros/Gurit.png', short:'Materiales compuestos', desc:'Gurit nos suministra materiales compuestos y asesoramiento técnico para fabricar piezas ligeras y resistentes.' },
+    lasertek: { id:'lasertek', name:'Lasertek', img:'fotos/patros/lasertek.jpeg', short:'Tecnologías láser', desc:'Lasertek apoya con procesos láser de precisión para el prototipado.' },
+    ntn: { id:'ntn', name:'NTN', img:'fotos/patros/NTN.png', short:'Rodamientos y componentes', desc:'NTN suministra rodamientos de alta calidad para nuestra transmisión y ruedas.' },
+    solysol: { id:'solysol', name:'Solysol', img:'fotos/patros/solysol.png', short:'Electrónica y sensores', desc:'Solysol colabora en la integración de sensores y electrónica embebida.' },
+    aeronautica_gestion: { id:'aeronautica_gestion', name:'Aeronautica Gestión', img:'fotos/patros/aeronautica%20gestion.png', short:'Servicios aeronáuticos', desc:'Apoyo en procesos de certificación y calidad.' },
+    solidworks: { id:'solidworks', name:'SolidWorks', img:'fotos/patros/solidoworks.png', short:'Diseño CAD', desc:'SolidWorks nos proporciona licencias y apoyo en modelado CAD y simulación básica.' },
+    castrol: { id:'castrol', name:'Castrol', img:'fotos/patros/Castrol.png', short:'Lubricantes', desc:'Castrol suministra lubricantes y asesoramiento para optimizar el rendimiento del motor.' },
+    bollhoff: { id:'bollhoff', name:'Bollhoff', img:'fotos/patros/bollhof.jpg', short:'Fijaciones y ensamblaje', desc:'Bollhoff provee soluciones de fijación y tecnologías de unión.' },
+    facom: { id:'facom', name:'Facom', img:'fotos/patros/facom.png', short:'Herramientas', desc:'Facom nos apoya con herramientas de taller y formación.' },
+    cimworks: { id:'cimworks', name:'CIMWORKS', img:'fotos/patros/cimworks.jpeg', short:'Consultoría y software', desc:'CIMWORKS colabora en procesos de fabricación y software de producción.' },
+    valmoldes: { id:'valmoldes', name:'Valmoldes', img:'fotos/patros/Valmoldes.png', short:'Moldes y fabricación', desc:'Valmoldes produce moldes y piezas a medida para nuestros componentes compuestos.' },
+    ng: { id:'ng', name:'NG', img:'fotos/equipo.jpg', short:'Partner local', desc:'NG colabora en logística y soporte técnico.' },
+    addyx: { id:'addyx', name:'Addyx', img:'fotos/patros/addyx.png', short:'Sistemas electrónicos', desc:'Addyx aporta soluciones electrónicas y software de control.' },
+    cogitim: { id:'cogitim', name:'COGITIM', img:'fotos/patros/cogitim.jpg', short:'Ingeniería', desc:'COGITIM colabora en procesos de ingeniería y optimización.' },
+    easycomposites: { id:'easycomposites', name:'easycomposites', img:'fotos/patros/easycomposites.png', short:'Materiales compuestos', desc:'Suministro de materias primas y asesoría técnica en composites.' },
+    bossard: { id:'bossard', name:'Bossard', img:'fotos/patros/Bossard.png', short:'Fijación y montaje', desc:'Bossard apoya con componentes y sistemas de ensamblaje.' }
+};
+
+function getParam(name){
+    const url = new URL(window.location.href);
+    return url.searchParams.get(name);
+}
+
+function renderSponsor(id){
+    const container = document.getElementById('sponsorContainer');
+    if (!id || !SPONSORS[id]){
+        container.innerHTML = `<div><h2>Patrocinador no encontrado</h2><p>El patrocinador solicitado no existe o no se ha especificado.</p><p><a href="patrocinadores.html">Volver a patrocinadores</a></p></div>`;
+        return;
+    }
+    const s = SPONSORS[id];
+    container.innerHTML = `
+        <div class="sponsor-detail">
+            <div class="sponsor-detail__grid">
+                <div class="sponsor-detail__content">
+                    <h1 class="sponsor-detail__title">${s.name}</h1>
+                    <p class="sponsor-detail__short">${s.short}</p>
+                    <p class="sponsor-detail__desc">${s.desc}</p>
+                    <p style="margin-top:20px;"><a class="btn" href="patrocinadores.html">Volver a patrocinadores</a></p>
+                </div>
+                <div class="sponsor-detail__media">
+                    <img class="sponsor-detail__img" src="${s.img}" alt="${s.name}" />
+                </div>
+            </div>
+        </div>
+    `;
+}
+
+// Run
+const sponsorId = getParam('id');
+renderSponsor(sponsorId);
+</script>
+</body>
+</html>

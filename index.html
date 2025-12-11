@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moto Maqlab UC3M | Engineering Team</title>
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container header-content">
+            <div class="logo">
+                MOTO MAQLAB <span>UC3M</span>
+            </div>
+            <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="mainNav">
+                <span class="hamburger"></span>
+            </button>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="index.html" data-i18n="nav.home">Inicio</a></li>
+                    <li><a href="sobre-nosotros.html" data-i18n="nav.about">Sobre Nosotros</a></li>
+                    <li><a href="events.html" data-i18n="nav.events">Eventos</a></li>
+                    <li><a href="equipo.html" data-i18n="nav.team">Equipo</a></li>
+                    <li><a href="patrocinadores.html" data-i18n="nav.sponsors">Patrocinadores</a></li>
+                    <li><a href="index.html#contacto" class="btn-contact" data-i18n="nav.contact">Contacto</a></li>
+                </ul>
+            </nav>
+            <select id="langSelect" class="lang-select" aria-label="Seleccionar idioma">
+                <option value="es">ES</option>
+                <option value="en">EN</option>
+            </select>
+        </div>
+    </header>
+
+    <section id="inicio" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 data-i18n="hero.title">Born to be <span class="text-highlight">Engineers</span></h1>
+            <p data-i18n="hero.subtitle">La pasión universitaria llevada al asfalto.</p>
+            <a href="#sobre-nosotros" class="cta-button" data-i18n="hero.cta">Conoce el proyecto</a>
+        </div>
+    </section>
+
+    <!-- Carousel de fotos en la página principal (se mostrará debajo de Ingeniería y Pasión) -->
+
+    <section id="sobre-nosotros" class="about-section">
+        <div class="container">
+            <div class="section-intro">
+                <h2 data-i18n="about.title">Ingeniería y Pasión</h2>
+                <p data-i18n="about.lead">Somos un equipo de estudiantes de la UC3M aplicando conocimientos teóricos para construir un prototipo ganador.</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="icon-box">
+                        <i class="fas fa-wrench"></i> </div>
+                    <h3 data-i18n="feature.tech.title">Técnica</h3>
+                    <p data-i18n="feature.tech.desc">Aplicamos mecánica avanzada y dinámica vehicular para optimizar cada pieza del prototipo.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="icon-box">
+                        <i class="fas fa-pencil-ruler"></i> </div>
+                    <h3 data-i18n="feature.design.title">Diseño</h3>
+                    <p data-i18n="feature.design.desc">Buscamos la aerodinámica perfecta y una estética agresiva que defina nuestra identidad en pista.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="icon-box">
+                        <i class="fas fa-lightbulb"></i> </div>
+                    <h3 data-i18n="feature.innov.title">Innovación</h3>
+                    <p data-i18n="feature.innov.desc">Implementamos nuevas tecnologías y materiales compuestos para reducir peso y ganar velocidad.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Carousel de fotos en la página principal -->
+    <section class="carousel-section">
+        <div class="container">
+            <div class="carousel" id="mainCarousel">
+                <button class="carousel-btn prev" aria-label="Anterior">&#10094;</button>
+                <div class="carousel-track"></div>
+                <button class="carousel-btn next" aria-label="Siguiente">&#10095;</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer simple -->
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <div class="logo">MOTO MAQLAB <span>UC3M</span></div>
+                <p data-i18n="footer.brandDesc">Equipo de competición universitaria — Born to be Engineers.</p>
+            </div>
+            <div class="footer-links">
+                <h4 data-i18n="footer.linksTitle">Enlaces</h4>
+                <ul>
+                    <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
+                    <li><a href="events.html">Eventos</a></li>
+                    <li><a href="equipo.html">Equipo</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4 data-i18n="footer.contactTitle">Contacto</h4>
+                <p data-i18n="footer.email">Correo: info@example.com</p>
+                <p data-i18n="footer.phone">Tel: +34 600 000 000</p>
+            </div>
+        </div>
+        <div class="footer-copy">&copy; <span id="siteYear"></span> Moto MaqLab UC3M</div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

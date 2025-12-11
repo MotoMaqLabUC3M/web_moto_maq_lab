@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos | Moto MaqLab UC3M</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="internal-page">
+
+    <header class="main-header scrolled">
+        <div class="container header-content">
+            <div class="logo">MOTO MAQLAB <span>UC3M</span></div>
+            <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="mainNav">
+                <span class="hamburger"></span>
+            </button>
+            <nav class="navbar" id="mainNav">
+                <ul>
+                    <li><a href="index.html" data-i18n="nav.home">Inicio</a></li>
+                    <li><a href="sobre-nosotros.html" data-i18n="nav.about">Sobre Nosotros</a></li>
+                    <li><a href="events.html" class="active" data-i18n="nav.events">Eventos</a></li>
+                    <li><a href="equipo.html" data-i18n="nav.team">Equipo</a></li>
+                    <li><a href="patrocinadores.html" data-i18n="nav.sponsors">Patrocinadores</a></li>
+                </ul>
+            </nav>
+            <select id="langSelect" class="lang-select" aria-label="Seleccionar idioma">
+                <option value="es">ES</option>
+                <option value="en">EN</option>
+            </select>
+        </div>
+    </header>
+
+    <main>
+        <div class="page-header-spacer"></div>
+
+        <section class="events-section">
+            <div class="container">
+                        <div class="section-title">
+                            <h1 data-i18n="events.title">Eventos y actividades</h1>
+                            <div class="divider"></div>
+                        </div>
+
+                        <div class="events-hero">
+                            <p class="lead" data-i18n="events.lead">Conoce nuestras últimas salidas, presentaciones y participaciones en ferias y competiciones. Haz click en cualquier tarjeta para ver más detalles.</p>
+                        </div>
+
+                        <div class="events-controls">
+                            <input id="searchBox" type="search" placeholder="Buscar evento..." data-i18n-placeholder="events.searchPlaceholder" />
+                            <select id="yearFilter">
+                                <option value="all" data-i18n="events.filterAll">Todos los años</option>
+                            </select>
+                        </div>
+
+                        <div class="events-grid" id="eventsGrid"></div>
+            </div>
+        </section>
+    </main>
+</main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <div class="logo">MOTO MAQLAB <span>UC3M</span></div>
+                <p data-i18n="footer.brandDesc">Equipo de competición universitaria — Born to be Engineers.</p>
+            </div>
+            <div class="footer-links">
+                <h4 data-i18n="footer.linksTitle">Enlaces</h4>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
+                    <li><a href="equipo.html">Equipo</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4 data-i18n="footer.contactTitle">Contacto</h4>
+                <p data-i18n="footer.email">Correo: info@example.com</p>
+                <p data-i18n="footer.phone">Tel: +34 600 000 000</p>
+            </div>
+        </div>
+        <div class="footer-copy">&copy; <span id="siteYear"></span> Moto MaqLab UC3M</div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
