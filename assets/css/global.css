@@ -1,60 +1,177 @@
-/* CSS Reset and Global Styles */
+/* --- Configuración Mínima y Variables --- */
+:root {
+    --c-red: #f2192b; /* Color principal rojo */
+    --c-dark: #0a0a0a; /* Fondo oscuro header */
+    --c-light: #ffffff; /* Texto blanco */
+    --font-stack: system-ui, -apple-system, sans-serif; /* Tipografía del sistema rápida */
+}
 
-*,
-*::before,
-*::after {
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
-*:not(dialog) {
-    margin: 0;
+body {
+    background-color: var(--c-dark);
+    color: var(--c-light);
+    font-family: var(--font-stack);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    html {
-        interpolate-size: allow-keywords;
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* --- Componentes Reutilizables (Botones y Badges) --- */
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: opacity 0.2s;
+    text-align: center;
+}
+.btn:hover {
+    opacity: 0.9;
+}
+
+.btn--primary {
+    background-color: var(--c-red);
+    color: var(--c-light);
+}
+.btn--outline {
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: var(--c-light);
+}
+
+.badge {
+    display: inline-block;
+    background-color: rgba(233, 58, 74, 0.2); /* Rojo semitransparente */
+    color: var(--c-red);
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+/* --- Header --- */
+@media (max-width: 768px) {
+    /* Ocultar navegación central en móviles */
+    .main-header nav {
+        display: none;
     }
 }
 
-body {
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
+.main-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 5%;
+    background-color: var(--c-dark);
+    font-weight: 700;
+    font-size: 0.8rem;
 }
 
-img,
-picture,
-video,
-canvas,
-svg {
+.logo {
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.logo-wrapper {
+    overflow: hidden;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     display: block;
-    max-width: 100%;
 }
 
-input,
-button,
-textarea,
-select {
-    font: inherit;
+.logo span {
+    color: var(--c-red);
 }
 
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    overflow-wrap: break-word;
+.main-header nav {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
 }
 
-p {
-    text-wrap: pretty;
+.main-header nav a {
+    margin: 0 1rem;
+    opacity: 0.8;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    text-wrap: balance;
+.main-header nav a:hover {
+    opacity: 1;
+    color: var(--c-red);
+    transition: 500ms;
+}
+
+/* Hero */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    .hero p {
+        font-size: 1rem;
+    }
+
+    /* Apilar botones en pantallas muy pequeñas */
+    .hero-btns {
+        flex-direction: column;
+    }
+    .hero-btns .btn {
+        width: 100%;
+    }
+}
+
+.hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/assets/img/fondo.jpg");
+    background-size: cover;
+    background-position: center;
+    min-height: 100dvh;
+    display: flex;
+    align-items: center;
+    padding: 0 5%;
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+.hero h1 span {
+    color: var(--c-red);
+}
+
+.hero p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    margin-bottom: 2rem;
+    line-height: 1.5;
+}
+
+.hero-btns {
+    display: flex;
+    gap: 1rem; /* Espacio entre botones */
 }
