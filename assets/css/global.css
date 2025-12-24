@@ -958,6 +958,7 @@ section.section-container:nth-of-type(even) {
     flex: 0 1 250px;
     padding: 1.5rem;
 }
+
 .tier-silver .sponsor-logo-wrapper.small {
     height: 80px;
 }
@@ -980,6 +981,19 @@ section.section-container:nth-of-type(even) {
 
 .tier-bronze p {
     font-size: 0.8rem;
+}
+
+@media (max-width: 768px) {
+    .tier-silver .card {
+        flex: 0 1 180px;
+        padding: 1.5rem;
+    }
+
+    .tier-bronze .card {
+        flex: 0 1 100px;
+        padding: 1rem;
+        background: transparent;
+    }
 }
 
 /* =========================================
@@ -1071,4 +1085,17 @@ section.section-container:nth-of-type(even) {
 .team-member-card p {
     font-size: 0.9rem;
     opacity: 0.6;
+}
+
+@media (max-width: 768px) {
+    .team-row {
+        flex-direction: column;
+        gap: 2rem;
+        justify-content: center;
+    }
+
+    .team-member-card img {
+        width: 100%;
+        height: auto;
+    }
 }
