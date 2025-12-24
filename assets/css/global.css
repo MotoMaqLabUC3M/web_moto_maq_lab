@@ -489,6 +489,16 @@ section.section-container:nth-of-type(even) {
     opacity: 0.9;
 }
 
+@media (max-width: 768px) {
+    .sobre-nosotros-hero {
+        padding: 8rem 5% 4rem;
+        height: auto;
+    }
+    .sobre-nosotros-hero h1 {
+        font-size: 2.5rem;
+    }
+}
+
 /* --- 6.2. Barra de Estadísticas --- */
 .stats-bar {
     display: flex;
@@ -743,6 +753,7 @@ section.section-container:nth-of-type(even) {
     .timeline-item {
         width: 100%;
         margin: auto;
+        padding: 1rem 0.5rem;
     }
     .timeline-dot {
         display: none;
