@@ -985,3 +985,90 @@ section.section-container:nth-of-type(even) {
 /* =========================================
     8. PÁGINA: EQUIPO
    ========================================= */
+
+/* Hero Equipo */
+.equipo-hero {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), var(--c-dark)), radial-gradient(circle at center, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.8) 100%), url("/assets/img/hero/equipo.webp");
+    background-size: cover;
+    padding: 12rem 5% 4rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    height: 100dvh;
+}
+
+.equipo-hero-content {
+    padding-top: 4rem;
+}
+
+.equipo-hero h1,
+.equipo-hero p {
+    text-shadow: 0 2px 30px rgba(0, 0, 0, 1);
+    position: relative;
+    z-index: 2;
+}
+
+.equipo-hero h1 {
+    font-size: 4.5rem;
+    font-weight: 900;
+    line-height: 1.1;
+    text-transform: uppercase;
+    font-style: italic;
+    letter-spacing: -2px;
+    margin-bottom: 1.5rem;
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
+}
+
+.equipo-hero h1 span {
+    color: var(--c-red);
+}
+
+.equipo-hero p {
+    max-width: 600px;
+    margin: 0 auto;
+    opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+    .equipo-hero {
+        padding: 8rem 5% 4rem;
+        height: auto;
+    }
+    .equipo-hero h1 {
+        font-size: 2.5rem;
+    }
+}
+
+/* Filas de Miembros */
+.team-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4rem;
+    align-items: center;
+}
+
+.team-member-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.team-member-card img {
+    width: 250px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    border-radius: 6px;
+}
+
+.team-member-card h3 {
+    margin-bottom: 0.5rem;
+}
+
+.team-member-card p {
+    font-size: 0.9rem;
+    opacity: 0.6;
+}
