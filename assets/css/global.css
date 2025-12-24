@@ -821,6 +821,7 @@ section.section-container:nth-of-type(even) {
     align-items: center;
     gap: 3rem;
     height: 100dvh;
+    background-position: center;
 }
 
 .patrocinadores-hero-content {
@@ -1011,6 +1012,7 @@ section.section-container:nth-of-type(even) {
     align-items: center;
     gap: 3rem;
     height: 100dvh;
+    background-position: center;
 }
 
 .equipo-hero-content {
