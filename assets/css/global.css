@@ -5,6 +5,7 @@
     --c-red: rgb(242, 25, 43);
     --c-red-transparente: rgba(242, 25, 43, 0.05);
     --c-red-transparente-strong: rgba(242, 25, 43, 0.2);
+    --c-red-transparente-stronger: rgba(242, 25, 43, 0.5);
     --c-dark: rgb(22, 22, 24);
     --c-light: rgb(255, 255, 255);
     --font-stack: system-ui, -apple-system, sans-serif;
@@ -392,7 +393,7 @@ section.section-container:nth-of-type(even) {
 
 /* --- Hero Section --- */
 .hero {
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.6) 40%, rgba(0, 0, 0, 0.2) 100%), url("/assets/img/hero/fondo.jpg");
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.6) 40%, rgba(0, 0, 0, 0.2) 100%), url("/assets/img/hero/index.webp");
     background-size: cover;
     background-position: right 20% bottom 45%;
     min-height: 100dvh;
@@ -451,9 +452,9 @@ section.section-container:nth-of-type(even) {
     6. PÁGINA: SOBRE NOSOTROS
    ========================================= */
 
-/* --- 6.1. Hero Específico de Equipo --- */
+/* --- 6.1. Hero Específico de Sobre Nosotros --- */
 .sobre-nosotros-hero {
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), var(--c-dark)), radial-gradient(circle at center, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.8) 100%), url("/assets/img/hero/equipo.jpg");
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), var(--c-dark)), radial-gradient(circle at center, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.8) 100%), url("/assets/img/hero/sobre-nosotros.webp");
     background-size: cover;
     background-position: center top;
     padding: 12rem 5% 4rem;
@@ -786,4 +787,63 @@ section.section-container:nth-of-type(even) {
     justify-content: center;
     gap: 1rem;
     margin-top: 2rem;
+}
+
+/* =========================================
+    7. PÁGINA: PATROCINADORES
+   ========================================= */
+
+/* Hero Patrocinadores */
+.patrocinadores-hero {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), var(--c-dark)), radial-gradient(circle at center, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.8) 100%), url("/assets/img/hero/patrocinadores.webp");
+    background-size: cover;
+    padding: 12rem 5% 4rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    height: 100dvh;
+}
+
+.patrocinadores-hero-content {
+    padding-top: 4rem;
+}
+
+.patrocinadores-hero h1,
+.patrocinadores-hero p {
+    text-shadow: 0 2px 30px rgba(0, 0, 0, 1);
+    position: relative;
+    z-index: 2;
+}
+
+.patrocinadores-hero h1 {
+    font-size: 4.5rem;
+    font-weight: 900;
+    line-height: 1.1;
+    text-transform: uppercase;
+    font-style: italic;
+    letter-spacing: -2px;
+    margin-bottom: 1.5rem;
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
+}
+
+.patrocinadores-hero h1 span {
+    color: var(--c-red);
+}
+
+.patrocinadores-hero p {
+    max-width: 600px;
+    margin: 0 auto;
+    opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+    .patrocinadores-hero {
+        padding: 8rem 5% 4rem;
+        height: auto;
+    }
+    .patrocinadores-hero h1 {
+        font-size: 2.5rem;
+    }
 }
