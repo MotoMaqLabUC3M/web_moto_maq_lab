@@ -1,0 +1,1103 @@
+/* =========================================
+    1. CONFIGURACIÓN BASE Y VARIABLES
+   ========================================= */
+:root {
+    --c-red: rgb(242, 25, 43);
+    --c-red-transparente: rgba(242, 25, 43, 0.05);
+    --c-red-transparente-strong: rgba(242, 25, 43, 0.2);
+    --c-red-transparente-stronger: rgba(242, 25, 43, 0.5);
+    --c-dark: rgb(22, 22, 24);
+    --c-light: rgb(255, 255, 255);
+    --font-stack: system-ui, -apple-system, sans-serif;
+    --bg-card: rgb(36, 36, 38);
+    --bg-darker: rgb(15, 15, 16);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--c-dark);
+    color: var(--c-light);
+    font-family: var(--font-stack);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* =========================================
+    2. COMPONENTES UI REUTILIZABLES
+   ========================================= */
+
+/* --- Botones --- */
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-align: center;
+    transition: 300ms;
+}
+
+.btn--primary {
+    background-color: var(--c-red);
+    color: var(--c-light);
+    border: 2px solid var(--c-red);
+}
+
+.btn:hover {
+    background-color: var(--c-dark);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: var(--c-light);
+    transform: scale(1.05);
+}
+
+.btn--outline {
+    background-color: transparent;
+    color: var(--c-light);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+/* --- Badges / Etiquetas --- */
+.badge {
+    display: inline-block;
+    background-color: rgba(233, 58, 74, 0.2);
+    color: var(--c-red);
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+/* --- Títulos de Sección (Global) --- */
+.section-title {
+    margin-bottom: 3rem;
+    border-left: 4px solid var(--c-red);
+    padding-left: 1.5rem;
+}
+.section-title h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+.section-title p {
+    opacity: 0.7;
+    max-width: 500px;
+}
+
+.section-title--center {
+    text-align: center;
+    border-left: none;
+    margin-bottom: 1rem;
+    padding-left: 0;
+}
+
+.section-title--center p {
+    margin: 0 auto;
+}
+
+/* --- Contenedor de Sección (Global) --- */
+.section-container {
+    padding: 4rem 5%;
+    background-color: var(--c-dark);
+}
+
+section.section-container:nth-of-type(even) {
+    background-color: #1c1c1e;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* =========================================
+    3. LAYOUT (HEADER & FOOTER)
+   ========================================= */
+
+/* --- Header Principal --- */
+.main-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    padding: 1rem 5%;
+    justify-content: space-between;
+    background-color: var(--bg-darker);
+    font-weight: 700;
+    font-size: 0.8rem;
+}
+
+.enlaces-header {
+    display: flex;
+    align-items: center;
+}
+
+/* --- Logo --- */
+.logo {
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.logo-wrapper {
+    overflow: hidden;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.logo span {
+    color: var(--c-red);
+}
+
+/* --- Navegación Escritorio --- */
+.main-header nav a {
+    margin: 0 1rem;
+    opacity: 0.8;
+    display: inline-block;
+    vertical-align: middle;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    will-change: transform;
+}
+.main-header nav a:hover {
+    opacity: 1;
+    color: var(--c-red);
+    transition: 300ms;
+    transform: scale(1.05);
+}
+
+/* --- Menú Hamburguesa (Botón) --- */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+    z-index: 1001;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--c-light);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* --- Footer --- */
+.main-footer {
+    background-color: #000000;
+    border-top: 2px solid var(--c-red);
+    padding: 4rem 5% 1rem;
+    color: #aeaeae;
+    font-size: 0.9rem;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+.footer-col {
+    flex: 0 1 auto;
+    margin: 0 auto;
+}
+
+.footer-col h4 {
+    color: var(--c-light);
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 800;
+}
+
+.brand-col .logo {
+    margin-bottom: 1rem;
+    filter: grayscale(100%);
+    transition: 0.3s;
+}
+
+.brand-col:hover .logo {
+    filter: none;
+}
+
+.footer-desc {
+    line-height: 1.6;
+    max-width: 300px;
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-links a {
+    color: #aeaeae;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.footer-links a:hover {
+    color: var(--c-light);
+    transform: translateX(5px);
+    color: var(--c-red);
+}
+
+.footer-links span {
+    margin-right: 0.5rem;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-icons a {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    transition: 0.3s;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    background-color: var(--c-red);
+    border-color: var(--c-red);
+    transform: translateY(-3px);
+    color: white;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-size: 0.8rem;
+}
+
+@media (max-width: 768px) {
+    .main-footer {
+        text-align: center;
+    }
+
+    .logo {
+        justify-content: center;
+    }
+
+    .footer-desc {
+        margin: 0 auto;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+/* =========================================
+    4. RESPONSIVO: MENÚ MÓVIL
+   ========================================= */
+@media (max-width: 948px) {
+    .hamburger {
+        display: flex;
+    }
+
+    /* Animación icono X */
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 6px);
+    }
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -6px);
+    }
+
+    /* Cajón del menú móvil */
+    .mobile-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100dvh;
+        background-color: rgba(10, 10, 10, 0.95);
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        justify-content: center;
+        gap: 2rem;
+        transition: right 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+        z-index: 1000;
+        padding-bottom: 2rem;
+    }
+
+    .mobile-menu.active {
+        right: 0;
+    }
+
+    .main-header nav {
+        position: static;
+        transform: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .main-header nav a {
+        font-size: 1.2rem;
+        margin: 0;
+    }
+}
+
+/* =========================================
+    5. PÁGINA: INICIO (LANDING)
+   ========================================= */
+
+/* --- Hero Section --- */
+.hero {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.6) 40%, rgba(0, 0, 0, 0.2) 100%), url("../img/hero/index.webp");
+    background-size: cover;
+    background-position: right 20% bottom 45%;
+    min-height: 100dvh;
+    display: flex;
+    align-items: center;
+    padding: 0 5%;
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    line-height: 0.9;
+    text-transform: uppercase;
+    font-style: italic;
+    letter-spacing: -2px;
+    margin-bottom: 1.5rem;
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
+}
+.hero h1 span {
+    color: var(--c-red);
+}
+
+.hero p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    margin-bottom: 2rem;
+    line-height: 1.5;
+}
+
+.hero-btns {
+    display: flex;
+    gap: 1rem;
+}
+
+/* Responsivo Landing */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    .hero p {
+        font-size: 1rem;
+    }
+    .hero-btns {
+        flex-direction: column;
+    }
+    .hero-btns .btn {
+        width: 100%;
+    }
+}
+
+/* =========================================
+    6. PÁGINA: SOBRE NOSOTROS
+   ========================================= */
+
+/* --- 6.1. Hero Específico de Sobre Nosotros --- */
+.sobre-nosotros-hero {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), var(--c-dark)), radial-gradient(circle at center, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.8) 100%), url("../img/hero/sobre-nosotros.webp");
+    background-size: cover;
+    background-position: center top;
+    padding: 12rem 5% 4rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    height: 100dvh;
+}
+
+.sobre-nosotros-hero-content {
+    padding-top: 4rem;
+}
+
+.sobre-nosotros-hero h1,
+.sobre-nosotros-hero p {
+    text-shadow: 0 2px 30px rgba(0, 0, 0, 1);
+    position: relative;
+    z-index: 2;
+}
+
+.sobre-nosotros-hero h1 {
+    font-size: 4.5rem;
+    font-weight: 900;
+    line-height: 1.1;
+    text-transform: uppercase;
+    font-style: italic;
+    letter-spacing: -2px;
+    margin-bottom: 1.5rem;
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
+}
+
+.sobre-nosotros-hero h1 span {
+    color: var(--c-red);
+}
+
+.sobre-nosotros-hero p {
+    max-width: 600px;
+    margin: 0 auto;
+    opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+    .sobre-nosotros-hero {
+        padding: 8rem 5% 4rem;
+        height: auto;
+    }
+    .sobre-nosotros-hero h1 {
+        font-size: 2.5rem;
+    }
+}
+
+/* --- 6.2. Barra de Estadísticas --- */
+.stats-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    gap: 2rem;
+    background: rgba(40, 40, 40, 0.7);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    padding: 2rem;
+    width: 100%;
+    max-width: 1100px;
+    margin-top: 2rem;
+}
+
+.stat-item {
+    text-align: center;
+    position: relative;
+    flex: 1;
+    min-width: 150px;
+}
+
+.stat-item h3 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--c-light);
+    margin: 0.5rem 0;
+    line-height: 1;
+}
+
+.stat-item p {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    opacity: 0.8;
+    letter-spacing: 1.5px;
+    font-weight: 500;
+}
+
+.stat-icon {
+    font-size: 1.8rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .stats-bar {
+        flex-direction: column;
+        gap: 2.5rem;
+        background: rgba(20, 20, 20, 0.9);
+    }
+
+    .stat-item:not(:last-child)::after {
+        display: none;
+    }
+
+    .stat-item {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding-bottom: 1.5rem;
+        width: 100%;
+    }
+
+    .stat-item:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+}
+
+/* --- LÍNEAS DIVISORIAS ENTRE ESTADÍSTICAS --- */
+/* Solo en escritorio */
+@media (min-width: 769px) {
+    .stat-item:not(:last-child)::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 20%;
+        height: 60%;
+        width: 1px;
+        background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.2), transparent);
+        right: -1rem;
+    }
+}
+
+/* --- 6.3. Grid de Tarjetas (Filosofía & Palmarés) --- */
+.grid-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    background-color: #1a1a1a;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    padding: 2rem;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    background-color: #222;
+    border-color: var(--c-red);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(242, 25, 43, 0.15);
+    cursor: default;
+}
+
+.card-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--c-red);
+}
+
+.card h2 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.card h3 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.card h4 {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.card h5 {
+    margin-bottom: 1rem;
+    font-size: 0.8rem;
+}
+
+.card p {
+    font-size: 0.9rem;
+    opacity: 0.7;
+    line-height: 1.6;
+}
+
+/* Variación: Tarjetas Pequeñas (Palmarés) */
+.mini-card {
+    text-align: center;
+    padding: 1.5rem;
+}
+.mini-card .card-icon {
+    font-size: 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin: 0 auto 1rem;
+}
+
+/* =========================================
+    6.4. TIMELINE (Historia Estilo Zigzag)
+   ========================================= */
+
+.history-section {
+    background-color: var(--bg-darker);
+    overflow-x: hidden;
+}
+
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.timeline-line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 60px;
+    width: 4px;
+    background-color: var(--c-red);
+    transform: translateX(-50%);
+    z-index: 0;
+}
+
+.timeline-line::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 4px;
+    height: 85px;
+    background-image: radial-gradient(circle, var(--c-red) 35%, transparent 40%);
+    background-size: 4px 30px;
+    background-repeat: repeat-y;
+    mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+    opacity: 0.8;
+}
+
+.timeline-item {
+    position: relative;
+    width: 50%;
+    padding: 2rem 4rem;
+    z-index: 1;
+    margin-bottom: 2rem;
+}
+
+.timeline-dot {
+    position: absolute;
+    top: 2rem;
+    width: 24px;
+    height: 24px;
+    background-color: var(--c-red);
+    border: 4px solid var(--bg-darker);
+    border-radius: 50%;
+    z-index: 2;
+}
+
+.timeline-left {
+    left: 0;
+    text-align: right;
+}
+
+.timeline-left .timeline-dot {
+    right: -12px;
+}
+
+.timeline-left .card {
+    margin-left: auto;
+}
+
+.timeline-right {
+    left: 50%;
+    text-align: left;
+}
+
+.timeline-right .timeline-dot {
+    left: -12px;
+}
+
+.timeline-item .card {
+    display: inline-block;
+    text-align: left;
+    width: 100%;
+    max-width: 500px;
+}
+
+.timeline-img-wrapper {
+    width: 100%;
+    height: auto;
+    margin-top: 1rem;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.timeline-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .timeline-line {
+        display: none;
+    }
+    .timeline-item {
+        width: 100%;
+        margin: auto;
+        padding: 1rem 0.5rem;
+    }
+    .timeline-dot {
+        display: none;
+    }
+
+    .timeline-right {
+        left: 0;
+    }
+}
+
+/* --- 6.5. CTA Section --- */
+.cta-section {
+    background: linear-gradient(to right, #4a0404, #000);
+    padding: 4rem 5%;
+    text-align: center;
+}
+.cta-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+.cta-btns {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+/* =========================================
+    7. PÁGINA: PATROCINADORES
+   ========================================= */
+
+/* Hero Patrocinadores */
+.patrocinadores-hero {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), var(--c-dark)), radial-gradient(circle at center, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.8) 100%), url("../img/hero/patrocinadores.webp");
+    background-size: cover;
+    padding: 12rem 5% 4rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    height: 100dvh;
+    background-position: center;
+}
+
+.patrocinadores-hero-content {
+    padding-top: 4rem;
+}
+
+.patrocinadores-hero h1,
+.patrocinadores-hero p {
+    text-shadow: 0 2px 30px rgba(0, 0, 0, 1);
+    position: relative;
+    z-index: 2;
+}
+
+.patrocinadores-hero h1 {
+    font-size: 4.5rem;
+    font-weight: 900;
+    line-height: 1.1;
+    text-transform: uppercase;
+    font-style: italic;
+    letter-spacing: -2px;
+    margin-bottom: 1.5rem;
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
+}
+
+.patrocinadores-hero h1 span {
+    color: var(--c-red);
+}
+
+.patrocinadores-hero p {
+    max-width: 600px;
+    margin: 0 auto;
+    opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+    .patrocinadores-hero {
+        padding: 8rem 5% 4rem;
+        height: auto;
+    }
+    .patrocinadores-hero h1 {
+        font-size: 2.5rem;
+    }
+}
+
+/* --- Contenedor Principal (La Pila Vertical) --- */
+.sponsors-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 6rem; /* Separación generosa entre niveles (Platinum vs Gold, etc.) */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- Títulos de cada Nivel --- */
+.tier-title {
+    text-align: center;
+    color: var(--c-red);
+    font-size: 1.2rem;
+    letter-spacing: 4px; /* Estilo muy técnico/racing */
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    opacity: 0.8;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+/* Líneas decorativas a los lados del título */
+.tier-title::before,
+.tier-title::after {
+    content: "";
+    display: inline-block;
+    width: 40px;
+    height: 2px;
+    background-color: var(--c-red);
+    vertical-align: middle;
+    margin: 0 1rem;
+    opacity: 0.5;
+}
+
+/* --- Contenedor de Tarjetas (Fila Flex) --- */
+.tier-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+/* --- LOGOS (Estilos Base) --- */
+.sponsor-logo-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.sponsor-logo-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: all 0.3s ease;
+}
+
+/* --- NIVELES ESPECÍFICOS (Aquí controlamos los tamaños con Flex) --- */
+
+/* 1. PLATINUM: Grande y destacado */
+.tier-platinum .card {
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+.tier-platinum .sponsor-logo-wrapper.large {
+    height: 250px;
+    background: transparent;
+}
+
+/* 2. GOLD: Medianos */
+.tier-gold .card {
+    flex: 0 1 400px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.tier-gold .sponsor-logo-wrapper.medium {
+    height: 120px;
+}
+
+/* 3. SILVER: Pequeños */
+.tier-silver .card {
+    flex: 0 1 250px;
+    padding: 1.5rem;
+}
+
+.tier-silver .sponsor-logo-wrapper.small {
+    height: 80px;
+}
+
+.tier-silver p {
+    font-size: 0.9rem;
+}
+
+/* 4. BRONZE: Muy pequeños */
+.tier-bronze .card {
+    flex: 0 1 180px;
+    padding: 1rem;
+    background: transparent;
+}
+.tier-bronze .sponsor-logo-wrapper.xsmall {
+    height: 60px;
+    margin-bottom: 0;
+    background: transparent;
+}
+
+.tier-bronze p {
+    font-size: 0.8rem;
+}
+
+@media (max-width: 768px) {
+    .tier-silver .card {
+        flex: 0 1 180px;
+        padding: 1.5rem;
+    }
+
+    .tier-bronze .card {
+        flex: 0 1 100px;
+        padding: 1rem;
+        background: transparent;
+    }
+}
+
+/* =========================================
+    8. PÁGINA: EQUIPO
+   ========================================= */
+
+/* Hero Equipo */
+.equipo-hero {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), var(--c-dark)), radial-gradient(circle at center, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.8) 100%), url("../img/hero/equipo.webp");
+    background-size: cover;
+    padding: 12rem 5% 4rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    height: 100dvh;
+    background-position: center;
+}
+
+.equipo-hero-content {
+    padding-top: 4rem;
+}
+
+.equipo-hero h1,
+.equipo-hero p {
+    text-shadow: 0 2px 30px rgba(0, 0, 0, 1);
+    position: relative;
+    z-index: 2;
+}
+
+.equipo-hero h1 {
+    font-size: 4.5rem;
+    font-weight: 900;
+    line-height: 1.1;
+    text-transform: uppercase;
+    font-style: italic;
+    letter-spacing: -2px;
+    margin-bottom: 1.5rem;
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
+}
+
+.equipo-hero h1 span {
+    color: var(--c-red);
+}
+
+.equipo-hero p {
+    max-width: 600px;
+    margin: 0 auto;
+    opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+    .equipo-hero {
+        padding: 8rem 5% 4rem;
+        height: auto;
+    }
+    .equipo-hero h1 {
+        font-size: 2.5rem;
+    }
+}
+
+/* Filas de Miembros */
+.team-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4rem;
+    align-items: center;
+}
+
+.team-member-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.team-member-card img {
+    width: 250px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    border-radius: 6px;
+}
+
+.team-member-card h3 {
+    margin-bottom: 0.5rem;
+}
+
+.team-member-card p {
+    font-size: 0.9rem;
+    opacity: 0.6;
+}
+
+@media (max-width: 768px) {
+    .team-row {
+        flex-direction: column;
+        gap: 2rem;
+        justify-content: center;
+    }
+
+    .team-member-card img {
+        width: 100%;
+        height: auto;
+    }
+}
