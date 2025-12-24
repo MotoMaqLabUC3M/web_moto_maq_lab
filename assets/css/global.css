@@ -392,7 +392,7 @@ section.section-container:nth-of-type(even) {
 
 /* --- Hero Section --- */
 .hero {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/assets/img/hero/fondo.jpg");
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.6) 40%, rgba(0, 0, 0, 0.2) 100%), url("/assets/img/hero/fondo.jpg");
     background-size: cover;
     background-position: right 20% bottom 45%;
     min-height: 100dvh;
@@ -407,9 +407,13 @@ section.section-container:nth-of-type(even) {
 
 .hero h1 {
     font-size: 3.5rem;
-    line-height: 1.1;
+    font-weight: 900;
+    line-height: 0.9;
     text-transform: uppercase;
-    margin-bottom: 1rem;
+    font-style: italic;
+    letter-spacing: -2px;
+    margin-bottom: 1.5rem;
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
 }
 .hero h1 span {
     color: var(--c-red);
@@ -463,7 +467,6 @@ section.section-container:nth-of-type(even) {
 
 .sobre-nosotros-hero-content {
     padding-top: 4rem;
-    margin-bottom: 2rem;
 }
 
 .sobre-nosotros-hero h1,
@@ -474,9 +477,14 @@ section.section-container:nth-of-type(even) {
 }
 
 .sobre-nosotros-hero h1 {
-    font-size: 3.5rem;
+    font-size: 4.5rem;
+    font-weight: 900;
     line-height: 1.1;
     text-transform: uppercase;
+    font-style: italic;
+    letter-spacing: -2px;
+    margin-bottom: 1.5rem;
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
 }
 
 .sobre-nosotros-hero h1 span {
