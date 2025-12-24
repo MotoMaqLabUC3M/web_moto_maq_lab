@@ -736,7 +736,6 @@ section.section-container:nth-of-type(even) {
     margin-top: 1rem;
     border-radius: 8px;
     overflow: hidden;
-    background-color: #222;
 }
 
 .timeline-img {
