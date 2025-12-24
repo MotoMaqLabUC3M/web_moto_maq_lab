@@ -393,7 +393,7 @@ section.section-container:nth-of-type(even) {
 
 /* --- Hero Section --- */
 .hero {
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.6) 40%, rgba(0, 0, 0, 0.2) 100%), url("./assets/img/hero/index.webp");
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.6) 40%, rgba(0, 0, 0, 0.2) 100%), url("../img/hero/index.webp");
     background-size: cover;
     background-position: right 20% bottom 45%;
     min-height: 100dvh;
@@ -454,7 +454,7 @@ section.section-container:nth-of-type(even) {
 
 /* --- 6.1. Hero Específico de Sobre Nosotros --- */
 .sobre-nosotros-hero {
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), var(--c-dark)), radial-gradient(circle at center, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.8) 100%), url("assets/img/hero/sobre-nosotros.webp");
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), var(--c-dark)), radial-gradient(circle at center, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.8) 100%), url("../img/hero/sobre-nosotros.webp");
     background-size: cover;
     background-position: center top;
     padding: 12rem 5% 4rem;
@@ -812,7 +812,7 @@ section.section-container:nth-of-type(even) {
 
 /* Hero Patrocinadores */
 .patrocinadores-hero {
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), var(--c-dark)), radial-gradient(circle at center, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.8) 100%), url("assets/img/hero/patrocinadores.webp");
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), var(--c-dark)), radial-gradient(circle at center, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.8) 100%), url("../img/hero/patrocinadores.webp");
     background-size: cover;
     padding: 12rem 5% 4rem;
     text-align: center;
@@ -1002,7 +1002,7 @@ section.section-container:nth-of-type(even) {
 
 /* Hero Equipo */
 .equipo-hero {
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), var(--c-dark)), radial-gradient(circle at center, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.8) 100%), url("assets/img/hero/equipo.webp");
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), var(--c-dark)), radial-gradient(circle at center, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.8) 100%), url("../img/hero/equipo.webp");
     background-size: cover;
     padding: 12rem 5% 4rem;
     text-align: center;
