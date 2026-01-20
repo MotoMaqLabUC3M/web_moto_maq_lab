@@ -82,10 +82,12 @@ a {
     border-left: 4px solid var(--c-red);
     padding-left: 1.5rem;
 }
+
 .section-title h2 {
     font-size: 2rem;
     margin-bottom: 0.5rem;
 }
+
 .section-title p {
     opacity: 0.7;
     max-width: 500px;
@@ -175,6 +177,7 @@ section.section-container:nth-of-type(even) {
     transform: translateZ(0);
     will-change: transform;
 }
+
 .main-header nav a:hover {
     opacity: 1;
     color: var(--c-red);
@@ -344,9 +347,11 @@ section.section-container:nth-of-type(even) {
     .hamburger.active span:nth-child(1) {
         transform: rotate(45deg) translate(5px, 6px);
     }
+
     .hamburger.active span:nth-child(2) {
         opacity: 0;
     }
+
     .hamburger.active span:nth-child(3) {
         transform: rotate(-45deg) translate(5px, -6px);
     }
@@ -416,6 +421,7 @@ section.section-container:nth-of-type(even) {
     margin-bottom: 1.5rem;
     text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
 }
+
 .hero h1 span {
     color: var(--c-red);
 }
@@ -437,12 +443,15 @@ section.section-container:nth-of-type(even) {
     .hero h1 {
         font-size: 2.5rem;
     }
+
     .hero p {
         font-size: 1rem;
     }
+
     .hero-btns {
         flex-direction: column;
     }
+
     .hero-btns .btn {
         width: 100%;
     }
@@ -503,6 +512,7 @@ section.section-container:nth-of-type(even) {
         padding: 8rem 5% 4rem;
         height: auto;
     }
+
     .sobre-nosotros-hero h1 {
         font-size: 2.5rem;
     }
@@ -654,6 +664,7 @@ section.section-container:nth-of-type(even) {
     text-align: center;
     padding: 1.5rem;
 }
+
 .mini-card .card-icon {
     font-size: 1.5rem;
     background: rgba(255, 255, 255, 0.05);
@@ -775,11 +786,13 @@ section.section-container:nth-of-type(even) {
     .timeline-line {
         display: none;
     }
+
     .timeline-item {
         width: 100%;
         margin: auto;
         padding: 1rem 0.5rem;
     }
+
     .timeline-dot {
         display: none;
     }
@@ -795,10 +808,12 @@ section.section-container:nth-of-type(even) {
     padding: 4rem 5%;
     text-align: center;
 }
+
 .cta-section h2 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
 }
+
 .cta-btns {
     display: flex;
     justify-content: center;
@@ -861,6 +876,7 @@ section.section-container:nth-of-type(even) {
         padding: 8rem 5% 4rem;
         height: auto;
     }
+
     .patrocinadores-hero h1 {
         font-size: 2.5rem;
     }
@@ -870,7 +886,8 @@ section.section-container:nth-of-type(even) {
 .sponsors-stack {
     display: flex;
     flex-direction: column;
-    gap: 6rem; /* Separación generosa entre niveles (Platinum vs Gold, etc.) */
+    gap: 6rem;
+    /* Separación generosa entre niveles (Platinum vs Gold, etc.) */
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -880,7 +897,8 @@ section.section-container:nth-of-type(even) {
     text-align: center;
     color: var(--c-red);
     font-size: 1.2rem;
-    letter-spacing: 4px; /* Estilo muy técnico/racing */
+    letter-spacing: 4px;
+    /* Estilo muy técnico/racing */
     text-transform: uppercase;
     margin-bottom: 2rem;
     opacity: 0.8;
@@ -950,6 +968,7 @@ section.section-container:nth-of-type(even) {
     flex-direction: column;
     text-align: center;
 }
+
 .tier-gold .sponsor-logo-wrapper.medium {
     height: 120px;
 }
@@ -974,6 +993,7 @@ section.section-container:nth-of-type(even) {
     padding: 1rem;
     background: transparent;
 }
+
 .tier-bronze .sponsor-logo-wrapper.xsmall {
     height: 60px;
     margin-bottom: 0;
@@ -1052,6 +1072,7 @@ section.section-container:nth-of-type(even) {
         padding: 8rem 5% 4rem;
         height: auto;
     }
+
     .equipo-hero h1 {
         font-size: 2.5rem;
     }
@@ -1062,13 +1083,17 @@ section.section-container:nth-of-type(even) {
     display: flex;
     flex-wrap: wrap;
     gap: 4rem;
-    align-items: center;
+    align-items: flex-start;
+    justify-content: flex-start;
+    max-width: calc(5 * 250px + 4 * 4rem);
+    margin: 0 auto;
 }
 
 .team-member-card {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    width: 250px;
 }
 
 .team-member-card img {
@@ -1078,6 +1103,7 @@ section.section-container:nth-of-type(even) {
     border-radius: 12px;
     margin-bottom: 1rem;
     border-radius: 6px;
+    background: white;
 }
 
 .team-member-card h3 {
@@ -1100,4 +1126,11 @@ section.section-container:nth-of-type(even) {
         width: 100%;
         height: auto;
     }
+}
+
+/* Imagen placeholder para miembros sin foto */
+.team-member-card img.placeholder-img {
+    object-fit: contain;
+    padding: 4rem;
+    box-sizing: border-box;
 }
