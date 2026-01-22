@@ -149,22 +149,33 @@
                 {
                     "name": "Miguel Lozano Nykolaychuk",
                     "role": "Jefe de Aerodinámica y Organización",
-                    "image": "assets/img/equipo/aerodinamica/Miguelotis.png"
+                    "image": "assets/img/equipo/Aerodinamica/Miguelotis.png"
+                },
+                {
+                    "name": "Alejandro Alcalde-Moraño Muñoz",
+                    "role": "Miembro de Aerodinámica",
+                    "image": "assets/img/logos uc3m/uc3m_logo_sin_fondo.PNG",
+                    "isPlaceholder": true
                 },
                 {
                     "name": "Adriana Morales",
                     "role": "Miembro de Aerodinámica",
-                    "image": "assets/img/equipo/aerodinamica/Adriana.png"
+                    "image": "assets/img/equipo/Aerodinamica/Adriana.png"
                 },
                 {
                     "name": "Maria Minaya Solera",
                     "role": "Miembro de Aerodinámica",
-                    "image": "assets/img/equipo/aerodinamica/Minaya.png"
+                    "image": "assets/img/equipo/Aerodinamica/Minaya.png"
                 },
                 {
                     "name": "Alvaro Menéndez",
                     "role": "Miembro de Aerodinámica",
-                    "image": "assets/img/equipo/aerodinamica/Menendez.png"
+                    "image": "assets/img/equipo/Aerodinamica/Menendez.png"
+                },
+                {
+                    "name": "Pablo García Morata",
+                    "role": "Miembro de Aerodinámica",
+                    "image": "assets/img/equipo/Aerodinamica/pablo.png"
                 }
             ]
         }
