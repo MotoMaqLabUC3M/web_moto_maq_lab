@@ -1,0 +1,172 @@
+{
+    "sections": [
+        {
+            "id": "jefes",
+            "title": "Jefes de Equipo",
+            "members": [
+                {
+                    "name": "Sergio Cruzado Villarín",
+                    "role": "Jefe de Equipo",
+                    "image": "assets/img/equipo/sergio.jpg"
+                },
+                {
+                    "name": "Miguel Hurtado Davó",
+                    "role": "Jefe de Equipo",
+                    "image": "assets/img/equipo/miguel.jpg"
+                }
+            ]
+        },
+        {
+            "id": "estructural",
+            "title": "Estructural",
+            "members": [
+                {
+                    "name": "David Otero Diez",
+                    "role": "Jefe de Estructural",
+                    "image": "assets/img/equipo/Estructual/otero.PNG"
+                }
+            ]
+        },
+        {
+            "id": "dinamica",
+            "title": "Dinámica",
+            "members": [
+                {
+                    "name": "David Otero Diez",
+                    "role": "Jefe de Dinámica",
+                    "image": "assets/img/equipo/Dinamica/otero.PNG"
+                },
+                {
+                    "name": "Beltran López Gonzalez",
+                    "role": "Miembro de Dinámica",
+                    "image": "assets/img/equipo/Dinamica/Beltran.png"
+                },
+                {
+                    "name": "Miguel Velazquez Kennedy",
+                    "role": "Miembro de Dinámica",
+                    "image": "assets/img/equipo/Dinamica/Big_mike.png"
+                },
+                {
+                    "name": "Rodrigo Andrés Cabrera",
+                    "role": "Miembro de Dinámica",
+                    "image": "assets/img/equipo/Dinamica/Rodrigo.png"
+                },
+                {
+                    "name": "Xaantal Pérez Martínez",
+                    "role": "Miembro de Dinámica",
+                    "image": "assets/img/equipo/Dinamica/Xaantal.png"
+                }
+            ]
+        },
+        {
+            "id": "electronica",
+            "title": "Electrónica",
+            "members": [
+                {
+                    "name": "Sara Domínguez Domínguez",
+                    "role": "Jefa de Electrónica",
+                    "image": "assets/img/equipo/Electronica/Sara.png"
+                },
+                {
+                    "name": "Jesús Galán Elices",
+                    "role": "Jefe de Telemetría y Sensorización",
+                    "image": "assets/img/equipo/Electronica/jesús.PNG"
+                },
+                {
+                    "name": "Abel Ramos Torres",
+                    "role": "Miembro de Electrónica",
+                    "image": "assets/img/equipo/Electronica/Abel.png"
+                },
+                {
+                    "name": "Alba López Mozo",
+                    "role": "Miembro de Electrónica",
+                    "image": "assets/img/logos uc3m/uc3m_logo_sin_fondo.PNG",
+                    "isPlaceholder": true
+                },
+                {
+                    "name": "Alberto Robles Serrano",
+                    "role": "Miembro de Electrónica",
+                    "image": "assets/img/equipo/Electronica/Alberto.png"
+                },
+                {
+                    "name": "Ángel Pérez Antorrena",
+                    "role": "Miembro de Electrónica",
+                    "image": "assets/img/equipo/Electronica/Angel.png"
+                },
+                {
+                    "name": "Elisa Rodríguez",
+                    "role": "Miembro de Electrónica",
+                    "image": "assets/img/equipo/Electronica/Elisa.png"
+                },
+                {
+                    "name": "Jaime Aznar García",
+                    "role": "Miembro de Electrónica",
+                    "image": "assets/img/equipo/Electronica/Aznar.png"
+                },
+                {
+                    "name": "Miguel Arigita Cilla",
+                    "role": "Miembro de Electrónica",
+                    "image": "assets/img/equipo/Electronica/Arigita.png"
+                },
+                {
+                    "name": "Monica Eugenia Salcudean Cozmean",
+                    "role": "Miembro de Electrónica",
+                    "image": "assets/img/equipo/Electronica/Monica.png"
+                },
+                {
+                    "name": "Rafael Pérez de Lema Carmona",
+                    "role": "Miembro de Electrónica",
+                    "image": "assets/img/equipo/Electronica/Rafa.png"
+                }
+            ]
+        },
+        {
+            "id": "patrocinadores",
+            "title": "Patrocinadores",
+            "members": [
+                {
+                    "name": "Jose García-Morato Álvarez",
+                    "role": "Jefe de Patrocinadores",
+                    "image": "assets/img/equipo/jose.jpg"
+                }
+            ]
+        },
+        {
+            "id": "marketing",
+            "title": "Marketing",
+            "members": [
+                {
+                    "name": "Sabina Rubio Suárez",
+                    "role": "Jefa de Marketing",
+                    "image": "assets/img/equipo/Marketing/sabina.PNG"
+                }
+            ]
+        },
+        {
+            "id": "aerodinamica",
+            "title": "Aerodinámica y Organización",
+            "members": [
+                {
+                    "name": "Miguel Lozano Nykolaychuk",
+                    "role": "Jefe de Aerodinámica y Organización",
+                    "image": "assets/img/equipo/aerodinamica/Miguelotis.png"
+                },
+                {
+                    "name": "Adriana Morales",
+                    "role": "Miembro de Aerodinámica",
+                    "image": "assets/img/equipo/aerodinamica/Adriana.png"
+                },
+                {
+                    "name": "Maria Minaya Solera",
+                    "role": "Miembro de Aerodinámica",
+                    "image": "assets/img/equipo/aerodinamica/Minaya.png"
+                },
+                {
+                    "name": "Alvaro Menéndez",
+                    "role": "Miembro de Aerodinámica",
+                    "image": "assets/img/equipo/aerodinamica/Menendez.png"
+                }
+            ]
+        }
+    ]
+}
