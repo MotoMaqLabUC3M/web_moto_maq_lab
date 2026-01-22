@@ -1094,13 +1094,13 @@ section.section-container:nth-of-type(even) {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    width: 200px;
+    width: 250px;
     flex-shrink: 0;
 }
 
 .team-member-card img {
-    width: 200px;
-    height: 280px;
+    width: 250px;
+    height: 350px;
     object-fit: cover;
     border-radius: 6px;
     margin-bottom: 1rem;
