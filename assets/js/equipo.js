@@ -33,7 +33,7 @@ function renderTeamSections(container, sections) {
  */
 function createSectionHTML(section) {
     const membersHTML = section.members.map(member => createMemberHTML(member)).join('');
-    
+
     return `
         <section class="section-container">
             <div class="section-title">
@@ -53,10 +53,10 @@ function createSectionHTML(section) {
  */
 function createMemberHTML(member) {
     const placeholderClass = member.isPlaceholder ? ' class="placeholder-img"' : '';
-    
+
     return `
         <div class="team-member-card">
-            <img src="${member.image}" alt="${member.name}"${placeholderClass} />
+            <img src="${member.image}" alt="${member.name}"${placeholderClass} loading="lazy" />
             <h3>${member.name}</h3>
             <p>${member.role}</p>
         </div>
