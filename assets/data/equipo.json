@@ -21,9 +21,14 @@
             "title": "Estructural",
             "members": [
                 {
-                    "name": "David Otero Diez",
+                    "name": "David Otero Díez",
                     "role": "Jefe de Estructural",
                     "image": "assets/img/equipo/Estructual/otero.PNG"
+                },
+                {
+                    "name": "Carlos Palanca Rueda",
+                    "role": "Miembro de Estructural",
+                    "image": "assets/img/equipo/Estructual/carlos_palanca_estructural.png"
                 }
             ]
         },
@@ -32,7 +37,7 @@
             "title": "Dinámica",
             "members": [
                 {
-                    "name": "David Otero Diez",
+                    "name": "David Otero Díez",
                     "role": "Jefe de Dinámica",
                     "image": "assets/img/equipo/Dinamica/otero.PNG"
                 },
@@ -55,6 +60,11 @@
                     "name": "Xaantal Pérez Martínez",
                     "role": "Miembro de Dinámica",
                     "image": "assets/img/equipo/Dinamica/Xaantal.png"
+                },
+                {
+                    "name": "Marta Alonso García",
+                    "role": "Miembro de Dinámica",
+                    "image": "assets/img/equipo/Dinamica/marta_alonso_dinamica.png"
                 }
             ]
         },
@@ -139,6 +149,21 @@
                     "name": "Sabina Rubio Suárez",
                     "role": "Jefa de Marketing",
                     "image": "assets/img/equipo/Marketing/sabina.PNG"
+                },
+                {
+                    "name": "Sabina Rubio Suárez",
+                    "role": "Jefa de Marketing",
+                    "image": "assets/img/equipo/Marketing/sabina.PNG"
+                },
+                {
+                    "name": "Lucia del Río Velado",
+                    "role": "Miembro de Marketing",
+                    "image": "assets/img/equipo/Marketing/lucia_del_rio_marketing.png"
+                },
+                {
+                    "name": "Pablo Montes Ponce",
+                    "role": "Miembro de Marketing",
+                    "image": "assets/img/equipo/Marketing/pablo_montes_ponce_marketing.png"
                 }
             ]
         },
@@ -176,6 +201,11 @@
                     "name": "Pablo García Morata",
                     "role": "Miembro de Aerodinámica",
                     "image": "assets/img/equipo/Aerodinamica/pablo.png"
+                },
+                {
+                    "name": "Alejandro Ranz Ramírez",
+                    "role": "Miembro de Aerodinámica",
+                    "image": "assets/img/equipo/Aerodinamica/alejandro.png"
                 }
             ]
         }
