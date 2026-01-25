@@ -1,34 +1,28 @@
 {
     "sections": [
         {
-            "id": "jefes",
+            "id": "jefatura",
             "title": "Jefes de Equipo",
             "members": [
                 {
                     "name": "Sergio Cruzado Villarín",
                     "role": "Jefe de Equipo",
-                    "image": "assets/img/equipo/sergio.jpg"
+                    "image": "assets/img/equipo/jefatura/sergio_cruzado_villarin.webp"
                 },
                 {
                     "name": "Miguel Hurtado Davó",
                     "role": "Jefe de Equipo",
-                    "image": "assets/img/equipo/miguel.jpg"
-                }
-            ]
-        },
-        {
-            "id": "estructural",
-            "title": "Estructural",
-            "members": [
-                {
-                    "name": "David Otero Díez",
-                    "role": "Jefe de Estructural",
-                    "image": "assets/img/equipo/Estructual/otero.PNG"
+                    "image": "assets/img/equipo/jefatura/miguel_hurtado_davo.webp"
                 },
                 {
-                    "name": "Carlos Palanca Rueda",
-                    "role": "Miembro de Estructural",
-                    "image": "assets/img/equipo/Estructual/carlos_palanca_estructural.png"
+                    "name": "Abraham Vadillo Morrillas",
+                    "role": "Tutor de Equipo",
+                    "image": "assets/img/equipo/jefatura/abraham_vadillo_morillas.webp"
+                },
+                {
+                    "name": "Marcos Vidal Rodríguez",
+                    "role": "Tutor de Equipo",
+                    "image": "assets/img/equipo/jefatura/marcos_vidal_rodiguez.webp"
                 }
             ]
         },
@@ -38,33 +32,136 @@
             "members": [
                 {
                     "name": "David Otero Díez",
-                    "role": "Jefe de Dinámica",
-                    "image": "assets/img/equipo/Dinamica/otero.PNG"
+                    "role": "Jefe de Dinámica y Estructural",
+                    "image": "assets/img/equipo/dinamica/david_otero_diez.webp"
                 },
                 {
                     "name": "Beltran López Gonzalez",
                     "role": "Miembro de Dinámica",
-                    "image": "assets/img/equipo/Dinamica/Beltran.png"
+                    "image": "assets/img/equipo/dinamica/beltran_lopez_gonzalez.webp"
                 },
                 {
-                    "name": "Miguel Velazquez Kennedy",
+                    "name": "Carlos Mendo López",
                     "role": "Miembro de Dinámica",
-                    "image": "assets/img/equipo/Dinamica/Big_mike.png"
-                },
-                {
-                    "name": "Rodrigo Andrés Cabrera",
-                    "role": "Miembro de Dinámica",
-                    "image": "assets/img/equipo/Dinamica/Rodrigo.png"
-                },
-                {
-                    "name": "Xaantal Pérez Martínez",
-                    "role": "Miembro de Dinámica",
-                    "image": "assets/img/equipo/Dinamica/Xaantal.png"
+                    "image": "assets/img/equipo/dinamica/carlos_mendo_lopez.webp"
                 },
                 {
                     "name": "Marta Alonso García",
                     "role": "Miembro de Dinámica",
-                    "image": "assets/img/equipo/Dinamica/marta_alonso_dinamica.png"
+                    "image": "assets/img/equipo/dinamica/marta_alonso_perez.webp"
+                },
+                {
+                    "name": "Miguel Velázquez Kennedy",
+                    "role": "Miembro de Dinámica",
+                    "image": "assets/img/equipo/dinamica/miguel_velazquez_kennedy.webp"
+                },
+                {
+                    "name": "Raúl Beas Amador",
+                    "role": "Miembro de Dinámica",
+                    "image": "assets/img/equipo/dinamica/raul_beas_amador.webp"
+                },
+                {
+                    "name": "Rodrigo Andrés Cabrera",
+                    "role": "Miembro de Dinámica",
+                    "image": "assets/img/equipo/dinamica/rodrigo_andres_cabrera.webp"
+                },
+                {
+                    "name": "Xaantal Pérez Martínez",
+                    "role": "Miembro de Dinámica",
+                    "image": "assets/img/equipo/dinamica/xaantal_perez_martinez.webp"
+                }
+            ]
+        },
+        {
+            "id": "estructural",
+            "title": "Estructural",
+            "members": [
+                {
+                    "name": "David Otero Díez",
+                    "role": "Jefe de Dinámica y Estructural",
+                    "image": "assets/img/equipo/dinamica/david_otero_diez.webp"
+                },
+                {
+                    "name": "Carlos Palanca Rueda",
+                    "role": "Miembro de Estructural",
+                    "image": "assets/img/equipo/estructual/carlos_palanca_rueda.webp"
+                },
+                {
+                    "name": "Cristina González Luna",
+                    "role": "Miembro de Estructural",
+                    "image": "assets/img/equipo/estructual/cristina_gonzalez_luna.webp"
+                },
+                {
+                    "name": "Diego Calvo Blanco",
+                    "role": "Miembro de Estructural",
+                    "image": "assets/img/equipo/estructual/diego_calvo_blanco.webp"
+                },
+                {
+                    "name": "Iván García Martín",
+                    "role": "Miembro de Estructural",
+                    "image": "assets/img/equipo/estructual/ivan_garcia_martin.webp"
+                },
+                {
+                    "name": "Javier Martín Caballero",
+                    "role": "Miembro de Estructural",
+                    "image": "assets/img/equipo/estructual/javier_martin_caballero.webp"
+                },
+                {
+                    "name": "Sergio Llorente",
+                    "role": "Miembro de Estructural",
+                    "image": "assets/img/equipo/estructual/sergio_llorente.webp"
+                }
+            ]
+        },
+        {
+            "id": "aerodinamica",
+            "title": "Aerodinámica",
+            "members": [
+                {
+                    "name": "Miguel Lozano Nykolaychuk",
+                    "role": "Jefe de Aerodinámica y Organización",
+                    "image": "assets/img/equipo/aerodinamica/miguel_lozano_nykolaychuk.webp"
+                },
+                {
+                    "name": "Adriana Morales",
+                    "role": "Miembro de Aerodinámica",
+                    "image": "assets/img/equipo/aerodinamica/adriana_morales.webp"
+                },
+                {
+                    "name": "Alejandro Alcalde",
+                    "role": "Miembro de Aerodinámica",
+                    "image": "assets/img/logos_uc3m/uc3m_logo_sin_fondo.png",
+                    "isPlaceholder": true
+                },
+                {
+                    "name": "Alejandro Ranz Ramírez",
+                    "role": "Miembro de Aerodinámica",
+                    "image": "assets/img/equipo/aerodinamica/alejandro_ranz_remartinez.webp"
+                },
+                {
+                    "name": "Álvaro Menéndez",
+                    "role": "Miembro de Aerodinámica",
+                    "image": "assets/img/equipo/aerodinamica/alvaro_menendez.webp"
+                },
+                {
+                    "name": "Gonzalo Matordomo Jiménez",
+                    "role": "Miembro de Aerodinámica",
+                    "image": "assets/img/equipo/aerodinamica/gonzalo_mayordomo_jimenez.webp"
+                },
+                {
+                    "name": "María Minaya Solera",
+                    "role": "Miembro de Aerodinámica",
+                    "image": "assets/img/equipo/aerodinamica/maria_minaya_solera.webp"
+                },
+                {
+                    "name": "Mario García Diaz",
+                    "role": "Miembro de Aerodinámica",
+                    "image": "assets/img/equipo/aerodinamica/mario_garcia_diaz.webp"
+                },
+                {
+                    "name": "Pablo Morata García",
+                    "role": "Miembro de Aerodinámica",
+                    "image": "assets/img/equipo/aerodinamica/pablo_morata_garcia.webp"
                 }
             ]
         },
@@ -75,58 +172,58 @@
                 {
                     "name": "Sara Domínguez Domínguez",
                     "role": "Jefa de Electrónica",
-                    "image": "assets/img/equipo/Electronica/Sara.png"
+                    "image": "assets/img/equipo/electronica/sara_dominguez_dominguez.webp"
                 },
                 {
                     "name": "Jesús Galán Elices",
                     "role": "Jefe de Telemetría y Sensorización",
-                    "image": "assets/img/equipo/Electronica/jesús.PNG"
+                    "image": "assets/img/equipo/electronica/jesus_galan_elices.webp"
                 },
                 {
                     "name": "Abel Ramos Torres",
                     "role": "Miembro de Electrónica",
-                    "image": "assets/img/equipo/Electronica/Abel.png"
+                    "image": "assets/img/equipo/electronica/abel_ramos_torres.webp"
                 },
                 {
                     "name": "Alba López Mozo",
                     "role": "Miembro de Electrónica",
-                    "image": "assets/img/logos uc3m/uc3m_logo_sin_fondo.PNG",
+                    "image": "assets/img/logos_uc3m/uc3m_logo_sin_fondo.png",
                     "isPlaceholder": true
                 },
                 {
                     "name": "Alberto Robles Serrano",
                     "role": "Miembro de Electrónica",
-                    "image": "assets/img/equipo/Electronica/Alberto.png"
+                    "image": "assets/img/equipo/electronica/alberto_robles_serrano.webp"
                 },
                 {
                     "name": "Ángel Pérez Antorrena",
                     "role": "Miembro de Electrónica",
-                    "image": "assets/img/equipo/Electronica/Angel.png"
+                    "image": "assets/img/equipo/electronica/angel_perez_antorrena.webp"
                 },
                 {
                     "name": "Elisa Rodríguez",
                     "role": "Miembro de Electrónica",
-                    "image": "assets/img/equipo/Electronica/Elisa.png"
+                    "image": "assets/img/equipo/electronica/elisa_rodriguez.webp"
                 },
                 {
                     "name": "Jaime Aznar García",
                     "role": "Miembro de Electrónica",
-                    "image": "assets/img/equipo/Electronica/Aznar.png"
+                    "image": "assets/img/equipo/electronica/jaime_aznar_garcia.webp"
                 },
                 {
                     "name": "Miguel Arigita Cilla",
                     "role": "Miembro de Electrónica",
-                    "image": "assets/img/equipo/Electronica/Arigita.png"
+                    "image": "assets/img/equipo/electronica/miguel_arigita_cilla.webp"
                 },
                 {
                     "name": "Monica Eugenia Salcudean Cozmean",
                     "role": "Miembro de Electrónica",
-                    "image": "assets/img/equipo/Electronica/Monica.png"
+                    "image": "assets/img/equipo/electronica/monica_eugenia_salcudean.webp"
                 },
                 {
                     "name": "Rafael Pérez de Lema Carmona",
                     "role": "Miembro de Electrónica",
-                    "image": "assets/img/equipo/Electronica/Rafa.png"
+                    "image": "assets/img/equipo/electronica/rafael_perez_de_lema.webp"
                 }
             ]
         },
@@ -137,7 +234,32 @@
                 {
                     "name": "Jose García-Morato Álvarez",
                     "role": "Jefe de Patrocinadores",
-                    "image": "assets/img/equipo/jose.jpg"
+                    "image": "assets/img/equipo/patrocinadores/jose_garcia-morato_alvarez.webp"
+                },
+                {
+                    "name": "Carlos Calles Gómez",
+                    "role": "Miembro de Patrocinadores",
+                    "image": "assets/img/equipo/patrocinadores/carlos_calles_gomez.webp"
+                },
+                {
+                    "name": "Clara Michilini",
+                    "role": "Miembro de Patrocinadores",
+                    "image": "assets/img/equipo/patrocinadores/clara_michilini.webp"
+                },
+                {
+                    "name": "Jimena Carrión Provencio",
+                    "role": "Miembro de Patrocinadores",
+                    "image": "assets/img/equipo/patrocinadores/jimena_carrion_provencio.webp"
+                },
+                {
+                    "name": "Nora Uribe Iribar",
+                    "role": "Miembro de Patrocinadores",
+                    "image": "assets/img/equipo/patrocinadores/nora_uribe_iribar.webp"
+                },
+                {
+                    "name": "Paula Marín Barone",
+                    "role": "Miembro de Patrocinadores",
+                    "image": "assets/img/equipo/patrocinadores/paula_marin_barone.webp"
                 }
             ]
         },
@@ -148,64 +270,53 @@
                 {
                     "name": "Sabina Rubio Suárez",
                     "role": "Jefa de Marketing",
-                    "image": "assets/img/equipo/Marketing/sabina.PNG"
+                    "image": "assets/img/equipo/marketing/sabina_rubio_suarez.webp"
                 },
                 {
-                    "name": "Sabina Rubio Suárez",
-                    "role": "Jefa de Marketing",
-                    "image": "assets/img/equipo/Marketing/sabina.PNG"
-                },
-                {
-                    "name": "Lucia del Río Velado",
+                    "name": "Adrián Moya Navarro",
                     "role": "Miembro de Marketing",
-                    "image": "assets/img/equipo/Marketing/lucia_del_rio_marketing.png"
+                    "image": "assets/img/equipo/marketing/adrian_moya_navarro.webp"
+                },
+                {
+                    "name": "Digna Guerrero Iruela",
+                    "role": "Miembro de Marketing",
+                    "image": "assets/img/equipo/marketing/digna_guerrero_iruela.webp"
+                },
+                {
+                    "name": "Isabella Chávez",
+                    "role": "Miembro de Marketing",
+                    "image": "assets/img/logos_uc3m/uc3m_logo_sin_fondo.png",
+                    "isPlaceholder": true
+                },
+                {
+                    "name": "Jimena Otero García",
+                    "role": "Miembro de Marketing",
+                    "image": "assets/img/equipo/marketing/jimena_otero_garcia.webp"
+                },
+                {
+                    "name": "Krishna Emelyn Espinoza",
+                    "role": "Miembro de Marketing",
+                    "image": "assets/img/equipo/marketing/krishna_emelyn_espinoza.webp"
+                },
+                {
+                    "name": "Lucía del Río Velado",
+                    "role": "Miembro de Marketing",
+                    "image": "assets/img/equipo/marketing/lucia_del_rio_velado.webp"
+                },
+                {
+                    "name": "María Sanz Martínez",
+                    "role": "Miembro de Marketing",
+                    "image": "assets/img/equipo/marketing/maria_sanz_martinez.webp"
+                },
+                {
+                    "name": "Nayra de Ganzo Rodríguez",
+                    "role": "Miembro de Marketing",
+                    "image": "assets/img/equipo/marketing/nayra_de_ganzo_rodriguez.webp"
                 },
                 {
                     "name": "Pablo Montes Ponce",
                     "role": "Miembro de Marketing",
-                    "image": "assets/img/equipo/Marketing/pablo_montes_ponce_marketing.png"
-                }
-            ]
-        },
-        {
-            "id": "aerodinamica",
-            "title": "Aerodinámica y Organización",
-            "members": [
-                {
-                    "name": "Miguel Lozano Nykolaychuk",
-                    "role": "Jefe de Aerodinámica y Organización",
-                    "image": "assets/img/equipo/Aerodinamica/Miguelotis.png"
-                },
-                {
-                    "name": "Alejandro Alcalde-Moraño Muñoz",
-                    "role": "Miembro de Aerodinámica",
-                    "image": "assets/img/logos uc3m/uc3m_logo_sin_fondo.PNG",
-                    "isPlaceholder": true
-                },
-                {
-                    "name": "Adriana Morales",
-                    "role": "Miembro de Aerodinámica",
-                    "image": "assets/img/equipo/Aerodinamica/Adriana.png"
-                },
-                {
-                    "name": "Maria Minaya Solera",
-                    "role": "Miembro de Aerodinámica",
-                    "image": "assets/img/equipo/Aerodinamica/Minaya.png"
-                },
-                {
-                    "name": "Alvaro Menéndez",
-                    "role": "Miembro de Aerodinámica",
-                    "image": "assets/img/equipo/Aerodinamica/Menendez.png"
-                },
-                {
-                    "name": "Pablo García Morata",
-                    "role": "Miembro de Aerodinámica",
-                    "image": "assets/img/equipo/Aerodinamica/pablo.png"
-                },
-                {
-                    "name": "Alejandro Ranz Ramírez",
-                    "role": "Miembro de Aerodinámica",
-                    "image": "assets/img/equipo/Aerodinamica/alejandro.png"
+                    "image": "assets/img/equipo/marketing/pablo_montes_ponce.webp"
                 }
             ]
         }
