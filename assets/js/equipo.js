@@ -56,7 +56,7 @@ function createMemberHTML(member) {
 
     return `
         <div class="team-member-card">
-            <img src="${member.image}" alt="${member.name}"${placeholderClass} loading="lazy" />
+            <img src="${member.image}" alt="${member.name}"${placeholderClass} loading="lazy" decoding="async" width="250" height="350" />
             <h3>${member.name}</h3>
             <p>${member.role}</p>
         </div>

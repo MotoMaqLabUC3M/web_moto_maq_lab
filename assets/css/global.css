@@ -1101,10 +1101,13 @@ section.section-container:nth-of-type(even) {
 .team-member-card img {
     width: 250px;
     height: 350px;
+    aspect-ratio: 5 / 7;
     object-fit: cover;
     border-radius: 6px;
     margin-bottom: 1rem;
     background: white;
+    /* Evitar layout shift mientras carga */
+    contain: layout style paint;
 }
 
 .team-member-card h3 {
