@@ -206,6 +206,12 @@
                     "image": "assets/img/equipo/electronica/elisa_rodriguez.webp"
                 },
                 {
+                    "name": "Icíar Zaminillo Herreros",
+                    "role": "Miembro de Electrónica",
+                    "image": "assets/img/logos_uc3m/uc3m_logo_sin_fondo.png",
+                    "isPlaceholder": true
+                },
+                {
                     "name": "Jaime Aznar García",
                     "role": "Miembro de Electrónica",
                     "image": "assets/img/equipo/electronica/jaime_aznar_garcia.webp"
