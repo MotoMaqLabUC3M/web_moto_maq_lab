@@ -941,16 +941,25 @@ section.section-container:nth-of-type(even) {
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 8px;
-    padding: 1rem;
+    border-radius: 12px;
+    padding: 1.5rem;
     margin-bottom: 1rem;
+    background: rgba(255, 255, 255, 0.95);
 }
 
 .sponsor-logo-wrapper img {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    transition: all 0.3s ease;
+    transition: all 0.4s ease;
+    filter: grayscale(100%);
+    opacity: 0.7;
+}
+
+/* El efecto se activa al pasar sobre toda la tarjeta */
+.card:hover .sponsor-logo-wrapper img {
+    filter: grayscale(0%);
+    opacity: 1;
 }
 
 /* --- NIVELES ESPECÍFICOS (Aquí controlamos los tamaños con Flex) --- */
@@ -966,7 +975,6 @@ section.section-container:nth-of-type(even) {
 
 .tier-platinum .sponsor-logo-wrapper.large {
     height: 250px;
-    background: transparent;
 }
 
 /* 2. GOLD: Medianos */
@@ -988,7 +996,7 @@ section.section-container:nth-of-type(even) {
 }
 
 .tier-silver .sponsor-logo-wrapper.small {
-    height: 80px;
+    height: 100px;
 }
 
 .tier-silver p {
@@ -1003,9 +1011,8 @@ section.section-container:nth-of-type(even) {
 }
 
 .tier-bronze .sponsor-logo-wrapper.xsmall {
-    height: 60px;
+    height: 90px;
     margin-bottom: 0;
-    background: transparent;
 }
 
 .tier-bronze p {
