@@ -46,6 +46,12 @@
                     "image": "assets/img/equipo/dinamica/carlos_mendo_lopez.webp"
                 },
                 {
+                    "name": "Joaquín Balabanian",
+                    "role": "Miembro de Dinámica",
+                    "image": "assets/img/logos_uc3m/uc3m_logo_sin_fondo.png",
+                    "isPlaceholder": true
+                },
+                {
                     "name": "Marta Alonso Pérez",
                     "role": "Miembro de Dinámica",
                     "image": "assets/img/equipo/dinamica/marta_alonso_perez.webp"
@@ -266,6 +272,11 @@
                     "name": "Paula Marín Barone",
                     "role": "Miembro de Patrocinadores",
                     "image": "assets/img/equipo/patrocinadores/paula_marin_barone.webp"
+                },
+                {
+                    "name": "Paula Mendoza Artiles",
+                    "role": "Miembro de Patrocinadores",
+                    "image": "assets/img/equipo/patrocinadores/paula_mendoza_artiles.webp"
                 }
             ]
         },
