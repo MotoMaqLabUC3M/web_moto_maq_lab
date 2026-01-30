@@ -1,0 +1,173 @@
+{
+    "tiers": [
+        {
+            "id": "platinum",
+            "name": "PLATINO",
+            "cssClass": "tier-platinum",
+            "logoSize": "large",
+            "sponsors": [
+                {
+                    "id": "maqlab",
+                    "name": "MAQLAB",
+                    "logo": "assets/img/patrocinios/Maqlab.png",
+                    "description": "Maqlab colabora con el equipo aportando recursos de investigación y conocimiento en materiales y procesos de fabricación. Trabajamos con Maqlab para validar prototipos y ensayar nuevas técnicas de fabricación de piezas compuestas.",
+                    "website": "",
+                    "dedicatedPage": ""
+                },
+                {
+                    "id": "altair",
+                    "name": "ALTAIR",
+                    "logo": "assets/img/patrocinios/altair.png",
+                    "description": "Altair nos aporta herramientas avanzadas de simulación multifísica y optimización. Aplicamos sus soluciones para optimizar diseños estructurales y el rendimiento aerodinámico de nuestras piezas.",
+                    "website": "",
+                    "dedicatedPage": ""
+                },
+                {
+                    "id": "addyx",
+                    "name": "ADDYX",
+                    "logo": "assets/img/patrocinios/addyx.png",
+                    "description": "Addyx es nuestro socio en la fabricación de moldes hidrosolubles impresos en 3D. Destaca por su capacidad de realizar desde tiradas cortas mediante impresión 3D hasta producción en serie por rotomoldeo. Gracias a sus moldes hemos logrado fabricar nuestro chasis doble viga hueco, integrando el sistema de admisión, imposible de conseguir con otros métodos.",
+                    "website": "",
+                    "dedicatedPage": ""
+                },
+                {
+                    "id": "UC3M",
+                    "name": "UC3M",
+                    "logo": "assets/img/patrocinios/uc3m.png",
+                    "description": "La Universidad Carlos III de Madrid es nuestra institución y respaldo académico. Financia parte del proyecto y nos proporciona las instalaciones, talleres y laboratorios donde diseñamos y fabricamos nuestra moto. Además, contamos con el apoyo de profesores y tutores que nos guían en cada fase del desarrollo",
+                    "website": "",
+                    "dedicatedPage": ""
+                }
+            ]
+        },
+        {
+            "id": "gold",
+            "name": "ORO",
+            "cssClass": "tier-gold",
+            "logoSize": "medium",
+            "sponsors": [
+                {
+                    "id": "gurit",
+                    "name": "GURIT",
+                    "logo": "assets/img/patrocinios/Gurit.png",
+                    "description": "Gurit nos suministra materiales compuestos y asesoramiento técnico para fabricar piezas ligeras y resistentes.",
+                    "website": ""
+                },
+                {
+                    "id": "lasertek",
+                    "name": "LASERTEK",
+                    "logo": "assets/img/patrocinios/lasertek.png",
+                    "description": "Lasertek apoya con procesos láser de precisión para el prototipado.",
+                    "website": ""
+                }
+            ]
+        },
+        {
+            "id": "silver",
+            "name": "PLATA",
+            "cssClass": "tier-silver",
+            "logoSize": "small",
+            "sponsors": [
+                {
+                    "id": "ntn",
+                    "name": "NTN",
+                    "logo": "assets/img/patrocinios/NTN.png",
+                    "description": "NTN suministra rodamientos de alta calidad para nuestra transmisión y ruedas.",
+                    "website": ""
+                },
+                {
+                    "id": "solysol",
+                    "name": "SOLYSOL",
+                    "logo": "assets/img/patrocinios/solysol.png",
+                    "description": "Solysol aporta tecnología de soldadura láser para la fabricación del sistema de escape.",
+                    "website": ""
+                },
+                {
+                    "id": "aeronautica-gestion",
+                    "name": "AERONÁUTICA GESTIÓN",
+                    "logo": "assets/img/patrocinios/aeronautica gestion.png",
+                    "description": "Apoyo en procesos de certificación y calidad.",
+                    "website": ""
+                },
+                {
+                    "id": "solidworks",
+                    "name": "SOLIDWORKS",
+                    "logo": "assets/img/patrocinios/solidoworks.png",
+                    "description": "SolidWorks nos proporciona licencias y apoyo en modelado CAD y simulación básica.",
+                    "website": ""
+                },
+                {
+                    "id": "castrol",
+                    "name": "CASTROL",
+                    "logo": "assets/img/patrocinios/Castrol.png",
+                    "description": "Castrol suministra lubricantes y asesoramiento para optimizar el rendimiento del motor.",
+                    "website": ""
+                },
+                {
+                    "id": "bollhoff",
+                    "name": "BOLLHOFF",
+                    "logo": "assets/img/patrocinios/bollhof.png",
+                    "description": "Bollhoff provee soluciones de fijación y tecnologías de unión.",
+                    "website": ""
+                },
+                {
+                    "id": "facom",
+                    "name": "FACOM",
+                    "logo": "assets/img/patrocinios/facom.png",
+                    "description": "Facom nos apoya con herramientas de taller y formación.",
+                    "website": ""
+                },
+                {
+                    "id": "cimworks",
+                    "name": "CIMWORKS",
+                    "logo": "assets/img/patrocinios/cimworks.png",
+                    "description": "CIMWORKS colabora en procesos de fabricación y software de producción.",
+                    "website": ""
+                }
+            ]
+        },
+        {
+            "id": "bronze",
+            "name": "BRONCE",
+            "cssClass": "tier-bronze",
+            "logoSize": "xsmall",
+            "sponsors": [
+                {
+                    "id": "valmoldes",
+                    "name": "VALMOLDES",
+                    "logo": "assets/img/patrocinios/Valmoldes.png",
+                    "description": "Valmoldes produce moldes y piezas a medida para nuestros componentes compuestos.",
+                    "website": ""
+                },
+                {
+                    "id": "ng",
+                    "name": "NG",
+                    "logo": "assets/img/patrocinios/NG.png",
+                    "description": "NG colabora en logística y soporte técnico.",
+                    "website": ""
+                },
+                {
+                    "id": "cogitim",
+                    "name": "COGITIM",
+                    "logo": "assets/img/patrocinios/cogitim.PNG",
+                    "description": "COGITIM colabora en procesos de ingeniería y optimización.",
+                    "website": ""
+                },
+                {
+                    "id": "easycomposites",
+                    "name": "EASYCOMPOSITES",
+                    "logo": "assets/img/patrocinios/easycomposites.png",
+                    "description": "Suministro de materias primas y asesoría técnica en composites.",
+                    "website": ""
+                },
+                {
+                    "id": "bossard",
+                    "name": "BOSSARD",
+                    "logo": "assets/img/patrocinios/Bossard.png",
+                    "description": "Bossard apoya con componentes y sistemas de ensamblaje.",
+                    "website": ""
+                }
+            ]
+        }
+    ]
+}
