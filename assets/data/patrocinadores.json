@@ -123,6 +123,13 @@
                     "logo": "assets/img/patrocinios/cimworks.png",
                     "description": "CIMWORKS colabora en procesos de fabricación y software de producción.",
                     "website": ""
+                },
+                {
+                    "id": "bossard",
+                    "name": "BOSSARD",
+                    "logo": "assets/img/patrocinios/Bossard.png",
+                    "description": "Bossard apoya con componentes y sistemas de ensamblaje.",
+                    "website": ""
                 }
             ]
         },
@@ -158,13 +165,6 @@
                     "name": "EASYCOMPOSITES",
                     "logo": "assets/img/patrocinios/easycomposites.png",
                     "description": "Suministro de materias primas y asesoría técnica en composites.",
-                    "website": ""
-                },
-                {
-                    "id": "bossard",
-                    "name": "BOSSARD",
-                    "logo": "assets/img/patrocinios/Bossard.png",
-                    "description": "Bossard apoya con componentes y sistemas de ensamblaje.",
                     "website": ""
                 }
             ]
