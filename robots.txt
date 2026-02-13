@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://motomaqlabuc3m.es/sitemap.xml
