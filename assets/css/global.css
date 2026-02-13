@@ -551,12 +551,26 @@ section.section-container:nth-of-type(even) {
     min-width: 150px;
 }
 
-.stat-item h3 {
+.stat-item h3,
+.stat-number {
     font-size: 2.5rem;
     font-weight: 800;
     color: var(--c-light);
     margin: 0.5rem 0;
     line-height: 1;
+}
+
+/* --- Utilidad: Texto solo para lectores de pantalla y SEO --- */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
 }
 
 .stat-item p {
