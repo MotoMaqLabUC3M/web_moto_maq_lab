@@ -156,6 +156,12 @@
                     "isPlaceholder": true
                 },
                 {
+                    "name": "José Ángel Crespo",
+                    "role": "Miembro de Aerodinámica",
+                    "image": "assets/img/logos_uc3m/uc3m_logo_sin_fondo.png",
+                    "isPlaceholder": true
+                },
+                {
                     "name": "Gonzalo Mayordomo Jiménez",
                     "role": "Miembro de Aerodinámica",
                     "image": "assets/img/equipo/aerodinamica/gonzalo_mayordomo_jimenez.webp"
