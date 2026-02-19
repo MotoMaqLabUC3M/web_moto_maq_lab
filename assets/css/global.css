@@ -802,25 +802,37 @@ section.section-container:nth-of-type(even) {
     height: 100%;
     object-fit: cover;
     display: block;
+    transition: transform 0.3s ease;
+}
+
+.timeline-item:hover .timeline-img {
+    transform: scale(1.05);
 }
 
 @media (max-width: 768px) {
     .timeline-line {
-        display: none;
+        left: 40px;
     }
 
     .timeline-item {
         width: 100%;
-        margin: auto;
-        padding: 1rem 0.5rem;
+        padding-left: 80px;
+        padding-right: 20px;
+        text-align: left;
     }
 
-    .timeline-dot {
-        display: none;
+    .timeline-item .card {
+        margin: 0;
     }
 
+    .timeline-left,
     .timeline-right {
         left: 0;
+    }
+
+    .timeline-left .timeline-dot,
+    .timeline-right .timeline-dot {
+        left: 28px;
     }
 }
 
