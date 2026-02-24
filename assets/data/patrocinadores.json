@@ -12,7 +12,9 @@
                     "logo": "assets/img/patrocinios/Maqlab.png",
                     "description": "Maqlab colabora con el equipo aportando recursos de investigación y conocimiento en materiales y procesos de fabricación. Trabajamos con Maqlab para validar prototipos y ensayar nuevas técnicas de fabricación de piezas compuestas.",
                     "website": "",
-                    "dedicatedPage": ""
+                    "dedicatedPage": "patrocinador.html?id=maqlab",
+                    "contenido": "Maqlab es el laboratorio de fabricación y materiales que respalda nuestro proyecto desde sus inicios. Nos proporcionan acceso a equipos de ensayo, asesoramiento en procesos de fabricación y soporte técnico continuo.\n\n## Qué nos aportan\n- Acceso a laboratorio de materiales para ensayos mecánicos\n- Asesoramiento en selección de materiales compuestos\n- Validación de prototipos mediante ensayos destructivos y no destructivos\n- Formación en técnicas de fabricación avanzada\n\n## Piezas fabricadas con su apoyo\nGracias a Maqlab hemos podido validar la resistencia de nuestro chasis de fibra de carbono, ensayar diferentes configuraciones de laminado y optimizar los procesos de curado.",
+                    "galeria": []
                 },
                 {
                     "id": "altair",
@@ -20,7 +22,9 @@
                     "logo": "assets/img/patrocinios/altair.png",
                     "description": "Altair nos aporta herramientas avanzadas de simulación multifísica y optimización. Aplicamos sus soluciones para optimizar diseños estructurales y el rendimiento aerodinámico de nuestras piezas.",
                     "website": "",
-                    "dedicatedPage": ""
+                    "dedicatedPage": "patrocinador.html?id=altair",
+                    "contenido": "Altair es líder mundial en simulación y análisis computacional. Nos proporcionan licencias de su suite de software que incluye herramientas de elementos finitos, CFD y optimización topológica.\n\n## Qué nos aportan\n- Licencias de HyperWorks para simulación estructural\n- Software de optimización topológica para reducción de peso\n- Herramientas de CFD para análisis aerodinámico\n- Soporte técnico y formación\n\n## Cómo lo utilizamos\nUtilizamos Altair para simular las cargas sobre el chasis, optimizar la geometría del basculante y analizar el flujo de aire sobre el carenado. Gracias a sus herramientas hemos conseguido reducir el peso un 15% manteniendo la rigidez.",
+                    "galeria": []
                 },
                 {
                     "id": "addyx",
@@ -28,7 +32,9 @@
                     "logo": "assets/img/patrocinios/addyx.png",
                     "description": "Addyx es nuestro socio en la fabricación de moldes hidrosolubles impresos en 3D. Destaca por su capacidad de realizar desde tiradas cortas mediante impresión 3D hasta producción en serie por rotomoldeo. Gracias a sus moldes hemos logrado fabricar nuestro chasis doble viga hueco, integrando el sistema de admisión, imposible de conseguir con otros métodos.",
                     "website": "",
-                    "dedicatedPage": ""
+                    "dedicatedPage": "patrocinador.html?id=addyx",
+                    "contenido": "Addyx es pionero en la fabricación de moldes hidrosolubles mediante impresión 3D. Su tecnología nos permite crear piezas huecas de geometría compleja que serían imposibles con métodos tradicionales.\n\n## Qué nos aportan\n- Moldes hidrosolubles impresos en 3D a medida\n- Asesoramiento en diseño para fabricación (DfM)\n- Capacidad de prototipado rápido\n- Soporte en el proceso de laminado sobre molde\n\n## El chasis doble viga hueco\nEl logro más destacado de nuestra colaboración es el chasis doble viga hueco en fibra de carbono. Gracias a los moldes de Addyx, pudimos fabricar un chasis con cavidades internas que integran el conducto de admisión de aire. Este diseño ahorra peso y mejora el rendimiento aerodinámico del motor.",
+                    "galeria": []
                 },
                 {
                     "id": "UC3M",
@@ -36,7 +42,9 @@
                     "logo": "assets/img/patrocinios/uc3m.png",
                     "description": "La Universidad Carlos III de Madrid es nuestra institución y respaldo académico. Financia parte del proyecto y nos proporciona las instalaciones, talleres y laboratorios donde diseñamos y fabricamos nuestra moto. Además, contamos con el apoyo de profesores y tutores que nos guían en cada fase del desarrollo",
                     "website": "",
-                    "dedicatedPage": ""
+                    "dedicatedPage": "patrocinador.html?id=UC3M",
+                    "contenido": "La Universidad Carlos III de Madrid es la institución que hace posible nuestro proyecto. Como equipo oficial de la universidad, contamos con su respaldo académico, financiero y logístico.\n\n## Qué nos aportan\n- Financiación parcial del proyecto\n- Acceso a talleres mecánicos y laboratorios de materiales\n- Apoyo de profesores tutores en todas las fases\n- Espacios de trabajo y almacenamiento\n- Visibilidad institucional y apoyo en comunicación\n\n## Nuestra relación con la UC3M\nMotoMaqLab nació en 2009 como proyecto de la Escuela Politécnica Superior. Desde entonces, la universidad ha sido nuestro pilar fundamental, permitiendo a generaciones de estudiantes de ingeniería aplicar sus conocimientos a un proyecto real de competición.",
+                    "galeria": []
                 }
             ]
         },
