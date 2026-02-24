@@ -1,0 +1,56 @@
+{
+    "eventos": [
+        {
+            "id": "presentacion-ms8",
+            "titulo": "Presentación Prototipo MS8",
+            "fecha": "2026-02-24",
+            "lugar": "Auditorio UC3M, Campus de Leganés",
+            "imagen": "assets/img/eventos/presentacion_ms8.jpeg",
+            "descripcion": "Presentación oficial del prototipo MS8 con el chasis doble viga hueco de fibra de carbono.",
+            "contenido": "El equipo MotoMaqLab UC3M presenta oficialmente el prototipo MS8 en el Auditorio del Campus de Leganés. Este prototipo es el resultado de meses de diseño e ingeniería, y destaca por su innovador chasis doble viga hueco de fibra de carbono con conducto de admisión integrado.\n\n## El Prototipo MS8\nLa MS8 incorpora un chasis fabricado con moldes hidrosolubles de Addyx, simulaciones de Altair y materiales compuestos de Gurit. El sistema de admisión de aire está integrado en la propia estructura del chasis, una solución única en el mundo de MotoStudent.\n\n## El Acto\nContamos con la presencia de profesores, patrocinadores y compañeros. Se presentó la visión del equipo para la competición MotoStudent 2027 y se mostraron los avances en cada departamento.",
+            "tipo": "presentacion"
+        },
+        {
+            "id": "aula-2026",
+            "titulo": "Feria AULA 2026",
+            "fecha": "2026-03-11",
+            "fechaFin": "2026-03-15",
+            "lugar": "IFEMA, Madrid",
+            "imagen": "assets/img/eventos/aula.jpg",
+            "descripcion": "MotoMaqLab UC3M estará presente en AULA 2026 representando a la UC3M del 11 al 15 de marzo.",
+            "contenido": "El equipo MotoMaqLab UC3M participará en la feria AULA 2026 en IFEMA, Madrid, del 11 al 15 de marzo. AULA es el Salón Internacional del Estudiante y de la Oferta Educativa, el evento de referencia en España para la orientación académica y profesional.\n\n## Nuestra Presencia\nRepresentaremos a la Universidad Carlos III de Madrid mostrando nuestro prototipo y explicando el proyecto a futuros estudiantes de ingeniería. Es una oportunidad única para dar visibilidad al equipo y atraer nuevos miembros.\n\n## Dónde Encontrarnos\nEstaremos en el stand de la UC3M en IFEMA durante los cinco días de la feria. ¡Ven a vernos y conoce de cerca la moto que estamos construyendo!",
+            "tipo": "presentacion"
+        },
+        {
+            "id": "madrid-x-moto",
+            "titulo": "Madrid X Moto 2026",
+            "fecha": "2026-04-10",
+            "fechaFin": "2026-04-12",
+            "lugar": "IFEMA, Madrid",
+            "imagen": "assets/img/eventos/madrid_x_moto.jpeg",
+            "descripcion": "MotoMaqLab UC3M estará presente en Madrid X Moto, el gran evento del motociclismo en la capital.",
+            "contenido": "El equipo MotoMaqLab UC3M participará en Madrid X Moto 2026, el evento de referencia del motociclismo en Madrid, del 10 al 12 de abril en IFEMA.\n\n## Nuestra Presencia\nExpondremos nuestro prototipo MS8 y compartiremos nuestra experiencia en ingeniería y competición con los aficionados al motor. Es una oportunidad única para conectar con la comunidad motera y dar a conocer el proyecto MotoStudent de la UC3M.\n\n## Dónde Encontrarnos\nVisítanos en IFEMA durante los tres días del evento. Podrás ver de cerca la moto, hablar con los miembros del equipo y conocer los detalles técnicos de nuestro innovador chasis de fibra de carbono.",
+            "tipo": "presentacion"
+        },
+        {
+            "id": "fabricacion-chasis",
+            "titulo": "Fabricación del Chasis",
+            "fecha": "2026-04-15",
+            "lugar": "Taller UC3M",
+            "imagen": "assets/img/eventos/fabricacion.webp",
+            "descripcion": "Inicio de la fabricación del chasis en fibra de carbono con moldes hidrosolubles de Addyx.",
+            "contenido": "Comienza la fabricación del chasis doble viga hueco en fibra de carbono. Gracias a los moldes hidrosolubles de Addyx, podemos fabricar geometrías huecas imposibles con métodos tradicionales.\n\n## Proceso de Fabricación\nEl proceso incluye laminado manual, curado en autoclave y mecanizado de insertos. El chasis integra el sistema de admisión de aire, una innovación clave de nuestro diseño.\n\n## Materiales\nUtilizamos prepreg de fibra de carbono de Gurit, con un esquema de laminado optimizado mediante simulaciones en Altair HyperWorks.",
+            "tipo": "hito"
+        },
+        {
+            "id": "motostudent-2027",
+            "titulo": "Competición MotoStudent 2027",
+            "fecha": "2027-07-01",
+            "lugar": "MotorLand Aragón, Alcañiz",
+            "imagen": "assets/img/eventos/competicion.webp",
+            "descripcion": "Participación en la competición internacional MotoStudent en el circuito de MotorLand Aragón.",
+            "contenido": "El gran momento: la moto de MotoMaqLab UC3M competirá en el circuito de MotorLand Aragón contra equipos universitarios de toda Europa.\n\n## La Competición\nMotoStudent incluye fases estáticas (presentación del proyecto, análisis de costes, diseño) y fases dinámicas (pruebas en pista y carrera). Nuestro objetivo: demostrar que la ingeniería de la UC3M está al más alto nivel.\n\n## Objetivos\nCompetir en la categoría Petrol, lograr completar todas las pruebas dinámicas y aspirar a los premios de innovación y diseño, donde históricamente hemos destacado.",
+            "tipo": "competicion"
+        }
+    ]
+}
