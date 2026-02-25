@@ -1,0 +1,85 @@
+name: Update Sitemap
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '**.html'
+
+jobs:
+  update-sitemap:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Generate sitemap.xml
+        run: |
+          TODAY=$(date +%Y-%m-%d)
+          SITE_URL="https://motomaqlabuc3m.es"
+
+          # Define pages with their priorities
+          # index.html -> priority 1.0
+          # Other pages -> priority based on importance
+          declare -A PRIORITIES
+          PRIORITIES["index.html"]="1.0"
+          PRIORITIES["sobre-nosotros.html"]="0.8"
+          PRIORITIES["equipo.html"]="0.8"
+          PRIORITIES["patrocinadores.html"]="0.7"
+          DEFAULT_PRIORITY="0.5"
+
+          # Start sitemap
+          cat > sitemap.xml << 'HEADER'
+          <?xml version="1.0" encoding="UTF-8"?>
+          <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+          HEADER
+
+          # Add index.html first (as root URL)
+          if [ -f "index.html" ]; then
+            LAST_MOD=$(git log -1 --format="%ai" -- index.html | cut -d' ' -f1)
+            [ -z "$LAST_MOD" ] && LAST_MOD="$TODAY"
+            cat >> sitemap.xml << EOF
+              <url>
+                  <loc>${SITE_URL}/</loc>
+                  <lastmod>${LAST_MOD}</lastmod>
+                  <changefreq>monthly</changefreq>
+                  <priority>1.0</priority>
+              </url>
+          EOF
+          fi
+
+          # Add all other HTML files in root directory
+          for file in *.html; do
+            [ "$file" = "index.html" ] && continue
+            [ ! -f "$file" ] && continue
+
+            LAST_MOD=$(git log -1 --format="%ai" -- "$file" | cut -d' ' -f1)
+            [ -z "$LAST_MOD" ] && LAST_MOD="$TODAY"
+
+            PRIORITY="${PRIORITIES[$file]:-$DEFAULT_PRIORITY}"
+
+            cat >> sitemap.xml << EOF
+              <url>
+                  <loc>${SITE_URL}/${file}</loc>
+                  <lastmod>${LAST_MOD}</lastmod>
+                  <changefreq>monthly</changefreq>
+                  <priority>${PRIORITY}</priority>
+              </url>
+          EOF
+          done
+
+          # Close sitemap
+          echo "</urlset>" >> sitemap.xml
+
+          echo "Generated sitemap.xml:"
+          cat sitemap.xml
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add sitemap.xml
+          git diff --cached --quiet || (git commit -m "chore: actualizar sitemap.xml automáticamente" && git push)
