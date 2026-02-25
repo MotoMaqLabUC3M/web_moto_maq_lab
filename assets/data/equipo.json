@@ -15,7 +15,7 @@
                     "image": "assets/img/equipo/jefatura/miguel_hurtado_davo.webp"
                 },
                 {
-                    "name": "Abraham Vadillo Morrillas",
+                    "name": "Abraham Vadillo Morillas",
                     "role": "Tutor de Equipo",
                     "image": "assets/img/equipo/jefatura/abraham_vadillo_morillas.webp"
                 },
@@ -140,7 +140,7 @@
                     "isPlaceholder": true
                 },
                 {
-                    "name": "Alejandro Ranz Ramírez",
+                    "name": "Alejandro Ranz Remartínez",
                     "role": "Miembro de Aerodinámica",
                     "image": "assets/img/equipo/aerodinamica/alejandro_ranz_remartinez.webp"
                 },
@@ -224,7 +224,7 @@
                     "image": "assets/img/equipo/electronica/elisa_rodriguez.webp"
                 },
                 {
-                    "name": "Icíar Zaminillo Herreros",
+                    "name": "Icíar Zamanillo Herreros",
                     "role": "Miembro de Electrónica",
                     "image": "assets/img/logos_uc3m/uc3m_logo_sin_fondo.png",
                     "isPlaceholder": true
