@@ -33,16 +33,6 @@
             "tipo": "presentacion"
         },
         {
-            "id": "fabricacion-chasis",
-            "titulo": "Fabricación del Chasis",
-            "fecha": "2026-04-15",
-            "lugar": "Taller UC3M",
-            "imagen": "assets/img/eventos/fabricacion.webp",
-            "descripcion": "Inicio de la fabricación del chasis en fibra de carbono con moldes hidrosolubles de Addyx.",
-            "contenido": "Comienza la fabricación del chasis doble viga hueco en fibra de carbono. Gracias a los moldes hidrosolubles de Addyx, podemos fabricar geometrías huecas imposibles con métodos tradicionales.\n\n## Proceso de Fabricación\nEl proceso incluye laminado manual, curado en autoclave y mecanizado de insertos. El chasis integra el sistema de admisión de aire, una innovación clave de nuestro diseño.\n\n## Materiales\nUtilizamos prepreg de fibra de carbono de Gurit, con un esquema de laminado optimizado mediante simulaciones en Altair HyperWorks.",
-            "tipo": "hito"
-        },
-        {
             "id": "motostudent-2027",
             "titulo": "Competición MotoStudent 2027",
             "fecha": "2027-07-01",

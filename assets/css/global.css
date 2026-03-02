@@ -466,6 +466,101 @@ section.section-container:nth-of-type(even) {
 }
 
 /* =========================================
+    5a. SECCIÓN ¿QUÉ ES MOTOSTUDENT? (SEO)
+   ========================================= */
+
+.motostudent-section {
+    background: linear-gradient(135deg, #1a1a1c 0%, var(--c-dark) 100%);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.motostudent-section .section-title h2 span {
+    color: var(--c-red);
+}
+
+.motostudent-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+    max-width: 1200px;
+    margin: 2rem auto 0;
+}
+
+.motostudent-text p {
+    font-size: 1rem;
+    line-height: 1.8;
+    opacity: 0.85;
+    margin-bottom: 1.5rem;
+}
+
+.motostudent-text strong {
+    color: var(--c-light);
+    opacity: 1;
+}
+
+.motostudent-cta {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.motostudent-highlights {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.highlight-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.highlight-card:hover {
+    border-color: var(--c-red);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(242, 25, 43, 0.1);
+}
+
+.highlight-icon {
+    font-size: 1.5rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.highlight-card h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.highlight-card p {
+    font-size: 0.9rem;
+    opacity: 0.7;
+    line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+    .motostudent-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .motostudent-cta {
+        flex-direction: column;
+    }
+
+    .motostudent-cta .btn {
+        width: 100%;
+    }
+}
+
+/* =========================================
     5b. SPONSORS MARQUEE (Cinta Transportadora)
    ========================================= */
 
