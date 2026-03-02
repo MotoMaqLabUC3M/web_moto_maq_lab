@@ -59,6 +59,13 @@
                     "logo": "assets/img/patrocinios/lasertek.png",
                     "description": "Lasertek apoya con procesos láser de precisión para el prototipado.",
                     "website": ""
+                },
+                {
+                    "id": "cesol",
+                    "name": "CESOL",
+                    "logo": "assets/img/patrocinios/CESOL.png",
+                    "description": "CESOL nos apoya con los procesos de soldadura y cursos complementarios a nuestros miembros para fomentar una formación continua y de calidad.",
+                    "website": ""
                 }
             ]
         },
@@ -73,13 +80,6 @@
                     "name": "NTN",
                     "logo": "assets/img/patrocinios/NTN.png",
                     "description": "NTN suministra rodamientos de alta calidad para nuestra transmisión y ruedas.",
-                    "website": ""
-                },
-                {
-                    "id": "cesol",
-                    "name": "CESOL",
-                    "logo": "assets/img/patrocinios/CESOL.png",
-                    "description": "CESOL nos apoya con los procesos de soldadura y cursos complementarios a nuestros miembros para fomentar una formación continua y de calidad.",
                     "website": ""
                 },
                 {
