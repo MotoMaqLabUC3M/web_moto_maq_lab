@@ -37,6 +37,16 @@
                     "description": "La Universidad Carlos III de Madrid es nuestra institución y respaldo académico. Financia parte del proyecto y nos proporciona las instalaciones, talleres y laboratorios donde diseñamos y fabricamos nuestra moto. Además, contamos con el apoyo de profesores y tutores que nos guían en cada fase del desarrollo",
                     "website": "",
                     "dedicatedPage": ""
+                },
+                {
+                    "id": "retamal",
+                    "name": "RETAMAL",
+                    "logo": "assets/img/patrocinios/retamal.png",
+                    "description": "Retamal es un socio estratégico fundamental que impulsa nuestro proyecto mediante un soporte logístico integral, respaldo financiero y asesoramiento continuo. Su colaboración nos permite centrar nuestros esfuerzos en la innovación y el rendimiento.",
+                    "website": "",
+                    "dedicatedPage": "patrocinador.html?id=retamal",
+                    "contenido": "Retamal desempeña un papel crucial en el ecosistema de MotoMaqLab, actuando como un pilar que sostiene tanto la viabilidad operativa como la ejecución material de nuestro proyecto. Su apoyo continuo garantiza que dispongamos de los recursos necesarios para competir al máximo nivel.\n\n## Qué nos aportan\n- Respaldo financiero clave para la viabilidad y crecimiento del equipo\n- Gestión logística avanzada y soporte en nuestras operaciones\n- Asesoramiento estratégico en la planificación y desarrollo del proyecto\n- Soluciones organizativas que optimizan nuestro flujo de trabajo\n\n## El impacto en nuestro desarrollo\nLa colaboración con Retamal nos dota de la estabilidad económica y logística imprescindible en el entorno altamente exigente de la competición. Gracias a su aportación, hemos podido agilizar nuestros procesos, acceder a mejores recursos y centrarnos plenamente en el perfeccionamiento tecnológico de nuestra motocicleta.",
+                    "galeria": []
                 }
             ]
         },
@@ -165,6 +175,13 @@
                     "name": "EASYCOMPOSITES",
                     "logo": "assets/img/patrocinios/easycomposites.png",
                     "description": "Suministro de materias primas y asesoría técnica en composites.",
+                    "website": ""
+                },
+                {
+                    "id": "frade",
+                    "name": "FRADE",
+                    "logo": "assets/img/patrocinios/frade.png",
+                    "description": "Frade nos proporciona Equipos de Protección Individual (EPIs), garantizando la seguridad de nuestro equipo en el taller.",
                     "website": ""
                 }
             ]
