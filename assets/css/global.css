@@ -1005,7 +1005,7 @@ section.section-container:nth-of-type(even) {
 
 /* 2. GOLD: Medianos */
 .tier-gold .card {
-    flex: 0 1 400px;
+    flex: 0 1 350px;
     display: flex;
     flex-direction: column;
     text-align: center;
