@@ -1,0 +1,24 @@
+{
+    "posts": [
+        {
+            "id": "circuito-f1-madrid",
+            "titulo": "El circuito de F1 en Madrid: un nuevo capítulo para la Fórmula 1 en España",
+            "autor": "External Relations",
+            "fecha": "2026-05-28",
+            "categoria": "Formula 1",
+            "imagen": "assets/img/blog/circuito-f1-madrid.webp",
+            "extracto": "El circuito de F1 en Madrid: un nuevo capítulo para la Fórmula 1 en España. Analizamos lo que supone para el motorsport universitario y la ingeniería española.",
+            "contenido": "La llegada de la Fórmula 1 a Madrid marca un antes y un después para el automovilismo en España. El nuevo circuito urbano, ubicado en la zona de IFEMA, promete ser uno de los más espectaculares del calendario.\n\n## ¿Qué supone para el motorsport universitario?\n\nPara equipos como MotoMaqLab UC3M, la presencia de un Gran Premio en Madrid es una oportunidad única. La visibilidad del motorsport en la capital atraerá más talento e interés hacia la ingeniería de competición.\n\n[img:assets/img/blog/circuito-f1-madrid.webp|Diseño del circuito de F1 en Madrid]\n\n## El impacto en la Universidad Carlos III\n\nLa UC3M, situada en Leganés, se encuentra a pocos kilómetros del futuro circuito. Esto abre puertas a colaboraciones con equipos profesionales y mayor visibilidad para proyectos como MotoStudent.\n\n## Oportunidades para la ingeniería española\n\nEspaña ya tiene una rica tradición en competición de motor. Con la Fórmula 1 en Madrid, se refuerza la demanda de ingenieros especializados en aerodinámica, dinámica vehicular, electrónica de competición y materiales compuestos — precisamente las áreas en las que trabajamos cada día en MotoMaqLab."
+        },
+        {
+            "id": "test-pretemporada-formula-student",
+            "titulo": "La clave del éxito en la Formula Student en Madrid: los test de pretemporada como en la F1",
+            "autor": "External Relations",
+            "fecha": "2026-03-19",
+            "categoria": "Formula 1",
+            "imagen": "assets/img/blog/test-pretemporada.webp",
+            "extracto": "La clave del éxito en la Formula Student en Madrid: los test de pretemporada como en la F1. Así preparamos nuestro prototipo para la competición.",
+            "contenido": "En la Fórmula 1, los test de pretemporada son el momento en el que se define la competitividad de un equipo para toda la temporada. En MotoStudent, el proceso es sorprendentemente similar.\n\n## La importancia de los test\n\nAntes de llegar a MotorLand Aragón, cada equipo debe asegurarse de que su prototipo funciona correctamente. Los test de pretemporada permiten detectar problemas mecánicos, ajustar la electrónica y optimizar el setup de suspensiones.\n\n[img:assets/img/blog/test-pretemporada.webp|Nuestro prototipo durante los test de pretemporada]\n\n## Cómo lo hacemos en MotoMaqLab\n\nNuestro equipo organiza sesiones de pruebas en circuitos cercanos a Madrid. Cada sesión se planifica con objetivos claros: validar la adquisición de datos, comprobar el rendimiento del motor y probar las diferentes configuraciones del chasis de fibra de carbono.\n\n## Datos, datos y más datos\n\nAl igual que en la F1, la telemetría es fundamental. Nuestro departamento de electrónica instala sensores en todo el prototipo para medir aceleraciones, temperaturas, velocidades y fuerzas. Esta información se analiza después de cada salida para tomar decisiones de ingeniería basadas en evidencia."
+        }
+    ]
+}
