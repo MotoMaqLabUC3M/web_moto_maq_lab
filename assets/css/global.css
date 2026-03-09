@@ -76,6 +76,12 @@ a {
     margin-bottom: 1rem;
 }
 
+/* --- Utilidad Center Button --- */
+.center-btn {
+    text-align: center;
+    margin-top: 2rem;
+}
+
 /* --- Títulos de Sección (Global) --- */
 .section-title {
     margin-bottom: 3rem;
@@ -131,9 +137,17 @@ section.section-container:nth-of-type(even) {
     align-items: center;
     padding: 1rem 5%;
     justify-content: space-between;
-    background-color: var(--bg-darker);
+    background-color: transparent;
+    transition: background-color 0.3s ease;
     font-weight: 700;
     font-size: 0.8rem;
+}
+
+.main-header.header-scrolled {
+    position: fixed;
+    background-color: rgba(15, 15, 16, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
 }
 
 .enlaces-header {

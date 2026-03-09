@@ -24,7 +24,22 @@
             const headerEl = document.getElementById('main-header');
             const footerEl = document.getElementById('main-footer');
 
-            if (headerEl) renderHeader(headerEl, data.header);
+            if (headerEl) {
+                renderHeader(headerEl, data.header);
+
+                // --- Transparent header logic ---
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 50) {
+                        headerEl.classList.add('header-scrolled');
+                    } else {
+                        headerEl.classList.remove('header-scrolled');
+                    }
+                });
+                // Check initial state in case page is loaded halfway scrolled
+                if (window.scrollY > 50) {
+                    headerEl.classList.add('header-scrolled');
+                }
+            }
             if (footerEl) renderFooter(footerEl, data.footer, data.header);
 
             // Notify other scripts that layout is ready
@@ -48,16 +63,16 @@
         el.className = 'main-header';
         el.innerHTML =
             '<a href="' + h.logo.href + '" class="logo">' +
-                '<div class="logo-wrapper">' +
-                    '<img src="' + h.logo.img + '" alt="' + h.logo.alt + '" />' +
-                '</div>' +
-                h.logo.text + ' <span>' + h.logo.highlight + '</span>' +
+            '<div class="logo-wrapper">' +
+            '<img src="' + h.logo.img + '" alt="' + h.logo.alt + '" />' +
+            '</div>' +
+            h.logo.text + ' <span>' + h.logo.highlight + '</span>' +
             '</a>' +
             '<button class="hamburger" aria-label="Menú">' +
-                '<span></span><span></span><span></span>' +
+            '<span></span><span></span><span></span>' +
             '</button>' +
             '<div class="enlaces-header mobile-menu">' +
-                '<nav>' + navLinks + '</nav>' +
+            '<nav>' + navLinks + '</nav>' +
             '</div>';
     }
 
@@ -79,37 +94,37 @@
         f.social.links.forEach(function (link) {
             socialHTML +=
                 '<a href="' + link.href + '" target="_blank" aria-label="' + link.label + '">' +
-                    '<img src="' + link.img + '" alt="' + link.label + '" />' +
+                '<img src="' + link.img + '" alt="' + link.label + '" />' +
                 '</a>';
         });
 
         el.className = 'main-footer';
         el.innerHTML =
             '<div class="footer-content">' +
-                '<div class="footer-col brand-col">' +
-                    '<a href="' + h.logo.href + '" class="logo">' +
-                        '<div class="logo-wrapper">' +
-                            '<img src="' + h.logo.img + '" alt="' + h.logo.alt + '" />' +
-                        '</div>' +
-                        h.logo.text + ' <span>' + h.logo.highlight + '</span>' +
-                    '</a>' +
-                    '<p class="footer-desc">' + f.brand.desc + '</p>' +
-                '</div>' +
-                '<div class="footer-col">' +
-                    '<h4>' + f.explorar.title + '</h4>' +
-                    '<ul class="footer-links">' + explorarHTML + '</ul>' +
-                '</div>' +
-                '<div class="footer-col">' +
-                    '<h4>' + f.contacto.title + '</h4>' +
-                    '<ul class="footer-links">' + contactoHTML + '</ul>' +
-                '</div>' +
-                '<div class="footer-col">' +
-                    '<h4>' + f.social.title + '</h4>' +
-                    '<div class="social-icons">' + socialHTML + '</div>' +
-                '</div>' +
+            '<div class="footer-col brand-col">' +
+            '<a href="' + h.logo.href + '" class="logo">' +
+            '<div class="logo-wrapper">' +
+            '<img src="' + h.logo.img + '" alt="' + h.logo.alt + '" />' +
+            '</div>' +
+            h.logo.text + ' <span>' + h.logo.highlight + '</span>' +
+            '</a>' +
+            '<p class="footer-desc">' + f.brand.desc + '</p>' +
+            '</div>' +
+            '<div class="footer-col">' +
+            '<h4>' + f.explorar.title + '</h4>' +
+            '<ul class="footer-links">' + explorarHTML + '</ul>' +
+            '</div>' +
+            '<div class="footer-col">' +
+            '<h4>' + f.contacto.title + '</h4>' +
+            '<ul class="footer-links">' + contactoHTML + '</ul>' +
+            '</div>' +
+            '<div class="footer-col">' +
+            '<h4>' + f.social.title + '</h4>' +
+            '<div class="social-icons">' + socialHTML + '</div>' +
+            '</div>' +
             '</div>' +
             '<div class="footer-bottom">' +
-                '<p>' + f.copy + '</p>' +
+            '<p>' + f.copy + '</p>' +
             '</div>';
     }
 
