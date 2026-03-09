@@ -51,10 +51,10 @@
         }
 
         // Construir hero de la página dinámicamente
-        const heroImage = evento.imagenDetalle || evento.imagen;
+        const heroImage = evento.imagen;
         const heroStyle = heroImage
             ? `background-image: linear-gradient(to bottom, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.65) 55%, var(--c-dark) 100%), url('${heroImage}'); background-size: cover; background-position: center;`
-            : 'background-color: var(--c-dark);';
+            : "background-color: var(--c-dark);";
 
         // Parse content
         const { intro, sections } = parseContenido(evento.contenido || evento.descripcion);
@@ -114,6 +114,7 @@
             <!-- CONTENT -->
             <div class="ev-body">
                 ${intro ? `<p class="ev-intro">${intro}</p>` : ''}
+                ${evento.imagenDetalle ? `<img src="${evento.imagenDetalle}" alt="Detalle del evento" style="max-width: 100%; border-radius: 8px; margin: 2rem 0; display: block;" />` : ''}
                 ${sectionsHTML}
             </div>
 
