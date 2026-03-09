@@ -16,7 +16,8 @@
             "fecha": "2026-03-11",
             "fechaFin": "2026-03-15",
             "lugar": "IFEMA, Madrid",
-            "imagen": "assets/img/eventos/aula.webp",
+            "imagen": "assets/img/eventos/aula_uc3m.webp",
+            "imagenDetalle": "assets/img/eventos/aula_uc3m_2.webp",
             "descripcion": "MotoMaqLab UC3M estará presente en AULA 2026 representando a la UC3M del 11 al 15 de marzo.",
             "contenido": "El equipo MotoMaqLab UC3M participará en la feria AULA 2026 en IFEMA, Madrid, del 11 al 15 de marzo. AULA es el Salón Internacional del Estudiante y de la Oferta Educativa, el evento de referencia en España para la orientación académica y profesional.\n\n## Nuestra Presencia\nRepresentaremos a la Universidad Carlos III de Madrid mostrando nuestro prototipo y explicando el proyecto a futuros estudiantes de ingeniería. Es una oportunidad única para dar visibilidad al equipo y atraer nuevos miembros.\n\n## Dónde Encontrarnos\nEstaremos en el stand de la UC3M en IFEMA durante los cinco días de la feria. ¡Ven a vernos y conoce de cerca la moto que estamos construyendo!",
             "tipo": "presentacion"
