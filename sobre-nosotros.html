@@ -55,31 +55,7 @@
 </head>
 
 <body>
-    <header class="main-header">
-        <a href="index.html" class="logo">
-            <div class="logo-wrapper">
-                <img src="assets/img/logos_uc3m/uc3m_logo.png" alt="MotoMaqLab UC3M Logo" />
-            </div>
-            MOTOMAQLAB <span>UC3M</span>
-        </a>
-
-        <button class="hamburger" aria-label="Menú">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-
-        <div class="enlaces-header mobile-menu">
-            <nav>
-                <a href="index.html">INICIO</a>
-                <a href="sobre-nosotros.html">SOBRE NOSOTROS</a>
-                <a href="equipo.html">EL EQUIPO </a>
-                <a href="eventos.html">EVENTOS</a>
-                <a href="patrocinadores.html">PATROCINADORES</a>
-                <a href="mailto:motomaqlabuc3m@uc3m.es" class="btn btn--primary">CONTACTO</a>
-            </nav>
-        </div>
-    </header>
+    <header id="main-header"></header>
     <main>
         <section class="sobre-nosotros-hero">
             <div class="sobre-nosotros-hero-content">
@@ -103,6 +79,54 @@
                     <span class="stat-icon">🏆</span>
                     <p class="stat-number" data-target="6">0</p>
                     <p>Premios</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección SEO: ¿Qué es MotoStudent? -->
+        <section class="section-container motostudent-section" id="que-es-motostudent">
+            <div class="section-title section-title--center">
+                <h2>¿Qué es <span>MotoStudent</span>?</h2>
+                <p>La mayor competición de ingeniería universitaria sobre dos ruedas</p>
+            </div>
+            <div class="motostudent-content">
+                <div class="motostudent-text">
+                    <p><strong>MotoStudent</strong> es una competición internacional de ingeniería en la que equipos
+                        universitarios de todo el mundo diseñan, fabrican y compiten con un prototipo de moto de
+                        carreras. Organizada por la Moto Engineering Foundation en España, MotoStudent desafía a
+                        estudiantes a aplicar sus conocimientos en un proyecto real: desde el diseño CAD y la simulación
+                        hasta la fabricación y las pruebas en circuito.</p>
+                    <p>En <strong>MotoMaqLab UC3M</strong>, somos el equipo MotoStudent de la Universidad Carlos III de
+                        Madrid. Desde 2009, más de <strong>70 estudiantes de ingeniería</strong> trabajamos cada
+                        temporada para llevar nuestra moto a la pista. Nuestro equipo MotoStudent en Madrid ha logrado
+                        <strong>6 premios</strong> a lo largo de nuestra historia, incluyendo reconocimientos a la
+                        innovación, el diseño industrial y la presentación del proyecto.
+                    </p>
+                    <div class="motostudent-cta">
+                        <a href="#nuestra-historia" class="btn btn--primary">Nuestra historia en
+                            MotoStudent</a>
+                        <a href="equipo.html" class="btn btn--outline">Conoce al equipo</a>
+                    </div>
+                </div>
+                <div class="motostudent-highlights">
+                    <div class="highlight-card">
+                        <span class="highlight-icon">🌍</span>
+                        <h3>Competición Internacional</h3>
+                        <p>Equipos MotoStudent de universidades de toda Europa y el mundo compiten en el circuito de
+                            Motorland Aragón, España.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <span class="highlight-icon">🔧</span>
+                        <h3>Ingeniería Real</h3>
+                        <p>Diseño, simulación, fabricación y pruebas dinámicas. MotoStudent exige dominar todas las
+                            fases del desarrollo de una moto.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <span class="highlight-icon">🏆</span>
+                        <h3>MotoStudent 2025–2027</h3>
+                        <p>Nuestra MS9 será el siguiente reto. Trabajamos en un prototipo que combinará innovación en
+                            materiales compuestos y aerodinámica avanzada.</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -284,66 +308,9 @@
             </div>
         </section>
     </main>
-    <footer class="main-footer">
-        <div class="footer-content">
-            <div class="footer-col brand-col">
-                <a href="index.html" class="logo">
-                    <div class="logo-wrapper">
-                        <img src="assets/img/logos_uc3m/uc3m_logo.png" alt="MotoMaqLab UC3M Logo" />
-                    </div>
-                    MOTOMAQLAB <span>UC3M</span>
-                </a>
-                <p class="footer-desc">Ingeniería, pasión y velocidad. El equipo oficial de MotoStudent de la
-                    Universidad Carlos III de Madrid.</p>
-            </div>
+    <footer id="main-footer"></footer>
 
-            <div class="footer-col">
-                <h4>EXPLORAR</h4>
-                <ul class="footer-links">
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="sobre-nosotros.html">Nuestra historia en MotoStudent</a></li>
-                    <li><a href="equipo.html">El Equipo</a></li>
-                    <li><a href="eventos.html">Eventos</a></li>
-                    <li><a href="patrocinadores.html">Patrocinadores</a></li>
-                    <li><a href="mailto:motomaqlabuc3m@uc3m.es">Contacto</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-col">
-                <h4>CONTACTO</h4>
-                <ul class="footer-links">
-                    <li>
-                        <a href="mailto:motomaqlabuc3m@uc3m.es"><span>📧</span>motomaqlabuc3m@uc3m.es</a>
-                    </li>
-                    <li>
-                        <a
-                            href="https://www.google.com/maps/place/data=!4m2!3m1!1s0xd41898b1cc06b5b:0xaf0cadd098b516f8?sa=X&ved=1t:8290&ictx=111"><span>📍</span>
-                            Universidad Carlos III de Madrid | Campus de Leganés</a>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="footer-col">
-                <h4>SÍGUENOS</h4>
-                <div class="social-icons">
-                    <a href="https://www.instagram.com/motomaqlabuc3m/?hl=en" target="_blank" aria-label="Instagram">
-                        <img src="assets/img/social/instagram.png" alt="Instagram" />
-                    </a>
-                    <a href="https://www.tiktok.com/@motomaqlabuc3m" target="_blank" aria-label="TikTok">
-                        <img src="assets/img/social/tik-tok.png" alt="TikTok" />
-                    </a>
-                    <a href="https://www.linkedin.com/company/moto-maqlab-uc3m/" target="_blank" aria-label="LinkedIn">
-                        <img src="assets/img/social/linkedin.png" alt="LinkedIn" />
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <div class="footer-bottom">
-            <p>&copy; 2025 MotoMaqLab UC3M. Todos los derechos reservados.</p>
-        </div>
-    </footer>
-
+    <script src="assets/js/layout.js"></script>
     <script src="assets/js/mobileMenu.js"></script>
 
     <!-- Traductor de Google -->

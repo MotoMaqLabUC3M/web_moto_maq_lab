@@ -70,4 +70,7 @@
         // Delayed init for JS-rendered content (events, sponsors)
         setTimeout(init, 500);
     });
+
+    // Re-init when layout.js finishes injecting header/footer
+    document.addEventListener('layoutReady', () => setTimeout(init, 50));
 })();

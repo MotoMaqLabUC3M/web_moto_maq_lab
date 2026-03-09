@@ -1,0 +1,122 @@
+/**
+ * layout.js
+ * Carga header y footer desde layout.json para evitar duplicar HTML.
+ * Se ejecuta ANTES que cualquier otro script de página.
+ *
+ * Uso: en cada HTML poner:
+ *   <header id="main-header"></header>
+ *   ...
+ *   <footer id="main-footer"></footer>
+ *   <script src="assets/js/layout.js"></script>
+ */
+(function () {
+    const JSON_PATH = 'assets/data/layout.json';
+
+    // Detect if we are on the index page
+    const path = window.location.pathname;
+    const isIndex = path === '/' || path.endsWith('/index.html') || path.endsWith('/');
+
+    async function init() {
+        try {
+            const res = await fetch(JSON_PATH);
+            const data = await res.json();
+
+            const headerEl = document.getElementById('main-header');
+            const footerEl = document.getElementById('main-footer');
+
+            if (headerEl) renderHeader(headerEl, data.header);
+            if (footerEl) renderFooter(footerEl, data.footer, data.header);
+
+            // Notify other scripts that layout is ready
+            document.dispatchEvent(new Event('layoutReady'));
+        } catch (err) {
+            console.error('Error cargando layout:', err);
+        }
+    }
+
+    function renderHeader(el, h) {
+        // Build nav links
+        var navLinks = '';
+        if (!isIndex) {
+            navLinks += '<a href="index.html">INICIO</a>';
+        }
+        h.nav.forEach(function (item) {
+            navLinks += '<a href="' + item.href + '">' + item.label + '</a>';
+        });
+        navLinks += '<a href="' + h.cta.href + '" class="btn btn--primary">' + h.cta.label + '</a>';
+
+        el.className = 'main-header';
+        el.innerHTML =
+            '<a href="' + h.logo.href + '" class="logo">' +
+                '<div class="logo-wrapper">' +
+                    '<img src="' + h.logo.img + '" alt="' + h.logo.alt + '" />' +
+                '</div>' +
+                h.logo.text + ' <span>' + h.logo.highlight + '</span>' +
+            '</a>' +
+            '<button class="hamburger" aria-label="Menú">' +
+                '<span></span><span></span><span></span>' +
+            '</button>' +
+            '<div class="enlaces-header mobile-menu">' +
+                '<nav>' + navLinks + '</nav>' +
+            '</div>';
+    }
+
+    function renderFooter(el, f, h) {
+        // Explorar links
+        var explorarHTML = '';
+        f.explorar.links.forEach(function (link) {
+            explorarHTML += '<li><a href="' + link.href + '">' + link.label + '</a></li>';
+        });
+
+        // Contacto links
+        var contactoHTML = '';
+        f.contacto.links.forEach(function (link) {
+            contactoHTML += '<li><a href="' + link.href + '"><span>' + link.icon + '</span>' + link.label + '</a></li>';
+        });
+
+        // Social icons
+        var socialHTML = '';
+        f.social.links.forEach(function (link) {
+            socialHTML +=
+                '<a href="' + link.href + '" target="_blank" aria-label="' + link.label + '">' +
+                    '<img src="' + link.img + '" alt="' + link.label + '" />' +
+                '</a>';
+        });
+
+        el.className = 'main-footer';
+        el.innerHTML =
+            '<div class="footer-content">' +
+                '<div class="footer-col brand-col">' +
+                    '<a href="' + h.logo.href + '" class="logo">' +
+                        '<div class="logo-wrapper">' +
+                            '<img src="' + h.logo.img + '" alt="' + h.logo.alt + '" />' +
+                        '</div>' +
+                        h.logo.text + ' <span>' + h.logo.highlight + '</span>' +
+                    '</a>' +
+                    '<p class="footer-desc">' + f.brand.desc + '</p>' +
+                '</div>' +
+                '<div class="footer-col">' +
+                    '<h4>' + f.explorar.title + '</h4>' +
+                    '<ul class="footer-links">' + explorarHTML + '</ul>' +
+                '</div>' +
+                '<div class="footer-col">' +
+                    '<h4>' + f.contacto.title + '</h4>' +
+                    '<ul class="footer-links">' + contactoHTML + '</ul>' +
+                '</div>' +
+                '<div class="footer-col">' +
+                    '<h4>' + f.social.title + '</h4>' +
+                    '<div class="social-icons">' + socialHTML + '</div>' +
+                '</div>' +
+            '</div>' +
+            '<div class="footer-bottom">' +
+                '<p>' + f.copy + '</p>' +
+            '</div>';
+    }
+
+    // Run immediately (sync-like) so layout is ready before DOMContentLoaded
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
+})();

@@ -32,6 +32,12 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://motomaqlabuc3m.es/blog.html</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
   <!-- Detalle de patrocinadores -->
   <url>
@@ -87,6 +93,20 @@
   <url>
     <loc>https://motomaqlabuc3m.es/evento.html?id=motostudent-2027</loc>
     <lastmod>2026-02-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Detalle de blog -->
+  <url>
+    <loc>https://motomaqlabuc3m.es/noticia.html?id=circuito-f1-madrid</loc>
+    <lastmod>2026-05-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://motomaqlabuc3m.es/noticia.html?id=test-pretemporada-formula-student</loc>
+    <lastmod>2026-03-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
