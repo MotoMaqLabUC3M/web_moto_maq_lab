@@ -50,10 +50,11 @@
             fechaStr = `${fecha.toLocaleDateString('es-ES', { day: 'numeric' })} – ${ff.toLocaleDateString('es-ES', opciones)}`;
         }
 
-        // Hero style
-        const heroStyle = evento.imagen
-            ? `background-image: linear-gradient(to bottom, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.65) 55%, var(--c-dark) 100%), url('${evento.imagen}'); background-size: cover; background-position: center;`
-            : 'background: linear-gradient(180deg, #1a1a1a 0%, var(--c-dark) 100%);';
+        // Construir hero de la página dinámicamente
+        const heroImage = evento.imagenDetalle || evento.imagen;
+        const heroStyle = heroImage
+            ? `background-image: linear-gradient(to bottom, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.65) 55%, var(--c-dark) 100%), url('${heroImage}'); background-size: cover; background-position: center;`
+            : 'background-color: var(--c-dark);';
 
         // Parse content
         const { intro, sections } = parseContenido(evento.contenido || evento.descripcion);
