@@ -82,6 +82,11 @@ a {
     margin-top: 2rem;
 }
 
+/* --- Utilidad Display None --- */
+.d-none {
+    display: none !important;
+}
+
 /* --- Títulos de Sección (Global) --- */
 .section-title {
     margin-bottom: 3rem;
