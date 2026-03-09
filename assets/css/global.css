@@ -709,27 +709,40 @@ section.section-container:nth-of-type(even) {
 
 /* --- Hero de Eventos --- */
 .eventos-hero {
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), var(--c-dark)),
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), var(--c-dark)),
         radial-gradient(circle at center, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.8) 100%),
-        url("../img/hero/index.webp");
+        url("../img/hero/eventos.webp");
     background-size: cover;
     background-position: center;
-    min-height: 45vh;
+    padding: 12rem 5% 4rem;
+    text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    padding: 8rem 5% 4rem;
+    align-items: center;
+    gap: 3rem;
+    height: 100dvh;
 }
 
 .eventos-hero-content {
-    max-width: 700px;
+    padding-top: 4rem;
+}
+
+.eventos-hero h1,
+.eventos-hero p {
+    text-shadow: 0 2px 30px rgba(0, 0, 0, 1);
+    position: relative;
+    z-index: 2;
 }
 
 .eventos-hero h1 {
-    font-size: clamp(2.5rem, 6vw, 4.5rem);
-    line-height: 1;
-    margin-top: 1rem;
-    letter-spacing: -1px;
+    font-size: 4.5rem;
+    font-weight: 900;
+    line-height: 1.1;
+    text-transform: uppercase;
+    font-style: italic;
+    letter-spacing: -2px;
+    margin-bottom: 1.5rem;
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
 }
 
 .eventos-hero h1 span {
@@ -737,10 +750,9 @@ section.section-container:nth-of-type(even) {
 }
 
 .eventos-hero p {
-    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
     opacity: 0.9;
-    margin-top: 1rem;
-    max-width: 500px;
 }
 
 /* --- Sección de eventos (listado) --- */
@@ -890,8 +902,8 @@ section.section-container:nth-of-type(even) {
     }
 
     .eventos-hero {
-        min-height: 35vh;
-        padding: 7rem 5% 3rem;
+        padding: 8rem 5% 4rem;
+        height: auto;
     }
 
     .eventos-hero h1 {
