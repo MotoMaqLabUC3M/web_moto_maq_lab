@@ -102,6 +102,29 @@
             </div>
         </section>
 
+        <!-- SEO Content Expansion -->
+        <section class="section-container about-seo-section"
+            style="padding: 4rem 2rem; max-width: 1200px; margin: 0 auto; text-align: left; line-height: 1.6;">
+            <h2>Sobre nuestro Engineering Team</h2>
+            <p>
+                MotoMaqLab UC3M es mucho más que un grupo de alumnos; somos un <strong>Engineering Team</strong>
+                dedicado en cuerpo y alma a la fabricación de prototipos de competición para el proyecto MotoStudent.
+                Desde las primeras etapas de diseño CAD, análisis aerodinámicos, simulaciones por elementos finitos,
+                hasta la fabricación final de las piezas en fibra de carbono y ensamblaje, cada paso es dado por
+                estudiantes de ingeniería de la Universidad Carlos III de Madrid (UC3M). Nuestra nueva season nos reta a
+                superarnos a nosotros mismos, y gracias al apoyo de nuestros sponsors y expertos de la universidad,
+                competimos al máximo nivel europeo.
+            </p>
+            <p>
+                Como <strong>team we</strong> collaborate with top tier manufacturers and sponsors to develop advanced
+                solutions for two-wheel racing. The motomaqlab uc3m team works tirelessly not only to win races but to
+                forge the engineers of tomorrow. La competición es nuestro laboratorio de pruebas real donde la teoría
+                aprendida en la UC3M se pone a prueba en el asfalto bajo las condiciones más extremas. Cada nueva season
+                nos permite innovar aerodinámicamente y optimizar el rendimiento de la moto gracias a nuestra gran
+                dedicación.
+            </p>
+        </section>
+
         <!-- Cinta transportadora de patrocinadores Platino -->
         <section class="sponsors-marquee-section" id="patrocinadores-principales">
             <div class="section-header">
@@ -139,6 +162,18 @@
     <script type="text/javascript"
         src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <script src="assets/js/scrollReveal.js"></script>
+
+    <!-- Fix missing alts for SEO (e.g. from injected widgets like Google Translate) -->
+    <script>
+        window.addEventListener('load', function () {
+            setTimeout(function () {
+                var imgs = document.querySelectorAll('img:not([alt]), img[alt=""]');
+                imgs.forEach(function (img) {
+                    img.setAttribute('alt', 'MotoMaqLab UC3M Image');
+                });
+            }, 3000);
+        });
+    </script>
 </body>
 
 </html>
