@@ -1,24 +1,34 @@
 {
     "posts": [
         {
-            "id": "circuito-f1-madrid",
-            "titulo": "El circuito de F1 en Madrid: un nuevo capítulo para la Fórmula 1 en España",
-            "autor": "External Relations",
-            "fecha": "2026-05-28",
-            "categoria": "Formula 1",
-            "imagen": "assets/img/blog/circuito-f1-madrid.webp",
-            "extracto": "El circuito de F1 en Madrid: un nuevo capítulo para la Fórmula 1 en España. Analizamos lo que supone para el motorsport universitario y la ingeniería española.",
-            "contenido": "La llegada de la Fórmula 1 a Madrid marca un antes y un después para el automovilismo en España. El nuevo circuito urbano, ubicado en la zona de IFEMA, promete ser uno de los más espectaculares del calendario.\n\n## ¿Qué supone para el motorsport universitario?\n\nPara equipos como MotoMaqLab UC3M, la presencia de un Gran Premio en Madrid es una oportunidad única. La visibilidad del motorsport en la capital atraerá más talento e interés hacia la ingeniería de competición.\n\n[img:assets/img/blog/circuito-f1-madrid.webp|Diseño del circuito de F1 en Madrid]\n\n## El impacto en la Universidad Carlos III\n\nLa UC3M, situada en Leganés, se encuentra a pocos kilómetros del futuro circuito. Esto abre puertas a colaboraciones con equipos profesionales y mayor visibilidad para proyectos como MotoStudent.\n\n## Oportunidades para la ingeniería española\n\nEspaña ya tiene una rica tradición en competición de motor. Con la Fórmula 1 en Madrid, se refuerza la demanda de ingenieros especializados en aerodinámica, dinámica vehicular, electrónica de competición y materiales compuestos — precisamente las áreas en las que trabajamos cada día en MotoMaqLab."
+            "id": "paco",
+            "titulo": "Paco",
+            "autor": "David Otero",
+            "fecha": "2026-03-19",
+            "categoria": "Paquismo",
+            "imagen": "assets/img/blog/paco/6847344a8ff02.webp",
+            "extracto": "Paco ha creado su circuito y correra en el paco gp",
+            "contenido": "Paco\n[img:assets/img/blog/paco/1410432219_f_rmula_e_editado_1.webp|paco]\n\n"
         },
         {
-            "id": "test-pretemporada-formula-student",
-            "titulo": "La clave del éxito en la Formula Student en Madrid: los test de pretemporada como en la F1",
-            "autor": "External Relations",
-            "fecha": "2026-03-19",
-            "categoria": "Formula 1",
-            "imagen": "assets/img/blog/test-pretemporada.webp",
-            "extracto": "La clave del éxito en la Formula Student en Madrid: los test de pretemporada como en la F1. Así preparamos nuestro prototipo para la competición.",
-            "contenido": "En la Fórmula 1, los test de pretemporada son el momento en el que se define la competitividad de un equipo para toda la temporada. En MotoStudent, el proceso es sorprendentemente similar.\n\n## La importancia de los test\n\nAntes de llegar a MotorLand Aragón, cada equipo debe asegurarse de que su prototipo funciona correctamente. Los test de pretemporada permiten detectar problemas mecánicos, ajustar la electrónica y optimizar el setup de suspensiones.\n\n[img:assets/img/blog/test-pretemporada.webp|Nuestro prototipo durante los test de pretemporada]\n\n## Cómo lo hacemos en MotoMaqLab\n\nNuestro equipo organiza sesiones de pruebas en circuitos cercanos a Madrid. Cada sesión se planifica con objetivos claros: validar la adquisición de datos, comprobar el rendimiento del motor y probar las diferentes configuraciones del chasis de fibra de carbono.\n\n## Datos, datos y más datos\n\nAl igual que en la F1, la telemetría es fundamental. Nuestro departamento de electrónica instala sensores en todo el prototipo para medir aceleraciones, temperaturas, velocidades y fuerzas. Esta información se analiza después de cada salida para tomar decisiones de ingeniería basadas en evidencia."
+            "id": "motostudent-arranca-viii-edicion",
+            "titulo": "MotoStudent arranca sus motores hacia la VIII Edición que tendrá lugar en 2025",
+            "autor": "Miguel Lozano",
+            "fecha": "2024-03-25",
+            "categoria": "MotoStudent",
+            "imagen": "assets/img/eventos/motostudent_2.webp",
+            "extracto": "La Competición Internacional MotoStudent, que se celebrará en Motorland Aragón, está de vuelta tras el éxito cosechado en la pasada edición, que contó con la participación de 80 equipos procedentes de 17 países",
+            "contenido": "Más de 5.000 estudiantes universitarios de todo el mundo han participado en esta competición desde su inicio\n\n[img:assets/img/eventos/motostudent_2.webp|Equipo MotoStudent]\n\nYa está abierto el registro para la VIII Edición de la Competición Internacional MotoStudent que se celebra en el circuito de velocidad de MotorLand Aragón en Alcañiz donde, a partir de ahora y durante los próximos 18 meses, equipos de todo el mundo pugnarán por ser el mejor proyecto de talento e innovación sobre una moto de competición. MotoStudent es ya todo un referente a escala internacional en el ámbito universitario y de la movilidad sobre dos ruedas, dado que viene respaldada por una trayectoria vertiginosa que ha involucrado directamente a más de 5.000 estudiantes universitarios y ha superado los 350 equipos provenientes de universidades de 22 países de 4 continentes.\n\n## Abiertas las inscripciones para los equipos interesados, así es el proceso\n\nEl registro para los equipos interesados en participar en la VIII Edición de MotoStudent está abierto desde el pasado 1 de marzo y se realiza a través de la web [www.motostudent.com](https://www.motostudent.com). En esta página web también se puede encontrar el nuevo Reglamento Oficial, cada vez más alineado con la alta competición mundial.\n\nTras el periodo de inscripción, se iniciará un ciclo de desarrollo de 18 meses en el que los equipos universitarios diseñarán y fabricarán prototipos de motocicletas de competición, integrando tecnología innovadora y aplicando los conocimientos adquiridos durante sus años de estudio. La edición culminará con el Evento Final, programado para otoño de 2025, en el prestigioso circuito de MotorLand Aragón. Este ofrecerá a los equipos la oportunidad única de competir durante cinco días en el mismo trazado que los mejores pilotos del mundo de MotoGP.\n\nDurante esta VIII Edición, los equipos registrados podrán disfrutar de acceso privilegiado a una variedad de recursos, servicios y formaciones a través de la plataforma interna de MotoStudent. Los participantes no sólo contarán con herramientas esenciales para el desarrollo de sus proyectos, sino que también tendrán la oportunidad de formar parte de programas de talento exclusivos y otros desafíos que potenciarán el crecimiento profesional y académico de los participantes. Además, este ecosistema exclusivo pondrá en contacto a la industria puntera en el sector, con el mayor talento universitario y seguro la innovación que se desarrolle, será de nuevo el estandarte que defina a sus integrantes.\n\nMotoStudent continúa siendo una competición pionera al presentar dos categorías: MotoStudent Petrol, dirigido a prototipos con motor de combustión interna, y MotoStudent Electric, destinado a los proyectos íntegramente eléctricos. Como novedad, en esta edición se van a trabajar en nuevos segmentos de sostenibilidad orientados hacia los nuevos modelos tecnológicos, y su consecuente reducción de emisiones, reflejando el compromiso de la competición con el medio ambiente y la movilidad sostenible.\n\n## Reconocimiento Internacional\n\nUn hito destacado recientemente es el premio ‘Trophy For The Future 2023’, otorgado a MotoStudent por la Federación Internacional de Motociclismo (FIM). Este prestigioso galardón fue entregado en los FIM Awards de Liverpool, una gala que reunió a los exponentes más destacados del deporte y la industria a escala mundial, en la que se reconoció la excelencia, la innovación y el desarrollo de talento que impulsa a los jóvenes esta Competición Internacional.\n\n## Casos de éxito\n\nMotoStudent es un excelente banco de ensayos para la tecnología más disruptiva, y está presente en muchos eventos de clase mundial impulsando la innovación tecnológica. Muestra de ello son los distintos estudiantes participantes en ediciones anteriores, que actualmente trabajan en competiciones como MotoGP, Fórmula 1 o WorldSBK, así como en empresas líderes del sector.\n\nOtro caso derivado de la colaboración tecnológica con MotoStudent es el equipo Watt Power Racing, liderado por un fiel colaborador de la Competición, Elías Bel, quien, junto a su equipo, ha competido en la última edición del Rally Dakar, con una motocicleta eléctrica, en la nueva categoría de propulsiones alternativas al petróleo, Dakar Mission 1000. En su prototipo se ha aplicado la tecnología con la que están compitiendo las universidades en MotoStudent, ya que se ha seguido el mismo reglamento técnico y los sistemas de seguridad eléctrica de MotoStudent.\n\n[https://www.motostudent.com](https://www.motostudent.com)"
+        },
+        {
+            "id": "newsletter-revista-motomaqlab",
+            "titulo": "Newsletter - Revista MotoMaqLab",
+            "autor": "MotoMaqLab UC3M",
+            "fecha": "2024-03-19",
+            "categoria": "Newsletter",
+            "imagen": "assets/img/blog/Portada_news_letter.png",
+            "extracto": "¡Ya está disponible nuestra nueva Newsletter! Descarga la Revista MotoMaqLab desde este enlace.",
+            "contenido": "Nos enorgullece presentar la última edición de nuestra revista MotoMaqLab, donde podrás mantenerte informado de todos nuestros avances.\n\n[pdf:assets/docs/Revista_Motomaqlab%20(1).pdf]"
         }
     ]
 }

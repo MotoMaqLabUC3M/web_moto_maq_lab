@@ -48,7 +48,25 @@
 
         posts.forEach(function (post) {
             var link = document.createElement('a');
-            link.href = 'noticia.html?id=' + encodeURIComponent(post.id);
+            
+            // Check if it's a Newsletter or contains a PDF tag
+            var isPdfDirect = false;
+            var pdfUrl = '';
+            var matchPdf = post.contenido ? post.contenido.match(/\[pdf:([^\]]+)\]/) : null;
+            
+            if (post.categoria && post.categoria.toLowerCase() === 'newsletter' && matchPdf) {
+                isPdfDirect = true;
+                pdfUrl = matchPdf[1];
+            }
+
+            if (isPdfDirect) {
+                link.href = pdfUrl;
+                link.target = '_blank';
+                link.rel = 'noopener noreferrer';
+            } else {
+                link.href = 'noticia.html?id=' + encodeURIComponent(post.id);
+            }
+            
             link.className = 'blog-card-link';
 
             var card = document.createElement('div');
@@ -61,7 +79,7 @@
 
             // Imagen de portada
             var imgHTML = post.imagen
-                ? '<div class="blog-card-img"><img src="' + post.imagen + '" alt="' + post.titulo + '" loading="lazy" /></div>'
+                ? '<div class="blog-card-img"><img src="' + post.imagen + '" alt="' + post.titulo + '" loading="lazy" onerror="this.style.display=\'none\'; this.parentElement.innerHTML=\'<div class=\\\'newsletter-fallback\\\'>📖<br>Imagen no encontrada</div>\';" /></div>'
                 : '';
 
             // Truncar extracto
@@ -70,15 +88,22 @@
                 extracto = extracto.substring(0, 120) + '[...]';
             }
 
-            card.innerHTML =
-                imgHTML +
-                '<div class="blog-card-body">' +
-                    '<span class="blog-card-categoria">' + post.categoria + '</span>' +
-                    '<h3>' + post.titulo + '</h3>' +
-                    '<p class="blog-card-meta">by ' + post.autor + ' on ' + fechaStr + '</p>' +
-                    '<p class="blog-card-extracto">' + extracto + '</p>' +
-                    '<span class="blog-card-leer">Read more →</span>' +
-                '</div>';
+            if (isPdfDirect) {
+                card.classList.add('newsletter-only-cover');
+                card.innerHTML = imgHTML 
+                    ? imgHTML 
+                    : '<div class="blog-card-img"><div class="newsletter-fallback">📖<br>Revista MotoMaqLab</div></div>';
+            } else {
+                card.innerHTML =
+                    imgHTML +
+                    '<div class="blog-card-body">' +
+                        '<span class="blog-card-categoria">' + post.categoria + '</span>' +
+                        '<h3>' + post.titulo + '</h3>' +
+                        '<p class="blog-card-meta">by ' + post.autor + ' on ' + fechaStr + '</p>' +
+                        '<p class="blog-card-extracto">' + extracto + '</p>' +
+                        '<span class="blog-card-leer">Read more →</span>' +
+                    '</div>';
+            }
 
             link.appendChild(card);
             fragment.appendChild(link);
