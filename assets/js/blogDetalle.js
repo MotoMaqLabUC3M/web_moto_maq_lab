@@ -2,9 +2,11 @@
  * blogDetalle.js
  * Renderiza página de detalle de noticia del blog.
  * Soporta imágenes inline con sintaxis: [img:ruta|alt text]
+ * Soporta visor PDF con sintaxis: [pdf:ruta]
  */
 (function () {
     const JSON_PATH = 'assets/data/blog.json';
+    const EQUIPO_PATH = 'assets/data/equipo.json';
 
     async function init() {
         const container = document.getElementById('noticia-detalle');
@@ -22,15 +24,25 @@
 
             if (!post) { renderError(container); return; }
 
+            // Cargar datos del equipo
+            let equipoData = [];
+            try {
+                const resEq = await fetch(EQUIPO_PATH);
+                const eqJson = await resEq.json();
+                equipoData = eqJson.sections.flatMap(sec => sec.members);
+            } catch (err) {
+                console.warn('Error cargando equipo.json', err);
+            }
+
             document.title = post.titulo + ' | MotoMaqLab UC3M';
-            render(container, post);
+            render(container, post, equipoData);
         } catch (err) {
             console.error('Error cargando noticia:', err);
             renderError(container);
         }
     }
 
-    function render(container, post) {
+    function render(container, post, equipoData) {
         // Formatear fecha
         var fecha = new Date(post.fecha);
         var opciones = { day: 'numeric', month: 'long', year: 'numeric' };
@@ -43,6 +55,26 @@
 
         // Parsear contenido
         var contentHTML = parseContenido(post.contenido);
+
+        // Autor panel
+        var authorHTML = '';
+        if (post.autor && equipoData && equipoData.length > 0) {
+            var authorMatches = equipoData.filter(m => m.name.toLowerCase().includes(post.autor.toLowerCase()));
+            var matchingAuthor = authorMatches.length > 0 ? authorMatches[0] : null;
+            
+            if (matchingAuthor) {
+                var imgSrc = matchingAuthor.image && matchingAuthor.image !== "" ? matchingAuthor.image : "assets/img/logos_uc3m/uc3m_logo_sin_fondo.png";
+                authorHTML = `
+                    <div class="blog-author-box">
+                        <img src="${imgSrc}" alt="${matchingAuthor.name}" class="author-avatar" loading="lazy">
+                        <div class="author-details">
+                            <h4>${matchingAuthor.name}</h4>
+                            <span>${matchingAuthor.role}</span>
+                        </div>
+                    </div>
+                `;
+            }
+        }
 
         container.innerHTML =
             '<!-- HERO -->' +
@@ -74,6 +106,7 @@
             '<!-- CONTENT -->' +
             '<article class="blog-article">' +
                 contentHTML +
+                authorHTML +
             '</article>' +
 
             '<!-- CTA -->' +
@@ -86,6 +119,8 @@
      * Parsea contenido del blog.
      * - ## Titulo = h2 con label decorativo
      * - [img:ruta|alt] = imagen inline
+     * - [pdf:ruta] = iframe de PDF inline
+     * - [texto](url) = link markdown
      * - Texto normal = párrafos
      */
     function parseContenido(text) {
@@ -109,10 +144,10 @@
                 inSection = true;
             } else if (line.startsWith('[img:')) {
                 // Imagen inline: [img:ruta|alt text]
-                var match = line.match(/^\[img:([^|]+)\|?([^\]]*)\]$/);
-                if (match) {
-                    var src = match[1];
-                    var alt = match[2] || '';
+                var matchImg = line.match(/^\[img:([^|]+)\|?([^\]]*)\]$/);
+                if (matchImg) {
+                    var src = matchImg[1];
+                    var alt = matchImg[2] || '';
                     html += '<figure class="blog-inline-img">';
                     html += '<img src="' + src + '" alt="' + alt + '" loading="lazy" />';
                     if (alt) {
@@ -120,13 +155,30 @@
                     }
                     html += '</figure>';
                 }
+            } else if (line.startsWith('[pdf:')) {
+                // PDF render: [pdf:ruta]
+                var matchPdf = line.match(/^\[pdf:([^\]]+)\]$/);
+                if (matchPdf) {
+                    var pdfUrl = matchPdf[1];
+                    if (!inSection) {
+                        html += '<section class="sp-text-block">';
+                        inSection = true;
+                    }
+                    html += '<div class="pdf-viewer-container" style="margin: 2rem 0; text-align:center;">';
+                    html += '<iframe src="' + pdfUrl + '" width="100%" height="700px" style="border:none; border-radius:12px; background:#fff;"></iframe>';
+                    html += '<div style="margin-top:1rem;"><a href="' + pdfUrl + '" target="_blank" class="btn btn--primary" style="display:inline-block; font-size:0.9rem;">Abrir PDF en otra pestaña</a></div>';
+                    html += '</div>';
+                }
             } else {
+                // Parse standard links inside text
+                var parsedLine = line.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer" style="color:var(--c-red); text-decoration:underline;">$1</a>');
+                
                 // Párrafo normal
                 if (!inSection) {
                     html += '<section class="sp-text-block">';
                     inSection = true;
                 }
-                html += '<div class="sp-text-content"><p>' + line + '</p></div>';
+                html += '<div class="sp-text-content"><p>' + parsedLine + '</p></div>';
             }
         });
 
