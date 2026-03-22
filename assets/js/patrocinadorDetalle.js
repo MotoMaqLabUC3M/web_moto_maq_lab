@@ -104,7 +104,7 @@
 
         // Website link
         const websiteBtn = sponsor.website
-            ? `<a href="${sponsor.website}" target="_blank" rel="noopener noreferrer" class="btn btn--outline sp-web-btn">🌐 Visitar web</a>`
+            ? `<a href="${sponsor.website}" target="_blank" rel="noopener noreferrer" class="btn btn--outline sp-web-btn"><i data-lucide="globe"></i> Visitar web</a>`
             : '';
 
         container.innerHTML = `
@@ -202,12 +202,14 @@
     function renderError(container) {
         container.innerHTML = `
             <div class="sp-error">
-                <span class="sp-error-icon">🔍</span>
+                <span class="sp-error-icon"><i data-lucide="search-x" style="width: 48px; height: 48px;"></i></span>
                 <h2>Patrocinador no encontrado</h2>
                 <p>El patrocinador que buscas no existe o ha sido eliminado.</p>
                 <a href="patrocinadores.html" class="btn btn--primary">Ver patrocinadores</a>
             </div>
         `;
+
+        if (window.lucide) { lucide.createIcons(); }
     }
 
     document.addEventListener('DOMContentLoaded', init);
