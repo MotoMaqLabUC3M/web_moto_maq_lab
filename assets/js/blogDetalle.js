@@ -90,15 +90,15 @@
             '<!-- INFO BAR -->' +
             '<section class="ev-info-bar">' +
                 '<div class="ev-info-card">' +
-                    '<span class="ev-info-icon">✍️</span>' +
+                    '<span class="ev-info-icon"><i data-lucide="pen-tool"></i></span>' +
                     '<div><span class="ev-info-label">Autor</span><span class="ev-info-value">' + post.autor + '</span></div>' +
                 '</div>' +
                 '<div class="ev-info-card">' +
-                    '<span class="ev-info-icon">📅</span>' +
+                    '<span class="ev-info-icon"><i data-lucide="calendar"></i></span>' +
                     '<div><span class="ev-info-label">Fecha</span><span class="ev-info-value">' + fechaStr + '</span></div>' +
                 '</div>' +
                 '<div class="ev-info-card">' +
-                    '<span class="ev-info-icon">📂</span>' +
+                    '<span class="ev-info-icon"><i data-lucide="folder"></i></span>' +
                     '<div><span class="ev-info-label">Categoría</span><span class="ev-info-value">' + post.categoria + '</span></div>' +
                 '</div>' +
             '</section>' +
@@ -113,6 +113,8 @@
             '<section class="sp-cta-section">' +
                 '<a href="blog.html" class="btn btn--primary">← Ver todas las noticias</a>' +
             '</section>';
+        
+        if (window.lucide) { lucide.createIcons(); }
     }
 
     /**
@@ -192,11 +194,12 @@
     function renderError(container) {
         container.innerHTML =
             '<div class="sp-error">' +
-                '<span class="sp-error-icon">🔍</span>' +
+                '<span class="sp-error-icon"><i data-lucide="search-x" style="width: 48px; height: 48px;"></i></span>' +
                 '<h2>Noticia no encontrada</h2>' +
                 '<p>El artículo que buscas no existe o ha sido eliminado.</p>' +
                 '<a href="blog.html" class="btn btn--primary">Ver blog</a>' +
             '</div>';
+        if (window.lucide) { lucide.createIcons(); }
     }
 
     document.addEventListener('DOMContentLoaded', init);

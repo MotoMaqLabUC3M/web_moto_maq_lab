@@ -10,10 +10,11 @@
     async function init() {
         // Página de eventos completa
         const proximosContainer = document.getElementById('proximos-container');
+        const pasadosContainer = document.getElementById('pasados-container');
         // Preview en index (3 próximos)
         const indexContainer = document.getElementById('eventos-index-container');
 
-        if (!proximosContainer && !indexContainer) return;
+        if (!proximosContainer && !indexContainer && !pasadosContainer) return;
 
         try {
             const res = await fetch(JSON_PATH);
@@ -32,12 +33,30 @@
                 })
                 .sort((a, b) => new Date(a.fecha) - new Date(b.fecha));
 
+            // Solo pasados (fecha < hoy)
+            const pasados = data.eventos
+                .filter(ev => {
+                    const fecha = new Date(ev.fechaFin || ev.fecha);
+                    return fecha < ahora;
+                })
+                .sort((a, b) => new Date(b.fecha) - new Date(a.fecha));
+
             // Página de eventos: todos los próximos
             if (proximosContainer) {
                 if (proximos.length > 0) {
                     renderEventos(proximosContainer, proximos);
                 } else {
                     const empty = document.getElementById('proximos-empty');
+                    if (empty) empty.style.display = 'block';
+                }
+            }
+
+            // Página de eventos: todos los pasados
+            if (pasadosContainer) {
+                if (pasados.length > 0) {
+                    renderEventos(pasadosContainer, pasados);
+                } else {
+                    const empty = document.getElementById('pasados-empty');
                     if (empty) empty.style.display = 'block';
                 }
             }
@@ -88,7 +107,7 @@
                 <div class="evento-card-body">
                     <div class="evento-fecha">${fechaStr}</div>
                     <h3>${evento.titulo}</h3>
-                    <p class="evento-lugar">📍 ${evento.lugar}</p>
+                    <p class="evento-lugar"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:text-bottom;margin-right:0.2rem;"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg> ${evento.lugar}</p>
                     <p class="evento-desc">${evento.descripcion}</p>
                     <span class="evento-ver-mas">Ver más →</span>
                 </div>

@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Creador Avanzado de Noticias | MotoMaqLab</title>
+    <title>Creador Avanzado de Eventos | MotoMaqLab</title>
     <!-- Incluimos los mismos estilos base de la web para la vista previa -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <!-- Iconos Lucide -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         :root {
@@ -71,7 +72,7 @@
         button.secondary { background: #333; padding: 0.5rem 0.8rem; font-size: 0.8rem; }
         button:disabled { background: #555; cursor: not-allowed; }
 
-        /* PREVIEW STYLES (Simulando la web real) */
+        /* PREVIEW STYLES */
         .preview-header { font-family: 'Montserrat', sans-serif; color: var(--red); border-bottom: 1px solid #333; padding-bottom: 0.5rem; margin-bottom: 2rem; display: flex; align-items: center; gap: 0.5rem; }
         
         .sp-text-block { background-color: var(--card); border-radius: 12px; margin-bottom: 2rem; padding: 0.1px 2rem; }
@@ -81,8 +82,6 @@
         .sp-text-content { color: rgba(255, 255, 255, 0.8); line-height: 1.8; margin-bottom: 1.5rem; font-size: 1.05rem; }
         .blog-inline-img { margin: 2rem 0; text-align: center; }
         .blog-inline-img img { max-width: 100%; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
-        .pdf-viewer-container { margin: 2rem 0; text-align: center; }
-        .pdf-viewer-container iframe { border: none; border-radius: 12px; background: #fff; width: 100%; height: 600px; }
 
         .ev-hero {
             border-radius: 12px; padding: 3rem 2rem; margin-bottom: 2rem;
@@ -103,64 +102,75 @@
         }
 
         .author-box { display: flex; align-items: center; gap: 1rem; margin-top: 3rem; padding: 1.5rem; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; }
-        .author-box img { width: 60px; height: 60px; border-radius: 50%; object-fit: cover; border: 2px solid var(--red); }
+        .author-box i { color: var(--red); width: 40px; height: 40px; }
         .author-box h4 { margin: 0; font-size: 1.1rem; }
-        .author-box span { font-size: 0.9rem; color: var(--red); }
+        .author-box span { font-size: 0.9rem; color: #aaa; }
     </style>
 </head>
 <body>
     <div class="sidebar">
-        <h2 style="color:var(--red); margin:0;">Gestor de Noticias</h2>
+        <h2 style="color:var(--red); margin:0;">Gestor de Eventos</h2>
         
         <div class="folder-setup" id="folderSetup">
             <p style="margin-top:0; font-size:0.9rem;"><strong>1. Conectar con el Proyecto</strong></p>
-            <p style="font-size:0.8rem; color:#aaa;">Selecciona la carpeta principal de <code>web_moto_maq_lab</code> para que la noticia se guarde automáticamente en el archivo y las fotos se guarden en sus carpetas de una vez.</p>
+            <p style="font-size:0.8rem; color:#aaa;">Selecciona la carpeta principal de <code>web_moto_maq_lab</code> para que el evento se guarde automáticamente en el archivo y las fotos se guarden en sus carpetas de una vez.</p>
             <button id="btnSelectDir" style="width:100%; height: 45px;"><i data-lucide="folder-output"></i> Seleccionar Carpeta del Proyecto</button>
-            <p id="dirStatus" style="color:#4CAF50; font-weight:bold; font-size:0.9rem; display:none; margin-bottom:0; align-items:center; gap:0.3rem;"><i data-lucide="check-circle-2" style="width: 18px;"></i> Carpeta vinculada con éxito</p>
+            <p id="dirStatus" style="color:#4CAF50; font-weight:bold; font-size:0.9rem; display:none; margin-bottom:0; display:flex; align-items:center; gap:0.3rem;"><i data-lucide="check-circle-2" style="width: 18px;"></i> Carpeta vinculada con éxito</p>
+            <p id="dirStatusHidden" style="display:none;"></p>
         </div>
 
-        <form id="newsForm">
+        <form id="eventsForm">
             <div class="form-group">
-                <label>Título de la noticia</label>
-                <input type="text" id="titulo" required placeholder="Ej: Nueva victoria en MotoStudent...">
+                <label>Título del evento</label>
+                <input type="text" id="titulo" required placeholder="Ej: Competición MotoStudent 2027">
             </div>
+            
+            <div class="form-group">
+                <label>Lugar</label>
+                <input type="text" id="lugar" required placeholder="Ej: MotorLand Aragón, Alcañiz">
+            </div>
+            
             <div style="display:flex; gap:0.5rem;">
                 <div class="form-group" style="flex:1;">
-                    <label>Autor</label>
-                    <input type="text" id="autor" required placeholder="Ej: Miguel Lozano">
+                    <label>Tipo (Categoría)</label>
+                    <input type="text" id="tipo" required placeholder="Ej: competicion, presentacion">
                 </div>
                 <div class="form-group" style="flex:1;">
-                    <label>Categoría</label>
-                    <input type="text" id="categoria" required placeholder="Ej: MotoStudent">
+                    <label>Fecha de inicio</label>
+                    <input type="date" id="fecha" required>
                 </div>
             </div>
             
             <div class="form-group">
-                <label>Fecha</label>
-                <input type="date" id="fecha" required>
+                <label>Fecha de fin (Opcional)</label>
+                <input type="date" id="fechaFin">
             </div>
 
             <div class="form-group">
                 <label>Imagen de Portada</label>
                 <input type="file" id="portadaFile" accept="image/*">
             </div>
+            
+            <div class="form-group">
+                <label>Imagen de Detalle (Opcional, mayor resolución)</label>
+                <input type="file" id="detalleFile" accept="image/*">
+            </div>
 
             <div class="form-group">
-                <label>Extracto (Para la tarjeta exterior)</label>
-                <textarea id="extracto" rows="2" required placeholder="Breve resumen para cuando se vea en la lista..."></textarea>
+                <label>Descripción corta (Para la tarjeta exterior)</label>
+                <textarea id="descripcion" rows="2" required placeholder="Breve resumen del evento..."></textarea>
             </div>
 
             <div class="form-group" style="flex: 1; display:flex; flex-direction:column;">
-                <label>Cuerpo de la noticia</label>
+                <label>Cuerpo del evento (Página de Detalle)</label>
                 <div class="btn-group">
-                    <button type="button" class="secondary" onclick="insertTag('## ', '')"><i data-lucide="heading" style="width:16px;"></i> Añadir Subtítulo</button>
+                    <button type="button" class="secondary" onclick="insertTag('## ', '')"><i data-lucide="heading" style="width:16px;"></i> Subtítulo</button>
                     <!-- File input hidden for inline photos -->
                     <input type="file" id="inlineImgInput" accept="image/*" style="display:none;" onchange="handleInlineImage(event)">
-                    <button type="button" class="secondary" onclick="document.getElementById('inlineImgInput').click()"><i data-lucide="image" style="width:16px;"></i> Añadir Foto al Texto</button>
-                    <button type="button" class="secondary" onclick="insertTag('[pdf:assets/docs/TU_DOCUMENTO.pdf]', '')"><i data-lucide="file-text" style="width:16px;"></i> Añadir PDF Externo</button>
-                    <button type="button" class="secondary" onclick="insertTag('[', '](https://...)')"><i data-lucide="link" style="width:16px;"></i> Insertar Enlace</button>
+                    <button type="button" class="secondary" onclick="document.getElementById('inlineImgInput').click()"><i data-lucide="image" style="width:16px;"></i> Foto al Texto</button>
+                    <button type="button" class="secondary" onclick="insertTag('[', '](https://...)')"><i data-lucide="link" style="width:16px;"></i> Enlace</button>
                 </div>
-                <textarea id="contenido" rows="12" required placeholder="Escribe tu noticia aquí... Ve la vista previa a la derecha en vivo."></textarea>
+                <textarea id="contenido" rows="12" required placeholder="Escribe los detalles del evento aquí... Ve la vista previa a la derecha en vivo."></textarea>
             </div>
 
             <button type="submit" id="btnPublish" style="width: 100%; font-size: 1.1rem; padding: 1rem; height: 55px;" disabled title="Conecta con la carpeta del proyecto para habilitar"><i data-lucide="send"></i> Publicar y Guardar Todo</button>
@@ -175,6 +185,7 @@
     </div>
 
     <script>
+        // Init icons
         lucide.createIcons();
 
         document.getElementById('fecha').valueAsDate = new Date();
@@ -182,6 +193,7 @@
         let projectDirHandle = null;
         let inlineImagesToSave = []; // Array to keep track of uploaded files { file, slugName }
         let portadaFileToSave = null;
+        let detalleFileToSave = null;
         let objectUrls = {}; // Map of original local blob url for preview
 
         // --- DIRECTORY PICKER ---
@@ -193,15 +205,15 @@
                 }
                 projectDirHandle = await window.showDirectoryPicker({ mode: 'readwrite' });
                 
-                // Verificar que sea la carpeta correcta (debe tener subcarpeta assets)
+                // Verificar que sea la carpeta correcta
                 try {
                     await projectDirHandle.getDirectoryHandle('assets');
-                    document.getElementById('dirStatus').style.display = 'block';
+                    document.getElementById('dirStatus').style.display = 'flex';
                     document.getElementById('btnSelectDir').style.display = 'none';
                     document.getElementById('btnPublish').disabled = false;
                     document.getElementById('btnPublish').title = "";
                 } catch(e) {
-                    alert("⚠️ Parece que no has seleccionado la carpeta principal del proyecto web_moto_maq_lab. Inténtalo de nuevo.");
+                    alert("No se ha detectado la carpeta 'assets'. Asegúrate de seleccionar la raíz de web_moto_maq_lab.");
                     projectDirHandle = null;
                 }
             } catch (err) {
@@ -211,11 +223,12 @@
 
         // --- PREVIEW LOGIC ---
         function createSlug(str) {
-            return str.toLowerCase().trim().replace(/[^\w\s-]/g, '').replace(/[\s_-]+/g, '-').replace(/^-+|-+$/g, '') || 'nueva-noticia';
+            return str.toLowerCase().trim().replace(/[^\w\s-]/g, '').replace(/[\s_-]+/g, '-').replace(/^-+|-+$/g, '') || 'nuevo-evento';
         }
 
-        const formInputs = document.querySelectorAll('#newsForm input, #newsForm textarea');
+        const formInputs = document.querySelectorAll('#eventsForm input, #eventsForm textarea');
         formInputs.forEach(i => i.addEventListener('input', updatePreview));
+
         // --- WEBP CONVERSION ---
         async function convertToWebP(file) {
             if (!file.type.startsWith('image/')) return file;
@@ -253,6 +266,18 @@
             updatePreview();
         });
 
+        document.getElementById('detalleFile').addEventListener('change', async (e) => {
+            let file = e.target.files[0];
+            if(file) {
+                detalleFileToSave = await convertToWebP(file);
+                objectUrls['detalle'] = URL.createObjectURL(detalleFileToSave);
+            } else {
+                detalleFileToSave = null;
+                delete objectUrls['detalle'];
+            }
+            updatePreview();
+        });
+
         function insertTag(prefix, suffix) {
             const textarea = document.getElementById('contenido');
             const start = textarea.selectionStart;
@@ -277,15 +302,14 @@
             }
 
             file = await convertToWebP(file);
-            const finalPath = `assets/img/blog/${slug}/${file.name}`;
+            const finalPath = `assets/img/eventos/${slug}/${file.name}`;
             
             inlineImagesToSave.push({ file: file, pathName: file.name });
-            // Generar Object URL para la vista previa
             objectUrls[finalPath] = URL.createObjectURL(file);
 
             const imgTag = `[img:${finalPath}|${altText}]`;
             insertTag(imgTag, '\n\n');
-            event.target.value = ''; // Clean so same file can trigger change again
+            event.target.value = ''; 
         }
 
         function parsePreview(text) {
@@ -296,7 +320,6 @@
 
             lines.forEach(line => {
                 line = line.trim();
-                // We don't skip empty lines anymore so we can preserve paragraphs properly, but for simplicity:
                 if (!line) return;
 
                 if (line.startsWith('## ')) {
@@ -308,11 +331,9 @@
                     let match = line.match(/^\[img:([^|]+)\|?([^\]]*)\]$/);
                     if (match) {
                         let src = match[1]; let alt = match[2];
-                        let finalSrc = objectUrls[src] ? objectUrls[src] : src; // Usar blob en vivo si existe en sesión
+                        let finalSrc = objectUrls[src] ? objectUrls[src] : src;
                         html += `<div class="blog-inline-img"><img src="${finalSrc}" alt="${alt}"></div>`;
                     }
-                } else if (line.startsWith('[pdf:')) {
-                    html += `<div class="pdf-viewer-container"><div style="color:var(--c-red); border:1px solid #333; padding:2rem; border-radius:12px; font-weight:bold; display:flex; align-items:center; justify-content:center; gap:0.5rem;"><i data-lucide="file-text"></i> Visor de PDF Dinámico: ${line} <br><br>(Se renderizará el PDF real en la web)</div></div>`;
                 } else {
                     let parsedLine = line.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" style="color:var(--c-red); text-decoration:underline;">$1</a>');
                     if (!inSection) { html += '<section class="sp-text-block">'; inSection = true; }
@@ -324,37 +345,37 @@
         }
 
         function updatePreview() {
-            const titulo = document.getElementById('titulo').value || 'Título De La Noticia';
-            const autor = document.getElementById('autor').value || 'El Autor';
-            const cat = document.getElementById('categoria').value || 'Categoría';
-            const extracto = document.getElementById('extracto').value || 'Este es el resumen atractivo de tu noticia...';
+            const titulo = document.getElementById('titulo').value || 'Título Del Evento';
+            const lugar = document.getElementById('lugar').value || 'Ubicación';
+            const tipo = document.getElementById('tipo').value || 'Categoría';
+            const descripcion = document.getElementById('descripcion').value || 'Resumen del evento...';
             const contenido = document.getElementById('contenido').value;
 
-            let heroStyle = objectUrls['portada'] 
-                ? `background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.9) 100%), url('${objectUrls['portada']}'); background-size:cover; background-position:center;`
+            // Si hay imagen de detalle, la usamos para el hero en lugar de la portada
+            const heroImage = objectUrls['detalle'] || objectUrls['portada'];
+            let heroStyle = heroImage 
+                ? `background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.9) 100%), url('${heroImage}'); background-size:cover; background-position:center;`
                 : '';
 
             document.getElementById('preview-area').innerHTML = `
                 <div class="ev-hero" style="${heroStyle}">
-                    <span class="badge">${cat}</span>
+                    <span class="badge">${tipo}</span>
                     <h1 style="color:white; margin-top:2rem;">${titulo}</h1>
-                    <p style="color:#ddd; font-size:1.1rem; max-width:600px; margin:0 auto;">${extracto}</p>
+                    <p style="color:#ddd; font-size:1.1rem; max-width:600px; margin:0 auto;">${descripcion}</p>
                 </div>
-                <div>${parsePreview(contenido)}</div>
-                
-                <div class="author-box">
-                    <img src="assets/img/logos_uc3m/uc3m_logo_sin_fondo.png" alt="Autor">
+
+                <div class="author-box" style="margin-top: 0; margin-bottom: 2rem; justify-content: center;">
+                    <i data-lucide="map-pin"></i>
                     <div>
-                        <h4>${autor}</h4>
-                        <span>Autor del Artículo</span>
+                        <h4>${lugar}</h4>
+                        <span>Lugar del Evento</span>
                     </div>
                 </div>
+
+                <div>${parsePreview(contenido)}</div>
             `;
             lucide.createIcons();
         }
-
-        // Initialize empty preview
-        updatePreview();
 
         // --- AUTOMATIC SAVE LOGIC ---
         async function getDirHandleDeep(baseHandle, pathArray) {
@@ -365,10 +386,10 @@
             return current;
         }
 
-        document.getElementById('newsForm').addEventListener('submit', async (e) => {
+        document.getElementById('eventsForm').addEventListener('submit', async (e) => {
             e.preventDefault();
             if (!projectDirHandle) {
-                alert("Primero debes hacer clic en 'Seleccionar Carpeta del Proyecto' en el primer paso.");
+                alert("Primero debes seleccionar la carpeta del proyecto.");
                 return;
             }
 
@@ -380,111 +401,93 @@
             try {
                 const slug = createSlug(document.getElementById('titulo').value);
                 
-                // 1. Guardar Fotos Físicas (requiere API file system)
+                // 1. Guardar Fotos Físicas
                 let imagenPortadaPath = "";
-                const imgBlogDirHandle = await getDirHandleDeep(projectDirHandle, ['assets', 'img', 'blog']);
+                let imagenDetallePath = "";
+                const imgEventosDirHandle = await getDirHandleDeep(projectDirHandle, ['assets', 'img', 'eventos']);
                 
-                let articleImgDirHandle;
-                if (portadaFileToSave || inlineImagesToSave.length > 0) {
-                    articleImgDirHandle = await imgBlogDirHandle.getDirectoryHandle(slug, { create: true });
-                }
+                // Si hay imágenes se crea una subcarpeta con el slug
+                let eventImgDirHandle = await imgEventosDirHandle.getDirectoryHandle(slug, { create: true });
 
                 if (portadaFileToSave) {
-                    const fileHandle = await articleImgDirHandle.getFileHandle(portadaFileToSave.name, { create: true });
+                    const fileHandle = await eventImgDirHandle.getFileHandle(portadaFileToSave.name, { create: true });
                     const writable = await fileHandle.createWritable();
                     await writable.write(portadaFileToSave);
                     await writable.close();
-                    imagenPortadaPath = `assets/img/blog/${slug}/${portadaFileToSave.name}`;
+                    imagenPortadaPath = `assets/img/eventos/${slug}/${portadaFileToSave.name}`;
+                }
+
+                if (detalleFileToSave) {
+                    const fileHandle = await eventImgDirHandle.getFileHandle(detalleFileToSave.name, { create: true });
+                    const writable = await fileHandle.createWritable();
+                    await writable.write(detalleFileToSave);
+                    await writable.close();
+                    imagenDetallePath = `assets/img/eventos/${slug}/${detalleFileToSave.name}`;
                 }
 
                 for (const imgObj of inlineImagesToSave) {
-                    const fileHandle = await articleImgDirHandle.getFileHandle(imgObj.file.name, { create: true });
+                    const fileHandle = await eventImgDirHandle.getFileHandle(imgObj.file.name, { create: true });
                     const writable = await fileHandle.createWritable();
                     await writable.write(imgObj.file);
                     await writable.close();
                 }
 
-                // 3. Arreglar rutas genéricas de fotos en el texto justo antes de guardar
-                const cleanedContenido = document.getElementById('contenido').value.replace(/assets\/img\/blog\/nueva-noticia\//g, `assets/img/blog/${slug}/`);
+                // 2. Arreglar rutas genéricas de fotos en el texto
+                const cleanedContenido = document.getElementById('contenido').value.replace(/assets\/img\/eventos\/nuevo-evento\//g, `assets/img/eventos/${slug}/`);
                 
                 const postData = {
                     id: slug,
                     titulo: document.getElementById('titulo').value,
-                    autor: document.getElementById('autor').value,
                     fecha: document.getElementById('fecha').value,
-                    categoria: document.getElementById('categoria').value,
-                    imagen: imagenPortadaPath,
-                    extracto: document.getElementById('extracto').value,
-                    contenido: cleanedContenido
                 };
+                
+                if(document.getElementById('fechaFin').value) {
+                    postData.fechaFin = document.getElementById('fechaFin').value;
+                }
 
+                postData.lugar = document.getElementById('lugar').value;
+                postData.imagen = imagenPortadaPath;
+                if(imagenDetallePath) postData.imagenDetalle = imagenDetallePath;
+                
+                postData.descripcion = document.getElementById('descripcion').value;
+                postData.contenido = cleanedContenido;
+                postData.tipo = document.getElementById('tipo').value;
+
+                // 3. Modificar JSON
                 const dataDirHandle = await getDirHandleDeep(projectDirHandle, ['assets', 'data']);
-                const jsonFileHandle = await dataDirHandle.getFileHandle('blog.json', { create: true });
+                const jsonFileHandle = await dataDirHandle.getFileHandle('eventos.json', { create: true });
                 const fileObj = await jsonFileHandle.getFile();
                 const jsonText = await fileObj.text();
                 
-                let blogDB = { posts: [] };
+                let eventsDB = { eventos: [] };
                 try {
-                    if (jsonText.trim() !== '') { blogDB = JSON.parse(jsonText); }
+                    if (jsonText.trim() !== '') { eventsDB = JSON.parse(jsonText); }
                 } catch(e) {}
 
-                blogDB.posts.unshift(postData);
+                eventsDB.eventos.unshift(postData);
 
                 const writableJson = await jsonFileHandle.createWritable();
-                await writableJson.write(JSON.stringify(blogDB, null, 4));
+                await writableJson.write(JSON.stringify(eventsDB, null, 4));
                 await writableJson.close();
 
-                alert("✅ ¡ÉXITO!\nLa noticia se ha guardado Automáticamente enviada a tus carpetas locales.");
+                alert("¡El evento se ha guardado correctamente!");
                 
-                document.getElementById('newsForm').reset();
+                // Reiniciar
+                document.getElementById('eventsForm').reset();
                 inlineImagesToSave = [];
                 portadaFileToSave = null;
+                detalleFileToSave = null;
                 updatePreview();
 
             } catch (err) {
                 console.error(err);
-                
-                // FALLBACK DE SEGURIDAD ABSOLUTO SI Falla CHROME
-                alert("⚠️ Error automático: " + err.message + "\n\nTu navegador ha bloqueado la escritura automática por seguridad. Pasando al modo de Descarga Manual.");
-                
-                // Forzamos creación del post info
-                const slug = createSlug(document.getElementById('titulo').value);
-                const cleanedContenido = document.getElementById('contenido').value.replace(/assets\/img\/blog\/nueva-noticia\//g, `assets/img/blog/${slug}/`);
-                
-                const manualPost = {
-                    id: slug,
-                    titulo: document.getElementById('titulo').value,
-                    autor: document.getElementById('autor').value,
-                    fecha: document.getElementById('fecha').value,
-                    categoria: document.getElementById('categoria').value,
-                    imagen: portadaFileToSave ? `assets/img/blog/${slug}/${portadaFileToSave.name}` : "",
-                    extracto: document.getElementById('extracto').value,
-                    contenido: cleanedContenido
-                };
-
-                // Trigger descargas
-                if (portadaFileToSave) downloadManual(portadaFileToSave, portadaFileToSave.name);
-                for (let io of inlineImagesToSave) {
-                    downloadManual(io.file, io.file.name);
-                }
-
-                const jsonSnippet = JSON.stringify(manualPost, null, 4);
-                prompt("📥 Fallo la escritura. Las fotos se han descargado. Por favor, crea una carpeta 'assets/img/blog/" + slug + "/' y mete ahi las fotos.\n\nLuego, COPIA y PEGA este codigo arriba de tu blog.json:", jsonSnippet + ",");
-                
+                alert("Error al guardar: " + err.message + "\nRevise permisos o intente de nuevo.");
             } finally {
                 btn.innerHTML = `<i data-lucide="send"></i> Publicar y Guardar Todo`;
                 lucide.createIcons();
                 btn.disabled = false;
             }
         });
-
-        function downloadManual(blob, filename) {
-            const a = document.createElement('a');
-            a.href = URL.createObjectURL(blob);
-            a.download = filename;
-            a.click();
-            URL.revokeObjectURL(a.href);
-        }
     </script>
 </body>
 </html>
