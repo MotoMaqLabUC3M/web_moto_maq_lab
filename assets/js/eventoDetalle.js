@@ -12,7 +12,7 @@
         default: 'Evento'
     };
 
-    const LIST_ICONS = ['🔬', '💡', '🛠️', '📐', '⚙️', '🏭', '📊', '🎯', '🔧', '🧪'];
+    const LIST_ICONS = ['microscope', 'lightbulb', 'hammer', 'ruler', 'settings', 'factory', 'bar-chart', 'target', 'wrench', 'flask-conical'];
 
     async function init() {
         const container = document.getElementById('evento-detalle');
@@ -64,7 +64,7 @@
             if (sec.type === 'features') {
                 const cards = sec.items.map((f, i) => `
                     <div class="sp-feature-card">
-                        <span class="sp-feature-icon">${LIST_ICONS[i % LIST_ICONS.length]}</span>
+                        <span class="sp-feature-icon"><i data-lucide="${LIST_ICONS[i % LIST_ICONS.length]}"></i></span>
                         <p>${f}</p>
                     </div>
                 `).join('');
@@ -98,15 +98,15 @@
             <!-- INFO BAR -->
             <section class="ev-info-bar">
                 <div class="ev-info-card">
-                    <span class="ev-info-icon">📅</span>
+                    <span class="ev-info-icon"><i data-lucide="calendar"></i></span>
                     <div><span class="ev-info-label">Fecha</span><span class="ev-info-value">${fechaStr}</span></div>
                 </div>
                 <div class="ev-info-card">
-                    <span class="ev-info-icon">📍</span>
+                    <span class="ev-info-icon"><i data-lucide="map-pin"></i></span>
                     <div><span class="ev-info-label">Lugar</span><span class="ev-info-value">${evento.lugar}</span></div>
                 </div>
                 <div class="ev-info-card">
-                    <span class="ev-info-icon">📋</span>
+                    <span class="ev-info-icon"><i data-lucide="clipboard-list"></i></span>
                     <div><span class="ev-info-label">Tipo</span><span class="ev-info-value">${tipoLabel}</span></div>
                 </div>
             </section>
@@ -123,6 +123,8 @@
                 <a href="eventos.html" class="btn btn--primary">← Ver todos los eventos</a>
             </section>
         `;
+        // Inicializar iconos
+        if (window.lucide) { lucide.createIcons(); }
     }
 
     /**
@@ -174,12 +176,13 @@
     function renderError(container) {
         container.innerHTML = `
             <div class="sp-error">
-                <span class="sp-error-icon">🔍</span>
+                <span class="sp-error-icon"><i data-lucide="search-x" style="width: 48px; height: 48px;"></i></span>
                 <h2>Evento no encontrado</h2>
                 <p>El evento que buscas no existe o ha sido eliminado.</p>
                 <a href="eventos.html" class="btn btn--primary">Ver eventos</a>
             </div>
         `;
+        if (window.lucide) { lucide.createIcons(); }
     }
 
     document.addEventListener('DOMContentLoaded', init);
