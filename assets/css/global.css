@@ -677,7 +677,7 @@ section.section-container:nth-of-type(even) {
     align-items: center;
     justify-content: center;
     width: 100%;
-    right: -30%;
+    height: 100%;
 }
 
 /* --- AUTHOR BOX --- */
