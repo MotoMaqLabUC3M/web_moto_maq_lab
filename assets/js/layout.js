@@ -42,6 +42,16 @@
             }
             if (footerEl) renderFooter(footerEl, data.footer, data.header);
 
+            // Inicializar o cargar iconos de Lucide dinámicamente si no existieran
+            if (window.lucide) {
+                lucide.createIcons();
+            } else if (!document.querySelector('script[src*="lucide"]')) {
+                const script = document.createElement('script');
+                script.src = 'https://unpkg.com/lucide@latest';
+                script.onload = () => lucide.createIcons();
+                document.head.appendChild(script);
+            }
+
             // Notify other scripts that layout is ready
             document.dispatchEvent(new Event('layoutReady'));
         } catch (err) {
@@ -117,6 +127,7 @@
             '<div class="footer-col">' +
             '<h4>' + f.contacto.title + '</h4>' +
             '<ul class="footer-links">' + contactoHTML + '</ul>' +
+            '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3041.516805096574!2d-3.769493624021703!3d40.330855075635395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4189ff70519a71%3A0xe5f2849ed8517bc5!2sUniversidad%20Carlos%20III%20de%20Madrid%20-%20Campus%20de%20Legan%C3%A9s!5e0!3m2!1sen!2ses!4v1711463124119!5m2!1sen!2ses" style="width: 100%; max-width: 300px; height: 160px; border:1px solid rgba(255,255,255,0.1); border-radius: 8px; margin-top: 15px; filter: invert(90%) hue-rotate(180deg) opacity(0.8);" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>' +
             '</div>' +
             '<div class="footer-col">' +
             '<h4>' + f.social.title + '</h4>' +
