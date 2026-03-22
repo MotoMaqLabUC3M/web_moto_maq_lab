@@ -6,7 +6,7 @@
     const JSON_PATH = 'assets/data/patrocinadores.json';
 
     const FEATURE_ICONS = [
-        '🔬', '💡', '🛠️', '📐', '⚙️', '🏭', '📊', '🎯', '🔧', '🧪'
+        'microscope', 'lightbulb', 'hammer', 'ruler', 'settings', 'factory', 'bar-chart-2', 'target', 'wrench', 'flask-conical'
     ];
 
     async function init() {
@@ -48,7 +48,9 @@
         if (features.length > 0) {
             const cards = features.map((f, i) => `
                 <div class="sp-feature-card">
-                    <span class="sp-feature-icon">${FEATURE_ICONS[i % FEATURE_ICONS.length]}</span>
+                    <span class="sp-feature-icon">
+                        <i data-lucide="${FEATURE_ICONS[i % FEATURE_ICONS.length]}"></i>
+                    </span>
                     <p>${f}</p>
                 </div>
             `).join('');
@@ -137,6 +139,10 @@
                 <a href="patrocinadores.html" class="btn btn--primary">← Ver todos los patrocinadores</a>
             </section>
         `;
+
+        if (window.lucide) {
+            lucide.createIcons();
+        }
     }
 
     /**

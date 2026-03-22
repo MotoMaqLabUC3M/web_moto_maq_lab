@@ -257,12 +257,13 @@ section.section-container:nth-of-type(even) {
 
 .brand-col .logo {
     margin-bottom: 1rem;
-    filter: grayscale(100%);
+    opacity: 0.9;
+    color: var(--c-light);
     transition: 0.3s;
 }
 
 .brand-col:hover .logo {
-    filter: none;
+    opacity: 1;
 }
 
 .footer-desc {
@@ -1286,9 +1287,16 @@ section.section-container:nth-of-type(even) {
 }
 
 .sp-feature-icon {
-    font-size: 1.6rem;
+    color: var(--c-red);
     flex-shrink: 0;
-    margin-top: .1rem;
+    display: flex;
+    align-items: flex-start;
+    margin-top: -2px;
+}
+
+.sp-feature-icon svg {
+    width: 26px;
+    height: 26px;
 }
 
 .sp-feature-card p {
