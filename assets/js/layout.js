@@ -148,7 +148,7 @@ window.sanitize = function(str) {
             '</div>' +
             '</div>' +
             '<div class="footer-bottom">' +
-            '<p>' + f.copy + '</p>' +
+            '<p>' + f.copy.replace('2025', new Date().getFullYear()) + '</p>' +
             '</div>';
     }
 
