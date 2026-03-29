@@ -2,6 +2,9 @@
 <html lang="es">
     <head>
         <meta charset="UTF-8" />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://translate.google.com https://translate.googleapis.com https://unpkg.com; style-src 'self' 'unsafe-inline' https://translate.googleapis.com https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https: blob:; frame-src 'self' https:; connect-src 'self' https:;">
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" type="image/x-icon" href="https://motomaqlabuc3m.es/favicon.ico" />
         <link rel="icon" type="image/png" sizes="192x192" href="https://motomaqlabuc3m.es/assets/img/logos_uc3m/favicon-192.png" />
@@ -24,7 +27,7 @@
         <meta name="twitter:card" content="summary_large_image" />
 
         <link rel="stylesheet" href="assets/css/global.css" />
-        <script src="https://unpkg.com/lucide@latest"></script>
+        <script src="https://unpkg.com/lucide@1.7.0/dist/umd/lucide.min.js" integrity="sha384-CykfT8/c0napBs4OEPBYSNzMhNhJUvjNEulxWZVAK+p2D3vEfYGg9zyOd8bzqyNO" crossorigin="anonymous"></script>
 
         <!-- Datos estructurados Schema.org -->
         <script type="application/ld+json">
@@ -276,7 +279,7 @@
         <!-- Traductor de Google -->
         <div id="google_translate_element" class="d-none"></div>
         <script src="assets/js/translate.js"></script>
-        <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+        <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
         <script src="assets/js/statsCounter.js"></script>
         <script src="assets/js/scrollReveal.js"></script>
         <script>
