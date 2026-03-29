@@ -114,7 +114,7 @@
 
                 <div class="sp-hero-inner">
                     <div class="sp-hero-logo">
-                        <img src="${sponsor.logo}" alt="${sponsor.name}" />
+                        <img src="${sanitize(sponsor.logo)}" alt="${sponsor.name}" />
                     </div>
                     <div class="sp-hero-text">
                         <span class="badge">${tierName}</span>

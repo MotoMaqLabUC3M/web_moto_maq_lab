@@ -56,9 +56,9 @@ function createMemberHTML(member) {
 
     return `
         <div class="team-member-card">
-            <img src="${member.image}" alt="${member.name}"${placeholderClass} loading="lazy" decoding="async" width="250" height="350" />
-            <h3>${member.name}</h3>
-            <p>${member.role}</p>
+            <img src="${sanitize(member.image)}" alt="${sanitize(member.name)}"${placeholderClass} loading="lazy" decoding="async" width="250" height="350" />
+            <h3>${sanitize(member.name)}</h3>
+            <p>${sanitize(member.role)}</p>
         </div>
     `;
 }
