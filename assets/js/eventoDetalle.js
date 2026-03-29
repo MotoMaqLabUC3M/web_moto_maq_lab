@@ -30,7 +30,7 @@
 
             if (!evento) { renderError(container); return; }
 
-            document.title = `${evento.titulo} | MotoMaqLab UC3M`;
+            document.title = `${sanitize(evento.titulo)} | MotoMaqLab UC3M`;
             render(container, evento);
         } catch (err) {
             console.error('Error cargando evento:', err);
@@ -90,8 +90,8 @@
                 <div class="ev-hero-content">
                     <a href="eventos.html" class="sp-back">← Eventos</a>
                     <span class="badge">${tipoLabel}</span>
-                    <h1>${evento.titulo}</h1>
-                    <p class="ev-hero-desc">${evento.descripcion}</p>
+                    <h1>${sanitize(evento.titulo)}</h1>
+                    <p class="ev-hero-desc">${sanitize(evento.descripcion)}</p>
                 </div>
             </section>
 
@@ -103,7 +103,7 @@
                 </div>
                 <div class="ev-info-card">
                     <span class="ev-info-icon"><i data-lucide="map-pin"></i></span>
-                    <div><span class="ev-info-label">Lugar</span><span class="ev-info-value">${evento.lugar}</span></div>
+                    <div><span class="ev-info-label">Lugar</span><span class="ev-info-value">${sanitize(evento.lugar)}</span></div>
                 </div>
                 <div class="ev-info-card">
                     <span class="ev-info-icon"><i data-lucide="clipboard-list"></i></span>

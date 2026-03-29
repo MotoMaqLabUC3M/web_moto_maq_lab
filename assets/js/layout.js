@@ -1,3 +1,14 @@
+
+// 🔒 Global HTML Sanitizer to prevent XSS
+window.sanitize = function(str) {
+    if (typeof str === 'number') return str.toString();
+    if (!str || typeof str !== 'string') return str || '';
+    return str.replace(/[&<>'"]/g, function(tag) {
+        const chars = { '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' };
+        return chars[tag] || tag;
+    });
+};
+
 /**
  * layout.js
  * Carga header y footer desde layout.json para evitar duplicar HTML.

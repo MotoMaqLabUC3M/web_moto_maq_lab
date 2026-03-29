@@ -1,4 +1,4 @@
-{
+﻿{
     "eventos": [
         {
             "id": "presentacion-ms8",
@@ -40,7 +40,7 @@
             "fecha": "2027-07-01",
             "lugar": "MotorLand Aragón, Alcañiz",
             "imagen": "assets/img/eventos/moto_student_header.webp",
-            "imagenDetalle": "assets/img/eventos/motostudent_2.cr2",
+            "imagenDetalle": "assets/img/eventos/motostudent_2.jpg",
             "descripcion": "Participación en la competición internacional MotoStudent en el circuito de MotorLand Aragón.",
             "contenido": "El gran momento: la moto de MotoMaqLab UC3M competirá en el circuito de MotorLand Aragón contra equipos universitarios de toda Europa.\n\n## La Competición\nMotoStudent incluye fases estáticas (presentación del proyecto, análisis de costes, diseño) y fases dinámicas (pruebas en pista y carrera). Nuestro objetivo: demostrar que la ingeniería de la UC3M está al más alto nivel.\n\n## Objetivos\nCompetir en la categoría Petrol, lograr completar todas las pruebas dinámicas y aspirar a los premios de innovación y diseño, donde históricamente hemos destacado.",
             "tipo": "competicion"

@@ -66,7 +66,7 @@ function createSponsorCardHTML(sponsor, tier) {
         cardContent = `
             <div class="${cardClass}${clickableClass}">
                 <div class="sponsor-logo-wrapper ${tier.logoSize}">
-                    <img src="${sponsor.logo}" alt="${sponsor.name}" />
+                    <img src="${sanitize(sponsor.logo)}" alt="${sponsor.name}" />
                 </div>
                 <div class="card-content">
                     <${headingTag}>${sponsor.name}</${headingTag}>
@@ -78,7 +78,7 @@ function createSponsorCardHTML(sponsor, tier) {
         cardContent = `
             <div class="${cardClass}${clickableClass}">
                 <div class="sponsor-logo-wrapper ${tier.logoSize}">
-                    <img src="${sponsor.logo}" alt="${sponsor.name}" />
+                    <img src="${sanitize(sponsor.logo)}" alt="${sponsor.name}" />
                 </div>
                 <${headingTag}>${sponsor.name}</${headingTag}>
                 <p>${sponsor.description}</p>
@@ -88,7 +88,7 @@ function createSponsorCardHTML(sponsor, tier) {
         cardContent = `
             <div class="${cardClass}${clickableClass}">
                 <div class="sponsor-logo-wrapper ${tier.logoSize}">
-                    <img src="${sponsor.logo}" alt="${sponsor.name}" />
+                    <img src="${sanitize(sponsor.logo)}" alt="${sponsor.name}" />
                 </div>
                 <${headingTag}>${sponsor.name}</${headingTag}>
                 <p>${sponsor.description}</p>
