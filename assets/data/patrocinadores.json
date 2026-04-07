@@ -157,6 +157,13 @@
                     "website": ""
                 },
                 {
+                    "id": "Würth Elektronik",
+                    "name": "Würth Elektronik",
+                    "logo": "assets/img/patrocinios/wurth.jpeg",
+                    "description": "Würth Elektronik proporciona componentes electrónicos para nuestra moto.",
+                    "website": ""
+                },
+                {
                     "id": "ng",
                     "name": "NG",
                     "logo": "assets/img/patrocinios/NG.png",
