@@ -69,8 +69,8 @@ function createSponsorCardHTML(sponsor, tier) {
                     <img src="${sanitize(sponsor.logo)}" alt="${sponsor.name}" />
                 </div>
                 <div class="card-content">
-                    <${headingTag}>${sponsor.name}</${headingTag}>
-                    <p>${sponsor.description}</p>
+                    <${headingTag}>${sanitize(sponsor.name)}</${headingTag}>
+                    <p>${sanitize(sponsor.description)}</p>
                 </div>
             </div>
         `;
@@ -78,20 +78,20 @@ function createSponsorCardHTML(sponsor, tier) {
         cardContent = `
             <div class="${cardClass}${clickableClass}">
                 <div class="sponsor-logo-wrapper ${tier.logoSize}">
-                    <img src="${sanitize(sponsor.logo)}" alt="${sponsor.name}" />
+                    <img src="${sanitize(sponsor.logo)}" alt="${sanitize(sponsor.name)}" />
                 </div>
-                <${headingTag}>${sponsor.name}</${headingTag}>
-                <p>${sponsor.description}</p>
+                <${headingTag}>${sanitize(sponsor.name)}</${headingTag}>
+                <p>${sanitize(sponsor.description)}</p>
             </div>
         `;
     } else {
         cardContent = `
             <div class="${cardClass}${clickableClass}">
                 <div class="sponsor-logo-wrapper ${tier.logoSize}">
-                    <img src="${sanitize(sponsor.logo)}" alt="${sponsor.name}" />
+                    <img src="${sanitize(sponsor.logo)}" alt="${sanitize(sponsor.name)}" />
                 </div>
-                <${headingTag}>${sponsor.name}</${headingTag}>
-                <p>${sponsor.description}</p>
+                <${headingTag}>${sanitize(sponsor.name)}</${headingTag}>
+                <p>${sanitize(sponsor.description)}</p>
             </div>
         `;
     }
