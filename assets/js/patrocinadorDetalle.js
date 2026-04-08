@@ -3,6 +3,17 @@
  * Renderiza página de detalle de patrocinador con diseño tipo showcase.
  */
 (function () {
+    function sanitize(str) {
+        if (!str) return '';
+        return String(str)
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#039;');
+    }
+
+
     const JSON_PATH = 'assets/data/patrocinadores.json';
 
     const FEATURE_ICONS = [

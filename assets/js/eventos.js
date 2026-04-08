@@ -5,6 +5,17 @@
  * Cada tarjeta enlaza a evento.html?id=xxx
  */
 (function () {
+    function sanitize(str) {
+        if (!str) return '';
+        return String(str)
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#039;');
+    }
+
+
     const JSON_PATH = 'assets/data/eventos.json';
 
     async function init() {

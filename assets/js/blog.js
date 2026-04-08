@@ -7,6 +7,16 @@
 (function () {
     const JSON_PATH = 'assets/data/blog.json';
 
+    function sanitize(str) {
+        if (!str) return '';
+        return String(str)
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#039;');
+    }
+
     async function init() {
         const blogContainer = document.getElementById('blog-container');
         const indexContainer = document.getElementById('blog-index-container');
