@@ -3,6 +3,17 @@
  * Renderiza página de detalle de evento con diseño showcase.
  */
 (function () {
+    function sanitize(str) {
+        if (!str) return '';
+        return String(str)
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#039;');
+    }
+
+
     const JSON_PATH = 'assets/data/eventos.json';
 
     const TIPO_LABELS = {

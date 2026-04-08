@@ -1,3 +1,14 @@
+    function sanitize(str) {
+        if (!str) return '';
+        return String(str)
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#039;');
+    }
+
+
 /**
  * patrocinadores.js - Renders sponsor sections from JSON data
  * Links sponsors with dedicatedPage to their detail pages.
