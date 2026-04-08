@@ -114,12 +114,12 @@
 
                 <div class="sp-hero-inner">
                     <div class="sp-hero-logo">
-                        <img src="${sanitize(sponsor.logo)}" alt="${sponsor.name}" />
+                        <img src="${sanitize(sponsor.logo)}" alt="${sanitize(sponsor.name)}" />
                     </div>
                     <div class="sp-hero-text">
-                        <span class="badge">${tierName}</span>
-                        <h1>${sponsor.name}</h1>
-                        <p>${intro || sponsor.description}</p>
+                        <span class="badge">${sanitize(tierName)}</span>
+                        <h1>${sanitize(sponsor.name)}</h1>
+                        <p>${sanitize(intro) || sanitize(sponsor.description)}</p>
                         ${websiteBtn}
                     </div>
                 </div>
