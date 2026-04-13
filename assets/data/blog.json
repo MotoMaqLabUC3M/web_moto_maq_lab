@@ -1,16 +1,6 @@
 {
     "posts": [
         {
-            "id": "paco",
-            "titulo": "Paco",
-            "autor": "David Otero",
-            "fecha": "2026-03-19",
-            "categoria": "Paquismo",
-            "imagen": "assets/img/blog/paco/6847344a8ff02.webp",
-            "extracto": "Paco ha creado su circuito y correra en el paco gp",
-            "contenido": "Paco\n[img:assets/img/blog/paco/1410432219_f_rmula_e_editado_1.webp|paco]\n\n"
-        },
-        {
             "id": "motostudent-arranca-viii-edicion",
             "titulo": "MotoStudent arranca sus motores hacia la VIII Edición que tendrá lugar en 2025",
             "autor": "Miguel Lozano",

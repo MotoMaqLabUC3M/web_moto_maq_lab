@@ -3,10 +3,21 @@
  * Renderiza página de detalle de patrocinador con diseño tipo showcase.
  */
 (function () {
+    function sanitize(str) {
+        if (!str) return '';
+        return String(str)
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#039;');
+    }
+
+
     const JSON_PATH = 'assets/data/patrocinadores.json';
 
     const FEATURE_ICONS = [
-        '🔬', '💡', '🛠️', '📐', '⚙️', '🏭', '📊', '🎯', '🔧', '🧪'
+        'microscope', 'lightbulb', 'hammer', 'ruler', 'settings', 'factory', 'bar-chart-2', 'target', 'wrench', 'flask-conical'
     ];
 
     async function init() {
@@ -48,7 +59,9 @@
         if (features.length > 0) {
             const cards = features.map((f, i) => `
                 <div class="sp-feature-card">
-                    <span class="sp-feature-icon">${FEATURE_ICONS[i % FEATURE_ICONS.length]}</span>
+                    <span class="sp-feature-icon">
+                        <i data-lucide="${FEATURE_ICONS[i % FEATURE_ICONS.length]}"></i>
+                    </span>
                     <p>${f}</p>
                 </div>
             `).join('');
@@ -102,7 +115,7 @@
 
         // Website link
         const websiteBtn = sponsor.website
-            ? `<a href="${sponsor.website}" target="_blank" rel="noopener noreferrer" class="btn btn--outline sp-web-btn">🌐 Visitar web</a>`
+            ? `<a href="${sponsor.website}" target="_blank" rel="noopener noreferrer" class="btn btn--outline sp-web-btn"><i data-lucide="globe"></i> Visitar web</a>`
             : '';
 
         container.innerHTML = `
@@ -112,12 +125,12 @@
 
                 <div class="sp-hero-inner">
                     <div class="sp-hero-logo">
-                        <img src="${sponsor.logo}" alt="${sponsor.name}" />
+                        <img src="${sanitize(sponsor.logo)}" alt="${sanitize(sponsor.name)}" />
                     </div>
                     <div class="sp-hero-text">
-                        <span class="badge">${tierName}</span>
-                        <h1>${sponsor.name}</h1>
-                        <p>${intro || sponsor.description}</p>
+                        <span class="badge">${sanitize(tierName)}</span>
+                        <h1>${sanitize(sponsor.name)}</h1>
+                        <p>${sanitize(intro) || sanitize(sponsor.description)}</p>
                         ${websiteBtn}
                     </div>
                 </div>
@@ -137,6 +150,10 @@
                 <a href="patrocinadores.html" class="btn btn--primary">← Ver todos los patrocinadores</a>
             </section>
         `;
+
+        if (window.lucide) {
+            lucide.createIcons();
+        }
     }
 
     /**
@@ -196,12 +213,14 @@
     function renderError(container) {
         container.innerHTML = `
             <div class="sp-error">
-                <span class="sp-error-icon">🔍</span>
+                <span class="sp-error-icon"><i data-lucide="search-x" style="width: 48px; height: 48px;"></i></span>
                 <h2>Patrocinador no encontrado</h2>
                 <p>El patrocinador que buscas no existe o ha sido eliminado.</p>
                 <a href="patrocinadores.html" class="btn btn--primary">Ver patrocinadores</a>
             </div>
         `;
+
+        if (window.lucide) { lucide.createIcons(); }
     }
 
     document.addEventListener('DOMContentLoaded', init);

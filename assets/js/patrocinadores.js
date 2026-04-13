@@ -1,3 +1,14 @@
+    function sanitize(str) {
+        if (!str) return '';
+        return String(str)
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#039;');
+    }
+
+
 /**
  * patrocinadores.js - Renders sponsor sections from JSON data
  * Links sponsors with dedicatedPage to their detail pages.
@@ -66,11 +77,11 @@ function createSponsorCardHTML(sponsor, tier) {
         cardContent = `
             <div class="${cardClass}${clickableClass}">
                 <div class="sponsor-logo-wrapper ${tier.logoSize}">
-                    <img src="${sponsor.logo}" alt="${sponsor.name}" />
+                    <img src="${sanitize(sponsor.logo)}" alt="${sponsor.name}" />
                 </div>
                 <div class="card-content">
-                    <${headingTag}>${sponsor.name}</${headingTag}>
-                    <p>${sponsor.description}</p>
+                    <${headingTag}>${sanitize(sponsor.name)}</${headingTag}>
+                    <p>${sanitize(sponsor.description)}</p>
                 </div>
             </div>
         `;
@@ -78,20 +89,20 @@ function createSponsorCardHTML(sponsor, tier) {
         cardContent = `
             <div class="${cardClass}${clickableClass}">
                 <div class="sponsor-logo-wrapper ${tier.logoSize}">
-                    <img src="${sponsor.logo}" alt="${sponsor.name}" />
+                    <img src="${sanitize(sponsor.logo)}" alt="${sanitize(sponsor.name)}" />
                 </div>
-                <${headingTag}>${sponsor.name}</${headingTag}>
-                <p>${sponsor.description}</p>
+                <${headingTag}>${sanitize(sponsor.name)}</${headingTag}>
+                <p>${sanitize(sponsor.description)}</p>
             </div>
         `;
     } else {
         cardContent = `
             <div class="${cardClass}${clickableClass}">
                 <div class="sponsor-logo-wrapper ${tier.logoSize}">
-                    <img src="${sponsor.logo}" alt="${sponsor.name}" />
+                    <img src="${sanitize(sponsor.logo)}" alt="${sanitize(sponsor.name)}" />
                 </div>
-                <${headingTag}>${sponsor.name}</${headingTag}>
-                <p>${sponsor.description}</p>
+                <${headingTag}>${sanitize(sponsor.name)}</${headingTag}>
+                <p>${sanitize(sponsor.description)}</p>
             </div>
         `;
     }
