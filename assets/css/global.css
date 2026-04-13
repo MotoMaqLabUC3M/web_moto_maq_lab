@@ -30,6 +30,10 @@ a {
     color: inherit;
 }
 
+.d-none {
+    display: none !important;
+}
+
 /* =========================================
     2. COMPONENTES UI REUTILIZABLES
    ========================================= */
