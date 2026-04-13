@@ -46,7 +46,7 @@ window.sanitize = function(str) {
                         headerEl.classList.remove('header-scrolled');
                     }
                 });
-                // Check initial state in case page is loaded halfway scrolled
+                // Check initial state
                 if (window.scrollY > 50) {
                     headerEl.classList.add('header-scrolled');
                 }
