@@ -1,7 +1,18 @@
+
+// 🔒 Global HTML Sanitizer to prevent XSS
+window.sanitize = function(str) {
+    if (typeof str === 'number') return str.toString();
+    if (!str || typeof str !== 'string') return str || '';
+    return str.replace(/[&<>'"]/g, function(tag) {
+        const chars = { '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' };
+        return chars[tag] || tag;
+    });
+};
+
 /**
  * layout.js
  * Carga header y footer desde layout.json para evitar duplicar HTML.
- * Se ejecuta ANTES que cualquier otro script de página.
+ * Se ejecuta ANTES que cualquier otro script de pÃ¡gina.
  *
  * Uso: en cada HTML poner:
  *   <header id="main-header"></header>
@@ -42,6 +53,18 @@
             }
             if (footerEl) renderFooter(footerEl, data.footer, data.header);
 
+            // Inicializar o cargar iconos de Lucide dinÃ¡micamente si no existieran
+            if (window.lucide) {
+                lucide.createIcons();
+            } else if (!document.querySelector('script[src*="lucide"]')) {
+                const script = document.createElement('script');
+                script.src = 'https://unpkg.com/lucide@1.7.0/dist/umd/lucide.min.js';
+                script.integrity = 'sha384-CykfT8/c0napBs4OEPBYSNzMhNhJUvjNEulxWZVAK+p2D3vEfYGg9zyOd8bzqyNO';
+                script.crossOrigin = 'anonymous';
+                script.onload = () => lucide.createIcons();
+                document.head.appendChild(script);
+            }
+
             // Notify other scripts that layout is ready
             document.dispatchEvent(new Event('layoutReady'));
         } catch (err) {
@@ -68,7 +91,7 @@
             '</div>' +
             h.logo.text + ' <span>' + h.logo.highlight + '</span>' +
             '</a>' +
-            '<button class="hamburger" aria-label="Menú">' +
+            '<button class="hamburger" aria-label="MenÃº">' +
             '<span></span><span></span><span></span>' +
             '</button>' +
             '<div class="enlaces-header mobile-menu">' +
@@ -117,6 +140,7 @@
             '<div class="footer-col">' +
             '<h4>' + f.contacto.title + '</h4>' +
             '<ul class="footer-links">' + contactoHTML + '</ul>' +
+            '<iframe class="footer-map" src="https://maps.google.com/maps?q=Universidad+Carlos+III+de+Madrid+Campus+de+LeganÃ©s&t=&z=15&ie=UTF8&iwloc=&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>' +
             '</div>' +
             '<div class="footer-col">' +
             '<h4>' + f.social.title + '</h4>' +
@@ -124,7 +148,7 @@
             '</div>' +
             '</div>' +
             '<div class="footer-bottom">' +
-            '<p>' + f.copy + '</p>' +
+            '<p>' + f.copy.replace('2025', new Date().getFullYear()) + '</p>' +
             '</div>';
     }
 
@@ -135,3 +159,4 @@
         init();
     }
 })();
+

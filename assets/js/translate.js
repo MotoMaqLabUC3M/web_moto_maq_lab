@@ -9,8 +9,8 @@
             var targetLang = userLang.split('-')[0]; // Ejemplo: 'en', 'fr', 'de'
 
             // Establecemos la cookie para que Google Translate traduzca automáticamente al cargar
-            document.cookie = "googtrans=/es/" + targetLang + "; path=/";
-            document.cookie = "googtrans=/es/" + targetLang + "; domain=." + document.domain + "; path=/";
+            document.cookie = "googtrans=/es/" + targetLang + "; path=/; Secure; SameSite=Lax";
+            document.cookie = "googtrans=/es/" + targetLang + "; domain=." + document.domain + "; path=/; Secure; SameSite=Lax";
         }
     } catch (e) {
         console.error("Error al configurar la traducción automática:", e);
