@@ -56,9 +56,12 @@
 
         // Feature cards
         let featuresHTML = '';
+        let galleryImages = (sponsor.galeria || []).slice(); // Copy
+
         if (features.length > 0) {
-            const cards = features.map((f, i) => `
-                <div class="sp-feature-card">
+            const heroFeatureBg = galleryImages.length > 0 ? galleryImages.shift() : '';
+            const cardsHTML = features.map((f, i) => `
+                <div class="sp-feature-card ${heroFeatureBg && i === 0 ? 'sp-feature-card--hero-image' : ''}" ${heroFeatureBg && i === 0 ? `style="background-image: linear-gradient(rgba(8, 8, 10, 0.45), rgba(8, 8, 10, 0.75)), url('${heroFeatureBg}');"` : ''}>
                     <span class="sp-feature-icon">
                         <i data-lucide="${FEATURE_ICONS[i % FEATURE_ICONS.length]}"></i>
                     </span>
@@ -72,7 +75,7 @@
                         <div class="sp-label-line"></div>
                         <h2>${featureTitle || 'Qué nos aportan'}</h2>
                     </div>
-                    <div class="sp-features-grid">${cards}</div>
+                    <div class="sp-features-grid">${cardsHTML}</div>
                 </section>
             `;
         }
@@ -95,15 +98,15 @@
 
         // Gallery
         let galeriaHTML = '';
-        if (sponsor.galeria && sponsor.galeria.length > 0) {
+        if (galleryImages.length > 0) {
             galeriaHTML = `
                 <section class="sp-gallery-section">
                     <div class="sp-section-label">
                         <div class="sp-label-line"></div>
-                        <h2>En acción</h2>
+                        <h2>Galería</h2>
                     </div>
                     <div class="sp-gallery-grid">
-                        ${sponsor.galeria.map((img, i) => `
+                        ${galleryImages.map((img, i) => `
                             <div class="sp-gallery-item ${i === 0 ? 'sp-gallery-item--hero' : ''}">
                                 <img src="${img}" alt="${sponsor.name}" loading="lazy" />
                             </div>
@@ -153,6 +156,68 @@
 
         if (window.lucide) {
             lucide.createIcons();
+        }
+
+        initGalleryLightbox();
+    }
+
+    function initGalleryLightbox() {
+        const gallery = document.querySelector('.sp-gallery-grid');
+        if (!gallery) return;
+
+        let lightbox = document.getElementById('sp-gallery-lightbox');
+        if (!lightbox) {
+            lightbox = document.createElement('div');
+            lightbox.id = 'sp-gallery-lightbox';
+            lightbox.className = 'sp-lightbox';
+            lightbox.innerHTML = `
+                <button type="button" class="sp-lightbox-close" aria-label="Cerrar imagen">×</button>
+                <img class="sp-lightbox-image" alt="" />
+            `;
+            document.body.appendChild(lightbox);
+        }
+
+        const imgEl = lightbox.querySelector('.sp-lightbox-image');
+        const closeBtn = lightbox.querySelector('.sp-lightbox-close');
+
+        function closeLightbox() {
+            lightbox.classList.remove('is-open');
+            document.body.classList.remove('sp-lightbox-open');
+            imgEl.removeAttribute('src');
+            imgEl.alt = '';
+        }
+
+        function openLightbox(src, alt) {
+            if (!src) return;
+            imgEl.src = src;
+            imgEl.alt = alt || 'Imagen de galeria';
+            lightbox.classList.add('is-open');
+            document.body.classList.add('sp-lightbox-open');
+        }
+
+        if (!gallery.dataset.lightboxBound) {
+            gallery.addEventListener('click', (event) => {
+                const target = event.target;
+                if (!(target instanceof HTMLImageElement)) return;
+                openLightbox(target.currentSrc || target.src, target.alt);
+            });
+            gallery.dataset.lightboxBound = 'true';
+        }
+
+        if (!lightbox.dataset.lightboxBound) {
+            lightbox.addEventListener('click', (event) => {
+                if (event.target === lightbox) closeLightbox();
+            });
+
+            closeBtn.addEventListener('click', closeLightbox);
+
+            document.addEventListener('keydown', (event) => {
+                if (event.key === 'Escape' && lightbox.classList.contains('is-open')) {
+                    closeLightbox();
+                }
+            });
+
+            lightbox.dataset.lightboxBound = 'true';
         }
     }
 

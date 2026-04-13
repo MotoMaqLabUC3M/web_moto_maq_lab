@@ -35,9 +35,10 @@ if __name__ == "__main__":
     
     for path in sys.argv[1:]:
         if os.path.isdir(path):
-            for filename in os.listdir(path):
-                ext = os.path.splitext(filename)[1].lower()
-                if ext in ['.png', '.jpg', '.jpeg', '.heic', '.webp']:
-                    convert_to_webp(os.path.join(path, filename))
+            for root, dirs, files in os.walk(path):
+                for filename in files:
+                    ext = os.path.splitext(filename)[1].lower()
+                    if ext in ['.png', '.jpg', '.jpeg', '.heic', '.webp']:
+                        convert_to_webp(os.path.join(root, filename))
         else:
             convert_to_webp(path)

@@ -2,7 +2,7 @@
     "header": {
         "logo": {
             "href": "index.html",
-            "img": "assets/img/logos_uc3m/uc3m_logo.png",
+            "img": "assets/img/logos_uc3m/uc3m_logo.webp",
             "alt": "MotoMaqLab UC3M Logo",
             "text": "MOTOMAQLAB",
             "highlight": "UC3M"
@@ -92,27 +92,27 @@
                 {
                     "label": "Instagram",
                     "href": "https://www.instagram.com/motomaqlabuc3m/?hl=en",
-                    "img": "assets/img/social/instagram.png"
+                    "img": "assets/img/social/instagram.webp"
                 },
                 {
                     "label": "TikTok",
                     "href": "https://www.tiktok.com/@motomaqlabuc3m",
-                    "img": "assets/img/social/tik-tok.png"
+                    "img": "assets/img/social/tik-tok.webp"
                 },
                 {
                     "label": "X",
                     "href": "https://x.com/MOTOMAQLABUC3M",
-                    "img": "assets/img/social/x.png"
+                    "img": "assets/img/social/x.webp"
                 },
                 {
                     "label": "YouTube",
                     "href": "https://www.youtube.com/@MotoMaqlab-UC3M",
-                    "img": "assets/img/social/youtube.png"
+                    "img": "assets/img/social/youtube.webp"
                 },
                 {
                     "label": "LinkedIn",
                     "href": "https://www.linkedin.com/company/moto-maqlab-uc3m/",
-                    "img": "assets/img/social/linkedin.png"
+                    "img": "assets/img/social/linkedin.webp"
                 }
             ]
         },
