@@ -3,28 +3,27 @@
 
 <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <meta name="referrer" content="strict-origin-when-cross-origin">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://translate.google.com https://translate.googleapis.com https://translate-pa.googleapis.com https://unpkg.com; style-src 'self' 'unsafe-inline' https://translate.googleapis.com https://fonts.googleapis.com https://www.gstatic.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https: blob:; frame-src 'self' https:; connect-src 'self' https:;">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/x-icon" href="https://motomaqlabuc3m.es/favicon.ico">
+    <link rel="icon" type="image/png" sizes="48x48"
+        href="https://motomaqlabuc3m.es/assets/img/logos_uc3m/favicon-48.png">
     <link rel="icon" type="image/png" sizes="192x192"
-        href="https://motomaqlabuc3m.es/assets/img/logos_uc3m/favicon-192.webp">
+        href="https://motomaqlabuc3m.es/assets/img/logos_uc3m/favicon-192.png">
     <link rel="icon" type="image/png" sizes="512x512"
-        href="https://motomaqlabuc3m.es/assets/img/logos_uc3m/favicon-512.webp">
-    <link rel="apple-touch-icon" sizes="192x192" href="https://motomaqlabuc3m.es/assets/img/logos_uc3m/favicon-192.webp">
+        href="https://motomaqlabuc3m.es/assets/img/logos_uc3m/favicon-512.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="https://motomaqlabuc3m.es/assets/img/logos_uc3m/favicon-192.png">
     <link rel="manifest" href="https://motomaqlabuc3m.es/site.webmanifest">
-    <title>Nuestros Patrocinadores - MotoStudent Madrid | MotoMaqLab UC3M</title>
+    <title>Patrocinadores | MotoMaqLab UC3M — Colaboradores de MotoStudent</title>
     <meta name="description"
-        content="🤝 Patrocinadores del equipo MotoStudent de la UC3M. Empresas que apoyan la competición MotoStudent España y a nuestro equipo.">
+        content="Patrocinadores del equipo de moto de la UC3M. Empresas e instituciones que apoyan a MotoMaqLab en la competición MotoStudent de la Universidad Carlos III de Madrid.">
     <meta name="keywords"
-        content="patrocinadores MotoStudent UC3M, sponsors MotoStudent Madrid, patrocinadores MotoMaqLab, MotoStudent España sponsors, colaboradores equipo moto UC3M">
+        content="patrocinadores moto UC3M, sponsors MotoMaqLab, MotoStudent UC3M patrocinadores, colaboradores UC3M">
     <link rel="canonical" href="https://motomaqlabuc3m.es/patrocinadores.html">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Patrocinadores del equipo MotoStudent UC3M — Sponsors">
+    <meta property="og:title" content="Patrocinadores del equipo de moto UC3M | MotoMaqLab">
     <meta property="og:description"
-        content="🤝 Las empresas e instituciones que hacen posible nuestro proyecto MotoStudent en Madrid. ¡Conócelos!">
+        content="Empresas e instituciones que hacen posible el proyecto MotoStudent del equipo de moto de la UC3M.">
     <meta property="og:image" content="https://motomaqlabuc3m.es/assets/img/hero/patrocinadores.webp">
     <meta property="og:url" content="https://motomaqlabuc3m.es/patrocinadores.html">
     <meta property="og:type" content="website">
@@ -55,20 +54,52 @@
         ]
     }
     </script>
-
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MMNY9WVPLY"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'G-MMNY9WVPLY');
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Patrocinadores — MotoMaqLab UC3M",
+        "description": "Empresas e instituciones que hacen posible el proyecto MotoStudent del equipo de moto de la UC3M.",
+        "url": "https://motomaqlabuc3m.es/patrocinadores.html",
+        "primaryImageOfPage": {
+            "@type": "ImageObject",
+            "url": "https://motomaqlabuc3m.es/assets/img/hero/patrocinadores.webp",
+            "caption": "Patrocinadores de MotoMaqLab UC3M - MotoStudent"
+        },
+        "isPartOf": {
+            "@type": "WebSite",
+            "name": "MotoMaqLab UC3M",
+            "url": "https://motomaqlabuc3m.es"
+        }
+    }
     </script>
 </head>
 
 <body>
-    <header id="main-header"></header>
+    <header class="main-header">
+        <a href="index.html" class="logo">
+            <div class="logo-wrapper">
+                <img src="assets/img/logos_uc3m/uc3m_logo.png" alt="MotoMaqLab UC3M Logo" />
+            </div>
+            MOTOMAQLAB <span>UC3M</span>
+        </a>
+
+        <button class="hamburger" aria-label="Menú">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <div class="enlaces-header mobile-menu">
+            <nav>
+                <a href="index.html">INICIO</a>
+                <a href="sobre-nosotros.html">SOBRE NOSOTROS</a>
+                <a href="equipo.html">EL EQUIPO </a>
+                <a href="patrocinadores.html">PATROCINADORES</a>
+                <a href="mailto:motomaqlabuc3m@uc3m.es" class="btn btn--primary">CONTACTO</a>
+            </nav>
+        </div>
+    </header>
     <main>
         <section class="patrocinadores-hero">
             <div class="patrocinadores-hero-content">
@@ -83,18 +114,73 @@
             <div id="sponsors-container"></div>
         </section>
     </main>
-    <footer id="main-footer"></footer>
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-col brand-col">
+                <a href="index.html" class="logo">
+                    <div class="logo-wrapper">
+                        <img src="assets/img/logos_uc3m/uc3m_logo.png" alt="MotoMaqLab UC3M Logo" />
+                    </div>
+                    MOTOMAQLAB <span>UC3M</span>
+                </a>
+                <p class="footer-desc">Ingeniería, pasión y velocidad. El equipo oficial de MotoStudent de la
+                    Universidad Carlos III de Madrid.</p>
+            </div>
 
-    <script src="assets/js/layout.js"></script>
+            <div class="footer-col">
+                <h4>EXPLORAR</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
+                    <li><a href="equipo.html">El Equipo</a></li>
+                    <li><a href="patrocinadores.html">Patrocinadores</a></li>
+                    <li><a href="mailto:motomaqlabuc3m@uc3m.es">Contacto</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>CONTACTO</h4>
+                <ul class="footer-links">
+                    <li>
+                        <a href="mailto:motomaqlabuc3m@uc3m.es"><span>📧</span>motomaqlabuc3m@uc3m.es</a>
+                    </li>
+                    <li>
+                        <a
+                            href="https://www.google.com/maps/place/data=!4m2!3m1!1s0xd41898b1cc06b5b:0xaf0cadd098b516f8?sa=X&ved=1t:8290&ictx=111"><span>📍</span>
+                            Universidad Carlos III de Madrid | Campus de Leganés</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>SÍGUENOS</h4>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/motomaqlabuc3m/?hl=en" target="_blank" aria-label="Instagram">
+                        <img src="assets/img/social/instagram.png" alt="Instagram" />
+                    </a>
+                    <a href="https://www.tiktok.com/@motomaqlabuc3m" target="_blank" aria-label="TikTok">
+                        <img src="assets/img/social/tik-tok.png" alt="TikTok" />
+                    </a>
+                    <a href="https://www.linkedin.com/company/moto-maqlab-uc3m/" target="_blank" aria-label="LinkedIn">
+                        <img src="assets/img/social/linkedin.png" alt="LinkedIn" />
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 MotoMaqLab UC3M. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
     <script src="assets/js/mobileMenu.js"></script>
     <script src="assets/js/patrocinadores.js"></script>
 
     <!-- Traductor de Google -->
-    <div id="google_translate_element" class="d-none"></div>
+    <div id="google_translate_element" style="display:none;"></div>
     <script src="assets/js/translate.js"></script>
     <script type="text/javascript"
-        src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-    <script src="assets/js/scrollReveal.js"></script>
+        src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 
 </html>
