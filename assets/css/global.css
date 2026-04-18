@@ -30,6 +30,10 @@ a {
     color: inherit;
 }
 
+.d-none {
+    display: none !important;
+}
+
 /* =========================================
     2. COMPONENTES UI REUTILIZABLES
    ========================================= */
@@ -76,17 +80,6 @@ a {
     margin-bottom: 1rem;
 }
 
-/* --- Utilidad Center Button --- */
-.center-btn {
-    text-align: center;
-    margin-top: 2rem;
-}
-
-/* --- Utilidad Display None --- */
-.d-none {
-    display: none !important;
-}
-
 /* --- Títulos de Sección (Global) --- */
 .section-title {
     margin-bottom: 3rem;
@@ -130,29 +123,26 @@ section.section-container:nth-of-type(even) {
 /* =========================================
     3. LAYOUT (HEADER & FOOTER)
    ========================================= */
-
 /* --- Header Principal --- */
 .main-header {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 10;
+    z-index: 1000;
     display: flex;
     align-items: center;
     padding: 1rem 5%;
     justify-content: space-between;
     background-color: transparent;
-    transition: background-color 0.3s ease;
     font-weight: 700;
     font-size: 0.8rem;
+    transition: background-color 0.3s ease;
 }
 
 .main-header.header-scrolled {
-    position: fixed;
-    background-color: rgba(15, 15, 16, 0.95);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+    background-color: var(--bg-darker);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 
 .enlaces-header {
@@ -791,23 +781,20 @@ section.section-container:nth-of-type(even) {
 
 /* --- Hero de Eventos --- */
 .eventos-hero {
-    background: linear-gradient(to right, rgba(22, 22, 24, 0.95) 0%, rgba(22, 22, 24, 0.8) 50%, transparent 100%),
-                linear-gradient(to bottom, transparent 0%, rgba(22, 22, 24, 1) 100%),
-                url("../img/hero/eventos.jpg");
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), var(--c-dark)), radial-gradient(circle at center, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.8) 100%), url("../img/hero/eventos.webp");
     background-size: cover;
-    background-position: center;
-    padding: 10rem 5% 4rem;
+    padding: 12rem 5% 4rem;
+    text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    min-height: 60vh;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    align-items: center;
+    gap: 3rem;
+    height: 100dvh;
+    background-position: center;
 }
 
 .eventos-hero-content {
-    max-width: 1200px;
-    width: 100%;
-    margin: 0 auto;
+    padding-top: 4rem;
 }
 
 .eventos-hero h1 {
@@ -1427,7 +1414,7 @@ section.section-container:nth-of-type(even) {
 .sp-feature-card:hover {
     border-color: rgba(242, 25, 43, 0.3);
     transform: translateY(-4px);
-    background: rgba(25, 25, 28, 0.9);
+    background-color: rgba(25, 25, 28, 0.9);
 }
 
 /* Bento Box Logic */
@@ -1522,6 +1509,17 @@ section.section-container:nth-of-type(even) {
 .sp-feature-card:nth-child(1) p {
     font-size: 1.25rem;
     line-height: 1.7;
+}
+
+.sp-feature-card--hero-image {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.sp-feature-card--hero-image p {
+    color: #fff;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.55);
 }
 
 
@@ -1726,9 +1724,10 @@ section.section-container:nth-of-type(even) {
 
 /* === GALLERY === */
 .sp-gallery-section {
-    max-width: 1000px;
+    max-width: 1100px;
     margin: 0 auto;
-    padding: 0 5% 3rem;
+    margin-top: 2rem;
+    padding: 0 5% 4rem;
 }
 
 .sp-gallery-grid {
@@ -1759,6 +1758,54 @@ section.section-container:nth-of-type(even) {
 
 .sp-gallery-item:hover img {
     transform: scale(1.05);
+}
+
+.sp-lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.86);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+    z-index: 2100;
+}
+
+.sp-lightbox.is-open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.sp-lightbox-image {
+    max-width: min(1200px, 92vw);
+    max-height: 85vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+}
+
+.sp-lightbox-close {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.5rem;
+    border: 0;
+    background: rgba(255, 255, 255, 0.14);
+    color: #fff;
+    width: 42px;
+    height: 42px;
+    border-radius: 999px;
+    font-size: 1.8rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.sp-lightbox-open {
+    overflow: hidden;
 }
 
 /* === SPONSOR CARD LINKS (patrocinadores.html) === */
@@ -1855,17 +1902,18 @@ section.section-container:nth-of-type(even) {
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), var(--c-dark)), radial-gradient(circle at center, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.8) 100%), url("../img/hero/sobre-nosotros.webp");
     background-size: cover;
     background-position: center top;
-    padding: 12rem 5% 4rem;
+    padding: 8rem 5% 4rem;
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: 3rem;
-    height: 100dvh;
+    min-height: 100dvh;
 }
 
 .sobre-nosotros-hero-content {
-    padding-top: 4rem;
+    /* quitamos padding-top para centrar mejor con flex */
 }
 
 .sobre-nosotros-hero h1,
@@ -2397,7 +2445,7 @@ section.section-container:nth-of-type(even) {
 
 /* 2. GOLD: Medianos */
 .tier-gold .card {
-    flex: 0 1 400px;
+    flex: 0 1 350px;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -2598,14 +2646,14 @@ section.section-container:nth-of-type(even) {
     text-align: center;
 }
 
-.stat-item {
+.stats-grid .stat-item {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 0.4rem;
 }
 
-.stat-number {
+.stats-grid .stat-number {
     font-size: clamp(2.5rem, 5vw, 3.5rem);
     font-weight: 800;
     color: var(--c-red);
@@ -2955,3 +3003,4 @@ section.section-container:nth-of-type(even) {
 .medal-silver {
     color: #9ca3af;
 }
+
