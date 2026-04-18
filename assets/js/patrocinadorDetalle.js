@@ -61,7 +61,7 @@
         if (features.length > 0) {
             const heroFeatureBg = galleryImages.length > 0 ? galleryImages.shift() : '';
             const cardsHTML = features.map((f, i) => `
-                <div class="sp-feature-card ${heroFeatureBg && i === 0 ? 'sp-feature-card--hero-image' : ''}" ${heroFeatureBg && i === 0 ? `style="background-image: linear-gradient(rgba(8, 8, 10, 0.45), rgba(8, 8, 10, 0.75)), url('${heroFeatureBg}');"` : ''}>
+                <div class="sp-feature-card ${heroFeatureBg && i === 0 ? 'sp-feature-card--hero-image' : ''}" ${heroFeatureBg && i === 0 ? `style="background-image: linear-gradient(rgba(14, 14, 16, 0.7), rgba(14, 14, 16, 0.7)), url('${heroFeatureBg}');"` : ''}>
                     <span class="sp-feature-icon">
                         <i data-lucide="${FEATURE_ICONS[i % FEATURE_ICONS.length]}"></i>
                     </span>
@@ -165,6 +165,11 @@
         const gallery = document.querySelector('.sp-gallery-grid');
         if (!gallery) return;
 
+        const images = Array.from(gallery.querySelectorAll('img'));
+        if (images.length === 0) return;
+
+        let currentIndex = 0;
+
         let lightbox = document.getElementById('sp-gallery-lightbox');
         if (!lightbox) {
             lightbox = document.createElement('div');
@@ -172,13 +177,17 @@
             lightbox.className = 'sp-lightbox';
             lightbox.innerHTML = `
                 <button type="button" class="sp-lightbox-close" aria-label="Cerrar imagen">×</button>
+                <button type="button" class="sp-lightbox-prev" aria-label="Imagen anterior">‹</button>
                 <img class="sp-lightbox-image" alt="" />
+                <button type="button" class="sp-lightbox-next" aria-label="Siguiente imagen">›</button>
             `;
             document.body.appendChild(lightbox);
         }
 
         const imgEl = lightbox.querySelector('.sp-lightbox-image');
         const closeBtn = lightbox.querySelector('.sp-lightbox-close');
+        const prevBtn = lightbox.querySelector('.sp-lightbox-prev');
+        const nextBtn = lightbox.querySelector('.sp-lightbox-next');
 
         function closeLightbox() {
             lightbox.classList.remove('is-open');
@@ -187,19 +196,29 @@
             imgEl.alt = '';
         }
 
-        function openLightbox(src, alt) {
-            if (!src) return;
-            imgEl.src = src;
-            imgEl.alt = alt || 'Imagen de galeria';
+        function showImage(index) {
+            if (index < 0) index = images.length - 1;
+            if (index >= images.length) index = 0;
+            currentIndex = index;
+            
+            const target = images[currentIndex];
+            imgEl.src = target.currentSrc || target.src;
+            imgEl.alt = target.alt || 'Imagen de galeria';
+        }
+
+        function openLightbox(index) {
+            showImage(index);
             lightbox.classList.add('is-open');
             document.body.classList.add('sp-lightbox-open');
         }
 
         if (!gallery.dataset.lightboxBound) {
-            gallery.addEventListener('click', (event) => {
-                const target = event.target;
-                if (!(target instanceof HTMLImageElement)) return;
-                openLightbox(target.currentSrc || target.src, target.alt);
+            images.forEach((img, idx) => {
+                img.style.cursor = 'pointer';
+                img.addEventListener('click', (event) => {
+                    event.stopPropagation();
+                    openLightbox(idx);
+                });
             });
             gallery.dataset.lightboxBound = 'true';
         }
@@ -210,10 +229,18 @@
             });
 
             closeBtn.addEventListener('click', closeLightbox);
+            prevBtn.addEventListener('click', (e) => { e.stopPropagation(); showImage(currentIndex - 1); });
+            nextBtn.addEventListener('click', (e) => { e.stopPropagation(); showImage(currentIndex + 1); });
 
             document.addEventListener('keydown', (event) => {
-                if (event.key === 'Escape' && lightbox.classList.contains('is-open')) {
+                if (!lightbox.classList.contains('is-open')) return;
+                
+                if (event.key === 'Escape') {
                     closeLightbox();
+                } else if (event.key === 'ArrowLeft') {
+                    showImage(currentIndex - 1);
+                } else if (event.key === 'ArrowRight') {
+                    showImage(currentIndex + 1);
                 }
             });
 
