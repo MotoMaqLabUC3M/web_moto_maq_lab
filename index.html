@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/x-icon" href="https://motomaqlabuc3m.es/favicon.ico">
     <link rel="icon" type="image/png" sizes="48x48"
-        href="https://motomaqlabuc3m.es/assets/img/logos_uc3m/favicon-48.png">
+        href="https://motomaqlabuc3m.es/assets/img/logos_uc3m/favicon-48.webp"> 
     <link rel="icon" type="image/png" sizes="192x192"
-        href="https://motomaqlabuc3m.es/assets/img/logos_uc3m/favicon-192.png">
+        href="https://motomaqlabuc3m.es/assets/img/logos_uc3m/favicon-192.webp">
     <link rel="icon" type="image/png" sizes="512x512"
-        href="https://motomaqlabuc3m.es/assets/img/logos_uc3m/favicon-512.png">
-    <link rel="apple-touch-icon" sizes="192x192" href="https://motomaqlabuc3m.es/assets/img/logos_uc3m/favicon-192.png">
+        href="https://motomaqlabuc3m.es/assets/img/logos_uc3m/favicon-512.webp">
+    <link rel="apple-touch-icon" sizes="192x192" href="https://motomaqlabuc3m.es/assets/img/logos_uc3m/favicon-192.webp">
     <link rel="manifest" href="https://motomaqlabuc3m.es/site.webmanifest">
     <title>MotoMaqLab UC3M | Equipo MotoStudent de la Universidad Carlos III de Madrid</title>
     <meta name="description"
@@ -40,7 +40,7 @@
             "@type": "Organization",
             "name": "MotoMaqLab UC3M",
             "url": "https://motomaqlabuc3m.es",
-            "logo": "https://motomaqlabuc3m.es/assets/img/logos_uc3m/uc3m_logo_sin_fondo.png",
+            "logo": "https://motomaqlabuc3m.es/assets/img/logos_uc3m/uc3m_logo_sin_fondo.webp",
             "description": "MotoMaqLab: el equipo de moto de la UC3M. Estudiantes de ingeniería de la Universidad Carlos III de Madrid que diseñan, construyen y compiten en MotoStudent.",
             "email": "motomaqlabuc3m@uc3m.es",
             "foundingDate": "2009",
@@ -75,29 +75,7 @@
 </head>
 
 <body>
-    <header class="main-header">
-        <a href="index.html" class="logo">
-            <div class="logo-wrapper">
-                <img src="assets/img/logos_uc3m/uc3m_logo.png" alt="MotoMaqLab UC3M Logo" />
-            </div>
-            MOTOMAQLAB <span>UC3M</span>
-        </a>
-
-        <button class="hamburger" aria-label="Menú">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-
-        <div class="enlaces-header mobile-menu">
-            <nav>
-                <a href="sobre-nosotros.html">SOBRE NOSOTROS</a>
-                <a href="equipo.html">EL EQUIPO </a>
-                <a href="patrocinadores.html">PATROCINADORES</a>
-                <a href="mailto:motomaqlabuc3m@uc3m.es" class="btn btn--primary">CONTACTO</a>
-            </nav>
-        </div>
-    </header>
+    <header id="main-header"></header>
     <main>
         <section class="hero">
             <div class="hero-content">
@@ -113,8 +91,36 @@
                 </div>
             </div>
         </section>
+
+        <!-- Cinta transportadora de patrocinadores Platino -->
+        <section class="sponsors-marquee-section" id="patrocinadores-principales">
+            <div class="section-header">
+                <h2><a href="patrocinadores.html">Nuestros Sponsors y Patrocinadores</a></h2>
+            </div>
+            <div class="sponsors-marquee">
+                <div class="sponsors-track"></div>
+            </div>
+        </section>
+
+        <!-- Preview de próximos eventos (top 3) -->
+        <section class="section-container eventos-section" id="eventos-preview">
+            <div class="section-title section-title--center">
+                <h2>PRÓXIMOS EVENTOS DE LA TEMPORADA</h2>
+                <p>Las próximas citas de nuestro equipo</p>
+            </div>
+            <div class="eventos-grid" id="eventos-index-container"></div>
+            <div class="center-btn">
+                <a href="eventos.html" class="btn btn--outline">Ver todos los eventos →</a>
+            </div>
+        </section>
     </main>
+
+    <footer id="main-footer"></footer>
+
+    <script src="assets/js/layout.js"></script>
     <script src="assets/js/mobileMenu.js"></script>
+    <script src="assets/js/sponsorsMarquee.js"></script>
+    <script src="assets/js/eventos.js"></script>
 
     <!-- Traductor de Google -->
     <div id="google_translate_element" style="display:none;"></div>

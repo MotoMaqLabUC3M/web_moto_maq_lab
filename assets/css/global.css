@@ -824,12 +824,23 @@ section.section-container:nth-of-type(even) {
     padding-bottom: 4rem;
 }
 
+.center-btn {
+    text-align: center;
+    margin-top: 3rem;
+}
+
 .eventos-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centrado por defecto (para el index) */
     gap: 1.5rem;
     max-width: 1200px;
     margin: 0 auto;
+}
+
+/* Alinear a la izquierda en la página de eventos */
+#proximos-container, #pasados-container {
+    justify-content: flex-start;
 }
 
 .eventos-empty {
@@ -844,20 +855,26 @@ section.section-container:nth-of-type(even) {
     text-decoration: none;
     color: inherit;
     display: block;
+    flex: 1 1 300px;
+    max-width: 380px;
 }
 
 .evento-card {
     background: rgba(20, 20, 22, 0.7);
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.05);
     border-radius: 8px;
     overflow: hidden;
-    transition: all 0.3s ease;
+    transform: translateZ(0); /* Mata bugs de fuga subpíxel */
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, border-left-color 0.3s ease;
     position: relative;
     height: 100%;
     display: flex;
     flex-direction: column;
     border-left: 3px solid transparent;
+    will-change: transform;
 }
 
 .evento-card:hover {
@@ -876,20 +893,24 @@ section.section-container:nth-of-type(even) {
     flex-shrink: 0;
     position: relative;
     background-color: var(--bg-card);
-    margin-bottom: -1px;
+    border-radius: 8px 8px 0 0;
 }
 
 .evento-img-wrapper img {
     width: 100%;
     height: 100%;
+    position: relative;
     object-fit: cover;
     display: block;
     transition: transform 0.5s ease;
     opacity: 0.85;
+    /* Al inflarla un 2% por defecto, sus bordes reales siempre quedan fuera de la máscara visible padre,
+       es Imposible que filtre nada por ningún lado, matemático */
+    transform: scale(1.02);
 }
 
 .evento-card:hover .evento-img-wrapper img {
-    transform: scale(1.05);
+    transform: scale(1.08); /* Crece desde 1.02, nunca desde 1.00 */
     opacity: 1;
 }
 
@@ -897,10 +918,10 @@ section.section-container:nth-of-type(even) {
 .evento-img-wrapper::after {
     content: "";
     position: absolute;
-    bottom: -1px;
+    bottom: -3px;
     left: 0;
     right: 0;
-    height: 100%;
+    height: calc(100% + 3px);
     background: linear-gradient(to top, rgba(20, 20, 22, 1) 0%, transparent 100%);
     pointer-events: none;
 }
@@ -912,6 +933,7 @@ section.section-container:nth-of-type(even) {
     flex-direction: column;
     position: relative;
     z-index: 1;
+    background-color: var(--bg-card);
 }
 
 .evento-icon {
@@ -974,14 +996,11 @@ section.section-container:nth-of-type(even) {
 }
 
 @media (max-width: 1024px) {
-    .eventos-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+    /* Flexible approach, no need to force 2 columns strictly, flex-basis handles it */
 }
 
 @media (max-width: 768px) {
     .eventos-grid {
-        grid-template-columns: 1fr;
         gap: 1rem;
     }
 
@@ -1512,9 +1531,26 @@ section.section-container:nth-of-type(even) {
 }
 
 .sp-feature-card--hero-image {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    
+    /* Matamos el sub-píxel que fuga por debajo del border-radius usando 2 sombras superpuestas:
+       Una cubre la rendija con el color oscuro del gradiente y otra hace de borde sutil */
+    border: none !important;
+    box-shadow: inset 0 0 0 1.5px rgba(255, 255, 255, 0.05), inset 0 0 0 2px rgba(14, 14, 16, 1) !important;
+}
+
+.sp-feature-card--hero-image:hover {
+    box-shadow: inset 0 0 0 1.5px rgba(242, 25, 43, 0.3), inset 0 0 0 2px rgba(14, 14, 16, 1) !important;
+}
+
+.sp-feature-card--hero-image p,
+.sp-feature-card--hero-image .sp-feature-icon {
+    position: relative;
+    z-index: 1;
 }
 
 .sp-feature-card--hero-image p {
@@ -1802,6 +1838,39 @@ section.section-container:nth-of-type(even) {
     font-size: 1.8rem;
     line-height: 1;
     cursor: pointer;
+    z-index: 10;
+}
+
+.sp-lightbox-prev, .sp-lightbox-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 0;
+    background: rgba(255, 255, 255, 0.14);
+    color: #fff;
+    width: 48px;
+    height: 48px;
+    border-radius: 999px;
+    font-size: 2rem;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease;
+    z-index: 10;
+}
+
+.sp-lightbox-prev:hover, .sp-lightbox-next:hover, .sp-lightbox-close:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.sp-lightbox-prev {
+    left: 1.5rem;
+}
+
+.sp-lightbox-next {
+    right: 1.5rem;
 }
 
 .sp-lightbox-open {
@@ -2798,6 +2867,8 @@ section.section-container:nth-of-type(even) {
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 16px;
     overflow: hidden;
+    transform: translateZ(0); /* Mata bugs de fuga subpíxel */
+
     transition: all 0.35s ease;
     position: relative;
     height: 100%;
@@ -2818,30 +2889,32 @@ section.section-container:nth-of-type(even) {
     flex-shrink: 0;
     position: relative;
     background-color: var(--bg-card);
-    transform: translateZ(0);
-    backface-visibility: hidden;
+    border-radius: 16px 16px 0 0;
 }
 
 .blog-card-img img {
     width: 100%;
     height: 100%;
+    position: relative;
     object-fit: cover;
     display: block;
     transition: transform 0.5s ease;
+    /* Sale genialmente un 2% fuera del contenedor para matar fugas de luz 100% de las esquinas */
+    transform: scale(1.02); 
 }
 
 .blog-card:hover .blog-card-img img {
-    transform: scale(1.08);
+    transform: scale(1.10); /* Crece aún más desde su escala inicial inflada */
 }
 
 /* Overlay gradient on blog image */
 .blog-card-img::after {
     content: "";
     position: absolute;
-    bottom: -1px;
+    bottom: -3px;
     left: 0;
     right: 0;
-    height: calc(60% + 1px);
+    height: calc(60% + 3px);
     background: linear-gradient(to top, var(--bg-card) 0%, rgba(36, 36, 38, 0) 100%);
     pointer-events: none;
 }
@@ -2884,6 +2957,7 @@ section.section-container:nth-of-type(even) {
     flex-direction: column;
     position: relative;
     z-index: 1;
+    background-color: var(--bg-card);
 }
 
 .blog-card-img + .blog-card-body {
@@ -2994,6 +3068,17 @@ section.section-container:nth-of-type(even) {
 .medal-badge span {
     font-size: 1.2rem;
     font-weight: 800;
+}
+
+.medal-gold {
+    color: #fbbf24;
+}
+
+.medal-silver {
+    color: #9ca3af;
+}
+
+t-weight: 800;
 }
 
 .medal-gold {
