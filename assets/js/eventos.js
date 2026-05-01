@@ -31,7 +31,9 @@
             const res = await fetch(JSON_PATH);
             const data = await res.json();
 
-            if (!data.eventos || !data.eventos.length) return;
+            if (!data.eventos) {
+                data.eventos = [];
+            }
 
             const ahora = new Date();
             ahora.setHours(0, 0, 0, 0);
@@ -58,7 +60,10 @@
                     renderEventos(proximosContainer, proximos);
                 } else {
                     const empty = document.getElementById('proximos-empty');
-                    if (empty) empty.style.display = 'block';
+                    if (empty) {
+                        empty.style.display = 'block';
+                        empty.classList.remove('d-none');
+                    }
                 }
             }
 
@@ -68,7 +73,10 @@
                     renderEventos(pasadosContainer, pasados);
                 } else {
                     const empty = document.getElementById('pasados-empty');
-                    if (empty) empty.style.display = 'block';
+                    if (empty) {
+                        empty.style.display = 'block';
+                        empty.classList.remove('d-none');
+                    }
                 }
             }
 
@@ -77,6 +85,8 @@
                 const top3 = proximos.slice(0, 3);
                 if (top3.length > 0) {
                     renderEventos(indexContainer, top3);
+                } else {
+                    indexContainer.innerHTML = '<p class="eventos-empty" style="grid-column: 1 / -1; text-align: center;">Actualmente no tenemos eventos programados. ¡Pronto anunciaremos nuevas fechas!</p>';
                 }
             }
 
