@@ -69,7 +69,7 @@
                 {
                     "name": "Rodrigo Andrés Cabrera",
                     "role": "Miembro de Dinámica",
-                    "image": "assets/img/equipo/dinamica/rodrigo_andres_cabrera.png"
+                    "image": "assets/img/equipo/dinamica/rodrigo_andres_cabrera.webp"
                 },
                 {
                     "name": "Xaantal Pérez Martínez",
@@ -142,8 +142,7 @@
                 {
                     "name": "Daniel Luque Migueles",
                     "role": "Miembro de Aerodinámica",
-                    "image": "assets/img/logos_uc3m/uc3m_logo_sin_fondo.webp",
-                    "isPlaceholder": true
+                    "image": "assets/img/equipo/aerodinamica/daniel_luque.webp"
                 },
                 {
                     "name": "José Ángel Crespo",
@@ -329,7 +328,7 @@
                 {
                     "name": "David Verdugo",
                     "role": "Jefe de Equipo en la MS8",
-                    "image": "assets/img/equipo/jefatura/david_verdugo_nogales.png"
+                    "image": "assets/img/equipo/jefatura/david_verdugo_nogales.webp"
                 },
                 {
                     "name": "Sergio Llorente",
