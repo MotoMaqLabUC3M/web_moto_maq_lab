@@ -12,7 +12,7 @@
                 {
                     "name": "Miguel Hurtado Davó",
                     "role": "Jefe de Equipo",
-                    "image": "assets/img/equipo/jefatura/miguel_hurtado_davo.webp"
+                    "image": "assets/img/equipo/jefatura/miguel_hurtado.webp"
                 },
                 {
                     "name": "Abraham Vadillo Morrillas",
@@ -69,7 +69,7 @@
                 {
                     "name": "Rodrigo Andrés Cabrera",
                     "role": "Miembro de Dinámica",
-                    "image": "assets/img/equipo/dinamica/rodrigo_andres_cabrera.webp"
+                    "image": "assets/img/equipo/dinamica/rodrigo_andres_cabrera.png"
                 },
                 {
                     "name": "Xaantal Pérez Martínez",
@@ -106,16 +106,6 @@
                     "name": "Iván García Martín",
                     "role": "Miembro de Estructural",
                     "image": "assets/img/equipo/estructual/ivan_garcia_martin.webp"
-                },
-                {
-                    "name": "Javier Martín Caballero",
-                    "role": "Miembro de Estructural",
-                    "image": "assets/img/equipo/estructual/javier_martin_caballero.webp"
-                },
-                {
-                    "name": "Sergio Llorente",
-                    "role": "Miembro de Estructural",
-                    "image": "assets/img/equipo/estructual/sergio_llorente.webp"
                 }
             ]
         },
@@ -126,7 +116,7 @@
                 {
                     "name": "Miguel Lozano Nykolaychuk",
                     "role": "Jefe de Aerodinámica y Organización",
-                    "image": "assets/img/equipo/aerodinamica/miguel_lozano_nykolaychuk.webp"
+                    "image": "assets/img/equipo/aerodinamica/miguel_lozano.webp"
                 },
                 {
                     "name": "Adriana Morales",
@@ -226,13 +216,12 @@
                 {
                     "name": "Icíar Zaminillo Herreros",
                     "role": "Miembro de Electrónica",
-                    "image": "assets/img/logos_uc3m/uc3m_logo_sin_fondo.webp",
-                    "isPlaceholder": true
+                    "image": "assets/img/equipo/electronica/iciar_zamanillo_herreros.webp"
                 },
                 {
-                    "name": "Miguel Arigita Cilla",
+                    "name": "Jose Manuel Fernandez Vargas",
                     "role": "Miembro de Electrónica",
-                    "image": "assets/img/equipo/electronica/miguel_arigita_cilla.webp"
+                    "image": "assets/img/equipo/electronica/jose_manuel_fernandez_vargas.webp"
                 },
                 {
                     "name": "Monica Eugenia Salcudean Cozmean",
@@ -304,8 +293,7 @@
                 {
                     "name": "Isabella Chávez",
                     "role": "Miembro de Marketing",
-                    "image": "assets/img/logos_uc3m/uc3m_logo_sin_fondo.webp",
-                    "isPlaceholder": true
+                    "image": "assets/img/equipo/marketing/isabella_chavez.webp"
                 },
                 {
                     "name": "Jimena Otero García",
@@ -331,6 +319,27 @@
                     "name": "Pablo Montes Ponce",
                     "role": "Miembro de Marketing",
                     "image": "assets/img/equipo/marketing/pablo_montes_ponce.webp"
+                }
+            ]
+        },
+        {
+            "id": "honorificos",
+            "title": "Miembros Honoríficos",
+            "members": [
+                {
+                    "name": "David Verdugo",
+                    "role": "Jefe de Equipo en la MS8",
+                    "image": "assets/img/equipo/jefatura/david_verdugo_nogales.png"
+                },
+                {
+                    "name": "Sergio Llorente",
+                    "role": "Jefe de Estructural en la MS8",
+                    "image": "assets/img/equipo/estructual/sergio_llorente.webp"
+                },
+                {
+                    "name": "Javier Martín Caballero",
+                    "role": "Miembro de Estructural en la MS8",
+                    "image": "assets/img/equipo/estructual/javier_martin_caballero.webp"
                 }
             ]
         }
