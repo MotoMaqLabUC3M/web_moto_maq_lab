@@ -118,9 +118,9 @@
                 fechaStr = `${fecha.toLocaleDateString('es-ES', { day: 'numeric' })} - ${fechaFin.toLocaleDateString('es-ES', opcionesFin)}`;
             }
 
-            // Imagen (si existe)
+            // Imagen (si existe) — sin onerror inline para cumplir CSP
             const imgHTML = evento.imagen
-                ? `<div class="evento-img-wrapper"><img src="${sanitize(evento.imagen)}" alt="${sanitize(evento.titulo)}" loading="lazy" onerror="this.parentElement.style.display='none'" /></div>`
+                ? `<div class="evento-img-wrapper"><img src="${sanitize(evento.imagen)}" alt="Imagen del evento: ${sanitize(evento.titulo)} — MotoMaqLab UC3M" loading="lazy" /></div>`
                 : '';
 
             card.innerHTML = `
@@ -133,6 +133,14 @@
                     <span class="evento-ver-mas">Ver más →</span>
                 </div>
             `;
+
+            // Ocultar imagen rota sin onerror inline (cumple CSP)
+            const imgEl = card.querySelector('.evento-img-wrapper img');
+            if (imgEl) {
+                imgEl.addEventListener('error', function () {
+                    this.parentElement.style.display = 'none';
+                });
+            }
 
             link.appendChild(card);
             fragment.appendChild(link);

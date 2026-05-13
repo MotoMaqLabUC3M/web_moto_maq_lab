@@ -35,6 +35,7 @@
             }
 
             document.title = post.titulo + ' | MotoMaqLab UC3M';
+            injectStructuredData(post);
             render(container, post, equipoData);
         } catch (err) {
             console.error('Error cargando noticia:', err);
@@ -200,6 +201,32 @@
                 '<a href="blog.html" class="btn btn--primary">Ver blog</a>' +
             '</div>';
         if (window.lucide) { lucide.createIcons(); }
+    }
+
+    function injectStructuredData(post) {
+        var script = document.createElement('script');
+        script.type = 'application/ld+json';
+        var data = {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": post.titulo,
+            "image": post.imagen ? "https://motomaqlabuc3m.es/" + post.imagen : "https://motomaqlabuc3m.es/assets/img/hero/blog.webp",
+            "datePublished": post.fecha,
+            "author": {
+                "@type": "Person",
+                "name": post.autor || "MotoMaqLab UC3M"
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": "MotoMaqLab UC3M",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://motomaqlabuc3m.es/assets/img/logos_uc3m/uc3m_logo_sin_fondo.webp"
+                }
+            }
+        };
+        script.text = JSON.stringify(data);
+        document.head.appendChild(script);
     }
 
     document.addEventListener('DOMContentLoaded', init);
