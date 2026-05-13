@@ -14,7 +14,13 @@
                     "website": "",
                     "dedicatedPage": "patrocinador.html?id=maqlab",
                     "contenido": "MAQLAB nos ayuda aportando conocimiento técnico y recursos de investigación en el ámbito de la ingeniería mecánica, especialmente en el análisis, diseño y simulación de sistemas y mecanismos. Gracias a sus laboratorios y experiencia en I+D, podemos validar nuestros prototipos y mejorar su rendimiento. Su colaboración nos permite aplicar métodos profesionales propios de la industria en el desarrollo de nuestra moto.\n\n## Impacto en el equipo\nAl MAQLAB patrocinarnos tenemos acceso a tecnología, instalaciones y asesoramiento experto que elevan la calidad de nuestro proyecto. Además, refuerza nuestra credibilidad como equipo y nos acerca al entorno profesional de la ingeniería. Esta colaboración impulsa nuestra formación como ingenieros y mejora nuestras posibilidades de éxito en competición y en el futuro.\n\n## Qué nos aportan\n- Acceso a laboratorio de materiales para ensayos mecánicos\n- Asesoramiento en selección de materiales compuestos\n- Validación de prototipos mediante ensayos destructivos y no destructivos\n- Formación en técnicas de fabricación avanzada\n",
-                    "galeria": []
+                    "galeria": [
+                        "assets/img/patrocinios/maqlab/Foto_5_Maqlab.webp",
+                        "assets/img/patrocinios/maqlab/Foto_1_Maqlab.webp",
+                        "assets/img/patrocinios/maqlab/Foto_2_Maqlab.webp",
+                        "assets/img/patrocinios/maqlab/Foto_3_Maqlab.webp",
+                        "assets/img/patrocinios/maqlab/Foto_4_Maqlab.webp"
+                    ]
                 },
                 {
                     "id": "altair",
@@ -50,7 +56,14 @@
                     "website": "",
                     "dedicatedPage": "patrocinador.html?id=UC3M",
                     "contenido": "La Universidad Carlos III de Madrid es nuestro principal respaldo académico e institucional. Nos proporciona las instalaciones, talleres y laboratorios donde diseñamos, fabricamos y ensamblamos nuestra moto. Además, contamos con el apoyo de profesores e investigadores que nos asesoran en las distintas fases del desarrollo, aportando conocimiento técnico y experiencia en ingeniería.\n\n## Impacto en el equipo\nQue la UC3M nos patrocine supone un apoyo fundamental para nuestro proyecto, ya que no solo contribuye a nivel económico, sino que también nos ofrece un entorno profesional y recursos de alto nivel para trabajar con estándares propios de la industria. Su respaldo refuerza nuestra credibilidad como equipo y potencia nuestra formación como ingenieros, impulsando el crecimiento técnico y competitivo de Motomaqlab.\n\n## Qué nos aportan\n- Financiación parcial del proyecto\n- Acceso a talleres mecánicos y laboratorios de materiales\n- Apoyo de profesores tutores en todas las fases\n- Espacios de trabajo y almacenamiento\n- Visibilidad institucional y apoyo en comunicación\n\n## Nuestra relación con la UC3M\nMotoMaqLab nació en 2009 como proyecto de la Escuela Politécnica Superior. Desde entonces, la universidad ha sido nuestro pilar fundamental, permitiendo a generaciones de estudiantes de ingeniería aplicar sus conocimientos a un proyecto real de competición.",
-                    "galeria": []
+                    "galeria": [
+                        "assets/img/patrocinios/uc3m/Foto_6_UC3M.webp",
+                        "assets/img/patrocinios/uc3m/Foto_1_UC3M.webp",
+                        "assets/img/patrocinios/uc3m/Foto_2_UC3M.webp",
+                        "assets/img/patrocinios/uc3m/Foto_3_UC3M.webp",
+                        "assets/img/patrocinios/uc3m/Foto_4_UC3M.webp",
+                        "assets/img/patrocinios/uc3m/Foto_5_UC3M.webp"
+                    ]
                 },
                                 {
                     "id": "retamal",

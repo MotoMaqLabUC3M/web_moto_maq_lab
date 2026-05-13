@@ -42,6 +42,7 @@
             if (!evento) { renderError(container); return; }
 
             document.title = `${sanitize(evento.titulo)} | MotoMaqLab UC3M`;
+            injectStructuredData(evento);
             render(container, evento);
         } catch (err) {
             console.error('Error cargando evento:', err);
@@ -194,6 +195,37 @@
             </div>
         `;
         if (window.lucide) { lucide.createIcons(); }
+    }
+
+    function injectStructuredData(evento) {
+        var script = document.createElement('script');
+        script.type = 'application/ld+json';
+        var data = {
+            "@context": "https://schema.org",
+            "@type": "Event",
+            "name": evento.titulo,
+            "startDate": evento.fecha,
+            "endDate": evento.fechaFin || evento.fecha,
+            "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+            "eventStatus": "https://schema.org/EventScheduled",
+            "location": {
+                "@type": "Place",
+                "name": evento.lugar,
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": evento.lugar
+                }
+            },
+            "image": evento.imagen ? "https://motomaqlabuc3m.es/" + evento.imagen : "https://motomaqlabuc3m.es/assets/img/hero/eventos.webp",
+            "description": evento.descripcion,
+            "organizer": {
+                "@type": "Organization",
+                "name": "MotoMaqLab UC3M",
+                "url": "https://motomaqlabuc3m.es"
+            }
+        };
+        script.text = JSON.stringify(data);
+        document.head.appendChild(script);
     }
 
     document.addEventListener('DOMContentLoaded', init);

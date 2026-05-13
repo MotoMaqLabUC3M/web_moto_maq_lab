@@ -77,7 +77,7 @@ function createSponsorCardHTML(sponsor, tier) {
         cardContent = `
             <div class="${cardClass}${clickableClass}">
                 <div class="sponsor-logo-wrapper ${tier.logoSize}">
-                    <img src="${sanitize(sponsor.logo)}" alt="${sponsor.name}" />
+                    <img src="${sanitize(sponsor.logo)}" alt="Logo de ${sanitize(sponsor.name)}" />
                 </div>
                 <div class="card-content">
                     <${headingTag}>${sanitize(sponsor.name)}</${headingTag}>
@@ -89,7 +89,7 @@ function createSponsorCardHTML(sponsor, tier) {
         cardContent = `
             <div class="${cardClass}${clickableClass}">
                 <div class="sponsor-logo-wrapper ${tier.logoSize}">
-                    <img src="${sanitize(sponsor.logo)}" alt="${sanitize(sponsor.name)}" />
+                    <img src="${sanitize(sponsor.logo)}" alt="Logo de ${sanitize(sponsor.name)}" />
                 </div>
                 <${headingTag}>${sanitize(sponsor.name)}</${headingTag}>
                 <p>${sanitize(sponsor.description)}</p>
@@ -99,7 +99,7 @@ function createSponsorCardHTML(sponsor, tier) {
         cardContent = `
             <div class="${cardClass}${clickableClass}">
                 <div class="sponsor-logo-wrapper ${tier.logoSize}">
-                    <img src="${sanitize(sponsor.logo)}" alt="${sanitize(sponsor.name)}" />
+                    <img src="${sanitize(sponsor.logo)}" alt="Logo de ${sanitize(sponsor.name)}" />
                 </div>
                 <${headingTag}>${sanitize(sponsor.name)}</${headingTag}>
                 <p>${sanitize(sponsor.description)}</p>
@@ -109,7 +109,7 @@ function createSponsorCardHTML(sponsor, tier) {
 
     // Wrap in link if has dedicated page
     if (sponsor.dedicatedPage) {
-        return `<a href="${sponsor.dedicatedPage}" class="sponsor-card-link">${cardContent}</a>`;
+        return `<a href="${sponsor.dedicatedPage}" class="sponsor-card-link" aria-label="Ver página de ${sanitize(sponsor.name)}">${cardContent}</a>`;
     }
 
     return cardContent;
