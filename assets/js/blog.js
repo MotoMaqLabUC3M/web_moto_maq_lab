@@ -1,0 +1,135 @@
+/**
+ * blog.js
+ * Carga posts desde JSON y los muestra ordenados del más reciente al más antiguo.
+ * Cada tarjeta enlaza a noticia.html?id=xxx
+ * También renderiza preview en index.html (2 últimas noticias).
+ */
+(function () {
+    const JSON_PATH = 'assets/data/blog.json';
+
+    function sanitize(str) {
+        if (!str) return '';
+        return String(str)
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#039;');
+    }
+
+    async function init() {
+        const blogContainer = document.getElementById('blog-container');
+        const indexContainer = document.getElementById('blog-index-container');
+
+        if (!blogContainer && !indexContainer) return;
+
+        try {
+            const res = await fetch(JSON_PATH);
+            const data = await res.json();
+
+            if (!data.posts || !data.posts.length) {
+                if (blogContainer) {
+                    const empty = document.getElementById('blog-empty');
+                    if (empty) empty.style.display = 'block';
+                }
+                return;
+            }
+
+            // Ordenar del más reciente al más antiguo
+            const posts = data.posts.sort((a, b) => new Date(b.fecha) - new Date(a.fecha));
+
+            // Página de blog: todos los posts
+            if (blogContainer) {
+                renderPosts(blogContainer, posts);
+            }
+
+            // Index: solo los 2 más recientes
+            if (indexContainer) {
+                renderPosts(indexContainer, posts.slice(0, 2));
+            }
+
+        } catch (err) {
+            console.error('Error cargando blog:', err);
+        }
+    }
+
+    function renderPosts(container, posts) {
+        const fragment = document.createDocumentFragment();
+
+        posts.forEach(function (post) {
+            var link = document.createElement('a');
+            
+            // Check if it's a Newsletter or contains a PDF tag
+            var isPdfDirect = false;
+            var pdfUrl = '';
+            var matchPdf = post.contenido ? post.contenido.match(/\[pdf:([^\]]+)\]/) : null;
+            
+            if (post.categoria && post.categoria.toLowerCase() === 'newsletter' && matchPdf) {
+                isPdfDirect = true;
+                pdfUrl = matchPdf[1];
+            }
+
+            if (isPdfDirect) {
+                link.href = pdfUrl;
+                link.target = '_blank';
+                link.rel = 'noopener noreferrer';
+            } else {
+                link.href = 'noticia.html?id=' + encodeURIComponent(post.id);
+            }
+            
+            link.className = 'blog-card-link';
+
+            var card = document.createElement('div');
+            card.className = 'blog-card';
+
+            // Formatear fecha
+            var fecha = new Date(post.fecha);
+            var opciones = { month: 'short', day: 'numeric' };
+            var fechaStr = fecha.toLocaleDateString('es-ES', opciones);
+
+            // Imagen de portada (safe, no inline onerror)
+            var imgHTML = post.imagen
+                ? '<div class="blog-card-img"><img src="' + sanitize(post.imagen) + '" alt="' + sanitize(post.titulo) + '" loading="lazy" /></div>'
+                : '';
+
+            var fallbackHTML = '<div class="blog-card-img"><div class="newsletter-fallback"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:0.5rem;"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg><br>Revista MotoMaqLab</div></div>';
+
+            // Truncar extracto
+            var extracto = post.extracto || '';
+            if (extracto.length > 120) {
+                extracto = extracto.substring(0, 120) + '[...]';
+            }
+
+            if (isPdfDirect) {
+                card.classList.add('newsletter-only-cover');
+                card.innerHTML = imgHTML || fallbackHTML;
+            } else {
+                card.innerHTML =
+                    imgHTML +
+                    '<div class="blog-card-body">' +
+                        '<span class="blog-card-categoria">' + sanitize(post.categoria) + '</span>' +
+                        '<h3>' + sanitize(post.titulo) + '</h3>' +
+                        '<p class="blog-card-meta">por ' + sanitize(post.autor) + ' el ' + sanitize(fechaStr) + '</p>' +
+                        '<p class="blog-card-extracto">' + sanitize(extracto) + '</p>' +
+                        '<span class="blog-card-leer">Leer más →</span>' +
+                    '</div>';
+            }
+
+            // Safe image error handling (no inline onerror)
+            var img = card.querySelector('img');
+            if (img) {
+                img.addEventListener('error', function () {
+                    this.style.display = 'none';
+                    this.parentElement.innerHTML = '<div class="newsletter-fallback"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:0.5rem;"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg><br>Imagen no encontrada</div>';
+                });
+            }
+
+            link.appendChild(card);
+            fragment.appendChild(link);
+        });
+
+        container.appendChild(fragment);
+    }
+
+    document.addEventListener('DOMContentLoaded', init);
+})();

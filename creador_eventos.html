@@ -1,0 +1,498 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta name="robots" content="noindex, nofollow">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://translate.google.com https://translate.googleapis.com https://translate-pa.googleapis.com https://unpkg.com; style-src 'self' 'unsafe-inline' https://translate.googleapis.com https://fonts.googleapis.com https://www.gstatic.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https: blob:; frame-src 'self' https:; connect-src 'self' https:;">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creador Avanzado de Eventos | MotoMaqLab</title>
+    <!-- Incluimos los mismos estilos base de la web para la vista previa -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <!-- Iconos Lucide -->
+    <script src="https://unpkg.com/lucide@1.7.0/dist/umd/lucide.min.js" integrity="sha384-CykfT8/c0napBs4OEPBYSNzMhNhJUvjNEulxWZVAK+p2D3vEfYGg9zyOd8bzqyNO" crossorigin="anonymous"></script>
+    <style>
+        :root {
+            --bg: #121212;
+            --card: #1e1e1e;
+            --text: #ffffff;
+            --red: #f2192b;
+            --c-red: #f2192b;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+        h1, h2, h3, h4 { font-family: 'Montserrat', sans-serif; }
+        
+        .sidebar {
+            width: 450px;
+            background: var(--card);
+            padding: 1.5rem;
+            overflow-y: auto;
+            border-right: 1px solid #333;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .main-content {
+            flex: 1;
+            padding: 2rem;
+            overflow-y: auto;
+            background: #000;
+        }
+
+        .folder-setup {
+            background: rgba(242, 25, 43, 0.1);
+            border: 1px solid var(--red);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .form-group { margin-bottom: 1rem; }
+        label { display: block; font-weight: bold; margin-bottom: 0.4rem; font-size: 0.9rem; color: #ccc; }
+        input[type="text"], input[type="date"], select, textarea {
+            width: 100%; padding: 0.6rem; background: #111; border: 1px solid #444;
+            color: white; border-radius: 4px; box-sizing: border-box; font-family: inherit;
+        }
+        input:focus, textarea:focus { outline: none; border-color: var(--red); }
+        input[type="file"] { background: #111; padding: 0.5rem; border-radius: 4px; border: 1px dashed #666; width: 100%; color: white; box-sizing: border-box; }
+        
+        .btn-group { display: flex; gap: 0.5rem; margin-bottom: 0.5rem; flex-wrap: wrap; }
+        button {
+            background: var(--red); color: white; border: none; padding: 0.75rem;
+            border-radius: 4px; cursor: pointer; font-weight: bold; font-family: 'Montserrat', sans-serif;
+            display: flex; align-items: center; justify-content: center; gap: 0.5rem;
+        }
+        button:hover { opacity: 0.8; }
+        button.secondary { background: #333; padding: 0.5rem 0.8rem; font-size: 0.8rem; }
+        button:disabled { background: #555; cursor: not-allowed; }
+
+        /* PREVIEW STYLES */
+        .preview-header { font-family: 'Montserrat', sans-serif; color: var(--red); border-bottom: 1px solid #333; padding-bottom: 0.5rem; margin-bottom: 2rem; display: flex; align-items: center; gap: 0.5rem; }
+        
+        .sp-text-block { background-color: var(--card); border-radius: 12px; margin-bottom: 2rem; padding: 0.1px 2rem; }
+        .sp-section-label { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
+        .sp-label-line { height: 2px; width: 40px; background-color: var(--red); }
+        .sp-section-label h2 { margin: 0; font-size: 1.5rem; text-transform: uppercase; letter-spacing: 2px; }
+        .sp-text-content { color: rgba(255, 255, 255, 0.8); line-height: 1.8; margin-bottom: 1.5rem; font-size: 1.05rem; }
+        .blog-inline-img { margin: 2rem 0; text-align: center; }
+        .blog-inline-img img { max-width: 100%; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
+
+        .ev-hero {
+            border-radius: 12px; padding: 3rem 2rem; margin-bottom: 2rem;
+            background: linear-gradient(180deg, #1a1a1a 0%, #121212 100%);
+            border: 1px solid rgba(255,255,255,0.05); text-align: center;
+        }
+        .ev-hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+        .badge { background: var(--red); padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.8rem; font-weight: bold; text-transform: uppercase; }
+        
+        #preview-area {
+            background: #111;
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .author-box { display: flex; align-items: center; gap: 1rem; margin-top: 3rem; padding: 1.5rem; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; }
+        .author-box i { color: var(--red); width: 40px; height: 40px; }
+        .author-box h4 { margin: 0; font-size: 1.1rem; }
+        .author-box span { font-size: 0.9rem; color: #aaa; }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h2 style="color:var(--red); margin:0;">Gestor de Eventos</h2>
+        
+        <div class="folder-setup" id="folderSetup">
+            <p style="margin-top:0; font-size:0.9rem;"><strong>1. Conectar con el Proyecto</strong></p>
+            <p style="font-size:0.8rem; color:#aaa;">Selecciona la carpeta principal de <code>web_moto_maq_lab</code> para que el evento se guarde automáticamente en el archivo y las fotos se guarden en sus carpetas de una vez.</p>
+            <button id="btnSelectDir" style="width:100%; height: 45px;"><i data-lucide="folder-output"></i> Seleccionar Carpeta del Proyecto</button>
+            <p id="dirStatus" style="color:#4CAF50; font-weight:bold; font-size:0.9rem; display:none; margin-bottom:0; display:flex; align-items:center; gap:0.3rem;"><i data-lucide="check-circle-2" style="width: 18px;"></i> Carpeta vinculada con éxito</p>
+            <p id="dirStatusHidden" style="display:none;"></p>
+        </div>
+
+        <form id="eventsForm">
+            <div class="form-group">
+                <label>Título del evento</label>
+                <input type="text" id="titulo" required placeholder="Ej: Competición MotoStudent 2027">
+            </div>
+            
+            <div class="form-group">
+                <label>Lugar</label>
+                <input type="text" id="lugar" required placeholder="Ej: MotorLand Aragón, Alcañiz">
+            </div>
+            
+            <div style="display:flex; gap:0.5rem;">
+                <div class="form-group" style="flex:1;">
+                    <label>Tipo (Categoría)</label>
+                    <input type="text" id="tipo" required placeholder="Ej: competicion, presentacion">
+                </div>
+                <div class="form-group" style="flex:1;">
+                    <label>Fecha de inicio</label>
+                    <input type="date" id="fecha" required>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label>Fecha de fin (Opcional)</label>
+                <input type="date" id="fechaFin">
+            </div>
+
+            <div class="form-group">
+                <label>Imagen de Portada</label>
+                <input type="file" id="portadaFile" accept="image/*">
+            </div>
+            
+            <div class="form-group">
+                <label>Imagen de Detalle (Opcional, mayor resolución)</label>
+                <input type="file" id="detalleFile" accept="image/*">
+            </div>
+
+            <div class="form-group">
+                <label>Descripción corta (Para la tarjeta exterior)</label>
+                <textarea id="descripcion" rows="2" required placeholder="Breve resumen del evento..."></textarea>
+            </div>
+
+            <div class="form-group" style="flex: 1; display:flex; flex-direction:column;">
+                <label>Cuerpo del evento (Página de Detalle)</label>
+                <div class="btn-group">
+                    <button type="button" class="secondary" onclick="insertTag('## ', '')"><i data-lucide="heading" style="width:16px;"></i> Subtítulo</button>
+                    <!-- File input hidden for inline photos -->
+                    <input type="file" id="inlineImgInput" accept="image/*" style="display:none;" onchange="handleInlineImage(event)">
+                    <button type="button" class="secondary" onclick="document.getElementById('inlineImgInput').click()"><i data-lucide="image" style="width:16px;"></i> Foto al Texto</button>
+                    <button type="button" class="secondary" onclick="insertTag('[', '](https://...)')"><i data-lucide="link" style="width:16px;"></i> Enlace</button>
+                </div>
+                <textarea id="contenido" rows="12" required placeholder="Escribe los detalles del evento aquí... Ve la vista previa a la derecha en vivo."></textarea>
+            </div>
+
+            <button type="submit" id="btnPublish" style="width: 100%; font-size: 1.1rem; padding: 1rem; height: 55px;" disabled title="Conecta con la carpeta del proyecto para habilitar"><i data-lucide="send"></i> Publicar y Guardar Todo</button>
+        </form>
+    </div>
+
+    <div class="main-content">
+        <h2 class="preview-header"><i data-lucide="eye"></i> Vista Previa en Vivo</h2>
+        <div id="preview-area">
+            <!-- Renderizado aquí -->
+        </div>
+    </div>
+
+    <script>
+        // Init icons
+        lucide.createIcons();
+
+        document.getElementById('fecha').valueAsDate = new Date();
+
+        let projectDirHandle = null;
+        let inlineImagesToSave = []; // Array to keep track of uploaded files { file, slugName }
+        let portadaFileToSave = null;
+        let detalleFileToSave = null;
+        let objectUrls = {}; // Map of original local blob url for preview
+
+        // --- DIRECTORY PICKER ---
+        document.getElementById('btnSelectDir').addEventListener('click', async () => {
+            try {
+                if (!window.showDirectoryPicker) {
+                    alert("Tu navegador no soporta esta función avanzada. Usa Chrome o Edge en tu PC.");
+                    return;
+                }
+                projectDirHandle = await window.showDirectoryPicker({ mode: 'readwrite' });
+                
+                // Verificar que sea la carpeta correcta
+                try {
+                    await projectDirHandle.getDirectoryHandle('assets');
+                    document.getElementById('dirStatus').style.display = 'flex';
+                    document.getElementById('btnSelectDir').style.display = 'none';
+                    document.getElementById('btnPublish').disabled = false;
+                    document.getElementById('btnPublish').title = "";
+                } catch(e) {
+                    alert("No se ha detectado la carpeta 'assets'. Asegúrate de seleccionar la raíz de web_moto_maq_lab.");
+                    projectDirHandle = null;
+                }
+            } catch (err) {
+                console.error(err);
+            }
+        });
+
+        // --- PREVIEW LOGIC ---
+        function createSlug(str) {
+            return str.toLowerCase().trim().replace(/[^\w\s-]/g, '').replace(/[\s_-]+/g, '-').replace(/^-+|-+$/g, '') || 'nuevo-evento';
+        }
+
+        const formInputs = document.querySelectorAll('#eventsForm input, #eventsForm textarea');
+        formInputs.forEach(i => i.addEventListener('input', updatePreview));
+
+        // --- WEBP CONVERSION ---
+        async function convertToWebP(file) {
+            if (!file.type.startsWith('image/')) return file;
+            if (file.type === 'image/webp' || file.type === 'image/svg+xml' || file.type === 'image/gif') return file;
+
+            return new Promise((resolve) => {
+                const img = new Image();
+                img.onload = () => {
+                    const canvas = document.createElement('canvas');
+                    canvas.width = img.width;
+                    canvas.height = img.height;
+                    const ctx = canvas.getContext('2d');
+                    ctx.drawImage(img, 0, 0);
+                    canvas.toBlob((blob) => {
+                        if (!blob) { resolve(file); return; }
+                        const newName = file.name.substring(0, file.name.lastIndexOf('.')) + '.webp';
+                        const webpFile = new File([blob], newName, { type: 'image/webp' });
+                        resolve(webpFile);
+                    }, 'image/webp', 0.90);
+                };
+                img.onerror = () => resolve(file);
+                img.src = URL.createObjectURL(file);
+            });
+        }
+
+        document.getElementById('portadaFile').addEventListener('change', async (e) => {
+            let file = e.target.files[0];
+            if(file) {
+                portadaFileToSave = await convertToWebP(file);
+                objectUrls['portada'] = URL.createObjectURL(portadaFileToSave);
+            } else {
+                portadaFileToSave = null;
+                delete objectUrls['portada'];
+            }
+            updatePreview();
+        });
+
+        document.getElementById('detalleFile').addEventListener('change', async (e) => {
+            let file = e.target.files[0];
+            if(file) {
+                detalleFileToSave = await convertToWebP(file);
+                objectUrls['detalle'] = URL.createObjectURL(detalleFileToSave);
+            } else {
+                detalleFileToSave = null;
+                delete objectUrls['detalle'];
+            }
+            updatePreview();
+        });
+
+        function insertTag(prefix, suffix) {
+            const textarea = document.getElementById('contenido');
+            const start = textarea.selectionStart;
+            const end = textarea.selectionEnd;
+            const text = textarea.value;
+            textarea.value = text.substring(0, start) + prefix + suffix + text.substring(end);
+            textarea.focus();
+            textarea.selectionStart = start + prefix.length;
+            textarea.selectionEnd = start + prefix.length + suffix.length;
+            updatePreview();
+        }
+
+        async function handleInlineImage(event) {
+            let file = event.target.files[0];
+            if (!file) return;
+
+            const slug = createSlug(document.getElementById('titulo').value);
+            const altText = prompt("Escribe una descripción corta para esta foto:");
+            if (altText === null) {
+                event.target.value = '';
+                return;
+            }
+
+            file = await convertToWebP(file);
+            const finalPath = `assets/img/eventos/${slug}/${file.name}`;
+            
+            inlineImagesToSave.push({ file: file, pathName: file.name });
+            objectUrls[finalPath] = URL.createObjectURL(file);
+
+            const imgTag = `[img:${finalPath}|${altText}]`;
+            insertTag(imgTag, '\n\n');
+            event.target.value = ''; 
+        }
+
+        function parsePreview(text) {
+            if (!text) return '';
+            let lines = text.split('\n');
+            let html = '';
+            let inSection = false;
+
+            lines.forEach(line => {
+                line = line.trim();
+                if (!line) return;
+
+                if (line.startsWith('## ')) {
+                    if (inSection) { html += '</section>'; }
+                    html += '<section class="sp-text-block">';
+                    html += `<div class="sp-section-label"><div class="sp-label-line"></div><h2>${line.slice(3)}</h2></div>`;
+                    inSection = true;
+                } else if (line.startsWith('[img:')) {
+                    let match = line.match(/^\[img:([^|]+)\|?([^\]]*)\]$/);
+                    if (match) {
+                        let src = match[1]; let alt = match[2];
+                        let finalSrc = objectUrls[src] ? objectUrls[src] : src;
+                        html += `<div class="blog-inline-img"><img src="${finalSrc}" alt="${alt}"></div>`;
+                    }
+                } else {
+                    let parsedLine = line.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" style="color:var(--c-red); text-decoration:underline;">$1</a>');
+                    if (!inSection) { html += '<section class="sp-text-block">'; inSection = true; }
+                    html += `<div class="sp-text-content"><p>${parsedLine}</p></div>`;
+                }
+            });
+            if (inSection) html += '</section>';
+            return html;
+        }
+
+        function updatePreview() {
+            const titulo = document.getElementById('titulo').value || 'Título Del Evento';
+            const lugar = document.getElementById('lugar').value || 'Ubicación';
+            const tipo = document.getElementById('tipo').value || 'Categoría';
+            const descripcion = document.getElementById('descripcion').value || 'Resumen del evento...';
+            const contenido = document.getElementById('contenido').value;
+
+            // Si hay imagen de detalle, la usamos para el hero en lugar de la portada
+            const heroImage = objectUrls['detalle'] || objectUrls['portada'];
+            let heroStyle = heroImage 
+                ? `background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.9) 100%), url('${heroImage}'); background-size:cover; background-position:center;`
+                : '';
+
+            document.getElementById('preview-area').innerHTML = `
+                <div class="ev-hero" style="${heroStyle}">
+                    <span class="badge">${tipo}</span>
+                    <h1 style="color:white; margin-top:2rem;">${titulo}</h1>
+                    <p style="color:#ddd; font-size:1.1rem; max-width:600px; margin:0 auto;">${descripcion}</p>
+                </div>
+
+                <div class="author-box" style="margin-top: 0; margin-bottom: 2rem; justify-content: center;">
+                    <i data-lucide="map-pin"></i>
+                    <div>
+                        <h4>${lugar}</h4>
+                        <span>Lugar del Evento</span>
+                    </div>
+                </div>
+
+                <div>${parsePreview(contenido)}</div>
+            `;
+            lucide.createIcons();
+        }
+
+        // --- AUTOMATIC SAVE LOGIC ---
+        async function getDirHandleDeep(baseHandle, pathArray) {
+            let current = baseHandle;
+            for (const folder of pathArray) {
+                current = await current.getDirectoryHandle(folder, { create: true });
+            }
+            return current;
+        }
+
+        document.getElementById('eventsForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            if (!projectDirHandle) {
+                alert("Primero debes seleccionar la carpeta del proyecto.");
+                return;
+            }
+
+            const btn = document.getElementById('btnPublish');
+            btn.innerHTML = `<i data-lucide="loader-2" class="lucide-spin"></i> Guardando...`;
+            lucide.createIcons();
+            btn.disabled = true;
+
+            try {
+                const slug = createSlug(document.getElementById('titulo').value);
+                
+                // 1. Guardar Fotos Físicas
+                let imagenPortadaPath = "";
+                let imagenDetallePath = "";
+                const imgEventosDirHandle = await getDirHandleDeep(projectDirHandle, ['assets', 'img', 'eventos']);
+                
+                // Si hay imágenes se crea una subcarpeta con el slug
+                let eventImgDirHandle = await imgEventosDirHandle.getDirectoryHandle(slug, { create: true });
+
+                if (portadaFileToSave) {
+                    const fileHandle = await eventImgDirHandle.getFileHandle(portadaFileToSave.name, { create: true });
+                    const writable = await fileHandle.createWritable();
+                    await writable.write(portadaFileToSave);
+                    await writable.close();
+                    imagenPortadaPath = `assets/img/eventos/${slug}/${portadaFileToSave.name}`;
+                }
+
+                if (detalleFileToSave) {
+                    const fileHandle = await eventImgDirHandle.getFileHandle(detalleFileToSave.name, { create: true });
+                    const writable = await fileHandle.createWritable();
+                    await writable.write(detalleFileToSave);
+                    await writable.close();
+                    imagenDetallePath = `assets/img/eventos/${slug}/${detalleFileToSave.name}`;
+                }
+
+                for (const imgObj of inlineImagesToSave) {
+                    const fileHandle = await eventImgDirHandle.getFileHandle(imgObj.file.name, { create: true });
+                    const writable = await fileHandle.createWritable();
+                    await writable.write(imgObj.file);
+                    await writable.close();
+                }
+
+                // 2. Arreglar rutas genéricas de fotos en el texto
+                const cleanedContenido = document.getElementById('contenido').value.replace(/assets\/img\/eventos\/nuevo-evento\//g, `assets/img/eventos/${slug}/`);
+                
+                const postData = {
+                    id: slug,
+                    titulo: document.getElementById('titulo').value,
+                    fecha: document.getElementById('fecha').value,
+                };
+                
+                if(document.getElementById('fechaFin').value) {
+                    postData.fechaFin = document.getElementById('fechaFin').value;
+                }
+
+                postData.lugar = document.getElementById('lugar').value;
+                postData.imagen = imagenPortadaPath;
+                if(imagenDetallePath) postData.imagenDetalle = imagenDetallePath;
+                
+                postData.descripcion = document.getElementById('descripcion').value;
+                postData.contenido = cleanedContenido;
+                postData.tipo = document.getElementById('tipo').value;
+
+                // 3. Modificar JSON
+                const dataDirHandle = await getDirHandleDeep(projectDirHandle, ['assets', 'data']);
+                const jsonFileHandle = await dataDirHandle.getFileHandle('eventos.json', { create: true });
+                const fileObj = await jsonFileHandle.getFile();
+                const jsonText = await fileObj.text();
+                
+                let eventsDB = { eventos: [] };
+                try {
+                    if (jsonText.trim() !== '') { eventsDB = JSON.parse(jsonText); }
+                } catch(e) {}
+
+                eventsDB.eventos.unshift(postData);
+
+                const writableJson = await jsonFileHandle.createWritable();
+                await writableJson.write(JSON.stringify(eventsDB, null, 4));
+                await writableJson.close();
+
+                alert("¡El evento se ha guardado correctamente!");
+                
+                // Reiniciar
+                document.getElementById('eventsForm').reset();
+                inlineImagesToSave = [];
+                portadaFileToSave = null;
+                detalleFileToSave = null;
+                updatePreview();
+
+            } catch (err) {
+                console.error(err);
+                alert("Error al guardar: " + err.message + "\nRevise permisos o intente de nuevo.");
+            } finally {
+                btn.innerHTML = `<i data-lucide="send"></i> Publicar y Guardar Todo`;
+                lucide.createIcons();
+                btn.disabled = false;
+            }
+        });
+    </script>
+</body>
+</html>
+
