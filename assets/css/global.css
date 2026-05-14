@@ -2015,9 +2015,7 @@ section.section-container:nth-of-type(even) {
     min-height: 100dvh;
 }
 
-.sobre-nosotros-hero-content {
-    /* quitamos padding-top para centrar mejor con flex */
-}
+
 
 .sobre-nosotros-hero h1,
 .sobre-nosotros-hero p {
@@ -3112,14 +3110,5 @@ section.section-container:nth-of-type(even) {
     color: #9ca3af;
 }
 
-t-weight: 800;
-}
 
-.medal-gold {
-    color: #fbbf24;
-}
-
-.medal-silver {
-    color: #9ca3af;
-}
 
