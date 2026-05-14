@@ -797,9 +797,10 @@ section.section-container:nth-of-type(even) {
     }
 
     .marquee-item {
-        height: 60px;
-        width: 140px;
-        padding: 0.75rem 1rem;
+        height: 80px;
+        width: 170px;
+        padding: 0.9rem 1.25rem;
+        border-radius: 10px;
     }
 }
 
@@ -2831,15 +2832,16 @@ section.section-container:nth-of-type(even) {
         display: none;
     }
 
-    /* --- BRONZE: logo-only wall, 4 columns --- */
+    /* --- BRONZE: logo-only wall, ~4 per row, orphans centered --- */
     .tier-bronze .tier-list {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
         gap: 0.5rem;
     }
 
     .tier-bronze .card {
-        flex: unset;
+        flex: 0 0 calc(25% - 0.4rem);
         padding: 0.5rem 0.35rem 0.35rem;
         text-align: center;
         background: rgba(255, 255, 255, 0.03);
