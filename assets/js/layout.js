@@ -134,16 +134,16 @@ window.sanitize = function(str) {
             '<p class="footer-desc">' + f.brand.desc + '</p>' +
             '</div>' +
             '<div class="footer-col">' +
-            '<h4>' + f.explorar.title + '</h4>' +
+            '<h3>' + f.explorar.title + '</h3>' +
             '<ul class="footer-links">' + explorarHTML + '</ul>' +
             '</div>' +
             '<div class="footer-col">' +
-            '<h4>' + f.contacto.title + '</h4>' +
+            '<h3>' + f.contacto.title + '</h3>' +
             '<ul class="footer-links">' + contactoHTML + '</ul>' +
             '<iframe class="footer-map" src="https://maps.google.com/maps?q=Universidad+Carlos+III+de+Madrid+Campus+de+LeganÃ©s&t=&z=15&ie=UTF8&iwloc=&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>' +
             '</div>' +
             '<div class="footer-col">' +
-            '<h4>' + f.social.title + '</h4>' +
+            '<h3>' + f.social.title + '</h3>' +
             '<div class="social-icons">' + socialHTML + '</div>' +
             '</div>' +
             '</div>' +

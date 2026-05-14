@@ -1,5 +1,5 @@
 /* =========================================
-    1. CONFIGURACIÓN BASE Y VARIABLES
+    1. CONFIGURACI?N BASE Y VARIABLES
    ========================================= */
 :root {
     --c-red: rgb(242, 25, 43);
@@ -80,7 +80,7 @@ a {
     margin-bottom: 1rem;
 }
 
-/* --- Títulos de Sección (Global) --- */
+/* --- T?tulos de Secci?n (Global) --- */
 .section-title {
     margin-bottom: 3rem;
     border-left: 4px solid var(--c-red);
@@ -108,7 +108,7 @@ a {
     margin: 0 auto;
 }
 
-/* --- Contenedor de Sección (Global) --- */
+/* --- Contenedor de Secci?n (Global) --- */
 .section-container {
     padding: 4rem 5%;
     background-color: var(--c-dark);
@@ -185,7 +185,7 @@ section.section-container:nth-of-type(even) {
     color: var(--c-red);
 }
 
-/* --- Navegación Escritorio --- */
+/* --- Navegaci?n Escritorio --- */
 .main-header nav a {
     margin: 0 1rem;
     opacity: 0.8;
@@ -203,7 +203,7 @@ section.section-container:nth-of-type(even) {
     transform: scale(1.05);
 }
 
-/* --- Menú Hamburguesa (Botón) --- */
+/* --- Men? Hamburguesa (Bot?n) --- */
 .hamburger {
     display: none;
     background: none;
@@ -245,7 +245,7 @@ section.section-container:nth-of-type(even) {
     margin: 0 auto;
 }
 
-.footer-col h4 {
+.footer-col h3 {
     color: var(--c-light);
     margin-bottom: 1.5rem;
     font-size: 1rem;
@@ -378,14 +378,14 @@ section.section-container:nth-of-type(even) {
 }
 
 /* =========================================
-    4. RESPONSIVO: MENÚ MÓVIL
+    4. RESPONSIVO: MEN? M?VIL
    ========================================= */
 @media (max-width: 948px) {
     .hamburger {
         display: flex;
     }
 
-    /* Animación icono X */
+    /* Animaci?n icono X */
     .hamburger.active span:nth-child(1) {
         transform: rotate(45deg) translate(5px, 6px);
     }
@@ -398,7 +398,7 @@ section.section-container:nth-of-type(even) {
         transform: rotate(-45deg) translate(5px, -6px);
     }
 
-    /* Cajón del menú móvil */
+    /* Caj?n del men? m?vil */
     .mobile-menu {
         position: fixed;
         top: 0;
@@ -435,7 +435,7 @@ section.section-container:nth-of-type(even) {
 }
 
 /* =========================================
-    5. PÁGINA: INICIO (LANDING)
+    5. P?GINA: INICIO (LANDING)
    ========================================= */
 
 /* --- Hero Section --- */
@@ -464,8 +464,19 @@ section.section-container:nth-of-type(even) {
     text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
 }
 
-.hero h1 span {
+.hero h1 span:not(.sr-only) {
     color: var(--c-red);
+}
+
+.hero-content .slogan-brand {
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.home-about-teaser .section-title h2 {
+    letter-spacing: 0.06em;
+    overflow-wrap: break-word;
+    hyphens: none;
 }
 
 .hero p {
@@ -500,7 +511,7 @@ section.section-container:nth-of-type(even) {
 }
 
 /* =========================================
-    5a. SECCIÓN ¿QUÉ ES MOTOSTUDENT? (SEO)
+    5a. SECCI?N ?QU? ES MOTOSTUDENT? (SEO)
    ========================================= */
 
 .motostudent-section {
@@ -592,6 +603,16 @@ section.section-container:nth-of-type(even) {
     .motostudent-cta .btn {
         width: 100%;
     }
+}
+
+/* Teaser ?Sobre nosotros? en la home (tras patrocinadores) */
+.home-about-teaser__text {
+    max-width: 48rem;
+    margin: 0 auto;
+}
+
+.home-about-teaser__cta {
+    margin-top: 2rem;
 }
 
 /* =========================================
@@ -805,7 +826,7 @@ section.section-container:nth-of-type(even) {
 }
 
 /* =========================================
-    5c. EVENTOS (Página de eventos + detalle)
+    5c. EVENTOS (P?gina de eventos + detalle)
    ========================================= */
 
 /* --- Hero de Eventos --- */
@@ -847,7 +868,7 @@ section.section-container:nth-of-type(even) {
     line-height: 1.6;
 }
 
-/* --- Sección de eventos (listado) --- */
+/* --- Secci?n de eventos (listado) --- */
 .eventos-section {
     padding-top: 3rem;
     padding-bottom: 4rem;
@@ -867,7 +888,7 @@ section.section-container:nth-of-type(even) {
     margin: 0 auto;
 }
 
-/* Alinear a la izquierda en la página de eventos */
+/* Alinear a la izquierda en la p?gina de eventos */
 #proximos-container, #pasados-container {
     justify-content: flex-start;
 }
@@ -895,7 +916,7 @@ section.section-container:nth-of-type(even) {
     border: 1px solid rgba(255, 255, 255, 0.05);
     border-radius: 8px;
     overflow: hidden;
-    transform: translateZ(0); /* Mata bugs de fuga subpíxel */
+    transform: translateZ(0); /* Mata bugs de fuga subp?xel */
 
     transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, border-left-color 0.3s ease;
     position: relative;
@@ -933,8 +954,8 @@ section.section-container:nth-of-type(even) {
     display: block;
     transition: transform 0.5s ease;
     opacity: 0.85;
-    /* Al inflarla un 2% por defecto, sus bordes reales siempre quedan fuera de la máscara visible padre,
-       es Imposible que filtre nada por ningún lado, matemático */
+    /* Al inflarla un 2% por defecto, sus bordes reales siempre quedan fuera de la m?scara visible padre,
+       es Imposible que filtre nada por ning?n lado, matem?tico */
     transform: scale(1.02);
 }
 
@@ -1044,7 +1065,7 @@ section.section-container:nth-of-type(even) {
 }
 
 /* =========================================
-    5d. PÁGINAS DE DETALLE — SHOWCASE
+    5d. P?GINAS DE DETALLE ? SHOWCASE
    ========================================= */
 
 /* === SHARED === */
@@ -1566,7 +1587,7 @@ section.section-container:nth-of-type(even) {
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;
     
-    /* Matamos el sub-píxel que fuga por debajo del border-radius usando 2 sombras superpuestas:
+    /* Matamos el sub-p?xel que fuga por debajo del border-radius usando 2 sombras superpuestas:
        Una cubre la rendija con el color oscuro del gradiente y otra hace de borde sutil */
     border: none !important;
     box-shadow: inset 0 0 0 1.5px rgba(255, 255, 255, 0.05), inset 0 0 0 2px rgba(14, 14, 16, 1) !important;
@@ -2122,10 +2143,10 @@ section.section-container:nth-of-type(even) {
 }
 
 /* =========================================
-    6. PÁGINA: SOBRE NOSOTROS
+    6. P?GINA: SOBRE NOSOTROS
    ========================================= */
 
-/* --- 6.1. Hero Específico de Sobre Nosotros --- */
+/* --- 6.1. Hero Espec?fico de Sobre Nosotros --- */
 .sobre-nosotros-hero {
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), var(--c-dark)), radial-gradient(circle at center, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.8) 100%), url("../img/hero/sobre-nosotros.webp");
     background-size: cover;
@@ -2181,7 +2202,7 @@ section.section-container:nth-of-type(even) {
     }
 }
 
-/* --- 6.2. Barra de Estadísticas --- */
+/* --- 6.2. Barra de Estad?sticas --- */
 .stats-bar {
     display: flex;
     flex-wrap: wrap;
@@ -2275,7 +2296,7 @@ section.section-container:nth-of-type(even) {
     }
 }
 
-/* --- LÍNEAS DIVISORIAS ENTRE ESTADÍSTICAS --- */
+/* --- L?NEAS DIVISORIAS ENTRE ESTAD?STICAS --- */
 /* Solo en escritorio */
 @media (min-width: 769px) {
     .stat-item:not(:last-child)::after {
@@ -2290,7 +2311,7 @@ section.section-container:nth-of-type(even) {
     }
 }
 
-/* --- 6.3. Grid de Tarjetas (Filosofía & Palmarés) --- */
+/* --- 6.3. Grid de Tarjetas (Filosof?a & Palmar?s) --- */
 .grid-cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -2347,7 +2368,7 @@ section.section-container:nth-of-type(even) {
     line-height: 1.6;
 }
 
-/* Variación: Tarjetas Pequeñas (Palmarés) */
+/* Variaci?n: Tarjetas Peque?as (Palmar?s) */
 .mini-card {
     text-align: center;
     padding: 1.5rem;
@@ -2522,7 +2543,7 @@ section.section-container:nth-of-type(even) {
 }
 
 /* =========================================
-    7. PÁGINA: PATROCINADORES
+    7. P?GINA: PATROCINADORES
    ========================================= */
 
 /* Hero Patrocinadores */
@@ -2606,18 +2627,18 @@ section.section-container:nth-of-type(even) {
     display: flex;
     flex-direction: column;
     gap: 6rem;
-    /* Separación generosa entre niveles (Platinum vs Gold, etc.) */
+    /* Separaci?n generosa entre niveles (Platinum vs Gold, etc.) */
     max-width: 1200px;
     margin: 0 auto;
 }
 
-/* --- Títulos de cada Nivel --- */
+/* --- T?tulos de cada Nivel --- */
 .tier-title {
     text-align: center;
     color: var(--c-red);
     font-size: 1.2rem;
     letter-spacing: 4px;
-    /* Estilo muy técnico/racing */
+    /* Estilo muy t?cnico/racing */
     text-transform: uppercase;
     margin-bottom: 2rem;
     opacity: 0.8;
@@ -2626,7 +2647,7 @@ section.section-container:nth-of-type(even) {
     width: 100%;
 }
 
-/* Líneas decorativas a los lados del título */
+/* L?neas decorativas a los lados del t?tulo */
 .tier-title::before,
 .tier-title::after {
     content: "";
@@ -2673,7 +2694,7 @@ section.section-container:nth-of-type(even) {
     opacity: 1;
 }
 
-/* --- NIVELES ESPECÍFICOS (Aquí controlamos los tamaños con Flex) --- */
+/* --- NIVELES ESPEC?FICOS (Aqu? controlamos los tama?os con Flex) --- */
 
 /* 1. PLATINUM: Grande y destacado */
 .tier-platinum .card {
@@ -2700,7 +2721,7 @@ section.section-container:nth-of-type(even) {
     height: 120px;
 }
 
-/* 3. SILVER: Pequeños */
+/* 3. SILVER: Peque?os */
 .tier-silver .card {
     flex: 0 1 250px;
     padding: 1.5rem;
@@ -2714,7 +2735,7 @@ section.section-container:nth-of-type(even) {
     font-size: 0.9rem;
 }
 
-/* 4. BRONZE: Muy pequeños */
+/* 4. BRONZE: Muy peque?os */
 .tier-bronze .card {
     flex: 0 1 180px;
     padding: 1rem;
@@ -2874,7 +2895,7 @@ section.section-container:nth-of-type(even) {
 }
 
 /* =========================================
-    8. PÁGINA: EQUIPO
+    8. P?GINA: EQUIPO
    ========================================= */
 
 /* Hero Equipo */
@@ -3085,7 +3106,7 @@ section.section-container:nth-of-type(even) {
 }
 
 /* =========================================
-    9. PÁGINA: BLOG
+    9. P?GINA: BLOG
    ========================================= */
 
 /* --- Blog Hero --- */
@@ -3173,7 +3194,7 @@ section.section-container:nth-of-type(even) {
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 16px;
     overflow: hidden;
-    transform: translateZ(0); /* Mata bugs de fuga subpíxel */
+    transform: translateZ(0); /* Mata bugs de fuga subp?xel */
 
     transition: all 0.35s ease;
     position: relative;
@@ -3210,7 +3231,7 @@ section.section-container:nth-of-type(even) {
 }
 
 .blog-card:hover .blog-card-img img {
-    transform: scale(1.10); /* Crece aún más desde su escala inicial inflada */
+    transform: scale(1.10); /* Crece a?n m?s desde su escala inicial inflada */
 }
 
 /* Overlay gradient on blog image */
@@ -3337,7 +3358,7 @@ section.section-container:nth-of-type(even) {
     padding-right: 0;
 }
 
-/* Imágenes inline en artículos */
+/* Im?genes inline en art?culos */
 .blog-inline-img {
     margin: 2rem 0;
     border-radius: 12px;
@@ -3387,7 +3408,7 @@ section.section-container:nth-of-type(even) {
 
 
 
-/* --- Centrado de Palmar�s en pantallas grandes --- */
+/* --- Centrado de Palmar?s en pantallas grandes --- */
 @media (min-width: 1200px) {
     .grid-palmares .card:nth-child(5) {
         grid-column: 2;

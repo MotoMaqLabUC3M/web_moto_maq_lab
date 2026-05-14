@@ -34,7 +34,17 @@
                 console.warn('Error cargando equipo.json', err);
             }
 
-            document.title = post.titulo + ' | MotoMaqLab UC3M';
+            if (typeof motoMaqLabApplySeo === 'function') {
+                motoMaqLabApplySeo({
+                    title: post.titulo + ' | MotoMaqLab UC3M',
+                    description: post.extracto || '',
+                    canonicalPath: '/noticia.html?id=' + encodeURIComponent(post.id),
+                    imagePath: post.imagen || 'assets/img/hero/blog.webp',
+                    ogType: 'article'
+                });
+            } else {
+                document.title = post.titulo + ' | MotoMaqLab UC3M';
+            }
             injectStructuredData(post);
             render(container, post, equipoData);
         } catch (err) {
