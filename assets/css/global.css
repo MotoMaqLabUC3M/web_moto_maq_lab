@@ -3112,3 +3112,13 @@ section.section-container:nth-of-type(even) {
 
 
 
+
+/* --- Centrado de Palmarés en pantallas grandes --- */
+@media (min-width: 1200px) {
+    .grid-palmares .card:nth-child(5) {
+        grid-column: 2;
+    }
+    .grid-palmares .card:nth-child(6) {
+        grid-column: 3;
+    }
+}
