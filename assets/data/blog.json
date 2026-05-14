@@ -1,16 +1,6 @@
 {
     "posts": [
         {
-            "id": "test-articulo-chasis-addyx",
-            "titulo": "Cómo fabricamos el chasis más innovador de MotoStudent",
-            "autor": "Sabina Rubio Suárez",
-            "fecha": "2026-05-13",
-            "categoria": "Ingeniería",
-            "imagen": "assets/img/timeline/2025.webp",
-            "extracto": "El chasis doble viga hueco en fibra de carbono de nuestra MS8 es único en el mundo. Aquí te contamos el proceso completo, desde el diseño hasta su fabricación con moldes hidrosolubles.",
-            "contenido": "Cuando el equipo de estructural se planteó el diseño de la MS8, el objetivo era claro: integrar el conducto de admisión de aire dentro del propio chasis, eliminando peso y mejorando la aerodinámica interna del motor. Lo que parecía una locura se convirtió en nuestro mayor logro.\n\n## El reto: geometrías imposibles\nFabricar un chasis hueco en fibra de carbono con cavidades internas que forman el conducto de admisión es, con métodos convencionales, prácticamente imposible. No se puede laminar fibra de carbono sobre un molde al que no puedes acceder ni extraer después.\n\n## La solución: moldes hidrosolubles de Addyx\nGracias a nuestra colaboración con Addyx, empresa pionera en fabricación de moldes hidrosolubles impresos en 3D, encontramos la solución. El proceso es fascinante: se imprime en 3D un molde de material soluble en agua con la forma exacta de las cavidades internas del chasis. Sobre ese molde se lamina la fibra de carbono. Una vez curada la pieza, se disuelve el molde con agua, dejando perfectamente formadas las cavidades internas.\n\n## Resultado: un chasis que respira\nEl resultado es un chasis doble viga en fibra de carbono que actúa simultáneamente como estructura portante y como conducto de admisión de aire al motor. Esto nos permitió reducir el peso global de la moto eliminando componentes adicionales y mejorar la eficiencia del motor al optimizar el flujo de aire.\n\n## Impacto en competición\nEn la VIII edición de MotoStudent, presentamos este desarrollo obteniendo el segundo puesto en la Pitch Presentation, con reconocimiento internacional a la innovación técnica y la viabilidad industrial del proyecto. Ningún otro equipo había presentado una solución similar."
-        },
-        {
             "id": "newsletter-revista-motomaqlab",
             "titulo": "Newsletter - Revista MotoMaqLab",
             "autor": "MotoMaqLab UC3M",
