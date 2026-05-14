@@ -159,6 +159,64 @@
         }
 
         initGalleryLightbox();
+        initMobileFeatureCarousel();
+    }
+
+    /**
+     * On mobile (≤768px), transforms the bento feature grid into a
+     * horizontal scroll-snap carousel with dot indicators.
+     */
+    function initMobileFeatureCarousel() {
+        if (window.innerWidth > 768) return;
+
+        const grid = document.querySelector('.sp-features-grid');
+        if (!grid) return;
+
+        const cards = Array.from(grid.querySelectorAll('.sp-feature-card'));
+        if (cards.length <= 1) return;
+
+        // Build dot indicators
+        const dotsWrapper = document.createElement('div');
+        dotsWrapper.className = 'sp-carousel-dots';
+        dotsWrapper.setAttribute('aria-label', 'Navegación de diapositivas');
+
+        cards.forEach(function (_, i) {
+            const dot = document.createElement('button');
+            dot.type = 'button';
+            dot.className = 'sp-carousel-dot' + (i === 0 ? ' active' : '');
+            dot.setAttribute('aria-label', 'Ir a elemento ' + (i + 1));
+            dot.addEventListener('click', function () {
+                const gap = parseFloat(getComputedStyle(grid).gap) || 16;
+                const cardW = cards[0].getBoundingClientRect().width + gap;
+                grid.scrollTo({ left: i * cardW, behavior: 'smooth' });
+            });
+            dotsWrapper.appendChild(dot);
+        });
+
+        // Insert dots section below the grid
+        const section = grid.closest('.sp-features-section');
+        if (section) {
+            section.appendChild(dotsWrapper);
+        } else {
+            grid.parentNode.insertBefore(dotsWrapper, grid.nextSibling);
+        }
+
+        // Update active dot on scroll
+        let scrollTimer;
+        grid.addEventListener('scroll', function () {
+            clearTimeout(scrollTimer);
+            scrollTimer = setTimeout(function () {
+                const gap = parseFloat(getComputedStyle(grid).gap) || 16;
+                const cardW = cards[0].getBoundingClientRect().width + gap;
+                const activeIndex = Math.min(
+                    Math.round(grid.scrollLeft / cardW),
+                    cards.length - 1
+                );
+                dotsWrapper.querySelectorAll('.sp-carousel-dot').forEach(function (dot, i) {
+                    dot.classList.toggle('active', i === activeIndex);
+                });
+            }, 50);
+        });
     }
 
     function initGalleryLightbox() {
