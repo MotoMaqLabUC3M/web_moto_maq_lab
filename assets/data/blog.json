@@ -1,0 +1,14 @@
+{
+    "posts": [
+        {
+            "id": "newsletter-revista-motomaqlab",
+            "titulo": "Newsletter - Revista MotoMaqLab",
+            "autor": "MotoMaqLab UC3M",
+            "fecha": "2024-03-19",
+            "categoria": "Newsletter",
+            "imagen": "assets/img/blog/Portada_news_letter.webp",
+            "extracto": "¡Ya está disponible nuestra nueva Newsletter! Descarga la Revista MotoMaqLab desde este enlace.",
+            "contenido": "Nos enorgullece presentar la última edición de nuestra revista MotoMaqLab, donde podrás mantenerte informado de todos nuestros avances.\n\n[pdf:assets/docs/Revista_Motomaqlab%20(1).pdf]"
+        }
+    ]
+}

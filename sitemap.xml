@@ -1,27 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    <url>
-        <loc>https://motomaqlabuc3m.es/</loc>
-        <lastmod>2026-03-02</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>1.0</priority>
-    </url>
-    <url>
-        <loc>https://motomaqlabuc3m.es/equipo.html</loc>
-        <lastmod>2026-03-02</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://motomaqlabuc3m.es/patrocinadores.html</loc>
-        <lastmod>2026-03-02</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://motomaqlabuc3m.es/sobre-nosotros.html</loc>
-        <lastmod>2026-03-02</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
+
+  <!-- Generado automáticamente por scripts/generate_sitemap.py -->
+  <!-- Última generación: 2026-05-13T09:26:10.142766+00:00 -->
+
+  <!-- Páginas principales -->
+  <url>
+    <loc>https://motomaqlabuc3m.es/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://motomaqlabuc3m.es/sobre-nosotros.html</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://motomaqlabuc3m.es/equipo.html</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://motomaqlabuc3m.es/patrocinadores.html</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://motomaqlabuc3m.es/eventos.html</loc>
+    <lastmod>2026-04-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://motomaqlabuc3m.es/blog.html</loc>
+    <lastmod>2026-04-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Detalle de patrocinadores -->
+  <url>
+    <loc>https://motomaqlabuc3m.es/patrocinador.html?id=maqlab</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://motomaqlabuc3m.es/patrocinador.html?id=altair</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://motomaqlabuc3m.es/patrocinador.html?id=addyx</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://motomaqlabuc3m.es/patrocinador.html?id=UC3M</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://motomaqlabuc3m.es/patrocinador.html?id=retamal</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Detalle de eventos -->
+
+
+  <!-- Detalle de blog -->
+  <url>
+    <loc>https://motomaqlabuc3m.es/noticia.html?id=newsletter-revista-motomaqlab</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
 </urlset>
