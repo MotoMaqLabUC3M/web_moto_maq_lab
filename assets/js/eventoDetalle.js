@@ -41,7 +41,17 @@
 
             if (!evento) { renderError(container); return; }
 
-            document.title = `${sanitize(evento.titulo)} | MotoMaqLab UC3M`;
+            if (typeof motoMaqLabApplySeo === 'function') {
+                motoMaqLabApplySeo({
+                    title: `${evento.titulo} | MotoMaqLab UC3M`,
+                    description: evento.descripcion || '',
+                    canonicalPath: `/evento.html?id=${encodeURIComponent(evento.id)}`,
+                    imagePath: evento.imagen || 'assets/img/hero/eventos.webp',
+                    ogType: 'website'
+                });
+            } else {
+                document.title = `${sanitize(evento.titulo)} | MotoMaqLab UC3M`;
+            }
             injectStructuredData(evento);
             render(container, evento);
         } catch (err) {

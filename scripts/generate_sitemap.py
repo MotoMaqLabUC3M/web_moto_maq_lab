@@ -6,8 +6,11 @@ Genera automáticamente el sitemap.xml leyendo:
   - Los archivos HTML principales del proyecto
   - Los JSON de datos dinámicos (patrocinadores, eventos, blog)
 
-Las fechas <lastmod> se calculan automáticamente a partir de la fecha
-de última modificación de los archivos fuente.
+Las fechas <lastmod> usan la fecha del contenido (evento/post) cuando
+existe (YYYY-MM-DD); si no, la mtime del JSON o del HTML.
+
+No incluye: 404.html, creador_*.html (tienen noindex), ni plantillas
+vacías — solo MAIN_PAGES + URLs de datos (patrocinadores, eventos, blog).
 
 Uso:
   py scripts/generate_sitemap.py
@@ -19,6 +22,8 @@ import json
 import os
 from datetime import datetime, timezone
 from pathlib import Path
+from typing import Optional
+from urllib.parse import quote
 
 DOMAIN = "https://motomaqlabuc3m.es"
 ROOT = Path(__file__).resolve().parent.parent
@@ -37,6 +42,24 @@ def read_json(rel_path: str) -> dict:
     full = ROOT / rel_path
     with open(full, "r", encoding="utf-8") as f:
         return json.load(f)
+
+
+def iso_date_prefix(value) -> Optional[str]:
+    """Devuelve YYYY-MM-DD si el valor es una fecha ISO reconocible."""
+    if not value or not isinstance(value, str):
+        return None
+    s = value.strip()
+    if len(s) >= 10 and s[4] == "-" and s[7] == "-":
+        return s[:10]
+    return None
+
+
+def lastmod_for_item(item: dict, json_fallback: str) -> str:
+    for key in ("updatedAt", "fechaModificacion", "fechaFin", "fecha"):
+        d = iso_date_prefix(item.get(key))
+        if d:
+            return d
+    return json_fallback
 
 
 def url_entry(loc: str, lastmod: str, changefreq: str, priority: str) -> str:
@@ -89,18 +112,24 @@ def main():
     evt_data = read_json("assets/data/eventos.json")
     evt_lastmod = get_last_modified(ROOT / "assets/data/eventos.json")
     for evento in evt_data["eventos"]:
+        eid = quote(str(evento.get("id", "")))
+        if not eid:
+            continue
         evt_entries.append(url_entry(
-            f"{DOMAIN}/evento.html?id={evento['id']}",
-            evt_lastmod, "monthly", "0.6"
+            f"{DOMAIN}/evento.html?id={eid}",
+            lastmod_for_item(evento, evt_lastmod), "monthly", "0.6"
         ))
 
     # 4) Blog posts
     blog_data = read_json("assets/data/blog.json")
     blog_lastmod = get_last_modified(ROOT / "assets/data/blog.json")
     for post in blog_data["posts"]:
+        pid = quote(str(post.get("id", "")))
+        if not pid:
+            continue
         blog_entries.append(url_entry(
-            f"{DOMAIN}/noticia.html?id={post['id']}",
-            blog_lastmod, "monthly", "0.6"
+            f"{DOMAIN}/noticia.html?id={pid}",
+            lastmod_for_item(post, blog_lastmod), "monthly", "0.6"
         ))
 
     # ── Generar XML ──────────────────────────────────────────────────
