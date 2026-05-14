@@ -1815,6 +1815,10 @@ section.section-container:nth-of-type(even) {
     aspect-ratio: 16/7;
 }
 
+.sp-gallery-item--hero img {
+    object-position: center 25%;
+}
+
 .sp-gallery-item img {
     width: 100%;
     height: 100%;
