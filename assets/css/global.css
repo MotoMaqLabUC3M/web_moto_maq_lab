@@ -1935,6 +1935,24 @@ section.section-container:nth-of-type(even) {
         flex-direction: column;
         text-align: center;
         gap: 2rem;
+        align-items: center;
+    }
+
+    .sp-hero-logo {
+        width: 100%;
+        max-width: 360px;
+    }
+
+    .sp-hero-text {
+        align-items: center;
+    }
+
+    .sp-hero-text .badge {
+        align-self: center;
+    }
+
+    .sp-web-btn {
+        align-self: center;
     }
 
     .sp-hero-text p {
@@ -1948,12 +1966,12 @@ section.section-container:nth-of-type(even) {
     }
 
     .sp-hero-logo {
+        max-width: 280px;
         padding: 1.4rem 1.8rem;
     }
 
     .sp-hero-logo img {
-        max-height: 65px;
-        max-width: 180px;
+        max-height: 80px;
     }
 
     .sp-hero-text h1 {
@@ -1983,8 +2001,70 @@ section.section-container:nth-of-type(even) {
         min-width: unset;
     }
 
+    /* Feature cards: horizontal scroll carousel on mobile */
     .sp-features-grid {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: row;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        gap: 1rem;
+        padding-bottom: 0.5rem;
+    }
+
+    .sp-features-grid::-webkit-scrollbar {
+        display: none;
+    }
+
+    .sp-feature-card {
+        flex: 0 0 85%;
+        scroll-snap-align: center;
+        padding: 1.75rem 1.5rem;
+        gap: 1rem;
+        /* reset bento grid spans */
+        grid-column: unset !important;
+        grid-row: unset !important;
+    }
+
+    .sp-feature-card:nth-child(1) p,
+    .sp-feature-card p {
+        font-size: 1rem;
+    }
+
+    /* Dots navigation */
+    .sp-carousel-dots {
+        display: flex;
+        justify-content: center;
+        gap: 0.5rem;
+        margin-top: 1.25rem;
+    }
+
+    .sp-carousel-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        border: none;
+        background: rgba(255, 255, 255, 0.2);
+        cursor: pointer;
+        transition: all 0.2s ease;
+        padding: 0;
+        flex-shrink: 0;
+    }
+
+    .sp-carousel-dot.active {
+        background: var(--c-red);
+        transform: scale(1.35);
+    }
+
+    .sp-features-section,
+    .sp-text-block {
+        padding: 0 4% 2.5rem;
+    }
+
+    .sp-gallery-section {
+        padding: 0 4% 2.5rem;
     }
 
     .sp-gallery-item {
@@ -1993,6 +2073,50 @@ section.section-container:nth-of-type(even) {
 
     .sp-gallery-item--hero {
         width: 100%;
+        aspect-ratio: 16/9;
+    }
+
+    .sp-cta-section {
+        padding: 1.5rem 5% 3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .sp-hero {
+        padding: 6rem 4% 2rem;
+    }
+
+    .sp-hero-logo {
+        max-width: 220px;
+        padding: 1rem 1.25rem;
+    }
+
+    .sp-hero-logo img {
+        max-height: 65px;
+    }
+
+    .sp-hero-text h1 {
+        font-size: 1.75rem;
+    }
+
+    .sp-hero-text p {
+        font-size: 0.95rem;
+    }
+
+    .sp-gallery-item {
+        width: 100%;
+    }
+
+    .sp-lightbox {
+        padding: 0.75rem;
+    }
+
+    .sp-lightbox-prev {
+        left: 0.3rem;
+    }
+
+    .sp-lightbox-next {
+        right: 0.3rem;
     }
 }
 
@@ -2448,12 +2572,31 @@ section.section-container:nth-of-type(even) {
 
 @media (max-width: 768px) {
     .patrocinadores-hero {
-        padding: 8rem 5% 4rem;
+        padding: 7rem 5% 3rem;
+        height: auto;
+        min-height: 100dvh;
+        gap: 1.5rem;
+    }
+
+    .patrocinadores-hero h1 {
+        font-size: 2.2rem;
+        letter-spacing: -1px;
+    }
+
+    .patrocinadores-hero p {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .patrocinadores-hero {
+        padding: 5.5rem 5% 2.5rem;
+        min-height: unset;
         height: auto;
     }
 
     .patrocinadores-hero h1 {
-        font-size: 2.5rem;
+        font-size: 1.9rem;
     }
 }
 
@@ -2587,15 +2730,144 @@ section.section-container:nth-of-type(even) {
 }
 
 @media (max-width: 768px) {
+    .sponsors-stack {
+        gap: 4rem;
+    }
+
+    .tier-platinum .card {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .tier-platinum .sponsor-logo-wrapper.large {
+        height: 160px;
+    }
+
+    .tier-gold .card {
+        flex: 0 1 300px;
+    }
+
+    .tier-gold .sponsor-logo-wrapper.medium {
+        height: 100px;
+    }
+
     .tier-silver .card {
-        flex: 0 1 180px;
-        padding: 1.5rem;
+        flex: 0 1 190px;
+        padding: 1.2rem;
+    }
+
+    .tier-silver .sponsor-logo-wrapper.small {
+        height: 80px;
     }
 
     .tier-bronze .card {
-        flex: 0 1 100px;
-        padding: 1rem;
-        background: transparent;
+        flex: 0 1 150px;
+        padding: 0.8rem;
+    }
+
+    .tier-bronze .sponsor-logo-wrapper.xsmall {
+        height: 65px;
+    }
+}
+
+@media (max-width: 480px) {
+    .sponsors-stack {
+        gap: 3.5rem;
+    }
+
+    /* ===================================================
+       LOGO WALL APPROACH
+       Platinum/Gold: full-width cards (1 per row)
+       Silver: logo-only grid, 3 columns
+       Bronze: logo-only grid, 4 columns
+       Hierarchy = card size + content richness
+       =================================================== */
+
+    /* --- PLATINUM: full-width card, all content --- */
+    .tier-platinum .card {
+        flex: unset;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .tier-platinum .sponsor-logo-wrapper.large {
+        height: 130px;
+    }
+
+    /* --- GOLD: full-width card, all content --- */
+    .tier-gold .card {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .tier-gold .sponsor-logo-wrapper.medium {
+        height: 100px;
+    }
+
+    /* --- SILVER: logo-only wall, 3 columns --- */
+    .tier-silver .tier-list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.65rem;
+    }
+
+    .tier-silver .card {
+        flex: unset;
+        padding: 0.65rem 0.5rem 0.5rem;
+        text-align: center;
+        border-radius: 10px;
+    }
+
+    .tier-silver .sponsor-logo-wrapper.small {
+        height: 52px;
+        padding: 0.4rem 0.5rem;
+        margin-bottom: 0;
+        border-radius: 7px;
+    }
+
+    /* Logo-only: hide name and description on silver */
+    .tier-silver h4,
+    .tier-silver .card p {
+        display: none;
+    }
+
+    /* --- BRONZE: logo-only wall, 4 columns --- */
+    .tier-bronze .tier-list {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0.5rem;
+    }
+
+    .tier-bronze .card {
+        flex: unset;
+        padding: 0.5rem 0.35rem 0.35rem;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.03);
+        border-radius: 8px;
+    }
+
+    .tier-bronze .sponsor-logo-wrapper.xsmall {
+        height: 38px;
+        padding: 0.3rem;
+        margin-bottom: 0;
+        border-radius: 5px;
+    }
+
+    /* Logo-only: hide name and description on bronze */
+    .tier-bronze h5,
+    .tier-bronze .card p {
+        display: none;
+    }
+
+    .tier-title {
+        font-size: 1rem;
+        letter-spacing: 3px;
+    }
+
+    .tier-title::before,
+    .tier-title::after {
+        width: 20px;
+        margin: 0 0.5rem;
     }
 }
 

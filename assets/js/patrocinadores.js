@@ -34,7 +34,19 @@ document.addEventListener('DOMContentLoaded', async () => {
 function renderSponsorTiers(container, tiers) {
     const html = tiers.map(tier => createTierHTML(tier)).join('');
     container.innerHTML = `<div class="sponsors-stack">${html}</div>`;
+    // Init swipe carousels on mobile after DOM is ready
+    requestAnimationFrame(initTierCarousels);
 }
+
+/**
+ * Previously used for tier carousel - now a no-op since
+ * silver/bronze use a CSS logo wall grid instead.
+ */
+function initTierCarousels() {
+    // No-op: logo wall approach is handled entirely in CSS.
+}
+
+
 
 /**
  * Creates HTML for a single tier section
