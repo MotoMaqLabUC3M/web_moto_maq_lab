@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <!-- Generado automáticamente por scripts/generate_sitemap.py -->
-  <!-- Última generación: 2026-05-14T11:26:11.611454+00:00 -->
+  <!-- Última generación: 2026-05-14T14:10:07.887246+00:00 -->
 
   <!-- Páginas principales -->
   <url>
@@ -44,31 +44,31 @@
 
   <!-- Detalle de patrocinadores -->
   <url>
-    <loc>https://motomaqlabuc3m.es/patrocinador.html?id=maqlab</loc>
+    <loc>https://motomaqlabuc3m.es/patrocinador-maqlab.html</loc>
     <lastmod>2026-05-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://motomaqlabuc3m.es/patrocinador.html?id=altair</loc>
+    <loc>https://motomaqlabuc3m.es/patrocinador-altair.html</loc>
     <lastmod>2026-05-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://motomaqlabuc3m.es/patrocinador.html?id=addyx</loc>
+    <loc>https://motomaqlabuc3m.es/patrocinador-addyx.html</loc>
     <lastmod>2026-05-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://motomaqlabuc3m.es/patrocinador.html?id=UC3M</loc>
+    <loc>https://motomaqlabuc3m.es/patrocinador-UC3M.html</loc>
     <lastmod>2026-05-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://motomaqlabuc3m.es/patrocinador.html?id=retamal</loc>
+    <loc>https://motomaqlabuc3m.es/patrocinador-retamal.html</loc>
     <lastmod>2026-05-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -79,7 +79,7 @@
 
   <!-- Detalle de blog -->
   <url>
-    <loc>https://motomaqlabuc3m.es/noticia.html?id=newsletter-revista-motomaqlab</loc>
+    <loc>https://motomaqlabuc3m.es/noticia-newsletter-revista-motomaqlab.html</loc>
     <lastmod>2024-03-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>

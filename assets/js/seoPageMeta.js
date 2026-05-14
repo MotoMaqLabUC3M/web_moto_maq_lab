@@ -50,7 +50,7 @@
      * @param {object} opts
      * @param {string} opts.title - document.title
      * @param {string} [opts.description] - texto plano, se trunca
-     * @param {string} opts.canonicalPath - p.ej. /evento.html?id=abc (sin origin)
+     * @param {string} opts.canonicalPath - p.ej. /evento-ms9.html o /noticia-slug.html (sin origin)
      * @param {string} [opts.imagePath] - ruta relativa o absoluta a imagen destacada
      * @param {string} [opts.ogType] - og:type (article | website)
      */

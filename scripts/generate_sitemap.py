@@ -112,11 +112,11 @@ def main():
     evt_data = read_json("assets/data/eventos.json")
     evt_lastmod = get_last_modified(ROOT / "assets/data/eventos.json")
     for evento in evt_data["eventos"]:
-        eid = quote(str(evento.get("id", "")))
+        eid = str(evento.get("id", "")).strip()
         if not eid:
             continue
         evt_entries.append(url_entry(
-            f"{DOMAIN}/evento.html?id={eid}",
+            f"{DOMAIN}/evento-{quote(eid)}.html",
             lastmod_for_item(evento, evt_lastmod), "monthly", "0.6"
         ))
 
@@ -124,11 +124,11 @@ def main():
     blog_data = read_json("assets/data/blog.json")
     blog_lastmod = get_last_modified(ROOT / "assets/data/blog.json")
     for post in blog_data["posts"]:
-        pid = quote(str(post.get("id", "")))
+        pid = str(post.get("id", "")).strip()
         if not pid:
             continue
         blog_entries.append(url_entry(
-            f"{DOMAIN}/noticia.html?id={pid}",
+            f"{DOMAIN}/noticia-{quote(pid)}.html",
             lastmod_for_item(post, blog_lastmod), "monthly", "0.6"
         ))
 

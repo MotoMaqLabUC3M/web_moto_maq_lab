@@ -29,8 +29,9 @@
         const container = document.getElementById('evento-detalle');
         if (!container) return;
 
-        const params = new URLSearchParams(window.location.search);
-        const id = params.get('id');
+        const id = window.motoMaqLabDetailIdFromUrl
+            ? window.motoMaqLabDetailIdFromUrl('evento')
+            : new URLSearchParams(window.location.search).get('id');
 
         if (!id) { renderError(container); return; }
 
@@ -45,7 +46,7 @@
                 motoMaqLabApplySeo({
                     title: `${evento.titulo} | MotoMaqLab UC3M`,
                     description: evento.descripcion || '',
-                    canonicalPath: `/evento.html?id=${encodeURIComponent(evento.id)}`,
+                    canonicalPath: `/evento-${evento.id}.html`,
                     imagePath: evento.imagen || 'assets/img/hero/eventos.webp',
                     ogType: 'website'
                 });
@@ -74,9 +75,10 @@
 
         // Construir hero de la página dinámicamente
         const heroImage = evento.imagen;
-        const heroStyle = heroImage
-            ? `background-image: linear-gradient(to bottom, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.65) 55%, var(--c-dark) 100%), url('${heroImage}'); background-size: cover; background-position: center;`
-            : "background-color: var(--c-dark);";
+        const heroClasses = heroImage ? 'ev-hero ev-hero--photo' : 'ev-hero ev-hero--solid-dark';
+        const heroBgAttr = heroImage
+            ? ` style="--ev-hero-bg:url('${String(heroImage).replace(/'/g, '%27')}')"`
+            : '';
 
         // Parse content
         const { intro, sections } = parseContenido(evento.contenido || evento.descripcion);
@@ -108,7 +110,7 @@
 
         container.innerHTML = `
             <!-- HERO -->
-            <section class="ev-hero" style="${heroStyle}">
+            <section class="${heroClasses}"${heroBgAttr}>
                 <div class="ev-hero-content">
                     <a href="eventos.html" class="sp-back">← Eventos</a>
                     <span class="badge">${tipoLabel}</span>
@@ -136,7 +138,7 @@
             <!-- CONTENT -->
             <div class="ev-body">
                 ${intro ? `<p class="ev-intro">${intro}</p>` : ''}
-                ${evento.imagenDetalle ? `<img src="${evento.imagenDetalle}" alt="Detalle del evento" style="max-width: 100%; border-radius: 8px; margin: 2rem 0; display: block;" />` : ''}
+                ${evento.imagenDetalle ? `<img src="${sanitize(evento.imagenDetalle)}" alt="Detalle visual del evento ${sanitize(evento.titulo)} — MotoMaqLab UC3M" class="ev-body__detail-img" />` : ''}
                 ${sectionsHTML}
             </div>
 
@@ -198,7 +200,7 @@
     function renderError(container) {
         container.innerHTML = `
             <div class="sp-error">
-                <span class="sp-error-icon"><i data-lucide="search-x" style="width: 48px; height: 48px;"></i></span>
+                <span class="sp-error-icon"><i data-lucide="search-x"></i></span>
                 <h2>Evento no encontrado</h2>
                 <p>El evento que buscas no existe o ha sido eliminado.</p>
                 <a href="eventos.html" class="btn btn--primary">Ver eventos</a>
