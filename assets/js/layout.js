@@ -51,7 +51,17 @@ window.sanitize = function(str) {
                     headerEl.classList.add('header-scrolled');
                 }
             }
-            if (footerEl) renderFooter(footerEl, data.footer, data.header);
+            if (footerEl) {
+                renderFooter(footerEl, data.footer, data.header);
+                var trBtn = document.getElementById('mml-footer-translate');
+                if (trBtn) {
+                    trBtn.addEventListener('click', function () {
+                        if (window.motoMaqLabLoadGoogleTranslate) {
+                            window.motoMaqLabLoadGoogleTranslate();
+                        }
+                    });
+                }
+            }
 
             // Inicializar o cargar iconos de Lucide dinÃ¡micamente si no existieran
             if (window.lucide) {
@@ -148,6 +158,9 @@ window.sanitize = function(str) {
             '</div>' +
             '</div>' +
             '<div class="footer-bottom">' +
+            '<p class="footer-translate-wrap">' +
+            '<button type="button" class="footer-translate-btn" id="mml-footer-translate">Idioma / Translate</button>' +
+            '</p>' +
             '<p>' + f.copy.replace('2025', new Date().getFullYear()) + '</p>' +
             '</div>';
     }

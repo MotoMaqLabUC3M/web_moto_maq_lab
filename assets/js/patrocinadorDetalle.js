@@ -24,8 +24,9 @@
         const container = document.getElementById('patrocinador-detalle');
         if (!container) return;
 
-        const params = new URLSearchParams(window.location.search);
-        const id = params.get('id');
+        const id = window.motoMaqLabDetailIdFromUrl
+            ? window.motoMaqLabDetailIdFromUrl('patrocinador')
+            : new URLSearchParams(window.location.search).get('id');
 
         if (!id) { renderError(container); return; }
 
@@ -61,7 +62,7 @@
         if (features.length > 0) {
             const heroFeatureBg = galleryImages.length > 0 ? galleryImages.shift() : '';
             const cardsHTML = features.map((f, i) => `
-                <div class="sp-feature-card ${heroFeatureBg && i === 0 ? 'sp-feature-card--hero-image' : ''}" ${heroFeatureBg && i === 0 ? `style="background-image: linear-gradient(rgba(14, 14, 16, 0.7), rgba(14, 14, 16, 0.7)), url('${heroFeatureBg}');"` : ''}>
+                <div class="sp-feature-card ${heroFeatureBg && i === 0 ? 'sp-feature-card--hero-image' : ''}" ${heroFeatureBg && i === 0 ? `style="--sp-hero-card-bg:url('${String(heroFeatureBg).replace(/'/g, '%27')}')"` : ''}>
                     <span class="sp-feature-icon">
                         <i data-lucide="${FEATURE_ICONS[i % FEATURE_ICONS.length]}"></i>
                     </span>
@@ -236,7 +237,7 @@
             lightbox.innerHTML = `
                 <button type="button" class="sp-lightbox-close" aria-label="Cerrar imagen">×</button>
                 <button type="button" class="sp-lightbox-prev" aria-label="Imagen anterior">‹</button>
-                <img class="sp-lightbox-image" alt="" />
+                <img class="sp-lightbox-image" alt="Imagen ampliada de la galería del patrocinador" />
                 <button type="button" class="sp-lightbox-next" aria-label="Siguiente imagen">›</button>
             `;
             document.body.appendChild(lightbox);
@@ -251,7 +252,7 @@
             lightbox.classList.remove('is-open');
             document.body.classList.remove('sp-lightbox-open');
             imgEl.removeAttribute('src');
-            imgEl.alt = '';
+            imgEl.alt = 'Imagen ampliada de la galería del patrocinador';
         }
 
         function showImage(index) {
@@ -272,7 +273,6 @@
 
         if (!gallery.dataset.lightboxBound) {
             images.forEach((img, idx) => {
-                img.style.cursor = 'pointer';
                 img.addEventListener('click', (event) => {
                     event.stopPropagation();
                     openLightbox(idx);
@@ -363,7 +363,7 @@
     function renderError(container) {
         container.innerHTML = `
             <div class="sp-error">
-                <span class="sp-error-icon"><i data-lucide="search-x" style="width: 48px; height: 48px;"></i></span>
+                <span class="sp-error-icon"><i data-lucide="search-x"></i></span>
                 <h2>Patrocinador no encontrado</h2>
                 <p>El patrocinador que buscas no existe o ha sido eliminado.</p>
                 <a href="patrocinadores.html" class="btn btn--primary">Ver patrocinadores</a>

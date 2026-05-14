@@ -1,7 +1,7 @@
 /**
  * blog.js
  * Carga posts desde JSON y los muestra ordenados del más reciente al más antiguo.
- * Cada tarjeta enlaza a noticia.html?id=xxx
+ * Cada tarjeta enlaza a noticia-<id>.html (URL limpia; ?id= sigue funcionando en noticia.html)
  * También renderiza preview en index.html (2 últimas noticias).
  */
 (function () {
@@ -74,7 +74,7 @@
                 link.target = '_blank';
                 link.rel = 'noopener noreferrer';
             } else {
-                link.href = 'noticia.html?id=' + encodeURIComponent(post.id);
+                link.href = 'noticia-' + post.id + '.html';
             }
             
             link.className = 'blog-card-link';
@@ -92,7 +92,7 @@
                 ? '<div class="blog-card-img"><img src="' + sanitize(post.imagen) + '" alt="' + sanitize(post.titulo) + '" loading="lazy" /></div>'
                 : '';
 
-            var fallbackHTML = '<div class="blog-card-img"><div class="newsletter-fallback"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:0.5rem;"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg><br>Revista MotoMaqLab</div></div>';
+            var fallbackHTML = '<div class="blog-card-img"><div class="newsletter-fallback"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg><br>Revista MotoMaqLab</div></div>';
 
             // Truncar extracto
             var extracto = post.extracto || '';
@@ -120,7 +120,7 @@
             if (img) {
                 img.addEventListener('error', function () {
                     this.style.display = 'none';
-                    this.parentElement.innerHTML = '<div class="newsletter-fallback"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:0.5rem;"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg><br>Imagen no encontrada</div>';
+                    this.parentElement.innerHTML = '<div class="newsletter-fallback"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg><br>Imagen no encontrada</div>';
                 });
             }
 

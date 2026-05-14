@@ -12,8 +12,9 @@
         const container = document.getElementById('noticia-detalle');
         if (!container) return;
 
-        const params = new URLSearchParams(window.location.search);
-        const id = params.get('id');
+        const id = window.motoMaqLabDetailIdFromUrl
+            ? window.motoMaqLabDetailIdFromUrl('noticia')
+            : new URLSearchParams(window.location.search).get('id');
 
         if (!id) { renderError(container); return; }
 
@@ -38,7 +39,7 @@
                 motoMaqLabApplySeo({
                     title: post.titulo + ' | MotoMaqLab UC3M',
                     description: post.extracto || '',
-                    canonicalPath: '/noticia.html?id=' + encodeURIComponent(post.id),
+                    canonicalPath: '/noticia-' + post.id + '.html',
                     imagePath: post.imagen || 'assets/img/hero/blog.webp',
                     ogType: 'article'
                 });
@@ -59,10 +60,11 @@
         var opciones = { day: 'numeric', month: 'long', year: 'numeric' };
         var fechaStr = fecha.toLocaleDateString('es-ES', opciones);
 
-        // Hero con imagen de fondo
-        var heroStyle = post.imagen
-            ? "background-image: linear-gradient(to bottom, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.65) 55%, var(--c-dark) 100%), url('" + post.imagen + "'); background-size: cover; background-position: center;"
-            : 'background: linear-gradient(180deg, #1a1a1a 0%, var(--c-dark) 100%);';
+        // Hero con imagen de fondo (gradiente en CSS; solo la URL va en variable)
+        var heroCls = post.imagen ? 'ev-hero ev-hero--photo' : 'ev-hero ev-hero--no-photo';
+        var heroStyleAttr = post.imagen
+            ? ' style="--ev-hero-bg:url(\'' + String(post.imagen).replace(/'/g, '%27') + '\')"'
+            : '';
 
         // Parsear contenido
         var contentHTML = parseContenido(post.contenido);
@@ -89,7 +91,7 @@
 
         container.innerHTML =
             '<!-- HERO -->' +
-            '<section class="ev-hero" style="' + heroStyle + '">' +
+            '<section class="' + heroCls + '"' + heroStyleAttr + '>' +
                 '<div class="ev-hero-content">' +
                     '<a href="blog.html" class="sp-back">← Blog</a>' +
                     '<span class="badge">' + post.categoria + '</span>' +
@@ -160,7 +162,11 @@
                 var matchImg = line.match(/^\[img:([^|]+)\|?([^\]]*)\]$/);
                 if (matchImg) {
                     var src = matchImg[1];
-                    var alt = matchImg[2] || '';
+                    var alt = (matchImg[2] || '').trim();
+                    if (!alt) {
+                        alt = 'Ilustración del artículo — MotoMaqLab UC3M';
+                    }
+                    alt = alt.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
                     html += '<figure class="blog-inline-img">';
                     html += '<img src="' + src + '" alt="' + alt + '" loading="lazy" />';
                     if (alt) {
@@ -177,14 +183,14 @@
                         html += '<section class="sp-text-block">';
                         inSection = true;
                     }
-                    html += '<div class="pdf-viewer-container" style="margin: 2rem 0; text-align:center;">';
-                    html += '<iframe src="' + pdfUrl + '" width="100%" height="700px" style="border:none; border-radius:12px; background:#fff;"></iframe>';
-                    html += '<div style="margin-top:1rem;"><a href="' + pdfUrl + '" target="_blank" class="btn btn--primary" style="display:inline-block; font-size:0.9rem;">Abrir PDF en otra pestaña</a></div>';
+                    html += '<div class="pdf-viewer-block">';
+                    html += '<iframe src="' + pdfUrl + '" class="pdf-viewer-frame" title="Documento PDF embebido"></iframe>';
+                    html += '<div class="pdf-viewer-actions"><a href="' + pdfUrl + '" target="_blank" class="btn btn--primary pdf-viewer-open-tab">Abrir PDF en otra pestaña</a></div>';
                     html += '</div>';
                 }
             } else {
                 // Parse standard links inside text
-                var parsedLine = line.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer" style="color:var(--c-red); text-decoration:underline;">$1</a>');
+                var parsedLine = line.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer" class="blog-inline-a">$1</a>');
                 
                 // Párrafo normal
                 if (!inSection) {
@@ -205,7 +211,7 @@
     function renderError(container) {
         container.innerHTML =
             '<div class="sp-error">' +
-                '<span class="sp-error-icon"><i data-lucide="search-x" style="width: 48px; height: 48px;"></i></span>' +
+                '<span class="sp-error-icon"><i data-lucide="search-x"></i></span>' +
                 '<h2>Noticia no encontrada</h2>' +
                 '<p>El artículo que buscas no existe o ha sido eliminado.</p>' +
                 '<a href="blog.html" class="btn btn--primary">Ver blog</a>' +

@@ -349,6 +349,29 @@ section.section-container:nth-of-type(even) {
     font-size: 0.8rem;
 }
 
+.footer-translate-wrap {
+    margin: 0;
+    flex: 1 1 100%;
+    text-align: center;
+}
+
+.footer-translate-btn {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: var(--c-light);
+    padding: 0.45rem 1rem;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+    transition: border-color 0.2s, color 0.2s;
+}
+
+.footer-translate-btn:hover {
+    border-color: var(--c-red);
+    color: #fff;
+}
+
 @media (max-width: 768px) {
     .main-footer {
         text-align: center;
@@ -1581,6 +1604,7 @@ section.section-container:nth-of-type(even) {
 }
 
 .sp-feature-card--hero-image {
+    background-image: linear-gradient(rgba(14, 14, 16, 0.7), rgba(14, 14, 16, 0.7)), var(--sp-hero-card-bg, none);
     background-size: cover !important;
     background-position: center !important;
     background-repeat: no-repeat !important;
@@ -1606,6 +1630,78 @@ section.section-container:nth-of-type(even) {
 .sp-feature-card--hero-image p {
     color: #fff;
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.55);
+}
+
+.ev-hero--photo {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.65) 55%, var(--c-dark) 100%), var(--ev-hero-bg, none);
+    background-size: cover;
+    background-position: center;
+}
+
+.ev-hero--no-photo {
+    background: linear-gradient(180deg, #1a1a1a 0%, var(--c-dark) 100%);
+}
+
+.ev-hero--solid-dark {
+    background-color: var(--c-dark);
+}
+
+.ev-body__detail-img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin: 2rem 0;
+    display: block;
+}
+
+.eventos-empty--fullwidth {
+    grid-column: 1 / -1;
+    text-align: center;
+}
+
+.evento-lugar-svg {
+    vertical-align: text-bottom;
+    margin-right: 0.2rem;
+}
+
+.newsletter-fallback svg {
+    margin-bottom: 0.5rem;
+}
+
+.pdf-viewer-block {
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.pdf-viewer-frame {
+    width: 100%;
+    height: 700px;
+    border: none;
+    border-radius: 12px;
+    background: #fff;
+}
+
+.pdf-viewer-actions {
+    margin-top: 1rem;
+}
+
+.pdf-viewer-open-tab {
+    display: inline-block;
+    font-size: 0.9rem;
+}
+
+.blog-inline-a {
+    color: var(--c-red);
+    text-decoration: underline;
+}
+
+.sp-error-icon [data-lucide],
+.sp-error-icon svg {
+    width: 48px;
+    height: 48px;
+}
+
+.sp-gallery-grid img {
+    cursor: pointer;
 }
 
 
