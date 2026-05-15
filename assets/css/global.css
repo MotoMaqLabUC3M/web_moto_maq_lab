@@ -19,10 +19,20 @@
     box-sizing: border-box;
 }
 
+html {
+    overflow-x: clip;
+}
+
 body {
     background-color: var(--c-dark);
     color: var(--c-light);
     font-family: var(--font-stack);
+    overflow-x: clip;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
 }
 
 a {
@@ -1417,9 +1427,22 @@ section.section-container:nth-of-type(even) {
     font-weight: 300;
 }
 
-.sp-web-btn {
-    margin-top: auto;
-    align-self: flex-start;
+.sp-hero-site-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    margin-top: 1.25rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--c-red);
+    text-decoration: none;
+    opacity: 0.9;
+    transition: opacity 0.2s ease;
+}
+
+.sp-hero-site-link:hover {
+    opacity: 1;
+    text-decoration: underline;
 }
 
 /* === EVENT DASHBOARD HERO === */
@@ -2198,6 +2221,31 @@ section.section-container:nth-of-type(even) {
     display: block;
 }
 
+/* El flex va en el enlace, no en .card (el <a> es hijo directo de .tier-list) */
+.tier-platinum .sponsor-card-link {
+    flex: 0 1 500px;
+    max-width: 500px;
+    width: 100%;
+}
+
+.tier-gold .sponsor-card-link {
+    flex: 0 1 350px;
+}
+
+.tier-silver .sponsor-card-link {
+    flex: 0 1 250px;
+}
+
+.tier-bronze .sponsor-card-link {
+    flex: 0 1 180px;
+}
+
+.sponsor-card-link > .card {
+    width: 100%;
+    flex: none;
+    max-width: none;
+}
+
 .card--clickable {
     cursor: pointer;
     transition: all 0.3s ease;
@@ -2207,6 +2255,10 @@ section.section-container:nth-of-type(even) {
     border-color: var(--c-red) !important;
     transform: translateY(-4px);
     box-shadow: 0 8px 24px rgba(242, 25, 43, 0.12);
+}
+
+.sponsor-card-link:hover > .card {
+    cursor: pointer;
 }
 
 /* === RESPONSIVE === */
@@ -2231,7 +2283,7 @@ section.section-container:nth-of-type(even) {
         align-self: center;
     }
 
-    .sp-web-btn {
+    .sp-hero-site-link {
         align-self: center;
     }
 
@@ -3019,16 +3071,19 @@ section.section-container:nth-of-type(even) {
         gap: 4rem;
     }
 
-    .tier-platinum .card {
+    .tier-platinum .card,
+    .tier-platinum .sponsor-card-link {
         max-width: 100%;
         width: 100%;
+        flex: 0 1 100%;
     }
 
     .tier-platinum .sponsor-logo-wrapper.large {
         height: 160px;
     }
 
-    .tier-gold .card {
+    .tier-gold .card,
+    .tier-gold .sponsor-card-link {
         flex: 0 1 300px;
     }
 
@@ -3036,8 +3091,12 @@ section.section-container:nth-of-type(even) {
         height: 100px;
     }
 
-    .tier-silver .card {
+    .tier-silver .card,
+    .tier-silver .sponsor-card-link {
         flex: 0 1 190px;
+    }
+
+    .tier-silver .card {
         padding: 1.2rem;
     }
 
@@ -3045,8 +3104,12 @@ section.section-container:nth-of-type(even) {
         height: 80px;
     }
 
-    .tier-bronze .card {
+    .tier-bronze .card,
+    .tier-bronze .sponsor-card-link {
         flex: 0 1 150px;
+    }
+
+    .tier-bronze .card {
         padding: 0.8rem;
     }
 
@@ -3069,7 +3132,8 @@ section.section-container:nth-of-type(even) {
        =================================================== */
 
     /* --- PLATINUM: full-width card, all content --- */
-    .tier-platinum .card {
+    .tier-platinum .card,
+    .tier-platinum .sponsor-card-link {
         flex: unset;
         width: 100%;
         max-width: 100%;
@@ -3080,7 +3144,8 @@ section.section-container:nth-of-type(even) {
     }
 
     /* --- GOLD: full-width card, all content --- */
-    .tier-gold .card {
+    .tier-gold .card,
+    .tier-gold .sponsor-card-link {
         flex: 0 0 100%;
         max-width: 100%;
     }
@@ -3096,8 +3161,12 @@ section.section-container:nth-of-type(even) {
         gap: 0.65rem;
     }
 
-    .tier-silver .card {
+    .tier-silver .card,
+    .tier-silver .sponsor-card-link {
         flex: unset;
+    }
+
+    .tier-silver .card {
         padding: 0.65rem 0.5rem 0.5rem;
         text-align: center;
         border-radius: 10px;
@@ -3124,8 +3193,12 @@ section.section-container:nth-of-type(even) {
         gap: 0.5rem;
     }
 
-    .tier-bronze .card {
+    .tier-bronze .card,
+    .tier-bronze .sponsor-card-link {
         flex: 0 0 calc(25% - 0.4rem);
+    }
+
+    .tier-bronze .card {
         padding: 0.5rem 0.35rem 0.35rem;
         text-align: center;
         background: rgba(255, 255, 255, 0.03);

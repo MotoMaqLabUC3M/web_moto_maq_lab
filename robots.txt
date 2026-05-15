@@ -1,4 +1,18 @@
 User-agent: *
 Allow: /
 
+# Plantillas genéricas sin ID (las URLs patrocinador-*.html / noticia-* sí se indexan)
+Disallow: /patrocinador.html
+Disallow: /evento.html
+Disallow: /noticia.html
+
+# Herramientas internas (también llevan noindex en HTML)
+Disallow: /creador_eventos.html
+Disallow: /creador_noticias.html
+
+# Utilidades de desarrollo (no forman parte del sitio público)
+Disallow: /temp_converter/
+
 Sitemap: https://motomaqlabuc3m.es/sitemap.xml
+
+# Guía para LLMs: https://motomaqlabuc3m.es/llms.txt

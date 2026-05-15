@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <!-- Generado automáticamente por scripts/generate_sitemap.py -->
-  <!-- Última generación: 2026-05-15T13:11:42.380532+00:00 -->
+  <!-- Última generación: 2026-05-15T13:39:08.827665+00:00 -->
 
   <!-- Páginas principales -->
   <url>
@@ -19,25 +19,25 @@
   </url>
   <url>
     <loc>https://motomaqlabuc3m.es/equipo.html</loc>
-    <lastmod>2026-05-15</lastmod>
+    <lastmod>2026-05-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://motomaqlabuc3m.es/patrocinadores.html</loc>
-    <lastmod>2026-05-15</lastmod>
+    <lastmod>2026-05-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://motomaqlabuc3m.es/eventos.html</loc>
-    <lastmod>2026-05-15</lastmod>
+    <lastmod>2026-05-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://motomaqlabuc3m.es/blog.html</loc>
-    <lastmod>2026-05-15</lastmod>
+    <lastmod>2026-05-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>

@@ -21,6 +21,14 @@
         }).join('/');
     }
 
+    function sponsorSiteLabel(url) {
+        try {
+            return new URL(url).hostname.replace(/^www\./i, '');
+        } catch {
+            return 'Sitio web';
+        }
+    }
+
 
     const JSON_PATH = 'assets/data/patrocinadores.json';
 
@@ -51,7 +59,21 @@
 
             if (!sponsor) { renderError(container); return; }
 
-            document.title = `${sponsor.name} — Patrocinador ${tierName} | MotoMaqLab UC3M`;
+            const canonicalFile = sponsor.dedicatedPage || `patrocinador-${sponsor.id}.html`;
+            const seoTitle = `${sponsor.name} — Patrocinador ${tierName} | MotoMaqLab UC3M`;
+
+            if (typeof motoMaqLabApplySeo === 'function') {
+                motoMaqLabApplySeo({
+                    title: seoTitle,
+                    description: sponsor.description || '',
+                    canonicalPath: '/' + String(canonicalFile).replace(/^\//, ''),
+                    imagePath: sponsor.logo || 'assets/img/hero/patrocinadores.webp',
+                    ogType: 'article'
+                });
+            } else {
+                document.title = seoTitle;
+            }
+
             render(container, sponsor, tierName);
 
         } catch (err) {
@@ -130,9 +152,8 @@
             `;
         }
 
-        // Website link
-        const websiteBtn = sponsor.website
-            ? `<a href="${sponsor.website}" target="_blank" rel="noopener noreferrer" class="btn btn--outline sp-web-btn"><i data-lucide="globe"></i> Visitar web</a>`
+        const websiteLink = sponsor.website
+            ? `<a href="${sanitize(sponsor.website)}" target="_blank" rel="noopener noreferrer" class="sp-hero-site-link">${sanitize(sponsorSiteLabel(sponsor.website))} ↗</a>`
             : '';
 
         container.innerHTML = `
@@ -148,7 +169,7 @@
                         <span class="badge">${sanitize(tierName)}</span>
                         <h1>${sanitize(sponsor.name)}</h1>
                         <p>${sanitize(intro) || sanitize(sponsor.description)}</p>
-                        ${websiteBtn}
+                        ${websiteLink}
                     </div>
                 </div>
             </section>
