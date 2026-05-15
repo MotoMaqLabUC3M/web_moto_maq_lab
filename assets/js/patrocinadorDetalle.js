@@ -13,6 +13,14 @@
             .replace(/'/g, '&#039;');
     }
 
+    /** Encode path for use inside CSS url('...') (spaces, etc.) */
+    function cssUrl(path) {
+        if (!path) return '';
+        return path.split('/').map(function (seg) {
+            return encodeURIComponent(seg);
+        }).join('/');
+    }
+
 
     const JSON_PATH = 'assets/data/patrocinadores.json';
 
@@ -61,14 +69,19 @@
 
         if (features.length > 0) {
             const heroFeatureBg = galleryImages.length > 0 ? galleryImages.shift() : '';
-            const cardsHTML = features.map((f, i) => `
-                <div class="sp-feature-card ${heroFeatureBg && i === 0 ? 'sp-feature-card--hero-image' : ''}" ${heroFeatureBg && i === 0 ? `style="--sp-hero-card-bg:url('${String(heroFeatureBg).replace(/'/g, '%27')}')"` : ''}>
+            const cardsHTML = features.map((f, i) => {
+                const isHero = heroFeatureBg && i === 0;
+                const heroStyle = isHero
+                    ? ` style="background-image:linear-gradient(rgba(14,14,16,0.7),rgba(14,14,16,0.7)),url('${cssUrl(heroFeatureBg)}')"`
+                    : '';
+                return `
+                <div class="sp-feature-card${isHero ? ' sp-feature-card--hero-image' : ''}"${heroStyle}>
                     <span class="sp-feature-icon">
                         <i data-lucide="${FEATURE_ICONS[i % FEATURE_ICONS.length]}"></i>
                     </span>
                     <p>${f}</p>
-                </div>
-            `).join('');
+                </div>`;
+            }).join('');
 
             featuresHTML = `
                 <section class="sp-features-section">
