@@ -629,13 +629,175 @@ section.section-container:nth-of-type(even) {
 }
 
 /* Teaser ?Sobre nosotros? en la home (tras patrocinadores) */
+.home-about-split {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+    gap: 2.5rem;
+    align-items: center;
+    max-width: 1200px;
+    margin: 2rem auto 0;
+}
+
+.home-about-split__media {
+    margin: 0;
+}
+
+.home-about-split__media img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    object-fit: cover;
+    aspect-ratio: 4 / 3;
+}
+
+.home-about-split__media figcaption {
+    margin-top: 0.65rem;
+    font-size: 0.85rem;
+    opacity: 0.6;
+    text-align: center;
+}
+
+.home-about-teaser .section-title h2 span {
+    color: var(--c-red);
+}
+
 .home-about-teaser__text {
-    max-width: 48rem;
-    margin: 0 auto;
+    max-width: none;
+    margin: 0;
 }
 
 .home-about-teaser__cta {
     margin-top: 2rem;
+}
+
+.home-about-teaser__cta--dual {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+@media (max-width: 900px) {
+    .home-about-split {
+        grid-template-columns: 1fr;
+        gap: 1.75rem;
+    }
+
+    .home-about-teaser__cta--dual .btn {
+        width: 100%;
+        max-width: 320px;
+    }
+}
+
+/* Sección Filosofía con cards de foto — Sobre nosotros */
+.sn-filosofia-section {
+    background: linear-gradient(135deg, #1a1a1c 0%, var(--c-dark) 100%);
+}
+
+.sn-filosofia-section .section-title--center {
+    margin-bottom: 2.5rem;
+}
+
+.filosofia-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.filosofia-card {
+    background: var(--bg-card);
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.filosofia-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+    border-color: var(--c-red);
+}
+
+.filosofia-card__img-wrap {
+    position: relative;
+    height: 220px;
+    overflow: hidden;
+}
+
+.filosofia-card__img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.filosofia-card:hover .filosofia-card__img-wrap img {
+    transform: scale(1.06);
+}
+
+.filosofia-card__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.2) 60%, transparent 100%);
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding: 1rem 1.25rem;
+    transition: background 0.3s ease;
+}
+
+.filosofia-card:hover .filosofia-card__overlay {
+    background: linear-gradient(to top, rgba(242,25,43,0.6) 0%, rgba(0,0,0,0.25) 60%, transparent 100%);
+}
+
+.filosofia-card__overlay i {
+    width: 28px;
+    height: 28px;
+    color: white;
+    opacity: 0.9;
+}
+
+.filosofia-card__body {
+    padding: 1.25rem 1.5rem 1.5rem;
+}
+
+.filosofia-card__body h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--c-light);
+}
+
+.filosofia-card__body p {
+    font-size: 0.9rem;
+    line-height: 1.65;
+    opacity: 0.7;
+}
+
+@media (max-width: 900px) {
+    .filosofia-grid {
+        grid-template-columns: 1fr;
+        max-width: 480px;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+    .filosofia-grid {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 100%;
+    }
+
+    .filosofia-card:last-child {
+        grid-column: 1 / -1;
+        max-width: 480px;
+        margin: 0 auto;
+        width: 100%;
+    }
 }
 
 /* =========================================
