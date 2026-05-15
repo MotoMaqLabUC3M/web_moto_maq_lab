@@ -80,8 +80,9 @@ function createSponsorCardHTML(sponsor, tier) {
     if (tier.id === 'silver') headingTag = 'h4';
     if (tier.id === 'bronze') headingTag = 'h5';
 
-    // Add clickable class if has dedicated page
-    const clickableClass = sponsor.dedicatedPage ? ' card--clickable' : '';
+    // Add clickable class if has dedicated page or external website
+    const hasLink = sponsor.dedicatedPage || sponsor.website;
+    const clickableClass = hasLink ? ' card--clickable' : '';
 
     let cardContent = '';
 
@@ -119,9 +120,11 @@ function createSponsorCardHTML(sponsor, tier) {
         `;
     }
 
-    // Wrap in link if has dedicated page
+    // Wrap in link if has dedicated page or external website
     if (sponsor.dedicatedPage) {
         return `<a href="${sponsor.dedicatedPage}" class="sponsor-card-link" aria-label="Ver página de ${sanitize(sponsor.name)}">${cardContent}</a>`;
+    } else if (sponsor.website) {
+        return `<a href="${sponsor.website}" target="_blank" rel="noopener noreferrer" class="sponsor-card-link" aria-label="Visitar web de ${sanitize(sponsor.name)}">${cardContent}</a>`;
     }
 
     return cardContent;

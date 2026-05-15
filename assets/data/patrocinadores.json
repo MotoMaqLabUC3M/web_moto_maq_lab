@@ -11,7 +11,7 @@
                     "name": "MAQLAB",
                     "logo": "assets/img/patrocinios/Maqlab.webp",
                     "description": "Maqlab colabora con el equipo aportando recursos de investigación y conocimiento en materiales y procesos de fabricación. Trabajamos con Maqlab para validar prototipos y ensayar nuevas técnicas de fabricación de piezas compuestas.",
-                    "website": "",
+                    "website": "https://www.maqlab.org/",
                     "dedicatedPage": "patrocinador-maqlab.html",
                     "contenido": "MAQLAB nos ayuda aportando conocimiento técnico y recursos de investigación en el ámbito de la ingeniería mecánica, especialmente en el análisis, diseño y simulación de sistemas y mecanismos. Gracias a sus laboratorios y experiencia en I+D, podemos validar nuestros prototipos y mejorar su rendimiento. Su colaboración nos permite aplicar métodos profesionales propios de la industria en el desarrollo de nuestra moto.\n\n## Impacto en el equipo\nAl MAQLAB patrocinarnos tenemos acceso a tecnología, instalaciones y asesoramiento experto que elevan la calidad de nuestro proyecto. Además, refuerza nuestra credibilidad como equipo y nos acerca al entorno profesional de la ingeniería. Esta colaboración impulsa nuestra formación como ingenieros y mejora nuestras posibilidades de éxito en competición y en el futuro.\n\n## Qué nos aportan\n- Acceso a laboratorio de materiales para ensayos mecánicos\n- Asesoramiento en selección de materiales compuestos\n- Validación de prototipos mediante ensayos destructivos y no destructivos\n- Formación en técnicas de fabricación avanzada\n",
                     "galeria": [
@@ -27,7 +27,7 @@
                     "name": "ALTAIR",
                     "logo": "assets/img/patrocinios/altair.webp",
                     "description": "Altair nos aporta herramientas avanzadas de simulación multifísica y optimización. Aplicamos sus soluciones para optimizar diseños estructurales y el rendimiento aerodinámico de nuestras piezas.",
-                    "website": "",
+                    "website": "https://altair.com.es/",
                     "dedicatedPage": "patrocinador-altair.html",
                     "contenido": "Altair nos aporta herramientas avanzadas de simulación multifísica y optimización que nos permiten analizar el comportamiento real de nuestros diseños antes de fabricarlos. Gracias a su software, podemos estudiar estructuras, aerodinámica y sistemas mecánicos de forma precisa, teniendo en cuenta múltiples variables físicas. Esto nos ayuda a tomar decisiones de diseño más eficientes y a mejorar el rendimiento global de la moto.\n\n## Impacto en el equipo\nQue Altair nos patrocine supone una gran ventaja, ya que nos da acceso a tecnología utilizada en la industria para el desarrollo de productos complejos. Esto nos permite reducir errores, ahorrar costes en prototipos y trabajar con metodologías profesionales basadas en simulación y optimización. Además, refuerza nuestro proyecto a nivel técnico y nos prepara mejor para el entorno real de la ingeniería.\n\n## Qué nos aportan\n- Licencias de HyperWorks para simulación estructural\n- Software de optimización topológica para reducción de peso\n- Herramientas de CFD para análisis aerodinámico\n- Soporte técnico y formación\n\n## Cómo lo utilizamos\nUtilizamos Altair para simular las cargas sobre el chasis, optimizar la geometría del basculante y analizar el flujo de aire sobre el carenado. Gracias a sus herramientas hemos conseguido reducir el peso un 15% manteniendo la rigidez.",
                     "galeria": []
@@ -37,7 +37,7 @@
                     "name": "ADDYX",
                     "logo": "assets/img/patrocinios/addyx.webp",
                     "description": "Addyx es nuestro socio en la fabricación de moldes hidrosolubles impresos en 3D. Destaca por su capacidad de realizar desde tiradas cortas mediante impresión 3D hasta producción en serie por rotomoldeo. Gracias a sus moldes hemos logrado fabricar nuestro chasis doble viga hueco, integrando el sistema de admisión, imposible de conseguir con otros métodos.",
-                    "website": "",
+                    "website": "https://www.addyx.it/",
                     "dedicatedPage": "patrocinador-addyx.html",
                     "contenido": "AddyX nos aporta soluciones innovadoras en fabricación mediante el uso de moldes hidrosolubles impresos en 3D, lo que nos permite desarrollar geometrías complejas que serían imposibles con métodos tradicionales. Gracias a su tecnología, podemos fabricar piezas avanzadas como nuestro chasis, integrando funciones en un solo componente. Esto nos ayuda a mejorar la eficiencia del diseño y a reducir peso y complejidad en la moto.\n\n## Impacto en el equipo\nAddyX nos da acceso a procesos de fabricación punteros utilizados en la industria avanzada. Esto nos permite explorar nuevas soluciones constructivas, reducir tiempos de producción y validar diseños más innovadores. Aparte, su apoyo refuerza el carácter tecnológico de nuestro proyecto y nos impulsa a seguir desarrollando soluciones de alto nivel en ingeniería.\n\n## Qué nos aportan\n- Moldes hidrosolubles impresos en 3D a medida\n- Asesoramiento en diseño para fabricación (DfM)\n- Capacidad de prototipado rápido\n- Soporte en el proceso de laminado sobre molde\n\n## El chasis doble viga hueco\nEl logro más destacado de nuestra colaboración es el chasis doble viga hueco en fibra de carbono. Gracias a los moldes de Addyx, pudimos fabricar un chasis con cavidades internas que integran el conducto de admisión de aire. Este diseño ahorra peso y mejora el rendimiento aerodinámico del motor.",
                     "galeria": [
@@ -53,7 +53,7 @@
                     "name": "UC3M",
                     "logo": "assets/img/patrocinios/uc3m.webp",
                     "description": "La Universidad Carlos III de Madrid es nuestra institución y respaldo académico. Financia parte del proyecto y nos proporciona las instalaciones, talleres y laboratorios donde diseñamos y fabricamos nuestra moto. Además, contamos con el apoyo de profesores y tutores que nos guían en cada fase del desarrollo",
-                    "website": "",
+                    "website": "https://www.uc3m.es/",
                     "dedicatedPage": "patrocinador-UC3M.html",
                     "contenido": "La Universidad Carlos III de Madrid es nuestro principal respaldo académico e institucional. Nos proporciona las instalaciones, talleres y laboratorios donde diseñamos, fabricamos y ensamblamos nuestra moto. Además, contamos con el apoyo de profesores e investigadores que nos asesoran en las distintas fases del desarrollo, aportando conocimiento técnico y experiencia en ingeniería.\n\n## Impacto en el equipo\nQue la UC3M nos patrocine supone un apoyo fundamental para nuestro proyecto, ya que no solo contribuye a nivel económico, sino que también nos ofrece un entorno profesional y recursos de alto nivel para trabajar con estándares propios de la industria. Su respaldo refuerza nuestra credibilidad como equipo y potencia nuestra formación como ingenieros, impulsando el crecimiento técnico y competitivo de Motomaqlab.\n\n## Qué nos aportan\n- Financiación parcial del proyecto\n- Acceso a talleres mecánicos y laboratorios de materiales\n- Apoyo de profesores tutores en todas las fases\n- Espacios de trabajo y almacenamiento\n- Visibilidad institucional y apoyo en comunicación\n\n## Nuestra relación con la UC3M\nMotoMaqLab nació en 2009 como proyecto de la Escuela Politécnica Superior. Desde entonces, la universidad ha sido nuestro pilar fundamental, permitiendo a generaciones de estudiantes de ingeniería aplicar sus conocimientos a un proyecto real de competición.",
                     "galeria": [
@@ -65,12 +65,12 @@
                         "assets/img/patrocinios/uc3m/Foto_5_UC3M.webp"
                     ]
                 },
-                                {
+                {
                     "id": "retamal",
                     "name": "RETAMAL",
                     "logo": "assets/img/patrocinios/retamal.webp",
                     "description": "Retamal es un socio estratégico clave para Motomaqlab, aportándonos soporte logístico y organizativo fundamental para el correcto desarrollo del proyecto.",
-                    "website": "",
+                    "website": "https://jretamal.com/",
                     "dedicatedPage": "patrocinador-retamal.html",
                     "contenido": "Retamal es un socio estratégico clave para Motomaqlab, aportándonos soporte logístico y organizativo fundamental para el correcto desarrollo del proyecto. Gracias a su experiencia en gestión de herramientas, servicios y logística, podemos optimizar nuestros procesos de trabajo y garantizar una mejor planificación y coordinación del equipo.\n\n## Impacto en el equipo\nQue Retamal nos patrocine supone un respaldo importante tanto a nivel operativo como estratégico. Su apoyo nos permite centrarnos en el diseño, fabricación y mejora del rendimiento de nuestra moto, asegurando que contamos con los recursos y la organización necesarios para competir al máximo nivel. Además, su colaboración refuerza la estructura profesional de nuestro proyecto y contribuye a nuestro crecimiento como equipo de ingeniería.\n\n## Qué nos aportan\n- Soporte logístico y organizativo integral para el proyecto\n- Experiencia en gestión de herramientas y servicios\n- Asesoramiento estratégico para planificación y coordinación\n- Recursos operativos para competir al máximo nivel",
                     "galeria": []
@@ -88,21 +88,21 @@
                     "name": "GURIT",
                     "logo": "assets/img/patrocinios/Gurit.webp",
                     "description": "Gurit nos suministra materiales compuestos y asesoramiento técnico para fabricar piezas ligeras y resistentes.",
-                    "website": ""
+                    "website": "https://www.gurit.com/"
                 },
                 {
                     "id": "lasertek",
                     "name": "LASERTEK",
                     "logo": "assets/img/patrocinios/lasertek.webp",
                     "description": "Lasertek apoya con procesos láser de precisión para el prototipado.",
-                    "website": ""
+                    "website": "https://lasertek.es/"
                 },
                 {
                     "id": "cesol",
                     "name": "CESOL",
                     "logo": "assets/img/patrocinios/CESOL.png",
                     "description": "CESOL nos apoya con los procesos de soldadura y cursos complementarios a nuestros miembros para fomentar una formación continua y de calidad.",
-                    "website": ""
+                    "website": "https://www.cesol.es/"
                 }
             ]
         },
@@ -117,63 +117,63 @@
                     "name": "NTN",
                     "logo": "assets/img/patrocinios/NTN.webp",
                     "description": "NTN suministra rodamientos de alta calidad para nuestra transmisión y ruedas.",
-                    "website": ""
+                    "website": "https://www.ntn-snr.com/es"
                 },
                 {
                     "id": "solysol",
                     "name": "SOLYSOL",
                     "logo": "assets/img/patrocinios/solysol.webp",
                     "description": "Solysol aporta tecnología de soldadura láser para la fabricación del sistema de escape.",
-                    "website": ""
+                    "website": "https://www.solysol.com.es/"
                 },
                 {
                     "id": "aeronautica-gestion",
                     "name": "AERONÁUTICA GESTIÓN",
                     "logo": "assets/img/patrocinios/aeronautica gestion.webp",
                     "description": "Apoyo en procesos de certificación y calidad.",
-                    "website": ""
+                    "website": "https://ag-universe.es/"
                 },
                 {
                     "id": "solidworks",
                     "name": "SOLIDWORKS",
                     "logo": "assets/img/patrocinios/solidworks.webp",
                     "description": "SolidWorks nos proporciona licencias y apoyo en modelado CAD y simulación básica.",
-                    "website": ""
+                    "website": "https://www.solidworks.com/es"
                 },
                 {
                     "id": "castrol",
                     "name": "CASTROL",
                     "logo": "assets/img/patrocinios/Castrol.webp",
                     "description": "Castrol suministra lubricantes y asesoramiento para optimizar el rendimiento del motor.",
-                    "website": ""
+                    "website": "https://www.castrol.com/es_es/spain/home.html"
                 },
                 {
                     "id": "bollhoff",
                     "name": "BOLLHOFF",
                     "logo": "assets/img/patrocinios/bollhof.webp",
                     "description": "Bollhoff provee soluciones de fijación y tecnologías de unión.",
-                    "website": ""
+                    "website": "https://www.boellhoff.com/es-es/"
                 },
                 {
                     "id": "facom",
                     "name": "FACOM",
                     "logo": "assets/img/patrocinios/facom.webp",
                     "description": "Facom nos apoya con herramientas de taller y formación.",
-                    "website": ""
+                    "website": "https://www.facom.com/"
                 },
                 {
                     "id": "cimworks",
                     "name": "CIMWORKS",
                     "logo": "assets/img/patrocinios/cimworks.webp",
                     "description": "CIMWORKS colabora en procesos de fabricación y software de producción.",
-                    "website": ""
+                    "website": "https://www.cimworks.es/"
                 },
                 {
                     "id": "bossard",
                     "name": "BOSSARD",
                     "logo": "assets/img/patrocinios/Bossard.webp",
                     "description": "Bossard apoya con componentes y sistemas de ensamblaje.",
-                    "website": ""
+                    "website": "https://www.bossard.com/es-es/"
                 }
             ]
         },
@@ -188,42 +188,42 @@
                     "name": "VALMOLDES",
                     "logo": "assets/img/patrocinios/Valmoldes.webp",
                     "description": "Valmoldes produce moldes y piezas a medida para nuestros componentes compuestos.",
-                    "website": ""
+                    "website": "https://valmoldes.com/"
                 },
                 {
                     "id": "Würth Elektronik",
                     "name": "Würth Elektronik",
                     "logo": "assets/img/patrocinios/wurth.jpeg",
                     "description": "Würth Elektronik proporciona componentes electrónicos para nuestra moto.",
-                    "website": ""
+                    "website": "https://www.we-online.com/en?srsltid=AfmBOoo-RbdOqtp5Y5VXe2dJqlco10Gzzc9WhCLC7o7D5_-fhVYRUifK"
                 },
                 {
-                    "id": "ng",
-                    "name": "NG",
-                    "logo": "assets/img/patrocinios/NG.webp",
-                    "description": "NG colabora en logística y soporte técnico.",
-                    "website": ""
+                    "id": "ng-brakes",
+                    "name": "NG BRAKES",
+                    "logo": "assets/img/patrocinios/ng_brakes.webp",
+                    "description": "NG Brakes nos proporciona discos de freno de alta competición, garantizando el máximo rendimiento y seguridad en pista.",
+                    "website": "https://ngbrakes.com/"
                 },
                 {
                     "id": "cogitim",
                     "name": "COGITIM",
                     "logo": "assets/img/patrocinios/cogitim.webp",
                     "description": "COGITIM colabora en procesos de ingeniería y optimización.",
-                    "website": ""
+                    "website": "https://www.cogitim.es/"
                 },
                 {
                     "id": "easycomposites",
                     "name": "EASYCOMPOSITES",
                     "logo": "assets/img/patrocinios/easycomposites.webp",
                     "description": "Suministro de materias primas y asesoría técnica en composites.",
-                    "website": ""
+                    "website": "https://www.easycomposites.eu/"
                 },
                 {
                     "id": "frade",
                     "name": "FRADE",
                     "logo": "assets/img/patrocinios/frade.webp",
                     "description": "Frade nos proporciona Equipos de Protección Individual (EPIs), garantizando la seguridad de nuestro equipo en el taller.",
-                    "website": ""
+                    "website": "http://www.fraderopadetrabajo.es/"
                 }
             ]
         }
