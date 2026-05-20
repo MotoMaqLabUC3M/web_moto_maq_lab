@@ -1,0 +1,142 @@
+/* =========================================
+   MS8 — página del prototipo (scroll normal)
+   ========================================= */
+
+body.ms8-page {
+    background-color: var(--c-black);
+}
+
+body.ms8-page .main-header {
+    background-color: rgba(5, 5, 5, 0.82);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+/* Hero: texto + imagen (asset SolidWorks sustituye #ms8-hero-img) */
+.ms8-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+    gap: 2.5rem;
+    align-items: center;
+    padding: 7rem var(--space-inline) 4rem;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.ms8-hero__copy .badge {
+    margin-bottom: 1rem;
+}
+
+.ms8-hero h1 {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    line-height: 0.9;
+    margin-bottom: 1rem;
+}
+
+.ms8-hero h1 span {
+    color: var(--c-red);
+}
+
+.ms8-hero__lead {
+    color: var(--c-muted);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    max-width: 42ch;
+}
+
+.ms8-hero__visual {
+    margin: 0;
+}
+
+.ms8-hero__visual img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: var(--radius-ui);
+    border: 1px solid var(--border-subtle);
+    background: var(--bg-card);
+}
+
+.ms8-hero__placeholder {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.65rem;
+    margin-top: 0.85rem;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.04em;
+    line-height: 1.5;
+    color: var(--c-muted);
+    text-align: left;
+}
+
+.ms8-hero__placeholder svg {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    color: var(--c-red);
+    margin-top: 0.1rem;
+}
+
+.ms8-hero__placeholder code {
+    font-size: 0.62rem;
+    color: var(--c-light);
+}
+
+/* Overview */
+.ms8-overview__text {
+    max-width: 720px;
+    margin: 0 auto 2rem;
+    text-align: center;
+}
+
+.ms8-overview__text p {
+    color: var(--c-muted);
+    line-height: 1.75;
+    margin-bottom: 1rem;
+    font-size: 1.02rem;
+}
+
+.ms8-overview__text strong {
+    color: var(--c-light);
+}
+
+.ms8-highlights--page {
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+/* Outro */
+.ms8-outro {
+    text-align: center;
+    padding: 3rem var(--space-inline) 5rem;
+    border-top: 1px solid var(--border-subtle);
+}
+
+.ms8-outro p {
+    color: var(--c-muted);
+    margin-bottom: 1.25rem;
+}
+
+.ms8-outro__btns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
+}
+
+@media (max-width: 900px) {
+    .ms8-hero {
+        grid-template-columns: 1fr;
+        padding-top: 6rem;
+    }
+
+    .ms8-hero__copy {
+        text-align: center;
+    }
+
+    .ms8-hero__lead {
+        margin: 0 auto;
+    }
+}
