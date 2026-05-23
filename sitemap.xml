@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <!-- Generado automáticamente por scripts/generate_sitemap.py -->
-  <!-- Última generación: 2026-05-23T11:44:13.925361+00:00 -->
+  <!-- Última generación: 2026-05-23T11:44:27.805951+00:00 -->
 
   <!-- Páginas principales -->
   <url>
@@ -31,13 +31,13 @@
   </url>
   <url>
     <loc>https://motomaqlabuc3m.es/eventos.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-05-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://motomaqlabuc3m.es/blog.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-05-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
