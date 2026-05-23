@@ -1,0 +1,16 @@
+# Archivos generados dinámicamente
+patrocinador-*.html
+noticia-*.html
+evento-*.html
+
+# Dependencias (si hay algún package.json local en el futuro)
+node_modules/
+
+# Archivos de SO
+.DS_Store
+Thumbs.db
+
+# Entornos virtuales de python (si usas scripts)
+venv/
+.env
+__pycache__/
