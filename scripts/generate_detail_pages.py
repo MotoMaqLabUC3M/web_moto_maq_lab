@@ -233,12 +233,15 @@ def main() -> None:
                 continue
             if sponsor.get("dedicatedPage"):
                 seen.add(sid)
+                # Use SEO-optimized title/description when available
+                seo_title = sponsor.get("seoTitle") or f"{sponsor.get('name', 'Patrocinador')} — Patrocinador {tier_name} | MotoMaqLab UC3M"
+                seo_desc = sponsor.get("seoDescription") or sponsor.get("description") or ""
                 write_page(
                     tpl_pat,
                     str(sid),
                     "patrocinador-",
-                    title=f"{sponsor.get('name', 'Patrocinador')} — Patrocinador {tier_name} | MotoMaqLab UC3M",
-                    description=sponsor.get("description") or "",
+                    title=seo_title,
+                    description=seo_desc,
                     image_path=sponsor.get("logo") or "assets/img/hero/patrocinadores.webp",
                     og_type="article",
                     item=sponsor,

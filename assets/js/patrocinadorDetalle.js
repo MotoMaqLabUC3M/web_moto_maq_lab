@@ -89,67 +89,122 @@
         let featuresHTML = '';
         let galleryImages = (sponsor.galeria || []).slice(); // Copy
 
+        // Pit Board Stats Bar (replacing the old feature cards)
         if (features.length > 0) {
-            const heroFeatureBg = galleryImages.length > 0 ? galleryImages.shift() : '';
-            const cardsHTML = features.map((f, i) => {
-                const isHero = heroFeatureBg && i === 0;
-                const heroStyle = isHero
-                    ? ` style="background-image:linear-gradient(rgba(14,14,16,0.7),rgba(14,14,16,0.7)),url('${cssUrl(heroFeatureBg)}')"`
-                    : '';
-                return `
-                <div class="sp-feature-card${isHero ? ' sp-feature-card--hero-image' : ''}"${heroStyle}>
-                    <span class="sp-feature-icon">
-                        <i data-lucide="${FEATURE_ICONS[i % FEATURE_ICONS.length]}"></i>
-                    </span>
-                    <p>${f}</p>
-                </div>`;
-            }).join('');
-
             featuresHTML = `
-                <section class="sp-features-section">
-                    <div class="sp-section-label">
-                        <div class="sp-label-line"></div>
-                        <h2>${featureTitle || 'Qué nos aportan'}</h2>
-                    </div>
-                    <div class="sp-features-grid">${cardsHTML}</div>
-                </section>
+                <div class="sp-stats-bar">
+                    ${features.map((f, i) => `
+                        <div class="sp-stat-card">
+                            <div class="sp-stat-icon"><i data-lucide="${FEATURE_ICONS[i % FEATURE_ICONS.length]}"></i></div>
+                            <div class="sp-stat-text">
+                                <span class="sp-stat-label">${f}</span>
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
             `;
         }
 
-        // Text blocks (other ## sections)
+        // Quote Box
+        // Split Layout Sections
         let blocksHTML = '';
         if (textBlocks.length > 0) {
-            blocksHTML = textBlocks.map(block => `
-                <section class="sp-text-block">
-                    <div class="sp-section-label">
-                        <div class="sp-label-line"></div>
-                        <h2>${block.title}</h2>
-                    </div>
-                    <div class="sp-text-content">
-                        ${block.paragraphs.map(p => `<p>${p}</p>`).join('')}
-                    </div>
-                </section>
-            `).join('');
+            blocksHTML = textBlocks.map((block, index) => {
+                let imgHTML = '';
+                // Take an image from gallery if available
+                if (galleryImages.length > 0) {
+                    const img = galleryImages.shift();
+                    imgHTML = `
+                        <div class="sp-split-media">
+                            <img src="${encodeURI(img)}" alt="${sanitize(block.title)}" loading="lazy" />
+                        </div>
+                    `;
+                } else {
+                    // Fallback to logo + decorative background if no more images
+                    imgHTML = `
+                        <div class="sp-split-media sp-split-media--fallback" style="background: var(--bg-card); display: flex; align-items: center; justify-content: center; padding: 2rem;">
+                            <img src="${encodeURI(sponsor.logo)}" alt="${sanitize(sponsor.name)} logo" loading="lazy" style="object-fit: contain; max-height: 250px; opacity: 0.5;" />
+                        </div>
+                    `;
+                }
+
+                // Alternate layout direction
+                const reverseClass = index % 2 !== 0 ? 'sp-split-section--reverse' : '';
+                
+                // Inject quote into the first text block
+                let quoteHTML = '';
+                if (index === 0 && sponsor.quoteEquipo) {
+                    quoteHTML = `
+                        <div class="sp-quote-box" style="margin-bottom: 2rem;">
+                            <blockquote>"${sanitize(sponsor.quoteEquipo)}"</blockquote>
+                            <cite>— Equipo MotoMaqLab UC3M</cite>
+                        </div>
+                    `;
+                }
+                
+                return `
+                    <section class="sp-split-section ${reverseClass}">
+                        <div class="sp-split-text">
+                            ${quoteHTML}
+                            <h2>${sanitize(block.title)}</h2>
+                            ${block.paragraphs.map(p => `<p>${sanitize(p)}</p>`).join('')}
+                        </div>
+                        ${imgHTML}
+                    </section>
+                `;
+            }).join('');
         }
 
-        // Gallery
+        // Remaining Gallery images
         let galeriaHTML = '';
         if (galleryImages.length > 0) {
             galeriaHTML = `
                 <section class="sp-gallery-section">
                     <div class="sp-section-label">
                         <div class="sp-label-line"></div>
-                        <h2>Galería</h2>
+                        <h2>Galería Adicional</h2>
                     </div>
                     <div class="sp-gallery-grid">
                         ${galleryImages.map((img, i) => `
                             <div class="sp-gallery-item ${i === 0 ? 'sp-gallery-item--hero' : ''}">
-                                <img src="${img}" alt="${sponsor.name}" loading="lazy" />
+                                <img src="${encodeURI(img)}" alt="${sanitize(sponsor.name)}" loading="lazy" />
                             </div>
                         `).join('')}
                     </div>
                 </section>
             `;
+        }
+
+        // JSON-LD structured data for SEO
+        try {
+            const jsonLd = {
+                '@context': 'https://schema.org',
+                '@type': 'Article',
+                'headline': sponsor.seoTitle || (sponsor.name + ' — Patrocinador ' + tierName + ' de MotoMaqLab UC3M'),
+                'description': sponsor.seoDescription || sponsor.description || '',
+                'author': {
+                    '@type': 'Organization',
+                    'name': 'MotoMaqLab UC3M',
+                    'url': 'https://motomaqlabuc3m.es'
+                },
+                'publisher': {
+                    '@type': 'Organization',
+                    'name': 'MotoMaqLab UC3M',
+                    'url': 'https://motomaqlabuc3m.es'
+                },
+                'about': {
+                    '@type': 'Organization',
+                    'name': sponsor.name,
+                    'url': sponsor.website || ''
+                },
+                'image': sponsor.logo ? ('https://motomaqlabuc3m.es/' + sponsor.logo) : ''
+            };
+            const script = document.createElement('script');
+            script.type = 'application/ld+json';
+            script.textContent = JSON.stringify(jsonLd);
+            document.head.appendChild(script);
+        } catch (e) {
+            console.warn('JSON-LD generation skipped:', e);
         }
 
         const websiteLink = sponsor.website
@@ -158,12 +213,12 @@
 
         container.innerHTML = `
             <!-- HERO -->
-            <section class="sp-hero">
+            <section class="sp-hero sp-hero-v2">
                 <a href="patrocinadores.html" class="sp-back">← Patrocinadores</a>
 
                 <div class="sp-hero-inner">
                     <div class="sp-hero-logo">
-                        <img src="${sanitize(sponsor.logo)}" alt="${sanitize(sponsor.name)}" />
+                        <img src="${encodeURI(sponsor.logo)}" alt="${sanitize(sponsor.name)}" />
                     </div>
                     <div class="sp-hero-text">
                         <span class="badge">${sanitize(tierName)}</span>
@@ -174,13 +229,13 @@
                 </div>
             </section>
 
-            <!-- FEATURES -->
+            <!-- PIT BOARD STATS -->
             ${featuresHTML}
 
-            <!-- TEXT BLOCKS -->
+            <!-- SPLIT SECTIONS -->
             ${blocksHTML}
 
-            <!-- GALLERY -->
+            <!-- REMAINING GALLERY -->
             ${galeriaHTML}
 
             <!-- CTA -->
@@ -204,10 +259,10 @@
     function initMobileFeatureCarousel() {
         if (window.innerWidth > 768) return;
 
-        const grid = document.querySelector('.sp-features-grid');
+        const grid = document.querySelector('.sp-stats-bar');
         if (!grid) return;
 
-        const cards = Array.from(grid.querySelectorAll('.sp-feature-card'));
+        const cards = Array.from(grid.querySelectorAll('.sp-stat-card'));
         if (cards.length <= 1) return;
 
         // Build dot indicators
@@ -229,9 +284,8 @@
         });
 
         // Insert dots section below the grid
-        const section = grid.closest('.sp-features-section');
-        if (section) {
-            section.appendChild(dotsWrapper);
+        if (grid.nextElementSibling && grid.nextElementSibling.classList.contains('sp-diagonal-divider')) {
+            grid.parentNode.insertBefore(dotsWrapper, grid.nextElementSibling.nextSibling);
         } else {
             grid.parentNode.insertBefore(dotsWrapper, grid.nextSibling);
         }
