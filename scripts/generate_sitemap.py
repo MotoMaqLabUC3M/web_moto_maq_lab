@@ -105,7 +105,7 @@ def main():
             if sponsor.get("dedicatedPage"):
                 pat_entries.append(url_entry(
                     f"{DOMAIN}/{sponsor['dedicatedPage']}",
-                    pat_lastmod, "monthly", "0.6"
+                    pat_lastmod, "monthly", "0.8"
                 ))
 
     # 3) Eventos
