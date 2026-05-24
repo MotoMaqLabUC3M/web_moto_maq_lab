@@ -65,7 +65,7 @@
             if (typeof motoMaqLabApplySeo === 'function') {
                 motoMaqLabApplySeo({
                     title: seoTitle,
-                    description: sponsor.description || '',
+                    description: sponsor.seoDescription || sponsor.description || '',
                     canonicalPath: '/' + String(canonicalFile).replace(/^\//, ''),
                     imagePath: sponsor.logo || 'assets/img/hero/patrocinadores.webp',
                     ogType: 'article'
