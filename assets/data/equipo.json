@@ -36,20 +36,9 @@
                     "image": "assets/img/equipo/dinamica/david_otero_diez.webp"
                 },
                 {
-                    "name": "Beltran López Gonzalez",
-                    "role": "Miembro de Dinámica",
-                    "image": "assets/img/equipo/dinamica/beltran_lopez_gonzalez.webp"
-                },
-                {
                     "name": "Carlos Mendo López",
                     "role": "Miembro de Dinámica",
                     "image": "assets/img/equipo/dinamica/carlos_mendo_lopez.webp"
-                },
-                {
-                    "name": "Joaquín Balabanian",
-                    "role": "Miembro de Dinámica",
-                    "image": "assets/img/logos_uc3m/uc3m_logo_sin_fondo.webp",
-                    "isPlaceholder": true
                 },
                 {
                     "name": "Marta Alonso Pérez",
@@ -142,7 +131,7 @@
                 {
                     "name": "Antón Lamela",
                     "role": "Miembro de Aerodinámica",
-                    "image": "assets/img/logos_uc3m/uc3m_logo_sin_fondo.png",
+                    "image": "assets/img/logos_uc3m/uc3m_logo_sin_fondo.webp",
                     "isPlaceholder": true
                 },
                 {
@@ -160,11 +149,6 @@
                     "name": "Gonzalo Mayordomo Jiménez",
                     "role": "Miembro de Aerodinámica",
                     "image": "assets/img/equipo/aerodinamica/gonzalo_mayordomo_jimenez.webp"
-                },
-                {
-                    "name": "María Minaya Solera",
-                    "role": "Miembro de Aerodinámica",
-                    "image": "assets/img/equipo/aerodinamica/maria_minaya_solera.webp"
                 },
                 {
                     "name": "Mario García Diaz",
