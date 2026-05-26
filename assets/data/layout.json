@@ -10,7 +10,17 @@
         "nav": [
             {
                 "label": "SOBRE NOSOTROS",
-                "href": "sobre-nosotros.html"
+                "href": "#",
+                "submenu": [
+                    {
+                        "label": "Historia y Filosofía",
+                        "href": "sobre-nosotros.html"
+                    },
+                    {
+                        "label": "La Competición",
+                        "href": "motostudent.html"
+                    }
+                ]
             },
             {
                 "label": "EL EQUIPO",

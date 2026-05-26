@@ -89,7 +89,18 @@ window.sanitize = function(str) {
             navLinks += '<a href="index.html">INICIO</a>';
         }
         h.nav.forEach(function (item) {
-            navLinks += '<a href="' + item.href + '">' + item.label + '</a>';
+            if (item.submenu) {
+                var submenuLinks = '';
+                item.submenu.forEach(function(sub) {
+                    submenuLinks += '<a href="' + sub.href + '">' + sub.label + '</a>';
+                });
+                navLinks += '<div class="nav-dropdown">' +
+                                '<a href="' + item.href + '" class="nav-dropdown-toggle">' + item.label + ' <i data-lucide="chevron-down" class="dropdown-icon"></i></a>' +
+                                '<div class="nav-dropdown-content">' + submenuLinks + '</div>' +
+                            '</div>';
+            } else {
+                navLinks += '<a href="' + item.href + '">' + item.label + '</a>';
+            }
         });
         navLinks += '<a href="' + h.cta.href + '" class="btn btn--primary">' + h.cta.label + '</a>';
 

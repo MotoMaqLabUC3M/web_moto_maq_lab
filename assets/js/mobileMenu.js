@@ -10,7 +10,13 @@ function initMobileMenu() {
     });
 
     document.querySelectorAll(".mobile-menu a").forEach((link) => {
-        link.addEventListener("click", () => {
+        link.addEventListener("click", (e) => {
+            if (link.classList.contains("nav-dropdown-toggle")) {
+                e.preventDefault();
+                const dropdown = link.parentElement;
+                dropdown.classList.toggle("active");
+                return;
+            }
             hamburger.classList.remove("active");
             menu.classList.remove("active");
         });
