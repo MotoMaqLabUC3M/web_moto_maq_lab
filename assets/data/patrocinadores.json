@@ -20,7 +20,10 @@
                         "assets/img/patrocinios/maqlab/Foto_2_Maqlab.webp",
                         "assets/img/patrocinios/maqlab/Foto_3_Maqlab.webp",
                         "assets/img/patrocinios/maqlab/Foto_4_Maqlab.webp"
-                    ]
+                    ],
+                    "seoTitle": "MAQLAB y MotoMaqLab UC3M — Laboratorio de ingeniería mecánica, ensayos de materiales y validación de prototipos | MotoStudent",
+                    "seoDescription": "MAQLAB aporta a MotoMaqLab UC3M laboratorios de materiales, ensayos mecánicos y validación de prototipos para competir en MotoStudent con estándares industriales.",
+                    "quoteEquipo": "MotoMaqLab nació gracias a MAQLAB. Desde nuestra fundación, su apoyo incondicional y sus laboratorios son la razón por la que seguimos vivos y compitiendo al más alto nivel."
                 },
                 {
                     "id": "altair",
@@ -30,7 +33,10 @@
                     "website": "https://altair.com.es/",
                     "dedicatedPage": "patrocinador-altair.html",
                     "contenido": "Altair nos aporta herramientas avanzadas de simulación multifísica y optimización que nos permiten analizar el comportamiento real de nuestros diseños antes de fabricarlos. Gracias a su software, podemos estudiar estructuras, aerodinámica y sistemas mecánicos de forma precisa, teniendo en cuenta múltiples variables físicas. Esto nos ayuda a tomar decisiones de diseño más eficientes y a mejorar el rendimiento global de la moto.\n\n## Impacto en el equipo\nQue Altair nos patrocine supone una gran ventaja, ya que nos da acceso a tecnología utilizada en la industria para el desarrollo de productos complejos. Esto nos permite reducir errores, ahorrar costes en prototipos y trabajar con metodologías profesionales basadas en simulación y optimización. Además, refuerza nuestro proyecto a nivel técnico y nos prepara mejor para el entorno real de la ingeniería.\n\n## Qué nos aportan\n- Licencias de HyperWorks para simulación estructural\n- Software de optimización topológica para reducción de peso\n- Herramientas de CFD para análisis aerodinámico\n- Soporte técnico y formación\n\n## Cómo lo utilizamos\nUtilizamos Altair para simular las cargas sobre el chasis, optimizar la geometría del basculante y analizar el flujo de aire sobre el carenado. Gracias a sus herramientas hemos conseguido reducir el peso un 15% manteniendo la rigidez.",
-                    "galeria": []
+                    "galeria": [],
+                    "seoTitle": "Altair y MotoMaqLab UC3M — Simulación multifísica HyperWorks, optimización topológica y CFD | MotoStudent",
+                    "seoDescription": "Altair proporciona a MotoMaqLab UC3M el software HyperWorks para simulación estructural, optimización topológica y CFD, logrando un 15% de reducción de peso.",
+                    "quoteEquipo": "Con HyperWorks de Altair simulamos las cargas del chasis, optimizamos la geometría del basculante y analizamos el flujo sobre el carenado. Ganamos el Altair Innovative Challenge 2020 y redujimos un 15% el peso estructural."
                 },
                 {
                     "id": "addyx",
@@ -43,10 +49,13 @@
                     "galeria": [
                         "assets/img/patrocinios/addyx/laminado 1.webp",
                         "assets/img/patrocinios/addyx/fibra.webp",
-                        "assets/img/patrocinios/addyx/lamiado 3.webp",
+                        "assets/img/patrocinios/addyx/laminado 3.webp",
                         "assets/img/patrocinios/addyx/laminado 2.webp",
                         "assets/img/patrocinios/addyx/montado.webp"
-                    ]
+                    ],
+                    "seoTitle": "Addyx y MotoMaqLab UC3M — Moldes hidrosolubles 3D para chasis de fibra de carbono | MotoStudent",
+                    "seoDescription": "Addyx fabrica los moldes hidrosolubles WSM-170 que permiten a MotoMaqLab UC3M crear su chasis doble viga hueco en fibra de carbono con admisión integrada.",
+                    "quoteEquipo": "Los moldes hidrosolubles WSM-170 de Addyx nos permitieron fabricar un chasis doble viga hueco en fibra de carbono con el conducto de admisión integrado. Sin esta tecnología, esa geometría sería sencillamente imposible."
                 },
                 {
                     "id": "UC3M",
@@ -63,7 +72,10 @@
                         "assets/img/patrocinios/uc3m/Foto_3_UC3M.webp",
                         "assets/img/patrocinios/uc3m/Foto_4_UC3M.webp",
                         "assets/img/patrocinios/uc3m/Foto_5_UC3M.webp"
-                    ]
+                    ],
+                    "seoTitle": "Universidad Carlos III de Madrid y MotoMaqLab UC3M — Talleres, laboratorios y formación en ingeniería | MotoStudent",
+                    "seoDescription": "La UC3M respalda a MotoMaqLab con talleres, laboratorios, financiación y tutores de la Escuela Politécnica Superior de Leganés desde 2009 en MotoStudent.",
+                    "quoteEquipo": "La UC3M es el pilar de este proyecto: nos da talleres, laboratorios de materiales y el apoyo de profesores que nos exigen rigor industrial. Sin el respaldo de la universidad, MotoMaqLab no existiría."
                 },
                 {
                     "id": "retamal",
@@ -73,7 +85,10 @@
                     "website": "https://jretamal.com/",
                     "dedicatedPage": "patrocinador-retamal.html",
                     "contenido": "Retamal es un socio estratégico clave para Motomaqlab, aportándonos soporte logístico y organizativo fundamental para el correcto desarrollo del proyecto. Gracias a su experiencia en gestión de herramientas, servicios y logística, podemos optimizar nuestros procesos de trabajo y garantizar una mejor planificación y coordinación del equipo.\n\n## Impacto en el equipo\nQue Retamal nos patrocine supone un respaldo importante tanto a nivel operativo como estratégico. Su apoyo nos permite centrarnos en el diseño, fabricación y mejora del rendimiento de nuestra moto, asegurando que contamos con los recursos y la organización necesarios para competir al máximo nivel. Además, su colaboración refuerza la estructura profesional de nuestro proyecto y contribuye a nuestro crecimiento como equipo de ingeniería.\n\n## Qué nos aportan\n- Soporte logístico y organizativo integral para el proyecto\n- Experiencia en gestión de herramientas y servicios\n- Asesoramiento estratégico para planificación y coordinación\n- Recursos operativos para competir al máximo nivel",
-                    "galeria": []
+                    "galeria": [],
+                    "seoTitle": "J. Retamal y MotoMaqLab UC3M — Soporte logístico, gestión de herramientas y coordinación de equipo | MotoStudent",
+                    "seoDescription": "J. Retamal aporta a MotoMaqLab UC3M soporte logístico, gestión profesional de herramientas y planificación estratégica para competir en MotoStudent.",
+                    "quoteEquipo": "Retamal nos aporta la organización logística que un equipo universitario necesita para funcionar como uno profesional. Su gestión de herramientas y planificación nos deja concentrarnos en la ingeniería."
                 }
             ]
         },

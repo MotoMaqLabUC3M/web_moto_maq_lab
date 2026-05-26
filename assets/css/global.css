@@ -1,7 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;0,900;1,700;1,800;1,900&family=Inter:wght@300;400;500;600;700&display=swap');
+
 /* =========================================
-    1. CONFIGURACI?N BASE Y VARIABLES
+    1. CONFIGURACIÓN BASE Y VARIABLES
    ========================================= */
 :root {
+    --font-heading: 'Barlow Condensed', system-ui, -apple-system, sans-serif;
+    --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+    --c-carbon: #1a1a1e;
+    --c-asphalt: #2a2a2e;
     --c-red: rgb(242, 25, 43);
     --c-red-transparente: rgba(242, 25, 43, 0.05);
     --c-red-transparente-strong: rgba(242, 25, 43, 0.2);
@@ -26,13 +32,17 @@ html {
 body {
     background-color: var(--c-dark);
     color: var(--c-light);
-    font-family: var(--font-stack);
+    font-family: var(--font-body);
     overflow-x: clip;
 }
 
 img {
     max-width: 100%;
     height: auto;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-heading);
 }
 
 a {
@@ -86,8 +96,11 @@ a {
     font-size: 0.75rem;
     font-weight: 700;
     padding: 0.25rem 0.5rem;
-    border-radius: 4px;
+    border-radius: 2px;
     margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    border-left: 3px solid var(--c-red);
 }
 
 /* --- T?tulos de Secci?n (Global) --- */
@@ -125,7 +138,7 @@ a {
 }
 
 section.section-container:nth-of-type(even) {
-    background-color: #1c1c1e;
+    background: repeating-linear-gradient(45deg, rgba(255,255,255,0.01) 0px, rgba(255,255,255,0.01) 2px, transparent 2px, transparent 6px), linear-gradient(135deg, #161618 0%, #1c1c1e 100%);
     border-top: 1px solid rgba(255, 255, 255, 0.05);
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
@@ -487,7 +500,7 @@ section.section-container:nth-of-type(even) {
 }
 
 .hero h1 {
-    font-size: 3.5rem;
+    font-size: clamp(2.8rem, 10vw, 7.5rem);
     font-weight: 900;
     line-height: 0.9;
     text-transform: uppercase;
@@ -526,10 +539,6 @@ section.section-container:nth-of-type(even) {
 
 /* Responsivo Landing */
 @media (max-width: 768px) {
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-
     .hero p {
         font-size: 1rem;
     }
@@ -548,10 +557,11 @@ section.section-container:nth-of-type(even) {
    ========================================= */
 
 .motostudent-section {
-    background: linear-gradient(135deg, #1a1a1c 0%, var(--c-dark) 100%);
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+    overflow: hidden;
 }
+
+
 
 .motostudent-section .section-title h2 span {
     color: var(--c-red);
@@ -559,9 +569,9 @@ section.section-container:nth-of-type(even) {
 
 .motostudent-content {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: start;
+    grid-template-columns: 5fr 7fr;
+    gap: 4rem;
+    align-items: stretch;
     max-width: 1200px;
     margin: 2rem auto 0;
 }
@@ -586,9 +596,22 @@ section.section-container:nth-of-type(even) {
 }
 
 .motostudent-highlights {
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 3rem auto 0;
+    position: relative;
+    z-index: 2;
+}
+
+.motostudent-media img {
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    object-fit: cover;
 }
 
 .highlight-card {
@@ -606,9 +629,15 @@ section.section-container:nth-of-type(even) {
 }
 
 .highlight-icon {
-    font-size: 1.5rem;
-    display: block;
-    margin-bottom: 0.5rem;
+    color: var(--c-red);
+    background: rgba(242, 25, 43, 0.1);
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
 }
 
 .highlight-card h3 {
@@ -627,6 +656,11 @@ section.section-container:nth-of-type(even) {
     .motostudent-content {
         grid-template-columns: 1fr;
         gap: 2rem;
+    }
+
+    .motostudent-highlights {
+        grid-template-columns: 1fr;
+        gap: 1rem;
     }
 
     .motostudent-cta {
@@ -1254,9 +1288,6 @@ section.section-container:nth-of-type(even) {
         height: auto;
     }
 
-    .eventos-hero h1 {
-        font-size: 2.5rem;
-    }
 }
 
 /* =========================================
@@ -2318,10 +2349,6 @@ section.section-container:nth-of-type(even) {
         padding: 7rem 5% 2rem;
     }
 
-    .ev-hero h1 {
-        font-size: 2rem;
-    }
-
     .ev-info-bar {
         flex-direction: column;
         align-items: stretch;
@@ -2486,9 +2513,9 @@ section.section-container:nth-of-type(even) {
 }
 
 .sobre-nosotros-hero h1 {
-    font-size: 4.5rem;
+    font-size: clamp(2.8rem, 10vw, 7.5rem);
     font-weight: 900;
-    line-height: 1.1;
+    line-height: 0.9;
     text-transform: uppercase;
     font-style: italic;
     letter-spacing: -2px;
@@ -2512,9 +2539,6 @@ section.section-container:nth-of-type(even) {
         height: auto;
     }
 
-    .sobre-nosotros-hero h1 {
-        font-size: 2.5rem;
-    }
 }
 
 /* --- 6.2. Barra de Estad?sticas --- */
@@ -2887,9 +2911,9 @@ section.section-container:nth-of-type(even) {
 }
 
 .patrocinadores-hero h1 {
-    font-size: 4.5rem;
+    font-size: clamp(2.8rem, 10vw, 7.5rem);
     font-weight: 900;
-    line-height: 1.1;
+    line-height: 0.9;
     text-transform: uppercase;
     font-style: italic;
     letter-spacing: -2px;
@@ -2932,9 +2956,6 @@ section.section-container:nth-of-type(even) {
         height: auto;
     }
 
-    .patrocinadores-hero h1 {
-        font-size: 1.9rem;
-    }
 }
 
 /* --- Contenedor Principal (La Pila Vertical) --- */
@@ -3017,7 +3038,7 @@ section.section-container:nth-of-type(even) {
     display: flex;
     flex-direction: column;
     text-align: center;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(0, 0, 0, 0) 100%);
+    background: var(--c-dark);
 }
 
 .tier-platinum .sponsor-logo-wrapper.large {
@@ -3054,7 +3075,7 @@ section.section-container:nth-of-type(even) {
 .tier-bronze .card {
     flex: 0 1 180px;
     padding: 1rem;
-    background: transparent;
+    background-color: var(--c-dark);
 }
 
 .tier-bronze .sponsor-logo-wrapper.xsmall {
@@ -3260,9 +3281,9 @@ section.section-container:nth-of-type(even) {
 }
 
 .equipo-hero h1 {
-    font-size: 4.5rem;
+    font-size: clamp(2.8rem, 10vw, 7.5rem);
     font-weight: 900;
-    line-height: 1.1;
+    line-height: 0.9;
     text-transform: uppercase;
     font-style: italic;
     letter-spacing: -2px;
@@ -3286,9 +3307,6 @@ section.section-container:nth-of-type(even) {
         height: auto;
     }
 
-    .equipo-hero h1 {
-        font-size: 2.5rem;
-    }
 }
 
 /* Filas de Miembros */
@@ -3471,9 +3489,9 @@ section.section-container:nth-of-type(even) {
 }
 
 .blog-hero h1 {
-    font-size: 4.5rem;
+    font-size: clamp(2.8rem, 10vw, 7.5rem);
     font-weight: 900;
-    line-height: 1.1;
+    line-height: 0.9;
     text-transform: uppercase;
     font-style: italic;
     letter-spacing: -2px;
@@ -3497,9 +3515,6 @@ section.section-container:nth-of-type(even) {
         height: auto;
     }
 
-    .blog-hero h1 {
-        font-size: 2.5rem;
-    }
 }
 
 /* --- Blog Grid (listado de tarjetas) --- */
@@ -3541,7 +3556,9 @@ section.section-container:nth-of-type(even) {
 
 .blog-card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 12px 32px rgba(242, 25, 43, 0.1);
+    border-color: rgba(242, 25, 43, 0.2);
+    border-bottom: 3px solid var(--c-red);
 }
 
 /* Imagen de portada del post */
@@ -3744,7 +3761,7 @@ section.section-container:nth-of-type(even) {
 
 
 
-/* --- Centrado de Palmar?s en pantallas grandes --- */
+/* --- Centrado de Palmares en pantallas grandes --- */
 @media (min-width: 1200px) {
     .grid-palmares .card:nth-child(5) {
         grid-column: 2;
@@ -3753,3 +3770,233 @@ section.section-container:nth-of-type(even) {
         grid-column: 3;
     }
 }
+
+/* =========================================
+    SPONSOR DETAIL PAGE V2 - SPLIT LAYOUT
+   ========================================= */
+
+/* --- Split Section (alternating text + image) --- */
+.sp-split-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 420px;
+    align-items: stretch;
+}
+
+.sp-split-section--reverse {
+    direction: rtl;
+}
+
+.sp-split-section--reverse > * {
+    direction: ltr;
+}
+
+.sp-split-media {
+    position: relative;
+    overflow: hidden;
+    min-height: 350px;
+}
+
+.sp-split-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+}
+
+.sp-split-section:hover .sp-split-media img {
+    transform: scale(1.04);
+}
+
+.sp-split-text {
+    padding: 3.5rem 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: var(--c-dark);
+    background-image: repeating-linear-gradient(45deg, rgba(255,255,255,0.01) 0px, rgba(255,255,255,0.01) 2px, transparent 2px, transparent 6px);
+}
+
+.sp-split-section:nth-child(even) .sp-split-text {
+    background-color: #1c1c1e;
+}
+
+.sp-split-text h2 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1.5rem;
+    color: var(--c-light);
+    position: relative;
+    padding-left: 1.25rem;
+}
+
+.sp-split-text h2::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: var(--c-red);
+    border-radius: 2px;
+}
+
+.sp-split-text p {
+    font-size: 1.02rem;
+    line-height: 1.8;
+    opacity: 0.82;
+    margin-bottom: 1rem;
+}
+
+.sp-split-text p:last-child {
+    margin-bottom: 0;
+}
+
+@media (max-width: 900px) {
+    .sp-split-section {
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+
+    .sp-split-section--reverse {
+        direction: ltr;
+    }
+
+    .sp-split-media {
+        min-height: 250px;
+        max-height: 350px;
+    }
+
+    .sp-split-text {
+        padding: 2.5rem 5%;
+    }
+}
+
+/* --- Stats Bar (Pit Board Style) --- */
+.sp-stats-bar {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 2.5rem 5%;
+    background: transparent;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.sp-stat-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 8px;
+    padding: 1.25rem 1.75rem;
+    flex: 1 1 200px;
+    max-width: 280px;
+    transition: all 0.3s ease;
+}
+
+.sp-stat-card:hover {
+    border-color: rgba(242, 25, 43, 0.3);
+    transform: translateY(-2px);
+    background: rgba(242, 25, 43, 0.04);
+    box-shadow: 0 4px 20px rgba(242, 25, 43, 0.1);
+}
+
+.sp-stat-icon {
+    color: var(--c-red);
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(242, 25, 43, 0.08);
+    border-radius: 8px;
+}
+
+.sp-stat-icon svg {
+    width: 22px;
+    height: 22px;
+}
+
+.sp-stat-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.sp-stat-label {
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--c-light);
+    line-height: 1.3;
+}
+
+.sp-stat-sublabel {
+    font-size: 0.78rem;
+    opacity: 0.5;
+    margin-top: 0.15rem;
+}
+
+@media (max-width: 768px) {
+    .sp-stats-bar {
+        gap: 0.75rem;
+        padding: 1.5rem 4%;
+    }
+
+    .sp-stat-card {
+        flex: 1 1 calc(50% - 0.75rem);
+        max-width: none;
+        padding: 1rem 1.25rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .sp-stat-card {
+        flex: 1 1 100%;
+    }
+}
+
+/* --- Quote Box --- */
+.sp-quote-box {
+    background: linear-gradient(135deg, rgba(242, 25, 43, 0.06) 0%, rgba(255, 255, 255, 0.02) 100%);
+    border: 1px solid rgba(242, 25, 43, 0.2);
+    border-left: 4px solid var(--c-red);
+    border-radius: 0 12px 12px 0;
+    padding: 2rem 2.5rem;
+    margin: 3rem auto;
+    max-width: 1100px;
+}
+
+.sp-quote-box blockquote {
+    font-size: 1.15rem;
+    font-style: italic;
+    line-height: 1.7;
+    opacity: 0.9;
+    margin: 0;
+}
+
+.sp-quote-box cite {
+    display: block;
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    font-style: normal;
+    opacity: 0.6;
+    font-weight: 600;
+}
+
+/* --- Hero V2 enhancements --- */
+.sp-hero-v2 {
+    position: relative;
+}
+
+
+
+
