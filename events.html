@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://www.gstatic.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https: blob:; frame-src 'self' https:; connect-src 'self' https:;">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="https://motomaqlabuc3m.es/favicon.ico">
+    <link rel="icon" type="image/png" sizes="192x192"
+        href="https://motomaqlabuc3m.es/assets/img/logos_uc3m/favicon-192.webp">
+    <link rel="icon" type="image/png" sizes="512x512"
+        href="https://motomaqlabuc3m.es/assets/img/logos_uc3m/favicon-512.webp">
+    <link rel="apple-touch-icon" sizes="192x192"
+        href="https://motomaqlabuc3m.es/assets/img/logos_uc3m/favicon-192.webp">
+    <link rel="manifest" href="https://motomaqlabuc3m.es/site.webmanifest">
+    <title>Events and MotoStudent Calendar | MotoMaqLab UC3M</title>
+    <meta name="description"
+        content="Events and milestones of the MotoMaqLab UC3M team. Upcoming appointments and achievements of the MotoStudent team.">
+    <meta name="keywords" content="UC3M motorcycle events, MotoMaqLab calendar, MotoStudent UC3M events, UC3M milestones">
+    <link rel="canonical" href="https://motomaqlabuc3m.es/events.html">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Events of the UC3M motorcycle team | MotoMaqLab">
+    <meta property="og:description" content="Upcoming events and achievements of the UC3M MotoStudent team.">
+    <meta property="og:image" content="https://motomaqlabuc3m.es/assets/img/hero/eventos.webp">
+    <meta property="og:url" content="https://motomaqlabuc3m.es/events.html">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="MotoMaqLab UC3M">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="stylesheet" href="assets/css/global.css" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MMNY9WVPLY"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-MMNY9WVPLY');
+    </script>
+</head>
+
+<body>
+    <header id="main-header"></header>
+
+    <main>
+        <section class="eventos-hero">
+            <div class="eventos-hero-content">
+                <span class="badge">2025-2027 SEASON</span>
+                <h1>OUR<br /><span>EVENTS</span></h1>
+                <p>Events we will attend soon or have already attended</p>
+            </div>
+        </section>
+
+        <!-- Próximos Eventos -->
+        <section class="section-container" id="proximos">
+            <div class="section-title">
+                <h2>UPCOMING EVENTS</h2>
+                <p>What's next on our roadmap</p>
+            </div>
+            <div class="eventos-grid" id="proximos-container"></div>
+            <p class="eventos-empty d-none" id="proximos-empty">No upcoming events scheduled.</p>
+        </section>
+
+        <!-- Eventos Pasados -->
+        <section class="section-container" id="pasados">
+            <div class="section-title">
+                <h2>PAST EVENTS</h2>
+                <p>History of our activities and competitions</p>
+            </div>
+            <div class="eventos-grid" id="pasados-container"></div>
+            <p class="eventos-empty d-none" id="pasados-empty">No past events recorded.</p>
+        </section>
+    </main>
+
+    <footer id="main-footer"></footer>
+
+    <script src="assets/js/layout.js"></script>
+    <script src="assets/js/mobileMenu.js"></script>
+    <script src="assets/js/eventos.js"></script>
+    <script src="assets/js/scrollReveal.js"></script>
+</body>
+
+</html>

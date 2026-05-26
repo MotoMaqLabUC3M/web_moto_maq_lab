@@ -18,10 +18,17 @@ document.addEventListener('DOMContentLoaded', async () => {
     const container = document.getElementById('sponsors-container');
     if (!container) return;
 
+    const path = window.location.pathname;
+    const currentFile = path.substring(path.lastIndexOf('/') + 1) || 'index.html';
+    const isEnglish = currentFile === 'sponsors.html' || currentFile === 'index-en.html';
+    const JSON_PATH = isEnglish ? 'assets/data/patrocinadores-en.json' : 'assets/data/patrocinadores.json';
+
     try {
-        const response = await fetch('assets/data/patrocinadores.json');
+        const response = await fetch(JSON_PATH);
         const data = await response.json();
         renderSponsorTiers(container, data.tiers);
+
+        
     } catch (error) {
         console.error('Error loading sponsors data:', error);
         container.innerHTML = '<p>Error al cargar los datos de patrocinadores.</p>';

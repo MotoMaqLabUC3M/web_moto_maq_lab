@@ -5,7 +5,10 @@
  * También renderiza preview en index.html (2 últimas noticias).
  */
 (function () {
-    const JSON_PATH = 'assets/data/blog.json';
+    const path = window.location.pathname;
+    const currentFile = path.substring(path.lastIndexOf('/') + 1) || 'index.html';
+    const isEnglish = currentFile === 'blog-en.html' || currentFile === 'index-en.html';
+    const JSON_PATH = isEnglish ? 'assets/data/blog-en.json' : 'assets/data/blog.json';
 
     function sanitize(str) {
         if (!str) return '';
@@ -85,14 +88,18 @@
             // Formatear fecha
             var fecha = new Date(post.fecha);
             var opciones = { month: 'short', day: 'numeric' };
-            var fechaStr = fecha.toLocaleDateString('es-ES', opciones);
+            var locale = isEnglish ? 'en-US' : 'es-ES';
+            var fechaStr = fecha.toLocaleDateString(locale, opciones);
 
             // Imagen de portada (safe, no inline onerror)
             var imgHTML = post.imagen
                 ? '<div class="blog-card-img"><img src="' + sanitize(post.imagen) + '" alt="' + sanitize(post.titulo) + '" loading="lazy" /></div>'
                 : '';
 
-            var fallbackHTML = '<div class="blog-card-img"><div class="newsletter-fallback"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg><br>Revista MotoMaqLab</div></div>';
+            var fallbackHTML = '<div class="blog-card-img"><div class="newsletter-fallback"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg><br>MotoMaqLab Magazine</div></div>';
+            if (!isEnglish) {
+                fallbackHTML = '<div class="blog-card-img"><div class="newsletter-fallback"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg><br>Revista MotoMaqLab</div></div>';
+            }
 
             // Truncar extracto
             var extracto = post.extracto || '';
@@ -104,14 +111,18 @@
                 card.classList.add('newsletter-only-cover');
                 card.innerHTML = imgHTML || fallbackHTML;
             } else {
+                const byText = isEnglish ? 'by ' : 'por ';
+                const onText = isEnglish ? ' on ' : ' el ';
+                const readMoreText = isEnglish ? 'Read more →' : 'Leer más →';
+                
                 card.innerHTML =
                     imgHTML +
                     '<div class="blog-card-body">' +
                         '<span class="blog-card-categoria">' + sanitize(post.categoria) + '</span>' +
                         '<h3>' + sanitize(post.titulo) + '</h3>' +
-                        '<p class="blog-card-meta">por ' + sanitize(post.autor) + ' el ' + sanitize(fechaStr) + '</p>' +
+                        '<p class="blog-card-meta">' + byText + sanitize(post.autor) + onText + sanitize(fechaStr) + '</p>' +
                         '<p class="blog-card-extracto">' + sanitize(extracto) + '</p>' +
-                        '<span class="blog-card-leer">Leer más →</span>' +
+                        '<span class="blog-card-leer">' + readMoreText + '</span>' +
                     '</div>';
             }
 

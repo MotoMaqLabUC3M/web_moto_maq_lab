@@ -18,7 +18,12 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (!container) return;
 
     try {
-        const response = await fetch('assets/data/equipo.json');
+        const path = window.location.pathname;
+        const currentFile = path.substring(path.lastIndexOf('/') + 1) || 'index.html';
+        const isEnglish = currentFile === 'team.html';
+        const jsonPath = isEnglish ? 'assets/data/equipo-en.json' : 'assets/data/equipo.json';
+
+        const response = await fetch(jsonPath);
         const data = await response.json();
         renderTeamSections(container, data.sections);
     } catch (error) {

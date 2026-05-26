@@ -16,7 +16,10 @@
     }
 
 
-    const JSON_PATH = 'assets/data/eventos.json';
+    const path = window.location.pathname;
+    const currentFile = path.substring(path.lastIndexOf('/') + 1) || 'index.html';
+    const isEnglish = currentFile === 'events.html' || currentFile === 'index-en.html';
+    const JSON_PATH = isEnglish ? 'assets/data/eventos-en.json' : 'assets/data/eventos.json';
 
     async function init() {
         // Página de eventos completa
@@ -86,7 +89,8 @@
                 if (top3.length > 0) {
                     renderEventos(indexContainer, top3);
                 } else {
-                    indexContainer.innerHTML = '<p class="eventos-empty eventos-empty--fullwidth">Actualmente no tenemos eventos programados. ¡Pronto anunciaremos nuevas fechas!</p>';
+                    const emptyMsg = isEnglish ? 'Currently we have no scheduled events. We will announce new dates soon!' : 'Actualmente no tenemos eventos programados. ¡Pronto anunciaremos nuevas fechas!';
+                    indexContainer.innerHTML = '<p class="eventos-empty eventos-empty--fullwidth">' + emptyMsg + '</p>';
                 }
             }
 
@@ -109,19 +113,22 @@
             // Formatear fecha
             const fecha = new Date(evento.fecha);
             const opciones = { day: 'numeric', month: 'long', year: 'numeric' };
-            let fechaStr = fecha.toLocaleDateString('es-ES', opciones);
+            const locale = isEnglish ? 'en-US' : 'es-ES';
+            let fechaStr = fecha.toLocaleDateString(locale, opciones);
 
             // Si tiene fechaFin, mostrar rango
             if (evento.fechaFin) {
                 const fechaFin = new Date(evento.fechaFin);
                 const opcionesFin = { day: 'numeric', month: 'long', year: 'numeric' };
-                fechaStr = `${fecha.toLocaleDateString('es-ES', { day: 'numeric' })} - ${fechaFin.toLocaleDateString('es-ES', opcionesFin)}`;
+                fechaStr = `${fecha.toLocaleDateString(locale, { day: 'numeric' })} - ${fechaFin.toLocaleDateString(locale, opcionesFin)}`;
             }
 
             // Imagen (si existe) — sin onerror inline para cumplir CSP
             const imgHTML = evento.imagen
-                ? `<div class="evento-img-wrapper"><img src="${sanitize(evento.imagen)}" alt="Imagen del evento: ${sanitize(evento.titulo)} — MotoMaqLab UC3M" loading="lazy" /></div>`
+                ? `<div class="evento-img-wrapper"><img src="${sanitize(evento.imagen)}" alt="Event image: ${sanitize(evento.titulo)} — MotoMaqLab UC3M" loading="lazy" /></div>`
                 : '';
+            
+            const verMasText = isEnglish ? 'View event' : 'Ver evento';
 
             card.innerHTML = `
                 ${imgHTML}
@@ -130,7 +137,7 @@
                     <h3>${sanitize(evento.titulo)}</h3>
                     <p class="evento-lugar"><svg class="evento-lugar-svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg> ${sanitize(evento.lugar)}</p>
                     <p class="evento-desc">${sanitize(evento.descripcion)}</p>
-                    <span class="evento-ver-mas">Ver evento: ${sanitize(evento.titulo)} →</span>
+                    <span class="evento-ver-mas">${verMasText}: ${sanitize(evento.titulo)} →</span>
                 </div>
             `;
 

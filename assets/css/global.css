@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;0,900;1,700;1,800;1,900&family=Inter:wght@300;400;500;600;700&display=swap');
+﻿@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;0,900;1,700;1,800;1,900&family=Inter:wght@300;400;500;600;700&display=swap');
 
 /* =========================================
-    1. CONFIGURACIÓN BASE Y VARIABLES
+    1. CONFIGURACIÃ“N BASE Y VARIABLES
    ========================================= */
 :root {
     --font-heading: 'Barlow Condensed', system-ui, -apple-system, sans-serif;
@@ -544,7 +544,7 @@ section.section-container:nth-of-type(even) {
         margin: 0;
     }
 
-    /* --- Dropdown Móvil --- */
+    /* --- Dropdown MÃ³vil --- */
     .nav-dropdown {
         width: 100%;
         margin: 0;
@@ -847,7 +847,7 @@ section.section-container:nth-of-type(even) {
     }
 }
 
-/* Sección Filosofía con cards de foto — Sobre nosotros */
+/* SecciÃ³n FilosofÃ­a con cards de foto â€” Sobre nosotros */
 .sn-filosofia-section {
     background: linear-gradient(135deg, #1a1a1c 0%, var(--c-dark) 100%);
 }
@@ -4131,3 +4131,36 @@ section.section-container:nth-of-type(even) {
 
 
 
+
+/* --- Language Switcher --- */
+.lang-switcher {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin: 0 1rem;
+    color: var(--c-light);
+    opacity: 0.8;
+}
+.lang-switcher a {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    margin: 0 !important;
+}
+.lang-switcher a:hover {
+    color: var(--c-white);
+    background: rgba(255, 255, 255, 0.1);
+}
+.lang-switcher a.active {
+    color: var(--c-white);
+    font-weight: 800;
+    opacity: 1;
+}
+.lang-switcher .separator {
+    opacity: 0.5;
+    font-weight: 400;
+}
