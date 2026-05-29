@@ -1,5 +1,17 @@
+    function sanitize(str) {
+        if (!str) return '';
+        return String(str)
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#039;');
+    }
+
+
 /**
  * patrocinadores.js - Renders sponsor sections from JSON data
+ * Links sponsors with dedicatedPage to their detail pages.
  */
 
 document.addEventListener('DOMContentLoaded', async () => {
@@ -18,18 +30,26 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 /**
  * Renders all sponsor tiers into the container
- * @param {HTMLElement} container - The container element
- * @param {Array} tiers - Array of tier objects
  */
 function renderSponsorTiers(container, tiers) {
     const html = tiers.map(tier => createTierHTML(tier)).join('');
     container.innerHTML = `<div class="sponsors-stack">${html}</div>`;
+    // Init swipe carousels on mobile after DOM is ready
+    requestAnimationFrame(initTierCarousels);
 }
 
 /**
+ * Previously used for tier carousel - now a no-op since
+ * silver/bronze use a CSS logo wall grid instead.
+ */
+function initTierCarousels() {
+    // No-op: logo wall approach is handled entirely in CSS.
+}
+
+
+
+/**
  * Creates HTML for a single tier section
- * @param {Object} tier - Tier object with id, name, cssClass, logoSize, and sponsors
- * @returns {string} HTML string for the tier
  */
 function createTierHTML(tier) {
     const sponsorsHTML = tier.sponsors.map(sponsor => createSponsorCardHTML(sponsor, tier)).join('');
@@ -45,58 +65,67 @@ function createTierHTML(tier) {
 }
 
 /**
- * Creates HTML for a single sponsor card
- * @param {Object} sponsor - Sponsor object with id, name, logo, description, website, dedicatedPage
- * @param {Object} tier - Parent tier object for sizing info
- * @returns {string} HTML string for the sponsor card
+ * Creates HTML for a single sponsor card.
+ * If the sponsor has a dedicatedPage, the card is wrapped in a link.
  */
 function createSponsorCardHTML(sponsor, tier) {
     const isPlatinum = tier.id === 'platinum';
     const isGold = tier.id === 'gold';
     const isSilverOrBronze = tier.id === 'silver' || tier.id === 'bronze';
 
-    // Determine card class based on tier
     const cardClass = isSilverOrBronze ? 'card mini-card' : 'card';
 
-    // Determine heading tag based on tier
     let headingTag = 'h2';
     if (isGold) headingTag = 'h3';
     if (tier.id === 'silver') headingTag = 'h4';
     if (tier.id === 'bronze') headingTag = 'h5';
 
-    // Build the card content based on tier type
+    // Add clickable class if has dedicated page or external website
+    const hasLink = sponsor.dedicatedPage || sponsor.website;
+    const clickableClass = hasLink ? ' card--clickable' : '';
+
+    let cardContent = '';
+
     if (isPlatinum) {
-        return `
-            <div class="${cardClass}">
+        cardContent = `
+            <div class="${cardClass}${clickableClass}">
                 <div class="sponsor-logo-wrapper ${tier.logoSize}">
-                    <img src="${sponsor.logo}" alt="${sponsor.name}" />
+                    <img src="${sanitize(sponsor.logo)}" alt="Logo de ${sanitize(sponsor.name)}" />
                 </div>
                 <div class="card-content">
-                    <${headingTag}>${sponsor.name}</${headingTag}>
-                    <p>${sponsor.description}</p>
+                    <${headingTag}>${sanitize(sponsor.name)}</${headingTag}>
+                    <p>${sanitize(sponsor.description)}</p>
                 </div>
             </div>
         `;
     } else if (isGold) {
-        return `
-            <div class="${cardClass}">
+        cardContent = `
+            <div class="${cardClass}${clickableClass}">
                 <div class="sponsor-logo-wrapper ${tier.logoSize}">
-                    <img src="${sponsor.logo}" alt="${sponsor.name}" />
+                    <img src="${sanitize(sponsor.logo)}" alt="Logo de ${sanitize(sponsor.name)}" />
                 </div>
-                <${headingTag}>${sponsor.name}</${headingTag}>
-                <p>${sponsor.description}</p>
+                <${headingTag}>${sanitize(sponsor.name)}</${headingTag}>
+                <p>${sanitize(sponsor.description)}</p>
             </div>
         `;
     } else {
-        // Silver and Bronze (mini-card style)
-        return `
-            <div class="${cardClass}">
+        cardContent = `
+            <div class="${cardClass}${clickableClass}">
                 <div class="sponsor-logo-wrapper ${tier.logoSize}">
-                    <img src="${sponsor.logo}" alt="${sponsor.name}" />
+                    <img src="${sanitize(sponsor.logo)}" alt="Logo de ${sanitize(sponsor.name)}" />
                 </div>
-                <${headingTag}>${sponsor.name}</${headingTag}>
-                <p>${sponsor.description}</p>
+                <${headingTag}>${sanitize(sponsor.name)}</${headingTag}>
+                <p>${sanitize(sponsor.description)}</p>
             </div>
         `;
     }
+
+    // Wrap in link if has dedicated page or external website
+    if (sponsor.dedicatedPage) {
+        return `<a href="${sponsor.dedicatedPage}" class="sponsor-card-link" aria-label="Ver página de ${sanitize(sponsor.name)}">${cardContent}</a>`;
+    } else if (sponsor.website) {
+        return `<a href="${sponsor.website}" target="_blank" rel="noopener noreferrer" class="sponsor-card-link" aria-label="Visitar web de ${sanitize(sponsor.name)}">${cardContent}</a>`;
+    }
+
+    return cardContent;
 }

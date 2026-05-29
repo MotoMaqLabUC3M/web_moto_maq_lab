@@ -1,0 +1,121 @@
+{
+    "header": {
+        "logo": {
+            "href": "index.html",
+            "img": "assets/img/logos_uc3m/uc3m_logo.webp",
+            "alt": "MotoMaqLab UC3M Logo",
+            "text": "MOTOMAQLAB",
+            "highlight": "UC3M"
+        },
+        "nav": [
+            {
+                "label": "SOBRE NOSOTROS",
+                "href": "sobre-nosotros.html"
+            },
+            {
+                "label": "EL EQUIPO",
+                "href": "equipo.html"
+            },
+            {
+                "label": "EVENTOS",
+                "href": "eventos.html"
+            },
+            {
+                "label": "BLOG",
+                "href": "blog.html"
+            },
+            {
+                "label": "PATROCINADORES",
+                "href": "patrocinadores.html"
+            }
+        ],
+        "cta": {
+            "label": "CONTACTO",
+            "href": "mailto:motomaqlabuc3m@uc3m.es"
+        }
+    },
+    "footer": {
+        "brand": {
+            "desc": "Ingeniería, pasión y velocidad. El equipo oficial de MotoStudent de la Universidad Carlos III de Madrid (UC3M), Campus de Leganés."
+        },
+        "explorar": {
+            "title": "EXPLORAR",
+            "links": [
+                {
+                    "label": "Inicio",
+                    "href": "index.html"
+                },
+                {
+                    "label": "Sobre Nosotros",
+                    "href": "sobre-nosotros.html"
+                },
+                {
+                    "label": "El Equipo",
+                    "href": "equipo.html"
+                },
+                {
+                    "label": "Eventos",
+                    "href": "eventos.html"
+                },
+                {
+                    "label": "Blog",
+                    "href": "blog.html"
+                },
+                {
+                    "label": "Patrocinadores",
+                    "href": "patrocinadores.html"
+                },
+                {
+                    "label": "Contacto",
+                    "href": "mailto:motomaqlabuc3m@uc3m.es"
+                }
+            ]
+        },
+        "contacto": {
+            "title": "CONTACTO",
+            "links": [
+                {
+                    "icon": "<i data-lucide=\"mail\" style=\"width:18px;height:18px;margin-right:8px;vertical-align:-3px;\"></i>",
+                    "label": "motomaqlabuc3m@uc3m.es",
+                    "href": "mailto:motomaqlabuc3m@uc3m.es"
+                },
+                {
+                    "icon": "<i data-lucide=\"map-pin\" style=\"width:18px;height:18px;margin-right:8px;vertical-align:-3px;\"></i>",
+                    "label": "Universidad Carlos III de Madrid | Campus de Leganés",
+                    "href": "https://www.google.com/maps/place/Universidad+Carlos+III+de+Madrid+-+Campus+de+Legan%C3%A9s/"
+                }
+            ]
+        },
+        "social": {
+            "title": "SÍGUENOS",
+            "links": [
+                {
+                    "label": "Instagram",
+                    "href": "https://www.instagram.com/motomaqlabuc3m/?hl=en",
+                    "img": "assets/img/social/instagram.webp"
+                },
+                {
+                    "label": "TikTok",
+                    "href": "https://www.tiktok.com/@motomaqlabuc3m",
+                    "img": "assets/img/social/tik-tok.webp"
+                },
+                {
+                    "label": "X",
+                    "href": "https://x.com/MOTOMAQLABUC3M",
+                    "img": "assets/img/social/x.webp"
+                },
+                {
+                    "label": "YouTube",
+                    "href": "https://www.youtube.com/@MotoMaqlab-UC3M",
+                    "img": "assets/img/social/youtube.webp"
+                },
+                {
+                    "label": "LinkedIn",
+                    "href": "https://www.linkedin.com/company/moto-maqlab-uc3m/",
+                    "img": "assets/img/social/linkedin.webp"
+                }
+            ]
+        },
+        "copy": "© 2025 MotoMaqLab UC3M. Todos los derechos reservados."
+    }
+}

@@ -1,0 +1,59 @@
+# MotoMaqLab UC3M
+
+> Equipo oficial de MotoStudent de la Universidad Carlos III de Madrid (UC3M). Más de 70 estudiantes de ingeniería diseñan, fabrican y compiten con prototipos de moto de competición a nivel internacional. Temporada 2025-2027.
+
+Sitio: https://motomaqlabuc3m.es
+
+## Acerca de
+
+MotoMaqLab es el equipo de moto de la UC3M en Leganés (Madrid). Participa en MotoStudent, competición internacional de ingeniería universitaria organizada por la Moto Engineering Foundation (MotorLand Aragón, España). Desde 2009 el equipo ha obtenido 6 premios en innovación, diseño industrial y presentación de proyecto.
+
+## Páginas principales
+
+- [Inicio](https://motomaqlabuc3m.es/): Hero del equipo, cinta de patrocinadores platino, sección «Quiénes somos», avance de próximos eventos.
+- [Sobre nosotros](https://motomaqlabuc3m.es/sobre-nosotros.html): Filosofía, qué es MotoStudent, historia (timeline MS1–MS8) y palmarés.
+- [Equipo](https://motomaqlabuc3m.es/equipo.html): Miembros por departamentos (datos en JSON).
+- [Patrocinadores](https://motomaqlabuc3m.es/patrocinadores.html): Niveles Platino, Oro, Plata y Bronce. En móvil pequeño, Plata y Bronce muestran solo logos en rejilla; Platino y Oro mantienen tarjeta completa.
+- [Eventos](https://motomaqlabuc3m.es/eventos.html): Calendario y hitos de temporada.
+- [Blog](https://motomaqlabuc3m.es/blog.html): Noticias y artículos del proyecto.
+
+## Fichas de patrocinadores (platino)
+
+- [MAQLAB](https://motomaqlabuc3m.es/patrocinador-maqlab.html)
+- [Altair](https://motomaqlabuc3m.es/patrocinador-altair.html)
+- [Addyx](https://motomaqlabuc3m.es/patrocinador-addyx.html)
+- [UC3M](https://motomaqlabuc3m.es/patrocinador-UC3M.html)
+- [Retamal](https://motomaqlabuc3m.es/patrocinador-retamal.html)
+
+Cada ficha incluye colaboración, «Qué nos aportan», galería y enlace al sitio web del patrocinador cuando aplica.
+
+## Páginas de detalle dinámicas
+
+- `evento.html` y rutas `evento-*.html`: detalle de un evento (ID en URL o archivo estático generado).
+- `noticia.html` y rutas `noticia-*.html`: detalle de una entrada del blog.
+- `patrocinador.html?id=…`: redirección legada; preferir las URLs `patrocinador-{id}.html` anteriores.
+
+## Datos y stack
+
+Vanilla HTML, CSS y JavaScript. Contenido dinámico desde JSON en `assets/data/`:
+
+- `patrocinadores.json` — niveles y fichas de patrocinadores
+- `equipo.json` — miembros por departamento
+- `eventos.json` — eventos de temporada
+- `blog.json` — entradas del blog
+
+## Contacto
+
+- Email: motomaqlabuc3m@uc3m.es
+- Universidad Carlos III de Madrid, Av. de la Universidad 30, 28911 Leganés, Madrid, España
+
+## Enlaces oficiales
+
+- Instagram: https://www.instagram.com/motomaqlabuc3m/
+- LinkedIn: https://www.linkedin.com/company/moto-maqlab-uc3m/
+- TikTok: https://www.tiktok.com/@motomaqlabuc3m
+
+## Optional
+
+- [Noticia: newsletter Revista MotoMaqLab](https://motomaqlabuc3m.es/noticia-newsletter-revista-motomaqlab.html)
+- `creador_eventos.html` / `creador_noticias.html`: herramientas internas de edición (no públicas orientadas al visitante).

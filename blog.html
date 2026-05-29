@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://translate.google.com https://translate.googleapis.com https://translate-pa.googleapis.com https://unpkg.com; style-src 'self' 'unsafe-inline' https://translate.googleapis.com https://fonts.googleapis.com https://www.gstatic.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https: blob:; frame-src 'self' https:; connect-src 'self' https:;">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="https://motomaqlabuc3m.es/favicon.ico">
+    <link rel="icon" type="image/png" sizes="192x192"
+        href="https://motomaqlabuc3m.es/assets/img/logos_uc3m/favicon-192.webp">
+    <link rel="icon" type="image/png" sizes="512x512"
+        href="https://motomaqlabuc3m.es/assets/img/logos_uc3m/favicon-512.webp">
+    <link rel="apple-touch-icon" sizes="192x192" href="https://motomaqlabuc3m.es/assets/img/logos_uc3m/favicon-192.webp">
+    <link rel="manifest" href="https://motomaqlabuc3m.es/site.webmanifest">
+    <title>Blog y Noticias MotoStudent | MotoMaqLab UC3M</title>
+    <meta name="description"
+        content="📰 Noticias, artículos técnicos y novedades del equipo MotoStudent de la Universidad Carlos III de Madrid.">
+    <meta name="keywords"
+        content="blog MotoStudent, noticias MotoMaqLab, artículos ingeniería moto, MotoStudent España noticias, UC3M motorsport blog, Formula Student Madrid">
+    <link rel="canonical" href="https://motomaqlabuc3m.es/blog.html">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Blog MotoMaqLab UC3M — Noticias del equipo MotoStudent">
+    <meta property="og:description"
+        content="📰 Artículos, noticias técnicas y novedades del equipo de moto de la UC3M.">
+    <meta property="og:image" content="https://motomaqlabuc3m.es/assets/img/hero/blog.webp">
+    <meta property="og:url" content="https://motomaqlabuc3m.es/blog.html">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:site_name" content="MotoMaqLab UC3M">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="stylesheet" href="assets/css/global.css" />
+
+    <!-- Datos estructurados Schema.org -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Inicio",
+                "item": "https://motomaqlabuc3m.es/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Blog",
+                "item": "https://motomaqlabuc3m.es/blog.html"
+            }
+        ]
+    }
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MMNY9WVPLY"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-MMNY9WVPLY');
+    </script>
+</head>
+
+<body>
+    <header id="main-header"></header>
+
+    <main>
+        <section class="blog-hero">
+            <div class="blog-hero-content">
+                <span class="badge">NOTICIAS Y ARTÍCULOS</span>
+                <h1>ÚLTIMAS<br /><span>NOTICIAS</span></h1>
+                <p>Artículos, noticias técnicas y novedades del equipo MotoMaqLab UC3M. Ingeniería, competición y el
+                    mundo del motorsport.</p>
+            </div>
+        </section>
+
+        <section class="section-container" id="blog-posts">
+            <div class="section-title">
+                <h2>Noticias Recientes</h2>
+                <p>Lo último de MotoMaqLab UC3M</p>
+            </div>
+            <div class="blog-grid" id="blog-container"></div>
+            <p class="blog-empty d-none" id="blog-empty">No hay artículos publicados todavía.</p>
+        </section>
+    </main>
+
+    <footer id="main-footer"></footer>
+
+    <script src="assets/js/layout.js"></script>
+    <script src="assets/js/mobileMenu.js"></script>
+    <script src="assets/js/blog.js"></script>
+
+    <!-- Traductor: widget al pulsar «Idioma / Translate» en el pie -->
+    <div id="google_translate_element" class="d-none"></div>
+    <script src="assets/js/translate.js"></script>
+    <script src="assets/js/scrollReveal.js"></script>
+</body>
+
+</html>
