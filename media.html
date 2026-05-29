@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="https://motomaqlabuc3m.es/favicon.ico">
+    <title>Media y Prensa | MotoMaqLab UC3M</title>
+    <meta name="description" content="Galerías exclusivas, apariciones en televisión, prensa y redes sociales del equipo MotoMaqLab.">
+    
+    <link rel="stylesheet" href="assets/css/global.css" />
+    <link rel="stylesheet" href="assets/css/media.css" />
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="media-page">
+    <header id="main-header"></header>
+
+    <main>
+        <!-- Hero Media -->
+        <section class="media-hero parallax-hero">
+            <div class="media-hero-bg"></div>
+            <div class="media-hero-overlay"></div>
+            <div class="media-hero-content stagger-reveal hero-stagger-1">
+                <h1>MotoMaqLab <span>Media</span></h1>
+                <p>Descubre el trabajo de nuestro equipo detrás de las cámaras: apariciones en televisión, noticias y galerías exclusivas.</p>
+            </div>
+        </section>
+
+        <!-- Prensa y TV -->
+        <section class="press-section section-container" id="prensa">
+            <div class="section-title section-title--center">
+                <h2>EN LOS <span>MEDIOS</span></h2>
+                <p>Nuestras apariciones recientes en prensa y televisión</p>
+            </div>
+            
+            <div class="press-grid" id="press-grid">
+                <!-- Se inyecta por JS -->
+            </div>
+        </section>
+
+        <!-- Galería Multimedia -->
+        <section class="gallery-section section-container" id="galeria">
+            <div class="section-title section-title--center">
+                <h2>GALERÍA <span>MULTIMEDIA</span></h2>
+                <p>Imágenes y vídeos desde el box y la pista</p>
+            </div>
+
+            <!-- Filtros -->
+            <div class="media-filters" id="media-filters">
+                <button class="filter-btn active" data-filter="all">Todo</button>
+                <button class="filter-btn" data-filter="photo">Fotos</button>
+                <button class="filter-btn" data-filter="video">Vídeos</button>
+                <button class="filter-btn" data-filter="3d">Renders 3D</button>
+            </div>
+
+            <div class="media-gallery" id="media-gallery">
+                <!-- Se inyecta por JS -->
+            </div>
+        </section>
+        <!-- Instagram Feed -->
+        <section class="ig-section section-container" id="instagram">
+            <div class="section-title section-title--center">
+                <h2>NUESTRO <span>INSTAGRAM</span></h2>
+                <p>Síguenos <a href="https://www.instagram.com/motomaqlabuc3m/" target="_blank" style="color: var(--c-red); font-weight: bold;">@motomaqlabuc3m</a> para no perderte nada</p>
+            </div>
+            
+            <div class="ig-grid" id="ig-grid">
+                <!-- Se inyecta por JS -->
+            </div>
+        </section>
+    </main>
+
+    <footer id="main-footer"></footer>
+
+    <script src="assets/js/layout.js"></script>
+    <script src="assets/js/mobileMenu.js"></script>
+    <script src="assets/js/media.js"></script>
+    <script src="assets/js/heroAnimations.js"></script>
+    <div id="google_translate_element" style="display:none;"></div>
+    <script src="assets/js/translate.js"></script>
+    <script>
+        document.addEventListener('layoutReady', function () {
+            if (window.lucide) lucide.createIcons();
+        });
+        if (window.lucide) lucide.createIcons();
+    </script>
+</body>
+
+</html>

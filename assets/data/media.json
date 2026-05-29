@@ -1,0 +1,69 @@
+{
+    "press": [
+        {
+            "id": "p1",
+            "title": "MotoMaqLab UC3M presenta su prototipo Moto3 para Aragón",
+            "outlet": "Telemadrid",
+            "date": "10 Oct 2024",
+            "excerpt": "El equipo de ingenieros de la UC3M muestra en directo los avances de su prototipo MS8 antes del evento MotoStudent en MotorLand.",
+            "img": "assets/img/timeline/2021.webp",
+            "url": "#"
+        },
+        {
+            "id": "p2",
+            "title": "Premio Internacional a la Innovación Estudiantil",
+            "outlet": "Motorbike Magazine",
+            "date": "15 Sep 2024",
+            "excerpt": "La innovadora admisión integrada en el chasis tubular de fibra de carbono otorga al equipo español un merecido reconocimiento.",
+            "img": "assets/img/timeline/2018.webp",
+            "url": "#"
+        },
+        {
+            "id": "p3",
+            "title": "De las aulas al circuito: el futuro del Motorsport",
+            "outlet": "Marca",
+            "date": "05 Ago 2024",
+            "excerpt": "Reportaje a fondo sobre cómo MotoMaqLab desarrolla talento y tecnología en la Universidad Carlos III.",
+            "img": "assets/img/timeline/2025.webp",
+            "url": "#"
+        }
+    ],
+    "gallery": [
+        {
+            "id": "g1",
+            "type": "photo",
+            "title": "Test en Circuito del Jarama",
+            "src": "assets/img/timeline/2025.webp"
+        },
+        {
+            "id": "g2",
+            "type": "3d",
+            "title": "Render Chasis MS8",
+            "src": "assets/img/timeline/2018.webp"
+        },
+        {
+            "id": "g3",
+            "type": "photo",
+            "title": "Ajustes de telemetría",
+            "src": "assets/img/timeline/2021.webp"
+        },
+        {
+            "id": "g4",
+            "type": "video",
+            "title": "Arranque de motor en box",
+            "src": "https://www.w3schools.com/html/mov_bbb.mp4"
+        },
+        {
+            "id": "g5",
+            "type": "photo",
+            "title": "Aerodinámica frontal",
+            "src": "assets/img/timeline/2025.webp"
+        },
+        {
+            "id": "g6",
+            "type": "photo",
+            "title": "Equipo completo MotorLand",
+            "src": "assets/img/timeline/2021.webp"
+        }
+    ]
+}

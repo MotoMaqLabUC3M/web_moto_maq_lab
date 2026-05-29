@@ -1,0 +1,302 @@
+/* =========================================
+   MEDIA — Página de Prensa y Galería
+   ========================================= */
+
+/* --- 1. Hero Media --- */
+.media-hero {
+    position: relative;
+    height: 60vh;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.media-hero-bg {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: url('../img/timeline/2021.webp'); /* Foto de fondo */
+    background-size: cover;
+    background-position: center;
+    filter: grayscale(100%);
+    opacity: 0.3;
+    transform: translateZ(0);
+    will-change: transform;
+    z-index: 0;
+}
+
+.media-hero-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(180deg, var(--c-dark) 0%, rgba(22, 22, 24, 0.7) 100%);
+    z-index: 1;
+}
+
+.media-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 0 var(--space-inline);
+}
+
+.media-hero-content h1 {
+    font-size: clamp(3rem, 8vw, 5rem);
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    font-weight: 900;
+    letter-spacing: -1px;
+}
+
+.media-hero-content h1 span {
+    color: var(--c-red);
+}
+
+.media-hero-content p {
+    font-size: 1.2rem;
+    color: var(--c-light);
+    opacity: 0.8;
+}
+
+/* --- 2. Prensa (Press) --- */
+.press-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.press-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-ui);
+    overflow: hidden;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+}
+
+.press-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--c-red);
+}
+
+.press-card__img {
+    height: 180px;
+    overflow: hidden;
+}
+
+.press-card__img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.press-card:hover .press-card__img img {
+    transform: scale(1.05);
+}
+
+.press-card__content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.press-card__meta {
+    font-size: 0.8rem;
+    color: var(--c-red);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.press-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--c-light);
+}
+
+.press-card p {
+    font-size: 0.95rem;
+    color: var(--c-muted);
+    line-height: 1.5;
+}
+
+/* --- 3. Filtros --- */
+.media-filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.filter-btn {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--c-light);
+    padding: 0.6rem 1.2rem;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.filter-btn.active {
+    background: var(--c-red);
+    border-color: var(--c-red);
+    color: #fff;
+    font-weight: 600;
+}
+
+/* --- 4. Galería --- */
+.media-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-auto-rows: 250px;
+    gap: 1rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: var(--radius-ui);
+    overflow: hidden;
+    cursor: pointer;
+    background: #111;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.gallery-item.hide {
+    display: none;
+}
+
+.gallery-item img,
+.gallery-item video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease, filter 0.5s ease;
+    filter: brightness(0.8);
+}
+
+.gallery-item:hover img,
+.gallery-item:hover video {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}
+
+/* Iconos de video / 3d superpuestos */
+.gallery-item .media-icon {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(4px);
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.gallery-item .media-icon svg {
+    width: 16px;
+    height: 16px;
+}
+
+.gallery-overlay {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 1rem;
+    background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+    color: #fff;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.gallery-overlay h4 {
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* Modal Simple para Ampliar */
+.media-modal {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.95);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    padding: 2rem;
+}
+
+.media-modal.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.media-modal-close {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    background: transparent;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    z-index: 10000;
+}
+
+.media-modal-close svg {
+    width: 32px; height: 32px;
+}
+
+.media-modal-content {
+    max-width: 90%;
+    max-height: 90vh;
+}
+
+.media-modal-content img,
+.media-modal-content video {
+    max-width: 100%;
+    max-height: 90vh;
+    border-radius: 8px;
+    box-shadow: 0 10px 50px rgba(0,0,0,0.5);
+}
+/* --- 5. Instagram Feed --- */
+.ig-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1rem; max-width: 1200px; margin: 0 auto; }
+.ig-post { position: relative; border-radius: var(--radius-ui); overflow: hidden; display: block; aspect-ratio: 1 / 1; background: #111; }
+.ig-post img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+.ig-post:hover img { transform: scale(1.05); }
+.ig-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.6); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease; color: #fff; gap: 1.5rem; }
+.ig-post:hover .ig-overlay { opacity: 1; }
+.ig-stat { display: flex; align-items: center; gap: 0.5rem; font-weight: 700; font-size: 1.1rem; }
+.ig-stat svg { width: 24px; height: 24px; fill: currentColor; stroke: none; }

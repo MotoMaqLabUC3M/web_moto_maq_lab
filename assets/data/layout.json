@@ -19,6 +19,10 @@
                     {
                         "label": "La Competición",
                         "href": "motostudent.html"
+                    },
+                    {
+                        "label": "El Prototipo (MS8)",
+                        "href": "ms8.html"
                     }
                 ]
             },
@@ -29,6 +33,10 @@
             {
                 "label": "EVENTOS",
                 "href": "eventos.html"
+            },
+            {
+                "label": "MEDIA",
+                "href": "media.html"
             },
             {
                 "label": "BLOG",

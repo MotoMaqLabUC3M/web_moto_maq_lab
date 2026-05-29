@@ -1,4 +1,4 @@
-﻿
+
 // 🔒 Global HTML Sanitizer to prevent XSS
 window.sanitize = function(str) {
     if (typeof str === 'number') return str.toString();
@@ -136,9 +136,9 @@ window.sanitize = function(str) {
         }
         
         var langSwitcher = '<div class="lang-switcher">' +
-                           '<a href="' + linkES + '" class="' + (!isEnglish ? 'active' : '') + '"><img src="https://flagcdn.com/24x18/es.png" alt="ES" style="width:20px; vertical-align:middle; margin-right:5px; border-radius:2px;"></a>' +
+                           '<a href="' + linkES + '" class="' + (!isEnglish ? 'active' : '') + '"><img src="https://flagcdn.com/w40/es.png" alt="ES" style="width:24px; height:16px; object-fit:cover; vertical-align:middle; margin-right:5px; border-radius:2px; box-shadow: 0 1px 2px rgba(0,0,0,0.5);"></a>' +
                            '<span class="separator">|</span>' +
-                           '<a href="' + linkEN + '" class="' + (isEnglish ? 'active' : '') + '"><img src="https://flagcdn.com/24x18/gb.png" alt="EN" style="width:20px; vertical-align:middle; margin-right:5px; border-radius:2px;"></a>' +
+                           '<a href="' + linkEN + '" class="' + (isEnglish ? 'active' : '') + '"><img src="https://flagcdn.com/w40/gb.png" alt="EN" style="width:24px; height:16px; object-fit:cover; vertical-align:middle; margin-right:5px; border-radius:2px; box-shadow: 0 1px 2px rgba(0,0,0,0.5);"></a>' +
                            '</div>';
 
         navLinks += langSwitcher;
@@ -219,5 +219,49 @@ window.sanitize = function(str) {
     } else {
         init();
     }
-})();
 
+    // Instagram Feed Global Render
+    const igGrid = document.getElementById('ig-grid');
+    if (igGrid) {
+        const mockData = [
+            { "id": "ig1", "type": "photo", "likes": 512, "comments": 23, "src": "assets/img/ig_cache/post_1.jpg", "url": "https://www.instagram.com/p/DYaIBrxjFo0/" },
+            { "id": "ig2", "type": "photo", "likes": 342, "comments": 14, "src": "assets/img/ig_cache/post_2.jpg", "url": "https://www.instagram.com/p/DYSe5-gsh34/" },
+            { "id": "ig3", "type": "photo", "likes": 405, "comments": 19, "src": "assets/img/ig_cache/post_3.jpg", "url": "https://www.instagram.com/p/DXcR0zpDFQa/" },
+            { "id": "ig4", "type": "photo", "likes": 894, "comments": 45, "src": "assets/img/ig_cache/post_4.jpg", "url": "https://www.instagram.com/p/DXM2G51jHBu/" }
+        ];
+
+        igGrid.innerHTML = '';
+        mockData.forEach(item => {
+            const a = document.createElement('a');
+            a.className = 'ig-post stagger-reveal';
+            a.href = item.url;
+            a.target = '_blank';
+            
+            let mediaTag = item.type === 'video' 
+                ? `<video src="${item.src}" autoplay loop muted playsinline></video>`
+                : `<img src="${item.src}" alt="Instagram post" loading="lazy">`;
+
+            a.innerHTML = `
+                ${mediaTag}
+                    <div class="ig-overlay">
+                        <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+                        </svg>
+                    </div>
+            `;
+            igGrid.appendChild(a);
+        });
+        
+        // Trigger reveal for IG grid if ScrollReveal is present
+        if(typeof ScrollReveal !== 'undefined') {
+            ScrollReveal().reveal('.ig-post', {
+                distance: '20px',
+                duration: 800,
+                easing: 'ease-out',
+                interval: 100
+            });
+        }
+    }
+})();

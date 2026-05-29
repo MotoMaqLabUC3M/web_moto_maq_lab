@@ -147,10 +147,65 @@
                         innovación, el diseño industrial y la presentación del proyecto.
                     </p>
                 </div>
+                </div>
             </div>
+            
+            <!-- Stats Counter Bar restored -->
+            <div class="stats-counter-bar stagger-reveal reveal-active">
+                <div class="stat-item">
+                    <span class="counter-number" data-target="15">0</span>
+                    <p>Años de historia</p>
+                </div>
+                <div class="stat-item">
+                    <span class="counter-number" data-target="6">0</span>
+                    <p>Premios logrados</p>
+                </div>
+                <div class="stat-item">
+                    <span class="counter-number" data-target="70">0</span>
+                    <p>Miembros actuales</p>
+                </div>
+                <div class="stat-item">
+                    <span class="counter-number" data-target="8">0</span>
+                    <p>Prototipos creados</p>
+                </div>
+            </div>
+
             <div class="center-btn home-about-teaser__cta home-about-teaser__cta--dual">
                 <a href="sobre-nosotros.html" class="btn btn--primary">Conoce a MotoMaqLab</a>
                 <a href="motostudent.html" class="btn btn--outline">Descubre MotoStudent</a>
+            </div>
+        </section>
+
+        </section>
+
+        <!-- MS8 Spotlight (Home Teaser) -->
+        <section class="proto-spotlight">
+            <div class="proto-spotlight-content">
+                <div class="proto-spotlight-text">
+                    <h2 class="stagger-reveal reveal-active">CONOCE A LA <span>MS8</span></h2>
+                    <p class="stagger-reveal reveal-active">Nuestra octava generación. Chasis doble viga de fibra de carbono, telemetría integrada y un diseño aerodinámico sin precedentes.</p>
+                    
+                    <div class="proto-quick-stats stagger-reveal reveal-active">
+                        <div class="stat">
+                            <span class="counter-number" data-target="155">0</span>
+                            <span>Peso (Kg)</span>
+                        </div>
+                        <div class="stat">
+                            <span class="counter-number" data-target="210">0</span>
+                            <span>Velocidad (km/h)</span>
+                        </div>
+                        <div class="stat">
+                            <span class="counter-number" data-target="50">0</span>
+                            <span>Potencia (CV)</span>
+                        </div>
+                    </div>
+
+                    <a href="ms8.html" class="btn btn--primary stagger-reveal reveal-active">Descubre la MS8 →</a>
+                </div>
+                
+                <div class="proto-spotlight-image stagger-reveal reveal-active">
+                    <img src="assets/img/timeline/2025.webp" alt="MotoMaqLab MS8 Prototype" loading="lazy" />
+                </div>
             </div>
         </section>
 
@@ -166,6 +221,46 @@
             </div>
         </section>
 
+        <!-- Media Teaser -->
+        <section class="section-container" style="text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 4rem;">
+            <div class="section-title section-title--center">
+                <h2>PRESENCIA Y <span>MEDIOS</span></h2>
+                <p>Descubre al equipo MotoMaqLab detrás de las cámaras</p>
+            </div>
+            <p style="opacity: 0.8; margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                Sigue nuestro día a día, mira nuestras apariciones en televisión y descubre galerías exclusivas del proceso de ingeniería y competición.
+            </p>
+
+            <div class="ig-grid" style="margin-bottom: 3rem;">
+                <a class="ig-post stagger-reveal" href="media.html" style="pointer-events: none;">
+                    <video src="assets/img/equipo/team_edit.mp4" autoplay loop muted playsinline></video>
+                    <div class="ig-overlay" style="pointer-events: auto;">
+                        <span style="font-weight: bold; font-size: 1.2rem;">Team Edit MS8</span>
+                    </div>
+                </a>
+                <a class="ig-post stagger-reveal" href="media.html" style="pointer-events: none;">
+                    <video src="assets/img/prensa/tv_24h.mp4" autoplay loop muted playsinline></video>
+                    <div class="ig-overlay" style="pointer-events: auto;">
+                        <span style="font-weight: bold; font-size: 1.2rem;">Aparición Canal 24h</span>
+                    </div>
+                </a>
+            </div>
+
+            <a href="media.html" class="btn btn--outline">Ver Media y Prensa completa</a>
+        </section>
+
+        <!-- Instagram Feed -->
+        <section class="ig-section section-container" id="instagram" style="padding-top: 4rem;">
+            <div class="section-title section-title--center">
+                <h2>NUESTRO <span>INSTAGRAM</span></h2>
+                <p>Síguenos <a href="https://www.instagram.com/motomaqlabuc3m/" target="_blank" style="color: var(--c-red); font-weight: bold;">@motomaqlabuc3m</a></p>
+            </div>
+            
+            <div class="ig-grid" id="ig-grid">
+                <!-- Se inyecta por JS -->
+            </div>
+        </section>
+
     </main>
 
     <footer id="main-footer"></footer>
@@ -174,6 +269,7 @@
     <script src="assets/js/mobileMenu.js"></script>
     <script src="assets/js/sponsorsMarquee.js"></script>
     <script src="assets/js/eventos.js"></script>
+    <script src="assets/js/heroAnimations.js"></script>
 
 </body>
 
