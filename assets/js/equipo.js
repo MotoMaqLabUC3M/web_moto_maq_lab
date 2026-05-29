@@ -1,3 +1,14 @@
+    function sanitize(str) {
+        if (!str) return '';
+        return String(str)
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#039;');
+    }
+
+
 /**
  * equipo.js - Renders team sections from JSON data
  */
@@ -56,9 +67,9 @@ function createMemberHTML(member) {
 
     return `
         <div class="team-member-card">
-            <img src="${member.image}" alt="${member.name}"${placeholderClass} loading="lazy" decoding="async" width="250" height="350" />
-            <h3>${member.name}</h3>
-            <p>${member.role}</p>
+            <img src="${sanitize(member.image)}" alt="Foto de ${sanitize(member.name)}, ${sanitize(member.role)} en MotoMaqLab UC3M"${placeholderClass} loading="lazy" decoding="async" width="250" height="350" />
+            <h3>${sanitize(member.name)}</h3>
+            <p>${sanitize(member.role)}</p>
         </div>
     `;
 }
