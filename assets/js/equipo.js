@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', async () => {
  */
 function renderTeamSections(container, sections) {
     const html = sections.map(section => createSectionHTML(section)).join('');
-    container.innerHTML = html;
+    container.outerHTML = html;
 }
 
 /**
