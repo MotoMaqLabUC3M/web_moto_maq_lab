@@ -60,7 +60,7 @@
             if (!sponsor) { renderError(container); return; }
 
             const canonicalFile = sponsor.dedicatedPage || `patrocinador-${sponsor.id}.html`;
-            const seoTitle = `${sponsor.name} — Patrocinador ${tierName} | MotoMaqLab UC3M`;
+            const seoTitle = sponsor.seoTitle || `${sponsor.name} — Patrocinador ${tierName} | MotoMaqLab UC3M`;
 
             if (typeof motoMaqLabApplySeo === 'function') {
                 motoMaqLabApplySeo({
