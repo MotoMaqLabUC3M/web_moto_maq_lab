@@ -21,11 +21,40 @@ window.sanitize = function(str) {
  *   <script src="assets/js/layout.js"></script>
  */
 (function () {
-    const JSON_PATH = 'assets/data/layout.json';
-
-    // Detect if we are on the index page
     const path = window.location.pathname;
-    const isIndex = path === '/' || path.endsWith('/index.html') || path.endsWith('/');
+    const currentFile = path.substring(path.lastIndexOf('/') + 1) || 'index.html';
+    const isIndex = currentFile === 'index.html' || currentFile === 'index-en.html' || path.endsWith('/');
+    
+    const routeMap = {
+        'index.html': 'index-en.html',
+        'sobre-nosotros.html': 'about-us.html',
+        'motostudent.html': 'motostudent-en.html',
+        'equipo.html': 'team.html',
+        'eventos.html': 'events.html',
+        'blog.html': 'blog-en.html',
+        'patrocinadores.html': 'sponsors.html'
+    };
+
+    const reverseRouteMap = {};
+    for (const key in routeMap) {
+        reverseRouteMap[routeMap[key]] = key;
+    }
+
+    // Un archivo es inglés si su nombre está en los valores del routeMap
+    const isEnglish = reverseRouteMap.hasOwnProperty(currentFile);
+    const JSON_PATH = isEnglish ? 'assets/data/layout-en.json' : 'assets/data/layout.json';
+
+    // Guardamos la preferencia actual
+    localStorage.setItem('motomaqlab_lang', isEnglish ? 'en' : 'es');
+
+    // Auto-redirección si es la primera vez y entramos a index.html
+    if (currentFile === 'index.html' && !localStorage.getItem('motomaqlab_redirected')) {
+        localStorage.setItem('motomaqlab_redirected', 'true');
+        const browserLang = navigator.language || navigator.userLanguage;
+        if (browserLang.toLowerCase().startsWith('en')) {
+            window.location.replace('index-en.html');
+        }
+    }
 
     async function init() {
         try {
@@ -53,14 +82,6 @@ window.sanitize = function(str) {
             }
             if (footerEl) {
                 renderFooter(footerEl, data.footer, data.header);
-                var trBtn = document.getElementById('mml-footer-translate');
-                if (trBtn) {
-                    trBtn.addEventListener('click', function () {
-                        if (window.motoMaqLabLoadGoogleTranslate) {
-                            window.motoMaqLabLoadGoogleTranslate();
-                        }
-                    });
-                }
             }
 
             // Inicializar o cargar iconos de Lucide dinÃ¡micamente si no existieran
@@ -89,8 +110,38 @@ window.sanitize = function(str) {
             navLinks += '<a href="index.html">INICIO</a>';
         }
         h.nav.forEach(function (item) {
-            navLinks += '<a href="' + item.href + '">' + item.label + '</a>';
+            if (item.submenu) {
+                var submenuLinks = '';
+                item.submenu.forEach(function(sub) {
+                    submenuLinks += '<a href="' + sub.href + '">' + sub.label + '</a>';
+                });
+                navLinks += '<div class="nav-dropdown">' +
+                                '<a href="' + item.href + '" class="nav-dropdown-toggle">' + item.label + ' <i data-lucide="chevron-down" class="dropdown-icon"></i></a>' +
+                                '<div class="nav-dropdown-content">' + submenuLinks + '</div>' +
+                            '</div>';
+            } else {
+                navLinks += '<a href="' + item.href + '">' + item.label + '</a>';
+            }
         });
+        
+        var linkES = '#';
+        var linkEN = '#';
+
+        if (isEnglish) {
+            linkES = reverseRouteMap[currentFile] || 'index.html';
+            linkEN = currentFile;
+        } else {
+            linkES = currentFile;
+            linkEN = routeMap[currentFile] || 'index-en.html';
+        }
+        
+        var langSwitcher = '<div class="lang-switcher">' +
+                           '<a href="' + linkES + '" class="' + (!isEnglish ? 'active' : '') + '"><img src="https://flagcdn.com/w40/es.png" alt="ES" style="width:24px; height:16px; object-fit:cover; vertical-align:middle; margin-right:5px; border-radius:2px; box-shadow: 0 1px 2px rgba(0,0,0,0.5);"></a>' +
+                           '<span class="separator">|</span>' +
+                           '<a href="' + linkEN + '" class="' + (isEnglish ? 'active' : '') + '"><img src="https://flagcdn.com/w40/gb.png" alt="EN" style="width:24px; height:16px; object-fit:cover; vertical-align:middle; margin-right:5px; border-radius:2px; box-shadow: 0 1px 2px rgba(0,0,0,0.5);"></a>' +
+                           '</div>';
+
+        navLinks += langSwitcher;
         navLinks += '<a href="' + h.cta.href + '" class="btn btn--primary">' + h.cta.label + '</a>';
 
         el.className = 'main-header';
@@ -158,9 +209,6 @@ window.sanitize = function(str) {
             '</div>' +
             '</div>' +
             '<div class="footer-bottom">' +
-            '<p class="footer-translate-wrap">' +
-            '<button type="button" class="footer-translate-btn" id="mml-footer-translate">Idioma / Translate</button>' +
-            '</p>' +
             '<p>' + f.copy.replace('2025', new Date().getFullYear()) + '</p>' +
             '</div>';
     }
@@ -172,4 +220,3 @@ window.sanitize = function(str) {
         init();
     }
 })();
-
