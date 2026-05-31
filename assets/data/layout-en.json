@@ -1,7 +1,7 @@
-{
+﻿{
     "header": {
         "logo": {
-            "href": "index.html",
+            "href": "index-en.html",
             "img": "assets/img/logos_uc3m/uc3m_logo.webp",
             "alt": "MotoMaqLab UC3M Logo",
             "text": "MOTOMAQLAB",
@@ -9,80 +9,80 @@
         },
         "nav": [
             {
-                "label": "SOBRE NOSOTROS",
+                "label": "ABOUT US",
                 "href": "#",
                 "submenu": [
                     {
-                        "label": "Historia y Filosofía",
-                        "href": "sobre-nosotros.html"
+                        "label": "History & Philosophy",
+                        "href": "about-us.html"
                     },
                     {
-                        "label": "La Competición",
-                        "href": "motostudent.html"
+                        "label": "The Competition",
+                        "href": "motostudent-en.html"
                     }
                 ]
             },
             {
-                "label": "EL EQUIPO",
-                "href": "equipo.html"
+                "label": "THE TEAM",
+                "href": "team.html"
             },
             {
-                "label": "EVENTOS",
-                "href": "eventos.html"
+                "label": "EVENTS",
+                "href": "events.html"
             },
             {
                 "label": "BLOG",
-                "href": "blog.html"
+                "href": "blog-en.html"
             },
             {
-                "label": "PATROCINADORES",
-                "href": "patrocinadores.html"
+                "label": "SPONSORS",
+                "href": "sponsors.html"
             }
         ],
         "cta": {
-            "label": "CONTACTO",
+            "label": "CONTACT",
             "href": "mailto:motomaqlabuc3m@uc3m.es"
         }
     },
     "footer": {
         "brand": {
-            "desc": "Ingeniería, pasión y velocidad. El equipo oficial de MotoStudent de la Universidad Carlos III de Madrid (UC3M), Campus de Leganés."
+            "desc": "Engineering, passion, and speed. The official MotoStudent team of the University Carlos III of Madrid (UC3M), Leganés Campus."
         },
         "explorar": {
-            "title": "EXPLORAR",
+            "title": "EXPLORE",
             "links": [
                 {
-                    "label": "Inicio",
-                    "href": "index.html"
+                    "label": "Home",
+                    "href": "index-en.html"
                 },
                 {
-                    "label": "Sobre Nosotros",
-                    "href": "sobre-nosotros.html"
+                    "label": "About Us",
+                    "href": "about-us.html"
                 },
                 {
-                    "label": "El Equipo",
-                    "href": "equipo.html"
+                    "label": "The Team",
+                    "href": "team.html"
                 },
                 {
-                    "label": "Eventos",
-                    "href": "eventos.html"
+                    "label": "Events",
+                    "href": "events.html"
                 },
                 {
                     "label": "Blog",
-                    "href": "blog.html"
+                    "href": "blog-en.html"
                 },
                 {
-                    "label": "Patrocinadores",
-                    "href": "patrocinadores.html"
+                    "label": "Sponsors",
+                    "href": "sponsors.html"
                 },
                 {
-                    "label": "Contacto",
+                    "label": "Contact",
                     "href": "mailto:motomaqlabuc3m@uc3m.es"
                 }
             ]
         },
         "contacto": {
-            "title": "CONTACTO",
+            "title": "CONTACT",
             "links": [
                 {
                     "icon": "<i data-lucide=\"mail\" style=\"width:18px;height:18px;margin-right:8px;vertical-align:-3px;\"></i>",
@@ -91,13 +91,13 @@
                 },
                 {
                     "icon": "<i data-lucide=\"map-pin\" style=\"width:18px;height:18px;margin-right:8px;vertical-align:-3px;\"></i>",
-                    "label": "Universidad Carlos III de Madrid | Campus de Leganés",
+                    "label": "University Carlos III of Madrid | Leganés Campus",
                     "href": "https://www.google.com/maps/place/Universidad+Carlos+III+de+Madrid+-+Campus+de+Legan%C3%A9s/"
                 }
             ]
         },
         "social": {
-            "title": "SÍGUENOS",
+            "title": "FOLLOW US",
             "links": [
                 {
                     "label": "Instagram",
@@ -126,6 +126,6 @@
                 }
             ]
         },
-        "copy": "© 2025 MotoMaqLab UC3M. Todos los derechos reservados."
+        "copy": "© 2025 MotoMaqLab UC3M. All rights reserved."
     }
 }

@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;0,900;1,700;1,800;1,900&family=Inter:wght@300;400;500;600;700&display=swap');
+﻿@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;0,900;1,700;1,800;1,900&family=Inter:wght@300;400;500;600;700&display=swap');
 
 /* =========================================
-    1. CONFIGURACIÓN BASE Y VARIABLES
+    1. CONFIGURACIÃ“N BASE Y VARIABLES
    ========================================= */
 :root {
     --font-heading: 'Barlow Condensed', system-ui, -apple-system, sans-serif;
@@ -224,6 +224,71 @@ section.section-container:nth-of-type(even) {
     color: var(--c-red);
     transition: 300ms;
     transform: scale(1.05);
+}
+
+/* --- Dropdown Escritorio --- */
+.nav-dropdown {
+    position: relative;
+    display: inline-block;
+    margin: 0 1rem;
+}
+
+.nav-dropdown-toggle {
+    display: flex !important;
+    align-items: center;
+    gap: 4px;
+    margin: 0 !important;
+    cursor: pointer;
+}
+
+.nav-dropdown-toggle .dropdown-icon {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.3s ease;
+}
+
+.nav-dropdown:hover .dropdown-icon {
+    transform: rotate(180deg);
+}
+
+.nav-dropdown-content {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background-color: rgba(22, 22, 24, 0.95);
+    backdrop-filter: blur(10px);
+    min-width: 200px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem 0;
+    z-index: 100;
+}
+
+.nav-dropdown:hover .nav-dropdown-content {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.nav-dropdown-content a {
+    margin: 0 !important;
+    padding: 0.75rem 1.5rem;
+    display: block;
+    transform: none !important;
+    white-space: nowrap;
+}
+
+.nav-dropdown-content a:hover {
+    background-color: rgba(242, 25, 43, 0.1);
+    color: var(--c-light) !important;
+    padding-left: 1.8rem;
 }
 
 /* --- Men? Hamburguesa (Bot?n) --- */
@@ -477,6 +542,53 @@ section.section-container:nth-of-type(even) {
     .main-header nav a {
         font-size: 1.2rem;
         margin: 0;
+    }
+
+    /* --- Dropdown MÃ³vil --- */
+    .nav-dropdown {
+        width: 100%;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-dropdown-toggle {
+        justify-content: center;
+    }
+
+    .nav-dropdown-content {
+        position: static;
+        transform: none !important;
+        box-shadow: none;
+        background-color: transparent;
+        display: none;
+        opacity: 1;
+        visibility: visible;
+        padding-top: 1rem;
+        width: 100%;
+        border: none;
+    }
+
+    .nav-dropdown.active .nav-dropdown-content {
+        display: flex;
+    }
+
+    .nav-dropdown.active .dropdown-icon {
+        transform: rotate(180deg);
+    }
+
+    .nav-dropdown-content a {
+        font-size: 1.1rem;
+        padding: 0.5rem;
+        text-align: center;
+        opacity: 0.8;
+    }
+
+    .nav-dropdown-content a:hover {
+        padding-left: 0.5rem;
+        background-color: transparent;
+        opacity: 1;
     }
 }
 
@@ -735,7 +847,7 @@ section.section-container:nth-of-type(even) {
     }
 }
 
-/* Sección Filosofía con cards de foto — Sobre nosotros */
+/* SecciÃ³n FilosofÃ­a con cards de foto â€” Sobre nosotros */
 .sn-filosofia-section {
     background: linear-gradient(135deg, #1a1a1c 0%, var(--c-dark) 100%);
 }
@@ -2503,16 +2615,33 @@ section.section-container:nth-of-type(even) {
     min-height: 100dvh;
 }
 
+.motostudent-page-hero {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), var(--c-dark)), radial-gradient(circle at center, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.8) 100%), url("../img/sobre-nosotros/motostudent.webp");
+    background-size: cover;
+    background-position: center center;
+    padding: 8rem 5% 4rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    min-height: 100dvh;
+}
+
 
 
 .sobre-nosotros-hero h1,
-.sobre-nosotros-hero p {
+.motostudent-page-hero h1,
+.sobre-nosotros-hero p,
+.motostudent-page-hero p {
     text-shadow: 0 2px 30px rgba(0, 0, 0, 1);
     position: relative;
     z-index: 2;
 }
 
-.sobre-nosotros-hero h1 {
+.sobre-nosotros-hero h1,
+.motostudent-page-hero h1 {
     font-size: clamp(2.8rem, 10vw, 7.5rem);
     font-weight: 900;
     line-height: 0.9;
@@ -2523,11 +2652,13 @@ section.section-container:nth-of-type(even) {
     text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
 }
 
-.sobre-nosotros-hero h1 span {
+.sobre-nosotros-hero h1 span,
+.motostudent-page-hero h1 span {
     color: var(--c-red);
 }
 
-.sobre-nosotros-hero p {
+.sobre-nosotros-hero p,
+.motostudent-page-hero p {
     max-width: 600px;
     margin: 0 auto;
     opacity: 0.9;
@@ -4000,3 +4131,36 @@ section.section-container:nth-of-type(even) {
 
 
 
+
+/* --- Language Switcher --- */
+.lang-switcher {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin: 0 1rem;
+    color: var(--c-light);
+    opacity: 0.8;
+}
+.lang-switcher a {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    margin: 0 !important;
+}
+.lang-switcher a:hover {
+    color: var(--c-white);
+    background: rgba(255, 255, 255, 0.1);
+}
+.lang-switcher a.active {
+    color: var(--c-white);
+    font-weight: 800;
+    opacity: 1;
+}
+.lang-switcher .separator {
+    opacity: 0.5;
+    font-weight: 400;
+}
