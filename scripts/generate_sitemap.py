@@ -77,11 +77,19 @@ def url_entry(loc: str, lastmod: str, changefreq: str, priority: str) -> str:
 
 MAIN_PAGES = [
     {"file": "index.html", "loc": "/", "changefreq": "weekly", "priority": "1.0"},
+    {"file": "index-en.html", "loc": "/index-en.html", "changefreq": "weekly", "priority": "1.0"},
     {"file": "sobre-nosotros.html", "loc": "/sobre-nosotros.html", "changefreq": "monthly", "priority": "0.8"},
+    {"file": "about-us.html", "loc": "/about-us.html", "changefreq": "monthly", "priority": "0.8"},
     {"file": "equipo.html", "loc": "/equipo.html", "changefreq": "monthly", "priority": "0.8"},
+    {"file": "team.html", "loc": "/team.html", "changefreq": "monthly", "priority": "0.8"},
     {"file": "patrocinadores.html", "loc": "/patrocinadores.html", "changefreq": "monthly", "priority": "0.8"},
+    {"file": "sponsors.html", "loc": "/sponsors.html", "changefreq": "monthly", "priority": "0.8"},
     {"file": "eventos.html", "loc": "/eventos.html", "changefreq": "weekly", "priority": "0.8"},
+    {"file": "events.html", "loc": "/events.html", "changefreq": "weekly", "priority": "0.8"},
     {"file": "blog.html", "loc": "/blog.html", "changefreq": "weekly", "priority": "0.8"},
+    {"file": "blog-en.html", "loc": "/blog-en.html", "changefreq": "weekly", "priority": "0.8"},
+    {"file": "motostudent.html", "loc": "/motostudent.html", "changefreq": "monthly", "priority": "0.8"},
+    {"file": "motostudent-en.html", "loc": "/motostudent-en.html", "changefreq": "monthly", "priority": "0.8"},
 ]
 
 
