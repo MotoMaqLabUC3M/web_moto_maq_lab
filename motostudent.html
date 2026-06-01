@@ -133,7 +133,7 @@
                     </div>
                 </div>
                 <figure class="home-about-split__media">
-                    <img src="assets/img/hero/sobre-nosotros.webp" alt="Parrilla de salida de MotoStudent" loading="lazy" style="height: 600px;" />
+                    <img src="assets/img/hero/sobre-nosotros.webp" alt="Parrilla de salida de MotoStudent" loading="lazy" style="width: 100%; height: auto; max-height: 600px; object-fit: cover; border-radius: 12px;" />
                 </figure>
             </div>
         </section>
@@ -147,19 +147,19 @@
             
             <div class="home-about-split" style="margin-top: 4rem;" data-sr="fade-up">
                 <figure class="home-about-split__media">
-                    <img src="assets/img/motostudent/motostudent_petro.webp" alt="Trabajo en taller categoría Petrol" loading="lazy" style="height: 500px;" />
+                    <img src="assets/img/motostudent/motostudent_petro.webp" alt="Trabajo en taller categoría Petrol" loading="lazy" style="width: 100%; height: auto; max-height: 500px; object-fit: cover; border-radius: 12px;" />
                 </figure>
-                <div class="home-about-teaser__text ms-long-text" style="padding-left: 1.5rem;">
+                <div class="home-about-teaser__text ms-long-text">
                     <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
-                        <div style="color: var(--c-red); background: rgba(242, 25, 43, 0.1); width: 50px; height: 50px; border-radius: 10px; display: flex; align-items: center; justify-content: center;">
-                            <i data-lucide="fuel"></i>
+                        <div class="category-icon">
+                            <i data-lucide="flame"></i>
                         </div>
-                        <h3 style="font-size: 2.2rem; margin: 0; font-weight: 800; text-transform: uppercase;">MotoStudent EFuel</h3>
+                        <h3 style="font-size: 2.2rem; margin: 0; font-weight: 800; text-transform: uppercase;">MotoStudent Petrol</h3>
                     </div>
-                    <p style="font-size: 1.2rem; font-weight: 600; color: var(--c-red); margin-bottom: 1.5rem;">Nuestra categoría reina. Combustión con combustible 100% renovable.</p>
-                    <p>Originalmente conocida como <em>Petrol</em>, esta categoría fue rebautizada como <strong>EFuel</strong> a partir de la VIII edición (2024/2025), reflejando el compromiso de la competición con la sostenibilidad mediante el uso de <strong>combustibles sintéticos y renovables</strong>. Los prototipos se desarrollan en torno a un <strong>motor de combustión interna de 250cc y 4 tiempos</strong>, inspirándose en las normativas del campeonato mundial de Moto3.</p>
-                    <p>En la última edición celebrada <strong>(VIII MotoStudent, octubre 2025)</strong>, el <em>Kit Básico</em> suministrado por la organización incluía el <strong>motor KTM 250 SX-F</strong>, llantas y sistema de frenado. Las normas son estrictas: está totalmente prohibido alterar estructuralmente el cárter o los anclajes de este motor.</p>
-                    <p><strong>El verdadero reto de ingeniería:</strong> Todo el diseño recae en la manufactura del chasis, el basculante, el subchasis, la aerodinámica completa, la telemetría y los sistemas de escape/admisión. Históricamente, es aquí donde MotoMaqLab exprime al máximo la termodinámica, logrando extraer cada caballo de potencia mediante la optimización de mapas de inyección y un diseño mecánico de la más alta precisión.</p>
+                    <p style="font-size: 1.2rem; font-weight: 600; color: var(--c-red); margin-bottom: 1.5rem;">Nuestra categoría reina. La pura esencia térmica de la competición.</p>
+                    <p>En la categoría fundacional <em>Petrol</em>, los prototipos se desarrollan en torno a un <strong>motor de combustión interna de 250cc y 4 tiempos</strong>. Inspirándose en las normativas del campeonato mundial de Moto3, la organización exige a los equipos niveles altísimos de seguridad y rendimiento técnico.</p>
+                    <p>Para la actual edición <strong>(VIII MotoStudent 2024/2025)</strong>, el <em>Kit Básico</em> suministrado por la organización incluye el imponente <strong>motor KTM 250 SX-F</strong>, llantas y sistema de frenado. Las normas son estrictas y prohíben totalmente alterar de forma estructural el cárter o los anclajes de este motor.</p>
+                    <p>El verdadero reto de ingeniería radica en que todo el diseño recae en la manufactura del chasis, el basculante, el subchasis, la aerodinámica completa, la telemetría y los sistemas de escape y admisión. Históricamente, es aquí donde MotoMaqLab exprime al máximo la termodinámica, logrando extraer cada caballo de potencia mediante la optimización de mapas de inyección y un diseño mecánico de la más alta precisión.</p>
                 </div>
             </div>
         </section>
@@ -167,43 +167,40 @@
         <!-- SECCIÓN 2B: CATEGORÍAS (ELECTRIC) -->
         <section class="section-container" style="background-color: var(--c-carbon);">
             <div class="home-about-split" data-sr="fade-up">
-                <div class="home-about-teaser__text ms-long-text" style="padding-right: 1.5rem;">
+                <div class="home-about-teaser__text ms-long-text">
                     <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
-                        <div style="color: var(--c-red); background: rgba(242, 25, 43, 0.1); width: 50px; height: 50px; border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+                        <div class="category-icon">
                             <i data-lucide="zap"></i>
                         </div>
                         <h3 style="font-size: 2rem; margin: 0; font-weight: 800;">MotoStudent Electric</h3>
                     </div>
                     <p>Introducida en 2016 como respuesta a la revolución de la movilidad sostenible en la industria del motor, esta categoría desafía a los estudiantes a fabricar prototipos <strong>100% eléctricos</strong>.</p>
-                    <p>La organización suministra un motor eléctrico (típicamente síncrono de imanes permanentes) y un dispositivo de monitorización de aislamiento (IMD) por cuestiones de seguridad. Sin embargo, el desafío de ingeniería aquí es monumental: <strong>los equipos deben diseñar, dimensionar y ensamblar sus propios packs de baterías de alto voltaje y sus sistemas de gestión térmica y electrónica (BMS)</strong>.</p>
-                    <p>La categoría Electric requiere a los futuros ingenieros dominar no solo la dinámica de la motocicleta, sino el flujo de energía, la programación de inversores y la seguridad extrema que demandan los sistemas eléctricos de alta competición.</p>
+                    <p>La organización suministra un motor eléctrico (típicamente síncrono de imanes permanentes) y un dispositivo de monitorización de aislamiento (IMD) por cuestiones de seguridad. Sin embargo, el desafío de ingeniería sigue siendo monumental, ya que <strong>los equipos deben diseñar, dimensionar y ensamblar sus propios packs de baterías de alto voltaje y sus sistemas de gestión térmica y electrónica (BMS)</strong>.</p>
+                    <p>La categoría Electric requiere a los futuros ingenieros dominar no solo la dinámica de la motocicleta, sino el flujo de energía, la programación de inversores y la extrema seguridad que demandan los sistemas eléctricos de alta competición.</p>
                 </div>
                 <figure class="home-about-split__media">
-                    <img src="assets/img/motostudent/motostudent_electric.webp" alt="MotoStudent Electric prototipos" loading="lazy" style="height: 500px;" />
+                    <img src="assets/img/motostudent/motostudent_electric.webp" alt="MotoStudent Electric prototipos" loading="lazy" style="width: 100%; height: auto; max-height: 500px; object-fit: cover; border-radius: 12px;" />
                 </figure>
             </div>
         </section>
 
         <!-- SECCIÓN 3: FASE MS1 -->
         <section class="section-container">
-            <div class="home-about-split" style="grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);" data-sr="fade-up">
+            <div class="home-about-split" data-sr="fade-up">
                 <figure class="home-about-split__media">
-                    <img src="assets/img/motostudent/ms1_motostudent.png" alt="El equipo completo de MotoMaqLab en el escenario MS1" loading="lazy" style="height: 550px; width: 100%; object-fit: cover; border-radius: var(--radius-ui);" />
+                    <img src="assets/img/motostudent/ms1_motostudent.png" alt="El equipo completo de MotoMaqLab en el escenario MS1" loading="lazy" style="width: 100%; height: auto; max-height: 550px; object-fit: cover; border-radius: 12px;" />
                 </figure>
-                <div class="home-about-teaser__text ms-long-text" style="padding-left: 2rem;">
+                <div class="home-about-teaser__text ms-long-text">
                     <div class="section-title">
                         <h2>Fase MS1: <span>El Proyecto Industrial</span></h2>
                     </div>
-                    <p>MotoStudent obliga a los equipos a comportarse como verdaderas empresas de automoción. En la <strong>Fase MS1</strong> (500 puntos), la competición evalúa el proyecto desde un prisma puramente técnico y de viabilidad empresarial. Las motos aún no han pisado el asfalto.</p>
+                    <p>MotoStudent obliga a los equipos a comportarse como verdaderas empresas de automoción. En la <strong>Fase MS1</strong>, la competición evalúa el proyecto desde un prisma puramente técnico y de viabilidad empresarial antes de que las motos pisen el asfalto.</p>
                     
                     <ul class="ms-list">
-                        <li><strong>Concept Development (50 pts):</strong> Definición del concepto del prototipo, requisitos de diseño y objetivos de rendimiento.</li>
-                        <li><strong>Innovación Tecnológica (100 pts):</strong> Se puntúa el riesgo y la creatividad. Los equipos deben presentar soluciones inéditas en aerodinámica, suspensiones o uso de nuevos materiales (impresión 3D, fibra de carbono).</li>
-                        <li><strong>Diseño y Desarrollo CAD (75 pts):</strong> Validación virtual completa del prototipo antes de su fabricación física, demostrando estudios FEA (Análisis de Elementos Finitos) y CFD (Dinámica de Fluidos Computacional).</li>
-                        <li><strong>Prototyping & Testing (75 pts):</strong> Fabricación del prototipo y ensayos de validación experimental previos a la competición.</li>
-                        <li><strong>Plan Económico y Viabilidad (100 pts):</strong> Presentar un plan de negocio realista para fabricar una tirada en serie de 500 unidades/año de la moto (~4.500 €/unidad), justificando los costes de materiales y procesos.</li>
-                        <li><strong>Pitch Presentation (60 pts):</strong> Una exposición comercial en formato "startup" frente a un jurado experto de la industria, convenciendo a potenciales inversores.</li>
-                        <li><strong>MS1 Finals (40 pts):</strong> Defensa final del proyecto ante el jurado técnico de la competición.</li>
+                        <li>Se valora enormemente la <strong>innovación tecnológica</strong>, premiando el riesgo y la creatividad. Los equipos deben presentar soluciones inéditas en aerodinámica, suspensiones o el uso de nuevos materiales, como la impresión 3D o la fibra de carbono.</li>
+                        <li>Es imprescindible un <strong>diseño y desarrollo CAD</strong> completo que sirva como validación virtual del prototipo previo a su fabricación física, apoyado en estudios FEA (Análisis de Elementos Finitos) y CFD (Dinámica de Fluidos Computacional).</li>
+                        <li>Se exige un <strong>plan económico y de viabilidad</strong> para plantear un modelo de negocio realista capaz de fabricar una tirada en serie de 500 unidades, justificando al detalle los costes de materiales y procesos.</li>
+                        <li>Todo culmina en un <strong>pitch presentation</strong>, una exposición comercial al más puro estilo startup frente a un jurado experto de la industria, con el objetivo de convencer a potenciales inversores.</li>
                     </ul>
                 </div>
             </div>
@@ -216,18 +213,18 @@
                     <div class="section-title">
                         <h2>Fase MS2: <span>Pruebas Dinámicas y Carrera</span></h2>
                     </div>
-                    <p>Tras meses de trabajo en el taller, los equipos viajan con su prototipo fabricado a la gran cita final: El <strong>Circuito FIM de MotorLand Aragón</strong>. Aquí, la moto se enfrenta al mundo real en la <strong>Fase MS2</strong>.</p>
+                    <p>Tras meses de arduo trabajo en el taller, los equipos viajan con su prototipo fabricado a la gran cita final en el <strong>Circuito FIM de MotorLand Aragón</strong>. Aquí es donde la moto se enfrenta al mundo real durante la <strong>Fase MS2</strong>.</p>
                     
                     <ul class="ms-list">
-                        <li><strong>Scrutineering (Inspecciones Técnicas):</strong> Los ingenieros y jueces de la FIM examinan milímetro a milímetro la moto para asegurar que cumple estrictamente el reglamento y es segura para competir. Si no se pasa el scrutineering, no se corre.</li>
-                        <li><strong>Test de Frenada (Braking Test):</strong> Evalúa la capacidad del sistema de frenado para detener la moto en la menor distancia posible desde una velocidad definida.</li>
-                        <li><strong>Test de Aceleración y Vmax:</strong> Pruebas cronometradas en recta para medir la potencia y eficiencia de transmisión.</li>
-                        <li><strong>Gymkhana:</strong> Un circuito ratonero de conos que pone a prueba la geometría del chasis, la agilidad y el manejo del piloto.</li>
-                        <li><strong>La Gran Carrera (Final Race):</strong> El clímax del evento. Una carrera oficial de velocidad en parrilla contra todos los equipos clasificados. Aquí cuenta la fiabilidad, la estrategia térmica, el consumo y las manos del piloto.</li>
+                        <li>Las <strong>inspecciones técnicas o scrutineering</strong> son el primer obstáculo. Los ingenieros y jueces de la FIM examinan la moto al milímetro para asegurar que cumple estrictamente el reglamento y es segura. Si no se supera, no hay carrera.</li>
+                        <li>El <strong>test de frenada</strong> pone a prueba el sistema de frenos y su capacidad para detener la moto en la menor distancia posible partiendo de una velocidad definida.</li>
+                        <li>Mediante el <strong>test de aceleración y velocidad máxima</strong> se realizan pruebas cronometradas en recta para medir la potencia pura y la eficiencia de la transmisión.</li>
+                        <li>La <strong>gymkhana</strong> es un circuito ratonero delimitado por conos diseñado para evaluar la geometría del chasis, la agilidad del conjunto y el manejo del piloto.</li>
+                        <li>Finalmente, <strong>la carrera oficial</strong> es el gran clímax del evento. Una competición de velocidad en parrilla contra todos los equipos clasificados donde se decide todo, poniendo a prueba la fiabilidad, la estrategia térmica, el consumo y, por supuesto, las manos del piloto.</li>
                     </ul>
                 </div>
-                <figure class="home-about-split__media" style="padding-left: 2rem;">
-                    <img src="assets/img/motostudent/ms2.webp" alt="Pruebas dinámicas en MotorLand" loading="lazy" style="height: 650px;" />
+                <figure class="home-about-split__media">
+                    <img src="assets/img/motostudent/ms2.webp" alt="Pruebas dinámicas en MotorLand" loading="lazy" style="width: 100%; height: auto; max-height: 650px; object-fit: cover; border-radius: 12px;" />
                 </figure>
             </div>
         </section>
