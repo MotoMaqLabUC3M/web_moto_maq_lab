@@ -104,6 +104,14 @@
             width: 30px;
             height: 30px;
         }
+        @media (max-width: 900px) {
+            .mobile-text-first .home-about-split__media {
+                order: 2;
+            }
+            .mobile-text-first .home-about-teaser__text {
+                order: 1;
+            }
+        }
     </style>
     <!-- Enlaces SEO Multilingüe -->
     <link rel="alternate" hreflang="es" href="https://motomaqlabuc3m.es/motostudent.html" />
@@ -149,7 +157,7 @@
                 <p>The competition evolves, offering two paths to elite engineering.</p>
             </div>
             
-            <div class="home-about-split" style="margin-top: 4rem;" data-sr="fade-up">
+            <div class="home-about-split mobile-text-first" style="margin-top: 4rem;" data-sr="fade-up">
                 <figure class="home-about-split__media">
                     <img src="assets/img/motostudent/motostudent_petro.webp" alt="Workshop work Petrol category" loading="lazy" style="width: 100%; height: auto; max-height: 500px; object-fit: cover; border-radius: 12px;" />
                 </figure>
@@ -190,7 +198,7 @@
 
         <!-- SECTION 3: MS1 PHASE -->
         <section class="section-container">
-            <div class="home-about-split" data-sr="fade-up">
+            <div class="home-about-split mobile-text-first" data-sr="fade-up">
                 <figure class="home-about-split__media">
                     <img src="assets/img/motostudent/ms1_motostudent.png" alt="The entire MotoMaqLab team on the MS1 stage" loading="lazy" style="width: 100%; height: auto; max-height: 550px; object-fit: cover; border-radius: 12px;" />
                 </figure>
