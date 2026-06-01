@@ -11,6 +11,23 @@
         });
     }
 
+    function initScrollIndicator() {
+        const indicator = document.querySelector('.scroll-indicator');
+        if (!indicator) return;
+
+        let hidden = false;
+        window.addEventListener('scroll', () => {
+            const scrollPos = window.scrollY;
+            if (scrollPos > 100 && !hidden) {
+                hidden = true;
+                indicator.classList.add('is-hidden');
+            } else if (scrollPos <= 100 && hidden) {
+                hidden = false;
+                indicator.classList.remove('is-hidden');
+            }
+        }, { passive: true });
+    }
+
     function initStaggerReveal() {
         const staggerElements = document.querySelectorAll('.stagger-reveal');
         if (staggerElements.length === 0) return;
@@ -61,6 +78,7 @@
 
     function initAll() {
         initParallax();
+        initScrollIndicator();
         initStaggerReveal();
         initCounters();
     }

@@ -39,26 +39,26 @@ document.addEventListener('DOMContentLoaded', () => {
                 "outlet": "Cadena SER",
                 "date": "27 Feb 2026",
                 "excerpt": "La asociación MotoMaqLab UC3M presenta su prototipo más reciente, desarrollado íntegramente por los estudiantes durante dos años.",
-                "img": "assets/img/prensa/ser_cover.jpg",
+                "img": "assets/img/prensa/ser_cover_new.jpg",
                 "url": "https://cadenaser.com/cmadrid/2026/02/27/asi-es-la-nueva-moto-de-competicion-creada-por-estudiantes-de-la-uc3m-ser-madrid-sur/"
             },
             {
                 "id": "p2",
-                "title": "Estudiantes de la UC3M presentan la espectacular MS8",
+                "title": "Estudiantes de la UC3M presentan su nueva moto de competición, la MS8",
                 "outlet": "Al Cabo de la Calle",
-                "date": "28 Feb 2026",
+                "date": "27 Feb 2026",
                 "excerpt": "El equipo universitario MotoMaqLab de la Universidad Carlos III desvela su nueva motocicleta para la competición MotoStudent.",
-                "img": "assets/img/timeline/2025.webp",
-                "url": "#"
+                "img": "assets/img/prensa/alcabo_cover_new.jpg",
+                "url": "https://alcabodelacalle.es/municipios/estudiantes-de-la-uc3m-presentan-su-nueva-moto-de-competicion-la-ms8/"
             },
             {
                 "id": "p3",
-                "title": "El equipo universitario MotoMaqLab presenta su nueva MS8",
+                "title": "La UC3M presenta en Leganés su nueva moto de competición tras competir en MotorLand Aragón",
                 "outlet": "Leganés Activo",
                 "date": "24 Feb 2026",
-                "excerpt": "Los estudiantes de la Universidad Carlos III muestran su nuevo prototipo fabricado íntegramente por ellos mismos.",
-                "img": "assets/img/timeline/2025.webp",
-                "url": "#"
+                "excerpt": "Los estudiantes de la Universidad Carlos III muestran su nuevo prototipo fabricado íntegramente por ellos mismos en el campus de Leganés.",
+                "img": "assets/img/prensa/leganes_cover_new.jpg",
+                "url": "https://leganesactivo.com/2026/02/24/presentan-moto-de-competicion-ms8-de-la-uc3m-leganes/"
             },
             {
                 "id": "p4",
