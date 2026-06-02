@@ -19,7 +19,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (!container) return;
 
     try {
-        const response = await fetch('assets/data/patrocinadores.json');
+        const isEnglish = window.location.pathname.endsWith('-en.html') || window.location.pathname.endsWith('sponsors.html');
+        const JSON_PATH = isEnglish ? 'assets/data/patrocinadores-en.json' : 'assets/data/patrocinadores.json';
+        const response = await fetch(JSON_PATH);
         const data = await response.json();
         renderSponsorTiers(container, data.tiers);
     } catch (error) {

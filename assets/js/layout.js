@@ -32,7 +32,13 @@ window.sanitize = function(str) {
         'equipo.html': 'team.html',
         'eventos.html': 'events.html',
         'blog.html': 'blog-en.html',
-        'patrocinadores.html': 'sponsors.html'
+        'patrocinadores.html': 'sponsors.html',
+        'patrocinador-UC3M.html': 'patrocinador-UC3M-en.html',
+        'patrocinador-addyx.html': 'patrocinador-addyx-en.html',
+        'patrocinador-altair.html': 'patrocinador-altair-en.html',
+        'patrocinador-maqlab.html': 'patrocinador-maqlab-en.html',
+        'patrocinador-retamal.html': 'patrocinador-retamal-en.html',
+        'patrocinador.html': 'patrocinador-en.html'
     };
 
     const reverseRouteMap = {};

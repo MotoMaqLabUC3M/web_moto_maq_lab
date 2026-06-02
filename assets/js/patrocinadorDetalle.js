@@ -30,7 +30,8 @@
     }
 
 
-    const JSON_PATH = 'assets/data/patrocinadores.json';
+    const isEnglish = window.location.pathname.endsWith('-en.html') || window.location.pathname.includes('sponsor-');
+    const JSON_PATH = isEnglish ? 'assets/data/patrocinadores-en.json' : 'assets/data/patrocinadores.json';
 
     const FEATURE_ICONS = [
         'microscope', 'lightbulb', 'hammer', 'ruler', 'settings', 'factory', 'bar-chart-2', 'target', 'wrench', 'flask-conical'
@@ -83,6 +84,12 @@
     }
 
     function render(container, sponsor, tierName) {
+        const isEnglish = window.location.pathname.endsWith('-en.html') || window.location.pathname.includes('sponsor-');
+        const backLink = isEnglish ? 'sponsors.html' : 'patrocinadores.html';
+        const backText = isEnglish ? '← Sponsors' : '← Patrocinadores';
+        const galleryTitle = isEnglish ? 'Additional Gallery' : 'Galería Adicional';
+        const allSponsorsText = isEnglish ? '← View all sponsors' : '← Ver todos los patrocinadores';
+        const quoteCite = isEnglish ? '— MotoMaqLab UC3M Team' : '— Equipo MotoMaqLab UC3M';
         const { intro, features, featureTitle, textBlocks } = parseContenido(sponsor.contenido || sponsor.description);
 
         // Feature cards
@@ -137,7 +144,7 @@
                     quoteHTML = `
                         <div class="sp-quote-box" style="margin-bottom: 2rem;">
                             <blockquote>"${sanitize(sponsor.quoteEquipo)}"</blockquote>
-                            <cite>— Equipo MotoMaqLab UC3M</cite>
+                            <cite>${quoteCite}</cite>
                         </div>
                     `;
                 }
@@ -162,7 +169,7 @@
                 <section class="sp-gallery-section">
                     <div class="sp-section-label">
                         <div class="sp-label-line"></div>
-                        <h2>Galería Adicional</h2>
+                        <h2>${galleryTitle}</h2>
                     </div>
                     <div class="sp-gallery-grid">
                         ${galleryImages.map((img, i) => `
@@ -214,7 +221,7 @@
         container.innerHTML = `
             <!-- HERO -->
             <section class="sp-hero sp-hero-v2">
-                <a href="patrocinadores.html" class="sp-back">← Patrocinadores</a>
+                <a href="${backLink}" class="sp-back">${backText}</a>
 
                 <div class="sp-hero-inner">
                     <div class="sp-hero-logo">
@@ -240,7 +247,7 @@
 
             <!-- CTA -->
             <section class="sp-cta-section">
-                <a href="patrocinadores.html" class="btn btn--primary">← Ver todos los patrocinadores</a>
+                <a href="${backLink}" class="btn btn--primary">${allSponsorsText}</a>
             </section>
         `;
 

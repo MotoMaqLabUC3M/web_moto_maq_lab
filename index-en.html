@@ -43,7 +43,7 @@
             "@context": "https://schema.org",
             "@type": "Organization",
             "name": "MotoMaqLab UC3M",
-            "url": "https://motomaqlabuc3m.es",
+            "url": "https://motomaqlabuc3m.es/index-en.html",
             "logo": "https://motomaqlabuc3m.es/assets/img/logos_uc3m/uc3m_logo_sin_fondo.webp",
             "description": "MotoMaqLab: the motorcycle team of UC3M. Students of the University Carlos III of Madrid who design, build, and compete in MotoStudent.",
             "email": "motomaqlabuc3m@uc3m.es",
@@ -73,7 +73,7 @@
             "@context": "https://schema.org",
             "@type": "WebSite",
             "name": "MotoMaqLab UC3M",
-            "url": "https://motomaqlabuc3m.es"
+            "url": "https://motomaqlabuc3m.es/index-en.html"
         }
     </script>
 
@@ -103,183 +103,76 @@
 <body>
     <header id="main-header"></header>
     <main>
-
-        <!-- 1. HERO -->
-        <section class="hero hero--video" id="hero-index">
-            <video class="hero__video" autoplay muted loop playsinline poster="assets/img/hero/index.webp">
-                <source src="assets/img/equipo/team_edit.mp4" type="video/mp4">
-            </video>
-            <div class="hero__overlay"></div>
-
-            <div class="hero__content">
-                <h1>BORN TO BE <br><span>ENGINEERS</span>
-                    <span class="sr-only">— MotoMaqLab UC3M, MotoStudent team at UC3M</span>
-                </h1>
-                <p class="hero__tagline">MotoStudent Team · University Carlos III of Madrid</p>
-                <a href="about-us.html" class="btn btn--primary btn--lg">MEET THE TEAM</a>
-            </div>
-
-            <div class="hero__stats" id="stats-bar">
-                <div class="hero__stat">
-                    <span class="counter-number" data-target="15">0</span>
-                    <span>years</span>
+        <section class="hero">
+            <div class="hero-content">
+                <span class="badge">2025-2027 SEASON</span>
+                <h1>BORN TO BE <br /><span>ENGINEERS</span> <span class="sr-only">— MotoMaqLab UC3M, MotoStudent
+                        team: engineering, motorcycles and competition at UC3M</span></h1>
+                <p>We are the MotoStudent team from UC3M, an <strong>engineering</strong> project that brings together design,
+                    manufacturing, and <strong>speed</strong> on track. We design, build, and compete in MotoStudent, the most important university engineering competition in Europe. The official team of the University Carlos III of Madrid.</p>
+                <div class="hero-btns">
+                    <a href="about-us.html#nuestra-historia" class="btn btn--primary">OUR HISTORY</a>
+                    <a href="about-us.html#palmarés" class="btn btn--outline">OUR ACHIEVEMENTS</a>
                 </div>
-                <div class="hero__stat">
-                    <span class="counter-number" data-target="6">0</span>
-                    <span>awards</span>
-                </div>
-                <div class="hero__stat">
-                    <span class="counter-number" data-target="70">0</span>
-                    <span>members</span>
-                </div>
-                <div class="hero__stat">
-                    <span class="counter-number" data-target="8">0</span>
-                    <span>prototypes</span>
-                </div>
-            </div>
-
-            <div class="scroll-indicator" aria-hidden="true">
-                <span class="scroll-indicator__text">Scroll</span>
-                <div class="scroll-indicator__line"></div>
             </div>
         </section>
 
-        <!-- 2. SPONSORS -->
+        <!-- Cinta transportadora de patrocinadores Platino -->
         <section class="sponsors-marquee-section" id="patrocinadores-principales">
             <div class="section-header">
-                <h2><a href="patrocinadores.html">Our Sponsors</a></h2>
+                <h2><a href="sponsors.html">Our Sponsors</a></h2>
             </div>
             <div class="sponsors-marquee">
                 <div class="sponsors-track"></div>
             </div>
         </section>
 
-        <!-- 3. MS8 SPOTLIGHT -->
-        <section class="proto-spotlight" id="ms8-spotlight">
-            <div class="proto-spotlight__glow" aria-hidden="true"></div>
-            <div class="proto-spotlight-content">
-                <div class="proto-spotlight-text">
-                    <span class="badge stagger-reveal">2025 PROTOTYPE</span>
-                    <h2 class="stagger-reveal">MEET THE <span>MS8</span></h2>
-                    <p class="stagger-reveal">Hollow carbon fiber twin-spar chassis with integrated air intake. CFD-optimized aerodynamics. Full telemetry system. 2nd place Pitch Presentation at MotoStudent.</p>
-
-                    <div class="proto-quick-stats stagger-reveal">
-                        <div class="stat">
-                            <span class="counter-number" data-target="155">0</span>
-                            <span>kg</span>
-                        </div>
-                        <div class="stat">
-                            <span class="counter-number" data-target="210">0</span>
-                            <span>km/h</span>
-                        </div>
-                        <div class="stat">
-                            <span class="counter-number" data-target="50">0</span>
-                            <span>HP</span>
-                        </div>
-                    </div>
-
-                    <a href="ms8.html" class="btn btn--primary stagger-reveal">Discover the MS8 →</a>
-                </div>
-
-                <div class="proto-spotlight-image stagger-reveal">
-                    <img src="assets/img/timeline/2025.webp"
-                        alt="MotoMaqLab MS8 Prototype — carbon fiber and integrated telemetry" loading="lazy" />
-                </div>
-            </div>
-        </section>
-
-        <!-- 4. ABOUT -->
-        <section class="section-container home-about-teaser" id="equipo-motostudent"
+        <!-- Quiénes somos (teaser hacia Sobre nosotros / Equipo) -->
+        <section class="section-container motostudent-section home-about-teaser" id="equipo-motostudent"
             aria-labelledby="home-about-teaser-title">
+            <div class="section-title section-title--center">
+                <h2 id="home-about-teaser-title">WHO WE <span>ARE</span></h2>
+                <p>We don't just build motorcycles. We train the next generation of talents.</p>
+            </div>
             <div class="home-about-split">
                 <figure class="home-about-split__media">
                     <img src="assets/img/home/equipo_index.webp"
-                        alt="MotoMaqLab UC3M Team with the racing prototype" width="1200" height="800"
-                        loading="lazy" />
+                        alt="MotoMaqLab UC3M team celebrating with the racing prototype on track" width="1200"
+                        height="800" loading="lazy" />
+                    <figcaption>MotoStudent 2025 — Motorland Aragón Circuit</figcaption>
                 </figure>
-                <div class="home-about-teaser__text">
-                    <h2 id="home-about-teaser-title">MORE THAN A <span>TEAM</span></h2>
-                    <p>We are <strong>+70 students</strong> from UC3M who every season design, manufacture, and compete
-                        with a racing motorcycle prototype in MotoStudent, Europe's largest university engineering
-                        competition.</p>
-                    <div class="home-about-teaser__cta home-about-teaser__cta--dual">
-                        <a href="about-us.html" class="btn btn--primary">Meet MotoMaqLab</a>
-                        <a href="motostudent-en.html" class="btn btn--outline">What is MotoStudent?</a>
-                    </div>
+                <div class="motostudent-text home-about-teaser__text">
+                    <p>We are MotoMaqLab, the UC3M motorcycle team. Students from the University Carlos III
+                        of Madrid united by passion, speed, and the challenge of building the motorcycle of the future.</p>
+                    <p><strong>MotoStudent</strong> is an international engineering competition where university teams
+                        from all over the world design, manufacture, and compete with a racing motorcycle prototype.
+                        Organized by the Moto Engineering Foundation in Spain, MotoStudent challenges students to
+                        apply their knowledge in a real project: from CAD design and simulation to
+                        manufacturing and track testing.</p>
+                    <p>At <strong>MotoMaqLab UC3M</strong>, we are the MotoStudent team of the University Carlos III of
+                        Madrid. Since 2009, over <strong>70 students</strong> work every season
+                        to bring our motorcycle to the track. Our MotoStudent team in Madrid has achieved
+                        <strong>6 awards</strong> throughout our history, including recognitions for
+                        innovation, industrial design, and project presentation.
+                    </p>
                 </div>
             </div>
-        </section>
-
-        <!-- 4b. NEXT EVENT BANNER -->
-        <section class="next-event-banner" id="next-event-banner" style="display: none;">
-            <div class="next-event-banner__inner">
-                <span class="next-event-banner__label">NEXT EVENT</span>
-                <span class="next-event-banner__separator" aria-hidden="true"></span>
-                <span class="next-event-banner__name" id="next-event-name"></span>
-                <span class="next-event-banner__meta" id="next-event-meta"></span>
-                <a href="events.html" class="next-event-banner__link" id="next-event-link">View events →</a>
+            <div class="center-btn home-about-teaser__cta home-about-teaser__cta--dual" style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="about-us.html" class="btn btn--primary">Learn more about the team</a>
+                <a href="motostudent-en.html" class="btn btn--outline" style="border-color: var(--c-red); color: var(--c-red);">Discover MotoStudent</a>
             </div>
         </section>
 
-        <!-- 5. MEDIA BENTO -->
-        <section class="media-bento section-container" id="media-preview">
+        <!-- Preview de próximos eventos (top 3) -->
+        <section class="section-container eventos-section" id="eventos-preview">
             <div class="section-title section-title--center">
-                <h2>IN THE <span>MEDIA</span></h2>
+                <h2>UPCOMING SEASON EVENTS</h2>
+                <p>The next appointments for our team</p>
             </div>
-
-            <div class="media-bento__grid">
-                <a class="media-bento__item media-bento__item--featured stagger-reveal" href="media.html">
-                    <video src="assets/img/prensa/tv_24h.mp4" autoplay loop muted playsinline></video>
-                    <div class="media-bento__overlay">
-                        <span class="media-bento__badge">TV</span>
-                        <span class="media-bento__label">Featured on Canal 24 Horas — RTVE</span>
-                    </div>
-                </a>
-
-                <a class="media-bento__item stagger-reveal"
-                    href="https://leganesactivo.com/2026/02/24/presentan-moto-de-competicion-ms8-de-la-uc3m-leganes/"
-                    target="_blank" rel="noopener">
-                    <img src="assets/img/prensa/leganes_cover_new.jpg" alt="Leganés Activo Article" loading="lazy">
-                    <div class="media-bento__overlay">
-                        <span class="media-bento__badge">Press</span>
-                        <span class="media-bento__label">Leganés Activo</span>
-                    </div>
-                </a>
-
-                <a class="media-bento__item stagger-reveal"
-                    href="https://cadenaser.com/cmadrid/2026/02/27/asi-es-la-nueva-moto-de-competicion-creada-por-estudiantes-de-la-uc3m-ser-madrid-sur/"
-                    target="_blank" rel="noopener">
-                    <img src="assets/img/prensa/ser_cover_new.jpg" alt="Cadena SER Article" loading="lazy">
-                    <div class="media-bento__overlay">
-                        <span class="media-bento__badge">Press</span>
-                        <span class="media-bento__label">Cadena SER</span>
-                    </div>
-                </a>
-
-                <a class="media-bento__item stagger-reveal"
-                    href="https://alcabodelacalle.es/municipios/estudiantes-de-la-uc3m-presentan-su-nueva-moto-de-competicion-la-ms8/"
-                    target="_blank" rel="noopener">
-                    <img src="assets/img/prensa/alcabo_cover_new.jpg" alt="Al Cabo de la Calle Article" loading="lazy">
-                    <div class="media-bento__overlay">
-                        <span class="media-bento__badge">Press</span>
-                        <span class="media-bento__label">Al Cabo de la Calle</span>
-                    </div>
-                </a>
-            </div>
-
+            <div class="eventos-grid" id="eventos-index-container"></div>
             <div class="center-btn">
-                <a href="media.html" class="btn btn--outline">See all coverage →</a>
+                <a href="events.html" class="btn btn--outline">View all events →</a>
             </div>
-        </section>
-
-        <!-- 6. INSTAGRAM -->
-        <section class="ig-section section-container" id="instagram">
-            <div class="section-title section-title--center">
-                <h2>FOLLOW US ON <span>INSTAGRAM</span></h2>
-                <p><a href="https://www.instagram.com/motomaqlabuc3m/" target="_blank"
-                        class="ig-section__handle">@motomaqlabuc3m</a></p>
-            </div>
-            <div class="ig-grid" id="ig-grid"></div>
         </section>
 
     </main>
@@ -289,52 +182,11 @@
     <script src="assets/js/layout.js"></script>
     <script src="assets/js/mobileMenu.js"></script>
     <script src="assets/js/sponsorsMarquee.js"></script>
-    <script src="assets/js/heroAnimations.js"></script>
+    <script src="assets/js/eventos.js"></script>
 
-    <!-- Next event banner -->
-    <script>
-        (function () {
-            async function loadNextEvent() {
-                const banner = document.getElementById('next-event-banner');
-                if (!banner) return;
-                try {
-                    const res = await fetch('assets/data/eventos-en.json');
-                    const data = await res.json();
-                    if (!data.eventos || data.eventos.length === 0) return;
-
-                    const now = new Date();
-                    now.setHours(0, 0, 0, 0);
-
-                    const upcoming = data.eventos
-                        .filter(ev => new Date(ev.fechaFin || ev.fecha) >= now)
-                        .sort((a, b) => new Date(a.fecha) - new Date(b.fecha));
-
-                    if (upcoming.length === 0) return;
-
-                    const ev = upcoming[0];
-                    const fecha = new Date(ev.fecha);
-                    const opts = { day: 'numeric', month: 'long' };
-                    let dateStr = fecha.toLocaleDateString('en-US', opts);
-                    if (ev.fechaFin) {
-                        const fin = new Date(ev.fechaFin);
-                        dateStr = fecha.toLocaleDateString('en-US', { day: 'numeric' }) + '–' + fin.toLocaleDateString('en-US', opts);
-                    }
-
-                    document.getElementById('next-event-name').textContent = ev.titulo;
-                    document.getElementById('next-event-meta').textContent = dateStr + '  ·  ' + ev.lugar;
-                    const link = document.getElementById('next-event-link');
-                    if (ev.id) link.href = 'evento-' + ev.id + '.html';
-                    banner.style.display = '';
-                } catch (e) { /* silently fail */ }
-            }
-            if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', loadNextEvent);
-            } else {
-                loadNextEvent();
-            }
-        })();
-    </script>
-
+    <!-- Traductor: widget al pulsar «Idioma / Translate» en el pie -->
+    <div id="google_translate_element" style="display:none;"></div>
+    <script src="assets/js/translate.js"></script>
 </body>
 
 </html>
