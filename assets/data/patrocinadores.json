@@ -115,7 +115,7 @@
                 {
                     "id": "cesol",
                     "name": "CESOL",
-                    "logo": "assets/img/patrocinios/CESOL.png",
+                    "logo": "assets/img/patrocinios/CESOL.webp",
                     "description": "CESOL nos apoya con los procesos de soldadura y cursos complementarios a nuestros miembros para fomentar una formación continua y de calidad.",
                     "website": "https://www.cesol.es/"
                 }
@@ -208,7 +208,7 @@
                 {
                     "id": "Würth Elektronik",
                     "name": "Würth Elektronik",
-                    "logo": "assets/img/patrocinios/wurth.jpeg",
+                    "logo": "assets/img/patrocinios/wurth.webp",
                     "description": "Würth Elektronik proporciona componentes electrónicos para nuestra moto.",
                     "website": "https://www.we-online.com/en?srsltid=AfmBOoo-RbdOqtp5Y5VXe2dJqlco10Gzzc9WhCLC7o7D5_-fhVYRUifK"
                 },
