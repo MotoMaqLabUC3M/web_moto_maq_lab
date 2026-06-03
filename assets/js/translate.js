@@ -3,23 +3,9 @@
  * El usuario abre el traductor desde el pie (botón "Idioma / Translate").
  */
 (function () {
-    try {
-        var userLang = navigator.language || navigator.userLanguage;
-        var isSpanish = userLang.toLowerCase().startsWith('es');
-
-        if (!isSpanish && !document.cookie.includes('googtrans')) {
-            var targetLang = userLang.split('-')[0];
-            document.cookie = 'googtrans=/es/' + targetLang + '; path=/; Secure; SameSite=Lax';
-            document.cookie =
-                'googtrans=/es/' +
-                targetLang +
-                '; domain=.' +
-                document.domain +
-                '; path=/; Secure; SameSite=Lax';
-        }
-    } catch (e) {
-        console.error('Error al configurar la traducción automática:', e);
-    }
+    // La traducción automática vía cookie 'googtrans' ha sido eliminada
+    // porque ahora redirigimos nativamente a las páginas en inglés (layout.js).
+    // El script de Google Translate solo se cargará a petición manual del usuario.
 })();
 
 function googleTranslateElementInit() {

@@ -53,12 +53,16 @@ window.sanitize = function(str) {
     // Guardamos la preferencia actual
     localStorage.setItem('motomaqlab_lang', isEnglish ? 'en' : 'es');
 
-    // Auto-redirección si es la primera vez y entramos a index.html
-    if (currentFile === 'index.html' && !localStorage.getItem('motomaqlab_redirected')) {
+    // Auto-redirección a la versión en inglés si el navegador no está en español
+    if (!localStorage.getItem('motomaqlab_redirected')) {
         localStorage.setItem('motomaqlab_redirected', 'true');
         const browserLang = navigator.language || navigator.userLanguage;
-        if (browserLang.toLowerCase().startsWith('en')) {
-            window.location.replace('index-en.html');
+        // Si el idioma no es español y estamos en una página en español, redirigir a la versión en inglés
+        if (!browserLang.toLowerCase().startsWith('es')) {
+            if (!isEnglish) {
+                const targetPage = routeMap[currentFile] || 'index-en.html';
+                window.location.replace(targetPage);
+            }
         }
     }
 
