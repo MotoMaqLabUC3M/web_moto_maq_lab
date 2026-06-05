@@ -1,4 +1,4 @@
-﻿@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;0,900;1,700;1,800;1,900&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;0,900;1,700;1,800;1,900&family=Inter:wght@300;400;500;600;700&display=swap');
 
 /* =========================================
     1. CONFIGURACIÃ“N BASE Y VARIABLES
@@ -844,6 +844,13 @@ section.section-container:nth-of-type(even) {
     .home-about-teaser__cta--dual .btn {
         width: 100%;
         max-width: 320px;
+    }
+
+    .mobile-text-first .home-about-split__media {
+        order: 2;
+    }
+    .mobile-text-first .home-about-teaser__text {
+        order: 1;
     }
 }
 
