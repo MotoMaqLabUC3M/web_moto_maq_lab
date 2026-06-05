@@ -18,10 +18,25 @@
             const res = await fetch(JSON_PATH);
             const data = await res.json();
 
-            const platinumTier = data.tiers.find(t => t.id === 'platinum');
-            if (!platinumTier || !platinumTier.sponsors.length) return;
+            let sponsors = [];
+            const isForSponsorsPage = ['for-sponsors.html', 'para-patrocinadores.html'].includes(currentFile);
 
-            const sponsors = platinumTier.sponsors;
+            if (isForSponsorsPage) {
+                // Cargar todos los patrocinadores para la página de patrocinadores
+                data.tiers.forEach(t => {
+                    if (t.sponsors && t.sponsors.length) {
+                        sponsors = sponsors.concat(t.sponsors);
+                    }
+                });
+                // Hacerlo distinto invirtiendo la dirección de la animación
+                track.style.animationDirection = 'reverse';
+            } else {
+                // Solo Platino para la página de inicio
+                const platinumTier = data.tiers.find(t => t.id === 'platinum');
+                if (platinumTier) sponsors = platinumTier.sponsors;
+            }
+
+            if (!sponsors || !sponsors.length) return;
 
             // Crear un set de logos
             function appendSet() {

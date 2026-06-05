@@ -44,17 +44,7 @@
             },
             {
                 "label": "PATROCINADORES",
-                "href": "#",
-                "submenu": [
-                    {
-                        "label": "Nuestros Patrocinadores",
-                        "href": "patrocinadores.html"
-                    },
-                    {
-                        "label": "Colabora con nosotros",
-                        "href": "para-patrocinadores.html"
-                    }
-                ]
+                "href": "patrocinadores.html"
             }
         ],
         "cta": {
