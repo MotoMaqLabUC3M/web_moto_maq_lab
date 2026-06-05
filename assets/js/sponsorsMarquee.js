@@ -6,7 +6,9 @@
  */
 (function () {
     const TRACK_SELECTOR = '.sponsors-track';
-    const JSON_PATH = 'assets/data/patrocinadores.json';
+    const currentFile = window.location.pathname.split('/').pop() || 'index.html';
+    const isEnglish = ['index-en.html', 'sponsors.html', 'about-us.html', 'team.html', 'events.html', 'blog-en.html', 'for-sponsors.html'].includes(currentFile);
+    const JSON_PATH = isEnglish ? 'assets/data/patrocinadores-en.json' : 'assets/data/patrocinadores.json';
 
     async function init() {
         const track = document.querySelector(TRACK_SELECTOR);

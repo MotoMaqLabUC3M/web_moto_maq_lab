@@ -44,12 +44,22 @@
             },
             {
                 "label": "PATROCINADORES",
-                "href": "patrocinadores.html"
+                "href": "#",
+                "submenu": [
+                    {
+                        "label": "Nuestros Patrocinadores",
+                        "href": "patrocinadores.html"
+                    },
+                    {
+                        "label": "Colabora con nosotros",
+                        "href": "para-patrocinadores.html"
+                    }
+                ]
             }
         ],
         "cta": {
-            "label": "CONTACTO",
-            "href": "mailto:motomaqlabuc3m@uc3m.es"
+            "label": "PATROCÍNANOS",
+            "href": "para-patrocinadores.html"
         }
     },
     "footer": {
@@ -82,6 +92,10 @@
                 {
                     "label": "Patrocinadores",
                     "href": "patrocinadores.html"
+                },
+                {
+                    "label": "Colabora con nosotros",
+                    "href": "para-patrocinadores.html"
                 },
                 {
                     "label": "Contacto",

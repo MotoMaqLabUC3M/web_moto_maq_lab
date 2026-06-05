@@ -32,7 +32,8 @@ window.sanitize = function(str) {
         'equipo.html': 'team.html',
         'eventos.html': 'events.html',
         'blog.html': 'blog-en.html',
-        'patrocinadores.html': 'sponsors.html'
+        'patrocinadores.html': 'sponsors.html',
+        'para-patrocinadores.html': 'for-sponsors.html'
     };
 
     const reverseRouteMap = {};

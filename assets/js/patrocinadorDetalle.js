@@ -30,7 +30,10 @@
     }
 
 
-    const JSON_PATH = 'assets/data/patrocinadores.json';
+    const currentFile = window.location.pathname.split('/').pop() || '';
+    const isEnglish = ['sponsor-UC3M.html', 'sponsor-addyx.html', 'sponsor-altair.html', 'sponsor-maqlab.html', 'sponsor-retamal.html', 'sponsor.html'].includes(currentFile);
+    const JSON_PATH = isEnglish ? 'assets/data/patrocinadores-en.json' : 'assets/data/patrocinadores.json';
+    const LANG = isEnglish ? 'en' : 'es';
 
     const FEATURE_ICONS = [
         'microscope', 'lightbulb', 'hammer', 'ruler', 'settings', 'factory', 'bar-chart-2', 'target', 'wrench', 'flask-conical'
@@ -137,7 +140,7 @@
                     quoteHTML = `
                         <div class="sp-quote-box" style="margin-bottom: 2rem;">
                             <blockquote>"${sanitize(sponsor.quoteEquipo)}"</blockquote>
-                            <cite>— Equipo MotoMaqLab UC3M</cite>
+                            <cite>${LANG === 'en' ? '— MotoMaqLab UC3M Team' : '— Equipo MotoMaqLab UC3M'}</cite>
                         </div>
                     `;
                 }
@@ -162,7 +165,7 @@
                 <section class="sp-gallery-section">
                     <div class="sp-section-label">
                         <div class="sp-label-line"></div>
-                        <h2>Galería Adicional</h2>
+                        <h2>${LANG === 'en' ? 'Additional Gallery' : 'Galería Adicional'}</h2>
                     </div>
                     <div class="sp-gallery-grid">
                         ${galleryImages.map((img, i) => `
@@ -214,7 +217,7 @@
         container.innerHTML = `
             <!-- HERO -->
             <section class="sp-hero sp-hero-v2">
-                <a href="patrocinadores.html" class="sp-back">← Patrocinadores</a>
+                <a href="${LANG === 'en' ? 'sponsors.html' : 'patrocinadores.html'}" class="sp-back">${LANG === 'en' ? '← Sponsors' : '← Patrocinadores'}</a>
 
                 <div class="sp-hero-inner">
                     <div class="sp-hero-logo">
@@ -240,7 +243,7 @@
 
             <!-- CTA -->
             <section class="sp-cta-section">
-                <a href="patrocinadores.html" class="btn btn--primary">← Ver todos los patrocinadores</a>
+                <a href="${LANG === 'en' ? 'sponsors.html' : 'patrocinadores.html'}" class="btn btn--primary">${LANG === 'en' ? '← All Sponsors' : '← Ver todos los patrocinadores'}</a>
             </section>
         `;
 
