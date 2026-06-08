@@ -4171,3 +4171,77 @@ section.section-container:nth-of-type(even) {
     opacity: 0.5;
     font-weight: 400;
 }
+
+/* =========================================
+    10. PÁGINA: MOTOSTUDENT
+   ========================================= */
+
+/* --- Long-form text blocks --- */
+.ms-long-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    opacity: 0.85;
+    margin-bottom: 1.5rem;
+}
+.ms-long-text p:last-child {
+    margin-bottom: 0;
+}
+.ms-long-text strong {
+    color: var(--c-light);
+    opacity: 1;
+}
+
+/* --- Custom bullet list --- */
+.ms-list {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0;
+}
+.ms-list li {
+    position: relative;
+    padding-left: 2rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+.ms-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 5px;
+    width: 8px;
+    height: 8px;
+    background-color: var(--c-red);
+    border-radius: 50%;
+}
+
+/* --- Category boxes (EFuel / Electric) --- */
+.category-box {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 2.5rem;
+    transition: all 0.3s ease;
+    height: 100%;
+}
+.category-box:hover {
+    border-color: var(--c-red);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(242, 25, 43, 0.1);
+}
+.category-icon {
+    color: var(--c-red);
+    background: rgba(242, 25, 43, 0.1);
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+.category-icon svg {
+    width: 30px;
+    height: 30px;
+}

@@ -1,6 +1,6 @@
 # MotoMaqLab UC3M
 
-> Equipo oficial de MotoStudent de la Universidad Carlos III de Madrid (UC3M). Más de 70 estudiantes de ingeniería diseñan, fabrican y compiten con prototipos de moto de competición a nivel internacional. Temporada 2025-2027.
+> Equipo oficial de MotoStudent de la Universidad Carlos III de Madrid (UC3M). Más de 56 estudiantes de ingeniería diseñan, fabrican y compiten con prototipos de moto de competición a nivel internacional. Temporada 2025-2027.
 
 Sitio: https://motomaqlabuc3m.es
 
@@ -11,11 +11,26 @@ MotoMaqLab es el equipo de moto de la UC3M en Leganés (Madrid). Participa en Mo
 ## Páginas principales
 
 - [Inicio](https://motomaqlabuc3m.es/): Hero del equipo, cinta de patrocinadores platino, sección «Quiénes somos», avance de próximos eventos.
-- [Sobre nosotros](https://motomaqlabuc3m.es/sobre-nosotros.html): Filosofía, qué es MotoStudent, historia (timeline MS1–MS8) y palmarés.
+- [Sobre nosotros](https://motomaqlabuc3m.es/sobre-nosotros.html): Filosofía, historia (timeline MS1–MS8), palmarés y valores del equipo.
+- [MotoStudent](https://motomaqlabuc3m.es/motostudent.html): Qué es MotoStudent, orígenes (MEF), categorías EFuel y Electric, fases MS1 (Proyecto Industrial) y MS2 (Pruebas Dinámicas y Carrera). Incluye FAQ estructurada.
 - [Equipo](https://motomaqlabuc3m.es/equipo.html): Miembros por departamentos (datos en JSON).
-- [Patrocinadores](https://motomaqlabuc3m.es/patrocinadores.html): Niveles Platino, Oro, Plata y Bronce. En móvil pequeño, Plata y Bronce muestran solo logos en rejilla; Platino y Oro mantienen tarjeta completa.
+- [Patrocinadores](https://motomaqlabuc3m.es/patrocinadores.html): Niveles Platino, Oro, Plata y Bronce.
 - [Eventos](https://motomaqlabuc3m.es/eventos.html): Calendario y hitos de temporada.
 - [Blog](https://motomaqlabuc3m.es/blog.html): Noticias y artículos del proyecto.
+
+## MotoStudent — Preguntas frecuentes
+
+### ¿Qué es MotoStudent?
+MotoStudent es la competición universitaria de motociclismo más prestigiosa a nivel mundial. Nacida en 2009 en Aragón (España), es un desafío bianual donde equipos universitarios de todo el planeta diseñan, desarrollan y fabrican un prototipo real de moto de competición. En la última edición (VIII, octubre 2025) participaron más de 86 equipos de 20 países.
+
+### ¿Cuáles son las fases de MotoStudent?
+MotoStudent se divide en dos fases: MS1 (El Proyecto Industrial, 500 puntos), donde se evalúa el diseño, la innovación, el plan económico y la presentación del proyecto; y MS2 (Pruebas Dinámicas y Carrera), donde los prototipos se someten a inspecciones técnicas, pruebas de frenada, aceleración, gymkhana y la carrera final en el Circuito FIM de MotorLand Aragón.
+
+### ¿Qué categorías tiene MotoStudent?
+MotoStudent ofrece dos categorías: EFuel (antes Petrol), con prototipos basados en un motor de combustión interna de 250cc y 4 tiempos alimentados con combustible 100% renovable; y Electric, donde los equipos fabrican prototipos 100% eléctricos diseñando sus propios packs de baterías de alto voltaje.
+
+### ¿Quién organiza MotoStudent?
+MotoStudent está organizada por la Moto Engineering Foundation (MEF), una entidad sin ánimo de lucro con base en el TechnoPark MotorLand en Alcañiz (Teruel, España). Su objetivo es estrechar lazos entre el mundo académico y la industria del motor.
 
 ## Fichas de patrocinadores (platino)
 

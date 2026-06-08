@@ -3,6 +3,7 @@ Allow: /
 
 # Plantillas genéricas sin ID (las URLs patrocinador-*.html / noticia-* sí se indexan)
 Disallow: /patrocinador.html
+Disallow: /sponsor.html
 Disallow: /evento.html
 Disallow: /noticia.html
 
