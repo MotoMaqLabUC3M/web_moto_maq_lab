@@ -48,28 +48,69 @@
             color: var(--c-light);
             opacity: 1;
         }
-        .ms-list {
-            list-style: none;
-            padding: 0;
+        .ms-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
             margin: 2rem 0;
+            width: 100%;
         }
-        .ms-list li {
+        .ms-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
             position: relative;
-            padding-left: 2rem;
-            margin-bottom: 1.5rem;
-            font-size: 1.05rem;
-            line-height: 1.6;
-            opacity: 0.9;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
         }
-        .ms-list li::before {
-            content: "";
-            position: absolute;
-            left: 0;
-            top: 5px;
-            width: 8px;
-            height: 8px;
-            background-color: var(--c-red);
-            border-radius: 50%;
+        .ms-card:hover {
+            border-color: var(--c-red);
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.05);
+            box-shadow: 0 10px 20px rgba(242, 25, 43, 0.15);
+        }
+        .ms-card-icon {
+            color: var(--c-red);
+            margin-bottom: 1rem;
+            background: rgba(242, 25, 43, 0.1);
+            width: 48px;
+            height: 48px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .ms-card-icon svg {
+            width: 24px;
+            height: 24px;
+        }
+        .ms-card-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--c-light);
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.5rem;
+        }
+        .ms-card-points {
+            font-size: 0.85rem;
+            color: var(--c-red);
+            font-weight: 800;
+            background: rgba(242, 25, 43, 0.1);
+            padding: 0.3rem 0.6rem;
+            border-radius: 20px;
+            white-space: nowrap;
+        }
+        .ms-card-text {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            opacity: 0.85;
+            flex-grow: 1;
         }
         .category-box {
             background: rgba(255, 255, 255, 0.03);
@@ -214,7 +255,7 @@
         <section class="section-container">
             <div class="section-title section-title--center" data-sr="fade-up" style="margin-bottom: 3rem;">
                 <h2>MS1 Phase: <span>The Industrial Project</span></h2>
-                <p>MotoStudent forces teams to behave like real automotive companies. In the <strong>MS1 Phase</strong> (500 points), the competition evaluates the project from a purely technical and business viability perspective before the bikes even hit the asphalt.</p>
+                <p>MotoStudent forces teams to behave like real automotive companies. According to the new 2026/2027 regulations, in the <strong>MS1 Phase</strong> (600 points), the competition evaluates the project from a purely technical and business viability perspective before the bikes even hit the asphalt.</p>
             </div>
 
             <!-- Block 1: Image Left, Text Right -->
@@ -223,23 +264,51 @@
                     <img src="assets/img/motostudent/ms1_verdugo_y_abraham.webp" alt="The entire MotoMaqLab team on the MS1 stage" loading="lazy" style="width: 100%; height: auto; max-height: 400px; object-fit: cover; border-radius: 12px;" />
                 </figure>
                 <div class="home-about-teaser__text ms-long-text">
-                    <ul class="ms-list">
-                        <li><strong>Concept Development (50 pts)</strong> involves thoroughly defining the prototype concept, design requirements, and performance targets.</li>
-                        <li>The <strong>Technological Innovation (100 pts)</strong> score rewards risk and creativity. Teams must present unprecedented solutions in aerodynamics, suspensions, or the use of new materials like 3D printing or carbon fiber.</li>
-                        <li>A complete <strong>CAD Design and Development (75 pts)</strong> is expected for the virtual validation of the prototype before its physical manufacturing, supported by detailed FEA (Finite Element Analysis) and CFD (Computational Fluid Dynamics) studies.</li>
-                    </ul>
+                    <div class="ms-grid">
+                        <div class="ms-card" data-sr="fade-up" data-sr-delay="100">
+                            <div class="ms-card-icon"><i data-lucide="users"></i></div>
+                            <div class="ms-card-title">Team Plan <span class="ms-card-points">75 pts</span></div>
+                            <div class="ms-card-text">Involves the team organization, strategy, and initial project planning.</div>
+                        </div>
+                        <div class="ms-card" data-sr="fade-up" data-sr-delay="200">
+                            <div class="ms-card-icon"><i data-lucide="file-search"></i></div>
+                            <div class="ms-card-title">Product Def. <span class="ms-card-points">100 pts</span></div>
+                            <div class="ms-card-text">Thoroughly defining the prototype concept, design requirements, and performance targets.</div>
+                        </div>
+                        <div class="ms-card" data-sr="fade-up" data-sr-delay="300">
+                            <div class="ms-card-icon"><i data-lucide="lightbulb"></i></div>
+                            <div class="ms-card-title">Innovation <span class="ms-card-points">150 pts</span></div>
+                            <div class="ms-card-text">Rewards risk and creativity. Teams must present unprecedented solutions in aerodynamics or materials.</div>
+                        </div>
+                        <div class="ms-card" data-sr="fade-up" data-sr-delay="400">
+                            <div class="ms-card-icon"><i data-lucide="monitor-play"></i></div>
+                            <div class="ms-card-title">CAD & Drawings <span class="ms-card-points">60 pts</span></div>
+                            <div class="ms-card-text">Complete virtual validation of the prototype through rigorous CAD design before manufacturing.</div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
             <!-- Block 2: Text Left, Image Right -->
             <div class="home-about-split" style="margin-top: 4rem; align-items: center;" data-sr="fade-up">
                 <div class="home-about-teaser__text ms-long-text">
-                    <ul class="ms-list">
-                        <li><strong>Prototyping & Testing (75 pts)</strong> requires actual prototype manufacturing and experimental validation tests prior to competition.</li>
-                        <li>An <strong>Economic Plan and Viability (100 pts)</strong> report must present a realistic business plan to manufacture a serial run of 500 units/year of the motorcycle (~€4,500/unit), carefully justifying the costs of materials and processes.</li>
-                        <li>Everything culminates in a <strong>Pitch Presentation (60 pts)</strong>, a commercial exhibition in a startup format in front of an expert industry jury, aimed at convincing potential investors.</li>
-                        <li>Finally, the <strong>MS1 Finals (40 pts)</strong> consist of the final defense of the project before the competition's technical jury.</li>
-                    </ul>
+                    <div class="ms-grid">
+                        <div class="ms-card" data-sr="fade-up" data-sr-delay="100">
+                            <div class="ms-card-icon"><i data-lucide="pie-chart"></i></div>
+                            <div class="ms-card-title">Economical Plan <span class="ms-card-points">75 pts</span></div>
+                            <div class="ms-card-text">Must present a realistic business plan to manufacture a serial run, carefully justifying costs.</div>
+                        </div>
+                        <div class="ms-card" data-sr="fade-up" data-sr-delay="200">
+                            <div class="ms-card-icon"><i data-lucide="presentation"></i></div>
+                            <div class="ms-card-title">Pitch Presentation <span class="ms-card-points">80 pts</span></div>
+                            <div class="ms-card-text">A commercial exhibition in a startup format aimed at convincing potential investors.</div>
+                        </div>
+                        <div class="ms-card" data-sr="fade-up" data-sr-delay="300">
+                            <div class="ms-card-icon"><i data-lucide="award"></i></div>
+                            <div class="ms-card-title">Final Event <span class="ms-card-points">60 pts</span></div>
+                            <div class="ms-card-text">The final and definitive defense of the project before the technical jury at MotorLand.</div>
+                        </div>
+                    </div>
                 </div>
                 <figure class="home-about-split__media">
                     <img src="assets/img/motostudent/MS1_Laminado_2.webp" alt="MS1 Lamination" loading="lazy" style="width: 100%; height: auto; max-height: 400px; object-fit: cover; border-radius: 12px;" />
@@ -251,7 +320,7 @@
         <section class="section-container" style="background-color: var(--bg-darker);">
             <div class="section-title section-title--center" data-sr="fade-up" style="margin-bottom: 3rem;">
                 <h2>MS2 Phase: <span>Dynamic Tests and Race</span></h2>
-                <p>After months of hard work in the workshop, the teams travel with their manufactured prototype to the grand finale at the <strong>FIM MotorLand Aragón Circuit</strong>. Here is where the motorcycle faces the real world during the <strong>MS2 Phase</strong>.</p>
+                <p>After months of hard work in the workshop, the teams travel with their manufactured prototype to the grand finale at the <strong>FIM MotorLand Aragón Circuit</strong>. Here is where the motorcycle faces the real world during the <strong>MS2 Phase</strong> (540 maximum points).</p>
             </div>
 
             <!-- Block 1: Image Left, Text Right -->
@@ -260,21 +329,51 @@
                     <img src="assets/img/timeline/2023.webp" alt="MS7 Tests" loading="lazy" style="width: 100%; height: auto; max-height: 400px; object-fit: cover; border-radius: 12px;" />
                 </figure>
                 <div class="home-about-teaser__text ms-long-text">
-                    <ul class="ms-list">
-                        <li>The first hurdle is <strong>Scrutineering (Technical Inspections)</strong>. FIM engineers and judges examine the motorcycle millimeter by millimeter to ensure it strictly complies with the regulations and is safe. If scrutineering is not passed, you don't race.</li>
-                        <li>The <strong>Braking Test</strong> puts the braking system to the test, evaluating its capacity to stop the motorcycle in the shortest possible distance from a defined speed.</li>
-                    </ul>
+                    <div class="ms-grid">
+                        <div class="ms-card" data-sr="fade-up" data-sr-delay="100">
+                            <div class="ms-card-icon"><i data-lucide="shield-check"></i></div>
+                            <div class="ms-card-title">Scrutineering <span class="ms-card-points" style="color:#fff; background: rgba(255,255,255,0.1)">Req.</span></div>
+                            <div class="ms-card-text">Mandatory safety inspection. If scrutineering is not passed, the bike doesn't race.</div>
+                        </div>
+                        <div class="ms-card" data-sr="fade-up" data-sr-delay="200">
+                            <div class="ms-card-icon"><i data-lucide="circle-stop"></i></div>
+                            <div class="ms-card-title">Test 1: Brake <span class="ms-card-points">90 pts</span></div>
+                            <div class="ms-card-text">Evaluates the system's capacity to stop the motorcycle in the shortest possible distance.</div>
+                        </div>
+                        <div class="ms-card" data-sr="fade-up" data-sr-delay="300">
+                            <div class="ms-card-icon"><i data-lucide="cone"></i></div>
+                            <div class="ms-card-title">Test 2: Gymkhana <span class="ms-card-points">70 pts</span></div>
+                            <div class="ms-card-text">A tight cone circuit specially designed to evaluate the chassis geometry and overall agility.</div>
+                        </div>
+                        <div class="ms-card" data-sr="fade-up" data-sr-delay="400">
+                            <div class="ms-card-icon"><i data-lucide="gauge"></i></div>
+                            <div class="ms-card-title">T3 & T4: Accel / Vmax <span class="ms-card-points">120 pts</span></div>
+                            <div class="ms-card-text">Straight-line timed tests to measure pure power (90 pts) and transmission efficiency (30 pts).</div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
             <!-- Block 2: Text Left, Image Right -->
             <div class="home-about-split" style="margin-top: 4rem; align-items: center;" data-sr="fade-up">
                 <div class="home-about-teaser__text ms-long-text">
-                    <ul class="ms-list">
-                        <li>Through the <strong>Acceleration Test & Vmax</strong>, timed tests on the straight are carried out to measure pure power and transmission efficiency.</li>
-                        <li>The <strong>Gymkhana</strong> is a tight cone circuit specially designed to evaluate the chassis geometry, overall agility, and the rider's handling.</li>
-                        <li><strong>The Final Race</strong> represents the climax of the event. An official grid speed race against all qualified teams where everything is decided, testing reliability, thermal strategy, fuel consumption, and, of course, the rider's skills.</li>
-                    </ul>
+                    <div class="ms-grid">
+                        <div class="ms-card" data-sr="fade-up" data-sr-delay="100">
+                            <div class="ms-card-icon"><i data-lucide="timer"></i></div>
+                            <div class="ms-card-title">Test 5: Regularity <span class="ms-card-points">50 pts</span></div>
+                            <div class="ms-card-text">Evaluates the rider's and bike's capacity to maintain a consistent lap pace.</div>
+                        </div>
+                        <div class="ms-card" data-sr="fade-up" data-sr-delay="200">
+                            <div class="ms-card-icon"><i data-lucide="flag"></i></div>
+                            <div class="ms-card-title">T6 & T7: Fast Lap <span class="ms-card-points">60 pts</span></div>
+                            <div class="ms-card-text">Rewards one-lap speed: Pole Position (30 pts) and Best Race Lap (30 pts).</div>
+                        </div>
+                        <div class="ms-card" data-sr="fade-up" data-sr-delay="300">
+                            <div class="ms-card-icon"><i data-lucide="trophy"></i></div>
+                            <div class="ms-card-title">Test 8: Race Result <span class="ms-card-points">150 pts</span></div>
+                            <div class="ms-card-text">The climax. Official grid speed race testing reliability, strategy, and the rider's skills.</div>
+                        </div>
+                    </div>
                 </div>
                 <figure class="home-about-split__media">
                     <img src="assets/img/motostudent/ms2.webp" alt="Dynamic tests at MotorLand" loading="lazy" style="width: 100%; height: auto; max-height: 400px; object-fit: cover; border-radius: 12px;" />
@@ -285,8 +384,11 @@
         <!-- CTA Join/Learn more -->
         <section class="section-container" style="text-align: center;" data-sr="fade-up">
             <h2>Join the Challenge</h2>
-            <p style="opacity: 0.8; max-width: 600px; margin: 1rem auto 2rem;">Do you want to know how we apply this methodology in our own team at the University Carlos III of Madrid?</p>
-            <a href="about-us.html" class="btn btn--primary" style="padding: 1rem 2.5rem; font-size: 1.1rem;">Meet MotoMaqLab</a>
+            <p style="opacity: 0.8; max-width: 600px; margin: 1rem auto 2rem;">Do you want to know how we apply this methodology in our team at the University Carlos III of Madrid, or are you interested in supporting us?</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="about-us.html" class="btn btn--primary" style="padding: 1rem 2.5rem; font-size: 1.1rem;">Meet MotoMaqLab</a>
+                <a href="sponsors.html" class="btn btn--outline" style="padding: 1rem 2.5rem; font-size: 1.1rem; border: 2px solid var(--c-red); color: var(--c-red); border-radius: 8px; font-weight: 700; text-decoration: none; transition: all 0.3s ease;" onmouseover="this.style.background='var(--c-red)'; this.style.color='#fff';" onmouseout="this.style.background='transparent'; this.style.color='var(--c-red)';">Become a Sponsor</a>
+            </div>
         </section>
 
     </main>
