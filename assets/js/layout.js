@@ -33,7 +33,12 @@ window.sanitize = function(str) {
         'eventos.html': 'events.html',
         'blog.html': 'blog-en.html',
         'patrocinadores.html': 'sponsors.html',
-        'para-patrocinadores.html': 'for-sponsors.html'
+        'patrocinador-UC3M.html': 'sponsor-UC3M.html',
+        'patrocinador-addyx.html': 'sponsor-addyx.html',
+        'patrocinador-altair.html': 'sponsor-altair.html',
+        'patrocinador-maqlab.html': 'sponsor-maqlab.html',
+        'patrocinador-retamal.html': 'sponsor-retamal.html',
+        'patrocinador.html': 'sponsor.html'
     };
 
     const reverseRouteMap = {};
@@ -48,12 +53,16 @@ window.sanitize = function(str) {
     // Guardamos la preferencia actual
     localStorage.setItem('motomaqlab_lang', isEnglish ? 'en' : 'es');
 
-    // Auto-redirección si es la primera vez y entramos a index.html
-    if (currentFile === 'index.html' && !localStorage.getItem('motomaqlab_redirected')) {
+    // Auto-redirección a la versión en inglés si el navegador no está en español
+    if (!localStorage.getItem('motomaqlab_redirected')) {
         localStorage.setItem('motomaqlab_redirected', 'true');
         const browserLang = navigator.language || navigator.userLanguage;
-        if (browserLang.toLowerCase().startsWith('en')) {
-            window.location.replace('index-en.html');
+        // Si el idioma no es español y estamos en una página en español, redirigir a la versión en inglés
+        if (!browserLang.toLowerCase().startsWith('es')) {
+            if (!isEnglish) {
+                const targetPage = routeMap[currentFile] || 'index-en.html';
+                window.location.replace(targetPage);
+            }
         }
     }
 
@@ -108,7 +117,11 @@ window.sanitize = function(str) {
         // Build nav links
         var navLinks = '';
         if (!isIndex) {
-            navLinks += '<a href="index.html">INICIO</a>';
+            if (isEnglish) {
+                navLinks += '<a href="index-en.html">HOME</a>';
+            } else {
+                navLinks += '<a href="index.html">INICIO</a>';
+            }
         }
         h.nav.forEach(function (item) {
             if (item.submenu) {
@@ -219,50 +232,5 @@ window.sanitize = function(str) {
         document.addEventListener('DOMContentLoaded', init);
     } else {
         init();
-    }
-
-    // Instagram Feed Global Render
-    const igGrid = document.getElementById('ig-grid');
-    if (igGrid) {
-        const mockData = [
-            { "id": "ig1", "type": "photo", "likes": 512, "comments": 23, "src": "assets/img/ig_cache/post_1.jpg", "url": "https://www.instagram.com/p/DYaIBrxjFo0/" },
-            { "id": "ig2", "type": "photo", "likes": 342, "comments": 14, "src": "assets/img/ig_cache/post_2.jpg", "url": "https://www.instagram.com/p/DYSe5-gsh34/" },
-            { "id": "ig3", "type": "photo", "likes": 405, "comments": 19, "src": "assets/img/ig_cache/post_3.jpg", "url": "https://www.instagram.com/p/DXcR0zpDFQa/" },
-            { "id": "ig4", "type": "photo", "likes": 894, "comments": 45, "src": "assets/img/ig_cache/post_4.jpg", "url": "https://www.instagram.com/p/DXM2G51jHBu/" }
-        ];
-
-        igGrid.innerHTML = '';
-        mockData.forEach(item => {
-            const a = document.createElement('a');
-            a.className = 'ig-post stagger-reveal';
-            a.href = item.url;
-            a.target = '_blank';
-            
-            let mediaTag = item.type === 'video' 
-                ? `<video src="${item.src}" autoplay loop muted playsinline></video>`
-                : `<img src="${item.src}" alt="Instagram post" loading="lazy">`;
-
-            a.innerHTML = `
-                ${mediaTag}
-                    <div class="ig-overlay">
-                        <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
-                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                            <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
-                        </svg>
-                    </div>
-            `;
-            igGrid.appendChild(a);
-        });
-        
-        // Trigger reveal for IG grid if ScrollReveal is present
-        if(typeof ScrollReveal !== 'undefined') {
-            ScrollReveal().reveal('.ig-post', {
-                distance: '20px',
-                duration: 800,
-                easing: 'ease-out',
-                interval: 100
-            });
-        }
     }
 })();

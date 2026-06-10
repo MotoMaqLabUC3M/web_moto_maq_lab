@@ -77,11 +77,19 @@ def url_entry(loc: str, lastmod: str, changefreq: str, priority: str) -> str:
 
 MAIN_PAGES = [
     {"file": "index.html", "loc": "/", "changefreq": "weekly", "priority": "1.0"},
+    {"file": "index-en.html", "loc": "/index-en.html", "changefreq": "weekly", "priority": "1.0"},
     {"file": "sobre-nosotros.html", "loc": "/sobre-nosotros.html", "changefreq": "monthly", "priority": "0.8"},
+    {"file": "about-us.html", "loc": "/about-us.html", "changefreq": "monthly", "priority": "0.8"},
     {"file": "equipo.html", "loc": "/equipo.html", "changefreq": "monthly", "priority": "0.8"},
+    {"file": "team.html", "loc": "/team.html", "changefreq": "monthly", "priority": "0.8"},
     {"file": "patrocinadores.html", "loc": "/patrocinadores.html", "changefreq": "monthly", "priority": "0.8"},
+    {"file": "sponsors.html", "loc": "/sponsors.html", "changefreq": "monthly", "priority": "0.8"},
     {"file": "eventos.html", "loc": "/eventos.html", "changefreq": "weekly", "priority": "0.8"},
+    {"file": "events.html", "loc": "/events.html", "changefreq": "weekly", "priority": "0.8"},
     {"file": "blog.html", "loc": "/blog.html", "changefreq": "weekly", "priority": "0.8"},
+    {"file": "blog-en.html", "loc": "/blog-en.html", "changefreq": "weekly", "priority": "0.8"},
+    {"file": "motostudent.html", "loc": "/motostudent.html", "changefreq": "monthly", "priority": "0.8"},
+    {"file": "motostudent-en.html", "loc": "/motostudent-en.html", "changefreq": "monthly", "priority": "0.8"},
 ]
 
 
@@ -97,16 +105,19 @@ def main():
         lastmod = get_last_modified(file_path)
         main_entries.append(url_entry(f'{DOMAIN}{page["loc"]}', lastmod, page["changefreq"], page["priority"]))
 
-    # 2) Patrocinadores con página dedicada
-    pat_data = read_json("assets/data/patrocinadores.json")
-    pat_lastmod = get_last_modified(ROOT / "assets/data/patrocinadores.json")
-    for tier in pat_data["tiers"]:
-        for sponsor in tier["sponsors"]:
-            if sponsor.get("dedicatedPage"):
-                pat_entries.append(url_entry(
-                    f"{DOMAIN}/{sponsor['dedicatedPage']}",
-                    pat_lastmod, "monthly", "0.8"
-                ))
+    # 2) Patrocinadores con página dedicada (Español e Inglés)
+    for lang_file in ["assets/data/patrocinadores.json", "assets/data/patrocinadores-en.json"]:
+        json_path = ROOT / lang_file
+        if json_path.exists():
+            pat_data = read_json(lang_file)
+            pat_lastmod = get_last_modified(json_path)
+            for tier in pat_data.get("tiers", []):
+                for sponsor in tier.get("sponsors", []):
+                    if sponsor.get("dedicatedPage"):
+                        pat_entries.append(url_entry(
+                            f"{DOMAIN}/{sponsor['dedicatedPage']}",
+                            pat_lastmod, "monthly", "0.8"
+                        ))
 
     # 3) Eventos
     evt_data = read_json("assets/data/eventos.json")

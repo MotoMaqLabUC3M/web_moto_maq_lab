@@ -17,13 +17,14 @@
                 ? /evento-([^./]+)\.html/i
                 : kind === 'noticia'
                   ? /noticia-([^./]+)\.html/i
-                  : /patrocinador-([^./]+)\.html/i;
+                  : /(?:patrocinador|sponsor)-([^./]+)\.html/i;
         var m = path.match(re);
         if (!m) return null;
         try {
-            return decodeURIComponent(m[1]);
+            var id = decodeURIComponent(m[1]);
+            return id.replace(/-en$/i, '');
         } catch (e) {
-            return m[1];
+            return m[1].replace(/-en$/i, '');
         }
     };
 })();

@@ -30,10 +30,8 @@
     }
 
 
-    const currentFile = window.location.pathname.split('/').pop() || '';
-    const isEnglish = ['sponsor-UC3M.html', 'sponsor-addyx.html', 'sponsor-altair.html', 'sponsor-maqlab.html', 'sponsor-retamal.html', 'sponsor.html'].includes(currentFile);
+    const isEnglish = window.location.pathname.endsWith('-en.html') || window.location.pathname.includes('sponsor-');
     const JSON_PATH = isEnglish ? 'assets/data/patrocinadores-en.json' : 'assets/data/patrocinadores.json';
-    const LANG = isEnglish ? 'en' : 'es';
 
     const FEATURE_ICONS = [
         'microscope', 'lightbulb', 'hammer', 'ruler', 'settings', 'factory', 'bar-chart-2', 'target', 'wrench', 'flask-conical'
@@ -86,6 +84,12 @@
     }
 
     function render(container, sponsor, tierName) {
+        const isEnglish = window.location.pathname.endsWith('-en.html') || window.location.pathname.includes('sponsor-');
+        const backLink = isEnglish ? 'sponsors.html' : 'patrocinadores.html';
+        const backText = isEnglish ? '← Sponsors' : '← Patrocinadores';
+        const galleryTitle = isEnglish ? 'Additional Gallery' : 'Galería Adicional';
+        const allSponsorsText = isEnglish ? '← View all sponsors' : '← Ver todos los patrocinadores';
+        const quoteCite = isEnglish ? '— MotoMaqLab UC3M Team' : '— Equipo MotoMaqLab UC3M';
         const { intro, features, featureTitle, textBlocks } = parseContenido(sponsor.contenido || sponsor.description);
 
         // Feature cards
@@ -140,7 +144,7 @@
                     quoteHTML = `
                         <div class="sp-quote-box" style="margin-bottom: 2rem;">
                             <blockquote>"${sanitize(sponsor.quoteEquipo)}"</blockquote>
-                            <cite>${LANG === 'en' ? '— MotoMaqLab UC3M Team' : '— Equipo MotoMaqLab UC3M'}</cite>
+                            <cite>${quoteCite}</cite>
                         </div>
                     `;
                 }
@@ -165,7 +169,7 @@
                 <section class="sp-gallery-section">
                     <div class="sp-section-label">
                         <div class="sp-label-line"></div>
-                        <h2>${LANG === 'en' ? 'Additional Gallery' : 'Galería Adicional'}</h2>
+                        <h2>${galleryTitle}</h2>
                     </div>
                     <div class="sp-gallery-grid">
                         ${galleryImages.map((img, i) => `
@@ -217,7 +221,7 @@
         container.innerHTML = `
             <!-- HERO -->
             <section class="sp-hero sp-hero-v2">
-                <a href="${LANG === 'en' ? 'sponsors.html' : 'patrocinadores.html'}" class="sp-back">${LANG === 'en' ? '← Sponsors' : '← Patrocinadores'}</a>
+                <a href="${backLink}" class="sp-back">${backText}</a>
 
                 <div class="sp-hero-inner">
                     <div class="sp-hero-logo">
@@ -243,7 +247,7 @@
 
             <!-- CTA -->
             <section class="sp-cta-section">
-                <a href="${LANG === 'en' ? 'sponsors.html' : 'patrocinadores.html'}" class="btn btn--primary">${LANG === 'en' ? '← All Sponsors' : '← Ver todos los patrocinadores'}</a>
+                <a href="${backLink}" class="btn btn--primary">${allSponsorsText}</a>
             </section>
         `;
 
@@ -252,63 +256,6 @@
         }
 
         initGalleryLightbox();
-        initMobileFeatureCarousel();
-    }
-
-    /**
-     * On mobile (≤768px), transforms the bento feature grid into a
-     * horizontal scroll-snap carousel with dot indicators.
-     */
-    function initMobileFeatureCarousel() {
-        if (window.innerWidth > 768) return;
-
-        const grid = document.querySelector('.sp-stats-bar');
-        if (!grid) return;
-
-        const cards = Array.from(grid.querySelectorAll('.sp-stat-card'));
-        if (cards.length <= 1) return;
-
-        // Build dot indicators
-        const dotsWrapper = document.createElement('div');
-        dotsWrapper.className = 'sp-carousel-dots';
-        dotsWrapper.setAttribute('aria-label', 'Navegación de diapositivas');
-
-        cards.forEach(function (_, i) {
-            const dot = document.createElement('button');
-            dot.type = 'button';
-            dot.className = 'sp-carousel-dot' + (i === 0 ? ' active' : '');
-            dot.setAttribute('aria-label', 'Ir a elemento ' + (i + 1));
-            dot.addEventListener('click', function () {
-                const gap = parseFloat(getComputedStyle(grid).gap) || 16;
-                const cardW = cards[0].getBoundingClientRect().width + gap;
-                grid.scrollTo({ left: i * cardW, behavior: 'smooth' });
-            });
-            dotsWrapper.appendChild(dot);
-        });
-
-        // Insert dots section below the grid
-        if (grid.nextElementSibling && grid.nextElementSibling.classList.contains('sp-diagonal-divider')) {
-            grid.parentNode.insertBefore(dotsWrapper, grid.nextElementSibling.nextSibling);
-        } else {
-            grid.parentNode.insertBefore(dotsWrapper, grid.nextSibling);
-        }
-
-        // Update active dot on scroll
-        let scrollTimer;
-        grid.addEventListener('scroll', function () {
-            clearTimeout(scrollTimer);
-            scrollTimer = setTimeout(function () {
-                const gap = parseFloat(getComputedStyle(grid).gap) || 16;
-                const cardW = cards[0].getBoundingClientRect().width + gap;
-                const activeIndex = Math.min(
-                    Math.round(grid.scrollLeft / cardW),
-                    cards.length - 1
-                );
-                dotsWrapper.querySelectorAll('.sp-carousel-dot').forEach(function (dot, i) {
-                    dot.classList.toggle('active', i === activeIndex);
-                });
-            }, 50);
-        });
     }
 
     function initGalleryLightbox() {

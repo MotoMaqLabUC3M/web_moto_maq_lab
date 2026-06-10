@@ -4,11 +4,6 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/x-icon" href="https://motomaqlabuc3m.es/favicon.ico" />
-    <link rel="icon" type="image/png" sizes="192x192" href="https://motomaqlabuc3m.es/assets/img/logos_uc3m/favicon-192.png" />
-    <link rel="icon" type="image/png" sizes="512x512" href="https://motomaqlabuc3m.es/assets/img/logos_uc3m/favicon-512.png" />
-    <link rel="apple-touch-icon" sizes="192x192" href="https://motomaqlabuc3m.es/assets/img/logos_uc3m/favicon-192.png" />
-    <link rel="manifest" href="https://motomaqlabuc3m.es/site.webmanifest" />
     <title>La Competición MotoStudent | Qué es y Fases | MotoMaqLab UC3M</title>
     <meta name="description" content="Descubre qué es MotoStudent: la mayor competición internacional universitaria de ingeniería y motociclismo. Conoce las fases MS1, MS2 y las categorías Petrol y Electric en MotorLand Aragón." />
     <meta name="keywords" content="MotoStudent, qué es MotoStudent, MS1, MS2, competición universitaria, MotorLand Aragón, MotoStudent Petrol, MotoStudent Electric, ingeniería de motos, Moto Engineering Foundation, MEF" />
@@ -17,7 +12,8 @@
     <!-- Open Graph -->
     <meta property="og:title" content="La Competición MotoStudent | MotoMaqLab UC3M" />
     <meta property="og:description" content="Descubre las fases MS1 y MS2 de MotoStudent, el mayor desafío de ingeniería universitaria del mundo del motor." />
-    <meta property="og:image" content="https://motomaqlabuc3m.es/assets/img/hero/sobre-nosotros.webp" />
+    <meta property="og:image" content="https://motomaqlabuc3m.es/assets/img/motostudent/moto_en_pista.jpeg" />
+    <meta name="twitter:image" content="https://motomaqlabuc3m.es/assets/img/motostudent/moto_en_pista.jpeg" />
     <meta property="og:url" content="https://motomaqlabuc3m.es/motostudent.html" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="es_ES" />
@@ -53,28 +49,69 @@
             color: var(--c-light);
             opacity: 1;
         }
-        .ms-list {
-            list-style: none;
-            padding: 0;
+        .ms-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
             margin: 2rem 0;
+            width: 100%;
         }
-        .ms-list li {
+        .ms-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
             position: relative;
-            padding-left: 2rem;
-            margin-bottom: 1.5rem;
-            font-size: 1.05rem;
-            line-height: 1.6;
-            opacity: 0.9;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
         }
-        .ms-list li::before {
-            content: "";
-            position: absolute;
-            left: 0;
-            top: 5px;
-            width: 8px;
-            height: 8px;
-            background-color: var(--c-red);
-            border-radius: 50%;
+        .ms-card:hover {
+            border-color: var(--c-red);
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.05);
+            box-shadow: 0 10px 20px rgba(242, 25, 43, 0.15);
+        }
+        .ms-card-icon {
+            color: var(--c-red);
+            margin-bottom: 1rem;
+            background: rgba(242, 25, 43, 0.1);
+            width: 48px;
+            height: 48px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .ms-card-icon svg {
+            width: 24px;
+            height: 24px;
+        }
+        .ms-card-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--c-light);
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.5rem;
+        }
+        .ms-card-points {
+            font-size: 0.85rem;
+            color: var(--c-red);
+            font-weight: 800;
+            background: rgba(242, 25, 43, 0.1);
+            padding: 0.3rem 0.6rem;
+            border-radius: 20px;
+            white-space: nowrap;
+        }
+        .ms-card-text {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            opacity: 0.85;
+            flex-grow: 1;
         }
         .category-box {
             background: rgba(255, 255, 255, 0.03);
@@ -105,6 +142,27 @@
             height: 30px;
         }
     </style>
+    <!-- Enlaces SEO Multilingüe -->
+    <link rel="alternate" hreflang="es" href="https://motomaqlabuc3m.es/motostudent.html" />
+    <link rel="alternate" hreflang="en" href="https://motomaqlabuc3m.es/motostudent-en.html" />
+    <link rel="alternate" hreflang="x-default" href="https://motomaqlabuc3m.es/motostudent.html" />
+    <link rel="apple-touch-icon" sizes="57x57" href="assets/img/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="assets/img/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/img/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/img/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="assets/img/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="assets/img/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="assets/img/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="assets/img/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="assets/img/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/img/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="assets/img/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
 </head>
 
 <body>
@@ -145,22 +203,33 @@
                 <p>La competición evoluciona, ofreciendo dos caminos hacia la ingeniería de élite.</p>
             </div>
             
-            <div class="home-about-split" style="margin-top: 4rem;" data-sr="fade-up">
+            <!-- Block 1: Image Left, Text Right -->
+            <div class="home-about-split mobile-text-first" style="margin-top: 4rem; align-items: center;" data-sr="fade-up">
                 <figure class="home-about-split__media">
-                    <img src="assets/img/motostudent/motostudent_petro.webp" alt="Trabajo en taller categoría Petrol" loading="lazy" style="width: 100%; height: auto; max-height: 500px; object-fit: cover; border-radius: 12px;" />
+                    <img src="assets/img/motostudent/motostudent_efuel.webp" alt="MotoStudent EFuel" loading="lazy" style="width: 100%; height: auto; max-height: 400px; object-fit: contain; background: white; padding: 3rem; border-radius: 12px;" />
                 </figure>
                 <div class="home-about-teaser__text ms-long-text">
                     <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
                         <div class="category-icon">
-                            <i data-lucide="flame"></i>
+                            <i data-lucide="fuel"></i>
                         </div>
-                        <h3 style="font-size: 2.2rem; margin: 0; font-weight: 800; text-transform: uppercase;">MotoStudent Petrol</h3>
+                        <h3 style="font-size: 2.2rem; margin: 0; font-weight: 800; text-transform: uppercase;">MotoStudent EFuel</h3>
                     </div>
-                    <p style="font-size: 1.2rem; font-weight: 600; color: var(--c-red); margin-bottom: 1.5rem;">Nuestra categoría reina. La pura esencia térmica de la competición.</p>
-                    <p>En la categoría fundacional <em>Petrol</em>, los prototipos se desarrollan en torno a un <strong>motor de combustión interna de 250cc y 4 tiempos</strong>. Inspirándose en las normativas del campeonato mundial de Moto3, la organización exige a los equipos niveles altísimos de seguridad y rendimiento técnico.</p>
-                    <p>Para la actual edición <strong>(VIII MotoStudent 2024/2025)</strong>, el <em>Kit Básico</em> suministrado por la organización incluye el imponente <strong>motor KTM 250 SX-F</strong>, llantas y sistema de frenado. Las normas son estrictas y prohíben totalmente alterar de forma estructural el cárter o los anclajes de este motor.</p>
-                    <p>El verdadero reto de ingeniería radica en que todo el diseño recae en la manufactura del chasis, el basculante, el subchasis, la aerodinámica completa, la telemetría y los sistemas de escape y admisión. Históricamente, es aquí donde MotoMaqLab exprime al máximo la termodinámica, logrando extraer cada caballo de potencia mediante la optimización de mapas de inyección y un diseño mecánico de la más alta precisión.</p>
+                    <p style="font-size: 1.2rem; font-weight: 600; color: var(--c-red); margin-bottom: 1.5rem;">Nuestra categoría reina. Combustión con combustible 100% renovable.</p>
+                    <p>Originalmente conocida como <em>Petrol</em>, esta categoría fue rebautizada como <strong>EFuel</strong> a partir de la VIII edición (2024/2025), reflejando el compromiso de la competición con la sostenibilidad mediante el uso de <strong>combustibles sintéticos y renovables</strong>.</p>
+                    <p>Los prototipos se desarrollan en torno a un <strong>motor de combustión interna de 250cc y 4 tiempos</strong>, inspirándose en las normativas del campeonato mundial de Moto3.</p>
                 </div>
+            </div>
+
+            <!-- Block 2: Text Left, Image Right -->
+            <div class="home-about-split" style="margin-top: 4rem; align-items: center;" data-sr="fade-up">
+                <div class="home-about-teaser__text ms-long-text">
+                    <p>En la última edición celebrada <strong>(VIII MotoStudent, octubre 2025)</strong>, el <em>Kit Básico</em> suministrado por la organización incluía el <strong>motor KTM 250 SX-F</strong>, llantas y sistema de frenado. Las normas son estrictas y prohíben totalmente alterar de forma estructural el cárter o los anclajes de este motor.</p>
+                    <p>El verdadero reto de ingeniería radica en que todo el diseño recae en la manufactura del chasis, el basculante, el subchasis, la aerodinámica completa, la telemetría y los sistemas de escape y admisión. Históricamente, es aquí donde MotoMaqLab destaca por su constante innovación, logrando hitos tecnológicos como el diseño y fabricación del primer chasis tubular de fibra de carbono en la historia de la competición.</p>
+                </div>
+                <figure class="home-about-split__media">
+                    <img src="assets/img/motostudent/motor_ktm_petrol.webp" alt="Motor KTM Petrol" loading="lazy" style="width: 100%; height: auto; max-height: 500px; object-fit: cover; border-radius: 12px;" />
+                </figure>
             </div>
         </section>
 
@@ -179,52 +248,137 @@
                     <p>La categoría Electric requiere a los futuros ingenieros dominar no solo la dinámica de la motocicleta, sino el flujo de energía, la programación de inversores y la extrema seguridad que demandan los sistemas eléctricos de alta competición.</p>
                 </div>
                 <figure class="home-about-split__media">
-                    <img src="assets/img/motostudent/motostudent_electric.webp" alt="MotoStudent Electric prototipos" loading="lazy" style="width: 100%; height: auto; max-height: 500px; object-fit: cover; border-radius: 12px;" />
+                    <img src="assets/img/motostudent/motostudent_electric.webp" alt="MotoStudent Electric prototipos" loading="lazy" style="width: 100%; height: auto; max-height: 400px; object-fit: contain; background: white; padding: 3rem; border-radius: 12px;" />
                 </figure>
             </div>
         </section>
 
         <!-- SECCIÓN 3: FASE MS1 -->
         <section class="section-container">
-            <div class="home-about-split" data-sr="fade-up">
+            <div class="section-title section-title--center" data-sr="fade-up" style="margin-bottom: 3rem;">
+                <h2>Fase MS1: <span>El Proyecto Industrial</span></h2>
+                <p>MotoStudent obliga a los equipos a comportarse como verdaderas empresas de automoción. Según el nuevo reglamento de la edición 2026/2027, en la <strong>Fase MS1</strong> (600 puntos), la competición evalúa el proyecto desde un prisma puramente técnico y de viabilidad empresarial antes de que las motos pisen el asfalto.</p>
+            </div>
+
+            <!-- Block 1: Image Left, Text Right -->
+            <div class="home-about-split mobile-text-first" style="align-items: center;" data-sr="fade-up">
                 <figure class="home-about-split__media">
-                    <img src="assets/img/motostudent/ms1_motostudent.png" alt="El equipo completo de MotoMaqLab en el escenario MS1" loading="lazy" style="width: 100%; height: auto; max-height: 550px; object-fit: cover; border-radius: 12px;" />
+                    <img src="assets/img/motostudent/ms1_verdugo_y_abraham.webp" alt="El equipo completo de MotoMaqLab en el escenario MS1" loading="lazy" style="width: 100%; height: auto; max-height: 400px; object-fit: cover; border-radius: 12px;" />
                 </figure>
                 <div class="home-about-teaser__text ms-long-text">
-                    <div class="section-title">
-                        <h2>Fase MS1: <span>El Proyecto Industrial</span></h2>
+                    <div class="ms-grid">
+                        <div class="ms-card" data-sr="fade-up" data-sr-delay="100">
+                            <div class="ms-card-icon"><i data-lucide="users"></i></div>
+                            <div class="ms-card-title">Team Plan <span class="ms-card-points">75 pts</span></div>
+                            <div class="ms-card-text">Abarca la organización del equipo, estrategia y la planificación inicial del proyecto.</div>
+                        </div>
+                        <div class="ms-card" data-sr="fade-up" data-sr-delay="200">
+                            <div class="ms-card-icon"><i data-lucide="file-search"></i></div>
+                            <div class="ms-card-title">Product Definition <span class="ms-card-points">100 pts</span></div>
+                            <div class="ms-card-text">Definición meticulosa del concepto del prototipo, requisitos de diseño y objetivos de rendimiento.</div>
+                        </div>
+                        <div class="ms-card" data-sr="fade-up" data-sr-delay="300">
+                            <div class="ms-card-icon"><i data-lucide="lightbulb"></i></div>
+                            <div class="ms-card-title">Innovation <span class="ms-card-points">150 pts</span></div>
+                            <div class="ms-card-text">Premia el riesgo y la creatividad. Los equipos deben presentar soluciones inéditas en aerodinámica, suspensiones o materiales.</div>
+                        </div>
+                        <div class="ms-card" data-sr="fade-up" data-sr-delay="400">
+                            <div class="ms-card-icon"><i data-lucide="monitor-play"></i></div>
+                            <div class="ms-card-title">CAD & Drawings <span class="ms-card-points">60 pts</span></div>
+                            <div class="ms-card-text">Riguroso diseño para la validación virtual completa del prototipo antes de su fabricación.</div>
+                        </div>
                     </div>
-                    <p>MotoStudent obliga a los equipos a comportarse como verdaderas empresas de automoción. En la <strong>Fase MS1</strong>, la competición evalúa el proyecto desde un prisma puramente técnico y de viabilidad empresarial antes de que las motos pisen el asfalto.</p>
-                    
-                    <ul class="ms-list">
-                        <li>Se valora enormemente la <strong>innovación tecnológica</strong>, premiando el riesgo y la creatividad. Los equipos deben presentar soluciones inéditas en aerodinámica, suspensiones o el uso de nuevos materiales, como la impresión 3D o la fibra de carbono.</li>
-                        <li>Es imprescindible un <strong>diseño y desarrollo CAD</strong> completo que sirva como validación virtual del prototipo previo a su fabricación física, apoyado en estudios FEA (Análisis de Elementos Finitos) y CFD (Dinámica de Fluidos Computacional).</li>
-                        <li>Se exige un <strong>plan económico y de viabilidad</strong> para plantear un modelo de negocio realista capaz de fabricar una tirada en serie de 500 unidades, justificando al detalle los costes de materiales y procesos.</li>
-                        <li>Todo culmina en un <strong>pitch presentation</strong>, una exposición comercial al más puro estilo startup frente a un jurado experto de la industria, con el objetivo de convencer a potenciales inversores.</li>
-                    </ul>
                 </div>
+            </div>
+
+            <!-- Block 2: Text Left, Image Right -->
+            <div class="home-about-split" style="margin-top: 4rem; align-items: center;" data-sr="fade-up">
+                <div class="home-about-teaser__text ms-long-text">
+                    <div class="ms-grid">
+                        <div class="ms-card" data-sr="fade-up" data-sr-delay="100">
+                            <div class="ms-card-icon"><i data-lucide="pie-chart"></i></div>
+                            <div class="ms-card-title">Economical Plan <span class="ms-card-points">75 pts</span></div>
+                            <div class="ms-card-text">Plan de negocio realista para fabricar una tirada en serie de la moto, justificando costes.</div>
+                        </div>
+                        <div class="ms-card" data-sr="fade-up" data-sr-delay="200">
+                            <div class="ms-card-icon"><i data-lucide="presentation"></i></div>
+                            <div class="ms-card-title">Pitch Presentation <span class="ms-card-points">80 pts</span></div>
+                            <div class="ms-card-text">Exposición comercial en formato "startup" para convencer a potenciales inversores.</div>
+                        </div>
+                        <div class="ms-card" data-sr="fade-up" data-sr-delay="300">
+                            <div class="ms-card-icon"><i data-lucide="award"></i></div>
+                            <div class="ms-card-title">Final Event <span class="ms-card-points">60 pts</span></div>
+                            <div class="ms-card-text">Defensa final y definitiva del proyecto ante el jurado técnico de la competición en MotorLand.</div>
+                        </div>
+                    </div>
+                </div>
+                <figure class="home-about-split__media">
+                    <img src="assets/img/motostudent/MS1_Laminado_2.webp" alt="Laminado MS1" loading="lazy" style="width: 100%; height: auto; max-height: 400px; object-fit: cover; border-radius: 12px;" />
+                </figure>
             </div>
         </section>
 
         <!-- SECCIÓN 4: FASE MS2 -->
         <section class="section-container" style="background-color: var(--bg-darker);">
-            <div class="home-about-split" data-sr="fade-up">
+            <div class="section-title section-title--center" data-sr="fade-up" style="margin-bottom: 3rem;">
+                <h2>Fase MS2: <span>Pruebas Dinámicas y Carrera</span></h2>
+                <p>Tras meses de arduo trabajo en el taller, los equipos viajan con su prototipo fabricado a la gran cita final en el <strong>Circuito FIM de MotorLand Aragón</strong>. Aquí es donde la moto se enfrenta al mundo real en la <strong>Fase MS2</strong> (540 puntos máximos).</p>
+            </div>
+
+            <!-- Block 1: Image Left, Text Right -->
+            <div class="home-about-split mobile-text-first" style="align-items: center;" data-sr="fade-up">
+                <figure class="home-about-split__media">
+                    <img src="assets/img/timeline/2023.webp" alt="Pruebas MS7" loading="lazy" style="width: 100%; height: auto; max-height: 400px; object-fit: cover; border-radius: 12px;" />
+                </figure>
                 <div class="home-about-teaser__text ms-long-text">
-                    <div class="section-title">
-                        <h2>Fase MS2: <span>Pruebas Dinámicas y Carrera</span></h2>
+                    <div class="ms-grid">
+                        <div class="ms-card" data-sr="fade-up" data-sr-delay="100">
+                            <div class="ms-card-icon"><i data-lucide="shield-check"></i></div>
+                            <div class="ms-card-title">Scrutineering <span class="ms-card-points" style="color:#fff; background: rgba(255,255,255,0.1)">Req.</span></div>
+                            <div class="ms-card-text">Inspección técnica obligatoria. Si no se pasa el scrutineering, la moto no compite en pista.</div>
+                        </div>
+                        <div class="ms-card" data-sr="fade-up" data-sr-delay="200">
+                            <div class="ms-card-icon"><i data-lucide="circle-stop"></i></div>
+                            <div class="ms-card-title">Test 1: Brake <span class="ms-card-points">90 pts</span></div>
+                            <div class="ms-card-text">Capacidad del sistema de frenado para detener la moto en la menor distancia posible.</div>
+                        </div>
+                        <div class="ms-card" data-sr="fade-up" data-sr-delay="300">
+                            <div class="ms-card-icon"><i data-lucide="cone"></i></div>
+                            <div class="ms-card-title">Test 2: Gymkhana <span class="ms-card-points">70 pts</span></div>
+                            <div class="ms-card-text">Circuito técnico de conos diseñado para poner a prueba la geometría y agilidad general.</div>
+                        </div>
+                        <div class="ms-card" data-sr="fade-up" data-sr-delay="400">
+                            <div class="ms-card-icon"><i data-lucide="gauge"></i></div>
+                            <div class="ms-card-title">T3 & T4: Accel / Vmax <span class="ms-card-points">120 pts</span></div>
+                            <div class="ms-card-text">Pruebas en recta para medir la potencia pura (90 pts) y la velocidad máxima (30 pts).</div>
+                        </div>
                     </div>
-                    <p>Tras meses de arduo trabajo en el taller, los equipos viajan con su prototipo fabricado a la gran cita final en el <strong>Circuito FIM de MotorLand Aragón</strong>. Aquí es donde la moto se enfrenta al mundo real durante la <strong>Fase MS2</strong>.</p>
-                    
-                    <ul class="ms-list">
-                        <li>Las <strong>inspecciones técnicas o scrutineering</strong> son el primer obstáculo. Los ingenieros y jueces de la FIM examinan la moto al milímetro para asegurar que cumple estrictamente el reglamento y es segura. Si no se supera, no hay carrera.</li>
-                        <li>El <strong>test de frenada</strong> pone a prueba el sistema de frenos y su capacidad para detener la moto en la menor distancia posible partiendo de una velocidad definida.</li>
-                        <li>Mediante el <strong>test de aceleración y velocidad máxima</strong> se realizan pruebas cronometradas en recta para medir la potencia pura y la eficiencia de la transmisión.</li>
-                        <li>La <strong>gymkhana</strong> es un circuito ratonero delimitado por conos diseñado para evaluar la geometría del chasis, la agilidad del conjunto y el manejo del piloto.</li>
-                        <li>Finalmente, <strong>la carrera oficial</strong> es el gran clímax del evento. Una competición de velocidad en parrilla contra todos los equipos clasificados donde se decide todo, poniendo a prueba la fiabilidad, la estrategia térmica, el consumo y, por supuesto, las manos del piloto.</li>
-                    </ul>
+                </div>
+            </div>
+
+            <!-- Block 2: Text Left, Image Right -->
+            <div class="home-about-split" style="margin-top: 4rem; align-items: center;" data-sr="fade-up">
+                <div class="home-about-teaser__text ms-long-text">
+                    <div class="ms-grid">
+                        <div class="ms-card" data-sr="fade-up" data-sr-delay="100">
+                            <div class="ms-card-icon"><i data-lucide="timer"></i></div>
+                            <div class="ms-card-title">Test 5: Regularity <span class="ms-card-points">50 pts</span></div>
+                            <div class="ms-card-text">Evalúa la capacidad de la moto y el piloto para mantener un ritmo de vuelta constante.</div>
+                        </div>
+                        <div class="ms-card" data-sr="fade-up" data-sr-delay="200">
+                            <div class="ms-card-icon"><i data-lucide="flag"></i></div>
+                            <div class="ms-card-title">T6 & T7: Fast Lap <span class="ms-card-points">60 pts</span></div>
+                            <div class="ms-card-text">Premian la velocidad a una vuelta: Pole Position (30 pts) y Vuelta Rápida en Carrera (30 pts).</div>
+                        </div>
+                        <div class="ms-card" data-sr="fade-up" data-sr-delay="300">
+                            <div class="ms-card-icon"><i data-lucide="trophy"></i></div>
+                            <div class="ms-card-title">Test 8: Race Result <span class="ms-card-points">150 pts</span></div>
+                            <div class="ms-card-text">El clímax del evento. Carrera oficial donde cuentan la fiabilidad, la estrategia y el piloto.</div>
+                        </div>
+                    </div>
                 </div>
                 <figure class="home-about-split__media">
-                    <img src="assets/img/motostudent/ms2.webp" alt="Pruebas dinámicas en MotorLand" loading="lazy" style="width: 100%; height: auto; max-height: 650px; object-fit: cover; border-radius: 12px;" />
+                    <img src="assets/img/motostudent/ms2.webp" alt="Pruebas dinámicas en MotorLand" loading="lazy" style="width: 100%; height: auto; max-height: 400px; object-fit: cover; border-radius: 12px;" />
                 </figure>
             </div>
         </section>
@@ -232,8 +386,11 @@
         <!-- CTA Unirse/Saber más -->
         <section class="section-container" style="text-align: center;" data-sr="fade-up">
             <h2>Únete al Reto</h2>
-            <p style="opacity: 0.8; max-width: 600px; margin: 1rem auto 2rem;">¿Quieres saber cómo aplicamos esta metodología en nuestro propio equipo en la Universidad Carlos III de Madrid?</p>
-            <a href="sobre-nosotros.html" class="btn btn--primary" style="padding: 1rem 2.5rem; font-size: 1.1rem;">Conoce a MotoMaqLab</a>
+            <p style="opacity: 0.8; max-width: 600px; margin: 1rem auto 2rem;">¿Quieres saber cómo aplicamos esta metodología en nuestro equipo de la Universidad Carlos III de Madrid o estás interesado en apoyarnos?</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="sobre-nosotros.html" class="btn btn--primary" style="padding: 1rem 2.5rem; font-size: 1.1rem;">Conoce a MotoMaqLab</a>
+                <a href="patrocinadores.html" class="btn btn--outline" style="padding: 1rem 2.5rem; font-size: 1.1rem; border: 2px solid var(--c-red); color: var(--c-red); border-radius: 8px; font-weight: 700; text-decoration: none; transition: all 0.3s ease;" onmouseover="this.style.background='var(--c-red)'; this.style.color='#fff';" onmouseout="this.style.background='transparent'; this.style.color='var(--c-red)';">Conviértete en Patrocinador</a>
+            </div>
         </section>
 
     </main>
