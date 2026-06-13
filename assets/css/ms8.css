@@ -1,0 +1,308 @@
+/* ms8.css - Apple-style Scroll Driven Design */
+
+.ms8-page {
+    background-color: var(--c-carbon);
+    color: var(--c-light);
+}
+
+/* --- 1. Hero Cinemático --- */
+.ms8-hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.ms8-hero-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('../img/timeline/2025.webp');
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.4) contrast(1.2);
+    z-index: 1;
+    transition: transform 0.1s linear;
+}
+
+.ms8-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(15,15,16,0.3) 0%, var(--c-carbon) 100%);
+    z-index: 2;
+}
+
+.ms8-hero-content {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    max-width: 800px;
+    padding: 0 2rem;
+}
+
+.ms8-hero-content h1 {
+    font-size: clamp(4rem, 10vw, 8rem);
+    font-family: var(--font-heading);
+    letter-spacing: -0.02em;
+    margin: 1rem 0;
+    line-height: 0.9;
+}
+
+.ms8-hero-content h1 span {
+    color: var(--c-red);
+}
+
+.ms8-hero-lead {
+    font-size: clamp(1.2rem, 3vw, 1.6rem);
+    font-weight: 300;
+    opacity: 0.9;
+    line-height: 1.4;
+}
+
+.ms8-hero-scroll {
+    position: absolute;
+    bottom: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    opacity: 0.6;
+    animation: bounce 2s infinite ease-in-out;
+}
+
+.ms8-hero-scroll span {
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(10px); }
+}
+
+/* --- 2. Specs Overview --- */
+.ms8-specs-section {
+    padding: 8rem 2rem;
+    background-color: var(--c-carbon);
+    position: relative;
+    z-index: 4;
+}
+
+.ms8-specs-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 4rem;
+}
+
+.ms8-spec-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.ms8-spec-value {
+    font-size: clamp(4rem, 8vw, 6rem);
+    font-family: var(--font-heading);
+    font-weight: 900;
+    color: var(--c-light);
+    line-height: 1;
+    background: linear-gradient(180deg, #fff 0%, #aaa 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: flex;
+    align-items: baseline;
+}
+
+.ms8-spec-unit {
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    font-weight: 600;
+    margin-left: 0.2rem;
+    -webkit-text-fill-color: var(--c-red);
+}
+
+.ms8-spec-label {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    opacity: 0.6;
+    margin-top: 1rem;
+    font-weight: 500;
+}
+
+/* --- 3. Scroll-driven Story --- */
+.ms8-story-wrapper {
+    position: relative;
+    background-color: var(--c-carbon);
+    padding-bottom: 10rem;
+}
+
+.ms8-story-block {
+    display: flex;
+    position: relative;
+    margin-bottom: 10vh;
+}
+
+.ms8-story-block--alt {
+    flex-direction: row-reverse;
+}
+
+.ms8-story-sticky {
+    width: 50%;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    overflow: hidden;
+}
+
+.ms8-story-image {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.ms8-story-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: contrast(1.1) brightness(0.8);
+}
+
+.ms8-story-gradient {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, var(--c-carbon) 0%, transparent 20%, transparent 80%, var(--c-carbon) 100%);
+}
+
+.ms8-story-block--alt .ms8-story-gradient {
+    background: linear-gradient(270deg, var(--c-carbon) 0%, transparent 20%, transparent 80%, var(--c-carbon) 100%);
+}
+
+.ms8-story-content {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    padding: 0 5vw;
+}
+
+.ms8-story-text {
+    min-height: 100vh; /* Make each text block take a full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.ms8-section-eyebrow {
+    color: var(--c-red);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.ms8-section-eyebrow svg {
+    width: 20px;
+    height: 20px;
+}
+
+.ms8-story-text h2 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-family: var(--font-heading);
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+}
+
+.ms8-story-text h2 span {
+    color: var(--c-red);
+}
+
+.ms8-story-text p {
+    font-size: clamp(1.1rem, 2vw, 1.3rem);
+    line-height: 1.6;
+    opacity: 0.8;
+    max-width: 500px;
+}
+
+/* Animations for scroll-reveal */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.scroll-reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.delay-1 { transition-delay: 0.2s; }
+.delay-2 { transition-delay: 0.4s; }
+
+
+@media (max-width: 1024px) {
+    .ms8-story-block, .ms8-story-block--alt {
+        flex-direction: column;
+    }
+
+    .ms8-story-sticky {
+        width: 100%;
+        height: 50vh;
+        position: relative;
+        top: auto;
+    }
+
+    .ms8-story-gradient {
+        background: linear-gradient(180deg, transparent 50%, var(--c-carbon) 100%);
+    }
+    
+    .ms8-story-block--alt .ms8-story-gradient {
+        background: linear-gradient(180deg, transparent 50%, var(--c-carbon) 100%);
+    }
+
+    .ms8-story-content {
+        width: 100%;
+        padding: 2rem;
+    }
+
+    .ms8-story-text {
+        min-height: auto;
+        padding: 4rem 0;
+    }
+}
+
+/* =========================================
+   UTILITY & OUTRO CLASSES
+   ========================================= */
+.ms8-story-img-alt {
+    opacity: 0.6;
+    mix-blend-mode: luminosity;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.ms8-outro__text {
+    text-align: center;
+    margin-bottom: 2rem;
+    opacity: 0.8;
+}
+
+.ms8-outro__btns {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
