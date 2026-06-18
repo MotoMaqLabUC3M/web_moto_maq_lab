@@ -73,6 +73,8 @@ def apply_seo(
     canonical_path: str,
     image_path: str,
     og_type: str = "article",
+    author: str | None = None,
+    json_ld: dict | None = None,
 ) -> str:
     desc = truncate(description or title)
     if canonical_path.startswith("http"):
@@ -108,6 +110,14 @@ def apply_seo(
         out,
         count=1,
     )
+    # Plantillas con noindex; las páginas generadas sí deben indexarse
+    out = re.sub(
+        r'<meta\s+name="robots"\s+content="noindex,\s*nofollow"\s*/?>',
+        '<meta name="robots" content="index, follow">',
+        out,
+        count=1,
+        flags=re.IGNORECASE,
+    )
 
     for key in (
         "og:title",
@@ -121,6 +131,14 @@ def apply_seo(
         pat = rf'\s*<meta\s+(?:property|name)="{re.escape(key)}"\s+content="[^"]*"\s*/>\s*\n?'
         out = re.sub(pat, "", out, flags=re.IGNORECASE)
 
+    author_tags = ""
+    if author:
+        esc_author = html.escape(author, quote=True)
+        author_tags = (
+            f'    <meta name="author" content="{esc_author}">\n'
+            f'    <meta property="article:author" content="{esc_author}">\n'
+        )
+
     social = (
         f'    <meta property="og:title" content="{esc_title}">\n'
         f'    <meta property="og:description" content="{esc_desc}">\n'
@@ -129,6 +147,7 @@ def apply_seo(
         f'    <meta name="twitter:title" content="{esc_title}">\n'
         f'    <meta name="twitter:description" content="{esc_desc}">\n'
         f'    <meta name="twitter:image" content="{esc_image}">\n'
+        + author_tags
     )
     out = re.sub(
         r'(<meta\s+name="twitter:card"\s+content="summary_large_image">)',
@@ -136,6 +155,12 @@ def apply_seo(
         out,
         count=1,
     )
+
+    if json_ld:
+        ld_json = json.dumps(json_ld, ensure_ascii=False)
+        ld_block = f'    <script type="application/ld+json">{ld_json}</script>\n'
+        out = re.sub(r"(</head>)", ld_block + r"\1", out, count=1)
+
     return out
 
 
@@ -163,6 +188,8 @@ def write_page(
     image_path: str,
     og_type: str = "article",
     item: dict | None = None,
+    author: str | None = None,
+    json_ld: dict | None = None,
 ) -> Path:
     sid = safe_id(slug)
     out_path = ROOT / f"{prefix}{sid}.html"
@@ -175,9 +202,34 @@ def write_page(
         canonical_path=canonical,
         image_path=image_path,
         og_type=og_type,
+        author=author,
+        json_ld=json_ld,
     )
     out_path.write_text(html_out, encoding="utf-8")
     return out_path
+
+
+def article_json_ld(post: dict, canonical_path: str) -> dict:
+    image = absolute_url(post.get("imagen") or "assets/img/hero/blog.webp")
+    author_name = post.get("autor") or "MotoMaqLab UC3M"
+    return {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": post.get("titulo", ""),
+        "description": post.get("extracto") or "",
+        "image": image,
+        "datePublished": post.get("fecha", ""),
+        "author": {"@type": "Person", "name": author_name},
+        "publisher": {
+            "@type": "Organization",
+            "name": "MotoMaqLab UC3M",
+            "logo": {
+                "@type": "ImageObject",
+                "url": f"{ORIGIN}/assets/img/logos_uc3m/uc3m_logo_sin_fondo.webp",
+            },
+        },
+        "mainEntityOfPage": {"@type": "WebPage", "@id": ORIGIN + canonical_path},
+    }
 
 
 def main() -> None:
@@ -211,6 +263,10 @@ def main() -> None:
         pid = post.get("id")
         if not pid:
             continue
+        cat = str(post.get("categoria", "")).strip().lower()
+        if cat == "newsletter":
+            continue
+        canonical = canonical_path_for("noticia-", str(pid), post)
         write_page(
             tpl_noticia,
             str(pid),
@@ -220,6 +276,8 @@ def main() -> None:
             image_path=post.get("imagen") or "assets/img/hero/blog.webp",
             og_type="article",
             item=post,
+            author=post.get("autor") or None,
+            json_ld=article_json_ld(post, canonical),
         )
         written.append(f"noticia-{safe_id(str(pid))}.html")
 
