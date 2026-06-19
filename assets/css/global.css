@@ -209,8 +209,15 @@ section.section-container:nth-of-type(even) {
 }
 
 /* --- Navegaci?n Escritorio --- */
+.main-header nav {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    white-space: nowrap;
+}
+
 .main-header nav a {
-    margin: 0 1rem;
+    margin: 0;
     opacity: 0.8;
     display: inline-block;
     vertical-align: middle;
@@ -230,7 +237,7 @@ section.section-container:nth-of-type(even) {
 .nav-dropdown {
     position: relative;
     display: inline-block;
-    margin: 0 1rem;
+    margin: 0;
 }
 
 .nav-dropdown-toggle {
@@ -4163,7 +4170,7 @@ section.section-container:nth-of-type(even) {
     gap: 0.5rem;
     font-size: 0.95rem;
     font-weight: 600;
-    margin: 0 1rem;
+    margin: 0;
     color: var(--c-light);
     opacity: 0.8;
 }
