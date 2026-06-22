@@ -12,6 +12,11 @@ existe (YYYY-MM-DD); si no, la mtime del JSON o del HTML.
 No incluye: 404.html, creador_*.html (tienen noindex), ni plantillas
 vacías — solo MAIN_PAGES + URLs de datos (patrocinadores, eventos, blog).
 
+Incluye extensiones de Image Sitemap (xmlns:image) para declarar
+explícitamente las imágenes de cada página, mejorando la indexación
+de Google Images y evitando que elija imágenes incorrectas (ej. logos
+de patrocinadores en la página de patrocinadores).
+
 Uso:
   py scripts/generate_sitemap.py
 
@@ -62,16 +67,87 @@ def lastmod_for_item(item: dict, json_fallback: str) -> str:
     return json_fallback
 
 
-def url_entry(loc: str, lastmod: str, changefreq: str, priority: str) -> str:
+def image_entry(loc: str, caption: str, title: str = "") -> str:
+    """Genera un bloque <image:image> para el Image Sitemap."""
+    title_tag = f"\n      <image:title>{title}</image:title>" if title else ""
+    return (
+        f"    <image:image>\n"
+        f"      <image:loc>{loc}</image:loc>\n"
+        f"      <image:caption>{caption}</image:caption>"
+        f"{title_tag}\n"
+        f"    </image:image>"
+    )
+
+
+def url_entry(loc: str, lastmod: str, changefreq: str, priority: str,
+              images=None) -> str:
+    """Genera un bloque <url> con soporte opcional de Image Sitemap."""
+    img_block = "\n" + "\n".join(images) if images else ""
     return (
         f"  <url>\n"
         f"    <loc>{loc}</loc>\n"
         f"    <lastmod>{lastmod}</lastmod>\n"
         f"    <changefreq>{changefreq}</changefreq>\n"
-        f"    <priority>{priority}</priority>\n"
+        f"    <priority>{priority}</priority>"
+        f"{img_block}\n"
         f"  </url>"
     )
 
+
+# ── Imagen hero representativa de cada página principal ──────────────
+# Estas imágenes son las que queremos que Google muestre en resultados.
+
+PAGE_HERO_IMAGES = {
+    "index.html": (
+        "assets/img/home/equipo_index.webp",
+        "Equipo MotoMaqLab UC3M celebrando con el prototipo de competición MotoStudent"
+    ),
+    "index-en.html": (
+        "assets/img/home/equipo_index.webp",
+        "MotoMaqLab UC3M team celebrating with MotoStudent competition prototype"
+    ),
+    "sobre-nosotros.html": (
+        "assets/img/hero/sobre-nosotros.webp",
+        "Equipo MotoMaqLab UC3M en el Circuito de MotorLand Aragón — Ingeniería y competición"
+    ),
+    "about-us.html": (
+        "assets/img/hero/sobre-nosotros.webp",
+        "MotoMaqLab UC3M team at MotorLand Aragón Circuit — Engineering and competition"
+    ),
+    # equipo.html y team.html → se generan desde JSON con build_team_images()
+    "patrocinadores.html": (
+        "assets/img/hero/patrocinadores.webp",
+        "Patrocinadores de MotoMaqLab UC3M — empresas e instituciones que apoyan la ingeniería de competición"
+    ),
+    "sponsors.html": (
+        "assets/img/hero/patrocinadores.webp",
+        "MotoMaqLab UC3M Sponsors — companies and institutions supporting competition engineering"
+    ),
+    "eventos.html": (
+        "assets/img/hero/eventos.webp",
+        "Eventos y calendario del equipo MotoMaqLab UC3M en MotoStudent"
+    ),
+    "events.html": (
+        "assets/img/hero/eventos.webp",
+        "MotoMaqLab UC3M team events and MotoStudent competition calendar"
+    ),
+    "blog.html": (
+        "assets/img/hero/blog.webp",
+        "Blog y noticias del equipo MotoMaqLab UC3M — ingeniería y competición"
+    ),
+    "blog-en.html": (
+        "assets/img/hero/blog.webp",
+        "MotoMaqLab UC3M team blog and news — engineering and motorsport"
+    ),
+    "motostudent.html": (
+        "assets/img/motostudent/moto_en_pista.jpeg",
+        "Prototipo MotoMaqLab UC3M en el Circuito FIM de MotorLand Aragón — MotoStudent"
+    ),
+    "motostudent-en.html": (
+        "assets/img/motostudent/moto_en_pista.jpeg",
+        "MotoMaqLab UC3M prototype at FIM MotorLand Aragón Circuit — MotoStudent"
+    ),
+}
 
 # ── Páginas principales ──────────────────────────────────────────────
 
@@ -93,17 +169,67 @@ MAIN_PAGES = [
 ]
 
 
+def build_team_images(json_path: str) -> list:
+    """
+    Genera los bloques image: para todos los miembros del equipo
+    (excluye placeholders y duplicados).
+    Pone primero la imagen hero de la página de equipo.
+    """
+    data = read_json(json_path)
+    images = []
+
+    # Hero de la página de equipo (foto grupal)
+    images.append(image_entry(
+        f"{DOMAIN}/assets/img/hero/equipo.webp",
+        "Equipo completo MotoMaqLab UC3M — ingenieros y estudiantes MotoStudent UC3M"
+    ))
+
+    seen = set()
+    for section in data.get("sections", []):
+        for member in section.get("members", []):
+            if member.get("isPlaceholder"):
+                continue
+            img_path = member.get("image", "")
+            if not img_path or img_path in seen:
+                continue
+            seen.add(img_path)
+            name = member.get("name", "")
+            role = member.get("role", "")
+            caption = f"Foto de {name}, {role} en MotoMaqLab UC3M"
+            title = f"{name} — {role} | MotoMaqLab UC3M"
+            images.append(image_entry(
+                f"{DOMAIN}/{img_path}",
+                caption,
+                title
+            ))
+    return images
+
+
 def main():
     main_entries = []
     pat_entries = []
     evt_entries = []
     blog_entries = []
 
-    # 1) Páginas principales – lastmod del propio archivo HTML
+    # 1) Páginas principales – lastmod del propio archivo HTML + imágenes declaradas
     for page in MAIN_PAGES:
         file_path = ROOT / page["file"]
         lastmod = get_last_modified(file_path)
-        main_entries.append(url_entry(f'{DOMAIN}{page["loc"]}', lastmod, page["changefreq"], page["priority"]))
+        images = []
+
+        if page["file"] == "equipo.html":
+            images = build_team_images("assets/data/equipo.json")
+        elif page["file"] == "team.html":
+            images = build_team_images("assets/data/equipo-en.json")
+        elif page["file"] in PAGE_HERO_IMAGES:
+            img_url, caption = PAGE_HERO_IMAGES[page["file"]]
+            images.append(image_entry(f"{DOMAIN}/{img_url}", caption))
+
+        main_entries.append(url_entry(
+            f'{DOMAIN}{page["loc"]}', lastmod,
+            page["changefreq"], page["priority"],
+            images if images else None
+        ))
 
     # 2) Patrocinadores con página dedicada (Español e Inglés)
     for lang_file in ["assets/data/patrocinadores.json", "assets/data/patrocinadores-en.json"]:
@@ -114,9 +240,26 @@ def main():
             for tier in pat_data.get("tiers", []):
                 for sponsor in tier.get("sponsors", []):
                     if sponsor.get("dedicatedPage"):
+                        sponsor_images = []
+                        logo = sponsor.get("logo", "")
+                        name = sponsor.get("name", "")
+                        if logo:
+                            sponsor_images.append(image_entry(
+                                f"{DOMAIN}/{logo}",
+                                f"Logo de {name}, patrocinador de MotoMaqLab UC3M",
+                                f"{name} — Patrocinador MotoMaqLab UC3M"
+                            ))
+                        # Primera foto de galería si existe
+                        galeria = sponsor.get("galeria", [])
+                        if galeria:
+                            sponsor_images.append(image_entry(
+                                f"{DOMAIN}/{galeria[0]}",
+                                f"{name} colaborando con MotoMaqLab UC3M en MotoStudent"
+                            ))
                         pat_entries.append(url_entry(
                             f"{DOMAIN}/{sponsor['dedicatedPage']}",
-                            pat_lastmod, "monthly", "0.8"
+                            pat_lastmod, "monthly", "0.8",
+                            sponsor_images if sponsor_images else None
                         ))
 
     # 3) Eventos
@@ -126,9 +269,18 @@ def main():
         eid = str(evento.get("id", "")).strip()
         if not eid:
             continue
+        evt_images = None
+        img = evento.get("imagen") or evento.get("image")
+        if img:
+            titulo = evento.get("titulo", evento.get("title", f"Evento {eid}"))
+            evt_images = [image_entry(
+                f"{DOMAIN}/{img}",
+                f"{titulo} — MotoMaqLab UC3M"
+            )]
         evt_entries.append(url_entry(
             f"{DOMAIN}/evento-{quote(eid)}.html",
-            lastmod_for_item(evento, evt_lastmod), "monthly", "0.6"
+            lastmod_for_item(evento, evt_lastmod), "monthly", "0.6",
+            evt_images
         ))
 
     # 4) Blog posts (skip newsletters — they redirect to PDF, not a real page)
@@ -142,9 +294,18 @@ def main():
         cat = str(post.get("categoria", "")).strip().lower()
         if cat == "newsletter":
             continue
+        post_images = None
+        img = post.get("imagen") or post.get("image") or post.get("thumbnail")
+        if img:
+            titulo = post.get("titulo", post.get("title", f"Artículo {pid}"))
+            post_images = [image_entry(
+                f"{DOMAIN}/{img}",
+                f"{titulo} — MotoMaqLab UC3M"
+            )]
         blog_entries.append(url_entry(
             f"{DOMAIN}/noticia-{quote(pid)}.html",
-            lastmod_for_item(post, blog_lastmod), "monthly", "0.6"
+            lastmod_for_item(post, blog_lastmod), "monthly", "0.6",
+            post_images
         ))
 
     # ── Generar XML ──────────────────────────────────────────────────
@@ -152,7 +313,8 @@ def main():
     total = len(main_entries) + len(pat_entries) + len(evt_entries) + len(blog_entries)
 
     xml = f"""<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
   <!-- Generado automáticamente por scripts/generate_sitemap.py -->
   <!-- Última generación: {now} -->
