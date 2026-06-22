@@ -3810,7 +3810,7 @@ section.section-container:nth-of-type(even) {
     font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: #3ea8d8;
+    color: var(--c-red);
     font-weight: 700;
     margin-bottom: 0.5rem;
 }
@@ -3839,7 +3839,7 @@ section.section-container:nth-of-type(even) {
     display: inline-block;
     margin-top: 1rem;
     font-size: 0.85rem;
-    color: #d4993a;
+    color: var(--c-red);
     font-weight: 600;
     transition: transform 0.2s ease;
 }
