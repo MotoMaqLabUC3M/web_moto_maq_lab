@@ -1,6 +1,16 @@
 {
     "posts": [
         {
+            "id": "moto-maqlab-uc3m-participa-en-una-jornada-de-diseo-electrnico-impartida-por-wrth-elektronik",
+            "titulo": "Moto Maqlab UC3M participates in an electronic design workshop led by Würth Elektronik",
+            "autor": "Nora Uribe Iribar",
+            "fecha": "2026-06-18",
+            "categoria": "Training",
+            "imagen": "assets/img/blog/moto-maqlab-uc3m-participa-en-una-jornada-de-diseo-electrnico-impartida-por-wrth-elektronik/Equipo.webp",
+            "extracto": "The members of the Electronics and Sensorization areas attended a specialized training and knowledge exchange session alongside experts from Würth Elektronik and Analog Devices.",
+            "contenido": "On June 4th, the MOTO-MAQLAB-UC3M team attended an intensive technical workshop on power supply design and optimization, taught by experts from Würth Elektronik, a sponsor of the university racing team and a key collaborator in supplying electronic components for the project.\n\n[img:assets/img/blog/moto-maqlab-uc3m-participa-en-una-jornada-de-diseo-electrnico-impartida-por-wrth-elektronik/Equipo.webp|The team at the training session]\n\nWürth Elektronik is a leading German manufacturer of electronic and electromechanical components. It is part of the Würth Group, offering professional products and solutions for sectors such as automotive, industrial vehicles, metallurgy, installations, construction, maintenance, and wood.\n\n[img:assets/img/blog/moto-maqlab-uc3m-participa-en-una-jornada-de-diseo-electrnico-impartida-por-wrth-elektronik/Productos.webp|Electronic design products and tools from Würth Elektronik and Analog Devices]\n\nThe workshop served to reinforce and align the knowledge of the different areas that make up Moto Maqlab UC3M. The Electronics team was able to delve into DC/DC conversion topologies, loop compensation, and smart component selection, using tools like REDEXPERT and LTspice.\n\nMeanwhile, members of the Sensorization area highlighted the sessions dedicated to electromagnetic interference (EMI) filtering and PCB layout optimization rules (shielding, ground routing, and noise control). They also pointed out that well-routed hardware from the ground up is an essential requirement for obtaining accurate and reliable telemetry readings in demanding environments.\n\n[img:assets/img/blog/moto-maqlab-uc3m-participa-en-una-jornada-de-diseo-electrnico-impartida-por-wrth-elektronik/Charla.webp|A Würth Elektronik speaker during the talk on noise sources in Buck topologies]\n\nFrom Moto Maqlab UC3M, we would like to thank Würth Elektronik Iberia for the invitation and organization. The interventions by speakers from Würth and Analog Devices brought great technical depth to the event, making it a highly valuable educational experience for the team. It was an inspiring day for all members, who returned with new ideas to apply directly to board design.\n\n[img:assets/img/blog/moto-maqlab-uc3m-participa-en-una-jornada-de-diseo-electrnico-impartida-por-wrth-elektronik/equipo-2.webp|Moto Maqlab UC3M members attending the training session]"
+        },
+        {
             "id": "newsletter-revista-motomaqlab",
             "titulo": "Newsletter - MotoMaqLab Magazine",
             "autor": "MotoMaqLab UC3M",

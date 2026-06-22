@@ -53,6 +53,7 @@
      * @param {string} opts.canonicalPath - p.ej. /evento-ms9.html o /noticia-slug.html (sin origin)
      * @param {string} [opts.imagePath] - ruta relativa o absoluta a imagen destacada
      * @param {string} [opts.ogType] - og:type (article | website)
+     * @param {string} [opts.author] - nombre del autor (artículos)
      */
     window.motoMaqLabApplySeo = function (opts) {
         if (!opts || !opts.title || !opts.canonicalPath) return;
@@ -75,5 +76,10 @@
         upsertMeta('name', 'twitter:title', opts.title);
         upsertMeta('name', 'twitter:description', desc || opts.title);
         upsertMeta('name', 'twitter:image', image);
+
+        if (opts.author) {
+            upsertMeta('name', 'author', opts.author);
+            upsertMeta('property', 'article:author', opts.author);
+        }
     };
 })();

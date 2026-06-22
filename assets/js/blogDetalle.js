@@ -50,7 +50,8 @@
                     description: post.extracto || '',
                     canonicalPath: '/noticia-' + post.id + '.html',
                     imagePath: post.imagen || 'assets/img/hero/blog.webp',
-                    ogType: 'article'
+                    ogType: 'article',
+                    author: post.autor || ''
                 });
             } else {
                 document.title = post.titulo + ' | MotoMaqLab UC3M';
@@ -63,6 +64,15 @@
         }
     }
 
+    function heroBgStyle(imagen) {
+        if (!imagen) return '';
+        var safeUrl = String(imagen).replace(/'/g, '%27');
+        if (!safeUrl.startsWith('/') && !safeUrl.startsWith('http')) {
+            safeUrl = '/' + safeUrl;
+        }
+        return ' style="--ev-hero-bg:url(\'' + safeUrl + '\')"';
+    }
+
     function render(container, post, equipoData) {
         // Formatear fecha
         var fecha = new Date(post.fecha);
@@ -71,9 +81,7 @@
 
         // Hero con imagen de fondo (gradiente en CSS; solo la URL va en variable)
         var heroCls = post.imagen ? 'ev-hero ev-hero--photo' : 'ev-hero ev-hero--no-photo';
-        var heroStyleAttr = post.imagen
-            ? ' style="--ev-hero-bg:url(\'' + String(post.imagen).replace(/'/g, '%27') + '\')"'
-            : '';
+        var heroStyleAttr = heroBgStyle(post.imagen);
 
         // Parsear contenido
         var contentHTML = parseContenido(post.contenido);
@@ -83,15 +91,16 @@
         if (post.autor && equipoData && equipoData.length > 0) {
             var authorMatches = equipoData.filter(m => m.name.toLowerCase().includes(post.autor.toLowerCase()));
             var matchingAuthor = authorMatches.length > 0 ? authorMatches[0] : null;
-            
+
             if (matchingAuthor) {
                 var imgSrc = matchingAuthor.image && matchingAuthor.image !== "" ? matchingAuthor.image : "assets/img/logos_uc3m/uc3m_logo_sin_fondo.png";
                 authorHTML = `
                     <div class="blog-author-box">
                         <img src="${imgSrc}" alt="${matchingAuthor.name}" class="author-avatar" loading="lazy">
                         <div class="author-details">
+                            <span class="author-written-by">Escrito por</span>
                             <h4>${matchingAuthor.name}</h4>
-                            <span>${matchingAuthor.role}</span>
+                            <span class="author-role">${matchingAuthor.role}</span>
                         </div>
                     </div>
                 `;
@@ -109,19 +118,23 @@
                 '</div>' +
             '</section>' +
 
-            '<!-- INFO BAR -->' +
-            '<section class="ev-info-bar">' +
-                '<div class="ev-info-card">' +
-                    '<span class="ev-info-icon"><i data-lucide="pen-tool"></i></span>' +
-                    '<div><span class="ev-info-label">Autor</span><span class="ev-info-value">' + post.autor + '</span></div>' +
-                '</div>' +
-                '<div class="ev-info-card">' +
-                    '<span class="ev-info-icon"><i data-lucide="calendar"></i></span>' +
-                    '<div><span class="ev-info-label">Fecha</span><span class="ev-info-value">' + fechaStr + '</span></div>' +
-                '</div>' +
-                '<div class="ev-info-card">' +
-                    '<span class="ev-info-icon"><i data-lucide="folder"></i></span>' +
-                    '<div><span class="ev-info-label">Categoría</span><span class="ev-info-value">' + post.categoria + '</span></div>' +
+            '<!-- META -->' +
+            '<section class="blog-meta-bar" aria-label="Metadatos del artículo">' +
+                '<div class="blog-meta-bar__inner">' +
+                    '<div class="blog-meta-item">' +
+                        '<i data-lucide="pen-tool" class="blog-meta-icon"></i>' +
+                        '<div><span class="blog-meta-label">Autor</span><span class="blog-meta-value">' + post.autor + '</span></div>' +
+                    '</div>' +
+                    '<span class="blog-meta-sep" aria-hidden="true"></span>' +
+                    '<div class="blog-meta-item">' +
+                        '<i data-lucide="calendar" class="blog-meta-icon"></i>' +
+                        '<div><span class="blog-meta-label">Fecha</span><span class="blog-meta-value">' + fechaStr + '</span></div>' +
+                    '</div>' +
+                    '<span class="blog-meta-sep" aria-hidden="true"></span>' +
+                    '<div class="blog-meta-item">' +
+                        '<i data-lucide="folder" class="blog-meta-icon"></i>' +
+                        '<div><span class="blog-meta-label">Categoría</span><span class="blog-meta-value">' + post.categoria + '</span></div>' +
+                    '</div>' +
                 '</div>' +
             '</section>' +
 
@@ -135,7 +148,7 @@
             '<section class="sp-cta-section">' +
                 '<a href="blog.html" class="btn btn--primary">← Ver todas las noticias</a>' +
             '</section>';
-        
+
         if (window.lucide) { lucide.createIcons(); }
     }
 
@@ -177,7 +190,7 @@
                     }
                     alt = alt.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
                     html += '<figure class="blog-inline-img">';
-                    html += '<img src="' + src + '" alt="' + alt + '" loading="lazy" />';
+                    html += '<img src="' + encodeURI(src) + '" alt="' + alt + '" loading="lazy" />';
                     if (alt) {
                         html += '<figcaption>' + alt + '</figcaption>';
                     }
@@ -193,14 +206,14 @@
                         inSection = true;
                     }
                     html += '<div class="pdf-viewer-block">';
-                    html += '<iframe src="' + pdfUrl + '" class="pdf-viewer-frame" title="Documento PDF embebido"></iframe>';
-                    html += '<div class="pdf-viewer-actions"><a href="' + pdfUrl + '" target="_blank" class="btn btn--primary pdf-viewer-open-tab">Abrir PDF en otra pestaña</a></div>';
+                    html += '<iframe src="' + encodeURI(pdfUrl) + '" class="pdf-viewer-frame" title="Documento PDF embebido"></iframe>';
+                    html += '<div class="pdf-viewer-actions"><a href="' + encodeURI(pdfUrl) + '" target="_blank" class="btn btn--primary pdf-viewer-open-tab">Abrir PDF en otra pestaña</a></div>';
                     html += '</div>';
                 }
             } else {
                 // Parse standard links inside text
                 var parsedLine = line.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer" class="blog-inline-a">$1</a>');
-                
+
                 // Párrafo normal
                 if (!inSection) {
                     html += '<section class="sp-text-block">';
@@ -235,6 +248,7 @@
             "@context": "https://schema.org",
             "@type": "Article",
             "headline": post.titulo,
+            "description": post.extracto || "",
             "image": post.imagen ? "https://motomaqlabuc3m.es/" + post.imagen : "https://motomaqlabuc3m.es/assets/img/hero/blog.webp",
             "datePublished": post.fecha,
             "author": {
