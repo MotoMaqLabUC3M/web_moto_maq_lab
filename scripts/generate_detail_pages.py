@@ -20,7 +20,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 ORIGIN = "https://motomaqlabuc3m.es"
 
-PREFIXES = ("evento-", "noticia-", "patrocinador-")
+PREFIXES = ("evento-", "noticia-", "news-", "patrocinador-")
 
 
 def read_json(rel: str) -> dict:
@@ -237,6 +237,7 @@ def main() -> None:
 
     tpl_evento = (ROOT / "evento.html").read_text(encoding="utf-8")
     tpl_noticia = (ROOT / "noticia.html").read_text(encoding="utf-8")
+    tpl_news = (ROOT / "news.html").read_text(encoding="utf-8")
     tpl_pat = (ROOT / "patrocinador.html").read_text(encoding="utf-8")
 
     written: list[str] = []
@@ -280,6 +281,29 @@ def main() -> None:
             json_ld=article_json_ld(post, canonical),
         )
         written.append(f"noticia-{safe_id(str(pid))}.html")
+
+    blog_en = read_json("assets/data/blog-en.json")
+    for post in blog_en.get("posts") or []:
+        pid = post.get("id")
+        if not pid:
+            continue
+        cat = str(post.get("categoria", "")).strip().lower()
+        if cat == "newsletter":
+            continue
+        canonical = canonical_path_for("news-", str(pid), post)
+        write_page(
+            tpl_news,
+            str(pid),
+            "news-",
+            title=f"{post.get('titulo', 'News')} | MotoMaqLab UC3M",
+            description=post.get("extracto") or "",
+            image_path=post.get("imagen") or "assets/img/hero/blog.webp",
+            og_type="article",
+            item=post,
+            author=post.get("autor") or None,
+            json_ld=article_json_ld(post, canonical),
+        )
+        written.append(f"news-{safe_id(str(pid))}.html")
 
     pat = read_json("assets/data/patrocinadores.json")
     seen: set[str] = set()
