@@ -100,7 +100,7 @@
                     <div class="blog-author-box">
                         <img src="${imgSrc}" alt="${matchingAuthor.name}" class="author-avatar" loading="lazy">
                         <div class="author-details">
-                            <span class="author-written-by">' + (isEnglish ? 'Written by' : 'Escrito por') + '</span>
+                            <span class="author-written-by">${isEnglish ? 'Written by' : 'Escrito por'}</span>
                             <h4>${matchingAuthor.name}</h4>
                             <span class="author-role">${matchingAuthor.role}</span>
                         </div>
