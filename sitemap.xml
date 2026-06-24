@@ -3,12 +3,12 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
   <!-- Generado automáticamente por scripts/generate_sitemap.py -->
-  <!-- Última generación: 2026-06-22T07:05:16.799437+00:00 -->
+  <!-- Última generación: 2026-06-24T10:36:00.572642+00:00 -->
 
   <!-- Páginas principales -->
   <url>
     <loc>https://motomaqlabuc3m.es/</loc>
-    <lastmod>2026-06-18</lastmod>
+    <lastmod>2026-06-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -18,7 +18,7 @@
   </url>
   <url>
     <loc>https://motomaqlabuc3m.es/index-en.html</loc>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-06-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -28,7 +28,7 @@
   </url>
   <url>
     <loc>https://motomaqlabuc3m.es/sobre-nosotros.html</loc>
-    <lastmod>2026-06-11</lastmod>
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -38,7 +38,7 @@
   </url>
   <url>
     <loc>https://motomaqlabuc3m.es/about-us.html</loc>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -48,7 +48,7 @@
   </url>
   <url>
     <loc>https://motomaqlabuc3m.es/equipo.html</loc>
-    <lastmod>2026-06-22</lastmod>
+    <lastmod>2026-06-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -313,7 +313,7 @@
   </url>
   <url>
     <loc>https://motomaqlabuc3m.es/team.html</loc>
-    <lastmod>2026-06-18</lastmod>
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -578,7 +578,7 @@
   </url>
   <url>
     <loc>https://motomaqlabuc3m.es/patrocinadores.html</loc>
-    <lastmod>2026-06-11</lastmod>
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -588,7 +588,7 @@
   </url>
   <url>
     <loc>https://motomaqlabuc3m.es/sponsors.html</loc>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -598,7 +598,7 @@
   </url>
   <url>
     <loc>https://motomaqlabuc3m.es/eventos.html</loc>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-06-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -608,7 +608,7 @@
   </url>
   <url>
     <loc>https://motomaqlabuc3m.es/events.html</loc>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-06-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -618,7 +618,7 @@
   </url>
   <url>
     <loc>https://motomaqlabuc3m.es/blog.html</loc>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-06-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -628,7 +628,7 @@
   </url>
   <url>
     <loc>https://motomaqlabuc3m.es/blog-en.html</loc>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-06-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -638,7 +638,7 @@
   </url>
   <url>
     <loc>https://motomaqlabuc3m.es/motostudent.html</loc>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -648,7 +648,7 @@
   </url>
   <url>
     <loc>https://motomaqlabuc3m.es/motostudent-en.html</loc>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -660,7 +660,7 @@
   <!-- Detalle de patrocinadores -->
   <url>
     <loc>https://motomaqlabuc3m.es/patrocinador-maqlab.html</loc>
-    <lastmod>2026-06-11</lastmod>
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -675,7 +675,7 @@
   </url>
   <url>
     <loc>https://motomaqlabuc3m.es/patrocinador-altair.html</loc>
-    <lastmod>2026-06-11</lastmod>
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -686,7 +686,7 @@
   </url>
   <url>
     <loc>https://motomaqlabuc3m.es/patrocinador-addyx.html</loc>
-    <lastmod>2026-06-11</lastmod>
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -701,7 +701,7 @@
   </url>
   <url>
     <loc>https://motomaqlabuc3m.es/patrocinador-UC3M.html</loc>
-    <lastmod>2026-06-11</lastmod>
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -716,7 +716,7 @@
   </url>
   <url>
     <loc>https://motomaqlabuc3m.es/patrocinador-retamal.html</loc>
-    <lastmod>2026-06-11</lastmod>
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -727,7 +727,7 @@
   </url>
   <url>
     <loc>https://motomaqlabuc3m.es/sponsor-maqlab.html</loc>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -742,7 +742,7 @@
   </url>
   <url>
     <loc>https://motomaqlabuc3m.es/sponsor-altair.html</loc>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -753,7 +753,7 @@
   </url>
   <url>
     <loc>https://motomaqlabuc3m.es/sponsor-addyx.html</loc>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -768,7 +768,7 @@
   </url>
   <url>
     <loc>https://motomaqlabuc3m.es/sponsor-UC3M.html</loc>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -783,7 +783,7 @@
   </url>
   <url>
     <loc>https://motomaqlabuc3m.es/sponsor-retamal.html</loc>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -796,12 +796,26 @@
   <!-- Detalle de eventos -->
 
 
-  <!-- Detalle de blog -->
+  <!-- Detalle de blog (ES + EN) -->
   <url>
     <loc>https://motomaqlabuc3m.es/noticia-moto-maqlab-uc3m-participa-en-una-jornada-de-diseo-electrnico-impartida-por-wrth-elektronik.html</loc>
     <lastmod>2026-06-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://motomaqlabuc3m.es/assets/img/blog/moto-maqlab-uc3m-participa-en-una-jornada-de-diseo-electrnico-impartida-por-wrth-elektronik/Equipo.webp</image:loc>
+      <image:caption>Moto Maqlab UC3M participa en una jornada de diseño electrónico impartida por Würth Elektronik — MotoMaqLab UC3M</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://motomaqlabuc3m.es/news-moto-maqlab-uc3m-participa-en-una-jornada-de-diseo-electrnico-impartida-por-wrth-elektronik.html</loc>
+    <lastmod>2026-06-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://motomaqlabuc3m.es/assets/img/blog/moto-maqlab-uc3m-participa-en-una-jornada-de-diseo-electrnico-impartida-por-wrth-elektronik/Equipo.webp</image:loc>
+      <image:caption>Moto Maqlab UC3M participates in an electronic design workshop led by Würth Elektronik — MotoMaqLab UC3M</image:caption>
+    </image:image>
   </url>
 
 </urlset>

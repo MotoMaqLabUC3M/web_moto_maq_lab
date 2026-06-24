@@ -308,6 +308,30 @@ def main():
             post_images
         ))
 
+    # 5) Blog posts EN (skip newsletters)
+    blog_en_data = read_json("assets/data/blog-en.json")
+    blog_en_lastmod = get_last_modified(ROOT / "assets/data/blog-en.json")
+    for post in blog_en_data.get("posts", []):
+        pid = str(post.get("id", "")).strip()
+        if not pid:
+            continue
+        cat = str(post.get("categoria", "")).strip().lower()
+        if cat == "newsletter":
+            continue
+        post_images = None
+        img = post.get("imagen") or post.get("image") or post.get("thumbnail")
+        if img:
+            titulo = post.get("titulo", post.get("title", f"Article {pid}"))
+            post_images = [image_entry(
+                f"{DOMAIN}/{img}",
+                f"{titulo} — MotoMaqLab UC3M"
+            )]
+        blog_entries.append(url_entry(
+            f"{DOMAIN}/news-{quote(pid)}.html",
+            lastmod_for_item(post, blog_en_lastmod), "monthly", "0.6",
+            post_images
+        ))
+
     # ── Generar XML ──────────────────────────────────────────────────
     now = datetime.now(tz=timezone.utc).isoformat()
     total = len(main_entries) + len(pat_entries) + len(evt_entries) + len(blog_entries)
@@ -328,7 +352,7 @@ def main():
   <!-- Detalle de eventos -->
 {chr(10).join(evt_entries)}
 
-  <!-- Detalle de blog -->
+  <!-- Detalle de blog (ES + EN) -->
 {chr(10).join(blog_entries)}
 
 </urlset>
@@ -340,9 +364,9 @@ def main():
 
     print(f"[OK] sitemap.xml generado con {total} URLs")
     print(f"   Páginas principales: {len(main_entries)}")
-    print(f"   Patrocinadores: {len(pat_entries)}")
+    print(f"   Patrocinadores ES+EN: {len(pat_entries)}")
     print(f"   Eventos: {len(evt_entries)}")
-    print(f"   Blog posts: {len(blog_entries)}")
+    print(f"   Blog posts ES+EN: {len(blog_entries)}")
 
 
 if __name__ == "__main__":
