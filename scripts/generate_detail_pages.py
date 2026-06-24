@@ -20,7 +20,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 ORIGIN = "https://motomaqlabuc3m.es"
 
-PREFIXES = ("evento-", "noticia-", "news-", "patrocinador-")
+PREFIXES = ("evento-", "noticia-", "news-", "patrocinador-", "sponsor-")
 
 
 def read_json(rel: str) -> dict:
@@ -57,7 +57,7 @@ def absolute_url(path: str) -> str:
 
 def canonical_path_for(prefix: str, slug: str, item: dict | None = None) -> str:
     sid = safe_id(slug)
-    if prefix == "patrocinador-" and item:
+    if prefix in ("patrocinador-", "sponsor-") and item:
         dedicated = item.get("dedicatedPage")
         if dedicated:
             name = str(dedicated).lstrip("/")
@@ -239,6 +239,7 @@ def main() -> None:
     tpl_noticia = (ROOT / "noticia.html").read_text(encoding="utf-8")
     tpl_news = (ROOT / "news.html").read_text(encoding="utf-8")
     tpl_pat = (ROOT / "patrocinador.html").read_text(encoding="utf-8")
+    tpl_sponsor = (ROOT / "sponsor.html").read_text(encoding="utf-8")
 
     written: list[str] = []
 
@@ -305,6 +306,7 @@ def main() -> None:
         )
         written.append(f"news-{safe_id(str(pid))}.html")
 
+    # Páginas en español (patrocinador-*.html)
     pat = read_json("assets/data/patrocinadores.json")
     seen: set[str] = set()
     for tier in pat.get("tiers") or []:
@@ -329,6 +331,31 @@ def main() -> None:
                     item=sponsor,
                 )
                 written.append(f"patrocinador-{safe_id(str(sid))}.html")
+
+    # Páginas en inglés (sponsor-*.html)
+    pat_en = read_json("assets/data/patrocinadores-en.json")
+    seen_en: set[str] = set()
+    for tier in pat_en.get("tiers") or []:
+        tier_name = tier.get("name") or ""
+        for sponsor in tier.get("sponsors") or []:
+            sid = sponsor.get("id")
+            if not sid or sid in seen_en:
+                continue
+            if sponsor.get("dedicatedPage"):
+                seen_en.add(sid)
+                seo_title = sponsor.get("seoTitle") or f"{sponsor.get('name', 'Sponsor')} — {tier_name} Sponsor | MotoMaqLab UC3M"
+                seo_desc = sponsor.get("seoDescription") or sponsor.get("description") or ""
+                write_page(
+                    tpl_sponsor,
+                    str(sid),
+                    "sponsor-",
+                    title=seo_title,
+                    description=seo_desc,
+                    image_path=sponsor.get("logo") or "assets/img/hero/patrocinadores.webp",
+                    og_type="article",
+                    item=sponsor,
+                )
+                written.append(f"sponsor-{safe_id(str(sid))}.html")
 
     print(f"[OK] generate_detail_pages: {len(written)} archivos")
     for w in sorted(written):
