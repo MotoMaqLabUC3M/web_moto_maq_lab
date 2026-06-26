@@ -116,13 +116,6 @@ window.sanitize = function(str) {
     function renderHeader(el, h) {
         // Build nav links
         var navLinks = '';
-        if (!isIndex) {
-            if (isEnglish) {
-                navLinks += '<a href="index-en.html">HOME</a>';
-            } else {
-                navLinks += '<a href="index.html">INICIO</a>';
-            }
-        }
         h.nav.forEach(function (item) {
             if (item.submenu) {
                 var submenuLinks = '';
