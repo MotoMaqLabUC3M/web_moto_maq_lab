@@ -5,9 +5,9 @@
  * También renderiza preview en index.html (2 últimas noticias).
  */
 (function () {
-    const path = window.location.pathname;
-    const currentFile = path.substring(path.lastIndexOf('/') + 1) || 'index.html';
-    const isEnglish = currentFile === 'blog-en.html' || currentFile === 'index-en.html';
+
+    const lang = document.documentElement.lang || 'es';
+    const isEnglish = lang === 'en';
     const JSON_PATH = isEnglish ? 'assets/data/blog-en.json' : 'assets/data/blog.json';
 
     function sanitize(str) {
@@ -77,7 +77,7 @@
                 link.target = '_blank';
                 link.rel = 'noopener noreferrer';
             } else {
-                link.href = 'noticia-' + post.id + '.html';
+                link.href = (isEnglish ? 'news-' : 'noticia-') + post.id + '.html';
             }
             
             link.className = 'blog-card-link';
@@ -96,15 +96,12 @@
                 ? '<div class="blog-card-img"><img src="' + sanitize(post.imagen) + '" alt="' + sanitize(post.titulo) + '" loading="lazy" /></div>'
                 : '';
 
-            var fallbackHTML = '<div class="blog-card-img"><div class="newsletter-fallback"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg><br>MotoMaqLab Magazine</div></div>';
-            if (!isEnglish) {
-                fallbackHTML = '<div class="blog-card-img"><div class="newsletter-fallback"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg><br>Revista MotoMaqLab</div></div>';
-            }
+            var fallbackHTML = '<div class="blog-card-img"><div class="newsletter-fallback"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg><br>' + (isEnglish ? 'MotoMaqLab Magazine' : 'Revista MotoMaqLab') + '</div></div>';
 
-            // Truncar extracto
+            // Truncar extracto (aumentado para que no corte frases tan pronto)
             var extracto = post.extracto || '';
-            if (extracto.length > 120) {
-                extracto = extracto.substring(0, 120) + '[...]';
+            if (extracto.length > 250) {
+                extracto = extracto.substring(0, 250) + '[...]';
             }
 
             if (isPdfDirect) {
@@ -120,9 +117,9 @@
                     '<div class="blog-card-body">' +
                         '<span class="blog-card-categoria">' + sanitize(post.categoria) + '</span>' +
                         '<h3>' + sanitize(post.titulo) + '</h3>' +
-                        '<p class="blog-card-meta">' + byText + sanitize(post.autor) + onText + sanitize(fechaStr) + '</p>' +
+                        '<p class="blog-card-meta">' + (isEnglish ? 'by ' : 'por ') + sanitize(post.autor) + (isEnglish ? ' on ' : ' el ') + sanitize(fechaStr) + '</p>' +
                         '<p class="blog-card-extracto">' + sanitize(extracto) + '</p>' +
-                        '<span class="blog-card-leer">' + readMoreText + '</span>' +
+                        '<span class="blog-card-leer">' + (isEnglish ? 'Read more →' : 'Leer más →') + '</span>' +
                     '</div>';
             }
 
@@ -131,7 +128,7 @@
             if (img) {
                 img.addEventListener('error', function () {
                     this.style.display = 'none';
-                    this.parentElement.innerHTML = '<div class="newsletter-fallback"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg><br>Imagen no encontrada</div>';
+                    this.parentElement.innerHTML = '<div class="newsletter-fallback"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg><br>' + (isEnglish ? 'Image not found' : 'Imagen no encontrada') + '</div>';
                 });
             }
 

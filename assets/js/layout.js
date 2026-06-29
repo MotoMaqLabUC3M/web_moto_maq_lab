@@ -56,12 +56,18 @@ window.sanitize = function(str) {
     // Auto-redirección a la versión en inglés si el navegador no está en español
     if (!localStorage.getItem('motomaqlab_redirected')) {
         localStorage.setItem('motomaqlab_redirected', 'true');
-        const browserLang = navigator.language || navigator.userLanguage;
-        // Si el idioma no es español y estamos en una página en español, redirigir a la versión en inglés
-        if (!browserLang.toLowerCase().startsWith('es')) {
-            if (!isEnglish) {
-                const targetPage = routeMap[currentFile] || 'index-en.html';
-                window.location.replace(targetPage);
+        
+        // Prevent redirecting bots (Googlebot, Bingbot, etc.) to fix SEO indexing issues
+        const isBot = /bot|googlebot|crawler|spider|robot|crawling/i.test(navigator.userAgent);
+        
+        if (!isBot) {
+            const browserLang = navigator.language || navigator.userLanguage;
+            // Si el idioma no es español y estamos en una página en español, redirigir a la versión en inglés
+            if (!browserLang.toLowerCase().startsWith('es')) {
+                if (!isEnglish) {
+                    const targetPage = routeMap[currentFile] || 'index-en.html';
+                    window.location.replace(targetPage);
+                }
             }
         }
     }
@@ -116,13 +122,6 @@ window.sanitize = function(str) {
     function renderHeader(el, h) {
         // Build nav links
         var navLinks = '';
-        if (!isIndex) {
-            if (isEnglish) {
-                navLinks += '<a href="index-en.html">HOME</a>';
-            } else {
-                navLinks += '<a href="index.html">INICIO</a>';
-            }
-        }
         h.nav.forEach(function (item) {
             if (item.submenu) {
                 var submenuLinks = '';

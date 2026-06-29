@@ -5,8 +5,10 @@
  * Soporta visor PDF con sintaxis: [pdf:ruta]
  */
 (function () {
-    const JSON_PATH = 'assets/data/blog.json';
-    const EQUIPO_PATH = 'assets/data/equipo.json';
+    const lang = document.documentElement.lang || 'es';
+    const isEnglish = lang === 'en';
+    const JSON_PATH = isEnglish ? 'assets/data/blog-en.json' : 'assets/data/blog.json';
+    const EQUIPO_PATH = isEnglish ? 'assets/data/equipo-en.json' : 'assets/data/equipo.json';
 
     async function init() {
         const container = document.getElementById('noticia-detalle');
@@ -50,7 +52,8 @@
                     description: post.extracto || '',
                     canonicalPath: '/noticia-' + post.id + '.html',
                     imagePath: post.imagen || 'assets/img/hero/blog.webp',
-                    ogType: 'article'
+                    ogType: 'article',
+                    author: post.autor || ''
                 });
             } else {
                 document.title = post.titulo + ' | MotoMaqLab UC3M';
@@ -63,6 +66,15 @@
         }
     }
 
+    function heroBgStyle(imagen) {
+        if (!imagen) return '';
+        var safeUrl = String(imagen).replace(/'/g, '%27');
+        if (!safeUrl.startsWith('/') && !safeUrl.startsWith('http')) {
+            safeUrl = '/' + safeUrl;
+        }
+        return ' style="--ev-hero-bg:url(\'' + safeUrl + '\')"';
+    }
+
     function render(container, post, equipoData) {
         // Formatear fecha
         var fecha = new Date(post.fecha);
@@ -71,9 +83,7 @@
 
         // Hero con imagen de fondo (gradiente en CSS; solo la URL va en variable)
         var heroCls = post.imagen ? 'ev-hero ev-hero--photo' : 'ev-hero ev-hero--no-photo';
-        var heroStyleAttr = post.imagen
-            ? ' style="--ev-hero-bg:url(\'' + String(post.imagen).replace(/'/g, '%27') + '\')"'
-            : '';
+        var heroStyleAttr = heroBgStyle(post.imagen);
 
         // Parsear contenido
         var contentHTML = parseContenido(post.contenido);
@@ -83,15 +93,16 @@
         if (post.autor && equipoData && equipoData.length > 0) {
             var authorMatches = equipoData.filter(m => m.name.toLowerCase().includes(post.autor.toLowerCase()));
             var matchingAuthor = authorMatches.length > 0 ? authorMatches[0] : null;
-            
+
             if (matchingAuthor) {
                 var imgSrc = matchingAuthor.image && matchingAuthor.image !== "" ? matchingAuthor.image : "assets/img/logos_uc3m/uc3m_logo_sin_fondo.png";
                 authorHTML = `
                     <div class="blog-author-box">
                         <img src="${imgSrc}" alt="${matchingAuthor.name}" class="author-avatar" loading="lazy">
                         <div class="author-details">
+                            <span class="author-written-by">${isEnglish ? 'Written by' : 'Escrito por'}</span>
                             <h4>${matchingAuthor.name}</h4>
-                            <span>${matchingAuthor.role}</span>
+                            <span class="author-role">${matchingAuthor.role}</span>
                         </div>
                     </div>
                 `;
@@ -102,26 +113,30 @@
             '<!-- HERO -->' +
             '<section class="' + heroCls + '"' + heroStyleAttr + '>' +
                 '<div class="ev-hero-content">' +
-                    '<a href="blog.html" class="sp-back">← Blog</a>' +
+                    '<a href="' + (isEnglish ? 'blog-en.html' : 'blog.html') + '" class="sp-back">← Blog</a>' +
                     '<span class="badge">' + post.categoria + '</span>' +
                     '<h1>' + post.titulo + '</h1>' +
                     '<p class="ev-hero-desc">' + post.extracto + '</p>' +
                 '</div>' +
             '</section>' +
 
-            '<!-- INFO BAR -->' +
-            '<section class="ev-info-bar">' +
-                '<div class="ev-info-card">' +
-                    '<span class="ev-info-icon"><i data-lucide="pen-tool"></i></span>' +
-                    '<div><span class="ev-info-label">Autor</span><span class="ev-info-value">' + post.autor + '</span></div>' +
-                '</div>' +
-                '<div class="ev-info-card">' +
-                    '<span class="ev-info-icon"><i data-lucide="calendar"></i></span>' +
-                    '<div><span class="ev-info-label">Fecha</span><span class="ev-info-value">' + fechaStr + '</span></div>' +
-                '</div>' +
-                '<div class="ev-info-card">' +
-                    '<span class="ev-info-icon"><i data-lucide="folder"></i></span>' +
-                    '<div><span class="ev-info-label">Categoría</span><span class="ev-info-value">' + post.categoria + '</span></div>' +
+            '<!-- META -->' +
+            '<section class="blog-meta-bar" aria-label="Metadatos del artículo">' +
+                '<div class="blog-meta-bar__inner">' +
+                    '<div class="blog-meta-item">' +
+                        '<i data-lucide="pen-tool" class="blog-meta-icon"></i>' +
+                        '<div><span class="blog-meta-label">' + (isEnglish ? 'Author' : 'Autor') + '</span><span class="blog-meta-value">' + post.autor + '</span></div>' +
+                    '</div>' +
+                    '<span class="blog-meta-sep" aria-hidden="true"></span>' +
+                    '<div class="blog-meta-item">' +
+                        '<i data-lucide="calendar" class="blog-meta-icon"></i>' +
+                        '<div><span class="blog-meta-label">' + (isEnglish ? 'Date' : 'Fecha') + '</span><span class="blog-meta-value">' + fechaStr + '</span></div>' +
+                    '</div>' +
+                    '<span class="blog-meta-sep" aria-hidden="true"></span>' +
+                    '<div class="blog-meta-item">' +
+                        '<i data-lucide="folder" class="blog-meta-icon"></i>' +
+                        '<div><span class="blog-meta-label">' + (isEnglish ? 'Category' : 'Categoría') + '</span><span class="blog-meta-value">' + post.categoria + '</span></div>' +
+                    '</div>' +
                 '</div>' +
             '</section>' +
 
@@ -133,9 +148,9 @@
 
             '<!-- CTA -->' +
             '<section class="sp-cta-section">' +
-                '<a href="blog.html" class="btn btn--primary">← Ver todas las noticias</a>' +
+                '<a href="' + (isEnglish ? 'blog-en.html' : 'blog.html') + '" class="btn btn--primary">← ' + (isEnglish ? 'View all news' : 'Ver todas las noticias') + '</a>' +
             '</section>';
-        
+
         if (window.lucide) { lucide.createIcons(); }
     }
 
@@ -177,7 +192,7 @@
                     }
                     alt = alt.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
                     html += '<figure class="blog-inline-img">';
-                    html += '<img src="' + src + '" alt="' + alt + '" loading="lazy" />';
+                    html += '<img src="' + encodeURI(src) + '" alt="' + alt + '" loading="lazy" />';
                     if (alt) {
                         html += '<figcaption>' + alt + '</figcaption>';
                     }
@@ -193,14 +208,14 @@
                         inSection = true;
                     }
                     html += '<div class="pdf-viewer-block">';
-                    html += '<iframe src="' + pdfUrl + '" class="pdf-viewer-frame" title="Documento PDF embebido"></iframe>';
-                    html += '<div class="pdf-viewer-actions"><a href="' + pdfUrl + '" target="_blank" class="btn btn--primary pdf-viewer-open-tab">Abrir PDF en otra pestaña</a></div>';
+                    html += '<iframe src="' + encodeURI(pdfUrl) + '" class="pdf-viewer-frame" title="Documento PDF embebido"></iframe>';
+                    html += '<div class="pdf-viewer-actions"><a href="' + encodeURI(pdfUrl) + '" target="_blank" class="btn btn--primary pdf-viewer-open-tab">' + (isEnglish ? 'Open PDF in new tab' : 'Abrir PDF en otra pestaña') + '</a></div>';
                     html += '</div>';
                 }
             } else {
                 // Parse standard links inside text
                 var parsedLine = line.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer" class="blog-inline-a">$1</a>');
-                
+
                 // Párrafo normal
                 if (!inSection) {
                     html += '<section class="sp-text-block">';
@@ -221,9 +236,9 @@
         container.innerHTML =
             '<div class="sp-error">' +
                 '<span class="sp-error-icon"><i data-lucide="search-x"></i></span>' +
-                '<h2>Noticia no encontrada</h2>' +
-                '<p>El artículo que buscas no existe o ha sido eliminado.</p>' +
-                '<a href="blog.html" class="btn btn--primary">Ver blog</a>' +
+                '<h2>' + (isEnglish ? 'News not found' : 'Noticia no encontrada') + '</h2>' +
+                '<p>' + (isEnglish ? 'The article you are looking for does not exist or has been removed.' : 'El artículo que buscas no existe o ha sido eliminado.') + '</p>' +
+                '<a href="' + (isEnglish ? 'blog-en.html' : 'blog.html') + '" class="btn btn--primary">' + (isEnglish ? 'View blog' : 'Ver blog') + '</a>' +
             '</div>';
         if (window.lucide) { lucide.createIcons(); }
     }
@@ -235,6 +250,7 @@
             "@context": "https://schema.org",
             "@type": "Article",
             "headline": post.titulo,
+            "description": post.extracto || "",
             "image": post.imagen ? "https://motomaqlabuc3m.es/" + post.imagen : "https://motomaqlabuc3m.es/assets/img/hero/blog.webp",
             "datePublished": post.fecha,
             "author": {
