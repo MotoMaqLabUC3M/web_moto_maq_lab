@@ -4442,3 +4442,745 @@ section.section-container:nth-of-type(even) {
     }
 }
 
+.fs-hero {
+    position: relative;
+    height: 90vh;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--c-light);
+    background: url('../img/hero/patrocinadores.webp') center/cover no-repeat;
+    overflow: hidden;
+}
+
+.fs-hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(10, 10, 10, 0.4) 0%,
+        rgba(10, 10, 10, 0.85) 60%,
+        var(--c-carbon) 100%
+    );
+    z-index: 1;
+}
+
+.fs-hero__content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 0 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.fs-hero__content .badge {
+    margin-bottom: 1.5rem;
+    animation: fadeInDown 0.8s ease backwards;
+}
+
+.fs-hero__content h1 {
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    font-weight: 800;
+    animation: fadeInUp 0.8s ease 0.2s backwards;
+}
+
+.fs-hero__content h1 span {
+    color: var(--c-red);
+}
+
+.fs-hero__content p {
+    font-size: clamp(1.1rem, 2vw, 1.3rem);
+    opacity: 0.9;
+    max-width: 650px;
+    margin-bottom: 2.5rem;
+    animation: fadeInUp 0.8s ease 0.4s backwards;
+}
+
+.fs-hero__cta {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    animation: fadeInUp 0.8s ease 0.6s backwards;
+}
+
+.fs-hero__scroll-hint {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    animation: bounce 2s infinite;
+}
+
+.fs-hero__scroll-hint span {
+    display: block;
+    width: 2px;
+    height: 40px;
+    background: linear-gradient(to bottom, var(--c-red), transparent);
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
+    40% { transform: translateY(-15px) translateX(-50%); }
+    60% { transform: translateY(-7px) translateX(-50%); }
+}
+
+/* --- ESTAD+ÏSTICAS (STATS BAR) --- */
+.fs-stats-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin: 3rem 0;
+    padding: 2.5rem;
+    background: var(--bg-card);
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+}
+
+.fs-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-width: 160px;
+}
+
+.fs-stat__number {
+    font-family: var(--font-heading);
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--c-red);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.fs-stat__label {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--c-light);
+    opacity: 0.8;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* --- VALUE GRID (PROPUESTA DE VALOR) --- */
+.fs-value-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.fs-value-card {
+    background: var(--bg-card);
+    padding: 2.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.fs-value-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(242, 25, 43, 0.3);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.fs-value-card__icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(242, 25, 43, 0.1);
+    color: var(--c-red);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.fs-value-card:hover .fs-value-card__icon {
+    transform: scale(1.1);
+    background: var(--c-red);
+    color: #fff;
+}
+
+.fs-value-card__icon svg {
+    width: 28px;
+    height: 28px;
+}
+
+.fs-value-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.fs-value-card p {
+    font-size: 1rem;
+    opacity: 0.8;
+    line-height: 1.6;
+}
+
+/* --- TIER CARDS (RANGOS) --- */
+.fs-tiers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 4rem;
+}
+
+.fs-tier-card {
+    position: relative;
+    background: rgba(20, 20, 20, 0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 2.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1;
+}
+
+.fs-tier-card:hover {
+    transform: translateY(-8px);
+    z-index: 2;
+}
+
+.fs-tier-card__glow {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.fs-tier-card:hover .fs-tier-card__glow {
+    opacity: 0.15;
+}
+
+/* Bronce */
+.fs-tier-card--bronze { border-top: 4px solid #cd7f32; }
+.fs-tier-card--bronze .fs-tier-card__glow { background: radial-gradient(circle at 50% 0%, #cd7f32, transparent 70%); }
+.fs-tier-card--bronze .fs-tier-card__name { color: #cd7f32; }
+
+/* Plata */
+.fs-tier-card--silver { border-top: 4px solid #c0c0c0; }
+.fs-tier-card--silver .fs-tier-card__glow { background: radial-gradient(circle at 50% 0%, #c0c0c0, transparent 70%); }
+.fs-tier-card--silver .fs-tier-card__name { color: #c0c0c0; }
+
+/* Oro */
+.fs-tier-card--gold { border-top: 4px solid #ffd700; transform: scale(1.05); }
+.fs-tier-card--gold:hover { transform: scale(1.05) translateY(-8px); }
+.fs-tier-card--gold .fs-tier-card__glow { background: radial-gradient(circle at 50% 0%, #ffd700, transparent 70%); opacity: 0.1; }
+.fs-tier-card--gold:hover .fs-tier-card__glow { opacity: 0.25; }
+.fs-tier-card--gold .fs-tier-card__name { color: #ffd700; }
+
+/* Platino */
+.fs-tier-card--platinum { border-top: 4px solid #e5e4e2; }
+.fs-tier-card--platinum .fs-tier-card__glow { background: radial-gradient(circle at 50% 0%, #e5e4e2, transparent 70%); opacity: 0.15; }
+.fs-tier-card--platinum:hover .fs-tier-card__glow { opacity: 0.3; }
+.fs-tier-card--platinum .fs-tier-card__name { 
+    background: linear-gradient(135deg, #e5e4e2, #b0c4de);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.fs-tier-card__shimmer {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right, transparent, rgba(255,255,255,0.1), transparent);
+    transform: skewX(-20deg);
+    animation: shimmer 4s infinite;
+    z-index: -1;
+}
+
+@keyframes shimmer {
+    100% { left: 200%; }
+}
+
+.fs-tier-card__badge-popular {
+    position: absolute;
+    top: 1rem;
+    right: -2rem;
+    background: #ffd700;
+    color: #000;
+    font-size: 0.75rem;
+    font-weight: 800;
+    padding: 0.3rem 2.5rem;
+    transform: rotate(45deg);
+    letter-spacing: 1px;
+}
+
+.fs-tier-card__header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.fs-tier-card__medal {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.fs-tier-card__medal svg {
+    width: 48px;
+    height: 48px;
+    stroke-width: 1.5;
+}
+
+.fs-tier-card--bronze .fs-tier-card__medal { color: #cd7f32; }
+.fs-tier-card--silver .fs-tier-card__medal { color: #c0c0c0; }
+.fs-tier-card--gold .fs-tier-card__medal { color: #ffd700; }
+.fs-tier-card--platinum .fs-tier-card__medal { color: #e5e4e2; }
+
+.fs-tier-card__name {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+}
+
+.fs-tier-card__price {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.fs-tier-card__from {
+    font-size: 0.85rem;
+    opacity: 0.6;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.fs-tier-card__amount {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.fs-tier-card__currency {
+    font-size: 1.5rem;
+    vertical-align: super;
+}
+
+.fs-tier-card__benefits {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem 0;
+    flex-grow: 1;
+}
+
+.fs-tier-card__benefits li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    opacity: 0.9;
+}
+
+.fs-tier-card__inherited {
+    opacity: 0.6 !important;
+}
+
+.fs-tier-card__benefits svg {
+    width: 20px;
+    height: 20px;
+    color: var(--c-red);
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.fs-tier-card--platinum .fs-tier-card__benefits svg { color: #b0c4de; }
+.fs-tier-card--gold .fs-tier-card__benefits svg { color: #ffd700; }
+
+.fs-tier-card__cta {
+    display: block;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--c-light);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.fs-tier-card__cta:hover {
+    background: var(--c-red);
+    border-color: var(--c-red);
+}
+
+.fs-tier-card__cta--gold:hover {
+    background: #ffd700;
+    border-color: #ffd700;
+    color: #000;
+}
+
+.fs-tier-card__cta--platinum:hover {
+    background: #e5e4e2;
+    border-color: #e5e4e2;
+    color: #000;
+}
+
+.fs-tiers-note {
+    text-align: center;
+    margin-top: 3rem;
+    opacity: 0.7;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.fs-tiers-note svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* --- CONTACT GRID (EQUIPO) --- */
+.fs-contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.fs-contact-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.fs-contact-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(242, 25, 43, 0.3);
+}
+
+.fs-contact-card__avatar {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    background: #ffffff;
+    border: 2px solid var(--c-red);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--c-red);
+}
+
+.fs-contact-card__info h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.25rem;
+}
+
+.fs-contact-card__role {
+    display: block;
+    font-size: 0.9rem;
+    opacity: 0.7;
+    margin-bottom: 1.25rem;
+}
+
+.fs-contact-card__email {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--c-light);
+    text-decoration: none;
+    font-size: 0.9rem;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.5rem 1rem;
+    border-radius: 999px;
+    transition: background 0.2s ease;
+}
+
+.fs-contact-card__email:hover {
+    background: rgba(242, 25, 43, 0.15);
+    color: var(--c-red);
+}
+
+.fs-contact-card__email svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* --- FORMULARIO DE CONTACTO --- */
+.fs-form-section {
+    background: url('../img/hero/patrocinadores.webp') center/cover no-repeat;
+    position: relative;
+    padding: 6rem 0;
+}
+
+.fs-form-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--c-carbon);
+    opacity: 0.95;
+}
+
+.fs-form-wrapper {
+    position: relative;
+    z-index: 2;
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.fs-form-intro h2 {
+    font-size: 3rem;
+    line-height: 1.1;
+    margin: 1rem 0 1.5rem;
+    font-weight: 800;
+}
+
+.fs-form-intro h2 span {
+    color: var(--c-red);
+}
+
+.fs-form-intro p {
+    font-size: 1.1rem;
+    opacity: 0.8;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.fs-form-perks {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.fs-form-perks li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    font-size: 1.05rem;
+}
+
+.fs-form-perks svg {
+    width: 24px;
+    height: 24px;
+    color: var(--c-red);
+}
+
+.fs-form {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    padding: 3rem;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.fs-form__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.fs-form__group {
+    margin-bottom: 1.5rem;
+}
+
+.fs-form__group label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    opacity: 0.9;
+}
+
+.fs-form__group input,
+.fs-form__group select,
+.fs-form__group textarea {
+    width: 100%;
+    background: rgba(0,0,0,0.2);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: var(--c-light);
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.fs-form__group input:focus,
+.fs-form__group select:focus,
+.fs-form__group textarea:focus {
+    outline: none;
+    border-color: var(--c-red);
+    background: rgba(0,0,0,0.4);
+    box-shadow: 0 0 0 3px rgba(242, 25, 43, 0.1);
+}
+
+.fs-form__group select option {
+    background: var(--c-carbon);
+    color: var(--c-light);
+}
+
+.fs-form__submit {
+    width: 100%;
+    padding: 1rem;
+    background: var(--c-red);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: background 0.3s ease, transform 0.1s ease;
+}
+
+.fs-form__submit:hover {
+    background: #d41423;
+}
+
+.fs-form__submit:active {
+    transform: scale(0.98);
+}
+
+.fs-form__submit svg {
+    width: 20px;
+    height: 20px;
+}
+
+.fs-form__submit svg.spin {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    100% { transform: rotate(360deg); }
+}
+
+.fs-form__privacy {
+    margin-top: 1.5rem;
+    font-size: 0.8rem;
+    opacity: 0.6;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.fs-form-success {
+    background: rgba(34, 197, 94, 0.1);
+    border: 1px solid rgba(34, 197, 94, 0.3);
+    padding: 3rem;
+    border-radius: 16px;
+    text-align: center;
+}
+
+.fs-form-success__icon {
+    width: 64px;
+    height: 64px;
+    background: rgba(34, 197, 94, 0.2);
+    color: #22c55e;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+}
+
+.fs-form-success__icon svg {
+    width: 32px;
+    height: 32px;
+}
+
+.fs-form-success h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #22c55e;
+}
+
+/* --- RESPONSIVE FOR SPONSORS --- */
+@media (max-width: 900px) {
+    .fs-form-wrapper {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .fs-form-intro {
+        text-align: center;
+    }
+    
+    .fs-form-perks {
+        display: inline-block;
+        text-align: left;
+    }
+}
+
+@media (max-width: 768px) {
+    .fs-hero__cta {
+        flex-direction: column;
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .fs-stats-row {
+        gap: 1.5rem;
+        padding: 1.5rem;
+    }
+    
+    .fs-stat {
+        min-width: 120px;
+    }
+    
+    .fs-stat__number {
+        font-size: 2.5rem;
+    }
+    
+    .fs-tier-card--gold {
+        transform: none;
+    }
+    
+    .fs-tier-card--gold:hover {
+        transform: translateY(-8px);
+    }
+    
+    .fs-form {
+        padding: 2rem 1.5rem;
+    }
+    
+    .fs-form__row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+}

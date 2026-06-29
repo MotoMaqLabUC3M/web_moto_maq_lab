@@ -140,4 +140,48 @@
     }
 
     document.addEventListener('DOMContentLoaded', init);
+
+
+
+    // --------------------------------------------------
+    // INSTAGRAM FEED
+    // --------------------------------------------------
+    async function loadIgFeed() {
+        const igGrid = document.getElementById('ig-grid');
+        if (!igGrid) return;
+        try {
+            const res = await fetch('assets/data/ig_feed.json');
+            if (!res.ok) throw new Error('No IG data');
+            const data = await res.json();
+            
+            if (!data.posts || data.posts.length === 0) {
+                igGrid.innerHTML = '<p style="text-align:center;width:100%;grid-column:1/-1;">No hay posts de Instagram disponibles en este momento.</p>';
+                return;
+            }
+            
+            igGrid.innerHTML = '';
+            data.posts.forEach(post => {
+                const isVideo = post.type === 'GraphVideo';
+                const icon = isVideo ? '<div class="media-icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg></div>' : '<div class="media-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></div>';
+                
+                const captionText = post.caption ? post.caption.substring(0, 80) + '...' : 'Instagram Post';
+                
+                igGrid.innerHTML += ` 
+                    <a href="${post.url}" target="_blank" rel="noopener noreferrer" class="ig-card stagger-reveal">
+                        <img src="${post.image}" alt="Post de Instagram de MotoMaqLab" loading="lazy">
+                        ${icon}
+                        <div class="ig-overlay">
+                            <p>${captionText}</p>
+                        </div>
+                    </a>
+                `;
+            });
+        } catch (error) {
+            console.error('Error loading IG feed:', error);
+            igGrid.innerHTML = '<p style="text-align:center;width:100%;grid-column:1/-1;">No se pudo cargar el feed de Instagram.</p>';
+        }
+    }
+    
+    loadIgFeed();
+
 })();
