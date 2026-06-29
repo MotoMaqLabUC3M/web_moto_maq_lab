@@ -28,9 +28,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         const JSON_PATH = isEnglish ? 'assets/data/patrocinadores-en.json' : 'assets/data/patrocinadores.json';
         const response = await fetch(JSON_PATH);
         const data = await response.json();
-        renderSponsorTiers(container, data.tiers);
-
-        
+        renderSponsorTiers(container, data.tiers, isEnglish);
     } catch (error) {
         console.error('Error loading sponsors data:', error);
         container.innerHTML = '<p>Error al cargar los datos de patrocinadores.</p>';
@@ -40,9 +38,12 @@ document.addEventListener('DOMContentLoaded', async () => {
 /**
  * Renders all sponsor tiers into the container
  */
-function renderSponsorTiers(container, tiers) {
-    const html = tiers.map(tier => createTierHTML(tier)).join('');
+function renderSponsorTiers(container, tiers, isEnglish) {
+    const html = tiers.map(tier => createTierHTML(tier, isEnglish)).join('');
     container.innerHTML = `<div class="sponsors-stack">${html}</div>`;
+    if (window.lucide) {
+        window.lucide.createIcons();
+    }
     // Init swipe carousels on mobile after DOM is ready
     requestAnimationFrame(initTierCarousels);
 }
@@ -60,8 +61,8 @@ function initTierCarousels() {
 /**
  * Creates HTML for a single tier section
  */
-function createTierHTML(tier) {
-    const sponsorsHTML = tier.sponsors.map(sponsor => createSponsorCardHTML(sponsor, tier)).join('');
+function createTierHTML(tier, isEnglish) {
+    const sponsorsHTML = tier.sponsors.map(sponsor => createSponsorCardHTML(sponsor, tier, isEnglish)).join('');
 
     return `
         <div class="sponsor-tier ${tier.cssClass}">
@@ -77,7 +78,7 @@ function createTierHTML(tier) {
  * Creates HTML for a single sponsor card.
  * If the sponsor has a dedicatedPage, the card is wrapped in a link.
  */
-function createSponsorCardHTML(sponsor, tier) {
+function createSponsorCardHTML(sponsor, tier, isEnglish) {
     const isPlatinum = tier.id === 'platinum';
     const isGold = tier.id === 'gold';
     const isSilverOrBronze = tier.id === 'silver' || tier.id === 'bronze';
@@ -94,6 +95,12 @@ function createSponsorCardHTML(sponsor, tier) {
     const clickableClass = hasLink ? ' card--clickable' : '';
 
     let cardContent = '';
+    let hintHtml = '';
+
+    if (sponsor.dedicatedPage) {
+        const hintText = isEnglish ? 'Learn more' : 'Saber más';
+        hintHtml = `<span class="card-link-hint">${hintText} <i data-lucide="arrow-right" style="width: 16px; height: 16px;"></i></span>`;
+    }
 
     if (isPlatinum) {
         cardContent = `
@@ -104,6 +111,7 @@ function createSponsorCardHTML(sponsor, tier) {
                 <div class="card-content">
                     <${headingTag}>${sanitize(sponsor.name)}</${headingTag}>
                     <p>${sanitize(sponsor.description)}</p>
+                    ${hintHtml}
                 </div>
             </div>
         `;
@@ -115,6 +123,7 @@ function createSponsorCardHTML(sponsor, tier) {
                 </div>
                 <${headingTag}>${sanitize(sponsor.name)}</${headingTag}>
                 <p>${sanitize(sponsor.description)}</p>
+                ${hintHtml}
             </div>
         `;
     } else {
@@ -125,6 +134,7 @@ function createSponsorCardHTML(sponsor, tier) {
                 </div>
                 <${headingTag}>${sanitize(sponsor.name)}</${headingTag}>
                 <p>${sanitize(sponsor.description)}</p>
+                ${hintHtml}
             </div>
         `;
     }

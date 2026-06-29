@@ -25,6 +25,15 @@
 
             if (!post) { renderError(container); return; }
 
+            // Newsletters with embedded PDFs don't have a dedicated detail page;
+            // the blog listing opens the PDF directly in a new tab.
+            // If someone lands here (e.g. via search engine), redirect to the PDF.
+            var pdfMatch = post.contenido ? post.contenido.match(/\[pdf:([^\]]+)\]/) : null;
+            if (post.categoria && post.categoria.toLowerCase() === 'newsletter' && pdfMatch) {
+                window.location.replace(pdfMatch[1]);
+                return;
+            }
+
             // Cargar datos del equipo
             let equipoData = [];
             try {

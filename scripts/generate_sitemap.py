@@ -131,12 +131,16 @@ def main():
             lastmod_for_item(evento, evt_lastmod), "monthly", "0.6"
         ))
 
-    # 4) Blog posts
+    # 4) Blog posts (skip newsletters — they redirect to PDF, not a real page)
     blog_data = read_json("assets/data/blog.json")
     blog_lastmod = get_last_modified(ROOT / "assets/data/blog.json")
     for post in blog_data["posts"]:
         pid = str(post.get("id", "")).strip()
         if not pid:
+            continue
+        # Newsletters open the PDF directly; they have no detail page to index
+        cat = str(post.get("categoria", "")).strip().lower()
+        if cat == "newsletter":
             continue
         blog_entries.append(url_entry(
             f"{DOMAIN}/noticia-{quote(pid)}.html",

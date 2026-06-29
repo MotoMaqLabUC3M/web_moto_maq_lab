@@ -36,6 +36,7 @@ jobs:
 
       - name: Generate sitemap and detail pages
         run: |
+          python3 scripts/generate_team_html.py
           python3 scripts/generate_sitemap.py
           python3 scripts/generate_detail_pages.py
 

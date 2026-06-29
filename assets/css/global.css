@@ -2391,6 +2391,23 @@ section.section-container:nth-of-type(even) {
     cursor: pointer;
 }
 
+.card-link-hint {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--c-red);
+    font-weight: 600;
+    margin-top: 1rem;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+}
+
+.sponsor-card-link:hover .card-link-hint {
+    opacity: 1;
+    transform: translateX(5px);
+}
+
 /* === RESPONSIVE === */
 @media (max-width: 900px) {
     .sp-hero-inner {
