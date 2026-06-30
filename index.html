@@ -202,56 +202,19 @@
         </div>
 
         <!-- ══════════════════════════════════════════════════
-             5. MEDIA — Layout asimétrico premium
+             5. MEDIA — Prensa y TV (Dinámico desde media.js)
              ══════════════════════════════════════════════════ -->
-        <section class="media-bento section-container" id="media-preview">
+        <section class="press-section section-container" id="media-preview">
             <div class="section-title section-title--center">
                 <h2>EN LOS <span>MEDIOS</span></h2>
+                <p>Nuestras apariciones recientes en prensa y televisión</p>
             </div>
-
-            <div class="media-bento__grid">
-                <!-- Grande: vídeo 24h -->
-                <a class="media-bento__item media-bento__item--featured stagger-reveal" href="media.html">
-                    <video src="assets/img/prensa/tv_24h.mp4" autoplay loop muted playsinline></video>
-                    <div class="media-bento__overlay">
-                        <span class="media-bento__badge">TV</span>
-                        <span class="media-bento__label">Aparición en Canal 24 Horas — RTVE</span>
-                    </div>
-                </a>
-
-                <!-- Pequeños: portadas de prensa -->
-                <a class="media-bento__item stagger-reveal"
-                    href="https://leganesactivo.com/2026/02/24/presentan-moto-de-competicion-ms8-de-la-uc3m-leganes/"
-                    target="_blank" rel="noopener">
-                    <img src="assets/img/prensa/leganes_cover_new.jpg" alt="Noticia Leganés Activo" loading="lazy">
-                    <div class="media-bento__overlay">
-                        <span class="media-bento__badge">Prensa</span>
-                        <span class="media-bento__label">Leganés Activo</span>
-                    </div>
-                </a>
-
-                <a class="media-bento__item stagger-reveal"
-                    href="https://cadenaser.com/cmadrid/2026/02/27/asi-es-la-nueva-moto-de-competicion-creada-por-estudiantes-de-la-uc3m-ser-madrid-sur/"
-                    target="_blank" rel="noopener">
-                    <img src="assets/img/prensa/ser_cover_new.jpg" alt="Noticia Cadena SER" loading="lazy">
-                    <div class="media-bento__overlay">
-                        <span class="media-bento__badge">Prensa</span>
-                        <span class="media-bento__label">Cadena SER</span>
-                    </div>
-                </a>
-
-                <a class="media-bento__item stagger-reveal"
-                    href="https://alcabodelacalle.es/municipios/estudiantes-de-la-uc3m-presentan-su-nueva-moto-de-competicion-la-ms8/"
-                    target="_blank" rel="noopener">
-                    <img src="assets/img/prensa/alcabo_cover_new.jpg" alt="Noticia Al Cabo de la Calle" loading="lazy">
-                    <div class="media-bento__overlay">
-                        <span class="media-bento__badge">Prensa</span>
-                        <span class="media-bento__label">Al Cabo de la Calle</span>
-                    </div>
-                </a>
+            
+            <div class="press-grid" id="press-grid">
+                <!-- Se inyecta por JS (media.js) -->
             </div>
-
-            <div class="center-btn">
+            
+            <div class="center-btn" style="margin-top: 2rem;">
                 <a href="media.html" class="btn btn--outline">Ver toda la cobertura →</a>
             </div>
         </section>
@@ -290,7 +253,7 @@
     <script src="assets/js/heroAnimations.js"></script>
     <script src="assets/js/eventos.js"></script>
     <script src="assets/js/blog.js"></script>
-
+    <script src="assets/js/media.js"></script>
     <!-- Próximo evento banner -->
     <script>
         (function () {
