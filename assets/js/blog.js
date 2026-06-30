@@ -21,9 +21,10 @@
 
     async function init() {
         const blogContainer = document.getElementById('blog-container');
+        const newsletterContainer = document.getElementById('newsletter-container');
         const indexContainer = document.getElementById('blog-index-container');
 
-        if (!blogContainer && !indexContainer) return;
+        if (!blogContainer && !indexContainer && !newsletterContainer) return;
 
         try {
             const res = await fetch(JSON_PATH);
@@ -34,6 +35,10 @@
                     const empty = document.getElementById('blog-empty');
                     if (empty) empty.style.display = 'block';
                 }
+                if (newsletterContainer) {
+                    const nEmpty = document.getElementById('newsletter-empty');
+                    if (nEmpty) nEmpty.style.display = 'block';
+                }
                 return;
             }
 
@@ -41,13 +46,41 @@
             const posts = data.posts.sort((a, b) => new Date(b.fecha) - new Date(a.fecha));
 
             // Página de blog: todos los posts
-            if (blogContainer) {
-                renderPosts(blogContainer, posts);
+            if (blogContainer || newsletterContainer) {
+                const normalPosts = [];
+                const newsletterPosts = [];
+
+                posts.forEach(post => {
+                    var matchPdf = post.contenido ? post.contenido.match(/\[pdf:([^\]]+)\]/) : null;
+                    if (post.categoria && post.categoria.toLowerCase() === 'newsletter' && matchPdf) {
+                        newsletterPosts.push(post);
+                    } else {
+                        normalPosts.push(post);
+                    }
+                });
+
+                if (blogContainer) {
+                    if (normalPosts.length > 0) {
+                        renderPosts(blogContainer, normalPosts);
+                    } else {
+                        const empty = document.getElementById('blog-empty');
+                        if (empty) empty.style.display = 'block';
+                    }
+                }
+
+                if (newsletterContainer) {
+                    if (newsletterPosts.length > 0) {
+                        renderPosts(newsletterContainer, newsletterPosts);
+                    } else {
+                        const nEmpty = document.getElementById('newsletter-empty');
+                        if (nEmpty) nEmpty.style.display = 'block';
+                    }
+                }
             }
 
-            // Index: solo los 2 más recientes
+            // Index: solo los 3 más recientes
             if (indexContainer) {
-                renderPosts(indexContainer, posts.slice(0, 2));
+                renderPosts(indexContainer, posts.slice(0, 3));
             }
 
         } catch (err) {
