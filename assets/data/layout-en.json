@@ -1,4 +1,4 @@
-{
+﻿{
     "header": {
         "logo": {
             "href": "index-en.html",
@@ -9,8 +9,8 @@
         },
         "nav": [
             {
-                "label": "ABOUT US",
-                "href": "#",
+                "label": "ABOUT",
+                "href": "about-us.html",
                 "submenu": [
                     {
                         "label": "History & Philosophy",
@@ -23,20 +23,44 @@
                 ]
             },
             {
-                "label": "THE TEAM",
-                "href": "team.html"
+                "label": "PROTOTYPES",
+                "href": "ms8.html",
+                "submenu": [
+                    {
+                        "label": "MS8 — Season 2025",
+                        "href": "ms8.html"
+                    }
+                ]
             },
             {
-                "label": "EVENTS",
-                "href": "events.html"
-            },
-            {
-                "label": "BLOG",
-                "href": "blog-en.html"
+                "label": "COMMUNITY",
+                "href": "team.html",
+                "submenu": [
+                    {
+                        "label": "The Team",
+                        "href": "team.html"
+                    },
+                    {
+                        "label": "Events",
+                        "href": "events.html"
+                    },
+                    {
+                        "label": "Join the team",
+                        "href": "unete.html"
+                    }
+                ]
             },
             {
                 "label": "SPONSORS",
                 "href": "sponsors.html"
+            },
+            {
+                "label": "MEDIA",
+                "href": "media.html"
+            },
+            {
+                "label": "BLOG",
+                "href": "blog-en.html"
             }
         ],
         "cta": {

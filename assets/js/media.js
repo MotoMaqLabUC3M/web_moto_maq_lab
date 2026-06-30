@@ -202,7 +202,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const igGrid = document.getElementById('ig-grid');
     if (igGrid) {
         const mockData = [
-            { "id": "ig1", "type": "video", "likes": 1250, "comments": 84, "src": "assets/img/ig_cache/post_1.mp4", "url": "https://www.instagram.com/p/DYmN6WBNN8J/" },
+            { "id": "ig1", "type": "photo", "likes": 1250, "comments": 84, "src": "assets/img/ig_cache/post_1.jpg", "url": "https://www.instagram.com/p/DYmN6WBNN8J/" },
             { "id": "ig2", "type": "photo", "likes": 562, "comments": 12, "src": "assets/img/ig_cache/post_2.jpg", "url": "https://www.instagram.com/p/DYZXW9kDfTj/" },
             { "id": "ig3", "type": "photo", "likes": 405, "comments": 19, "src": "assets/img/ig_cache/post_3.jpg", "url": "https://www.instagram.com/p/DXcR0zpDFQa/" },
             { "id": "ig4", "type": "photo", "likes": 894, "comments": 45, "src": "assets/img/ig_cache/post_4.jpg", "url": "https://www.instagram.com/p/DXM2G51jHBu/" }

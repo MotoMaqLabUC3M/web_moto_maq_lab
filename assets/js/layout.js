@@ -129,7 +129,7 @@ window.sanitize = function(str) {
                     submenuLinks += '<a href="' + sub.href + '">' + sub.label + '</a>';
                 });
                 navLinks += '<div class="nav-dropdown">' +
-                                '<a href="' + item.href + '" class="nav-dropdown-toggle">' + item.label + ' <i data-lucide="chevron-down" class="dropdown-icon"></i></a>' +
+                                '<a href="javascript:void(0);" class="nav-dropdown-toggle">' + item.label + ' <i data-lucide="chevron-down" class="dropdown-icon"></i></a>' +
                                 '<div class="nav-dropdown-content">' + submenuLinks + '</div>' +
                             '</div>';
             } else {

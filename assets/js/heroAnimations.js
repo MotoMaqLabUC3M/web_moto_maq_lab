@@ -42,7 +42,7 @@
         if (counterElements.length === 0) return;
 
         const observerOptions = {
-            threshold: 0.5,
+            threshold: 0.1,
             rootMargin: '0px'
         };
 
@@ -57,7 +57,18 @@
             });
         }, observerOptions);
 
-        counterElements.forEach(el => counterObserver.observe(el));
+        counterElements.forEach(el => {
+            // If already visible in viewport on load, animate immediately
+            const rect = el.getBoundingClientRect();
+            const inView = rect.top < window.innerHeight && rect.bottom > 0;
+            if (inView) {
+                const target = parseInt(el.getAttribute('data-target') || 0, 10);
+                // Small delay so page rendering is complete
+                setTimeout(() => animateValue(el, 0, target, 2000), 300);
+            } else {
+                counterObserver.observe(el);
+            }
+        });
     }
 
     function animateValue(obj, start, end, duration) {
