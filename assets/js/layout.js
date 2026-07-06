@@ -50,27 +50,11 @@ window.sanitize = function(str) {
     const isEnglish = reverseRouteMap.hasOwnProperty(currentFile);
     const JSON_PATH = isEnglish ? 'assets/data/layout-en.json' : 'assets/data/layout.json';
 
-    // Guardamos la preferencia actual
+    // Guardamos la preferencia actual para el selector de idioma,
+    // pero evitamos redirecciones automáticas por idioma del navegador.
+    // Motivo: las redirecciones basadas en cliente pueden generar señales
+    // SEO ambiguas (canonical/hreflang) en Google Search Console.
     localStorage.setItem('motomaqlab_lang', isEnglish ? 'en' : 'es');
-
-    // Auto-redirección a la versión en inglés si el navegador no está en español
-    if (!localStorage.getItem('motomaqlab_redirected')) {
-        localStorage.setItem('motomaqlab_redirected', 'true');
-        
-        // Prevent redirecting bots (Googlebot, Bingbot, etc.) to fix SEO indexing issues
-        const isBot = /bot|googlebot|crawler|spider|robot|crawling/i.test(navigator.userAgent);
-        
-        if (!isBot) {
-            const browserLang = navigator.language || navigator.userLanguage;
-            // Si el idioma no es español y estamos en una página en español, redirigir a la versión en inglés
-            if (!browserLang.toLowerCase().startsWith('es')) {
-                if (!isEnglish) {
-                    const targetPage = routeMap[currentFile] || 'index-en.html';
-                    window.location.replace(targetPage);
-                }
-            }
-        }
-    }
 
     async function init() {
         try {
@@ -141,7 +125,7 @@ window.sanitize = function(str) {
         var linkEN = '#';
 
         if (isEnglish) {
-            linkES = reverseRouteMap[currentFile] || 'index.html';
+            linkES = reverseRouteMap[currentFile] || '/';
             linkEN = currentFile;
         } else {
             linkES = currentFile;

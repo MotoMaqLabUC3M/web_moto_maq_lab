@@ -1,7 +1,7 @@
 {
     "header": {
         "logo": {
-            "href": "index.html",
+            "href": "/",
             "img": "assets/img/logos_uc3m/MMU_logo.png",
             "alt": "MotoMaqLab UC3M Logo",
             "text": "MOTOMAQLAB",
@@ -53,7 +53,7 @@
             "links": [
                 {
                     "label": "Inicio",
-                    "href": "index.html"
+                    "href": "/"
                 },
                 {
                     "label": "Sobre Nosotros",
