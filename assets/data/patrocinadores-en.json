@@ -189,6 +189,13 @@
                     "logo": "assets/img/patrocinios/Bossard.webp",
                     "description": "Bossard supports with components and assembly systems.",
                     "website": "https://www.bossard.com/es-es/"
+                },
+                {
+                    "id": "altium",
+                    "name": "ALTIUM",
+                    "logo": "assets/img/patrocinios/Altium.webp",
+                    "description": "Altium provides us with professional software licenses for electronic design, schematics, and PCB layout.",
+                    "website": "https://www.altium.com/"
                 }
             ]
         },
