@@ -23,8 +23,18 @@
                 ]
             },
             {
-                "label": "EL EQUIPO",
-                "href": "equipo.html"
+                "label": "COMUNIDAD",
+                "href": "#",
+                "submenu": [
+                    {
+                        "label": "El Equipo",
+                        "href": "equipo.html"
+                    },
+                    {
+                        "label": "Únete al Equipo",
+                        "href": "unete.html"
+                    }
+                ]
             },
             {
                 "label": "EVENTOS",
@@ -40,8 +50,8 @@
             }
         ],
         "cta": {
-            "label": "ÚNETE AL EQUIPO",
-            "href": "unete.html"
+            "label": "CONTACTO",
+            "href": "#main-footer"
         }
     },
     "footer": {

@@ -34,18 +34,14 @@
             },
             {
                 "label": "COMMUNITY",
-                "href": "team.html",
+                "href": "#",
                 "submenu": [
                     {
                         "label": "The Team",
                         "href": "team.html"
                     },
                     {
-                        "label": "Events",
-                        "href": "events.html"
-                    },
-                    {
-                        "label": "Join the team",
+                        "label": "Join the Team",
                         "href": "unete.html"
                     }
                 ]
@@ -64,8 +60,8 @@
             }
         ],
         "cta": {
-            "label": "JOIN THE TEAM",
-            "href": "unete.html"
+            "label": "CONTACT",
+            "href": "#main-footer"
         }
     },
     "footer": {
