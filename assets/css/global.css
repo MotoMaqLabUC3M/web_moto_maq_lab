@@ -204,10 +204,17 @@ section.section-container:nth-of-type(even) {
     width: 36px;
 }
 
-.logo span {
+.logo-text {
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.logo span,
+.logo-text span {
     color: var(--c-red);
-    margin-left: 0;
-    padding-left: 0;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
 }
 
 /* --- Navegaci?n Escritorio --- */
