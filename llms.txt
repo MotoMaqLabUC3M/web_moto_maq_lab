@@ -13,6 +13,7 @@ MotoMaqLab es el equipo de moto de la UC3M en Leganés (Madrid). Participa en Mo
 - [Inicio](https://motomaqlabuc3m.es/): Hero del equipo, cinta de patrocinadores platino, sección «Quiénes somos», avance de próximos eventos.
 - [Sobre nosotros](https://motomaqlabuc3m.es/sobre-nosotros.html): Filosofía, historia (timeline MS1–MS8), palmarés y valores del equipo.
 - [MotoStudent](https://motomaqlabuc3m.es/motostudent.html): Qué es MotoStudent, orígenes (MEF), categorías EFuel y Electric, fases MS1 (Proyecto Industrial) y MS2 (Pruebas Dinámicas y Carrera). Incluye FAQ estructurada.
+- [Únete al equipo](https://motomaqlabuc3m.es/unete.html): Proceso de captación de nuevos miembros para estudiantes de la UC3M. Incluye las razones para unirte (Competición Real, Ingeniería Aplicada, Red Profesional, Desarrollo Personal), áreas de trabajo (Ingeniería, Electrónica, Aerodinámica, Patrocinio, Marketing, Comunicación) y formulario oficial de inscripción / QR.
 - [Equipo](https://motomaqlabuc3m.es/equipo.html): Miembros por departamentos (datos en JSON).
 - [Patrocinadores](https://motomaqlabuc3m.es/patrocinadores.html): Niveles Platino, Oro, Plata y Bronce.
 - [Eventos](https://motomaqlabuc3m.es/eventos.html): Calendario y hitos de temporada.
