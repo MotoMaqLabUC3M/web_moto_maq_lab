@@ -171,7 +171,7 @@ window.sanitize = function(str) {
             '<div class="logo-wrapper">' +
             '<img src="' + h.logo.img + '" alt="' + h.logo.alt + '" />' +
             '</div>' +
-            (h.logo.text + '<span>' + h.logo.highlight + '</span>').replace(/-\s+<span>/, '-<span>') +
+            '<div class="logo-text">' + h.logo.text.trim() + '<span>' + h.logo.highlight.trim() + '</span></div>' +
             '</a>' +
             '<button class="hamburger" aria-label="MenÃº">' +
             '<span></span><span></span><span></span>' +
