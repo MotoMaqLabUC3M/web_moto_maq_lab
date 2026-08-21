@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 "title": "Los estudiantes de la Carlos III presentan su nueva moto de competición MS8",
                 "outlet": "Cadena SER",
                 "date": "27 Feb 2026",
-                "excerpt": "La asociación MotoMaqLab UC3M presenta su prototipo más reciente, desarrollado íntegramente por los estudiantes durante dos años.",
+                "excerpt": "La asociación MOTO-MAQLAB-UC3M presenta su prototipo más reciente, desarrollado íntegramente por los estudiantes durante dos años.",
                 "img": "assets/img/prensa/ser_cover_new.jpg",
                 "url": "https://cadenaser.com/cmadrid/2026/02/27/asi-es-la-nueva-moto-de-competicion-creada-por-estudiantes-de-la-uc3m-ser-madrid-sur/"
             },
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 "title": "Estudiantes de la UC3M presentan su nueva moto de competición, la MS8",
                 "outlet": "Al Cabo de la Calle",
                 "date": "27 Feb 2026",
-                "excerpt": "El equipo universitario MotoMaqLab de la Universidad Carlos III desvela su nueva motocicleta para la competición MotoStudent.",
+                "excerpt": "El equipo universitario MOTO-MAQLAB-UC3M de la Universidad Carlos III desvela su nueva motocicleta para la competición MotoStudent.",
                 "img": "assets/img/prensa/alcabo_cover_new.jpg",
                 "url": "https://alcabodelacalle.es/municipios/estudiantes-de-la-uc3m-presentan-su-nueva-moto-de-competicion-la-ms8/"
             },
@@ -62,10 +62,10 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             {
                 "id": "p4",
-                "title": "MotoMaqLab en el Canal 24 Horas",
+                "title": "MOTO-MAQLAB-UC3M en el Canal 24 Horas",
                 "outlet": "RTVE 24h",
                 "date": "14 Mar 2024",
-                "excerpt": "Aparición del equipo MotoMaqLab en las noticias del Canal 24 Horas de RTVE explicando el proyecto y la fabricación de la MS8.",
+                "excerpt": "Aparición del equipo MOTO-MAQLAB-UC3M en las noticias del Canal 24 Horas de RTVE explicando el proyecto y la fabricación de la MS8.",
                 "img": "assets/img/hero/patrocinadores.webp",
                 "url": "assets/img/prensa/tv_24h.mp4"
             }
@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
             { "id": "g1", "type": "photo", "title": "Test en Circuito del Jarama", "src": "assets/img/timeline/2025.webp" },
             { "id": "g2", "type": "3d", "title": "Render Chasis MS8", "src": "assets/img/timeline/2018.webp" },
             { "id": "g3", "type": "photo", "title": "Ajustes de telemetría", "src": "assets/img/timeline/2021.webp" },
-            { "id": "g4", "type": "video", "title": "Equipo MotoMaqLab en Excent Showcase", "src": "assets/img/motostudent/ms1_showcase.mp4" },
+            { "id": "g4", "type": "video", "title": "Equipo MOTO-MAQLAB-UC3M en Excent Showcase", "src": "assets/img/motostudent/ms1_showcase.mp4" },
             { "id": "g5", "type": "photo", "title": "Aerodinámica frontal", "src": "assets/img/timeline/2025.webp" },
             { "id": "g6", "type": "photo", "title": "Equipo completo MotorLand", "src": "assets/img/timeline/2021.webp" },
             { "id": "g7", "type": "video", "title": "Team Edit Vertical", "src": "assets/img/equipo/team_edit.mp4" },

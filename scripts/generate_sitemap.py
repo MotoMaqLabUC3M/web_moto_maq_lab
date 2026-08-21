@@ -100,56 +100,56 @@ def url_entry(loc: str, lastmod: str, changefreq: str, priority: str,
 PAGE_HERO_IMAGES = {
     "index.html": (
         "assets/img/home/equipo_index.webp",
-        "Equipo MotoMaqLab UC3M celebrando con el prototipo de competición MotoStudent"
+        "Equipo MOTO-MAQLAB-UC3M celebrando con el prototipo de competición MotoStudent"
     ),
     "index-en.html": (
         "assets/img/home/equipo_index.webp",
-        "MotoMaqLab UC3M team celebrating with MotoStudent competition prototype"
+        "MOTO-MAQLAB-UC3M team celebrating with MotoStudent competition prototype"
     ),
     "sobre-nosotros.html": (
         "assets/img/hero/sobre-nosotros.webp",
-        "Equipo MotoMaqLab UC3M en el Circuito de MotorLand Aragón — Ingeniería y competición"
+        "Equipo MOTO-MAQLAB-UC3M en el Circuito de MotorLand Aragón — Ingeniería y competición"
     ),
     "about-us.html": (
         "assets/img/hero/sobre-nosotros.webp",
-        "MotoMaqLab UC3M team at MotorLand Aragón Circuit — Engineering and competition"
+        "MOTO-MAQLAB-UC3M team at MotorLand Aragón Circuit — Engineering and competition"
     ),
     # equipo.html y team.html → se generan desde JSON con build_team_images()
     "patrocinadores.html": (
         "assets/img/hero/patrocinadores.webp",
-        "Patrocinadores de MotoMaqLab UC3M — empresas e instituciones que apoyan la ingeniería de competición"
+        "Patrocinadores de MOTO-MAQLAB-UC3M — empresas e instituciones que apoyan la ingeniería de competición"
     ),
     "sponsors.html": (
         "assets/img/hero/patrocinadores.webp",
-        "MotoMaqLab UC3M Sponsors — companies and institutions supporting competition engineering"
+        "MOTO-MAQLAB-UC3M Sponsors — companies and institutions supporting competition engineering"
     ),
     "eventos.html": (
         "assets/img/hero/eventos.webp",
-        "Eventos y calendario del equipo MotoMaqLab UC3M en MotoStudent"
+        "Eventos y calendario del equipo MOTO-MAQLAB-UC3M en MotoStudent"
     ),
     "events.html": (
         "assets/img/hero/eventos.webp",
-        "MotoMaqLab UC3M team events and MotoStudent competition calendar"
+        "MOTO-MAQLAB-UC3M team events and MotoStudent competition calendar"
     ),
     "blog.html": (
         "assets/img/hero/blog.webp",
-        "Blog y noticias del equipo MotoMaqLab UC3M — ingeniería y competición"
+        "Blog y noticias del equipo MOTO-MAQLAB-UC3M — ingeniería y competición"
     ),
     "blog-en.html": (
         "assets/img/hero/blog.webp",
-        "MotoMaqLab UC3M team blog and news — engineering and motorsport"
+        "MOTO-MAQLAB-UC3M team blog and news — engineering and motorsport"
     ),
     "motostudent.html": (
         "assets/img/motostudent/moto_en_pista.jpeg",
-        "Prototipo MotoMaqLab UC3M en el Circuito FIM de MotorLand Aragón — MotoStudent"
+        "Prototipo MOTO-MAQLAB-UC3M en el Circuito FIM de MotorLand Aragón — MotoStudent"
     ),
     "motostudent-en.html": (
         "assets/img/motostudent/moto_en_pista.jpeg",
-        "MotoMaqLab UC3M prototype at FIM MotorLand Aragón Circuit — MotoStudent"
+        "MOTO-MAQLAB-UC3M prototype at FIM MotorLand Aragón Circuit — MotoStudent"
     ),
     "unete.html": (
         "assets/img/home/header_unete.webp",
-        "Únete al equipo MotoMaqLab UC3M — Proceso de captación para la temporada MotoStudent"
+        "Únete al equipo MOTO-MAQLAB-UC3M — Proceso de captación para la temporada MotoStudent"
     ),
 }
 
@@ -186,7 +186,7 @@ def build_team_images(json_path: str) -> list:
     # Hero de la página de equipo (foto grupal)
     images.append(image_entry(
         f"{DOMAIN}/assets/img/hero/equipo.webp",
-        "Equipo completo MotoMaqLab UC3M — ingenieros y estudiantes MotoStudent UC3M"
+        "Equipo completo MOTO-MAQLAB-UC3M — ingenieros y estudiantes MotoStudent UC3M"
     ))
 
     seen = set()
@@ -200,8 +200,8 @@ def build_team_images(json_path: str) -> list:
             seen.add(img_path)
             name = member.get("name", "")
             role = member.get("role", "")
-            caption = f"Foto de {name}, {role} en MotoMaqLab UC3M"
-            title = f"{name} — {role} | MotoMaqLab UC3M"
+            caption = f"Foto de {name}, {role} en MOTO-MAQLAB-UC3M"
+            title = f"{name} — {role} | MOTO-MAQLAB-UC3M"
             images.append(image_entry(
                 f"{DOMAIN}/{img_path}",
                 caption,
@@ -251,15 +251,15 @@ def main():
                         if logo:
                             sponsor_images.append(image_entry(
                                 f"{DOMAIN}/{logo}",
-                                f"Logo de {name}, patrocinador de MotoMaqLab UC3M",
-                                f"{name} — Patrocinador MotoMaqLab UC3M"
+                                f"Logo de {name}, patrocinador de MOTO-MAQLAB-UC3M",
+                                f"{name} — Patrocinador MOTO-MAQLAB-UC3M"
                             ))
                         # Primera foto de galería si existe
                         galeria = sponsor.get("galeria", [])
                         if galeria:
                             sponsor_images.append(image_entry(
                                 f"{DOMAIN}/{galeria[0]}",
-                                f"{name} colaborando con MotoMaqLab UC3M en MotoStudent"
+                                f"{name} colaborando con MOTO-MAQLAB-UC3M en MotoStudent"
                             ))
                         pat_entries.append(url_entry(
                             f"{DOMAIN}/{sponsor['dedicatedPage']}",
@@ -280,7 +280,7 @@ def main():
             titulo = evento.get("titulo", evento.get("title", f"Evento {eid}"))
             evt_images = [image_entry(
                 f"{DOMAIN}/{img}",
-                f"{titulo} — MotoMaqLab UC3M"
+                f"{titulo} — MOTO-MAQLAB-UC3M"
             )]
         evt_entries.append(url_entry(
             f"{DOMAIN}/evento-{quote(eid)}.html",
@@ -305,7 +305,7 @@ def main():
             titulo = post.get("titulo", post.get("title", f"Artículo {pid}"))
             post_images = [image_entry(
                 f"{DOMAIN}/{img}",
-                f"{titulo} — MotoMaqLab UC3M"
+                f"{titulo} — MOTO-MAQLAB-UC3M"
             )]
         blog_entries.append(url_entry(
             f"{DOMAIN}/noticia-{quote(pid)}.html",
@@ -329,7 +329,7 @@ def main():
             titulo = post.get("titulo", post.get("title", f"Article {pid}"))
             post_images = [image_entry(
                 f"{DOMAIN}/{img}",
-                f"{titulo} — MotoMaqLab UC3M"
+                f"{titulo} — MOTO-MAQLAB-UC3M"
             )]
         blog_entries.append(url_entry(
             f"{DOMAIN}/news-{quote(pid)}.html",

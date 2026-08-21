@@ -26,8 +26,8 @@ if not has_addyx:
             "assets/img/patrocinios/addyx/laminado 2.webp",
             "assets/img/patrocinios/addyx/montado.webp"
         ],
-        "seoTitle": "Addyx and MotoMaqLab UC3M — 3D water-soluble molds for carbon fiber chassis | MotoStudent",
-        "seoDescription": "Addyx manufactures the WSM-170 water-soluble molds that allow MotoMaqLab UC3M to create its hollow twin-spar carbon fiber chassis with integrated intake.",
+        "seoTitle": "Addyx and MOTO-MAQLAB-UC3M — 3D water-soluble molds for carbon fiber chassis | MotoStudent",
+        "seoDescription": "Addyx manufactures the WSM-170 water-soluble molds that allow MOTO-MAQLAB-UC3M to create its hollow twin-spar carbon fiber chassis with integrated intake.",
         "quoteEquipo": "Addyx's WSM-170 water-soluble molds allowed us to manufacture a hollow twin-spar carbon fiber chassis with the integrated intake duct. Without this technology, that geometry would simply be impossible."
     }
     en_plat.insert(2, addyx_en)
@@ -52,7 +52,7 @@ es_plat = next(t for t in es_data['tiers'] if t['id'] == 'platinum')['sponsors']
 
 for sponsor in es_plat:
     id = sponsor['id']
-    title = sponsor.get('seoTitle', f"{sponsor['name']} — Patrocinador PLATINO | MotoMaqLab UC3M")
+    title = sponsor.get('seoTitle', f"{sponsor['name']} — Patrocinador PLATINO | MOTO-MAQLAB-UC3M")
     desc = sponsor.get('seoDescription', sponsor.get('description', ''))
     
     html_path = f"patrocinador-{id}.html"
@@ -64,7 +64,7 @@ for sponsor in es_plat:
 
 for sponsor in en_plat:
     id = sponsor['id']
-    title = sponsor.get('seoTitle', f"{sponsor['name']} — PLATINUM Sponsor | MotoMaqLab UC3M")
+    title = sponsor.get('seoTitle', f"{sponsor['name']} — PLATINUM Sponsor | MOTO-MAQLAB-UC3M")
     desc = sponsor.get('seoDescription', sponsor.get('description', ''))
     
     html_path = f"patrocinador-{id}-en.html"

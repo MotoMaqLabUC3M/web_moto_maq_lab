@@ -2,13 +2,13 @@
     "posts": [
         {
             "id": "newsletter-revista-julio-2026-mmu",
-            "titulo": "Newsletter - MotoMaqLab Magazine July 2026",
-            "autor": "MotoMaqLab UC3M",
+            "titulo": "Newsletter - MOTO-MAQLAB-UC3M Magazine July 2026",
+            "autor": "MOTO-MAQLAB-UC3M",
             "fecha": "2026-06-30",
             "categoria": "Newsletter",
             "imagen": "assets/img/blog/Portada_newsletter_junio.png",
-            "extracto": "Our new July 2026 Newsletter is now available! Download the MotoMaqLab Magazine from this link.",
-            "contenido": "We are proud to present the latest edition of our MotoMaqLab magazine for July 2026, where you can stay informed about all our progress.\n\n[pdf:assets/docs/Revista_Julio_2026_MMU.pdf]"
+            "extracto": "Our new July 2026 Newsletter is now available! Download the MOTO-MAQLAB-UC3M Magazine from this link.",
+            "contenido": "We are proud to present the latest edition of our MOTO-MAQLAB-UC3M magazine for July 2026, where you can stay informed about all our progress.\n\n[pdf:assets/docs/Revista_Julio_2026_MMU.pdf]"
         },
         {
             "id": "moto-maqlab-uc3m-participa-en-una-jornada-de-diseo-electrnico-impartida-por-wrth-elektronik",
@@ -22,13 +22,13 @@
         },
         {
             "id": "newsletter-revista-motomaqlab",
-            "titulo": "Newsletter - MotoMaqLab Magazine",
-            "autor": "MotoMaqLab UC3M",
+            "titulo": "Newsletter - MOTO-MAQLAB-UC3M Magazine",
+            "autor": "MOTO-MAQLAB-UC3M",
             "fecha": "2024-03-19",
             "categoria": "Newsletter",
             "imagen": "assets/img/blog/Portada_news_letter.webp",
-            "extracto": "¡Ya está disponible nuestra nueva Newsletter! Descarga la Revista MotoMaqLab desde este enlace.",
-            "contenido": "Nos enorgullece presentar la última edición de nuestra revista MotoMaqLab, donde podrás mantenerte informado de todos nuestros avances.\n\n[pdf:assets/docs/Revista_Motomaqlab%20(1).pdf]"
+            "extracto": "¡Ya está disponible nuestra nueva Newsletter! Descarga la Revista MOTO-MAQLAB-UC3M desde este enlace.",
+            "contenido": "Nos enorgullece presentar la última edición de nuestra revista MOTO-MAQLAB-UC3M, donde podrás mantenerte informado de todos nuestros avances.\n\n[pdf:assets/docs/Revista_Motomaqlab%20(1).pdf]"
         }
     ]
 }

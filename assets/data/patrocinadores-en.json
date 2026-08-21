@@ -21,9 +21,9 @@
                         "assets/img/patrocinios/maqlab/Foto_3_Maqlab.webp",
                         "assets/img/patrocinios/maqlab/Foto_4_Maqlab.webp"
                     ],
-                    "seoTitle": "MAQLAB: Engineering & Testing Laboratory | MotoMaqLab",
-                    "seoDescription": "MAQLAB provides MotoMaqLab UC3M with materials laboratories, mechanical testing, and prototype validation to compete in MotoStudent with industrial standards.",
-                    "quoteEquipo": "MotoMaqLab was born thanks to MAQLAB. Since our foundation, their unconditional support and their laboratories are the reason we stay alive and competing at the highest level."
+                    "seoTitle": "MAQLAB: Engineering & Testing Laboratory | MOTO-MAQLAB-UC3M",
+                    "seoDescription": "MAQLAB provides MOTO-MAQLAB-UC3M with materials laboratories, mechanical testing, and prototype validation to compete in MotoStudent with industrial standards.",
+                    "quoteEquipo": "MOTO-MAQLAB-UC3M was born thanks to MAQLAB. Since our foundation, their unconditional support and their laboratories are the reason we stay alive and competing at the highest level."
                 },
                 {
                     "id": "altair",
@@ -34,8 +34,8 @@
                     "dedicatedPage": "sponsor-altair.html",
                     "contenido": "Altair provides us with advanced tools for multiphysics simulation and optimization that allow us to analyze the real behavior of our designs before manufacturing them. Thanks to their software, we can accurately study structures, aerodynamics, and mechanical systems, taking into account multiple physical variables. This helps us make more efficient design decisions and improve the overall performance of the motorcycle.\n\n## Impact on the team\nHaving Altair as a sponsor is a huge advantage, as it gives us access to technology used in the industry for the development of complex products. This allows us to reduce errors, save costs on prototypes, and work with professional methodologies based on simulation and optimization. Furthermore, it strengthens our project technically and prepares us better for the real engineering environment.\n\n## What they provide us\n- HyperWorks licenses for structural simulation\n- Topological optimization software for weight reduction\n- CFD tools for aerodynamic analysis\n- Technical support and training\n\n## How we use it\nWe use Altair to simulate the loads on the chassis, optimize the swingarm geometry, and analyze the airflow over the fairing. Thanks to their tools we have managed to reduce weight by 15% while maintaining rigidity.",
                     "galeria": [],
-                    "seoTitle": "Altair: Simulation & Topology Optimization | MotoMaqLab",
-                    "seoDescription": "Altair provides MotoMaqLab UC3M with HyperWorks software for structural simulation, topological optimization and CFD, achieving a 15% weight reduction.",
+                    "seoTitle": "Altair: Simulation & Topology Optimization | MOTO-MAQLAB-UC3M",
+                    "seoDescription": "Altair provides MOTO-MAQLAB-UC3M with HyperWorks software for structural simulation, topological optimization and CFD, achieving a 15% weight reduction.",
                     "quoteEquipo": "With Altair's HyperWorks we simulate chassis loads, optimize the swingarm geometry, and analyze airflow over the fairing. We won the Altair Innovative Challenge 2020 and reduced structural weight by 15%."
                 },
                 {
@@ -53,8 +53,8 @@
                         "assets/img/patrocinios/addyx/laminado 2.webp",
                         "assets/img/patrocinios/addyx/montado.webp"
                     ],
-                    "seoTitle": "ADDYX: 3D Molds for Carbon Fiber | MotoMaqLab",
-                    "seoDescription": "Addyx manufactures the WSM-170 water-soluble molds that allow MotoMaqLab UC3M to create its hollow twin-spar carbon fiber chassis with integrated intake.",
+                    "seoTitle": "ADDYX: 3D Molds for Carbon Fiber | MOTO-MAQLAB-UC3M",
+                    "seoDescription": "Addyx manufactures the WSM-170 water-soluble molds that allow MOTO-MAQLAB-UC3M to create its hollow twin-spar carbon fiber chassis with integrated intake.",
                     "quoteEquipo": "Addyx's WSM-170 water-soluble molds allowed us to manufacture a hollow twin-spar carbon fiber chassis with the integrated intake duct. Without this technology, that geometry would simply be impossible."
                 },
                 {
@@ -64,7 +64,7 @@
                     "description": "University Carlos III of Madrid is our institution and academic backing. It finances part of the project and provides us with the facilities, workshops, and laboratories where we design and manufacture our motorcycle. In addition, we have the support of professors and tutors who guide us in each phase of development.",
                     "website": "https://www.uc3m.es/",
                     "dedicatedPage": "sponsor-UC3M.html",
-                    "contenido": "The University Carlos III of Madrid is our main academic and institutional support. It provides us with the facilities, workshops, and laboratories where we design, manufacture, and assemble our motorcycle. In addition, we have the support of professors and researchers who advise us in the different stages of development, providing technical knowledge and experience in engineering.\n\n## Impact on the team\nHaving UC3M as a sponsor is fundamental support for our project, since it not only contributes economically, but also offers us a professional environment and high-level resources to work with industry standards. Their support reinforces our credibility as a team and enhances our training as engineers, driving the technical and competitive growth of Motomaqlab.\n\n## What they provide us\n- Partial funding of the project\n- Access to mechanical workshops and materials laboratories\n- Support from tutor professors in all phases\n- Workspaces and storage\n- Institutional visibility and communication support\n\n## Our relationship with UC3M\nMotoMaqLab was born in 2009 as a project of the Higher Polytechnic School. Since then, the university has been our fundamental pillar, allowing generations of engineering students to apply their knowledge to a real competition project.",
+                    "contenido": "The University Carlos III of Madrid is our main academic and institutional support. It provides us with the facilities, workshops, and laboratories where we design, manufacture, and assemble our motorcycle. In addition, we have the support of professors and researchers who advise us in the different stages of development, providing technical knowledge and experience in engineering.\n\n## Impact on the team\nHaving UC3M as a sponsor is fundamental support for our project, since it not only contributes economically, but also offers us a professional environment and high-level resources to work with industry standards. Their support reinforces our credibility as a team and enhances our training as engineers, driving the technical and competitive growth of Motomaqlab.\n\n## What they provide us\n- Partial funding of the project\n- Access to mechanical workshops and materials laboratories\n- Support from tutor professors in all phases\n- Workspaces and storage\n- Institutional visibility and communication support\n\n## Our relationship with UC3M\nMOTO-MAQLAB-UC3M was born in 2009 as a project of the Higher Polytechnic School. Since then, the university has been our fundamental pillar, allowing generations of engineering students to apply their knowledge to a real competition project.",
                     "galeria": [
                         "assets/img/patrocinios/uc3m/Foto_6_UC3M.webp",
                         "assets/img/patrocinios/uc3m/Foto_1_UC3M.webp",
@@ -73,9 +73,9 @@
                         "assets/img/patrocinios/uc3m/Foto_4_UC3M.webp",
                         "assets/img/patrocinios/uc3m/Foto_5_UC3M.webp"
                     ],
-                    "seoTitle": "UC3M: Engineering Training & Workshops | MotoMaqLab",
-                    "seoDescription": "UC3M supports MotoMaqLab with workshops, laboratories, funding, and tutors from the Higher Polytechnic School of LeganÃ©s since 2009 in MotoStudent.",
-                    "quoteEquipo": "UC3M is the pillar of this project: they give us workshops, materials laboratories, and the support of professors who demand industrial rigor from us. Without the backing of the university, MotoMaqLab would not exist."
+                    "seoTitle": "UC3M: Engineering Training & Workshops | MOTO-MAQLAB-UC3M",
+                    "seoDescription": "UC3M supports MOTO-MAQLAB-UC3M with workshops, laboratories, funding, and tutors from the Higher Polytechnic School of LeganÃ©s since 2009 in MotoStudent.",
+                    "quoteEquipo": "UC3M is the pillar of this project: they give us workshops, materials laboratories, and the support of professors who demand industrial rigor from us. Without the backing of the university, MOTO-MAQLAB-UC3M would not exist."
                 },
                 {
                     "id": "retamal",
@@ -86,8 +86,8 @@
                     "dedicatedPage": "sponsor-retamal.html",
                     "contenido": "Retamal is a key strategic partner for Motomaqlab, providing fundamental logistical and organizational support for the proper development of the project. Thanks to their experience in managing tools, services, and logistics, we can optimize our work processes and guarantee better team planning and coordination.\n\n## Impact on the team\nHaving Retamal as a sponsor is an important backing both operationally and strategically. Their support allows us to focus on the design, manufacturing, and performance improvement of our motorcycle, ensuring that we have the necessary resources and organization to compete at the highest level. Furthermore, their collaboration strengthens the professional structure of our project and contributes to our growth as an engineering team.\n\n## What they provide us\n- Comprehensive logistical and organizational support for the project\n- Experience in managing tools and services\n- Strategic advice for planning and coordination\n- Operational resources to compete at the highest level",
                     "galeria": [],
-                    "seoTitle": "J. Retamal: Logistics & Team Coordination | MotoMaqLab",
-                    "seoDescription": "J. Retamal provides MotoMaqLab UC3M with logistical support, professional tool management, and strategic planning to compete in MotoStudent.",
+                    "seoTitle": "J. Retamal: Logistics & Team Coordination | MOTO-MAQLAB-UC3M",
+                    "seoDescription": "J. Retamal provides MOTO-MAQLAB-UC3M with logistical support, professional tool management, and strategic planning to compete in MotoStudent.",
                     "quoteEquipo": "Retamal brings us the logistical organization that a university team needs to function like a professional one. Their tool management and planning allow us to focus on engineering."
                 }
             ]

@@ -44,14 +44,14 @@
 
             if (typeof motoMaqLabApplySeo === 'function') {
                 motoMaqLabApplySeo({
-                    title: `${evento.titulo} | MotoMaqLab UC3M`,
+                    title: `${evento.titulo} | MOTO-MAQLAB-UC3M`,
                     description: evento.descripcion || '',
                     canonicalPath: `/evento-${evento.id}.html`,
                     imagePath: evento.imagen || 'assets/img/hero/eventos.webp',
                     ogType: 'website'
                 });
             } else {
-                document.title = `${sanitize(evento.titulo)} | MotoMaqLab UC3M`;
+                document.title = `${sanitize(evento.titulo)} | MOTO-MAQLAB-UC3M`;
             }
             injectStructuredData(evento);
             render(container, evento);
@@ -138,7 +138,7 @@
             <!-- CONTENT -->
             <div class="ev-body">
                 ${intro ? `<p class="ev-intro">${intro}</p>` : ''}
-                ${evento.imagenDetalle ? `<img src="${sanitize(evento.imagenDetalle)}" alt="Detalle visual del evento ${sanitize(evento.titulo)} — MotoMaqLab UC3M" class="ev-body__detail-img" />` : ''}
+                ${evento.imagenDetalle ? `<img src="${sanitize(evento.imagenDetalle)}" alt="Detalle visual del evento ${sanitize(evento.titulo)} — MOTO-MAQLAB-UC3M" class="ev-body__detail-img" />` : ''}
                 ${sectionsHTML}
             </div>
 
@@ -232,7 +232,7 @@
             "description": evento.descripcion,
             "organizer": {
                 "@type": "Organization",
-                "name": "MotoMaqLab UC3M",
+                "name": "MOTO-MAQLAB-UC3M",
                 "url": "https://motomaqlabuc3m.es"
             }
         };

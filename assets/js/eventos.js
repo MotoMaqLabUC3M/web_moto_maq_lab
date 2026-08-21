@@ -125,7 +125,7 @@
 
             // Imagen (si existe) — sin onerror inline para cumplir CSP
             const imgHTML = evento.imagen
-                ? `<div class="evento-img-wrapper"><img src="${sanitize(evento.imagen)}" alt="Event image: ${sanitize(evento.titulo)} — MotoMaqLab UC3M" loading="lazy" /></div>`
+                ? `<div class="evento-img-wrapper"><img src="${sanitize(evento.imagen)}" alt="Event image: ${sanitize(evento.titulo)} — MOTO-MAQLAB-UC3M" loading="lazy" /></div>`
                 : '';
             
             const verMasText = isEnglish ? 'View event' : 'Ver evento';

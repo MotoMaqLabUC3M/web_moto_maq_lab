@@ -6,7 +6,7 @@ headers = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
 }
 
-res = requests.get("https://alcabodelacalle.es/?s=MotoMaqLab", headers=headers)
+res = requests.get("https://alcabodelacalle.es/?s=MOTO-MAQLAB-UC3M", headers=headers)
 match_url = re.search(r'<h2 class="entry-title"><a href="([^"]+)"', res.text)
 if match_url:
     article_url = match_url.group(1)

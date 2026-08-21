@@ -3,8 +3,8 @@
         "logo": {
             "href": "index-en.html",
             "img": "assets/img/logos_uc3m/MMU_logo.png",
-            "alt": "MotoMaqLab UC3M Logo",
-            "text": "MOTOMAQLAB",
+            "alt": "MOTO-MAQLAB-UC3M Logo",
+            "text": "MOTO-MAQLAB-",
             "highlight": "UC3M"
         },
         "nav": [
@@ -136,7 +136,7 @@
                 },
                 {
                     "label": "X",
-                    "href": "https://x.com/MOTOMAQLABUC3M",
+                    "href": "https://x.com/MOTO-MAQLABUC3M",
                     "img": "assets/img/social/x.webp"
                 },
                 {
@@ -151,6 +151,6 @@
                 }
             ]
         },
-        "copy": "© 2025 MotoMaqLab UC3M. All rights reserved."
+        "copy": "© 2025 MOTO-MAQLAB-UC3M. All rights reserved."
     }
 }

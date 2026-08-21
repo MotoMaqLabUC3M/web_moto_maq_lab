@@ -84,7 +84,7 @@ function createMemberHTML(member, index) {
 
     return `
         <div class="team-member-card">
-            <img src="${sanitize(member.image)}" alt="Foto de ${sanitize(member.name)}, ${sanitize(member.role)} en MotoMaqLab UC3M"${placeholderClass} loading="${loadingAttr}" decoding="async" width="250" height="350" />
+            <img src="${sanitize(member.image)}" alt="Foto de ${sanitize(member.name)}, ${sanitize(member.role)} en MOTO-MAQLAB-UC3M"${placeholderClass} loading="${loadingAttr}" decoding="async" width="250" height="350" />
             <h3>${sanitize(member.name)}</h3>
             <p>${sanitize(member.role)}</p>
         </div>

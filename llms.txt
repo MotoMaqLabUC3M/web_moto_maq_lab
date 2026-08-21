@@ -1,4 +1,4 @@
-# MotoMaqLab UC3M
+# MOTO-MAQLAB-UC3M
 
 > Equipo oficial de MotoStudent de la Universidad Carlos III de Madrid (UC3M). Más de 56 estudiantes de ingeniería diseñan, fabrican y compiten con prototipos de moto de competición a nivel internacional. Temporada 2025-2027.
 
@@ -6,7 +6,7 @@ Sitio: https://motomaqlabuc3m.es
 
 ## Acerca de
 
-MotoMaqLab es el equipo de moto de la UC3M en Leganés (Madrid). Participa en MotoStudent, competición internacional de ingeniería universitaria organizada por la Moto Engineering Foundation (MotorLand Aragón, España). Desde 2009 el equipo ha obtenido 6 premios en innovación, diseño industrial y presentación de proyecto.
+MOTO-MAQLAB-UC3M es el equipo de moto de la UC3M en Leganés (Madrid). Participa en MotoStudent, competición internacional de ingeniería universitaria organizada por la Moto Engineering Foundation (MotorLand Aragón, España). Desde 2009 el equipo ha obtenido 6 premios en innovación, diseño industrial y presentación de proyecto.
 
 ## Páginas principales
 
@@ -71,5 +71,5 @@ Vanilla HTML, CSS y JavaScript. Contenido dinámico desde JSON en `assets/data/`
 
 ## Optional
 
-- [Noticia: newsletter Revista MotoMaqLab](https://motomaqlabuc3m.es/noticia-newsletter-revista-motomaqlab.html)
+- [Noticia: newsletter Revista MOTO-MAQLAB-UC3M](https://motomaqlabuc3m.es/noticia-newsletter-revista-motomaqlab.html)
 - `creador_eventos.html` / `creador_noticias.html`: herramientas internas de edición (no públicas orientadas al visitante).

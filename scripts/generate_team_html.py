@@ -59,7 +59,7 @@ def build_member_card(member: dict, index: int) -> str:
     return (
         f'            <div class="team-member-card">\n'
         f'                <img src="{image}" '
-        f'alt="Foto de {name}, {role} en MotoMaqLab UC3M"'
+        f'alt="Foto de {name}, {role} en MOTO-MAQLAB-UC3M"'
         f'{placeholder_attr} loading="{loading}" decoding="async" '
         f'width="250" height="350" />\n'
         f"                <h3>{name}</h3>\n"

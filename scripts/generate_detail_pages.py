@@ -211,7 +211,7 @@ def write_page(
 
 def article_json_ld(post: dict, canonical_path: str) -> dict:
     image = absolute_url(post.get("imagen") or "assets/img/hero/blog.webp")
-    author_name = post.get("autor") or "MotoMaqLab UC3M"
+    author_name = post.get("autor") or "MOTO-MAQLAB-UC3M"
     return {
         "@context": "https://schema.org",
         "@type": "Article",
@@ -222,7 +222,7 @@ def article_json_ld(post: dict, canonical_path: str) -> dict:
         "author": {"@type": "Person", "name": author_name},
         "publisher": {
             "@type": "Organization",
-            "name": "MotoMaqLab UC3M",
+            "name": "MOTO-MAQLAB-UC3M",
             "logo": {
                 "@type": "ImageObject",
                 "url": f"{ORIGIN}/assets/img/logos_uc3m/uc3m_logo_sin_fondo.webp",
@@ -252,7 +252,7 @@ def main() -> None:
             tpl_evento,
             str(eid),
             "evento-",
-            title=f"{evento.get('titulo', 'Evento')} | MotoMaqLab UC3M",
+            title=f"{evento.get('titulo', 'Evento')} | MOTO-MAQLAB-UC3M",
             description=evento.get("descripcion") or "",
             image_path=evento.get("imagen") or "assets/img/hero/eventos.webp",
             og_type="website",
@@ -273,7 +273,7 @@ def main() -> None:
             tpl_noticia,
             str(pid),
             "noticia-",
-            title=f"{post.get('titulo', 'Noticia')} | MotoMaqLab UC3M",
+            title=f"{post.get('titulo', 'Noticia')} | MOTO-MAQLAB-UC3M",
             description=post.get("extracto") or "",
             image_path=post.get("imagen") or "assets/img/hero/blog.webp",
             og_type="article",
@@ -296,7 +296,7 @@ def main() -> None:
             tpl_news,
             str(pid),
             "news-",
-            title=f"{post.get('titulo', 'News')} | MotoMaqLab UC3M",
+            title=f"{post.get('titulo', 'News')} | MOTO-MAQLAB-UC3M",
             description=post.get("extracto") or "",
             image_path=post.get("imagen") or "assets/img/hero/blog.webp",
             og_type="article",
@@ -318,7 +318,7 @@ def main() -> None:
             if sponsor.get("dedicatedPage"):
                 seen.add(sid)
                 # Use SEO-optimized title/description when available
-                seo_title = sponsor.get("seoTitle") or f"{sponsor.get('name', 'Patrocinador')} — Patrocinador {tier_name} | MotoMaqLab UC3M"
+                seo_title = sponsor.get("seoTitle") or f"{sponsor.get('name', 'Patrocinador')} — Patrocinador {tier_name} | MOTO-MAQLAB-UC3M"
                 seo_desc = sponsor.get("seoDescription") or sponsor.get("description") or ""
                 write_page(
                     tpl_pat,
@@ -343,7 +343,7 @@ def main() -> None:
                 continue
             if sponsor.get("dedicatedPage"):
                 seen_en.add(sid)
-                seo_title = sponsor.get("seoTitle") or f"{sponsor.get('name', 'Sponsor')} — {tier_name} Sponsor | MotoMaqLab UC3M"
+                seo_title = sponsor.get("seoTitle") or f"{sponsor.get('name', 'Sponsor')} — {tier_name} Sponsor | MOTO-MAQLAB-UC3M"
                 seo_desc = sponsor.get("seoDescription") or sponsor.get("description") or ""
                 write_page(
                     tpl_sponsor,

@@ -3,7 +3,7 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
   <!-- Generado automáticamente por scripts/generate_sitemap.py -->
-  <!-- Última generación: 2026-08-21T09:11:07.716705+00:00 -->
+  <!-- Última generación: 2026-08-21T09:13:05.968940+00:00 -->
 
   <!-- Páginas principales -->
   <url>
@@ -13,17 +13,17 @@
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/home/equipo_index.webp</image:loc>
-      <image:caption>Equipo MotoMaqLab UC3M celebrando con el prototipo de competición MotoStudent</image:caption>
+      <image:caption>Equipo MOTO-MAQLAB-UC3M celebrando con el prototipo de competición MotoStudent</image:caption>
     </image:image>
   </url>
   <url>
     <loc>https://motomaqlabuc3m.es/index-en.html</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-08-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/home/equipo_index.webp</image:loc>
-      <image:caption>MotoMaqLab UC3M team celebrating with MotoStudent competition prototype</image:caption>
+      <image:caption>MOTO-MAQLAB-UC3M team celebrating with MotoStudent competition prototype</image:caption>
     </image:image>
   </url>
   <url>
@@ -33,7 +33,7 @@
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/home/header_unete.webp</image:loc>
-      <image:caption>Únete al equipo MotoMaqLab UC3M — Proceso de captación para la temporada MotoStudent</image:caption>
+      <image:caption>Únete al equipo MOTO-MAQLAB-UC3M — Proceso de captación para la temporada MotoStudent</image:caption>
     </image:image>
   </url>
   <url>
@@ -43,7 +43,7 @@
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/hero/sobre-nosotros.webp</image:loc>
-      <image:caption>Equipo MotoMaqLab UC3M en el Circuito de MotorLand Aragón — Ingeniería y competición</image:caption>
+      <image:caption>Equipo MOTO-MAQLAB-UC3M en el Circuito de MotorLand Aragón — Ingeniería y competición</image:caption>
     </image:image>
   </url>
   <url>
@@ -53,7 +53,7 @@
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/hero/sobre-nosotros.webp</image:loc>
-      <image:caption>MotoMaqLab UC3M team at MotorLand Aragón Circuit — Engineering and competition</image:caption>
+      <image:caption>MOTO-MAQLAB-UC3M team at MotorLand Aragón Circuit — Engineering and competition</image:caption>
     </image:image>
   </url>
   <url>
@@ -63,262 +63,262 @@
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/hero/equipo.webp</image:loc>
-      <image:caption>Equipo completo MotoMaqLab UC3M — ingenieros y estudiantes MotoStudent UC3M</image:caption>
+      <image:caption>Equipo completo MOTO-MAQLAB-UC3M — ingenieros y estudiantes MotoStudent UC3M</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/jefatura/sergio_cruzado_villarin.webp</image:loc>
-      <image:caption>Foto de Sergio Cruzado Villarín, Jefe de Equipo en MotoMaqLab UC3M</image:caption>
-      <image:title>Sergio Cruzado Villarín — Jefe de Equipo | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Sergio Cruzado Villarín, Jefe de Equipo en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Sergio Cruzado Villarín — Jefe de Equipo | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/estructual/miguel_hurtado.webp</image:loc>
-      <image:caption>Foto de Miguel Hurtado Davó, Jefe de Equipo en MotoMaqLab UC3M</image:caption>
-      <image:title>Miguel Hurtado Davó — Jefe de Equipo | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Miguel Hurtado Davó, Jefe de Equipo en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Miguel Hurtado Davó — Jefe de Equipo | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/jefatura/abraham_vadillo_morillas.webp</image:loc>
-      <image:caption>Foto de Abraham Vadillo Morillas, Tutor de Equipo en MotoMaqLab UC3M</image:caption>
-      <image:title>Abraham Vadillo Morillas — Tutor de Equipo | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Abraham Vadillo Morillas, Tutor de Equipo en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Abraham Vadillo Morillas — Tutor de Equipo | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/jefatura/marcos_vidal_rodiguez.webp</image:loc>
-      <image:caption>Foto de Marcos Vidal Rodríguez, Tutor de Equipo en MotoMaqLab UC3M</image:caption>
-      <image:title>Marcos Vidal Rodríguez — Tutor de Equipo | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Marcos Vidal Rodríguez, Tutor de Equipo en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Marcos Vidal Rodríguez — Tutor de Equipo | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/dinamica/david_otero_diez.webp</image:loc>
-      <image:caption>Foto de David Otero Díez, Jefe de Dinámica y Estructural en MotoMaqLab UC3M</image:caption>
-      <image:title>David Otero Díez — Jefe de Dinámica y Estructural | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de David Otero Díez, Jefe de Dinámica y Estructural en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>David Otero Díez — Jefe de Dinámica y Estructural | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/dinamica/carlos_mendo_lopez.webp</image:loc>
-      <image:caption>Foto de Carlos Mendo López, Miembro de Dinámica en MotoMaqLab UC3M</image:caption>
-      <image:title>Carlos Mendo López — Miembro de Dinámica | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Carlos Mendo López, Miembro de Dinámica en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Carlos Mendo López — Miembro de Dinámica | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/dinamica/marta_alonso_perez.webp</image:loc>
-      <image:caption>Foto de Marta Alonso Pérez, Miembro de Dinámica en MotoMaqLab UC3M</image:caption>
-      <image:title>Marta Alonso Pérez — Miembro de Dinámica | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Marta Alonso Pérez, Miembro de Dinámica en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Marta Alonso Pérez — Miembro de Dinámica | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/dinamica/miguel_velazquez_kennedy.webp</image:loc>
-      <image:caption>Foto de Miguel Velázquez Kennedy, Miembro de Dinámica en MotoMaqLab UC3M</image:caption>
-      <image:title>Miguel Velázquez Kennedy — Miembro de Dinámica | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Miguel Velázquez Kennedy, Miembro de Dinámica en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Miguel Velázquez Kennedy — Miembro de Dinámica | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/dinamica/raul_beas_amador.webp</image:loc>
-      <image:caption>Foto de Raúl Beas Amador, Miembro de Dinámica en MotoMaqLab UC3M</image:caption>
-      <image:title>Raúl Beas Amador — Miembro de Dinámica | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Raúl Beas Amador, Miembro de Dinámica en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Raúl Beas Amador — Miembro de Dinámica | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/dinamica/rodrigo_andres_cabrera.webp</image:loc>
-      <image:caption>Foto de Rodrigo Andrés Cabrera, Miembro de Dinámica en MotoMaqLab UC3M</image:caption>
-      <image:title>Rodrigo Andrés Cabrera — Miembro de Dinámica | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Rodrigo Andrés Cabrera, Miembro de Dinámica en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Rodrigo Andrés Cabrera — Miembro de Dinámica | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/dinamica/xaantal_perez_martinez.webp</image:loc>
-      <image:caption>Foto de Xaantal Pérez Martínez, Miembro de Dinámica en MotoMaqLab UC3M</image:caption>
-      <image:title>Xaantal Pérez Martínez — Miembro de Dinámica | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Xaantal Pérez Martínez, Miembro de Dinámica en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Xaantal Pérez Martínez — Miembro de Dinámica | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/estructual/carlos_palanca_rueda.webp</image:loc>
-      <image:caption>Foto de Carlos Palanca Rueda, Miembro de Estructural en MotoMaqLab UC3M</image:caption>
-      <image:title>Carlos Palanca Rueda — Miembro de Estructural | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Carlos Palanca Rueda, Miembro de Estructural en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Carlos Palanca Rueda — Miembro de Estructural | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/estructual/cristina_gonzalez_luna.webp</image:loc>
-      <image:caption>Foto de Cristina González Luna, Miembro de Estructural en MotoMaqLab UC3M</image:caption>
-      <image:title>Cristina González Luna — Miembro de Estructural | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Cristina González Luna, Miembro de Estructural en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Cristina González Luna — Miembro de Estructural | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/estructual/diego_calvo_blanco.webp</image:loc>
-      <image:caption>Foto de Diego Calvo Blanco, Miembro de Estructural en MotoMaqLab UC3M</image:caption>
-      <image:title>Diego Calvo Blanco — Miembro de Estructural | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Diego Calvo Blanco, Miembro de Estructural en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Diego Calvo Blanco — Miembro de Estructural | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/estructual/ivan_garcia_martin.webp</image:loc>
-      <image:caption>Foto de Iván García Martín, Miembro de Estructural en MotoMaqLab UC3M</image:caption>
-      <image:title>Iván García Martín — Miembro de Estructural | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Iván García Martín, Miembro de Estructural en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Iván García Martín — Miembro de Estructural | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/aerodinamica/miguel_lozano.webp</image:loc>
-      <image:caption>Foto de Miguel Lozano Nykolaychuk, Jefe de Aerodinámica y Organización en MotoMaqLab UC3M</image:caption>
-      <image:title>Miguel Lozano Nykolaychuk — Jefe de Aerodinámica y Organización | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Miguel Lozano Nykolaychuk, Jefe de Aerodinámica y Organización en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Miguel Lozano Nykolaychuk — Jefe de Aerodinámica y Organización | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/aerodinamica/adriana_morales.webp</image:loc>
-      <image:caption>Foto de Adriana Morales, Miembro de Aerodinámica en MotoMaqLab UC3M</image:caption>
-      <image:title>Adriana Morales — Miembro de Aerodinámica | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Adriana Morales, Miembro de Aerodinámica en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Adriana Morales — Miembro de Aerodinámica | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/aerodinamica/alejandro_ranz_remartinez.webp</image:loc>
-      <image:caption>Foto de Alejandro Ranz Remartínez, Miembro de Aerodinámica en MotoMaqLab UC3M</image:caption>
-      <image:title>Alejandro Ranz Remartínez — Miembro de Aerodinámica | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Alejandro Ranz Remartínez, Miembro de Aerodinámica en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Alejandro Ranz Remartínez — Miembro de Aerodinámica | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/aerodinamica/alvaro_menendez.webp</image:loc>
-      <image:caption>Foto de Álvaro Menéndez, Miembro de Aerodinámica en MotoMaqLab UC3M</image:caption>
-      <image:title>Álvaro Menéndez — Miembro de Aerodinámica | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Álvaro Menéndez, Miembro de Aerodinámica en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Álvaro Menéndez — Miembro de Aerodinámica | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/aerodinamica/daniel_luque.webp</image:loc>
-      <image:caption>Foto de Daniel Luque Migueles, Miembro de Aerodinámica en MotoMaqLab UC3M</image:caption>
-      <image:title>Daniel Luque Migueles — Miembro de Aerodinámica | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Daniel Luque Migueles, Miembro de Aerodinámica en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Daniel Luque Migueles — Miembro de Aerodinámica | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/aerodinamica/gonzalo_mayordomo_jimenez.webp</image:loc>
-      <image:caption>Foto de Gonzalo Mayordomo Jiménez, Miembro de Aerodinámica en MotoMaqLab UC3M</image:caption>
-      <image:title>Gonzalo Mayordomo Jiménez — Miembro de Aerodinámica | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Gonzalo Mayordomo Jiménez, Miembro de Aerodinámica en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Gonzalo Mayordomo Jiménez — Miembro de Aerodinámica | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/aerodinamica/mario_garcia_diaz.webp</image:loc>
-      <image:caption>Foto de Mario García Diaz, Miembro de Aerodinámica en MotoMaqLab UC3M</image:caption>
-      <image:title>Mario García Diaz — Miembro de Aerodinámica | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Mario García Diaz, Miembro de Aerodinámica en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Mario García Diaz — Miembro de Aerodinámica | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/aerodinamica/pablo_morata_garcia.webp</image:loc>
-      <image:caption>Foto de Pablo Morata García, Miembro de Aerodinámica en MotoMaqLab UC3M</image:caption>
-      <image:title>Pablo Morata García — Miembro de Aerodinámica | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Pablo Morata García, Miembro de Aerodinámica en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Pablo Morata García — Miembro de Aerodinámica | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/electronica/sara_dominguez_dominguez.webp</image:loc>
-      <image:caption>Foto de Sara Domínguez Domínguez, Jefa de Electrónica en MotoMaqLab UC3M</image:caption>
-      <image:title>Sara Domínguez Domínguez — Jefa de Electrónica | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Sara Domínguez Domínguez, Jefa de Electrónica en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Sara Domínguez Domínguez — Jefa de Electrónica | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/electronica/jesus_galan_elices.webp</image:loc>
-      <image:caption>Foto de Jesús Galán Elices, Jefe de Telemetría y Sensorización en MotoMaqLab UC3M</image:caption>
-      <image:title>Jesús Galán Elices — Jefe de Telemetría y Sensorización | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Jesús Galán Elices, Jefe de Telemetría y Sensorización en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Jesús Galán Elices — Jefe de Telemetría y Sensorización | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/electronica/abel_ramos_torres.webp</image:loc>
-      <image:caption>Foto de Abel Ramos Torres, Miembro de Electrónica en MotoMaqLab UC3M</image:caption>
-      <image:title>Abel Ramos Torres — Miembro de Electrónica | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Abel Ramos Torres, Miembro de Electrónica en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Abel Ramos Torres — Miembro de Electrónica | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/electronica/alberto_robles_serrano.webp</image:loc>
-      <image:caption>Foto de Alberto Robles Serrano, Miembro de Electrónica en MotoMaqLab UC3M</image:caption>
-      <image:title>Alberto Robles Serrano — Miembro de Electrónica | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Alberto Robles Serrano, Miembro de Electrónica en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Alberto Robles Serrano — Miembro de Electrónica | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/electronica/angel_perez_antorrena.webp</image:loc>
-      <image:caption>Foto de Ángel Pérez Antorrena, Miembro de Electrónica en MotoMaqLab UC3M</image:caption>
-      <image:title>Ángel Pérez Antorrena — Miembro de Electrónica | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Ángel Pérez Antorrena, Miembro de Electrónica en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Ángel Pérez Antorrena — Miembro de Electrónica | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/electronica/elisa_rodriguez.webp</image:loc>
-      <image:caption>Foto de Elisa Rodríguez, Miembro de Electrónica en MotoMaqLab UC3M</image:caption>
-      <image:title>Elisa Rodríguez — Miembro de Electrónica | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Elisa Rodríguez, Miembro de Electrónica en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Elisa Rodríguez — Miembro de Electrónica | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/electronica/iciar_zamanillo_herreros.webp</image:loc>
-      <image:caption>Foto de Icíar Zamanillo Herreros, Miembro de Electrónica en MotoMaqLab UC3M</image:caption>
-      <image:title>Icíar Zamanillo Herreros — Miembro de Electrónica | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Icíar Zamanillo Herreros, Miembro de Electrónica en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Icíar Zamanillo Herreros — Miembro de Electrónica | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/electronica/jose_manuel_fernandez_vargas.webp</image:loc>
-      <image:caption>Foto de Jose Manuel Fernandez Vargas, Miembro de Electrónica en MotoMaqLab UC3M</image:caption>
-      <image:title>Jose Manuel Fernandez Vargas — Miembro de Electrónica | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Jose Manuel Fernandez Vargas, Miembro de Electrónica en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Jose Manuel Fernandez Vargas — Miembro de Electrónica | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/electronica/monica_eugenia_salcudean.webp</image:loc>
-      <image:caption>Foto de Monica Eugenia Salcudean Cozmean, Miembro de Electrónica en MotoMaqLab UC3M</image:caption>
-      <image:title>Monica Eugenia Salcudean Cozmean — Miembro de Electrónica | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Monica Eugenia Salcudean Cozmean, Miembro de Electrónica en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Monica Eugenia Salcudean Cozmean — Miembro de Electrónica | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/electronica/rafael_perez_de_lema.webp</image:loc>
-      <image:caption>Foto de Rafael Pérez de Lema Carmona, Miembro de Electrónica en MotoMaqLab UC3M</image:caption>
-      <image:title>Rafael Pérez de Lema Carmona — Miembro de Electrónica | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Rafael Pérez de Lema Carmona, Miembro de Electrónica en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Rafael Pérez de Lema Carmona — Miembro de Electrónica | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/patrocinadores/jose_garcia-morato_alvarez.webp</image:loc>
-      <image:caption>Foto de Jose García-Morato Álvarez, Jefe de Patrocinadores en MotoMaqLab UC3M</image:caption>
-      <image:title>Jose García-Morato Álvarez — Jefe de Patrocinadores | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Jose García-Morato Álvarez, Jefe de Patrocinadores en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Jose García-Morato Álvarez — Jefe de Patrocinadores | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/patrocinadores/carlos_calles_gomez.webp</image:loc>
-      <image:caption>Foto de Carlos Calles Gómez, Miembro de Patrocinadores en MotoMaqLab UC3M</image:caption>
-      <image:title>Carlos Calles Gómez — Miembro de Patrocinadores | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Carlos Calles Gómez, Miembro de Patrocinadores en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Carlos Calles Gómez — Miembro de Patrocinadores | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/patrocinadores/clara_michilini.webp</image:loc>
-      <image:caption>Foto de Clara Michilini, Miembro de Patrocinadores en MotoMaqLab UC3M</image:caption>
-      <image:title>Clara Michilini — Miembro de Patrocinadores | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Clara Michilini, Miembro de Patrocinadores en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Clara Michilini — Miembro de Patrocinadores | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/patrocinadores/nora_uribe_iribar.webp</image:loc>
-      <image:caption>Foto de Nora Uribe Iribar, Miembro de Patrocinadores en MotoMaqLab UC3M</image:caption>
-      <image:title>Nora Uribe Iribar — Miembro de Patrocinadores | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Nora Uribe Iribar, Miembro de Patrocinadores en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Nora Uribe Iribar — Miembro de Patrocinadores | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/patrocinadores/paula_marin_barone.webp</image:loc>
-      <image:caption>Foto de Paula Marín Barone, Miembro de Patrocinadores en MotoMaqLab UC3M</image:caption>
-      <image:title>Paula Marín Barone — Miembro de Patrocinadores | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Paula Marín Barone, Miembro de Patrocinadores en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Paula Marín Barone — Miembro de Patrocinadores | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/patrocinadores/paula_mendoza_artiles.webp</image:loc>
-      <image:caption>Foto de Paula Mendoza Artiles, Miembro de Patrocinadores en MotoMaqLab UC3M</image:caption>
-      <image:title>Paula Mendoza Artiles — Miembro de Patrocinadores | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Paula Mendoza Artiles, Miembro de Patrocinadores en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Paula Mendoza Artiles — Miembro de Patrocinadores | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/marketing/sabina_rubio_suarez.webp</image:loc>
-      <image:caption>Foto de Sabina Rubio Suárez, Jefa de Marketing en MotoMaqLab UC3M</image:caption>
-      <image:title>Sabina Rubio Suárez — Jefa de Marketing | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Sabina Rubio Suárez, Jefa de Marketing en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Sabina Rubio Suárez — Jefa de Marketing | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/marketing/adrian_moya_navarro.webp</image:loc>
-      <image:caption>Foto de Adrián Moya Navarro, Miembro de Marketing en MotoMaqLab UC3M</image:caption>
-      <image:title>Adrián Moya Navarro — Miembro de Marketing | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Adrián Moya Navarro, Miembro de Marketing en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Adrián Moya Navarro — Miembro de Marketing | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/marketing/digna_guerrero_iruela.webp</image:loc>
-      <image:caption>Foto de Digna Guerrero Iruela, Miembro de Marketing en MotoMaqLab UC3M</image:caption>
-      <image:title>Digna Guerrero Iruela — Miembro de Marketing | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Digna Guerrero Iruela, Miembro de Marketing en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Digna Guerrero Iruela — Miembro de Marketing | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/marketing/isabella_chavez.webp</image:loc>
-      <image:caption>Foto de Isabella Chávez, Miembro de Marketing en MotoMaqLab UC3M</image:caption>
-      <image:title>Isabella Chávez — Miembro de Marketing | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Isabella Chávez, Miembro de Marketing en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Isabella Chávez — Miembro de Marketing | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/marketing/jimena_otero_garcia.webp</image:loc>
-      <image:caption>Foto de Jimena Otero García, Miembro de Marketing en MotoMaqLab UC3M</image:caption>
-      <image:title>Jimena Otero García — Miembro de Marketing | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Jimena Otero García, Miembro de Marketing en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Jimena Otero García — Miembro de Marketing | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/marketing/krishna_emelyn_espinoza.webp</image:loc>
-      <image:caption>Foto de Krishna Emelyn Espinoza, Miembro de Marketing en MotoMaqLab UC3M</image:caption>
-      <image:title>Krishna Emelyn Espinoza — Miembro de Marketing | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Krishna Emelyn Espinoza, Miembro de Marketing en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Krishna Emelyn Espinoza — Miembro de Marketing | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/marketing/lucia_del_rio_velado.webp</image:loc>
-      <image:caption>Foto de Lucía del Río Velado, Miembro de Marketing en MotoMaqLab UC3M</image:caption>
-      <image:title>Lucía del Río Velado — Miembro de Marketing | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Lucía del Río Velado, Miembro de Marketing en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Lucía del Río Velado — Miembro de Marketing | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/marketing/nayra_de_ganzo_rodriguez.webp</image:loc>
-      <image:caption>Foto de Nayra de Ganzo Rodríguez, Miembro de Marketing en MotoMaqLab UC3M</image:caption>
-      <image:title>Nayra de Ganzo Rodríguez — Miembro de Marketing | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Nayra de Ganzo Rodríguez, Miembro de Marketing en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Nayra de Ganzo Rodríguez — Miembro de Marketing | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/marketing/pablo_montes_ponce.webp</image:loc>
-      <image:caption>Foto de Pablo Montes Ponce, Miembro de Marketing en MotoMaqLab UC3M</image:caption>
-      <image:title>Pablo Montes Ponce — Miembro de Marketing | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Pablo Montes Ponce, Miembro de Marketing en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Pablo Montes Ponce — Miembro de Marketing | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/jefatura/david_verdugo.webp</image:loc>
-      <image:caption>Foto de David Verdugo, Jefe de Equipo en la MS8 en MotoMaqLab UC3M</image:caption>
-      <image:title>David Verdugo — Jefe de Equipo en la MS8 | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de David Verdugo, Jefe de Equipo en la MS8 en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>David Verdugo — Jefe de Equipo en la MS8 | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/estructual/sergio_llorente.webp</image:loc>
-      <image:caption>Foto de Sergio Llorente, Jefe de Estructural en la MS8 en MotoMaqLab UC3M</image:caption>
-      <image:title>Sergio Llorente — Jefe de Estructural en la MS8 | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Sergio Llorente, Jefe de Estructural en la MS8 en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Sergio Llorente — Jefe de Estructural en la MS8 | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/estructual/javier_martin_caballero.webp</image:loc>
-      <image:caption>Foto de Javier Martín Caballero, Miembro de Estructural en la MS8 en MotoMaqLab UC3M</image:caption>
-      <image:title>Javier Martín Caballero — Miembro de Estructural en la MS8 | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Javier Martín Caballero, Miembro de Estructural en la MS8 en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Javier Martín Caballero — Miembro de Estructural en la MS8 | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
   </url>
   <url>
@@ -328,262 +328,262 @@
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/hero/equipo.webp</image:loc>
-      <image:caption>Equipo completo MotoMaqLab UC3M — ingenieros y estudiantes MotoStudent UC3M</image:caption>
+      <image:caption>Equipo completo MOTO-MAQLAB-UC3M — ingenieros y estudiantes MotoStudent UC3M</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/jefatura/sergio_cruzado_villarin.webp</image:loc>
-      <image:caption>Foto de Sergio Cruzado Villarín, Team Leader en MotoMaqLab UC3M</image:caption>
-      <image:title>Sergio Cruzado Villarín — Team Leader | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Sergio Cruzado Villarín, Team Leader en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Sergio Cruzado Villarín — Team Leader | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/estructual/miguel_hurtado.webp</image:loc>
-      <image:caption>Foto de Miguel Hurtado Davó, Team Leader en MotoMaqLab UC3M</image:caption>
-      <image:title>Miguel Hurtado Davó — Team Leader | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Miguel Hurtado Davó, Team Leader en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Miguel Hurtado Davó — Team Leader | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/jefatura/abraham_vadillo_morillas.webp</image:loc>
-      <image:caption>Foto de Abraham Vadillo Morillas, Tutor de Equipo en MotoMaqLab UC3M</image:caption>
-      <image:title>Abraham Vadillo Morillas — Tutor de Equipo | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Abraham Vadillo Morillas, Tutor de Equipo en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Abraham Vadillo Morillas — Tutor de Equipo | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/jefatura/marcos_vidal_rodiguez.webp</image:loc>
-      <image:caption>Foto de Marcos Vidal Rodríguez, Tutor de Equipo en MotoMaqLab UC3M</image:caption>
-      <image:title>Marcos Vidal Rodríguez — Tutor de Equipo | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Marcos Vidal Rodríguez, Tutor de Equipo en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Marcos Vidal Rodríguez — Tutor de Equipo | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/dinamica/david_otero_diez.webp</image:loc>
-      <image:caption>Foto de David Otero Díez, Jefe de Dinámica y Estructural en MotoMaqLab UC3M</image:caption>
-      <image:title>David Otero Díez — Jefe de Dinámica y Estructural | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de David Otero Díez, Jefe de Dinámica y Estructural en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>David Otero Díez — Jefe de Dinámica y Estructural | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/dinamica/carlos_mendo_lopez.webp</image:loc>
-      <image:caption>Foto de Carlos Mendo López, Miembro de Dinámica en MotoMaqLab UC3M</image:caption>
-      <image:title>Carlos Mendo López — Miembro de Dinámica | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Carlos Mendo López, Miembro de Dinámica en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Carlos Mendo López — Miembro de Dinámica | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/dinamica/marta_alonso_perez.webp</image:loc>
-      <image:caption>Foto de Marta Alonso Pérez, Miembro de Dinámica en MotoMaqLab UC3M</image:caption>
-      <image:title>Marta Alonso Pérez — Miembro de Dinámica | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Marta Alonso Pérez, Miembro de Dinámica en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Marta Alonso Pérez — Miembro de Dinámica | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/dinamica/miguel_velazquez_kennedy.webp</image:loc>
-      <image:caption>Foto de Miguel Velázquez Kennedy, Miembro de Dinámica en MotoMaqLab UC3M</image:caption>
-      <image:title>Miguel Velázquez Kennedy — Miembro de Dinámica | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Miguel Velázquez Kennedy, Miembro de Dinámica en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Miguel Velázquez Kennedy — Miembro de Dinámica | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/dinamica/raul_beas_amador.webp</image:loc>
-      <image:caption>Foto de Raúl Beas Amador, Miembro de Dinámica en MotoMaqLab UC3M</image:caption>
-      <image:title>Raúl Beas Amador — Miembro de Dinámica | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Raúl Beas Amador, Miembro de Dinámica en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Raúl Beas Amador — Miembro de Dinámica | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/dinamica/rodrigo_andres_cabrera.webp</image:loc>
-      <image:caption>Foto de Rodrigo Andrés Cabrera, Miembro de Dinámica en MotoMaqLab UC3M</image:caption>
-      <image:title>Rodrigo Andrés Cabrera — Miembro de Dinámica | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Rodrigo Andrés Cabrera, Miembro de Dinámica en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Rodrigo Andrés Cabrera — Miembro de Dinámica | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/dinamica/xaantal_perez_martinez.webp</image:loc>
-      <image:caption>Foto de Xaantal Pérez Martínez, Miembro de Dinámica en MotoMaqLab UC3M</image:caption>
-      <image:title>Xaantal Pérez Martínez — Miembro de Dinámica | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Xaantal Pérez Martínez, Miembro de Dinámica en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Xaantal Pérez Martínez — Miembro de Dinámica | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/estructual/carlos_palanca_rueda.webp</image:loc>
-      <image:caption>Foto de Carlos Palanca Rueda, Miembro de Estructural en MotoMaqLab UC3M</image:caption>
-      <image:title>Carlos Palanca Rueda — Miembro de Estructural | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Carlos Palanca Rueda, Miembro de Estructural en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Carlos Palanca Rueda — Miembro de Estructural | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/estructual/cristina_gonzalez_luna.webp</image:loc>
-      <image:caption>Foto de Cristina González Luna, Miembro de Estructural en MotoMaqLab UC3M</image:caption>
-      <image:title>Cristina González Luna — Miembro de Estructural | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Cristina González Luna, Miembro de Estructural en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Cristina González Luna — Miembro de Estructural | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/estructual/diego_calvo_blanco.webp</image:loc>
-      <image:caption>Foto de Diego Calvo Blanco, Miembro de Estructural en MotoMaqLab UC3M</image:caption>
-      <image:title>Diego Calvo Blanco — Miembro de Estructural | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Diego Calvo Blanco, Miembro de Estructural en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Diego Calvo Blanco — Miembro de Estructural | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/estructual/ivan_garcia_martin.webp</image:loc>
-      <image:caption>Foto de Iván García Martín, Miembro de Estructural en MotoMaqLab UC3M</image:caption>
-      <image:title>Iván García Martín — Miembro de Estructural | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Iván García Martín, Miembro de Estructural en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Iván García Martín — Miembro de Estructural | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/aerodinamica/miguel_lozano.webp</image:loc>
-      <image:caption>Foto de Miguel Lozano Nykolaychuk, Jefe de Aerodinámica y Organización en MotoMaqLab UC3M</image:caption>
-      <image:title>Miguel Lozano Nykolaychuk — Jefe de Aerodinámica y Organización | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Miguel Lozano Nykolaychuk, Jefe de Aerodinámica y Organización en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Miguel Lozano Nykolaychuk — Jefe de Aerodinámica y Organización | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/aerodinamica/adriana_morales.webp</image:loc>
-      <image:caption>Foto de Adriana Morales, Miembro de Aerodinámica en MotoMaqLab UC3M</image:caption>
-      <image:title>Adriana Morales — Miembro de Aerodinámica | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Adriana Morales, Miembro de Aerodinámica en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Adriana Morales — Miembro de Aerodinámica | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/aerodinamica/alejandro_ranz_remartinez.webp</image:loc>
-      <image:caption>Foto de Alejandro Ranz Remartínez, Miembro de Aerodinámica en MotoMaqLab UC3M</image:caption>
-      <image:title>Alejandro Ranz Remartínez — Miembro de Aerodinámica | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Alejandro Ranz Remartínez, Miembro de Aerodinámica en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Alejandro Ranz Remartínez — Miembro de Aerodinámica | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/aerodinamica/alvaro_menendez.webp</image:loc>
-      <image:caption>Foto de Álvaro Menéndez, Miembro de Aerodinámica en MotoMaqLab UC3M</image:caption>
-      <image:title>Álvaro Menéndez — Miembro de Aerodinámica | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Álvaro Menéndez, Miembro de Aerodinámica en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Álvaro Menéndez — Miembro de Aerodinámica | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/aerodinamica/daniel_luque.webp</image:loc>
-      <image:caption>Foto de Daniel Luque Migueles, Miembro de Aerodinámica en MotoMaqLab UC3M</image:caption>
-      <image:title>Daniel Luque Migueles — Miembro de Aerodinámica | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Daniel Luque Migueles, Miembro de Aerodinámica en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Daniel Luque Migueles — Miembro de Aerodinámica | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/aerodinamica/gonzalo_mayordomo_jimenez.webp</image:loc>
-      <image:caption>Foto de Gonzalo Mayordomo Jiménez, Miembro de Aerodinámica en MotoMaqLab UC3M</image:caption>
-      <image:title>Gonzalo Mayordomo Jiménez — Miembro de Aerodinámica | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Gonzalo Mayordomo Jiménez, Miembro de Aerodinámica en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Gonzalo Mayordomo Jiménez — Miembro de Aerodinámica | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/aerodinamica/mario_garcia_diaz.webp</image:loc>
-      <image:caption>Foto de Mario García Diaz, Miembro de Aerodinámica en MotoMaqLab UC3M</image:caption>
-      <image:title>Mario García Diaz — Miembro de Aerodinámica | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Mario García Diaz, Miembro de Aerodinámica en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Mario García Diaz — Miembro de Aerodinámica | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/aerodinamica/pablo_morata_garcia.webp</image:loc>
-      <image:caption>Foto de Pablo Morata García, Miembro de Aerodinámica en MotoMaqLab UC3M</image:caption>
-      <image:title>Pablo Morata García — Miembro de Aerodinámica | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Pablo Morata García, Miembro de Aerodinámica en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Pablo Morata García — Miembro de Aerodinámica | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/electronica/sara_dominguez_dominguez.webp</image:loc>
-      <image:caption>Foto de Sara Domínguez Domínguez, Jefa de Electrónica en MotoMaqLab UC3M</image:caption>
-      <image:title>Sara Domínguez Domínguez — Jefa de Electrónica | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Sara Domínguez Domínguez, Jefa de Electrónica en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Sara Domínguez Domínguez — Jefa de Electrónica | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/electronica/jesus_galan_elices.webp</image:loc>
-      <image:caption>Foto de Jesús Galán Elices, Jefe de Telemetría y Sensorización en MotoMaqLab UC3M</image:caption>
-      <image:title>Jesús Galán Elices — Jefe de Telemetría y Sensorización | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Jesús Galán Elices, Jefe de Telemetría y Sensorización en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Jesús Galán Elices — Jefe de Telemetría y Sensorización | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/electronica/abel_ramos_torres.webp</image:loc>
-      <image:caption>Foto de Abel Ramos Torres, Miembro de Electrónica en MotoMaqLab UC3M</image:caption>
-      <image:title>Abel Ramos Torres — Miembro de Electrónica | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Abel Ramos Torres, Miembro de Electrónica en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Abel Ramos Torres — Miembro de Electrónica | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/electronica/alberto_robles_serrano.webp</image:loc>
-      <image:caption>Foto de Alberto Robles Serrano, Miembro de Electrónica en MotoMaqLab UC3M</image:caption>
-      <image:title>Alberto Robles Serrano — Miembro de Electrónica | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Alberto Robles Serrano, Miembro de Electrónica en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Alberto Robles Serrano — Miembro de Electrónica | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/electronica/angel_perez_antorrena.webp</image:loc>
-      <image:caption>Foto de Ángel Pérez Antorrena, Miembro de Electrónica en MotoMaqLab UC3M</image:caption>
-      <image:title>Ángel Pérez Antorrena — Miembro de Electrónica | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Ángel Pérez Antorrena, Miembro de Electrónica en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Ángel Pérez Antorrena — Miembro de Electrónica | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/electronica/elisa_rodriguez.webp</image:loc>
-      <image:caption>Foto de Elisa Rodríguez, Miembro de Electrónica en MotoMaqLab UC3M</image:caption>
-      <image:title>Elisa Rodríguez — Miembro de Electrónica | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Elisa Rodríguez, Miembro de Electrónica en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Elisa Rodríguez — Miembro de Electrónica | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/electronica/iciar_zamanillo_herreros.webp</image:loc>
-      <image:caption>Foto de Icíar Zamanillo Herreros, Miembro de Electrónica en MotoMaqLab UC3M</image:caption>
-      <image:title>Icíar Zamanillo Herreros — Miembro de Electrónica | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Icíar Zamanillo Herreros, Miembro de Electrónica en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Icíar Zamanillo Herreros — Miembro de Electrónica | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/electronica/jose_manuel_fernandez_vargas.webp</image:loc>
-      <image:caption>Foto de Jose Manuel Fernandez Vargas, Miembro de Electrónica en MotoMaqLab UC3M</image:caption>
-      <image:title>Jose Manuel Fernandez Vargas — Miembro de Electrónica | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Jose Manuel Fernandez Vargas, Miembro de Electrónica en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Jose Manuel Fernandez Vargas — Miembro de Electrónica | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/electronica/monica_eugenia_salcudean.webp</image:loc>
-      <image:caption>Foto de Monica Eugenia Salcudean Cozmean, Miembro de Electrónica en MotoMaqLab UC3M</image:caption>
-      <image:title>Monica Eugenia Salcudean Cozmean — Miembro de Electrónica | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Monica Eugenia Salcudean Cozmean, Miembro de Electrónica en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Monica Eugenia Salcudean Cozmean — Miembro de Electrónica | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/electronica/rafael_perez_de_lema.webp</image:loc>
-      <image:caption>Foto de Rafael Pérez de Lema Carmona, Miembro de Electrónica en MotoMaqLab UC3M</image:caption>
-      <image:title>Rafael Pérez de Lema Carmona — Miembro de Electrónica | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Rafael Pérez de Lema Carmona, Miembro de Electrónica en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Rafael Pérez de Lema Carmona — Miembro de Electrónica | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/patrocinadores/jose_garcia-morato_alvarez.webp</image:loc>
-      <image:caption>Foto de Jose García-Morato Álvarez, Jefe de Patrocinadores en MotoMaqLab UC3M</image:caption>
-      <image:title>Jose García-Morato Álvarez — Jefe de Patrocinadores | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Jose García-Morato Álvarez, Jefe de Patrocinadores en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Jose García-Morato Álvarez — Jefe de Patrocinadores | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/patrocinadores/carlos_calles_gomez.webp</image:loc>
-      <image:caption>Foto de Carlos Calles Gómez, Miembro de Patrocinadores en MotoMaqLab UC3M</image:caption>
-      <image:title>Carlos Calles Gómez — Miembro de Patrocinadores | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Carlos Calles Gómez, Miembro de Patrocinadores en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Carlos Calles Gómez — Miembro de Patrocinadores | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/patrocinadores/clara_michilini.webp</image:loc>
-      <image:caption>Foto de Clara Michilini, Miembro de Patrocinadores en MotoMaqLab UC3M</image:caption>
-      <image:title>Clara Michilini — Miembro de Patrocinadores | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Clara Michilini, Miembro de Patrocinadores en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Clara Michilini — Miembro de Patrocinadores | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/patrocinadores/nora_uribe_iribar.webp</image:loc>
-      <image:caption>Foto de Nora Uribe Iribar, Miembro de Patrocinadores en MotoMaqLab UC3M</image:caption>
-      <image:title>Nora Uribe Iribar — Miembro de Patrocinadores | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Nora Uribe Iribar, Miembro de Patrocinadores en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Nora Uribe Iribar — Miembro de Patrocinadores | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/patrocinadores/paula_marin_barone.webp</image:loc>
-      <image:caption>Foto de Paula Marín Barone, Miembro de Patrocinadores en MotoMaqLab UC3M</image:caption>
-      <image:title>Paula Marín Barone — Miembro de Patrocinadores | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Paula Marín Barone, Miembro de Patrocinadores en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Paula Marín Barone — Miembro de Patrocinadores | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/patrocinadores/paula_mendoza_artiles.webp</image:loc>
-      <image:caption>Foto de Paula Mendoza Artiles, Miembro de Patrocinadores en MotoMaqLab UC3M</image:caption>
-      <image:title>Paula Mendoza Artiles — Miembro de Patrocinadores | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Paula Mendoza Artiles, Miembro de Patrocinadores en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Paula Mendoza Artiles — Miembro de Patrocinadores | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/marketing/sabina_rubio_suarez.webp</image:loc>
-      <image:caption>Foto de Sabina Rubio Suárez, Jefa de Marketing en MotoMaqLab UC3M</image:caption>
-      <image:title>Sabina Rubio Suárez — Jefa de Marketing | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Sabina Rubio Suárez, Jefa de Marketing en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Sabina Rubio Suárez — Jefa de Marketing | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/marketing/adrian_moya_navarro.webp</image:loc>
-      <image:caption>Foto de Adrián Moya Navarro, Miembro de Marketing en MotoMaqLab UC3M</image:caption>
-      <image:title>Adrián Moya Navarro — Miembro de Marketing | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Adrián Moya Navarro, Miembro de Marketing en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Adrián Moya Navarro — Miembro de Marketing | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/marketing/digna_guerrero_iruela.webp</image:loc>
-      <image:caption>Foto de Digna Guerrero Iruela, Miembro de Marketing en MotoMaqLab UC3M</image:caption>
-      <image:title>Digna Guerrero Iruela — Miembro de Marketing | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Digna Guerrero Iruela, Miembro de Marketing en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Digna Guerrero Iruela — Miembro de Marketing | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/marketing/isabella_chavez.webp</image:loc>
-      <image:caption>Foto de Isabella Chávez, Miembro de Marketing en MotoMaqLab UC3M</image:caption>
-      <image:title>Isabella Chávez — Miembro de Marketing | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Isabella Chávez, Miembro de Marketing en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Isabella Chávez — Miembro de Marketing | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/marketing/jimena_otero_garcia.webp</image:loc>
-      <image:caption>Foto de Jimena Otero García, Miembro de Marketing en MotoMaqLab UC3M</image:caption>
-      <image:title>Jimena Otero García — Miembro de Marketing | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Jimena Otero García, Miembro de Marketing en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Jimena Otero García — Miembro de Marketing | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/marketing/krishna_emelyn_espinoza.webp</image:loc>
-      <image:caption>Foto de Krishna Emelyn Espinoza, Miembro de Marketing en MotoMaqLab UC3M</image:caption>
-      <image:title>Krishna Emelyn Espinoza — Miembro de Marketing | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Krishna Emelyn Espinoza, Miembro de Marketing en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Krishna Emelyn Espinoza — Miembro de Marketing | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/marketing/lucia_del_rio_velado.webp</image:loc>
-      <image:caption>Foto de Lucía del Río Velado, Miembro de Marketing en MotoMaqLab UC3M</image:caption>
-      <image:title>Lucía del Río Velado — Miembro de Marketing | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Lucía del Río Velado, Miembro de Marketing en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Lucía del Río Velado — Miembro de Marketing | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/marketing/nayra_de_ganzo_rodriguez.webp</image:loc>
-      <image:caption>Foto de Nayra de Ganzo Rodríguez, Miembro de Marketing en MotoMaqLab UC3M</image:caption>
-      <image:title>Nayra de Ganzo Rodríguez — Miembro de Marketing | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Nayra de Ganzo Rodríguez, Miembro de Marketing en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Nayra de Ganzo Rodríguez — Miembro de Marketing | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/marketing/pablo_montes_ponce.webp</image:loc>
-      <image:caption>Foto de Pablo Montes Ponce, Miembro de Marketing en MotoMaqLab UC3M</image:caption>
-      <image:title>Pablo Montes Ponce — Miembro de Marketing | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Pablo Montes Ponce, Miembro de Marketing en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Pablo Montes Ponce — Miembro de Marketing | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/jefatura/david_verdugo.webp</image:loc>
-      <image:caption>Foto de David Verdugo, Jefe de Equipo en la MS8 en MotoMaqLab UC3M</image:caption>
-      <image:title>David Verdugo — Jefe de Equipo en la MS8 | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de David Verdugo, Jefe de Equipo en la MS8 en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>David Verdugo — Jefe de Equipo en la MS8 | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/estructual/sergio_llorente.webp</image:loc>
-      <image:caption>Foto de Sergio Llorente, Jefe de Estructural en la MS8 en MotoMaqLab UC3M</image:caption>
-      <image:title>Sergio Llorente — Jefe de Estructural en la MS8 | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Sergio Llorente, Jefe de Estructural en la MS8 en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Sergio Llorente — Jefe de Estructural en la MS8 | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/equipo/estructual/javier_martin_caballero.webp</image:loc>
-      <image:caption>Foto de Javier Martín Caballero, Miembro de Estructural en la MS8 en MotoMaqLab UC3M</image:caption>
-      <image:title>Javier Martín Caballero — Miembro de Estructural en la MS8 | MotoMaqLab UC3M</image:title>
+      <image:caption>Foto de Javier Martín Caballero, Miembro de Estructural en la MS8 en MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>Javier Martín Caballero — Miembro de Estructural en la MS8 | MOTO-MAQLAB-UC3M</image:title>
     </image:image>
   </url>
   <url>
@@ -593,7 +593,7 @@
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/hero/patrocinadores.webp</image:loc>
-      <image:caption>Patrocinadores de MotoMaqLab UC3M — empresas e instituciones que apoyan la ingeniería de competición</image:caption>
+      <image:caption>Patrocinadores de MOTO-MAQLAB-UC3M — empresas e instituciones que apoyan la ingeniería de competición</image:caption>
     </image:image>
   </url>
   <url>
@@ -603,7 +603,7 @@
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/hero/patrocinadores.webp</image:loc>
-      <image:caption>MotoMaqLab UC3M Sponsors — companies and institutions supporting competition engineering</image:caption>
+      <image:caption>MOTO-MAQLAB-UC3M Sponsors — companies and institutions supporting competition engineering</image:caption>
     </image:image>
   </url>
   <url>
@@ -613,7 +613,7 @@
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/hero/eventos.webp</image:loc>
-      <image:caption>Eventos y calendario del equipo MotoMaqLab UC3M en MotoStudent</image:caption>
+      <image:caption>Eventos y calendario del equipo MOTO-MAQLAB-UC3M en MotoStudent</image:caption>
     </image:image>
   </url>
   <url>
@@ -623,7 +623,7 @@
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/hero/eventos.webp</image:loc>
-      <image:caption>MotoMaqLab UC3M team events and MotoStudent competition calendar</image:caption>
+      <image:caption>MOTO-MAQLAB-UC3M team events and MotoStudent competition calendar</image:caption>
     </image:image>
   </url>
   <url>
@@ -633,7 +633,7 @@
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/hero/blog.webp</image:loc>
-      <image:caption>Blog y noticias del equipo MotoMaqLab UC3M — ingeniería y competición</image:caption>
+      <image:caption>Blog y noticias del equipo MOTO-MAQLAB-UC3M — ingeniería y competición</image:caption>
     </image:image>
   </url>
   <url>
@@ -643,7 +643,7 @@
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/hero/blog.webp</image:loc>
-      <image:caption>MotoMaqLab UC3M team blog and news — engineering and motorsport</image:caption>
+      <image:caption>MOTO-MAQLAB-UC3M team blog and news — engineering and motorsport</image:caption>
     </image:image>
   </url>
   <url>
@@ -653,7 +653,7 @@
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/motostudent/moto_en_pista.jpeg</image:loc>
-      <image:caption>Prototipo MotoMaqLab UC3M en el Circuito FIM de MotorLand Aragón — MotoStudent</image:caption>
+      <image:caption>Prototipo MOTO-MAQLAB-UC3M en el Circuito FIM de MotorLand Aragón — MotoStudent</image:caption>
     </image:image>
   </url>
   <url>
@@ -663,7 +663,7 @@
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/motostudent/moto_en_pista.jpeg</image:loc>
-      <image:caption>MotoMaqLab UC3M prototype at FIM MotorLand Aragón Circuit — MotoStudent</image:caption>
+      <image:caption>MOTO-MAQLAB-UC3M prototype at FIM MotorLand Aragón Circuit — MotoStudent</image:caption>
     </image:image>
   </url>
 
@@ -675,12 +675,12 @@
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/patrocinios/Maqlab.webp</image:loc>
-      <image:caption>Logo de MAQLAB, patrocinador de MotoMaqLab UC3M</image:caption>
-      <image:title>MAQLAB — Patrocinador MotoMaqLab UC3M</image:title>
+      <image:caption>Logo de MAQLAB, patrocinador de MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>MAQLAB — Patrocinador MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/patrocinios/maqlab/Foto_5_Maqlab.webp</image:loc>
-      <image:caption>MAQLAB colaborando con MotoMaqLab UC3M en MotoStudent</image:caption>
+      <image:caption>MAQLAB colaborando con MOTO-MAQLAB-UC3M en MotoStudent</image:caption>
     </image:image>
   </url>
   <url>
@@ -690,8 +690,8 @@
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/patrocinios/altair.webp</image:loc>
-      <image:caption>Logo de ALTAIR, patrocinador de MotoMaqLab UC3M</image:caption>
-      <image:title>ALTAIR — Patrocinador MotoMaqLab UC3M</image:title>
+      <image:caption>Logo de ALTAIR, patrocinador de MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>ALTAIR — Patrocinador MOTO-MAQLAB-UC3M</image:title>
     </image:image>
   </url>
   <url>
@@ -701,12 +701,12 @@
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/patrocinios/addyx.webp</image:loc>
-      <image:caption>Logo de ADDYX, patrocinador de MotoMaqLab UC3M</image:caption>
-      <image:title>ADDYX — Patrocinador MotoMaqLab UC3M</image:title>
+      <image:caption>Logo de ADDYX, patrocinador de MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>ADDYX — Patrocinador MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/patrocinios/addyx/laminado 1.webp</image:loc>
-      <image:caption>ADDYX colaborando con MotoMaqLab UC3M en MotoStudent</image:caption>
+      <image:caption>ADDYX colaborando con MOTO-MAQLAB-UC3M en MotoStudent</image:caption>
     </image:image>
   </url>
   <url>
@@ -716,12 +716,12 @@
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/patrocinios/uc3m.webp</image:loc>
-      <image:caption>Logo de UC3M, patrocinador de MotoMaqLab UC3M</image:caption>
-      <image:title>UC3M — Patrocinador MotoMaqLab UC3M</image:title>
+      <image:caption>Logo de UC3M, patrocinador de MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>UC3M — Patrocinador MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/patrocinios/uc3m/Foto_6_UC3M.webp</image:loc>
-      <image:caption>UC3M colaborando con MotoMaqLab UC3M en MotoStudent</image:caption>
+      <image:caption>UC3M colaborando con MOTO-MAQLAB-UC3M en MotoStudent</image:caption>
     </image:image>
   </url>
   <url>
@@ -731,75 +731,75 @@
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/patrocinios/retamal.webp</image:loc>
-      <image:caption>Logo de RETAMAL, patrocinador de MotoMaqLab UC3M</image:caption>
-      <image:title>RETAMAL — Patrocinador MotoMaqLab UC3M</image:title>
+      <image:caption>Logo de RETAMAL, patrocinador de MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>RETAMAL — Patrocinador MOTO-MAQLAB-UC3M</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://motomaqlabuc3m.es/sponsor-maqlab.html</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-08-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/patrocinios/Maqlab.webp</image:loc>
-      <image:caption>Logo de MAQLAB, patrocinador de MotoMaqLab UC3M</image:caption>
-      <image:title>MAQLAB — Patrocinador MotoMaqLab UC3M</image:title>
+      <image:caption>Logo de MAQLAB, patrocinador de MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>MAQLAB — Patrocinador MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/patrocinios/maqlab/Foto_5_Maqlab.webp</image:loc>
-      <image:caption>MAQLAB colaborando con MotoMaqLab UC3M en MotoStudent</image:caption>
+      <image:caption>MAQLAB colaborando con MOTO-MAQLAB-UC3M en MotoStudent</image:caption>
     </image:image>
   </url>
   <url>
     <loc>https://motomaqlabuc3m.es/sponsor-altair.html</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-08-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/patrocinios/altair.webp</image:loc>
-      <image:caption>Logo de ALTAIR, patrocinador de MotoMaqLab UC3M</image:caption>
-      <image:title>ALTAIR — Patrocinador MotoMaqLab UC3M</image:title>
+      <image:caption>Logo de ALTAIR, patrocinador de MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>ALTAIR — Patrocinador MOTO-MAQLAB-UC3M</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://motomaqlabuc3m.es/sponsor-addyx.html</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-08-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/patrocinios/addyx.webp</image:loc>
-      <image:caption>Logo de ADDYX, patrocinador de MotoMaqLab UC3M</image:caption>
-      <image:title>ADDYX — Patrocinador MotoMaqLab UC3M</image:title>
+      <image:caption>Logo de ADDYX, patrocinador de MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>ADDYX — Patrocinador MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/patrocinios/addyx/laminado 1.webp</image:loc>
-      <image:caption>ADDYX colaborando con MotoMaqLab UC3M en MotoStudent</image:caption>
+      <image:caption>ADDYX colaborando con MOTO-MAQLAB-UC3M en MotoStudent</image:caption>
     </image:image>
   </url>
   <url>
     <loc>https://motomaqlabuc3m.es/sponsor-UC3M.html</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-08-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/patrocinios/uc3m.webp</image:loc>
-      <image:caption>Logo de UC3M, patrocinador de MotoMaqLab UC3M</image:caption>
-      <image:title>UC3M — Patrocinador MotoMaqLab UC3M</image:title>
+      <image:caption>Logo de UC3M, patrocinador de MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>UC3M — Patrocinador MOTO-MAQLAB-UC3M</image:title>
     </image:image>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/patrocinios/uc3m/Foto_6_UC3M.webp</image:loc>
-      <image:caption>UC3M colaborando con MotoMaqLab UC3M en MotoStudent</image:caption>
+      <image:caption>UC3M colaborando con MOTO-MAQLAB-UC3M en MotoStudent</image:caption>
     </image:image>
   </url>
   <url>
     <loc>https://motomaqlabuc3m.es/sponsor-retamal.html</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-08-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/patrocinios/retamal.webp</image:loc>
-      <image:caption>Logo de RETAMAL, patrocinador de MotoMaqLab UC3M</image:caption>
-      <image:title>RETAMAL — Patrocinador MotoMaqLab UC3M</image:title>
+      <image:caption>Logo de RETAMAL, patrocinador de MOTO-MAQLAB-UC3M</image:caption>
+      <image:title>RETAMAL — Patrocinador MOTO-MAQLAB-UC3M</image:title>
     </image:image>
   </url>
 
@@ -814,7 +814,7 @@
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/blog/moto-maqlab-uc3m-participa-en-una-jornada-de-diseo-electrnico-impartida-por-wrth-elektronik/Equipo.webp</image:loc>
-      <image:caption>MotoMaqlab UC3M participa en una jornada de diseño electrónico impartida por Würth Elektronik — MotoMaqLab UC3M</image:caption>
+      <image:caption>MotoMaqlab UC3M participa en una jornada de diseño electrónico impartida por Würth Elektronik — MOTO-MAQLAB-UC3M</image:caption>
     </image:image>
   </url>
   <url>
@@ -824,7 +824,7 @@
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://motomaqlabuc3m.es/assets/img/blog/moto-maqlab-uc3m-participa-en-una-jornada-de-diseo-electrnico-impartida-por-wrth-elektronik/Equipo.webp</image:loc>
-      <image:caption>Moto Maqlab UC3M participates in an electronic design workshop led by Würth Elektronik — MotoMaqLab UC3M</image:caption>
+      <image:caption>Moto Maqlab UC3M participates in an electronic design workshop led by Würth Elektronik — MOTO-MAQLAB-UC3M</image:caption>
     </image:image>
   </url>
 

@@ -4,7 +4,7 @@ import os
 
 urls = {
     "ser_cover.jpg": "https://cadenaser.com/cmadrid/2026/02/27/asi-es-la-nueva-moto-de-competicion-creada-por-estudiantes-de-la-uc3m-ser-madrid-sur/",
-    "alcabo_cover.jpg": "https://alcabodelacalle.es/?s=MotoMaqLab"
+    "alcabo_cover.jpg": "https://alcabodelacalle.es/?s=MOTO-MAQLAB-UC3M"
 }
 
 headers = {

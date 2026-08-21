@@ -2,7 +2,7 @@
 let data = JSON.parse(fs.readFileSync('assets/data/blog.json', 'utf8'));
 
 const translations = {
-    "Newsletter - Revista MotoMaqLab": "Newsletter - MotoMaqLab Magazine",
+    "Newsletter - Revista MOTO-MAQLAB-UC3M": "Newsletter - MOTO-MAQLAB-UC3M Magazine",
     "¡Ya está disponible nuestra nueva Newsletter! Descarga el PDF para conocer los últimos avances del equipo, competiciones pasadas y nuestros próximos objetivos.": "Our new Newsletter is now available! Download the PDF to learn about the team's latest progress, past competitions, and our upcoming goals.",
     "Avances en la Aerodinámica del MS8": "Advances in MS8 Aerodynamics",
     "Nuestro departamento de aerodinámica ha completado las simulaciones CFD del nuevo diseño del carenado. Reducción de drag estimada del 5%. Aquí te contamos los detalles técnicos y los próximos pasos en el túnel de viento.": "Our aerodynamics department has completed the CFD simulations of the new fairing design. Estimated drag reduction of 5%. Here we tell you the technical details and the next steps in the wind tunnel.",

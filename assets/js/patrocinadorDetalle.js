@@ -61,7 +61,7 @@
             if (!sponsor) { renderError(container); return; }
 
             const canonicalFile = sponsor.dedicatedPage || `patrocinador-${sponsor.id}.html`;
-            const seoTitle = sponsor.seoTitle || `${sponsor.name} — Patrocinador ${tierName} | MotoMaqLab UC3M`;
+            const seoTitle = sponsor.seoTitle || `${sponsor.name} — Patrocinador ${tierName} | MOTO-MAQLAB-UC3M`;
 
             if (typeof motoMaqLabApplySeo === 'function') {
                 motoMaqLabApplySeo({
@@ -89,7 +89,7 @@
         const backText = isEnglish ? '← Sponsors' : '← Patrocinadores';
         const galleryTitle = isEnglish ? 'Additional Gallery' : 'Galería Adicional';
         const allSponsorsText = isEnglish ? '← View all sponsors' : '← Ver todos los patrocinadores';
-        const quoteCite = isEnglish ? '— MotoMaqLab UC3M Team' : '— Equipo MotoMaqLab UC3M';
+        const quoteCite = isEnglish ? '— MOTO-MAQLAB-UC3M Team' : '— Equipo MOTO-MAQLAB-UC3M';
         const { intro, features, featureTitle, textBlocks } = parseContenido(sponsor.contenido || sponsor.description);
 
         // Feature cards
@@ -187,16 +187,16 @@
             const jsonLd = {
                 '@context': 'https://schema.org',
                 '@type': 'Article',
-                'headline': sponsor.seoTitle || (sponsor.name + ' — Patrocinador ' + tierName + ' de MotoMaqLab UC3M'),
+                'headline': sponsor.seoTitle || (sponsor.name + ' — Patrocinador ' + tierName + ' de MOTO-MAQLAB-UC3M'),
                 'description': sponsor.seoDescription || sponsor.description || '',
                 'author': {
                     '@type': 'Organization',
-                    'name': 'MotoMaqLab UC3M',
+                    'name': 'MOTO-MAQLAB-UC3M',
                     'url': 'https://motomaqlabuc3m.es'
                 },
                 'publisher': {
                     '@type': 'Organization',
-                    'name': 'MotoMaqLab UC3M',
+                    'name': 'MOTO-MAQLAB-UC3M',
                     'url': 'https://motomaqlabuc3m.es'
                 },
                 'about': {
