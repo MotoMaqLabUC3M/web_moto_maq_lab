@@ -42,7 +42,8 @@
                     },
                     {
                         "label": "Join the Team",
-                        "href": "unete.html"
+                        "href": "unete.html",
+                        "badge": "OPEN"
                     }
                 ]
             },

@@ -32,7 +32,8 @@
                     },
                     {
                         "label": "Únete al Equipo",
-                        "href": "unete.html"
+                        "href": "unete.html",
+                        "badge": "ABIERTO"
                     }
                 ]
             },

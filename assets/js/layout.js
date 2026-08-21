@@ -104,13 +104,37 @@ window.sanitize = function(str) {
     }
 
     function renderHeader(el, h) {
+        // Render Top Announcement Bar if not closed in this session
+        if (!sessionStorage.getItem('hide_top_announcement') && !document.querySelector('.top-announcement-bar')) {
+            const topBar = document.createElement('div');
+            topBar.className = 'top-announcement-bar';
+            const barText = isEnglish ? 
+                '🔥 <strong>RECRUITMENT OPEN 2025/2027!</strong> We are looking for UC3M students for all departments.' : 
+                '🔥 <strong>¡CAPTACIÓN ABIERTA 2025/2027!</strong> Buscamos estudiantes de la UC3M para todos los departamentos.';
+            const barLinkText = isEnglish ? 'Apply now &rarr;' : 'Solicitar unirse &rarr;';
+            topBar.innerHTML = 
+                '<div class="top-announcement-bar__content">' +
+                    '<span>' + barText + '</span>' +
+                    '<a href="unete.html" class="top-announcement-bar__link">' + barLinkText + '</a>' +
+                '</div>' +
+                '<button type="button" class="top-announcement-bar__close" aria-label="Cerrar">&times;</button>';
+            
+            document.body.insertBefore(topBar, document.body.firstChild);
+
+            topBar.querySelector('.top-announcement-bar__close').addEventListener('click', function() {
+                topBar.classList.add('is-hidden');
+                sessionStorage.setItem('hide_top_announcement', 'true');
+            });
+        }
+
         // Build nav links
         var navLinks = '';
         h.nav.forEach(function (item) {
             if (item.submenu) {
                 var submenuLinks = '';
                 item.submenu.forEach(function(sub) {
-                    submenuLinks += '<a href="' + sub.href + '">' + sub.label + '</a>';
+                    var badgeHtml = sub.badge ? ' <span class="nav-badge-pulse">' + sub.badge + '</span>' : '';
+                    submenuLinks += '<a href="' + sub.href + '">' + sub.label + badgeHtml + '</a>';
                 });
                 navLinks += '<div class="nav-dropdown">' +
                                 '<a href="javascript:void(0);" class="nav-dropdown-toggle">' + item.label + ' <i data-lucide="chevron-down" class="dropdown-icon"></i></a>' +
