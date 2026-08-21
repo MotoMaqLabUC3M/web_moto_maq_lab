@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://www.gstatic.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https: blob:; frame-src 'self' https:; connect-src 'self' https:;">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Únete al Equipo | MotoMaqLab UC3M</title>
+    <meta name="description" content="¿Quieres formar parte de MotoMaqLab UC3M? Únete al equipo MotoStudent de la UC3M. Ingeniería real, competición internacional y experiencia que marca la diferencia.">
+    <meta name="keywords" content="unirse MotoMaqLab, equipo MotoStudent UC3M, prácticas ingeniería moto, voluntariado MotoStudent, UC3M motorsport">
+    <link rel="canonical" href="https://motomaqlabuc3m.es/unete.html">
+    <meta property="og:title" content="Únete a MotoMaqLab UC3M — Equipo MotoStudent">
+    <meta property="og:description" content="Ingeniería real, competición internacional y experiencia que marca la diferencia. Únete al equipo de moto de la UC3M.">
+    <meta property="og:image" content="https://motomaqlabuc3m.es/assets/img/home/equipo_index.webp">
+    <meta property="og:url" content="https://motomaqlabuc3m.es/unete.html">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:site_name" content="MotoMaqLab UC3M">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="assets/css/global.css" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MMNY9WVPLY"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-MMNY9WVPLY');
+    </script>
+    <link rel="alternate" hreflang="es" href="https://motomaqlabuc3m.es/unete.html" />
+    <link rel="alternate" hreflang="x-default" href="https://motomaqlabuc3m.es/unete.html" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon/favicon-32x32.png">
+    <link rel="manifest" href="assets/img/favicon/manifest.json">
+    <meta name="theme-color" content="#0a0a0a">
+
+    <style>
+        /* ── Join page — hero full viewport ── */
+        .join-hero {
+            min-height: 100vh;
+            background: #0d0d0f;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 8rem 2rem 5rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .join-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('assets/img/home/header_unete.webp') center/cover no-repeat;
+            opacity: 0.55;
+        }
+        .join-hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(13, 13, 15, 0.35) 0%, rgba(10, 10, 10, 0.75) 75%, #0a0a0a 100%);
+            pointer-events: none;
+        }
+        .join-hero__content {
+            position: relative;
+            z-index: 1;
+            max-width: 720px;
+        }
+        .join-hero__badge {
+            display: inline-block;
+            background: var(--c-red, #e3000f);
+            color: #fff;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            padding: 0.4rem 1.2rem;
+            border-radius: 2px;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+        }
+        .join-hero h1 {
+            font-size: clamp(2.8rem, 7vw, 5.5rem);
+            font-weight: 900;
+            line-height: 1.05;
+            color: #fff;
+            margin-bottom: 1.2rem;
+            text-transform: uppercase;
+        }
+        .join-hero h1 span { color: var(--c-red, #e3000f); }
+        .join-hero__lead {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.65);
+            max-width: 540px;
+            margin: 0 auto 2.5rem;
+            line-height: 1.7;
+        }
+        .join-hero__scroll {
+            position: absolute;
+            bottom: 2.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.4rem;
+            color: rgba(255,255,255,0.45);
+            font-size: 0.65rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
+        .join-hero__scroll-line {
+            width: 1px;
+            height: 40px;
+            background: linear-gradient(to bottom, rgba(255,255,255,0.4), transparent);
+            animation: scrollPulse 1.8s ease-in-out infinite;
+        }
+        @keyframes scrollPulse {
+            0%, 100% { opacity: 0.4; transform: scaleY(1); }
+            50% { opacity: 1; transform: scaleY(1.15); }
+        }
+
+        /* Why join */
+        .join-why { background: #0a0a0a; padding: 5rem 2rem; }
+        .join-why__grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            max-width: 1100px;
+            margin: 3rem auto 0;
+        }
+        .join-why__card {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 12px;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+        }
+        .join-why__card:hover {
+            transform: translateY(-5px);
+            border-color: var(--c-red, #e3000f);
+            box-shadow: 0 12px 40px rgba(227,0,15,0.15);
+        }
+        .join-why__icon { font-size: 2.4rem; margin-bottom: 1rem; display: block; }
+        .join-why__card h3 {
+            font-size: 0.95rem; font-weight: 700; color: #fff;
+            margin-bottom: 0.6rem; text-transform: uppercase; letter-spacing: 0.05em;
+        }
+        .join-why__card p { font-size: 0.88rem; color: rgba(255,255,255,0.58); line-height: 1.6; }
+
+        /* Departments */
+        .join-areas { padding: 5rem 2rem; background: rgba(255,255,255,0.02); }
+        .join-areas__grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1rem;
+            max-width: 1100px;
+            margin: 3rem auto 0;
+        }
+        .join-area-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.07);
+            border-left: 3px solid var(--c-red, #e3000f);
+            border-radius: 8px;
+            padding: 1.3rem 1.4rem;
+            transition: background 0.2s ease, transform 0.2s ease;
+        }
+        .join-area-item:hover {
+            background: rgba(227,0,15,0.07);
+            transform: translateX(4px);
+        }
+        .join-area-item__icon { font-size: 1.7rem; flex-shrink: 0; margin-top: 0.1rem; }
+        .join-area-item__text h4 { font-size: 0.95rem; font-weight: 700; color: #fff; margin-bottom: 0.3rem; }
+        .join-area-item__text p { font-size: 0.82rem; color: rgba(255,255,255,0.55); line-height: 1.5; }
+
+        /* Process */
+        .join-process { padding: 5rem 2rem; background: #0a0a0a; }
+        .join-process__steps {
+            display: flex;
+            justify-content: center;
+            max-width: 900px;
+            margin: 3rem auto 0;
+            position: relative;
+        }
+        .join-process__steps::before {
+            content: '';
+            position: absolute;
+            top: 2rem;
+            left: 10%; right: 10%;
+            height: 2px;
+            background: rgba(227,0,15,0.3);
+        }
+        .join-step { flex: 1; text-align: center; padding: 0 1rem; position: relative; }
+        .join-step__num {
+            width: 4rem; height: 4rem;
+            background: var(--c-red, #e3000f);
+            color: #fff; font-size: 1.3rem; font-weight: 900;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 1rem;
+            position: relative; z-index: 1;
+        }
+        .join-step h4 {
+            font-size: 0.85rem; font-weight: 700; color: #fff;
+            text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.4rem;
+        }
+        .join-step p { font-size: 0.8rem; color: rgba(255,255,255,0.55); line-height: 1.5; }
+
+        /* CTA */
+        .join-cta {
+            padding: 6rem 2rem;
+            text-align: center;
+            background: linear-gradient(135deg, #1a0000 0%, #0a0a0a 100%);
+            position: relative; overflow: hidden;
+        }
+        .join-cta::before {
+            content: '';
+            position: absolute; top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 700px; height: 700px;
+            background: radial-gradient(circle, rgba(227,0,15,0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .join-cta__inner { position: relative; z-index: 1; max-width: 740px; margin: 0 auto; }
+        .join-cta h2 {
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            font-weight: 900; color: #fff; text-transform: uppercase; margin-bottom: 0.8rem;
+        }
+        .join-cta h2 span { color: var(--c-red, #e3000f); }
+        .join-cta p { color: rgba(255,255,255,0.65); font-size: 1rem; line-height: 1.6; margin-bottom: 2.2rem; max-width: 560px; margin-left: auto; margin-right: auto; }
+        
+        .join-cta__card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 2.2rem 2.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2.8rem;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(10px);
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .join-cta__card:hover {
+            border-color: rgba(227, 0, 15, 0.3);
+            box-shadow: 0 20px 50px rgba(227, 0, 15, 0.08);
+        }
+        .join-cta__main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        .join-cta__badge {
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            color: var(--c-red, #e3000f);
+            text-transform: uppercase;
+        }
+        .join-cta__divider {
+            width: 1px;
+            height: 95px;
+            background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.12), transparent);
+        }
+        .join-cta__qr {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+        }
+        .join-cta__qr-box {
+            background: #fff;
+            padding: 0.45rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease;
+        }
+        .join-cta__qr:hover .join-cta__qr-box {
+            transform: scale(1.08);
+            box-shadow: 0 8px 25px rgba(227, 0, 15, 0.3);
+        }
+        .join-cta__qr-box img {
+            width: 110px;
+            height: 110px;
+            display: block;
+            object-fit: contain;
+        }
+        .join-cta__qr-label {
+            font-size: 0.68rem;
+            color: rgba(255, 255, 255, 0.55);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            font-weight: 600;
+            white-space: nowrap;
+            transition: color 0.2s ease;
+        }
+        .join-cta__qr:hover .join-cta__qr-label {
+            color: #fff;
+        }
+
+        /* Modal Lightbox Ampliar QR */
+        .qr-modal {
+            position: fixed;
+            inset: 0;
+            z-index: 99999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+        .qr-modal.is-active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .qr-modal__backdrop {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(8px);
+        }
+        .qr-modal__content {
+            position: relative;
+            z-index: 1;
+            background: #141418;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 20px;
+            padding: 2.2rem 2rem 1.8rem;
+            text-align: center;
+            max-width: 360px;
+            width: 90%;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8);
+            transform: scale(0.88);
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .qr-modal.is-active .qr-modal__content {
+            transform: scale(1);
+        }
+        .qr-modal__close {
+            position: absolute;
+            top: 12px;
+            right: 16px;
+            background: transparent;
+            border: none;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 1.8rem;
+            cursor: pointer;
+            line-height: 1;
+            transition: color 0.2s ease;
+        }
+        .qr-modal__close:hover {
+            color: #fff;
+        }
+        .qr-modal__box {
+            background: #fff;
+            padding: 0.6rem;
+            border-radius: 12px;
+            display: inline-block;
+            margin-bottom: 1rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        }
+        .qr-modal__box img {
+            width: 240px;
+            height: 240px;
+            display: block;
+            object-fit: contain;
+        }
+        .qr-modal__caption {
+            color: rgba(255, 255, 255, 0.75);
+            font-size: 0.82rem;
+            line-height: 1.4;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .join-cta__card {
+                padding: 1.8rem 1.5rem;
+            }
+            .desktop-only {
+                display: none !important;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .join-process__steps { flex-direction: column; gap: 2rem; }
+            .join-process__steps::before { display: none; }
+        }
+    </style>
+</head>
+
+<body>
+    <header id="main-header"></header>
+
+    <main>
+        <!-- ══ HERO — pantalla completa ══ -->
+        <section class="join-hero" id="join-hero">
+            <div class="join-hero__content">
+                <span class="join-hero__badge">MotoMaqLab UC3M · Captación</span>
+                <h1>FORMA PARTE<br>DEL <span>EQUIPO</span></h1>
+                <p class="join-hero__lead">Ingeniería real, competición internacional y un equipo que te impulsa. Si estudias en la UC3M y quieres poner en práctica lo que aprendes, este es tu sitio.</p>
+                <a href="#cuestionario" class="btn btn--primary btn--lg" id="cta-join-hero">Solicitar unirse</a>
+            </div>
+            <div class="join-hero__scroll" aria-hidden="true">
+                <span>Scroll</span>
+                <div class="join-hero__scroll-line"></div>
+            </div>
+        </section>
+
+        <!-- ══ POR QUÉ UNIRTE ══ -->
+        <section class="join-why section-container" id="por-que-unirte">
+            <div class="section-title section-title--center">
+                <h2>¿POR QUÉ <span>UNIRTE?</span></h2>
+                <p>Lo que te llevas aquí no lo encuentras en ningún aula</p>
+            </div>
+            <div class="join-why__grid">
+                <div class="join-why__card" data-reveal>
+                    <span class="join-why__icon"><i data-lucide="flag" style="width:36px;height:36px;color:var(--c-red);"></i></span>
+                    <h3>Competición real</h3>
+                    <p>Diseñas, fabricas y compites en MotoStudent, la competición internacional de ingeniería más exigente para universidades de todo el mundo.</p>
+                </div>
+                <div class="join-why__card" data-reveal>
+                    <span class="join-why__icon"><i data-lucide="wrench" style="width:36px;height:36px;color:var(--c-red);"></i></span>
+                    <h3>Ingeniería aplicada</h3>
+                    <p>Del CAD al circuito. El conocimiento del aula se convierte en piezas reales, sistemas que funcionan y resultados medibles.</p>
+                </div>
+                <div class="join-why__card" data-reveal>
+                    <span class="join-why__icon"><i data-lucide="handshake" style="width:36px;height:36px;color:var(--c-red);"></i></span>
+                    <h3>Red profesional</h3>
+                    <p>Trabajarás con empresas como Würth, Altair o Addyx y construirás conexiones que abren puertas al mundo laboral antes de graduarte.</p>
+                </div>
+                <div class="join-why__card" data-reveal>
+                    <span class="join-why__icon"><i data-lucide="rocket" style="width:36px;height:36px;color:var(--c-red);"></i></span>
+                    <h3>Desarrollo personal</h3>
+                    <p>Liderazgo, trabajo en equipo, gestión de proyectos y comunicación con clientes reales. Habilidades que definen carreras.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ══ DEPARTAMENTOS ══ -->
+        <section class="join-areas section-container" id="departamentos">
+            <div class="section-title section-title--center">
+                <h2>NUESTROS <span>DEPARTAMENTOS</span></h2>
+                <p>Somos multidisciplinares — hay un hueco para tu perfil</p>
+            </div>
+            <div class="join-areas__grid">
+                <div class="join-area-item" data-reveal>
+                    <span class="join-area-item__icon"><i data-lucide="cpu" style="width:24px;height:24px;color:var(--c-red);"></i></span>
+                    <div class="join-area-item__text">
+                        <h4>Electrónica</h4>
+                        <p>PCB design, sistemas de potencia, ECU, electrónica de control del motor y sistemas de adquisición de datos.</p>
+                    </div>
+                </div>
+                <div class="join-area-item" data-reveal>
+                    <span class="join-area-item__icon"><i data-lucide="hexagon" style="width:24px;height:24px;color:var(--c-red);"></i></span>
+                    <div class="join-area-item__text">
+                        <h4>Estructural</h4>
+                        <p>Diseño y análisis del chasis y estructura de la moto. CAD, FEA, fabricación en materiales compuestos y fibra de carbono.</p>
+                    </div>
+                </div>
+                <div class="join-area-item" data-reveal>
+                    <span class="join-area-item__icon"><i data-lucide="activity" style="width:24px;height:24px;color:var(--c-red);"></i></span>
+                    <div class="join-area-item__text">
+                        <h4>Dinámica</h4>
+                        <p>Suspensión, geometría de la moto, cinemática, setup de puesta a punto y simulación de comportamiento en circuito.</p>
+                    </div>
+                </div>
+                <div class="join-area-item" data-reveal>
+                    <span class="join-area-item__icon"><i data-lucide="wind" style="width:24px;height:24px;color:var(--c-red);"></i></span>
+                    <div class="join-area-item__text">
+                        <h4>Aerodinámica</h4>
+                        <p>CFD, diseño de carenados y optimización aerodinámica para maximizar la eficiencia y el rendimiento en pista.</p>
+                    </div>
+                </div>
+                <div class="join-area-item" data-reveal>
+                    <span class="join-area-item__icon"><i data-lucide="briefcase" style="width:24px;height:24px;color:var(--c-red);"></i></span>
+                    <div class="join-area-item__text">
+                        <h4>Patrocinadores</h4>
+                        <p>Captación y gestión de empresas colaboradoras, elaboración de propuestas comerciales y relaciones institucionales.</p>
+                    </div>
+                </div>
+                <div class="join-area-item" data-reveal>
+                    <span class="join-area-item__icon"><i data-lucide="megaphone" style="width:24px;height:24px;color:var(--c-red);"></i></span>
+                    <div class="join-area-item__text">
+                        <h4>Marketing</h4>
+                        <p>Redes sociales, diseño gráfico, fotografía, vídeo y gestión de la imagen del equipo hacia el exterior.</p>
+                    </div>
+                </div>
+                <div class="join-area-item" data-reveal>
+                    <span class="join-area-item__icon"><i data-lucide="users" style="width:24px;height:24px;color:var(--c-red);"></i></span>
+                    <div class="join-area-item__text">
+                        <h4>Organización</h4>
+                        <p>Coordinación interna, logística de eventos, gestión de recursos y soporte en la planificación del equipo.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ══ PROCESO ══ -->
+        <section class="join-process section-container" id="como-unirse">
+            <div class="section-title section-title--center">
+                <h2>¿CÓMO <span>FUNCIONA?</span></h2>
+                <p>El proceso es sencillo — solo necesitas ganas</p>
+            </div>
+            <div class="join-process__steps">
+                <div class="join-step" data-reveal>
+                    <div class="join-step__num">1</div>
+                    <h4>Rellena el formulario</h4>
+                    <p>Cuéntanos quién eres, qué estudias y qué departamento te interesa.</p>
+                </div>
+                <div class="join-step" data-reveal>
+                    <div class="join-step__num">2</div>
+                    <h4>Entrevista informal</h4>
+                    <p>Nos reunimos, te explicamos cómo funciona el equipo y resolvemos dudas.</p>
+                </div>
+                <div class="join-step" data-reveal>
+                    <div class="join-step__num">3</div>
+                    <h4>Bienvenido al equipo</h4>
+                    <p>Te integramos en tu departamento y empiezas a contribuir desde el primer día.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ══ CTA FINAL ══ -->
+        <section class="join-cta" id="cuestionario">
+            <div class="join-cta__inner">
+                <h2>¿LISTO PARA <span>COMPETIR?</span></h2>
+                <p>Rellena el siguiente formulario para presentar tu candidatura y formar parte de MotoMaqLab UC3M.</p>
+                
+                <div class="join-cta__card">
+                    <div class="join-cta__main">
+                        <span class="join-cta__badge">PROCESO DE SELECCIÓN</span>
+                        <a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=6N9rm859HEmcImIU4jR484rPZTJ___9Ap-SbtNQQNB9UNkFJUE1NMklHNjA0T0pWRFNQQjhIM0pUQiQlQCN0PWcu" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--lg" id="cta-join-form">Rellenar Formulario</a>
+                    </div>
+
+                    <div class="join-cta__divider desktop-only" aria-hidden="true"></div>
+
+                    <div class="join-cta__qr desktop-only">
+                        <div class="join-cta__qr-box">
+                            <img src="assets/img/home/qr_formulario.webp" alt="QR Formulario de Captación MotoMaqLab UC3M" width="110" height="110" loading="lazy">
+                        </div>
+                        <span class="join-cta__qr-label">O escanea desde tu móvil</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="main-footer"></footer>
+
+    <script src="assets/js/layout.js"></script>
+    <script src="assets/js/mobileMenu.js"></script>
+    <script src="assets/js/scrollReveal.js"></script>
+    <div id="google_translate_element" class="d-none"></div>
+
+    <!-- Modal Ampliar QR -->
+    <div id="qr-modal" class="qr-modal" aria-hidden="true">
+        <div class="qr-modal__backdrop"></div>
+        <div class="qr-modal__content">
+            <button type="button" class="qr-modal__close" id="qr-modal-close" aria-label="Cerrar">&times;</button>
+            <div class="qr-modal__box">
+                <img src="assets/img/home/qr_formulario.webp" alt="QR Formulario de Captación MotoMaqLab UC3M" width="240" height="240" loading="lazy">
+            </div>
+            <p class="qr-modal__caption">Escanea con la cámara de tu móvil para abrir el formulario de captación</p>
+        </div>
+    </div>
+
+    <script>
+        (function() {
+            const qrTrigger = document.querySelector('.join-cta__qr');
+            const modal = document.getElementById('qr-modal');
+            const closeBtn = document.getElementById('qr-modal-close');
+            const backdrop = modal ? modal.querySelector('.qr-modal__backdrop') : null;
+
+            if (qrTrigger && modal) {
+                function openModal() {
+                    modal.classList.add('is-active');
+                    modal.setAttribute('aria-hidden', 'false');
+                    document.body.style.overflow = 'hidden';
+                }
+                function closeModal() {
+                    modal.classList.remove('is-active');
+                    modal.setAttribute('aria-hidden', 'true');
+                    document.body.style.overflow = '';
+                }
+
+                qrTrigger.addEventListener('click', openModal);
+                if (closeBtn) closeBtn.addEventListener('click', closeModal);
+                if (backdrop) backdrop.addEventListener('click', closeModal);
+                document.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape' && modal.classList.contains('is-active')) {
+                        closeModal();
+                    }
+                });
+            }
+        })();
+    </script>
+    <script src="assets/js/translate.js"></script>
+</body>
+
+</html>

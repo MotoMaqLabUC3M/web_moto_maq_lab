@@ -40,8 +40,8 @@
             }
         ],
         "cta": {
-            "label": "CONTACTO",
-            "href": "mailto:motomaqlabuc3m@uc3m.es"
+            "label": "ÚNETE AL EQUIPO",
+            "href": "unete.html"
         }
     },
     "footer": {
@@ -58,6 +58,10 @@
                 {
                     "label": "Sobre Nosotros",
                     "href": "sobre-nosotros.html"
+                },
+                {
+                    "label": "Únete al Equipo",
+                    "href": "unete.html"
                 },
                 {
                     "label": "El Equipo",
