@@ -1,4 +1,4 @@
-﻿{
+{
     "header": {
         "logo": {
             "href": "/",
@@ -9,8 +9,8 @@
         },
         "nav": [
             {
-                "label": "NOSOTROS",
-                "href": "sobre-nosotros.html",
+                "label": "SOBRE NOSOTROS",
+                "href": "#",
                 "submenu": [
                     {
                         "label": "Historia y Filosofía",
@@ -23,49 +23,25 @@
                 ]
             },
             {
-                "label": "PROTOTIPOS",
-                "href": "ms8.html",
-                "submenu": [
-                    {
-                        "label": "MS8 — Temporada 2025",
-                        "href": "ms8.html"
-                    }
-                ]
+                "label": "EL EQUIPO",
+                "href": "equipo.html"
             },
             {
-                "label": "COMUNIDAD",
-                "href": "equipo.html",
-                "submenu": [
-                    {
-                        "label": "El Equipo",
-                        "href": "equipo.html"
-                    },
-                    {
-                        "label": "Eventos",
-                        "href": "eventos.html"
-                    },
-                    {
-                        "label": "Únete al equipo",
-                        "href": "unete.html"
-                    }
-                ]
-            },
-            {
-                "label": "PATROCINADORES",
-                "href": "patrocinadores.html"
-            },
-            {
-                "label": "MEDIA",
-                "href": "media.html"
+                "label": "EVENTOS",
+                "href": "eventos.html"
             },
             {
                 "label": "BLOG",
                 "href": "blog.html"
+            },
+            {
+                "label": "PATROCINADORES",
+                "href": "patrocinadores.html"
             }
         ],
         "cta": {
-            "label": "PATROCÍNANOS",
-            "href": "para-patrocinadores.html"
+            "label": "ÚNETE AL EQUIPO",
+            "href": "unete.html"
         }
     },
     "footer": {
@@ -84,6 +60,10 @@
                     "href": "sobre-nosotros.html"
                 },
                 {
+                    "label": "Únete al Equipo",
+                    "href": "unete.html"
+                },
+                {
                     "label": "El Equipo",
                     "href": "equipo.html"
                 },
@@ -98,14 +78,6 @@
                 {
                     "label": "Patrocinadores",
                     "href": "patrocinadores.html"
-                },
-                {
-                    "label": "Únete al equipo",
-                    "href": "unete.html"
-                },
-                {
-                    "label": "Colabora con nosotros",
-                    "href": "para-patrocinadores.html"
                 },
                 {
                     "label": "Contacto",

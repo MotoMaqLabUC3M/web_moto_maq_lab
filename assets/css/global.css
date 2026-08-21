@@ -91,16 +91,16 @@ a {
 /* --- Badges / Etiquetas --- */
 .badge {
     display: inline-block;
-    background-color: rgba(233, 58, 74, 0.2);
-    color: var(--c-red);
-    font-size: 0.75rem;
-    font-weight: 700;
-    padding: 0.25rem 0.5rem;
-    border-radius: 2px;
-    margin-bottom: 1rem;
+    background-color: var(--c-red);
+    color: #ffffff;
+    font-size: 0.72rem;
+    font-weight: 800;
+    padding: 0.4rem 1.2rem;
+    border-radius: 4px;
+    margin-bottom: 1.2rem;
     text-transform: uppercase;
-    letter-spacing: 1.5px;
-    border-left: 3px solid var(--c-red);
+    letter-spacing: 2px;
+    box-shadow: 0 4px 15px rgba(242, 25, 43, 0.3);
 }
 
 /* --- T?tulos de Secci?n (Global) --- */
@@ -625,6 +625,36 @@ section.section-container:nth-of-type(even) {
     background-size: cover;
     background-position: right 20% bottom 45%;
     padding: 0 5%;
+    position: relative;
+}
+
+/* --- Global Hero Scroll Indicator --- */
+.scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+.scroll-indicator__line {
+    width: 1px;
+    height: 38px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), transparent);
+    animation: heroScrollPulse 1.8s ease-in-out infinite;
+}
+@keyframes heroScrollPulse {
+    0%, 100% { opacity: 0.4; transform: scaleY(1); }
+    50% { opacity: 1; transform: scaleY(1.18); }
 }
 
 /* Video hero variant */
@@ -1659,14 +1689,17 @@ section.section-container:nth-of-type(even) {
 
 .sp-hero-text .badge {
     margin-bottom: 1.5rem;
-    font-size: 0.8rem;
-    letter-spacing: 3px;
-    background: rgba(242, 25, 43, 0.1);
-    color: var(--c-red);
-    border: 1px solid rgba(242, 25, 43, 0.3);
-    padding: 0.5rem 1rem;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    background: var(--c-red);
+    color: #ffffff;
+    border: none;
+    padding: 0.4rem 1.2rem;
+    border-radius: 4px;
     display: inline-block;
     align-self: flex-start;
+    box-shadow: 0 4px 15px rgba(242, 25, 43, 0.3);
 }
 
 .sp-hero-text h1 {

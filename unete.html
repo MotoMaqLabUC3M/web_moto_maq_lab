@@ -123,30 +123,86 @@
         .join-why { background: #0a0a0a; padding: 5rem 2rem; }
         .join-why__grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1.5rem;
-            max-width: 1100px;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.8rem;
+            max-width: 1140px;
             margin: 3rem auto 0;
         }
         .join-why__card {
-            background: rgba(255,255,255,0.04);
-            border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 12px;
-            padding: 2rem 1.5rem;
-            text-align: center;
-            transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 14px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
         }
         .join-why__card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-7px);
             border-color: var(--c-red, #e3000f);
-            box-shadow: 0 12px 40px rgba(227,0,15,0.15);
+            box-shadow: 0 15px 40px rgba(227, 0, 15, 0.18);
         }
-        .join-why__icon { font-size: 2.4rem; margin-bottom: 1rem; display: block; }
-        .join-why__card h3 {
-            font-size: 0.95rem; font-weight: 700; color: #fff;
-            margin-bottom: 0.6rem; text-transform: uppercase; letter-spacing: 0.05em;
+        .join-why__img-wrap {
+            position: relative;
+            width: 100%;
+            height: 190px;
+            overflow: hidden;
+            background: #121215;
         }
-        .join-why__card p { font-size: 0.88rem; color: rgba(255,255,255,0.58); line-height: 1.6; }
+        .join-why__img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .join-why__card:hover .join-why__img-wrap img {
+            transform: scale(1.08);
+        }
+        .join-why__overlay {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: rgba(10, 10, 10, 0.75);
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--c-red, #e3000f);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+            transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+        }
+        .join-why__overlay svg {
+            width: 20px;
+            height: 20px;
+        }
+        .join-why__card:hover .join-why__overlay {
+            background: var(--c-red, #e3000f);
+            color: #fff;
+            transform: scale(1.1);
+        }
+        .join-why__body {
+            padding: 1.6rem 1.4rem 1.8rem;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+        .join-why__body h3 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 0.6rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+        .join-why__body p {
+            font-size: 0.88rem;
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.6;
+        }
 
         /* Departments */
         .join-areas { padding: 5rem 2rem; background: rgba(255,255,255,0.02); }
@@ -402,7 +458,7 @@
         <!-- ══ HERO — pantalla completa ══ -->
         <section class="join-hero" id="join-hero">
             <div class="join-hero__content">
-                <span class="join-hero__badge">MotoMaqLab UC3M · Captación</span>
+                <span class="badge">MotoMaqLab UC3M · Captación</span>
                 <h1>FORMA PARTE<br>DEL <span>EQUIPO</span></h1>
                 <p class="join-hero__lead">Ingeniería real, competición internacional y un equipo que te impulsa. Si estudias en la UC3M y quieres poner en práctica lo que aprendes, este es tu sitio.</p>
                 <a href="#cuestionario" class="btn btn--primary btn--lg" id="cta-join-hero">Solicitar unirse</a>
@@ -421,24 +477,55 @@
             </div>
             <div class="join-why__grid">
                 <div class="join-why__card" data-reveal>
-                    <span class="join-why__icon"><i data-lucide="flag" style="width:36px;height:36px;color:var(--c-red);"></i></span>
-                    <h3>Competición real</h3>
-                    <p>Diseñas, fabricas y compites en MotoStudent, la competición internacional de ingeniería más exigente para universidades de todo el mundo.</p>
+                    <div class="join-why__img-wrap">
+                        <img src="assets/img/home/unete_competicion_real.webp" alt="Competición real MotoStudent UC3M" loading="lazy">
+                        <div class="join-why__overlay">
+                            <i data-lucide="flag"></i>
+                        </div>
+                    </div>
+                    <div class="join-why__body">
+                        <h3>Competición real</h3>
+                        <p>Diseñas, fabricas y compites en MotoStudent, la competición internacional de ingeniería más exigente para universidades de todo el mundo.</p>
+                    </div>
                 </div>
+
                 <div class="join-why__card" data-reveal>
-                    <span class="join-why__icon"><i data-lucide="wrench" style="width:36px;height:36px;color:var(--c-red);"></i></span>
-                    <h3>Ingeniería aplicada</h3>
-                    <p>Del CAD al circuito. El conocimiento del aula se convierte en piezas reales, sistemas que funcionan y resultados medibles.</p>
+                    <div class="join-why__img-wrap">
+                        <img src="assets/img/home/unete_ingenieria_aplicada.webp" alt="Ingeniería aplicada MotoMaqLab UC3M" loading="lazy">
+                        <div class="join-why__overlay">
+                            <i data-lucide="wrench"></i>
+                        </div>
+                    </div>
+                    <div class="join-why__body">
+                        <h3>Ingeniería aplicada</h3>
+                        <p>Del CAD al circuito. El conocimiento del aula se convierte en piezas reales, sistemas que funcionan y resultados medibles.</p>
+                    </div>
                 </div>
+
                 <div class="join-why__card" data-reveal>
-                    <span class="join-why__icon"><i data-lucide="handshake" style="width:36px;height:36px;color:var(--c-red);"></i></span>
-                    <h3>Red profesional</h3>
-                    <p>Trabajarás con empresas como Würth, Altair o Addyx y construirás conexiones que abren puertas al mundo laboral antes de graduarte.</p>
+                    <div class="join-why__img-wrap">
+                        <img src="assets/img/home/unete_red_profesional.webp" alt="Red profesional MotoMaqLab UC3M" loading="lazy">
+                        <div class="join-why__overlay">
+                            <i data-lucide="handshake"></i>
+                        </div>
+                    </div>
+                    <div class="join-why__body">
+                        <h3>Red profesional</h3>
+                        <p>Trabajarás con empresas como Würth, Altair o Addyx y construirás conexiones que abren puertas al mundo laboral antes de graduarte.</p>
+                    </div>
                 </div>
+
                 <div class="join-why__card" data-reveal>
-                    <span class="join-why__icon"><i data-lucide="rocket" style="width:36px;height:36px;color:var(--c-red);"></i></span>
-                    <h3>Desarrollo personal</h3>
-                    <p>Liderazgo, trabajo en equipo, gestión de proyectos y comunicación con clientes reales. Habilidades que definen carreras.</p>
+                    <div class="join-why__img-wrap">
+                        <img src="assets/img/home/unete_desarrollo_personal.webp" alt="Desarrollo personal MotoMaqLab UC3M" loading="lazy">
+                        <div class="join-why__overlay">
+                            <i data-lucide="rocket"></i>
+                        </div>
+                    </div>
+                    <div class="join-why__body">
+                        <h3>Desarrollo personal</h3>
+                        <p>Liderazgo, trabajo en equipo, gestión de proyectos y comunicación con clientes reales. Habilidades que definen carreras.</p>
+                    </div>
                 </div>
             </div>
         </section>

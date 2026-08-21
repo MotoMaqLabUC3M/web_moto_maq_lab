@@ -11,7 +11,7 @@
         content="moto UC3M, MotoMaqLab, equipo moto UC3M, MotoStudent UC3M, ingeniería UC3M, Universidad Carlos III de Madrid, moto competición universitaria">
     <link rel="canonical" href="https://motomaqlabuc3m.es/">
 
-    <!-- Open Graph -->
+    <!-- Open Graph (preview al compartir en redes sociales) -->
     <meta property="og:title" content="MotoMaqLab UC3M | Equipo MotoStudent — Carlos III Madrid">
     <meta property="og:description"
         content="MotoMaqLab UC3M: equipo MotoStudent de la Universidad Carlos III de Madrid. Born to be engineers — competición, prototipos y velocidad en pista.">
@@ -27,7 +27,6 @@
     <meta name="twitter:card" content="summary_large_image">
 
     <link rel="stylesheet" href="assets/css/global.css" />
-    <link rel="stylesheet" href="assets/css/media.css" />
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-MMNY9WVPLY"></script>
@@ -68,7 +67,7 @@
                 "https://www.linkedin.com/company/moto-maqlab-uc3m/"
             ]
         }
-    </script>
+        </script>
     <script type="application/ld+json">
         {
             "@context": "https://schema.org",
@@ -104,56 +103,23 @@
 <body>
     <header id="main-header"></header>
     <main>
-
-        <!-- ══════════════════════════════════════════════════
-             1. HERO — Video + Stats integrados
-             ══════════════════════════════════════════════════ -->
-        <section class="hero hero--video" id="hero-index">
-            <video class="hero__video" autoplay muted loop playsinline poster="assets/img/hero/index.webp">
-                <source src="assets/img/equipo/team_edit.mp4" type="video/mp4">
-            </video>
-            <div class="hero__overlay"></div>
-
-            <div class="hero__content">
-                <h1>BORN TO BE <br><span>ENGINEERS</span>
-                    <span class="sr-only">— MotoMaqLab UC3M, equipo MotoStudent de la UC3M</span>
-                </h1>
-                <p class="hero__tagline">Equipo MotoStudent · Universidad Carlos III de Madrid</p>
-                <div class="hero__cta-group">
-                    <a href="sobre-nosotros.html" class="btn btn--primary btn--lg">CONOCE AL EQUIPO</a>
-                    <a href="unete.html" class="btn btn--outline btn--lg btn--outline-light">ÚNETE AL EQUIPO</a>
+        <section class="hero">
+            <div class="hero-content">
+                <span class="badge">TEMPORADA 2025-2027</span>
+                <h1>BORN TO BE <br /><span>ENGINEERS</span> <span class="sr-only">— MotoMaqLab UC3M, equipo
+                        MotoStudent: ingeniería, moto y competición en la UC3M</span></h1>
+                <p>Somos el equipo de MotoStudent de la UC3M, un proyecto de <strong>ingeniería</strong> que une diseño,
+                    fabricación y <strong>velocidad</strong> en pista. Diseñamos, construimos y competimos en
+                    MotoStudent, la competición de ingeniería universitaria más importante de Europa. El equipo
+                    oficial de la Universidad Carlos III de Madrid.</p>
+                <div class="hero-btns">
+                    <a href="sobre-nosotros.html#nuestra-historia" class="btn btn--primary">NUESTRA HISTORIA</a>
+                    <a href="unete.html" class="btn btn--outline">ÚNETE AL EQUIPO</a>
                 </div>
-            </div>
-
-            <!-- Stats integrados en el hero -->
-            <div class="hero__stats" id="stats-bar">
-                <div class="hero__stat">
-                    <span class="counter-number" data-target="15">0</span>
-                    <span>años</span>
-                </div>
-                <div class="hero__stat">
-                    <span class="counter-number" data-target="6">0</span>
-                    <span>premios</span>
-                </div>
-                <div class="hero__stat">
-                    <span class="counter-number" data-target="70">0</span>
-                    <span>miembros</span>
-                </div>
-                <div class="hero__stat">
-                    <span class="counter-number" data-target="8">0</span>
-                    <span>prototipos</span>
-                </div>
-            </div>
-
-            <div class="scroll-indicator" aria-hidden="true">
-                <span class="scroll-indicator__text">Scroll</span>
-                <div class="scroll-indicator__line"></div>
             </div>
         </section>
 
-        <!-- ══════════════════════════════════════════════════
-             2. SPONSORS — Máxima visibilidad
-             ══════════════════════════════════════════════════ -->
+        <!-- Cinta transportadora de patrocinadores Platino -->
         <section class="sponsors-marquee-section" id="patrocinadores-principales">
             <div class="section-header">
                 <h2><a href="patrocinadores.html">Nuestros Patrocinadores</a></h2>
@@ -186,78 +152,18 @@
             <div class="center-btn home-about-teaser__cta home-about-teaser__cta--dual" style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
                 <a href="sobre-nosotros.html" class="btn btn--primary">Saber más del equipo</a>
                 <a href="motostudent.html" class="btn btn--outline" style="border-color: var(--c-red); color: var(--c-red);">Descubre MotoStudent</a>
-                <a href="unete.html" class="btn btn--outline btn--outline-light">Quiero unirme</a>
             </div>
-        </section>        <!-- ══════════════════════════════════════════════════
-             3. MS8 — Prototipo destacado
-             ══════════════════════════════════════════════════ -->
-        <section class="section-container ms8-teaser" id="prototipo-ms8" aria-labelledby="ms8-teaser-title" style="background-color: var(--c-asphalt); position: relative; overflow: hidden; border-top: 1px solid rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.05);" >
-            <div style="position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;max-width:1200px;margin:0 auto;" class="ms8-teaser__grid">
-                <div>
-                    <span class="badge" style="background:var(--c-red);color:#fff;margin-bottom:1.5rem;display:inline-block;">TEMPORADA 2025–2027</span>
-                    <h2 id="ms8-teaser-title" style="font-size:clamp(2.5rem,5vw,4.5rem);font-weight:900;color:#fff;text-transform:uppercase;line-height:1.05;margin-bottom:1rem;">LA <span style="color:var(--c-red);">MS8</span></h2>
-                    <p style="color:rgba(255,255,255,0.65);font-size:1.05rem;line-height:1.7;margin-bottom:1rem;">Nuestro prototipo Moto3 de competición: chasis de fibra de carbono hueco de doble viga, admisión de aire integrada en la propia estructura y aerodinámica radical.</p>
-                    <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.8rem;">
-                        <a href="ms8.html" class="btn btn--primary" id="cta-ms8-index">Descubre la MS8 &#8594;</a>
-<a href="para-patrocinadores.html" class="btn btn--outline" style="border-color: rgba(255,255,255,0.2); color: #fff;">Impulsa el proyecto</a>
-                        <div style="display:flex;gap:2rem;align-items:center;">
-                            <div style="text-align:center;">
-                                <div style="font-size:1.8rem;font-weight:900;color:#fff;">155<span style="font-size:1rem;color:var(--c-red);">kg</span></div>
-                                <div style="font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.45);">Peso</div>
-                            </div>
-                            <div style="text-align:center;">
-                                <div style="font-size:1.8rem;font-weight:900;color:#fff;">210<span style="font-size:1rem;color:var(--c-red);">km/h</span></div>
-                                <div style="font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.45);">V. punta</div>
-                            </div>
-                            <div style="text-align:center;">
-                                <div style="font-size:1.8rem;font-weight:900;color:#fff;">2.º</div>
-                                <div style="font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.45);">Pitch MS2025</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div style="position:relative;">
-                    <img src="assets/img/timeline/2025.webp" alt="Prototipo MS8 MotoMaqLab UC3M — Moto de competición MotoStudent 2025"
-                        style="width:100%;border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,0.6);display:block;" loading="lazy">
-                    <div style="position:absolute;top:-1rem;right:-1rem;background:var(--c-red);color:#fff;font-size:0.7rem;font-weight:700;letter-spacing:0.1em;padding:0.5rem 1rem;border-radius:4px;text-transform:uppercase;">MS8</div>
-                </div>
-            </div>
-            <style>
-                @media (max-width: 768px) {
-                    .ms8-teaser__grid { grid-template-columns: 1fr !important; }
-                }
-            </style>
         </section>
 
-
-        <!-- ══════════════════════════════════════════════════
-             4b. PRÓXIMO EVENTO — Banner compacto
-             ══════════════════════════════════════════════════ -->
-        <div class="next-event-banner" id="next-event-banner" style="display: none;">
-            <div class="next-event-banner__inner">
-                <span class="next-event-banner__label">PRÓXIMO EVENTO</span>
-                <span class="next-event-banner__separator" aria-hidden="true"></span>
-                <span class="next-event-banner__name" id="next-event-name"></span>
-                <span class="next-event-banner__meta" id="next-event-meta"></span>
-                <a href="eventos.html" class="next-event-banner__link" id="next-event-link">Ver eventos →</a>
-            </div>
-        </div>
-
-        <!-- ══════════════════════════════════════════════════
-             5. MEDIA — Prensa y TV (Dinámico desde media.js)
-             ══════════════════════════════════════════════════ -->
-        <section class="press-section section-container" id="media-preview">
+        <!-- Preview de próximos eventos (top 3) -->
+        <section class="section-container eventos-section" id="eventos-preview">
             <div class="section-title section-title--center">
-                <h2>EN LOS <span>MEDIOS</span></h2>
-                <p>Nuestras apariciones recientes en prensa y televisión</p>
+                <h2>PRÓXIMOS EVENTOS DE LA TEMPORADA</h2>
+                <p>Las próximas citas de nuestro equipo</p>
             </div>
-            
-            <div class="press-grid" id="press-grid">
-                <!-- Se inyecta por JS (media.js) -->
-            </div>
-            
-            <div class="center-btn" style="margin-top: 2rem;">
-                <a href="media.html" class="btn btn--outline">Ver toda la cobertura →</a>
+            <div class="eventos-grid" id="eventos-index-container"></div>
+            <div class="center-btn">
+                <a href="eventos.html" class="btn btn--outline">Ver todos los eventos →</a>
             </div>
         </section>
 
@@ -273,18 +179,6 @@
             </div>
         </section>
 
-        <!-- ══════════════════════════════════════════════════
-             6. INSTAGRAM — Feed real
-             ══════════════════════════════════════════════════ -->
-        <section class="ig-section section-container" id="instagram">
-            <div class="section-title section-title--center">
-                <h2>SÍGUENOS EN <span>INSTAGRAM</span></h2>
-                <p><a href="https://www.instagram.com/motomaqlabuc3m/" target="_blank"
-                        class="ig-section__handle">@motomaqlabuc3m</a></p>
-            </div>
-            <div class="ig-grid" id="ig-grid"></div>
-        </section>
-
     </main>
 
     <footer id="main-footer"></footer>
@@ -292,56 +186,12 @@
     <script src="assets/js/layout.js"></script>
     <script src="assets/js/mobileMenu.js"></script>
     <script src="assets/js/sponsorsMarquee.js"></script>
-    <script src="assets/js/heroAnimations.js"></script>
     <script src="assets/js/eventos.js"></script>
     <script src="assets/js/blog.js"></script>
-    <script src="assets/js/media.js"></script>
-    <!-- Próximo evento banner -->
-    <script>
-        (function () {
-            async function loadNextEvent() {
-                const banner = document.getElementById('next-event-banner');
-                if (!banner) return;
-                try {
-                    const res = await fetch('assets/data/eventos.json');
-                    const data = await res.json();
-                    if (!data.eventos || data.eventos.length === 0) return;
 
-                    const now = new Date();
-                    now.setHours(0, 0, 0, 0);
-
-                    const upcoming = data.eventos
-                        .filter(ev => new Date(ev.fechaFin || ev.fecha) >= now)
-                        .sort((a, b) => new Date(a.fecha) - new Date(b.fecha));
-
-                    if (upcoming.length === 0) return;
-
-                    const ev = upcoming[0];
-                    const fecha = new Date(ev.fecha);
-                    const opts = { day: 'numeric', month: 'long' };
-                    let dateStr = fecha.toLocaleDateString('es-ES', opts);
-                    if (ev.fechaFin) {
-                        const fin = new Date(ev.fechaFin);
-                        dateStr = fecha.toLocaleDateString('es-ES', { day: 'numeric' }) + '–' + fin.toLocaleDateString('es-ES', opts);
-                    }
-
-                    document.getElementById('next-event-name').textContent = ev.titulo;
-                    document.getElementById('next-event-meta').textContent = dateStr + '  ·  ' + ev.lugar;
-                    const link = document.getElementById('next-event-link');
-                    if (ev.id) link.href = 'evento-' + ev.id + '.html';
-                    banner.style.display = '';
-                } catch (e) {
-                    /* silently fail */
-                }
-            }
-            if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', loadNextEvent);
-            } else {
-                loadNextEvent();
-            }
-        })();
-    </script>
-
+    <!-- Traductor: widget al pulsar «Idioma / Translate» en el pie -->
+    <div id="google_translate_element" style="display:none;"></div>
+    <script src="assets/js/translate.js"></script>
 </body>
 
 </html>
