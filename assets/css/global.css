@@ -1034,8 +1034,13 @@ section.section-container:nth-of-type(even) {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
     display: block;
     transition: transform 0.5s ease;
+}
+
+.filosofia-card__img-wrap img[src*="unete_ingenieria_aplicada"] {
+    object-position: center top;
 }
 
 .filosofia-card:hover .filosofia-card__img-wrap img {
