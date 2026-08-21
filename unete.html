@@ -50,16 +50,15 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: url('assets/img/home/equipo_index.webp') center/cover no-repeat;
-            opacity: 0.15;
-            mix-blend-mode: luminosity;
+            background: url('assets/img/home/header_unete.webp') center/cover no-repeat;
+            opacity: 0.55;
         }
         .join-hero::after {
             content: '';
             position: absolute;
-            bottom: 0; left: 0; right: 0;
-            height: 140px;
-            background: linear-gradient(to bottom, transparent, #0a0a0a);
+            inset: 0;
+            background: linear-gradient(180deg, rgba(13, 13, 15, 0.35) 0%, rgba(10, 10, 10, 0.75) 75%, #0a0a0a 100%);
+            pointer-events: none;
         }
         .join-hero__content {
             position: relative;
@@ -225,14 +224,169 @@
             background: radial-gradient(circle, rgba(227,0,15,0.1) 0%, transparent 70%);
             pointer-events: none;
         }
-        .join-cta__inner { position: relative; z-index: 1; max-width: 620px; margin: 0 auto; }
+        .join-cta__inner { position: relative; z-index: 1; max-width: 740px; margin: 0 auto; }
         .join-cta h2 {
-            font-size: clamp(2rem, 4vw, 3.2rem);
-            font-weight: 900; color: #fff; text-transform: uppercase; margin-bottom: 1rem;
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            font-weight: 900; color: #fff; text-transform: uppercase; margin-bottom: 0.8rem;
         }
         .join-cta h2 span { color: var(--c-red, #e3000f); }
-        .join-cta p { color: rgba(255,255,255,0.65); font-size: 1rem; line-height: 1.7; margin-bottom: 2.5rem; }
-        .join-cta__btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+        .join-cta p { color: rgba(255,255,255,0.65); font-size: 1rem; line-height: 1.6; margin-bottom: 2.2rem; max-width: 560px; margin-left: auto; margin-right: auto; }
+        
+        .join-cta__card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 2.2rem 2.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2.8rem;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(10px);
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .join-cta__card:hover {
+            border-color: rgba(227, 0, 15, 0.3);
+            box-shadow: 0 20px 50px rgba(227, 0, 15, 0.08);
+        }
+        .join-cta__main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        .join-cta__badge {
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            color: var(--c-red, #e3000f);
+            text-transform: uppercase;
+        }
+        .join-cta__divider {
+            width: 1px;
+            height: 95px;
+            background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.12), transparent);
+        }
+        .join-cta__qr {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+        }
+        .join-cta__qr-box {
+            background: #fff;
+            padding: 0.45rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease;
+        }
+        .join-cta__qr:hover .join-cta__qr-box {
+            transform: scale(1.08);
+            box-shadow: 0 8px 25px rgba(227, 0, 15, 0.3);
+        }
+        .join-cta__qr-box img {
+            width: 110px;
+            height: 110px;
+            display: block;
+            object-fit: contain;
+        }
+        .join-cta__qr-label {
+            font-size: 0.68rem;
+            color: rgba(255, 255, 255, 0.55);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            font-weight: 600;
+            white-space: nowrap;
+            transition: color 0.2s ease;
+        }
+        .join-cta__qr:hover .join-cta__qr-label {
+            color: #fff;
+        }
+
+        /* Modal Lightbox Ampliar QR */
+        .qr-modal {
+            position: fixed;
+            inset: 0;
+            z-index: 99999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+        .qr-modal.is-active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .qr-modal__backdrop {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(8px);
+        }
+        .qr-modal__content {
+            position: relative;
+            z-index: 1;
+            background: #141418;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 20px;
+            padding: 2.2rem 2rem 1.8rem;
+            text-align: center;
+            max-width: 360px;
+            width: 90%;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8);
+            transform: scale(0.88);
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .qr-modal.is-active .qr-modal__content {
+            transform: scale(1);
+        }
+        .qr-modal__close {
+            position: absolute;
+            top: 12px;
+            right: 16px;
+            background: transparent;
+            border: none;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 1.8rem;
+            cursor: pointer;
+            line-height: 1;
+            transition: color 0.2s ease;
+        }
+        .qr-modal__close:hover {
+            color: #fff;
+        }
+        .qr-modal__box {
+            background: #fff;
+            padding: 0.6rem;
+            border-radius: 12px;
+            display: inline-block;
+            margin-bottom: 1rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        }
+        .qr-modal__box img {
+            width: 240px;
+            height: 240px;
+            display: block;
+            object-fit: contain;
+        }
+        .qr-modal__caption {
+            color: rgba(255, 255, 255, 0.75);
+            font-size: 0.82rem;
+            line-height: 1.4;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .join-cta__card {
+                padding: 1.8rem 1.5rem;
+            }
+            .desktop-only {
+                display: none !important;
+            }
+        }
 
         @media (max-width: 640px) {
             .join-process__steps { flex-direction: column; gap: 2rem; }
@@ -377,10 +531,22 @@
         <section class="join-cta" id="cuestionario">
             <div class="join-cta__inner">
                 <h2>¿LISTO PARA <span>COMPETIR?</span></h2>
-                <p>Rellena el siguiente formulario para presentar tu candidatura. Si tienes cualquier duda, escríbenos directamente y te contamos todo lo que necesitas saber.</p>
-                <div class="join-cta__btns">
-                    <a href="https://forms.cloud.microsoft/Pages/DesignPageV2.aspx?origin=Marketing&groupid=3265cf8a-ff7f-40ff-a7e4-9bb4d410341f" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--lg" id="cta-join-form">Rellenar Formulario</a>
-                    <a href="mailto:motomaqlabuc3m@uc3m.es" class="btn btn--outline btn--lg" id="cta-join-email">Escríbenos →</a>
+                <p>Rellena el siguiente formulario para presentar tu candidatura y formar parte de MotoMaqLab UC3M.</p>
+                
+                <div class="join-cta__card">
+                    <div class="join-cta__main">
+                        <span class="join-cta__badge">PROCESO DE SELECCIÓN</span>
+                        <a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=6N9rm859HEmcImIU4jR484rPZTJ___9Ap-SbtNQQNB9UNkFJUE1NMklHNjA0T0pWRFNQQjhIM0pUQiQlQCN0PWcu" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--lg" id="cta-join-form">Rellenar Formulario</a>
+                    </div>
+
+                    <div class="join-cta__divider desktop-only" aria-hidden="true"></div>
+
+                    <div class="join-cta__qr desktop-only">
+                        <div class="join-cta__qr-box">
+                            <img src="assets/img/home/qr_formulario.webp" alt="QR Formulario de Captación MotoMaqLab UC3M" width="110" height="110" loading="lazy">
+                        </div>
+                        <span class="join-cta__qr-label">O escanea desde tu móvil</span>
+                    </div>
                 </div>
             </div>
         </section>
@@ -392,6 +558,49 @@
     <script src="assets/js/mobileMenu.js"></script>
     <script src="assets/js/scrollReveal.js"></script>
     <div id="google_translate_element" class="d-none"></div>
+
+    <!-- Modal Ampliar QR -->
+    <div id="qr-modal" class="qr-modal" aria-hidden="true">
+        <div class="qr-modal__backdrop"></div>
+        <div class="qr-modal__content">
+            <button type="button" class="qr-modal__close" id="qr-modal-close" aria-label="Cerrar">&times;</button>
+            <div class="qr-modal__box">
+                <img src="assets/img/home/qr_formulario.webp" alt="QR Formulario de Captación MotoMaqLab UC3M" width="240" height="240" loading="lazy">
+            </div>
+            <p class="qr-modal__caption">Escanea con la cámara de tu móvil para abrir el formulario de captación</p>
+        </div>
+    </div>
+
+    <script>
+        (function() {
+            const qrTrigger = document.querySelector('.join-cta__qr');
+            const modal = document.getElementById('qr-modal');
+            const closeBtn = document.getElementById('qr-modal-close');
+            const backdrop = modal ? modal.querySelector('.qr-modal__backdrop') : null;
+
+            if (qrTrigger && modal) {
+                function openModal() {
+                    modal.classList.add('is-active');
+                    modal.setAttribute('aria-hidden', 'false');
+                    document.body.style.overflow = 'hidden';
+                }
+                function closeModal() {
+                    modal.classList.remove('is-active');
+                    modal.setAttribute('aria-hidden', 'true');
+                    document.body.style.overflow = '';
+                }
+
+                qrTrigger.addEventListener('click', openModal);
+                if (closeBtn) closeBtn.addEventListener('click', closeModal);
+                if (backdrop) backdrop.addEventListener('click', closeModal);
+                document.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape' && modal.classList.contains('is-active')) {
+                        closeModal();
+                    }
+                });
+            }
+        })();
+    </script>
     <script src="assets/js/translate.js"></script>
 </body>
 
