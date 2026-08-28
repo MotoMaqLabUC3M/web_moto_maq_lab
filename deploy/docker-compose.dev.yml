@@ -1,0 +1,43 @@
+# Desarrollo local — SQLite
+# Uso: cd deploy && cp .env.example .env && docker compose -f docker-compose.dev.yml up --build
+
+services:
+  api:
+    build:
+      context: ../apps/api
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    ports:
+      - "${API_PORT:-8080}:8080"
+    environment:
+      APP_ENV: development
+      HTTP_ADDR: ":8080"
+      DB_DRIVER: sqlite
+      DATABASE_URL: file:/app/data/motomaqlab.db?_pragma=foreign_keys(1)
+      JWT_SECRET: ${JWT_SECRET:-dev-secret-change-me}
+      JWT_EXPIRY_HOURS: ${JWT_EXPIRY_HOURS:-72}
+      ADMIN_USERNAME: ${ADMIN_USERNAME:-admin}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:-admin123}
+      UPLOAD_DIR: /app/data/uploads
+      PUBLIC_API_BASE_URL: ${PUBLIC_API_BASE_URL:-http://localhost:8080}
+      CORS_ORIGINS: ${CORS_ORIGINS:-http://localhost:3000,http://127.0.0.1:3000}
+      MAX_UPLOAD_MB: ${MAX_UPLOAD_MB:-10}
+    volumes:
+      - api_data:/app/data
+    restart: unless-stopped
+
+  admin:
+    build:
+      context: ../apps/admin
+      dockerfile: Dockerfile
+      args:
+        NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL:-http://localhost:8080}
+    depends_on:
+      - api
+    ports:
+      - "${ADMIN_PORT:-3000}:3000"
+    restart: unless-stopped
+
+volumes:
+  api_data:

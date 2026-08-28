@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+# Panel CMS (solo VPS, no indexar)
+Disallow: /admin
+Disallow: /admin/
+
+# Herramientas internas (también llevan noindex en HTML)
+Disallow: /creador_eventos.html
+Disallow: /creador_noticias.html
+
+# Utilidades de desarrollo (no forman parte del sitio público)
+Disallow: /temp_converter/
+
+Sitemap: https://motomaqlabuc3m.es/sitemap.xml
+
+# Guía para LLMs: https://motomaqlabuc3m.es/llms.txt

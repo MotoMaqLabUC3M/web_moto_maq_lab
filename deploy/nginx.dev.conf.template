@@ -1,0 +1,73 @@
+# Desarrollo local — un solo puerto :3000
+# Web en /, admin en /admin/, API en /api/ y /media/
+# Generado por scripts/dev.sh (no editar la copia en /tmp)
+
+worker_processes 1;
+error_log stderr warn;
+pid /tmp/mml-nginx-dev.pid;
+
+events {
+    worker_connections 256;
+}
+
+http {
+    include       /etc/nginx/mime.types;
+    default_type  application/octet-stream;
+    access_log off;
+
+    upstream motomaqlab_api {
+        server 127.0.0.1:8080;
+    }
+
+    upstream motomaqlab_admin {
+        server 127.0.0.1:3001;
+    }
+
+    server {
+        listen 3000;
+        server_name localhost;
+
+        client_max_body_size 12m;
+
+        root __SITE_ROOT__;
+        index index.html;
+
+        location /api/ {
+            proxy_pass http://motomaqlab_api;
+            proxy_http_version 1.1;
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header X-Forwarded-Proto $scheme;
+        }
+
+        location /media/ {
+            proxy_pass http://motomaqlab_api;
+            proxy_http_version 1.1;
+            proxy_set_header Host $host;
+        }
+
+        location /health {
+            proxy_pass http://motomaqlab_api;
+        }
+
+        location = /admin {
+            return 302 /admin/login;
+        }
+
+        location /admin/ {
+            proxy_pass http://motomaqlab_admin;
+            proxy_http_version 1.1;
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header X-Forwarded-Proto $scheme;
+            proxy_set_header Upgrade $http_upgrade;
+            proxy_set_header Connection "upgrade";
+        }
+
+        location / {
+            try_files $uri $uri/ $uri.html =404;
+        }
+    }
+}

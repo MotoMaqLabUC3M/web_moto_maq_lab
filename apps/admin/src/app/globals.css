@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --app-bg: #09090b;
+  --app-surface: #141416;
+  --app-surface-2: #1c1c1f;
+  --app-border: #27272a;
+  --app-accent: #e10600;
+  --app-accent-soft: rgba(225, 6, 0, 0.12);
+  --app-text: #fafafa;
+  --app-muted: #a1a1aa;
+  --sidebar-width: 260px;
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+  height: 100%;
+  background: var(--app-bg);
+  color: var(--app-text);
+}
+
+body {
+  font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+}
+
+@layer components {
+  .app-header {
+    @apply sticky top-0 z-30 border-b border-[var(--app-border)] px-4 py-3 backdrop-blur-md;
+    background-color: color-mix(in srgb, var(--app-bg) 95%, transparent);
+  }
+
+  .app-main {
+    @apply mx-auto w-full max-w-lg flex-1 overflow-y-auto px-4 pb-28 pt-4 lg:max-w-none lg:px-8 lg:pb-8 lg:pt-6;
+  }
+
+  .app-card {
+    @apply rounded-2xl border border-[var(--app-border)] bg-[var(--app-surface)] p-4 transition active:scale-[0.98] lg:rounded-xl lg:p-5 lg:hover:border-zinc-600/80 lg:active:scale-100;
+  }
+
+  .app-btn {
+    @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition active:scale-[0.97] lg:active:scale-100;
+  }
+
+  .app-btn-primary {
+    @apply app-btn bg-[var(--app-accent)] text-white shadow-lg shadow-red-950/25 lg:hover:brightness-110;
+  }
+
+  .app-btn-ghost {
+    @apply app-btn border border-[var(--app-border)] bg-[var(--app-surface-2)] text-[var(--app-text)] lg:hover:border-zinc-600 lg:hover:bg-zinc-800/80;
+  }
+
+  .app-input {
+    @apply w-full rounded-xl border border-[var(--app-border)] bg-[var(--app-surface-2)] px-4 py-3 text-sm outline-none ring-[var(--app-accent)] placeholder:text-[var(--app-muted)] focus:ring-2;
+  }
+
+  .bottom-nav {
+    @apply fixed bottom-0 left-0 right-0 z-40 border-t border-[var(--app-border)] px-2 pb-[calc(0.5rem+var(--safe-bottom))] pt-2 backdrop-blur-xl lg:hidden;
+    background-color: color-mix(in srgb, var(--app-surface) 95%, transparent);
+  }
+
+  .saas-sidebar {
+    @apply sticky top-0 hidden h-dvh w-[var(--sidebar-width)] shrink-0 flex-col border-r border-[var(--app-border)] bg-[var(--app-surface)] lg:flex;
+  }
+
+  .saas-topbar {
+    @apply sticky top-0 z-20 hidden items-center justify-between gap-4 border-b border-[var(--app-border)] px-8 py-5 backdrop-blur-md lg:flex;
+    background-color: color-mix(in srgb, var(--app-bg) 90%, transparent);
+  }
+
+  .saas-nav-item {
+    @apply flex items-center gap-3 rounded-lg px-3 py-2.5 text-left text-[var(--app-muted)] transition hover:bg-[var(--app-surface-2)] hover:text-[var(--app-text)];
+  }
+
+  .saas-nav-item--active {
+    @apply bg-[var(--app-accent-soft)] text-[var(--app-accent)] hover:bg-[var(--app-accent-soft)] hover:text-[var(--app-accent)];
+  }
+
+  .content-grid {
+    @apply grid gap-4 lg:grid-cols-2 lg:gap-5;
+  }
+
+  .bn-container {
+    --bn-colors-editor-background: var(--app-surface);
+    --bn-colors-editor-text: var(--app-text);
+    --bn-colors-menu-background: var(--app-surface-2);
+    --bn-colors-menu-text: var(--app-text);
+    --bn-colors-border: var(--app-border);
+    --bn-colors-hovered-background: var(--app-surface-2);
+    --bn-colors-selected-background: var(--app-accent-soft);
+    --bn-colors-selected-text: var(--app-text);
+    --bn-colors-tooltip-background: var(--app-surface-2);
+    --bn-colors-tooltip-text: var(--app-text);
+  }
+
+  .blog-editor .bn-mantine {
+    --bn-border-radius: 0.75rem;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-up {
+  animation: slide-up 0.2s ease-out;
+}
