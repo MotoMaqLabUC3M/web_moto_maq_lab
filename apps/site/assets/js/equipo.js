@@ -8,30 +8,44 @@
             .replace(/'/g, '&#039;');
     }
 
+const PLACEHOLDER_IMAGE = 'assets/img/logos_uc3m/uc3m_logo_sin_fondo.webp';
 
 /**
- * equipo.js - Renders team sections from JSON data
+ * equipo.js — Renderiza el equipo desde la API del CMS.
  *
- * If the server has already pre-rendered the team HTML (via
- * generate_team_html.py), this script detects existing content
- * and skips the fetch. Otherwise it fetches the JSON and renders
- * client-side as a fallback.
+ * El HTML estático entre <!-- TEAM_START --> y <!-- TEAM_END --> sirve
+ * como fallback SEO si la API no responde. Cuando la API está disponible,
+ * siempre sustituye ese contenido por los datos en vivo.
  */
 
 document.addEventListener('DOMContentLoaded', async () => {
     const container = document.getElementById('team-sections');
     if (!container) return;
 
-    // If the build script already injected static HTML, skip JS rendering
-    if (container.querySelector('.section-container')) return;
+    const hasStaticFallback = Boolean(container.querySelector('.section-container'));
+
+    if (!window.motoMaqLabCms) {
+        if (!hasStaticFallback) {
+            container.innerHTML = '<p>Error al cargar los datos del equipo.</p>';
+        }
+        return;
+    }
 
     try {
         const lang = document.documentElement.lang || 'es';
         const data = await window.motoMaqLabCms.loadTeam(lang);
+        if (!data.sections || data.sections.length === 0) {
+            if (!hasStaticFallback) {
+                container.innerHTML = '<p>No hay miembros publicados todavía.</p>';
+            }
+            return;
+        }
         renderTeamSections(container, data.sections);
     } catch (error) {
         console.error('Error loading team data:', error);
-        container.innerHTML = '<p>Error al cargar los datos del equipo.</p>';
+        if (!hasStaticFallback) {
+            container.innerHTML = '<p>Error al cargar los datos del equipo.</p>';
+        }
     }
 });
 
@@ -56,7 +70,7 @@ function createSectionHTML(section) {
     return `
         <section class="section-container">
             <div class="section-title">
-                <h2>${section.title}</h2>
+                <h2>${sanitize(section.title)}</h2>
             </div>
             <div class="team-row">
                 ${membersHTML}
@@ -72,13 +86,14 @@ function createSectionHTML(section) {
  * @returns {string} HTML string for the member card
  */
 function createMemberHTML(member, index) {
-    const placeholderClass = member.isPlaceholder ? ' class="placeholder-img"' : '';
-    // First member of each section loads eagerly for better SEO discoverability
+    const imageSrc = member.image || PLACEHOLDER_IMAGE;
+    const isPlaceholder = member.isPlaceholder || !member.image;
+    const placeholderClass = isPlaceholder ? ' class="placeholder-img"' : '';
     const loadingAttr = index === 0 ? 'eager' : 'lazy';
 
     return `
         <div class="team-member-card">
-            <img src="${sanitize(member.image)}" alt="Foto de ${sanitize(member.name)}, ${sanitize(member.role)} en MOTO-MAQLAB-UC3M"${placeholderClass} loading="${loadingAttr}" decoding="async" width="250" height="350" />
+            <img src="${sanitize(imageSrc)}" alt="Foto de ${sanitize(member.name)}, ${sanitize(member.role)} en MOTO-MAQLAB-UC3M"${placeholderClass} loading="${loadingAttr}" decoding="async" width="250" height="350" />
             <h3>${sanitize(member.name)}</h3>
             <p>${sanitize(member.role)}</p>
         </div>

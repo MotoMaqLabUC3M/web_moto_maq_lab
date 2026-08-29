@@ -15,8 +15,8 @@ Si los marcadores no existen (primera ejecución), los crea dentro de
 <div id="team-sections">. En ejecuciones posteriores, reemplaza solo
 el contenido entre los marcadores (idempotente).
 
-El JS del cliente (equipo.js) detecta que el contenido ya existe
-y no hace nada.
+El JS del cliente (equipo.js) sustituye ese HTML por datos en vivo de la API
+cuando está disponible; si la API falla, se mantiene el HTML estático.
 
 Uso (desde la raíz del repo):
     py scripts/generate_team_html.py
