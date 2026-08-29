@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 :root {
+  --font-geist-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --app-bg: #09090b;
   --app-surface: #141416;
   --app-surface-2: #1c1c1f;
