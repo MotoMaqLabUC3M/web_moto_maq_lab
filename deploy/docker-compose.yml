@@ -1,14 +1,13 @@
-# Producción — VPS manual
-# Uso: cd deploy && cp .env.example .env && docker compose up -d --build
+# Producción — VPS / Coolify
+# Rutas ./apps/* relativas a la raíz del repo (Coolify usa --project-directory ahí).
 #
-# Coolify: usa docker-compose.yml en la RAÍZ del repo (no este archivo).
-# Ver docker-compose.yml y deploy/.env.production.example
+# Manual desde la raíz:
+#   cp deploy/.env.example deploy/.env
+#   docker compose -f deploy/docker-compose.yml --env-file deploy/.env up -d --build
 
 services:
   postgres:
     image: postgres:16-alpine
-    env_file:
-      - .env
     environment:
       POSTGRES_DB: ${POSTGRES_DB:-motomaqlab}
       POSTGRES_USER: ${POSTGRES_USER:-motomaqlab}
@@ -26,10 +25,8 @@ services:
 
   api:
     build:
-      context: ../apps/api
+      context: ./apps/api
       dockerfile: Dockerfile
-    env_file:
-      - .env
     depends_on:
       postgres:
         condition: service_healthy
@@ -60,7 +57,7 @@ services:
 
   admin:
     build:
-      context: ../apps/admin
+      context: ./apps/admin
       dockerfile: Dockerfile
       args:
         NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL:?NEXT_PUBLIC_API_URL required}
@@ -79,8 +76,8 @@ services:
     ports:
       - "${HTTP_PORT:-80}:80"
     volumes:
-      - ../apps/site:/usr/share/nginx/html:ro
-      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./apps/site:/usr/share/nginx/html:ro
+      - ./deploy/nginx.conf:/etc/nginx/conf.d/default.conf:ro
     restart: unless-stopped
     networks:
       - motomaqlab
