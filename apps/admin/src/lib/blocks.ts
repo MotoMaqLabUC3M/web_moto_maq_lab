@@ -2,10 +2,9 @@ import type { Block, PartialBlock } from "@blocknote/core";
 import type { BlogBlock } from "./types";
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8080";
-
-function uid() {
-  return crypto.randomUUID();
-}
+const MEDIA_BASE =
+  process.env.NEXT_PUBLIC_MEDIA_URL ??
+  `${API_URL.replace(/\/$/, "")}/media`;
 
 export function mediaUrl(path: string): string {
   if (!path) return "";
@@ -13,7 +12,11 @@ export function mediaUrl(path: string): string {
   if (path.startsWith("assets/")) return `/${path}`;
   const clean = path.replace(/^\//, "");
   if (clean.startsWith("media/")) return `${API_URL}/${clean}`;
-  return `${API_URL}/media/${clean}`;
+  return `${MEDIA_BASE}/${clean}`;
+}
+
+function uid() {
+  return crypto.randomUUID();
 }
 
 type InlineItem = {
@@ -307,6 +310,103 @@ export function apiToBlocks(blocks: BlogBlock[]): PartialBlock[] {
   }
 
   return result;
+}
+
+function escapeHtml(text: string): string {
+  return text
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
+function parseInlineMarkdown(text: string): string {
+  const safe = escapeHtml(text);
+  return safe
+    .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
+    .replace(/\*(.+?)\*/g, "<em>$1</em>")
+    .replace(/~~(.+?)~~/g, "<s>$1</s>")
+    .replace(/`([^`]+)`/g, '<code class="blog-inline-code">$1</code>')
+    .replace(
+      /\[([^\]]+)\]\(([^)]+)\)/g,
+      '<a href="$2" target="_blank" rel="noopener noreferrer" class="blog-inline-a">$1</a>',
+    );
+}
+
+export function blocksToPreviewHtml(blocks: BlogBlock[]): string {
+  let html = "";
+  let inSection = false;
+
+  const closeSection = () => {
+    if (inSection) {
+      html += "</section>";
+      inSection = false;
+    }
+  };
+
+  for (const block of blocks) {
+    switch (block.type) {
+      case "heading": {
+        closeSection();
+        const level = Number(block.content.level ?? 2) || 2;
+        const tag = level === 1 ? "h1" : level === 3 ? "h3" : "h2";
+        const title = String(block.content.text ?? "");
+        html += `<section class="sp-text-block"><div class="sp-section-label"><div class="sp-label-line"></div><${tag}>${parseInlineMarkdown(title)}</${tag}></div>`;
+        inSection = true;
+        break;
+      }
+      case "quote": {
+        if (!inSection) {
+          html += '<section class="sp-text-block">';
+          inSection = true;
+        }
+        html += `<blockquote class="blog-quote">${parseInlineMarkdown(String(block.content.text ?? ""))}</blockquote>`;
+        break;
+      }
+      case "paragraph": {
+        const text = String(block.content.text ?? "").trim();
+        if (!text) break;
+        if (!inSection) {
+          html += '<section class="sp-text-block">';
+          inSection = true;
+        }
+        html += `<p>${parseInlineMarkdown(text)}</p>`;
+        break;
+      }
+      case "image": {
+        closeSection();
+        const src = mediaUrl(String(block.content.src ?? ""));
+        const alt = escapeHtml(String(block.content.alt ?? ""));
+        html += `<figure class="blog-inline-figure"><img src="${src}" alt="${alt}" loading="lazy" /></figure>`;
+        break;
+      }
+      case "pdf": {
+        closeSection();
+        const src = mediaUrl(String(block.content.src ?? ""));
+        html += `<div class="blog-pdf-preview"><a href="${src}" target="_blank" rel="noopener noreferrer">Ver PDF</a></div>`;
+        break;
+      }
+      case "list": {
+        if (!inSection) {
+          html += '<section class="sp-text-block">';
+          inSection = true;
+        }
+        const items = (block.content.items as string[]) ?? [];
+        const ordered = Boolean(block.content.ordered);
+        const tag = ordered ? "ol" : "ul";
+        html += `<${tag} class="blog-list">`;
+        for (const item of items) {
+          html += `<li>${parseInlineMarkdown(item)}</li>`;
+        }
+        html += `</${tag}>`;
+        break;
+      }
+      default:
+        break;
+    }
+  }
+  closeSection();
+  return html;
 }
 
 export function blocksToPlainExcerpt(blocks: BlogBlock[], max = 160): string {

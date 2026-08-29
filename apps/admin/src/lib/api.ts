@@ -2,6 +2,7 @@ import { getToken, clearToken } from "./auth";
 import type {
   AuthResponse,
   BlogPost,
+  BlogSection,
   DashboardStats,
   Department,
   TeamMember,
@@ -105,6 +106,12 @@ export const api = {
   deleteDepartment: (id: string) =>
     request<void>(`/api/v1/departments/${id}`, { method: "DELETE" }),
 
+  reorderDepartments: (ids: string[]) =>
+    request<void>("/api/v1/departments/reorder", {
+      method: "PUT",
+      body: JSON.stringify({ ids }),
+    }),
+
   createMember: (
     departmentId: string,
     data: {
@@ -137,6 +144,12 @@ export const api = {
   deleteMember: (id: string) =>
     request<void>(`/api/v1/members/${id}`, { method: "DELETE" }),
 
+  reorderMembers: (departmentId: string, ids: string[]) =>
+    request<void>(`/api/v1/departments/${departmentId}/members/reorder`, {
+      method: "PUT",
+      body: JSON.stringify({ ids }),
+    }),
+
   uploadMemberPhoto: (id: string, file: File) => {
     const form = new FormData();
     form.append("photo", file);
@@ -154,7 +167,64 @@ export const api = {
       `/api/v1/blog/posts${locale ? `?locale=${locale}` : ""}`,
     ).then(ensureArray),
 
+  listSections: () =>
+    request<BlogSection[] | null>("/api/v1/blog/sections").then(ensureArray),
+
+  getSection: (id: string) =>
+    request<BlogSection>(`/api/v1/blog/sections/${id}`),
+
+  createSection: (data: {
+    slug?: string;
+    title_es: string;
+    title_en?: string;
+    subtitle_es?: string;
+    subtitle_en?: string;
+    layout?: string;
+    sort_order?: number;
+  }) =>
+    request<BlogSection>("/api/v1/blog/sections", {
+      method: "POST",
+      body: JSON.stringify(data),
+    }),
+
+  updateSection: (
+    id: string,
+    data: Partial<{
+      slug: string;
+      title_es: string;
+      title_en: string;
+      subtitle_es: string;
+      subtitle_en: string;
+      layout: string;
+      sort_order: number;
+    }>,
+  ) =>
+    request<BlogSection>(`/api/v1/blog/sections/${id}`, {
+      method: "PUT",
+      body: JSON.stringify(data),
+    }),
+
+  deleteSection: (id: string) =>
+    request<void>(`/api/v1/blog/sections/${id}`, { method: "DELETE" }),
+
+  reorderSections: (ids: string[]) =>
+    request<void>("/api/v1/blog/sections/reorder", {
+      method: "PUT",
+      body: JSON.stringify({ ids }),
+    }),
+
+  reorderPosts: (sectionId: string, ids: string[]) =>
+    request<void>(`/api/v1/blog/sections/${sectionId}/posts/reorder`, {
+      method: "PUT",
+      body: JSON.stringify({ ids }),
+    }),
+
   getPost: (id: string) => request<BlogPost>(`/api/v1/blog/posts/${id}`),
+
+  lookupPost: (slug: string, locale: string) =>
+    request<BlogPost>(
+      `/api/v1/blog/posts/lookup?slug=${encodeURIComponent(slug)}&locale=${encodeURIComponent(locale)}`,
+    ),
 
   createPost: (data: Partial<BlogPost>) =>
     request<BlogPost>("/api/v1/blog/posts", {

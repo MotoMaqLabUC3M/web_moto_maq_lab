@@ -40,6 +40,20 @@ export type BlogBlock = {
   content: Record<string, unknown>;
 };
 
+export type BlogSection = {
+  id: string;
+  slug: string;
+  title_es: string;
+  title_en: string;
+  subtitle_es: string;
+  subtitle_en: string;
+  layout: string;
+  sort_order: number;
+  posts?: BlogPost[];
+  created_at: string;
+  updated_at: string;
+};
+
 export type BlogPost = {
   id: string;
   slug: string;
@@ -52,6 +66,8 @@ export type BlogPost = {
   blocks: BlogBlock[];
   locale: string;
   published: boolean;
+  section_id?: string;
+  sort_order: number;
   created_at: string;
   updated_at: string;
 };

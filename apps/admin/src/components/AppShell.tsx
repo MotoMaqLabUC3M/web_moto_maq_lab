@@ -19,9 +19,7 @@ export function AppShell({
   action?: React.ReactNode;
 }) {
   const router = useRouter();
-  const [ready, setReady] = useState(() =>
-    typeof window !== "undefined" ? isAuthenticated() : false,
-  );
+  const [ready, setReady] = useState(false);
 
   useEffect(() => {
     if (!isAuthenticated()) {

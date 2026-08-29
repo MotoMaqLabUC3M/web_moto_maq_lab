@@ -4,6 +4,8 @@ import { FormEvent, useCallback, useEffect, useState } from "react";
 import Link from "next/link";
 import { ChevronRight, Plus, Trash2 } from "lucide-react";
 import { AppShell } from "@/components/AppShell";
+import { useConfirm } from "@/components/ConfirmProvider";
+import { SortableList } from "@/components/SortableList";
 import { api } from "@/lib/api";
 import type { Department } from "@/lib/types";
 
@@ -13,6 +15,7 @@ export default function TeamPage() {
   const [showForm, setShowForm] = useState(false);
   const [titleES, setTitleES] = useState("");
   const [titleEN, setTitleEN] = useState("");
+  const confirm = useConfirm();
 
   const load = useCallback(async () => {
     setLoading(true);
@@ -31,7 +34,11 @@ export default function TeamPage() {
 
   async function createDepartment(e: FormEvent) {
     e.preventDefault();
-    await api.createDepartment({ title_es: titleES, title_en: titleEN });
+    await api.createDepartment({
+      title_es: titleES,
+      title_en: titleEN,
+      sort_order: departments.length,
+    });
     setTitleES("");
     setTitleEN("");
     setShowForm(false);
@@ -39,15 +46,34 @@ export default function TeamPage() {
   }
 
   async function removeDepartment(id: string) {
-    if (!confirm("¿Eliminar departamento y todos sus miembros?")) return;
+    const ok = await confirm({
+      title: "Eliminar departamento",
+      message:
+        "Se borrará el departamento y todos sus miembros. Esta acción no se puede deshacer.",
+      confirmLabel: "Eliminar",
+    });
+    if (!ok) return;
     await api.deleteDepartment(id);
     load();
+  }
+
+  async function reorderDepartments(ids: string[]) {
+    await api.reorderDepartments(ids);
+    setDepartments((prev) => {
+      const byId = new Map(prev.map((d) => [d.id, d]));
+      return ids
+        .map((id, index) => {
+          const dep = byId.get(id);
+          return dep ? { ...dep, sort_order: index } : null;
+        })
+        .filter((d): d is Department => d !== null);
+    });
   }
 
   return (
     <AppShell
       title="Equipo"
-      subtitle={`${departments?.length ?? 0} departamentos`}
+      subtitle={`${departments?.length ?? 0} departamentos · arrastra para ordenar`}
       action={
         <button
           type="button"
@@ -93,13 +119,21 @@ export default function TeamPage() {
         <div className="py-12 text-center text-[var(--app-muted)]">
           Cargando…
         </div>
+      ) : departments.length === 0 ? (
+        <div className="py-12 text-center text-[var(--app-muted)]">
+          No hay departamentos todavía.
+        </div>
       ) : (
-        <ul className="content-grid lg:grid-cols-1 xl:grid-cols-2">
-          {departments.map((dep) => (
-            <li key={dep.id} className="app-card flex items-center gap-3 !p-0">
+        <SortableList
+          items={departments}
+          getId={(dep) => dep.id}
+          onReorder={reorderDepartments}
+          renderItem={(dep, { dragHandle }) => (
+            <div className="app-card flex items-center gap-1 !p-0 lg:active:scale-100">
+              {dragHandle}
               <Link
                 href={`/team/${dep.id}`}
-                className="flex flex-1 items-center gap-3 p-4"
+                className="flex flex-1 items-center gap-3 p-4 pl-0"
               >
                 <div className="flex-1">
                   <p className="font-semibold">{dep.title_es}</p>
@@ -117,9 +151,9 @@ export default function TeamPage() {
               >
                 <Trash2 size={16} />
               </button>
-            </li>
-          ))}
-        </ul>
+            </div>
+          )}
+        />
       )}
     </AppShell>
   );
