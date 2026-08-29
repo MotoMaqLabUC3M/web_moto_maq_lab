@@ -7,10 +7,10 @@ import { AppShell } from "@/components/AppShell";
 import { useConfirm } from "@/components/ConfirmProvider";
 import { SortableList } from "@/components/SortableList";
 import { api } from "@/lib/api";
+import { groupPostsBySlug, type BlogArticleGroup } from "@/lib/blog";
 import type { BlogPost, BlogSection } from "@/lib/types";
-import type { BlogArticleGroup } from "@/lib/blog";
 
-import { groupPostsBySlug } from "@/lib/blog";
+export default function BlogSectionPage({
   params,
 }: {
   params: Promise<{ sectionId: string }>;

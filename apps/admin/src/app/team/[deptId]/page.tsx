@@ -2,7 +2,7 @@
 
 import { FormEvent, useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { ArrowLeft, Camera, Plus, Trash2, User, X } from "lucide-react";
+import { ArrowLeft, Camera, ChevronRight, Plus, Trash2, User, X } from "lucide-react";
 import { AppShell } from "@/components/AppShell";
 import { useConfirm } from "@/components/ConfirmProvider";
 import { SortableList } from "@/components/SortableList";
@@ -25,7 +25,6 @@ export default function DepartmentPage({
   const [photo, setPhoto] = useState<File | null>(null);
   const [photoPreview, setPhotoPreview] = useState<string | null>(null);
   const [saving, setSaving] = useState(false);
-  const [uploading, setUploading] = useState<string | null>(null);
   const createPhotoRef = useRef<HTMLInputElement>(null);
   const confirm = useConfirm();
 
@@ -100,17 +99,6 @@ export default function DepartmentPage({
     if (!ok) return;
     await api.deleteMember(id);
     load();
-  }
-
-  async function onPhoto(memberId: string, file: File | undefined) {
-    if (!file) return;
-    setUploading(memberId);
-    try {
-      await api.uploadMemberPhoto(memberId, file);
-      load();
-    } finally {
-      setUploading(null);
-    }
   }
 
   async function reorderMembers(ids: string[]) {
@@ -229,41 +217,35 @@ export default function DepartmentPage({
           renderItem={(m, { dragHandle }) => (
             <div className="app-card flex gap-2 !p-3 lg:active:scale-100">
               {dragHandle}
-              <label className="relative shrink-0 cursor-pointer">
-                {m.image_path ? (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img
-                    src={mediaUrl(m.image_path)}
-                    alt={m.name}
-                    className="h-16 w-16 rounded-xl object-cover"
-                  />
-                ) : (
-                  <div className="flex h-16 w-16 items-center justify-center rounded-xl bg-[var(--app-surface-2)] text-[var(--app-muted)]">
-                    <User size={24} />
-                  </div>
-                )}
-                <span className="absolute -bottom-1 -right-1 flex h-7 w-7 items-center justify-center rounded-full bg-[var(--app-accent)] text-white shadow">
-                  {uploading === m.id ? (
-                    <span className="h-3 w-3 animate-spin rounded-full border-2 border-white border-t-transparent" />
+              <Link
+                href={`/team/${deptId}/${m.id}`}
+                className="flex min-w-0 flex-1 items-center gap-3"
+              >
+                <div className="relative shrink-0">
+                  {m.image_path ? (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img
+                      src={mediaUrl(m.image_path)}
+                      alt={m.name}
+                      className="h-16 w-16 rounded-xl object-cover"
+                    />
                   ) : (
-                    <Camera size={14} />
+                    <div className="flex h-16 w-16 items-center justify-center rounded-xl bg-[var(--app-surface-2)] text-[var(--app-muted)]">
+                      <User size={24} />
+                    </div>
                   )}
-                </span>
-                <input
-                  type="file"
-                  accept="image/*"
-                  className="hidden"
-                  onChange={(e) => onPhoto(m.id, e.target.files?.[0])}
-                />
-              </label>
-              <div className="min-w-0 flex-1 self-center">
-                <p className="truncate font-semibold">{m.name}</p>
-                <p className="text-sm text-[var(--app-muted)]">{m.role_es}</p>
-              </div>
+                </div>
+                <div className="min-w-0 flex-1 self-center">
+                  <p className="truncate font-semibold">{m.name}</p>
+                  <p className="text-sm text-[var(--app-muted)]">{m.role_es}</p>
+                </div>
+                <ChevronRight size={18} className="shrink-0 text-[var(--app-muted)]" />
+              </Link>
               <button
                 type="button"
                 onClick={() => removeMember(m.id)}
                 className="self-start rounded-lg p-2 text-red-400"
+                aria-label="Eliminar miembro"
               >
                 <Trash2 size={16} />
               </button>
