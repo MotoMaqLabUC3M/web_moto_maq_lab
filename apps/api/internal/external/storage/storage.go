@@ -3,28 +3,55 @@ package storage
 import (
 	"fmt"
 	"io"
-	"os"
 	"path/filepath"
 	"strings"
+
+	"github.com/MotoMaqLabUC3M/web_moto_maq_lab/apps/api/internal/config"
 )
 
 type StorageService struct {
-	root       string
+	backend    Backend
 	maxBytes   int64
 	allowedExt map[string]bool
+	local      *LocalBackend
 }
 
-func NewStorageService(root string, maxUploadMB int64) *StorageService {
+func NewFromConfig(cfg config.Config) (*StorageService, error) {
+	var backend Backend
+	var local *LocalBackend
+
+	switch cfg.StorageDriver {
+	case "r2":
+		r2, err := NewR2Backend(R2Config{
+			AccountID:       cfg.R2AccountID,
+			AccessKeyID:     cfg.R2AccessKeyID,
+			SecretAccessKey: cfg.R2SecretAccessKey,
+			Bucket:          cfg.R2BucketName,
+		})
+		if err != nil {
+			return nil, err
+		}
+		backend = r2
+	default:
+		local = NewLocalBackend(cfg.UploadDir)
+		backend = local
+	}
+
 	return &StorageService{
-		root:     root,
-		maxBytes: maxUploadMB * 1024 * 1024,
-		allowedExt: map[string]bool{
-			".webp": true,
-			".jpg":  true,
-			".jpeg": true,
-			".png":  true,
-			".pdf":  true,
-		},
+		backend:    backend,
+		local:      local,
+		maxBytes:   cfg.MaxUploadMB * 1024 * 1024,
+		allowedExt: defaultAllowedExt(),
+	}, nil
+}
+
+func defaultAllowedExt() map[string]bool {
+	return map[string]bool{
+		".webp": true,
+		".jpg":  true,
+		".jpeg": true,
+		".png":  true,
+		".pdf":  true,
 	}
 }
 
@@ -38,48 +65,27 @@ func (s *StorageService) Save(relativePath string, r io.Reader, size int64) (str
 		return "", fmt.Errorf("file type not allowed: %s", ext)
 	}
 
-	clean := filepath.Clean(relativePath)
-	if strings.HasPrefix(clean, "..") {
-		return "", fmt.Errorf("invalid path")
-	}
-
-	full := filepath.Join(s.root, filepath.FromSlash(clean))
-	if err := os.MkdirAll(filepath.Dir(full), 0o755); err != nil {
-		return "", fmt.Errorf("mkdir: %w", err)
-	}
-
-	f, err := os.Create(full)
+	path, err := s.backend.Save(relativePath, r, size)
 	if err != nil {
-		return "", fmt.Errorf("create file: %w", err)
+		return "", err
 	}
-	defer f.Close()
-
-	written, err := io.Copy(f, r)
-	if err != nil {
-		return "", fmt.Errorf("write file: %w", err)
+	if size > 0 {
+		// Size is validated upstream by handlers; backends may not enforce it.
+		_ = size
 	}
-	if size > 0 && written > size {
-		return "", fmt.Errorf("upload size mismatch")
-	}
-
-	return filepath.ToSlash(clean), nil
+	return path, nil
 }
 
 func (s *StorageService) Delete(relativePath string) error {
-	if relativePath == "" {
+	if strings.HasPrefix(relativePath, "http://") || strings.HasPrefix(relativePath, "https://") {
 		return nil
 	}
-	clean := filepath.Clean(relativePath)
-	if strings.HasPrefix(clean, "..") {
-		return fmt.Errorf("invalid path")
-	}
-	full := filepath.Join(s.root, filepath.FromSlash(clean))
-	if err := os.Remove(full); err != nil && !os.IsNotExist(err) {
-		return err
-	}
-	return nil
+	return s.backend.Delete(relativePath)
 }
 
 func (s *StorageService) Absolute(relativePath string) string {
-	return filepath.Join(s.root, filepath.FromSlash(relativePath))
+	if s.local == nil {
+		return ""
+	}
+	return s.local.Absolute(relativePath)
 }

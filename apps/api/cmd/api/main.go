@@ -36,12 +36,15 @@ func main() {
 	teamRepo := repository.NewTeamRepository(store)
 	blogRepo := repository.NewBlogRepository(store)
 
-	storageSvc := storage.NewStorageService(cfg.UploadDir, cfg.MaxUploadMB)
+	storageSvc, err := storage.NewFromConfig(cfg)
+	if err != nil {
+		log.Fatalf("storage: %v", err)
+	}
 
 	authSvc := service.NewAuthService(userRepo, cfg)
 	teamSvc := service.NewTeamService(teamRepo, storageSvc)
 	blogSvc := service.NewBlogService(blogRepo, storageSvc)
-	publicSvc := service.NewPublicService(teamSvc, blogRepo, cfg.PublicAPIBaseURL)
+	publicSvc := service.NewPublicService(teamSvc, blogRepo, cfg.MediaBaseURL())
 
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 	defer cancel()
@@ -68,6 +71,10 @@ func main() {
 	go func() {
 		log.Printf("api listening on %s (env=%s db=%s)", cfg.HTTPAddr, cfg.Env, cfg.DBDriver)
 		log.Printf("public API base: %s", cfg.PublicAPIBaseURL)
+		log.Printf("storage driver: %s", cfg.StorageDriver)
+		if cfg.StorageDriver == "r2" {
+			log.Printf("media CDN base: %s", cfg.MediaBaseURL())
+		}
 		if err := server.ListenAndServe(); err != nil && err != http.ErrServerClosed {
 			log.Fatalf("server: %v", err)
 		}

@@ -19,18 +19,24 @@ const (
 )
 
 type Config struct {
-	Env              string
-	HTTPAddr         string
-	DBDriver         DBDriver
-	DatabaseURL      string
-	JWTSecret        string
-	JWTExpiry        time.Duration
-	AdminUsername    string
-	AdminPassword    string
-	UploadDir        string
-	PublicAPIBaseURL string
-	CORSOrigins      []string
-	MaxUploadMB      int64
+	Env                 string
+	HTTPAddr            string
+	DBDriver            DBDriver
+	DatabaseURL         string
+	JWTSecret           string
+	JWTExpiry           time.Duration
+	AdminUsername       string
+	AdminPassword       string
+	UploadDir           string
+	StorageDriver       string
+	R2AccountID         string
+	R2AccessKeyID       string
+	R2SecretAccessKey   string
+	R2BucketName        string
+	R2PublicURL         string
+	PublicAPIBaseURL    string
+	CORSOrigins         []string
+	MaxUploadMB         int64
 }
 
 func Load() (Config, error) {
@@ -47,19 +53,26 @@ func Load() (Config, error) {
 	}
 
 	driver := DBDriver(strings.ToLower(getEnv("DB_DRIVER", "sqlite")))
+	storageDriver := strings.ToLower(getEnv("STORAGE_DRIVER", "local"))
 	cfg := Config{
-		Env:            getEnv("APP_ENV", "development"),
-		HTTPAddr:       getEnv("HTTP_ADDR", ":8080"),
-		DBDriver:       driver,
-		DatabaseURL:    getEnv("DATABASE_URL", "file:data/motomaqlab.db?_pragma=foreign_keys(1)"),
-		JWTSecret:      getEnv("JWT_SECRET", ""),
-		JWTExpiry:      time.Duration(jwtHours) * time.Hour,
-		AdminUsername:    getEnv("ADMIN_USERNAME", "admin"),
-		AdminPassword:    getEnv("ADMIN_PASSWORD", ""),
-		UploadDir:        getEnv("UPLOAD_DIR", "./data/uploads"),
-		PublicAPIBaseURL: getEnv("PUBLIC_API_BASE_URL", "http://localhost:8080"),
-		CORSOrigins:      splitCSV(getEnv("CORS_ORIGINS", "http://localhost:3000,http://localhost:8080,https://motomaqlabuc3m.es")),
-		MaxUploadMB:    maxUpload,
+		Env:               getEnv("APP_ENV", "development"),
+		HTTPAddr:          getEnv("HTTP_ADDR", ":8080"),
+		DBDriver:          driver,
+		DatabaseURL:       getEnv("DATABASE_URL", "file:data/motomaqlab.db?_pragma=foreign_keys(1)"),
+		JWTSecret:         getEnv("JWT_SECRET", ""),
+		JWTExpiry:         time.Duration(jwtHours) * time.Hour,
+		AdminUsername:     getEnv("ADMIN_USERNAME", "admin"),
+		AdminPassword:     getEnv("ADMIN_PASSWORD", ""),
+		UploadDir:         getEnv("UPLOAD_DIR", "./data/uploads"),
+		StorageDriver:     storageDriver,
+		R2AccountID:       getEnv("R2_ACCOUNT_ID", ""),
+		R2AccessKeyID:     getEnv("R2_ACCESS_KEY_ID", ""),
+		R2SecretAccessKey: getEnv("R2_SECRET_ACCESS_KEY", ""),
+		R2BucketName:      getEnv("R2_BUCKET_NAME", ""),
+		R2PublicURL:       getEnv("R2_PUBLIC_URL", ""),
+		PublicAPIBaseURL:  getEnv("PUBLIC_API_BASE_URL", "http://localhost:8080"),
+		CORSOrigins:       splitCSV(getEnv("CORS_ORIGINS", "http://localhost:3000,http://localhost:8080,https://motomaqlabuc3m.es")),
+		MaxUploadMB:       maxUpload,
 	}
 
 	if cfg.JWTSecret == "" {
@@ -71,8 +84,24 @@ func Load() (Config, error) {
 	if cfg.DBDriver != DriverSQLite && cfg.DBDriver != DriverPostgres {
 		return Config{}, fmt.Errorf("unsupported DB_DRIVER: %s", cfg.DBDriver)
 	}
+	if cfg.StorageDriver != "local" && cfg.StorageDriver != "r2" {
+		return Config{}, fmt.Errorf("unsupported STORAGE_DRIVER: %s (use local or r2)", cfg.StorageDriver)
+	}
+	if cfg.StorageDriver == "r2" {
+		if cfg.R2AccountID == "" || cfg.R2AccessKeyID == "" || cfg.R2SecretAccessKey == "" || cfg.R2BucketName == "" {
+			return Config{}, fmt.Errorf("R2 storage requires R2_ACCOUNT_ID, R2_ACCESS_KEY_ID, R2_SECRET_ACCESS_KEY and R2_BUCKET_NAME")
+		}
+	}
 
 	return cfg, nil
+}
+
+// MediaBaseURL is the public prefix for uploaded files (API /media/ or R2 CDN).
+func (c Config) MediaBaseURL() string {
+	if c.StorageDriver == "r2" && c.R2PublicURL != "" {
+		return strings.TrimSuffix(c.R2PublicURL, "/")
+	}
+	return strings.TrimSuffix(c.PublicAPIBaseURL, "/") + "/media"
 }
 
 // loadEnvFiles carga .env sin sobrescribir variables ya definidas en el sistema.
