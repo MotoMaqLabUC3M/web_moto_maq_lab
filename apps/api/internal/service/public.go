@@ -87,16 +87,21 @@ func (s *PublicService) Stats(ctx context.Context) (map[string]int, error) {
 	if err != nil {
 		return nil, err
 	}
-	published := 0
+	slugPublished := map[string]bool{}
 	for _, p := range posts {
 		if p.Published {
-			published++
+			slugPublished[p.Slug] = true
 		}
+	}
+	publishedArticles := len(slugPublished)
+	uniqueSlugs := map[string]struct{}{}
+	for _, p := range posts {
+		uniqueSlugs[p.Slug] = struct{}{}
 	}
 	return map[string]int{
 		"departments": len(deps),
 		"members":     len(members),
-		"posts":       len(posts),
-		"published":   published,
+		"posts":       len(uniqueSlugs),
+		"published":   publishedArticles,
 	}, nil
 }

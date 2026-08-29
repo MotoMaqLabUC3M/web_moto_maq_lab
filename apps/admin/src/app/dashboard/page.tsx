@@ -36,7 +36,7 @@ export default function DashboardPage() {
           value={stats?.departments}
         />
         <StatCard icon={Users} label="Miembros" value={stats?.members} />
-        <StatCard icon={BookOpen} label="Entradas" value={stats?.posts} />
+        <StatCard icon={BookOpen} label="Artículos" value={stats?.posts} />
         <StatCard
           icon={Activity}
           label="Publicadas"

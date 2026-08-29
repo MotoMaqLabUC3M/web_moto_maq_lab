@@ -7,6 +7,7 @@ import { AppShell } from "@/components/AppShell";
 import { useConfirm } from "@/components/ConfirmProvider";
 import { SortableList } from "@/components/SortableList";
 import { api, ApiClientError } from "@/lib/api";
+import { countArticlesBySlug } from "@/lib/blog";
 import type { BlogSection } from "@/lib/types";
 
 export default function BlogPage() {
@@ -181,7 +182,9 @@ export default function BlogPage() {
                 <div className="flex-1">
                   <p className="font-semibold">{sec.title_es}</p>
                   <p className="text-xs text-[var(--app-muted)]">
-                    {sec.posts?.length ?? 0} entradas · {sec.slug} ·{" "}
+                    {countArticlesBySlug(sec.posts)} artículo
+                    {(countArticlesBySlug(sec.posts) !== 1 ? "s" : "")} ·{" "}
+                    {sec.slug} ·{" "}
                     {sec.layout === "newsletter" ? "Newsletter" : "Noticias"}
                   </p>
                 </div>
