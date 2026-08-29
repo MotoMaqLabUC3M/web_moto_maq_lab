@@ -69,15 +69,14 @@ services:
       - motomaqlab
 
   nginx:
-    image: nginx:1.27-alpine
+    build:
+      context: ..
+      dockerfile: deploy/nginx.Dockerfile
     depends_on:
       - api
       - admin
     ports:
       - "${HTTP_PORT:-80}:80"
-    volumes:
-      - ./apps/site:/usr/share/nginx/html:ro
-      - ./deploy/nginx.conf:/etc/nginx/conf.d/default.conf:ro
     restart: unless-stopped
     networks:
       - motomaqlab

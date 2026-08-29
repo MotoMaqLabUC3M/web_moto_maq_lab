@@ -155,7 +155,8 @@ func (s *Store) ensureBlogPostColumns(ctx context.Context) error {
 	}
 	for _, stmt := range alters {
 		if _, err := s.db.ExecContext(ctx, stmt); err != nil {
-			if strings.Contains(strings.ToLower(err.Error()), "duplicate column") {
+			msg := strings.ToLower(err.Error())
+			if strings.Contains(msg, "duplicate column") || strings.Contains(msg, "already exists") {
 				continue
 			}
 			return fmt.Errorf("migrate blog_posts column: %w", err)
