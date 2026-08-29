@@ -104,6 +104,46 @@ func (s *TeamService) DeleteDepartment(ctx context.Context, id string) error {
 	return s.repo.DeleteDepartment(ctx, id)
 }
 
+func (s *TeamService) ReorderDepartments(ctx context.Context, ids []string) error {
+	if len(ids) == 0 {
+		return nil
+	}
+	for i, id := range ids {
+		d, err := s.repo.GetDepartment(ctx, id)
+		if err != nil {
+			return err
+		}
+		d.SortOrder = i
+		if err := s.repo.UpdateDepartment(ctx, d); err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
+func (s *TeamService) ReorderMembers(ctx context.Context, departmentID string, ids []string) error {
+	if len(ids) == 0 {
+		return nil
+	}
+	if _, err := s.repo.GetDepartment(ctx, departmentID); err != nil {
+		return err
+	}
+	for i, id := range ids {
+		m, err := s.repo.GetMember(ctx, id)
+		if err != nil {
+			return err
+		}
+		if m.DepartmentID != departmentID {
+			return fmt.Errorf("%w: member does not belong to department", ErrValidation)
+		}
+		m.SortOrder = i
+		if err := s.repo.UpdateMember(ctx, m); err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
 func (s *TeamService) CreateMember(ctx context.Context, departmentID string, in MemberInput) (domain.TeamMember, error) {
 	if _, err := s.repo.GetDepartment(ctx, departmentID); err != nil {
 		return domain.TeamMember{}, err

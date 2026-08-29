@@ -117,6 +117,37 @@ func (h *TeamHandler) DeleteDepartment(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(http.StatusNoContent)
 }
 
+func (h *TeamHandler) ReorderDepartments(w http.ResponseWriter, r *http.Request) {
+	var body struct {
+		IDs []string `json:"ids"`
+	}
+	if err := json.NewDecoder(r.Body).Decode(&body); err != nil {
+		writeError(w, http.StatusBadRequest, "invalid json body")
+		return
+	}
+	if err := h.team.ReorderDepartments(r.Context(), body.IDs); err != nil {
+		writeServiceError(w, err)
+		return
+	}
+	w.WriteHeader(http.StatusNoContent)
+}
+
+func (h *TeamHandler) ReorderMembers(w http.ResponseWriter, r *http.Request) {
+	departmentID := chiURLParam(r, "id")
+	var body struct {
+		IDs []string `json:"ids"`
+	}
+	if err := json.NewDecoder(r.Body).Decode(&body); err != nil {
+		writeError(w, http.StatusBadRequest, "invalid json body")
+		return
+	}
+	if err := h.team.ReorderMembers(r.Context(), departmentID, body.IDs); err != nil {
+		writeServiceError(w, err)
+		return
+	}
+	w.WriteHeader(http.StatusNoContent)
+}
+
 func (h *TeamHandler) CreateMember(w http.ResponseWriter, r *http.Request) {
 	departmentID := chiURLParam(r, "id")
 	var in service.MemberInput
@@ -207,6 +238,109 @@ func (h *BlogHandler) ListPosts(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	writeJSON(w, http.StatusOK, posts)
+}
+
+func (h *BlogHandler) ListSections(w http.ResponseWriter, r *http.Request) {
+	sections, err := h.blog.ListSections(r.Context())
+	if err != nil {
+		writeError(w, http.StatusInternalServerError, "failed to list sections")
+		return
+	}
+	writeJSON(w, http.StatusOK, sections)
+}
+
+func (h *BlogHandler) GetSection(w http.ResponseWriter, r *http.Request) {
+	id := chiURLParam(r, "id")
+	sec, err := h.blog.GetSection(r.Context(), id)
+	if err != nil {
+		writeServiceError(w, err)
+		return
+	}
+	writeJSON(w, http.StatusOK, sec)
+}
+
+func (h *BlogHandler) CreateSection(w http.ResponseWriter, r *http.Request) {
+	var in service.BlogSectionInput
+	if err := json.NewDecoder(r.Body).Decode(&in); err != nil {
+		writeError(w, http.StatusBadRequest, "invalid json body")
+		return
+	}
+	sec, err := h.blog.CreateSection(r.Context(), in)
+	if err != nil {
+		writeServiceError(w, err)
+		return
+	}
+	writeJSON(w, http.StatusCreated, sec)
+}
+
+func (h *BlogHandler) UpdateSection(w http.ResponseWriter, r *http.Request) {
+	id := chiURLParam(r, "id")
+	var in service.BlogSectionInput
+	if err := json.NewDecoder(r.Body).Decode(&in); err != nil {
+		writeError(w, http.StatusBadRequest, "invalid json body")
+		return
+	}
+	sec, err := h.blog.UpdateSection(r.Context(), id, in)
+	if err != nil {
+		writeServiceError(w, err)
+		return
+	}
+	writeJSON(w, http.StatusOK, sec)
+}
+
+func (h *BlogHandler) DeleteSection(w http.ResponseWriter, r *http.Request) {
+	id := chiURLParam(r, "id")
+	if err := h.blog.DeleteSection(r.Context(), id); err != nil {
+		writeServiceError(w, err)
+		return
+	}
+	w.WriteHeader(http.StatusNoContent)
+}
+
+func (h *BlogHandler) ReorderSections(w http.ResponseWriter, r *http.Request) {
+	var body struct {
+		IDs []string `json:"ids"`
+	}
+	if err := json.NewDecoder(r.Body).Decode(&body); err != nil {
+		writeError(w, http.StatusBadRequest, "invalid json body")
+		return
+	}
+	if err := h.blog.ReorderSections(r.Context(), body.IDs); err != nil {
+		writeServiceError(w, err)
+		return
+	}
+	w.WriteHeader(http.StatusNoContent)
+}
+
+func (h *BlogHandler) ReorderPosts(w http.ResponseWriter, r *http.Request) {
+	sectionID := chiURLParam(r, "id")
+	var body struct {
+		IDs []string `json:"ids"`
+	}
+	if err := json.NewDecoder(r.Body).Decode(&body); err != nil {
+		writeError(w, http.StatusBadRequest, "invalid json body")
+		return
+	}
+	if err := h.blog.ReorderPosts(r.Context(), sectionID, body.IDs); err != nil {
+		writeServiceError(w, err)
+		return
+	}
+	w.WriteHeader(http.StatusNoContent)
+}
+
+func (h *BlogHandler) LookupPost(w http.ResponseWriter, r *http.Request) {
+	slug := r.URL.Query().Get("slug")
+	locale := r.URL.Query().Get("locale")
+	if slug == "" || locale == "" {
+		writeError(w, http.StatusBadRequest, "slug and locale are required")
+		return
+	}
+	post, err := h.blog.GetPostBySlug(r.Context(), slug, locale)
+	if err != nil {
+		writeServiceError(w, err)
+		return
+	}
+	writeJSON(w, http.StatusOK, post)
 }
 
 func (h *BlogHandler) GetPost(w http.ResponseWriter, r *http.Request) {

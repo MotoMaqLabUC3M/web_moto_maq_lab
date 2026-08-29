@@ -7,6 +7,7 @@ import (
 	"os"
 	"path/filepath"
 	"strings"
+	"time"
 
 	"github.com/MotoMaqLabUC3M/web_moto_maq_lab/apps/api/internal/config"
 	_ "github.com/jackc/pgx/v5/stdlib"
@@ -117,6 +118,18 @@ func (s *Store) Migrate(ctx context.Context) error {
 		)`,
 		`CREATE INDEX IF NOT EXISTS idx_team_members_department ON team_members(department_id)`,
 		`CREATE INDEX IF NOT EXISTS idx_blog_posts_locale ON blog_posts(locale)`,
+		`CREATE TABLE IF NOT EXISTS blog_sections (
+			id TEXT PRIMARY KEY,
+			slug TEXT NOT NULL UNIQUE,
+			title_es TEXT NOT NULL,
+			title_en TEXT NOT NULL DEFAULT '',
+			subtitle_es TEXT NOT NULL DEFAULT '',
+			subtitle_en TEXT NOT NULL DEFAULT '',
+			layout TEXT NOT NULL DEFAULT 'grid',
+			sort_order INTEGER NOT NULL DEFAULT 0,
+			created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+			updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+		)`,
 	}
 
 	for _, stmt := range stmts {
@@ -125,6 +138,82 @@ func (s *Store) Migrate(ctx context.Context) error {
 		}
 	}
 
+	if err := s.ensureBlogPostColumns(ctx); err != nil {
+		return err
+	}
+	if err := s.seedBlogSections(ctx); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (s *Store) ensureBlogPostColumns(ctx context.Context) error {
+	alters := []string{
+		`ALTER TABLE blog_posts ADD COLUMN section_id TEXT NOT NULL DEFAULT ''`,
+		`ALTER TABLE blog_posts ADD COLUMN sort_order INTEGER NOT NULL DEFAULT 0`,
+	}
+	for _, stmt := range alters {
+		if _, err := s.db.ExecContext(ctx, stmt); err != nil {
+			if strings.Contains(strings.ToLower(err.Error()), "duplicate column") {
+				continue
+			}
+			return fmt.Errorf("migrate blog_posts column: %w", err)
+		}
+	}
+	return nil
+}
+
+func (s *Store) seedBlogSections(ctx context.Context) error {
+	var count int
+	if err := s.db.QueryRowContext(ctx, `SELECT COUNT(*) FROM blog_sections`).Scan(&count); err != nil {
+		return err
+	}
+	if count > 0 {
+		return s.backfillBlogPostSections(ctx)
+	}
+
+	now := time.Now().UTC()
+	sections := []struct {
+		id, slug, titleES, titleEN, subtitleES, subtitleEN, layout string
+		sortOrder                                                    int
+	}{
+		{"sec-noticias", "noticias-recientes", "Noticias Recientes", "Recent News", "Lo último de MOTO-MAQLAB-UC3M", "The latest from MOTO-MAQLAB-UC3M", "grid", 0},
+		{"sec-newsletter", "newsletter", "Newsletters", "Newsletters", "Revista MOTO-MAQLAB-UC3M", "MOTO-MAQLAB-UC3M Magazine", "newsletter", 1},
+	}
+
+	for _, sec := range sections {
+		query := rebind(`INSERT INTO blog_sections (id, slug, title_es, title_en, subtitle_es, subtitle_en, layout, sort_order, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`, s.driver)
+		if _, err := s.db.ExecContext(ctx, query, sec.id, sec.slug, sec.titleES, sec.titleEN, sec.subtitleES, sec.subtitleEN, sec.layout, sec.sortOrder, now, now); err != nil {
+			return fmt.Errorf("seed blog section: %w", err)
+		}
+	}
+
+	return s.backfillBlogPostSections(ctx)
+}
+
+func (s *Store) backfillBlogPostSections(ctx context.Context) error {
+	updates := []struct {
+		sectionID string
+		match     string
+	}{
+		{"sec-newsletter", "newsletter"},
+		{"sec-noticias", ""},
+	}
+	for _, u := range updates {
+		var query string
+		var args []any
+		if u.match == "" {
+			query = rebind(`UPDATE blog_posts SET section_id = ? WHERE section_id = '' OR section_id IS NULL`, s.driver)
+			args = []any{u.sectionID}
+		} else {
+			query = rebind(`UPDATE blog_posts SET section_id = ? WHERE LOWER(category) = ? AND (section_id = '' OR section_id IS NULL)`, s.driver)
+			args = []any{u.sectionID, u.match}
+		}
+		if _, err := s.db.ExecContext(ctx, query, args...); err != nil {
+			return err
+		}
+	}
 	return nil
 }
 

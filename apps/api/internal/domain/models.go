@@ -54,8 +54,24 @@ type BlogPost struct {
 	Blocks     []BlogBlock `json:"blocks"`
 	Locale     string      `json:"locale"`
 	Published  bool        `json:"published"`
+	SectionID  string      `json:"section_id,omitempty"`
+	SortOrder  int         `json:"sort_order"`
 	CreatedAt  time.Time   `json:"created_at"`
 	UpdatedAt  time.Time   `json:"updated_at"`
+}
+
+type BlogSection struct {
+	ID         string     `json:"id"`
+	Slug       string     `json:"slug"`
+	TitleES    string     `json:"title_es"`
+	TitleEN    string     `json:"title_en"`
+	SubtitleES string     `json:"subtitle_es"`
+	SubtitleEN string     `json:"subtitle_en"`
+	Layout     string     `json:"layout"`
+	SortOrder  int        `json:"sort_order"`
+	Posts      []BlogPost `json:"posts,omitempty"`
+	CreatedAt  time.Time  `json:"created_at"`
+	UpdatedAt  time.Time  `json:"updated_at"`
 }
 
 type LoginRequest struct {

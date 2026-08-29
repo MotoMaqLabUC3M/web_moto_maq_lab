@@ -43,11 +43,18 @@ func (s *PublicService) GetBlog(ctx context.Context, locale string) (publicforma
 	if locale == "" {
 		locale = "es"
 	}
-	posts, err := s.blog.ListPosts(ctx, locale, true)
+	sections, err := s.blog.ListSections(ctx)
 	if err != nil {
 		return publicformat.BlogResponse{}, err
 	}
-	return publicformat.BuildBlog(posts, locale, s.mediaBase), nil
+	for i := range sections {
+		posts, err := s.blog.ListPostsBySection(ctx, sections[i].ID)
+		if err != nil {
+			return publicformat.BlogResponse{}, err
+		}
+		sections[i].Posts = posts
+	}
+	return publicformat.BuildBlog(sections, locale, s.mediaBase), nil
 }
 
 func (s *PublicService) GetBlogPost(ctx context.Context, slug, locale string) (publicformat.BlogPost, error) {

@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"regexp"
+	"sort"
 	"strings"
 
 	"github.com/MotoMaqLabUC3M/web_moto_maq_lab/apps/api/internal/domain"
@@ -44,8 +45,17 @@ type BlogPost struct {
 	Contenido string `json:"contenido"`
 }
 
+type BlogSectionPublic struct {
+	ID       string     `json:"id"`
+	Title    string     `json:"title"`
+	Subtitle string     `json:"subtitle,omitempty"`
+	Layout   string     `json:"layout"`
+	Posts    []BlogPost `json:"posts"`
+}
+
 type BlogResponse struct {
-	Posts []BlogPost `json:"posts"`
+	Sections []BlogSectionPublic `json:"sections"`
+	Posts    []BlogPost          `json:"posts"`
 }
 
 func BuildTeam(departments []domain.Department, members []domain.TeamMember, locale string, mediaBase string) TeamResponse {
@@ -61,7 +71,14 @@ func BuildTeam(departments []domain.Department, members []domain.TeamMember, loc
 			title = firstNonEmpty(d.TitleEN, d.TitleES)
 		}
 		sec := TeamSection{ID: d.Slug, Title: title}
-		for _, m := range membersByDept[d.ID] {
+		deptMembers := membersByDept[d.ID]
+		sort.Slice(deptMembers, func(i, j int) bool {
+			if deptMembers[i].SortOrder != deptMembers[j].SortOrder {
+				return deptMembers[i].SortOrder < deptMembers[j].SortOrder
+			}
+			return deptMembers[i].Name < deptMembers[j].Name
+		})
+		for _, m := range deptMembers {
 			role := m.RoleES
 			if locale == "en" {
 				role = firstNonEmpty(m.RoleEN, m.RoleES)
@@ -77,27 +94,56 @@ func BuildTeam(departments []domain.Department, members []domain.TeamMember, loc
 	return TeamResponse{Sections: sections}
 }
 
-func BuildBlog(posts []domain.BlogPost, locale string, mediaBase string) BlogResponse {
-	exported := make([]BlogPost, 0, len(posts))
-	for _, p := range posts {
-		if p.Locale != locale || !p.Published {
-			continue
+func BuildBlog(sections []domain.BlogSection, locale string, mediaBase string) BlogResponse {
+	exportedSections := make([]BlogSectionPublic, 0, len(sections))
+	var flat []BlogPost
+
+	for _, sec := range sections {
+		title := sec.TitleES
+		subtitle := sec.SubtitleES
+		if locale == "en" {
+			title = firstNonEmpty(sec.TitleEN, sec.TitleES)
+			subtitle = firstNonEmpty(sec.SubtitleEN, sec.SubtitleES)
 		}
-		exported = append(exported, BlogPost{
-			ID:        p.Slug,
-			Titulo:    p.Title,
-			Autor:     p.Author,
-			Fecha:     p.Date,
-			Categoria: p.Category,
-			Imagen:    ResolveMediaURL(mediaBase, p.CoverImage),
-			Extracto:  p.Excerpt,
-			Contenido: resolveContentMedia(mediaBase, BlocksToLegacyContent(p.Blocks)),
+
+		pubSec := BlogSectionPublic{
+			ID:       sec.Slug,
+			Title:    title,
+			Subtitle: subtitle,
+			Layout:   sec.Layout,
+			Posts:    make([]BlogPost, 0),
+		}
+
+		posts := append([]domain.BlogPost(nil), sec.Posts...)
+		sort.Slice(posts, func(i, j int) bool {
+			if posts[i].SortOrder != posts[j].SortOrder {
+				return posts[i].SortOrder < posts[j].SortOrder
+			}
+			return posts[i].Date > posts[j].Date
 		})
+
+		for _, p := range posts {
+			if p.Locale != locale || !p.Published {
+				continue
+			}
+			item := exportBlogPost(p, mediaBase)
+			pubSec.Posts = append(pubSec.Posts, item)
+			flat = append(flat, item)
+		}
+
+		if len(pubSec.Posts) > 0 {
+			exportedSections = append(exportedSections, pubSec)
+		}
 	}
-	return BlogResponse{Posts: exported}
+
+	sort.Slice(flat, func(i, j int) bool {
+		return flat[i].Fecha > flat[j].Fecha
+	})
+
+	return BlogResponse{Sections: exportedSections, Posts: flat}
 }
 
-func BuildBlogPost(p domain.BlogPost, mediaBase string) BlogPost {
+func exportBlogPost(p domain.BlogPost, mediaBase string) BlogPost {
 	return BlogPost{
 		ID:        p.Slug,
 		Titulo:    p.Title,
@@ -108,6 +154,10 @@ func BuildBlogPost(p domain.BlogPost, mediaBase string) BlogPost {
 		Extracto:  p.Excerpt,
 		Contenido: resolveContentMedia(mediaBase, BlocksToLegacyContent(p.Blocks)),
 	}
+}
+
+func BuildBlogPost(p domain.BlogPost, mediaBase string) BlogPost {
+	return exportBlogPost(p, mediaBase)
 }
 
 func ResolveMediaURL(base, path string) string {
@@ -121,7 +171,7 @@ func ResolveMediaURL(base, path string) string {
 		return path
 	}
 	path = strings.TrimPrefix(path, "/")
-	return strings.TrimSuffix(base, "/") + "/media/" + path
+	return strings.TrimSuffix(base, "/") + "/" + path
 }
 
 func resolveContentMedia(base, content string) string {

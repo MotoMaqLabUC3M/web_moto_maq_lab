@@ -66,9 +66,11 @@ func New(deps Dependencies) http.Handler {
 			protected.Route("/departments", func(dr chi.Router) {
 				dr.Get("/", teamHandler.ListDepartments)
 				dr.Post("/", teamHandler.CreateDepartment)
+				dr.Put("/reorder", teamHandler.ReorderDepartments)
 				dr.Put("/{id}", teamHandler.UpdateDepartment)
 				dr.Delete("/{id}", teamHandler.DeleteDepartment)
 				dr.Post("/{id}/members", teamHandler.CreateMember)
+				dr.Put("/{id}/members/reorder", teamHandler.ReorderMembers)
 			})
 
 			protected.Route("/members", func(mr chi.Router) {
@@ -78,8 +80,19 @@ func New(deps Dependencies) http.Handler {
 				mr.Delete("/{id}/photo", teamHandler.RemoveMemberPhoto)
 			})
 
+			protected.Route("/blog/sections", func(sr chi.Router) {
+				sr.Get("/", blogHandler.ListSections)
+				sr.Post("/", blogHandler.CreateSection)
+				sr.Put("/reorder", blogHandler.ReorderSections)
+				sr.Get("/{id}", blogHandler.GetSection)
+				sr.Put("/{id}", blogHandler.UpdateSection)
+				sr.Delete("/{id}", blogHandler.DeleteSection)
+				sr.Put("/{id}/posts/reorder", blogHandler.ReorderPosts)
+			})
+
 			protected.Route("/blog/posts", func(br chi.Router) {
 				br.Get("/", blogHandler.ListPosts)
+				br.Get("/lookup", blogHandler.LookupPost)
 				br.Post("/", blogHandler.CreatePost)
 				br.Get("/{id}", blogHandler.GetPost)
 				br.Put("/{id}", blogHandler.UpdatePost)
