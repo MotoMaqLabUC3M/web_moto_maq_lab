@@ -1,8 +1,11 @@
 # Environment
 .env
 .env.local
+.env.production
 **/.env
+**/.env.production
 !**/.env.example
+!**/.env.production.example
 
 # API
 apps/api/data/
