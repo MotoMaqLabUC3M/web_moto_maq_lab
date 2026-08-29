@@ -155,7 +155,7 @@ func importBlog(ctx context.Context, repo *repository.BlogRepository, path, loca
 		return err
 	}
 	now := time.Now().UTC()
-	for _, p := range data.Posts {
+	for i, p := range data.Posts {
 		post := domain.BlogPost{
 			ID:         uuid.NewString(),
 			Slug:       p.ID,
@@ -168,6 +168,8 @@ func importBlog(ctx context.Context, repo *repository.BlogRepository, path, loca
 			Blocks:     legacyToBlocks(p.Contenido),
 			Locale:     locale,
 			Published:  true,
+			SectionID:  sectionIDForCategory(p.Categoria),
+			SortOrder:  i,
 			CreatedAt:  now,
 			UpdatedAt:  now,
 		}
@@ -177,6 +179,13 @@ func importBlog(ctx context.Context, repo *repository.BlogRepository, path, loca
 	}
 	log.Printf("imported %d posts from %s (%s)", len(data.Posts), path, locale)
 	return nil
+}
+
+func sectionIDForCategory(category string) string {
+	if strings.EqualFold(strings.TrimSpace(category), "newsletter") {
+		return "sec-newsletter"
+	}
+	return "sec-noticias"
 }
 
 func legacyToBlocks(content string) []domain.BlogBlock {
