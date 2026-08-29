@@ -62,7 +62,6 @@ export default function BlogSectionPage({
       .filter((id): id is string => Boolean(id));
     await api.reorderPosts(sectionId, ids);
     setPosts((prev) => {
-      const byId = new Map(prev.map((p) => [p.id, p]));
       const slugOrder = new Map(slugs.map((slug, index) => [slug, index]));
       return [...prev]
         .map((post) => {
