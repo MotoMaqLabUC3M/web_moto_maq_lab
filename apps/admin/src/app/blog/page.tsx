@@ -173,27 +173,27 @@ export default function BlogPage() {
           getId={(sec) => sec.id}
           onReorder={reorderSections}
           renderItem={(sec, { dragHandle }) => (
-            <div className="app-card flex items-center gap-1 !p-0 lg:active:scale-100">
+            <div className="app-card blog-list-row">
               {dragHandle}
               <Link
                 href={`/blog/section/${sec.id}`}
-                className="flex flex-1 items-center gap-3 p-4 pl-0"
+                className="blog-list-row__main"
               >
-                <div className="flex-1">
-                  <p className="font-semibold">{sec.title_es}</p>
-                  <p className="text-xs text-[var(--app-muted)]">
+                <div className="blog-list-row__content">
+                  <p className="blog-list-row__title">{sec.title_es}</p>
+                  <p className="blog-list-row__meta">
                     {countArticlesBySlug(sec.posts)} artículo
-                    {(countArticlesBySlug(sec.posts) !== 1 ? "s" : "")} ·{" "}
-                    {sec.slug} ·{" "}
+                    {countArticlesBySlug(sec.posts) !== 1 ? "s" : ""} ·{" "}
+                    <span className="break-all">{sec.slug}</span> ·{" "}
                     {sec.layout === "newsletter" ? "Newsletter" : "Noticias"}
                   </p>
                 </div>
-                <ChevronRight size={18} className="text-[var(--app-muted)]" />
+                <ChevronRight size={18} className="blog-list-row__chevron" />
               </Link>
               <button
                 type="button"
                 onClick={() => removeSection(sec.id)}
-                className="mr-3 rounded-lg p-2 text-red-400 active:bg-red-500/10"
+                className="blog-list-row__delete"
                 aria-label="Eliminar sección"
               >
                 <Trash2 size={16} />

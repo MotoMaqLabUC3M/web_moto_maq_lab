@@ -3783,10 +3783,20 @@ section.section-container.join-team-callout {
 }
 
 /* --- Blog Grid (listado de tarjetas) --- */
+#blog-sections {
+    width: 100%;
+    overflow-x: clip;
+}
+
+#blog-sections .section-container {
+    padding: 3rem 5%;
+}
+
 .blog-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
+    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -3866,7 +3876,7 @@ section.section-container.join-team-callout {
 
 /* Modificadores para tarjeta de Newsletter (solo portada) */
 .newsletter-only-cover {
-    min-height: 480px;
+    min-height: clamp(260px, 62vw, 480px);
 }
 .newsletter-only-cover .blog-card-img {
     height: 100%;
@@ -3958,9 +3968,67 @@ section.section-container.join-team-callout {
 }
 
 @media (max-width: 768px) {
+    #blog-sections .section-container {
+        padding: 2.5rem 4%;
+    }
+
+    #blog-sections .section-title {
+        margin-bottom: 2rem;
+        padding-left: 1rem;
+    }
+
+    #blog-sections .section-title h2 {
+        font-size: clamp(1.35rem, 5vw, 1.75rem);
+        line-height: 1.2;
+    }
+
+    #blog-sections .section-title p {
+        font-size: 0.9rem;
+    }
+
     .blog-grid {
         grid-template-columns: 1fr;
         gap: 1rem;
+    }
+
+    .blog-card-img {
+        height: 200px;
+    }
+
+    .blog-card h3 {
+        font-size: 1.05rem;
+    }
+
+    .blog-card-body {
+        padding: 1rem 1.15rem 1.25rem;
+    }
+
+    .blog-section .blog-grid,
+    #blog-preview .blog-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .blog-hero {
+        padding: 7rem 4% 3rem;
+    }
+
+    .blog-hero-content {
+        padding-top: 2rem;
+    }
+
+    #blog-sections .section-container {
+        padding: 2rem 4%;
+    }
+
+    .newsletter-only-cover {
+        min-height: clamp(220px, 75vw, 360px);
+    }
+
+    .newsletter-fallback {
+        font-size: 1.1rem;
+        padding: 1rem;
     }
 }
 

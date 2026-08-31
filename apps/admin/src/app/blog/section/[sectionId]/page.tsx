@@ -89,10 +89,10 @@ export default function BlogSectionPage({
         </Link>
       }
     >
-      <div className="mb-4 flex justify-end">
+      <div className="mb-4 flex flex-col gap-3 sm:flex-row sm:justify-end">
         <Link
           href={`/blog/new?section=${sectionId}`}
-          className="app-btn-primary"
+          className="app-btn-primary w-full sm:w-auto"
         >
           <Plus size={18} /> Entrada
         </Link>
@@ -112,46 +112,44 @@ export default function BlogSectionPage({
             const anyPublished = group.posts.some((p) => p.published);
 
             return (
-              <div className="app-card flex items-center gap-1 !p-0 lg:active:scale-100">
+              <div className="app-card blog-list-row">
                 {dragHandle}
                 <Link
                   href={`/blog/${group.primary.id}`}
-                  className="flex flex-1 items-center gap-3 p-4 pl-0"
+                  className="blog-list-row__main"
                 >
-                  <div className="min-w-0 flex-1">
-                    <div className="flex flex-wrap items-center gap-2">
-                      <p className="truncate font-semibold">
-                        {group.primary.title}
-                      </p>
+                  <div className="blog-list-row__content">
+                    <div className="flex flex-col gap-1.5 sm:flex-row sm:flex-wrap sm:items-center sm:gap-2">
+                      <p className="blog-list-row__title">{group.primary.title}</p>
+                      <div className="blog-list-row__badges">
                       {allPublished ? (
-                        <span className="shrink-0 rounded-full bg-emerald-500/15 px-2 py-0.5 text-[10px] font-semibold text-emerald-400">
+                        <span className="rounded-full bg-emerald-500/15 px-2 py-0.5 text-[10px] font-semibold text-emerald-400">
                           LIVE
                         </span>
                       ) : anyPublished ? (
-                        <span className="shrink-0 rounded-full bg-amber-500/15 px-2 py-0.5 text-[10px] font-semibold text-amber-400">
+                        <span className="rounded-full bg-amber-500/15 px-2 py-0.5 text-[10px] font-semibold text-amber-400">
                           PARCIAL
                         </span>
                       ) : (
-                        <span className="shrink-0 rounded-full bg-zinc-500/15 px-2 py-0.5 text-[10px] font-semibold text-zinc-400">
+                        <span className="rounded-full bg-zinc-500/15 px-2 py-0.5 text-[10px] font-semibold text-zinc-400">
                           BORRADOR
                         </span>
                       )}
-                      <span className="flex shrink-0 gap-1">
-                        {group.posts.map((p) => (
-                          <span
-                            key={p.id}
-                            className={
-                              p.published
-                                ? "rounded-full bg-[var(--app-surface-2)] px-2 py-0.5 text-[10px] font-semibold text-[var(--app-text)]"
-                                : "rounded-full bg-[var(--app-surface-2)] px-2 py-0.5 text-[10px] font-semibold text-[var(--app-muted)]"
-                            }
-                          >
-                            {p.locale.toUpperCase()}
-                          </span>
-                        ))}
-                      </span>
+                      {group.posts.map((p) => (
+                        <span
+                          key={p.id}
+                          className={
+                            p.published
+                              ? "rounded-full bg-[var(--app-surface-2)] px-2 py-0.5 text-[10px] font-semibold text-[var(--app-text)]"
+                              : "rounded-full bg-[var(--app-surface-2)] px-2 py-0.5 text-[10px] font-semibold text-[var(--app-muted)]"
+                          }
+                        >
+                          {p.locale.toUpperCase()}
+                        </span>
+                      ))}
+                      </div>
                     </div>
-                    <p className="text-xs text-[var(--app-muted)]">
+                    <p className="blog-list-row__meta">
                       {group.primary.date}
                       {group.primary.category
                         ? ` · ${group.primary.category}`
@@ -159,15 +157,12 @@ export default function BlogSectionPage({
                       {group.posts.length > 1 ? " · traducido" : ""}
                     </p>
                   </div>
-                  <ChevronRight
-                    size={18}
-                    className="text-[var(--app-muted)]"
-                  />
+                  <ChevronRight size={18} className="blog-list-row__chevron" />
                 </Link>
                 <button
                   type="button"
                   onClick={() => removeArticle(group)}
-                  className="mr-3 rounded-lg p-2 text-red-400 active:bg-red-500/10"
+                  className="blog-list-row__delete"
                   aria-label="Eliminar entrada"
                 >
                   <Trash2 size={16} />
