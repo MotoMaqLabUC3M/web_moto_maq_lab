@@ -181,7 +181,7 @@ window.sanitize = function(str) {
             '</div>' +
             '<div class="logo-text">' + h.logo.text.trim() + '<span>' + h.logo.highlight.trim() + '</span></div>' +
             '</a>' +
-            '<button class="hamburger" aria-label="MenÃº">' +
+            '<button class="hamburger" aria-label="Menú">' +
             '<span></span><span></span><span></span>' +
             '</button>' +
             '<div class="enlaces-header mobile-menu">' +

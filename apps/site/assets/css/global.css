@@ -501,7 +501,7 @@ section.section-container:nth-of-type(even) {
         text-align: center;
     }
 
-    .logo {
+    .main-footer .logo {
         justify-content: center;
     }
 
@@ -528,8 +528,42 @@ section.section-container:nth-of-type(even) {
     4. RESPONSIVO: MEN? M?VIL
    ========================================= */
 @media (max-width: 948px) {
+    .main-header {
+        padding: 0.7rem 3.4rem 0.7rem 1rem;
+        gap: 0.5rem;
+        z-index: 1002;
+    }
+
+    .logo {
+        min-width: 0;
+        flex: 1 1 auto;
+        font-size: 1.05rem;
+        gap: 0.4rem;
+        max-width: calc(100% - 0.25rem);
+    }
+
+    .logo-wrapper {
+        width: 40px;
+        height: 40px;
+    }
+
+    .logo-text {
+        display: block;
+        min-width: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
     .hamburger {
         display: flex;
+        position: absolute;
+        right: 0.7rem;
+        top: 50%;
+        transform: translateY(-50%);
+        flex-shrink: 0;
+        z-index: 1003;
+        padding: 10px;
     }
 
     /* Animaci?n icono X */
@@ -558,8 +592,10 @@ section.section-container:nth-of-type(even) {
         justify-content: center;
         gap: 2rem;
         transition: right 0.4s cubic-bezier(0.77, 0, 0.175, 1);
-        z-index: 1000;
-        padding-bottom: 2rem;
+        z-index: 1002;
+        padding: 6rem 1.25rem 2rem;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
     }
 
     .mobile-menu.active {
@@ -3198,6 +3234,20 @@ section.section-container:nth-of-type(even) {
         height: auto;
     }
 
+    .patrocinadores-hero h1 {
+        font-size: clamp(1.85rem, 11vw, 2.2rem);
+        overflow-wrap: anywhere;
+    }
+
+    .patrocinadores-hero p {
+        font-size: 0.9rem;
+        padding: 0 0.15rem;
+        overflow-wrap: break-word;
+    }
+
+    .main-header .logo-text {
+        font-size: 0.92rem;
+    }
 }
 
 /* --- Contenedor Principal (La Pila Vertical) --- */
@@ -3254,21 +3304,24 @@ section.section-container:nth-of-type(even) {
     border-radius: 12px;
     padding: 1.5rem;
     margin-bottom: 1rem;
-    background: rgba(255, 255, 255, 0.95);
+    background: #ffffff;
+    overflow: hidden;
 }
 
 .sponsor-logo-wrapper img {
     width: 100%;
     height: 100%;
+    max-width: 100%;
     object-fit: contain;
-    transition: all 0.4s ease;
-    filter: grayscale(100%);
-    opacity: 0.7;
+    object-position: center;
+    transition: filter 0.35s ease, opacity 0.35s ease;
+    filter: none;
+    opacity: 1;
 }
 
 /* El efecto se activa al pasar sobre toda la tarjeta */
 .card:hover .sponsor-logo-wrapper img {
-    filter: grayscale(0%);
+    filter: none;
     opacity: 1;
 }
 
@@ -3417,35 +3470,41 @@ section.section-container:nth-of-type(even) {
         height: 100px;
     }
 
-    /* --- SILVER: logo-only wall, 3 columns, orphans centered --- */
+    /* --- SILVER: 2-column wall so logos stay readable --- */
     .tier-silver .tier-list {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 0.65rem;
+        gap: 0.75rem;
     }
 
     .tier-silver .card,
     .tier-silver .sponsor-card-link {
-        flex: 0 0 calc(33.333% - 0.45rem);
-        max-width: calc(33.333% - 0.45rem);
+        flex: 0 0 calc(50% - 0.4rem);
+        max-width: calc(50% - 0.4rem);
     }
 
     .tier-silver .card {
-        padding: 0.65rem 0.5rem 0.5rem;
+        padding: 0.75rem 0.6rem 0.7rem;
         text-align: center;
         border-radius: 10px;
     }
 
     .tier-silver .sponsor-logo-wrapper.small {
-        height: 52px;
-        padding: 0.4rem 0.5rem;
-        margin-bottom: 0;
-        border-radius: 7px;
+        height: 78px;
+        padding: 0.55rem 0.6rem;
+        margin-bottom: 0.45rem;
+        border-radius: 8px;
     }
 
-    /* Logo-only: hide name and description on silver */
-    .tier-silver h4,
+    .tier-silver h4 {
+        display: block;
+        margin-bottom: 0;
+        font-size: 0.72rem;
+        letter-spacing: 0.04em;
+        line-height: 1.25;
+    }
+
     .tier-silver .card p {
         display: none;
     }
@@ -5450,6 +5509,48 @@ section.section-container.join-team-callout {
 }
 .top-announcement-bar__close:hover {
     color: #fff;
+}
+
+@media (max-width: 948px) {
+    .top-announcement-bar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1001;
+        padding: 0.4rem 2.1rem 0.4rem 0.65rem;
+        font-size: 0.7rem;
+    }
+
+    .top-announcement-bar__content {
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        gap: 0.4rem;
+        min-width: 0;
+        width: 100%;
+    }
+
+    .top-announcement-bar__content span {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        min-width: 0;
+        flex: 1 1 auto;
+    }
+
+    .top-announcement-bar__link {
+        flex-shrink: 0;
+        font-size: 0.62rem;
+        padding: 0.18rem 0.45rem;
+        max-width: 38vw;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    body:has(.top-announcement-bar:not(.is-hidden)) .main-header {
+        top: 2.55rem;
+    }
 }
 
 /* 2. Glowing Nav Badge in Submenu */

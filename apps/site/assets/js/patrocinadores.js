@@ -8,6 +8,11 @@
             .replace(/'/g, '&#039;');
     }
 
+    function logoSrc(path) {
+        if (!path) return '';
+        return String(path).split('/').map(encodeURIComponent).join('/');
+    }
+
 
 /**
  * patrocinadores.js - Renders sponsor sections from JSON data
@@ -106,7 +111,7 @@ function createSponsorCardHTML(sponsor, tier, isEnglish) {
         cardContent = `
             <div class="${cardClass}${clickableClass}">
                 <div class="sponsor-logo-wrapper ${tier.logoSize}">
-                    <img src="${sanitize(sponsor.logo)}" alt="Logo de ${sanitize(sponsor.name)}" />
+                    <img src="${sanitize(logoSrc(sponsor.logo))}" alt="Logo de ${sanitize(sponsor.name)}" />
                 </div>
                 <div class="card-content">
                     <${headingTag}>${sanitize(sponsor.name)}</${headingTag}>
@@ -119,7 +124,7 @@ function createSponsorCardHTML(sponsor, tier, isEnglish) {
         cardContent = `
             <div class="${cardClass}${clickableClass}">
                 <div class="sponsor-logo-wrapper ${tier.logoSize}">
-                    <img src="${sanitize(sponsor.logo)}" alt="Logo de ${sanitize(sponsor.name)}" />
+                    <img src="${sanitize(logoSrc(sponsor.logo))}" alt="Logo de ${sanitize(sponsor.name)}" />
                 </div>
                 <${headingTag}>${sanitize(sponsor.name)}</${headingTag}>
                 <p>${sanitize(sponsor.description)}</p>
@@ -130,7 +135,7 @@ function createSponsorCardHTML(sponsor, tier, isEnglish) {
         cardContent = `
             <div class="${cardClass}${clickableClass}">
                 <div class="sponsor-logo-wrapper ${tier.logoSize}">
-                    <img src="${sanitize(sponsor.logo)}" alt="Logo de ${sanitize(sponsor.name)}" />
+                    <img src="${sanitize(logoSrc(sponsor.logo))}" alt="Logo de ${sanitize(sponsor.name)}" />
                 </div>
                 <${headingTag}>${sanitize(sponsor.name)}</${headingTag}>
                 <p>${sanitize(sponsor.description)}</p>
