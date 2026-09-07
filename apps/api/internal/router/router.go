@@ -55,6 +55,8 @@ func New(deps Dependencies) http.Handler {
 			pub.Get("/team", publicHandler.Team)
 			pub.Get("/blog", publicHandler.Blog)
 			pub.Get("/blog/{slug}", publicHandler.BlogPost)
+			pub.Get("/sitemap.xml", publicHandler.Sitemap)
+			pub.Get("/seo/article/{locale}/{slug}", publicHandler.ArticleHTML)
 		})
 
 		api.Group(func(protected chi.Router) {

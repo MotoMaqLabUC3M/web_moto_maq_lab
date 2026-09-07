@@ -44,7 +44,7 @@ func main() {
 	authSvc := service.NewAuthService(userRepo, cfg)
 	teamSvc := service.NewTeamService(teamRepo, storageSvc)
 	blogSvc := service.NewBlogService(blogRepo, storageSvc)
-	publicSvc := service.NewPublicService(teamSvc, blogRepo, cfg.MediaBaseURL())
+	publicSvc := service.NewPublicService(teamSvc, blogRepo, cfg.MediaBaseURL(), cfg.PublicAPIBaseURL)
 
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 	defer cancel()

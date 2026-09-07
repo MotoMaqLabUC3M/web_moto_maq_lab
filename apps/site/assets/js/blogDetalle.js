@@ -45,10 +45,19 @@
                 motoMaqLabApplySeo({
                     title: post.titulo + ' | MOTO-MAQLAB-UC3M',
                     description: post.extracto || '',
-                    canonicalPath: '/noticia-' + post.id + '.html',
+                    canonicalPath: (isEnglish ? '/news-' : '/noticia-') + post.id + '.html',
                     imagePath: post.imagen || 'assets/img/hero/blog.webp',
+                    imageAlt: post.titulo + ' — MOTO-MAQLAB-UC3M',
                     ogType: 'article',
-                    author: post.autor || ''
+                    ogLocale: isEnglish ? 'en_US' : 'es_ES',
+                    author: post.autor || '',
+                    publishedTime: post.fecha || '',
+                    hreflang: {
+                        es: '/noticia-' + post.id + '.html',
+                        en: '/news-' + post.id + '.html',
+                        default: '/noticia-' + post.id + '.html'
+                    },
+                    indexable: true
                 });
             } else {
                 document.title = post.titulo + ' | MOTO-MAQLAB-UC3M';
@@ -259,16 +268,33 @@
         if (window.lucide) { lucide.createIcons(); }
     }
 
+    function pageOrigin() {
+        if (window.location.protocol === 'http:' || window.location.protocol === 'https:') {
+            return window.location.origin;
+        }
+        return 'https://motomaqlabuc3m.es';
+    }
+
+    function absoluteMedia(path, fallback) {
+        var origin = pageOrigin();
+        if (!path) return origin + fallback;
+        if (String(path).indexOf('http') === 0) return path;
+        return origin + '/' + String(path).replace(/^\//, '');
+    }
+
     function injectStructuredData(post) {
+        var origin = pageOrigin();
         var script = document.createElement('script');
         script.type = 'application/ld+json';
         var data = {
             "@context": "https://schema.org",
-            "@type": "Article",
+            "@type": "NewsArticle",
             "headline": post.titulo,
             "description": post.extracto || "",
-            "image": post.imagen ? "https://motomaqlabuc3m.es/" + post.imagen : "https://motomaqlabuc3m.es/assets/img/hero/blog.webp",
+            "image": absoluteMedia(post.imagen, '/assets/img/hero/blog.webp'),
             "datePublished": post.fecha,
+            "inLanguage": isEnglish ? "en" : "es",
+            "articleSection": post.categoria || "",
             "author": {
                 "@type": "Person",
                 "name": post.autor || "MOTO-MAQLAB-UC3M"
@@ -278,8 +304,12 @@
                 "name": "MOTO-MAQLAB-UC3M",
                 "logo": {
                     "@type": "ImageObject",
-                    "url": "https://motomaqlabuc3m.es/assets/img/logos_uc3m/uc3m_logo_sin_fondo.webp"
+                    "url": origin + "/assets/img/logos_uc3m/uc3m_logo_sin_fondo.webp"
                 }
+            },
+            "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": origin + "/" + (isEnglish ? "news-" : "noticia-") + post.id + ".html"
             }
         };
         script.text = JSON.stringify(data);

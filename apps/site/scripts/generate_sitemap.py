@@ -2,25 +2,15 @@
 """
 generate_sitemap.py
 
-Genera automáticamente el sitemap.xml leyendo:
-  - Los archivos HTML principales del proyecto
-  - Los JSON de datos dinámicos (patrocinadores, eventos, blog)
+Genera un sitemap.xml estático (GitHub Pages / fallback).
 
-Las fechas <lastmod> usan la fecha del contenido (evento/post) cuando
-existe (YYYY-MM-DD); si no, la mtime del JSON o del HTML.
+En producción (VPS / Coolify) el sitemap vivo lo sirve la API en
+GET /sitemap.xml (artículos publicados del CMS + páginas estáticas).
+Este script sigue siendo útil para Pages y como referencia de URLs fijas.
 
-No incluye: 404.html, creador_*.html (tienen noindex), ni plantillas
-vacías — solo MAIN_PAGES + URLs de datos (patrocinadores, eventos, blog).
-
-Incluye extensiones de Image Sitemap (xmlns:image) para declarar
-explícitamente las imágenes de cada página, mejorando la indexación
-de Google Images y evitando que elija imágenes incorrectas (ej. logos
-de patrocinadores en la página de patrocinadores).
-
-Uso:
-  py scripts/generate_sitemap.py
-
-Se ejecutará desde la raíz del proyecto y sobrescribirá sitemap.xml.
+Lee los HTML principales y los JSON de patrocinadores, eventos y blog.
+Las fechas <lastmod> usan la fecha del contenido cuando existe.
+No incluye 404.html ni plantillas vacías (noticia.html, etc.).
 """
 
 import json
@@ -151,6 +141,22 @@ PAGE_HERO_IMAGES = {
         "assets/img/home/header_unete.webp",
         "Únete al equipo MOTO-MAQLAB-UC3M — Proceso de captación para la temporada MotoStudent"
     ),
+    "media.html": (
+        "assets/img/hero/blog.webp",
+        "Media y prensa del equipo MOTO-MAQLAB-UC3M"
+    ),
+    "ms8.html": (
+        "assets/img/timeline/2025.webp",
+        "Prototipo MS8 MOTO-MAQLAB-UC3M — Moto3 de competición"
+    ),
+    "para-patrocinadores.html": (
+        "assets/img/hero/patrocinadores.webp",
+        "Colabora con MOTO-MAQLAB-UC3M"
+    ),
+    "for-sponsors.html": (
+        "assets/img/hero/patrocinadores.webp",
+        "Partner with MOTO-MAQLAB-UC3M"
+    ),
 }
 
 # ── Páginas principales ──────────────────────────────────────────────
@@ -171,6 +177,10 @@ MAIN_PAGES = [
     {"file": "blog-en.html", "loc": "/blog-en.html", "changefreq": "weekly", "priority": "0.8"},
     {"file": "motostudent.html", "loc": "/motostudent.html", "changefreq": "monthly", "priority": "0.8"},
     {"file": "motostudent-en.html", "loc": "/motostudent-en.html", "changefreq": "monthly", "priority": "0.8"},
+    {"file": "para-patrocinadores.html", "loc": "/para-patrocinadores.html", "changefreq": "monthly", "priority": "0.8"},
+    {"file": "for-sponsors.html", "loc": "/for-sponsors.html", "changefreq": "monthly", "priority": "0.8"},
+    {"file": "media.html", "loc": "/media.html", "changefreq": "weekly", "priority": "0.7"},
+    {"file": "ms8.html", "loc": "/ms8.html", "changefreq": "monthly", "priority": "0.7"},
 ]
 
 

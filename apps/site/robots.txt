@@ -1,17 +1,19 @@
 User-agent: *
 Allow: /
 
-# Panel CMS (solo VPS, no indexar)
+# Panel CMS
 Disallow: /admin
 Disallow: /admin/
 
-# Herramientas internas (también llevan noindex en HTML)
-Disallow: /creador_eventos.html
-Disallow: /creador_noticias.html
+# JSON interno de la API (el sitemap público está en /sitemap.xml)
+Disallow: /api/
 
-# Utilidades de desarrollo (no forman parte del sitio público)
-Disallow: /temp_converter/
+# Plantillas de detalle (contenido vacío). Las URLs reales son
+# /noticia-{slug}.html, /news-{slug}.html y /evento-{id}.html
+Disallow: /noticia.html
+Disallow: /news.html
+Disallow: /evento.html
+Disallow: /patrocinador.html
+Disallow: /sponsor.html
 
 Sitemap: https://motomaqlabuc3m.es/sitemap.xml
-
-# Guía para LLMs: https://motomaqlabuc3m.es/llms.txt

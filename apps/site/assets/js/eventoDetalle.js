@@ -48,7 +48,10 @@
                     description: evento.descripcion || '',
                     canonicalPath: `/evento-${evento.id}.html`,
                     imagePath: evento.imagen || 'assets/img/hero/eventos.webp',
-                    ogType: 'website'
+                    imageAlt: evento.titulo + ' — MOTO-MAQLAB-UC3M',
+                    ogType: 'website',
+                    ogLocale: 'es_ES',
+                    indexable: true
                 });
             } else {
                 document.title = `${sanitize(evento.titulo)} | MOTO-MAQLAB-UC3M`;
@@ -228,12 +231,14 @@
                     "addressLocality": evento.lugar
                 }
             },
-            "image": evento.imagen ? "https://motomaqlabuc3m.es/" + evento.imagen : "https://motomaqlabuc3m.es/assets/img/hero/eventos.webp",
+            "image": evento.imagen
+                ? (String(evento.imagen).indexOf('http') === 0 ? evento.imagen : (window.location.origin + '/' + String(evento.imagen).replace(/^\//, '')))
+                : (window.location.origin + '/assets/img/hero/eventos.webp'),
             "description": evento.descripcion,
             "organizer": {
                 "@type": "Organization",
                 "name": "MOTO-MAQLAB-UC3M",
-                "url": "https://motomaqlabuc3m.es"
+                "url": window.location.origin || "https://motomaqlabuc3m.es"
             }
         };
         script.text = JSON.stringify(data);

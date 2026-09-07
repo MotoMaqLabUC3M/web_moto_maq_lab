@@ -1,9 +1,11 @@
 /**
  * Actualiza <title>, meta description, canonical y Open Graph / Twitter
- * para páginas con contenido cargado por query (?id=).
+ * para páginas con contenido cargado dinámicamente.
  */
 (function () {
-    var ORIGIN = 'https://motomaqlabuc3m.es';
+    var ORIGIN = (window.location.protocol === 'http:' || window.location.protocol === 'https:')
+        ? window.location.origin
+        : 'https://motomaqlabuc3m.es';
 
     function truncate(text, max) {
         max = max || 155;
@@ -46,14 +48,35 @@
         el.setAttribute('href', href);
     }
 
+    function setHreflang(hreflang) {
+        if (!hreflang) return;
+        document.head.querySelectorAll('link[rel="alternate"][hreflang]').forEach(function (el) {
+            el.parentNode.removeChild(el);
+        });
+        ['es', 'en', 'default'].forEach(function (key) {
+            var path = hreflang[key];
+            if (!path) return;
+            var link = document.createElement('link');
+            link.setAttribute('rel', 'alternate');
+            link.setAttribute('hreflang', key === 'default' ? 'x-default' : key);
+            link.setAttribute('href', absoluteUrl(path));
+            document.head.appendChild(link);
+        });
+    }
+
     /**
      * @param {object} opts
-     * @param {string} opts.title - document.title
-     * @param {string} [opts.description] - texto plano, se trunca
-     * @param {string} opts.canonicalPath - p.ej. /evento-ms9.html o /noticia-slug.html (sin origin)
-     * @param {string} [opts.imagePath] - ruta relativa o absoluta a imagen destacada
-     * @param {string} [opts.ogType] - og:type (article | website)
-     * @param {string} [opts.author] - nombre del autor (artículos)
+     * @param {string} opts.title
+     * @param {string} [opts.description]
+     * @param {string} opts.canonicalPath
+     * @param {string} [opts.imagePath]
+     * @param {string} [opts.imageAlt]
+     * @param {string} [opts.ogType]
+     * @param {string} [opts.ogLocale]
+     * @param {string} [opts.author]
+     * @param {string} [opts.publishedTime]
+     * @param {object} [opts.hreflang]
+     * @param {boolean} [opts.indexable]
      */
     window.motoMaqLabApplySeo = function (opts) {
         if (!opts || !opts.title || !opts.canonicalPath) return;
@@ -62,24 +85,40 @@
         var canonical = opts.canonicalPath.indexOf('http') === 0 ? opts.canonicalPath : ORIGIN + opts.canonicalPath;
         var image = opts.imagePath ? absoluteUrl(opts.imagePath) : ORIGIN + '/assets/img/hero/index.webp';
         var ogType = opts.ogType || 'website';
+        var imageAlt = opts.imageAlt || opts.title;
 
         document.title = opts.title;
         upsertMeta('name', 'description', desc || opts.title);
         setCanonical(canonical);
 
+        if (opts.indexable !== false) {
+            upsertMeta('name', 'robots', 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1');
+        }
+
         upsertMeta('property', 'og:title', opts.title);
         upsertMeta('property', 'og:description', desc || opts.title);
         upsertMeta('property', 'og:url', canonical);
         upsertMeta('property', 'og:image', image);
+        upsertMeta('property', 'og:image:alt', imageAlt);
         upsertMeta('property', 'og:type', ogType);
+        if (opts.ogLocale) {
+            upsertMeta('property', 'og:locale', opts.ogLocale);
+        }
 
+        upsertMeta('name', 'twitter:card', 'summary_large_image');
         upsertMeta('name', 'twitter:title', opts.title);
         upsertMeta('name', 'twitter:description', desc || opts.title);
         upsertMeta('name', 'twitter:image', image);
+        upsertMeta('name', 'twitter:image:alt', imageAlt);
 
         if (opts.author) {
             upsertMeta('name', 'author', opts.author);
             upsertMeta('property', 'article:author', opts.author);
         }
+        if (opts.publishedTime) {
+            upsertMeta('property', 'article:published_time', opts.publishedTime);
+        }
+
+        setHreflang(opts.hreflang);
     };
 })();

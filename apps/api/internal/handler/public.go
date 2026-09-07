@@ -53,6 +53,40 @@ func (h *PublicHandler) BlogPost(w http.ResponseWriter, r *http.Request) {
 	writeJSON(w, http.StatusOK, post)
 }
 
+func (h *PublicHandler) Sitemap(w http.ResponseWriter, r *http.Request) {
+	data, err := h.public.BuildSitemap(r.Context())
+	if err != nil {
+		writeError(w, http.StatusInternalServerError, "failed to build sitemap")
+		return
+	}
+	w.Header().Set("Content-Type", "application/xml; charset=utf-8")
+	w.Header().Set("Cache-Control", "public, max-age=300")
+	w.WriteHeader(http.StatusOK)
+	_, _ = w.Write(data)
+}
+
+func (h *PublicHandler) ArticleHTML(w http.ResponseWriter, r *http.Request) {
+	slug := chi.URLParam(r, "slug")
+	locale := chi.URLParam(r, "locale")
+	if locale != "en" {
+		locale = "es"
+	}
+	html, err := h.public.RenderArticleHTML(r.Context(), slug, locale)
+	if err != nil {
+		if errors.Is(err, service.ErrNotFoundPublic) {
+			http.NotFound(w, r)
+			return
+		}
+		writeError(w, http.StatusInternalServerError, "failed to render article")
+		return
+	}
+	w.Header().Set("Content-Type", "text/html; charset=utf-8")
+	w.Header().Set("Cache-Control", "public, max-age=60")
+	w.Header().Set("X-Robots-Tag", "index, follow, max-image-preview:large")
+	w.WriteHeader(http.StatusOK)
+	_, _ = w.Write(html)
+}
+
 func (h *PublicHandler) Stats(w http.ResponseWriter, r *http.Request) {
 	stats, err := h.public.Stats(r.Context())
 	if err != nil {

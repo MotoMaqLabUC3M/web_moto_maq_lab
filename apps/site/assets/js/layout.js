@@ -46,8 +46,10 @@ window.sanitize = function(str) {
         reverseRouteMap[routeMap[key]] = key;
     }
 
-    // Un archivo es inglés si su nombre está en los valores del routeMap
-    const isEnglish = reverseRouteMap.hasOwnProperty(currentFile);
+    // Un archivo es inglés si su nombre está en los valores del routeMap,
+    // o si es una ficha EN de noticia (news-{slug}.html / news.html).
+    const isNewsPretty = currentFile === 'news.html' || /^news-/i.test(currentFile);
+    const isEnglish = reverseRouteMap.hasOwnProperty(currentFile) || isNewsPretty;
     const JSON_PATH = isEnglish ? 'assets/data/layout-en.json' : 'assets/data/layout.json';
 
     // Guardamos la preferencia actual para el selector de idioma,
@@ -148,7 +150,13 @@ window.sanitize = function(str) {
         var linkES = '#';
         var linkEN = '#';
 
-        if (isEnglish) {
+        if (/^noticia-/i.test(currentFile)) {
+            linkES = currentFile;
+            linkEN = currentFile.replace(/^noticia-/i, 'news-');
+        } else if (/^news-/i.test(currentFile)) {
+            linkEN = currentFile;
+            linkES = currentFile.replace(/^news-/i, 'noticia-');
+        } else if (isEnglish) {
             linkES = reverseRouteMap[currentFile] || '/';
             linkEN = currentFile;
         } else {

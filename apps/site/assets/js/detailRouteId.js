@@ -16,7 +16,7 @@
             kind === 'evento'
                 ? /evento-([^./]+)\.html/i
                 : kind === 'noticia'
-                  ? /noticia-([^./]+)\.html/i
+                  ? /(?:noticia|news)-([^./]+)\.html/i
                   : /(?:patrocinador|sponsor)-([^./]+)\.html/i;
         var m = path.match(re);
         if (!m) return null;

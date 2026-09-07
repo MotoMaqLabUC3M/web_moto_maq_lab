@@ -51,12 +51,16 @@ Cada ficha incluye colaboración, «Qué nos aportan», galería y enlace al sit
 
 ## Datos y stack
 
-Vanilla HTML, CSS y JavaScript. Contenido dinámico desde JSON en `assets/data/`:
+Web pública en HTML, CSS y JavaScript. El blog y el equipo se sirven desde el CMS (`/api/v1/public/blog`, `/api/v1/public/team`). El sitemap vivo está en https://motomaqlabuc3m.es/sitemap.xml e incluye las páginas estáticas y los artículos publicados.
+
+JSON estático de apoyo en `assets/data/` (patrocinadores, eventos, fallback si la API no responde):
 
 - `patrocinadores.json` — niveles y fichas de patrocinadores
-- `equipo.json` — miembros por departamento
+- `equipo.json` — fallback de miembros por departamento
 - `eventos.json` — eventos de temporada
-- `blog.json` — entradas del blog
+- `blog.json` — fallback de entradas del blog
+
+Las URLs canónicas de noticias son `/noticia-{slug}.html` (ES) y `/news-{slug}.html` (EN).
 
 ## Contacto
 
