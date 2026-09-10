@@ -86,6 +86,14 @@ http {
             try_files $uri /evento.html;
         }
 
+        location ~ ^/patrocinador-.+\.html$ {
+            try_files $uri /patrocinador.html;
+        }
+
+        location ~ ^/sponsor-.+\.html$ {
+            try_files $uri /sponsor.html;
+        }
+
         location = /admin {
             return 302 /admin/login;
         }

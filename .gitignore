@@ -34,8 +34,6 @@ venv/
 *.pyc
 
 # Site generated (CI regenerates)
-apps/site/patrocinador-*.html
-apps/site/noticia-*.html
 apps/site/evento-*.html
 apps/site/sitemap.xml
 
