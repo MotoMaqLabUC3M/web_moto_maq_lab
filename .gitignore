@@ -1,16 +1,45 @@
-# Dependencias
+# Environment
+.env
+.env.local
+.env.production
+**/.env
+**/.env.production
+!**/.env.example
+!**/.env.production.example
+
+# API
+apps/api/data/
+apps/api/*.db
+
+# Admin
+apps/admin/node_modules/
+apps/admin/.next/
+apps/admin/out/
+
+# Site
+apps/site/node_modules/
+
+# Node
 node_modules/
 
-# Archivos de SO
+# Binaries
+bin/
+
+# OS / IDE
 .DS_Store
 Thumbs.db
+.idea/
+*.swp
 
-# Entornos virtuales de python (si usas scripts)
-venv/
-.env
+# Python
 __pycache__/
+venv/
+*.pyc
 
-# Archivos temporales de desarrollo
+# Site generated (CI regenerates)
+apps/site/evento-*.html
+apps/site/sitemap.xml
+
+# Legacy / temp
 branch_structure.json
-temp_auto_push.bat
-temp_interactive_push.bat
+temp_*.bat
