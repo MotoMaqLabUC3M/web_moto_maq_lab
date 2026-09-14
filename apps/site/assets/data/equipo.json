@@ -5,14 +5,9 @@
             "title": "Jefes de Equipo",
             "members": [
                 {
-                    "name": "Sergio Cruzado Villarín",
+                    "name": "David Otero Díez",
                     "role": "Jefe de Equipo",
-                    "image": "assets/img/equipo/jefatura/sergio_cruzado_villarin.webp"
-                },
-                {
-                    "name": "Miguel Hurtado Davó",
-                    "role": "Jefe de Equipo",
-                    "image": "assets/img/equipo/estructual/miguel_hurtado.webp"
+                    "image": "assets/img/equipo/dinamica/david_otero_diez.webp"
                 },
                 {
                     "name": "Abraham Vadillo Morillas",
@@ -32,7 +27,7 @@
             "members": [
                 {
                     "name": "David Otero Díez",
-                    "role": "Jefe de Dinámica y Estructural",
+                    "role": "Jefe de Dinámica",
                     "image": "assets/img/equipo/dinamica/david_otero_diez.webp"
                 },
                 {
@@ -73,7 +68,7 @@
             "members": [
                 {
                     "name": "David Otero Díez",
-                    "role": "Jefe de Dinámica y Estructural",
+                    "role": "Jefe de Estructural",
                     "image": "assets/img/equipo/dinamica/david_otero_diez.webp"
                 },
                 {
@@ -103,20 +98,15 @@
             "title": "Aerodinámica",
             "members": [
                 {
-                    "name": "Miguel Lozano Nykolaychuk",
-                    "role": "Jefe de Aerodinámica y Organización",
-                    "image": "assets/img/equipo/aerodinamica/miguel_lozano.webp"
+                    "name": "Alejandro Alcalde",
+                    "role": "Jefe de Aerodinámica",
+                    "image": "assets/img/logos_uc3m/uc3m_logo_sin_fondo.webp",
+                    "isPlaceholder": true
                 },
                 {
                     "name": "Adriana Morales",
                     "role": "Miembro de Aerodinámica",
                     "image": "assets/img/equipo/aerodinamica/adriana_morales.webp"
-                },
-                {
-                    "name": "Alejandro Alcalde",
-                    "role": "Miembro de Aerodinámica",
-                    "image": "assets/img/logos_uc3m/uc3m_logo_sin_fondo.webp",
-                    "isPlaceholder": true
                 },
                 {
                     "name": "Alejandro Ranz Remartínez",
@@ -229,14 +219,9 @@
             "title": "Patrocinadores",
             "members": [
                 {
-                    "name": "Jose García-Morato Álvarez",
-                    "role": "Jefe de Patrocinadores",
-                    "image": "assets/img/equipo/patrocinadores/jose_garcia-morato_alvarez.webp"
-                },
-                {
-                    "name": "Carlos Calles Gómez",
-                    "role": "Miembro de Patrocinadores",
-                    "image": "assets/img/equipo/patrocinadores/carlos_calles_gomez.webp"
+                    "name": "Paula Mendoza Artiles",
+                    "role": "Jefa de Patrocinadores",
+                    "image": "assets/img/equipo/patrocinadores/paula_mendoza_artiles.webp"
                 },
                 {
                     "name": "Clara Michilini",
@@ -252,11 +237,6 @@
                     "name": "Paula Marín Barone",
                     "role": "Miembro de Patrocinadores",
                     "image": "assets/img/equipo/patrocinadores/paula_marin_barone.webp"
-                },
-                {
-                    "name": "Paula Mendoza Artiles",
-                    "role": "Miembro de Patrocinadores",
-                    "image": "assets/img/equipo/patrocinadores/paula_mendoza_artiles.webp"
                 }
             ]
         },
@@ -312,6 +292,17 @@
             ]
         },
         {
+            "id": "organizacion",
+            "title": "Organización",
+            "members": [
+                {
+                    "name": "Carlos Calles Gómez",
+                    "role": "Jefe de Organización",
+                    "image": "assets/img/equipo/patrocinadores/carlos_calles_gomez.webp"
+                }
+            ]
+        },
+        {
             "id": "honorificos",
             "title": "Miembros Honoríficos",
             "members": [
@@ -321,9 +312,29 @@
                     "image": "assets/img/equipo/jefatura/david_verdugo.webp"
                 },
                 {
+                    "name": "Sergio Cruzado Villarín",
+                    "role": "Jefe de Equipo en la MS9",
+                    "image": "assets/img/equipo/jefatura/sergio_cruzado_villarin.webp"
+                },
+                {
+                    "name": "Miguel Hurtado Davó",
+                    "role": "Jefe de Equipo en la MS9",
+                    "image": "assets/img/equipo/estructual/miguel_hurtado.webp"
+                },
+                {
                     "name": "Sergio Llorente",
                     "role": "Jefe de Estructural en la MS8",
                     "image": "assets/img/equipo/estructual/sergio_llorente.webp"
+                },
+                {
+                    "name": "Miguel Lozano Nykolaychuk",
+                    "role": "Jefe de Aerodinámica en la MS9",
+                    "image": "assets/img/equipo/aerodinamica/miguel_lozano.webp"
+                },
+                {
+                    "name": "Jose García-Morato Álvarez",
+                    "role": "Jefe de Patrocinadores en la MS9",
+                    "image": "assets/img/equipo/patrocinadores/jose_garcia-morato_alvarez.webp"
                 },
                 {
                     "name": "Javier Martín Caballero",
