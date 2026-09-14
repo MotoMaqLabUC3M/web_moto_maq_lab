@@ -1,0 +1,45 @@
+Maqlab colabora con el equipo aportando recursos de investigación y conocimiento en materiales y procesos de fabricación. Trabajamos con Maqlab para validar prototipos y ensayar nuevas técnicas de fabricación de piezas compuestas.
+---
+Altair nos aporta herramientas avanzadas de simulación multifísica y optimización. Aplicamos sus soluciones para optimizar diseños estructurales y el rendimiento aerodinámico de nuestras piezas.
+---
+Addyx es nuestro socio en la fabricación de moldes hidrosolubles impresos en 3D. Destaca por su capacidad de realizar desde tiradas cortas mediante impresión 3D hasta producción en serie por rotomoldeo. Gracias a sus moldes hemos logrado fabricar nuestro chasis doble viga hueco, integrando el sistema de admisión, imposible de conseguir con otros métodos.
+---
+La Universidad Carlos III de Madrid es nuestra institución y respaldo académico. Financia parte del proyecto y nos proporciona las instalaciones, talleres y laboratorios donde diseñamos y fabricamos nuestra moto. Además, contamos con el apoyo de profesores y tutores que nos guían en cada fase del desarrollo
+---
+Retamal es un socio estratégico clave para Motomaqlab, aportándonos soporte logístico y organizativo fundamental para el correcto desarrollo del proyecto.
+---
+Gurit nos suministra materiales compuestos y asesoramiento técnico para fabricar piezas ligeras y resistentes.
+---
+Lasertek apoya con procesos láser de precisión para el prototipado.
+---
+CESOL nos apoya con los procesos de soldadura y cursos complementarios a nuestros miembros para fomentar una formación continua y de calidad.
+---
+NTN suministra rodamientos de alta calidad para nuestra transmisión y ruedas.
+---
+Solysol aporta tecnología de soldadura láser para la fabricación del sistema de escape.
+---
+Apoyo en procesos de certificación y calidad.
+---
+SolidWorks nos proporciona licencias y apoyo en modelado CAD y simulación básica.
+---
+Castrol suministra lubricantes y asesoramiento para optimizar el rendimiento del motor.
+---
+Bollhoff provee soluciones de fijación y tecnologías de unión.
+---
+Facom nos apoya con herramientas de taller y formación.
+---
+CIMWORKS colabora en procesos de fabricación y software de producción.
+---
+Bossard apoya con componentes y sistemas de ensamblaje.
+---
+Valmoldes produce moldes y piezas a medida para nuestros componentes compuestos.
+---
+Würth Elektronik proporciona componentes electrónicos para nuestra moto.
+---
+NG Brakes nos proporciona discos de freno de alta competición, garantizando el máximo rendimiento y seguridad en pista.
+---
+COGITIM colabora en procesos de ingeniería y optimización.
+---
+Suministro de materias primas y asesoría técnica en composites.
+---
+Frade nos proporciona Equipos de Protección Individual (EPIs), garantizando la seguridad de nuestro equipo en el taller.

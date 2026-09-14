@@ -1,45 +1,16 @@
-# Environment
-.env
-.env.local
-.env.production
-**/.env
-**/.env.production
-!**/.env.example
-!**/.env.production.example
-
-# API
-apps/api/data/
-apps/api/*.db
-
-# Admin
-apps/admin/node_modules/
-apps/admin/.next/
-apps/admin/out/
-
-# Site
-apps/site/node_modules/
-
-# Node
+# Dependencias
 node_modules/
 
-# Binaries
-bin/
-
-# OS / IDE
+# Archivos de SO
 .DS_Store
 Thumbs.db
-.idea/
-*.swp
 
-# Python
-__pycache__/
+# Entornos virtuales de python (si usas scripts)
 venv/
-*.pyc
+.env
+__pycache__/
 
-# Site generated (CI regenerates)
-apps/site/evento-*.html
-apps/site/sitemap.xml
-
-# Legacy / temp
+# Archivos temporales de desarrollo
 branch_structure.json
-temp_*.bat
+temp_auto_push.bat
+temp_interactive_push.bat
