@@ -19,6 +19,9 @@ apps/admin/out/
 # Site
 apps/site/node_modules/
 
+# Node
+node_modules/
+
 # Binaries
 bin/
 
