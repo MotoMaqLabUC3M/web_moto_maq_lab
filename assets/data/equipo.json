@@ -224,19 +224,9 @@
                     "image": "assets/img/equipo/patrocinadores/paula_mendoza_artiles.webp"
                 },
                 {
-                    "name": "Clara Michilini",
-                    "role": "Miembro de Patrocinadores",
-                    "image": "assets/img/equipo/patrocinadores/clara_michilini.webp"
-                },
-                {
                     "name": "Nora Uribe Iribar",
                     "role": "Miembro de Patrocinadores",
                     "image": "assets/img/equipo/patrocinadores/nora_uribe_iribar.webp"
-                },
-                {
-                    "name": "Paula Marín Barone",
-                    "role": "Miembro de Patrocinadores",
-                    "image": "assets/img/equipo/patrocinadores/paula_marin_barone.webp"
                 }
             ]
         },
@@ -280,14 +270,14 @@
                     "image": "assets/img/equipo/marketing/lucia_del_rio_velado.webp"
                 },
                 {
-                    "name": "Nayra de Ganzo Rodríguez",
-                    "role": "Miembro de Marketing",
-                    "image": "assets/img/equipo/marketing/nayra_de_ganzo_rodriguez.webp"
-                },
-                {
                     "name": "Pablo Montes Ponce",
                     "role": "Miembro de Marketing",
                     "image": "assets/img/equipo/marketing/pablo_montes_ponce.webp"
+                },
+                {
+                    "name": "Paula Marín Barone",
+                    "role": "Miembro de Marketing",
+                    "image": "assets/img/equipo/marketing/paula_marin_barone.webp"
                 }
             ]
         },
