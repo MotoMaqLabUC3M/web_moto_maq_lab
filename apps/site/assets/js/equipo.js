@@ -87,7 +87,16 @@ function createSectionHTML(section) {
  */
 function createMemberHTML(member, index) {
     const imageSrc = member.image || PLACEHOLDER_IMAGE;
-    const isPlaceholder = member.isPlaceholder || !member.image;
+    const isPlaceholder = Boolean(
+        member.isPlaceholder ||
+        !member.image ||
+        (typeof imageSrc === 'string' && (
+            imageSrc.includes('uc3m_logo_sin_fondo') ||
+            imageSrc.includes('logos_uc3m') ||
+            imageSrc.includes('MMU_logo') ||
+            imageSrc.includes('placeholder')
+        ))
+    );
     const placeholderClass = isPlaceholder ? ' class="placeholder-img"' : '';
     const loadingAttr = index === 0 ? 'eager' : 'lazy';
 

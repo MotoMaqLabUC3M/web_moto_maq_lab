@@ -3695,10 +3695,13 @@ section.section-container.join-team-callout {
 }
 
 /* Imagen placeholder para miembros sin foto */
-.team-member-card img.placeholder-img {
-    object-fit: contain;
-    padding: 4rem;
-    box-sizing: border-box;
+.team-member-card img.placeholder-img,
+.team-member-card img[src*="uc3m_logo_sin_fondo"],
+.team-member-card img[src*="logos_uc3m"],
+.team-member-card img[src*="MMU_logo"] {
+    object-fit: contain !important;
+    padding: 3.5rem !important;
+    box-sizing: border-box !important;
 }
 
 /* =========================================

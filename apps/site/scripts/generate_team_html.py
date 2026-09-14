@@ -50,7 +50,13 @@ def build_member_card(member: dict, index: int) -> str:
     name = esc(member.get("name", ""))
     role = esc(member.get("role", ""))
     image = esc(member.get("image", ""))
-    is_placeholder = member.get("isPlaceholder", False)
+    is_placeholder = bool(
+        member.get("isPlaceholder", False)
+        or not image
+        or "uc3m_logo_sin_fondo" in image
+        or "logos_uc3m" in image
+        or "MMU_logo" in image
+    )
 
     placeholder_attr = ' class="placeholder-img"' if is_placeholder else ""
     # First member of each section loads eagerly for better SEO
