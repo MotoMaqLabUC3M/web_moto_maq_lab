@@ -104,7 +104,9 @@ window.sanitize = function(str) {
     }
 
     function renderHeader(el, h) {
-        // Render Top Announcement Bar if not closed in this session
+        // HIDDEN: captación cerrada — Descomenta el bloque siguiente para reactivar la barra de captación
+        // Contenido original preservado para restauración futura:
+        /*
         if (!sessionStorage.getItem('hide_top_announcement') && !document.querySelector('.top-announcement-bar')) {
             const topBar = document.createElement('div');
             topBar.className = 'top-announcement-bar';
@@ -126,6 +128,7 @@ window.sanitize = function(str) {
                 sessionStorage.setItem('hide_top_announcement', 'true');
             });
         }
+        */
 
         // Build nav links
         var navLinks = '';

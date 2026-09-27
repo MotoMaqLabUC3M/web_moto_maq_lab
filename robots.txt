@@ -5,6 +5,9 @@ Allow: /
 Disallow: /creador_eventos.html
 Disallow: /creador_noticias.html
 
+# HIDDEN: captación cerrada — página de inscripción desactivada temporalmente
+Disallow: /unete.html
+
 # Utilidades de desarrollo (no forman parte del sitio público)
 Disallow: /temp_converter/
 
