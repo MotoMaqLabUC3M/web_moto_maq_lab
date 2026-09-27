@@ -147,10 +147,11 @@ PAGE_HERO_IMAGES = {
         "assets/img/motostudent/moto_en_pista.jpeg",
         "MOTO-MAQLAB-UC3M prototype at FIM MotorLand Aragón Circuit — MotoStudent"
     ),
-    "unete.html": (
-        "assets/img/home/header_unete.webp",
-        "Únete al equipo MOTO-MAQLAB-UC3M — Proceso de captación para la temporada MotoStudent"
-    ),
+    # HIDDEN: captación cerrada — descomentar cuando se reactive la inscripción
+    # "unete.html": (
+    #     "assets/img/home/header_unete.webp",
+    #     "Únete al equipo MOTO-MAQLAB-UC3M — Proceso de captación para la temporada MotoStudent"
+    # ),
 }
 
 # ── Páginas principales ──────────────────────────────────────────────
@@ -158,7 +159,8 @@ PAGE_HERO_IMAGES = {
 MAIN_PAGES = [
     {"file": "index.html", "loc": "/", "changefreq": "weekly", "priority": "1.0"},
     {"file": "index-en.html", "loc": "/index-en.html", "changefreq": "weekly", "priority": "1.0"},
-    {"file": "unete.html", "loc": "/unete.html", "changefreq": "monthly", "priority": "0.9"},
+    # HIDDEN: captación cerrada
+    # {"file": "unete.html", "loc": "/unete.html", "changefreq": "monthly", "priority": "0.9"},
     {"file": "sobre-nosotros.html", "loc": "/sobre-nosotros.html", "changefreq": "monthly", "priority": "0.8"},
     {"file": "about-us.html", "loc": "/about-us.html", "changefreq": "monthly", "priority": "0.8"},
     {"file": "equipo.html", "loc": "/equipo.html", "changefreq": "monthly", "priority": "0.8"},

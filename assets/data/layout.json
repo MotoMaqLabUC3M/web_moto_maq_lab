@@ -29,11 +29,6 @@
                     {
                         "label": "El Equipo",
                         "href": "equipo.html"
-                    },
-                    {
-                        "label": "Únete al Equipo",
-                        "href": "unete.html",
-                        "badge": "ABIERTO"
                     }
                 ]
             },
@@ -69,10 +64,6 @@
                 {
                     "label": "Sobre Nosotros",
                     "href": "sobre-nosotros.html"
-                },
-                {
-                    "label": "Únete al Equipo",
-                    "href": "unete.html"
                 },
                 {
                     "label": "El Equipo",

@@ -39,11 +39,6 @@
                     {
                         "label": "The Team",
                         "href": "team.html"
-                    },
-                    {
-                        "label": "Join the Team",
-                        "href": "unete.html",
-                        "badge": "OPEN"
                     }
                 ]
             },
@@ -95,10 +90,6 @@
                 {
                     "label": "Sponsors",
                     "href": "sponsors.html"
-                },
-                {
-                    "label": "Join the team",
-                    "href": "unete.html"
                 },
                 {
                     "label": "Contact",
