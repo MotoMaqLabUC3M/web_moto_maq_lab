@@ -247,6 +247,13 @@
                     "logo": "assets/img/patrocinios/frade.webp",
                     "description": "Frade nos proporciona Equipos de Protección Individual (EPIs), garantizando la seguridad de nuestro equipo en el taller.",
                     "website": "http://www.fraderopadetrabajo.es/"
+                },
+                {
+                    "id": "jlcpcb",
+                    "name": "JLCPCB",
+                    "logo": "assets/img/patrocinios/jlcpcb.webp",
+                    "description": "JLCPCB nos proporciona servicios de fabricación  y montaje de PCBs para nuestra electrónica",
+                    "website": "https://jlcpcb.com/es?from=esga_brand&gad_source=1&gad_campaignid=22797133438&gbraid=0AAAABAjtujL01sCr2hjglctHym9lBMud5&gclid=CjwKCAjwuczWBhA9EiwAYGgEoRK7d4WxZrxAB8UkylMU7XeK6EcnhG7TfpMcSTgnNMRAda9wYznBthoCRwAQAvD_BwE"
                 }
             ]
         }

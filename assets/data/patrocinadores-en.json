@@ -246,6 +246,13 @@
                     "logo": "assets/img/patrocinios/frade.webp",
                     "description": "Frade provides us with Personal Protective Equipment (PPE), ensuring the safety of our team in the workshop.",
                     "website": "http://www.fraderopadetrabajo.es/"
+                },
+                {
+                    "id": "jlcpcb",
+                    "name": "JLCPCB",
+                    "logo": "assets/img/patrocinios/jlcpcb.webp",
+                    "description": "JLCPCB provides us with PCB manufacturing and assembly services for our electronics.",
+                    "website": "https://jlcpcb.com/es?from=esga_brand&gad_source=1&gad_campaignid=22797133438&gbraid=0AAAABAjtujL01sCr2hjglctHym9lBMud5&gclid=CjwKCAjwuczWBhA9EiwAYGgEoRK7d4WxZrxAB8UkylMU7XeK6EcnhG7TfpMcSTgnNMRAda9wYznBthoCRwAQAvD_BwE"
                 }
             ]
         }

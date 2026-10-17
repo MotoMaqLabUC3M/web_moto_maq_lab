@@ -3411,10 +3411,15 @@ section.section-container:nth-of-type(even) {
         gap: 0.65rem;
     }
 
-    .tier-silver .card,
+    .tier-silver .tier-list > .card,
     .tier-silver .sponsor-card-link {
         flex: 0 0 calc(33.333% - 0.45rem);
         max-width: calc(33.333% - 0.45rem);
+    }
+
+    .tier-silver .sponsor-card-link > .card {
+        width: 100%;
+        max-width: none;
     }
 
     .tier-silver .card {
@@ -3444,9 +3449,14 @@ section.section-container:nth-of-type(even) {
         gap: 0.5rem;
     }
 
-    .tier-bronze .card,
+    .tier-bronze .tier-list > .card,
     .tier-bronze .sponsor-card-link {
         flex: 0 0 calc(25% - 0.4rem);
+    }
+
+    .tier-bronze .sponsor-card-link > .card {
+        width: 100%;
+        max-width: none;
     }
 
     .tier-bronze .card {
