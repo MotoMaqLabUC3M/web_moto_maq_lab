@@ -7,7 +7,6 @@ Thumbs.db
 
 # Entornos virtuales de python (si usas scripts)
 venv/
-.env
 __pycache__/
 
 # Archivos temporales de desarrollo
@@ -20,3 +19,4 @@ nul
 # Reglas de seguridad
 *.fml
 .gitignore
+config.bat
