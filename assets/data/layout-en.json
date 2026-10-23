@@ -9,8 +9,8 @@
         },
         "nav": [
             {
-                "label": "ABOUT",
-                "href": "about-us.html",
+                "label": "ABOUT US",
+                "href": "#",
                 "submenu": [
                     {
                         "label": "History & Philosophy",
@@ -19,16 +19,6 @@
                     {
                         "label": "The Competition",
                         "href": "motostudent-en.html"
-                    }
-                ]
-            },
-            {
-                "label": "PROTOTYPES",
-                "href": "ms8.html",
-                "submenu": [
-                    {
-                        "label": "MS8 — Season 2025",
-                        "href": "ms8.html"
                     }
                 ]
             },
@@ -43,16 +33,16 @@
                 ]
             },
             {
-                "label": "SPONSORS",
-                "href": "sponsors.html"
-            },
-            {
-                "label": "MEDIA",
-                "href": "media.html"
+                "label": "EVENTS",
+                "href": "events.html"
             },
             {
                 "label": "BLOG",
                 "href": "blog-en.html"
+            },
+            {
+                "label": "SPONSORS",
+                "href": "sponsors.html"
             }
         ],
         "cta": {

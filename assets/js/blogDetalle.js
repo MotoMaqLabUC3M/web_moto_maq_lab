@@ -10,6 +10,17 @@
     const JSON_PATH = isEnglish ? 'assets/data/blog-en.json' : 'assets/data/blog.json';
     const EQUIPO_PATH = isEnglish ? 'assets/data/equipo-en.json' : 'assets/data/equipo.json';
 
+    function sanitize(str) {
+        if (typeof str === 'number') return str.toString();
+        if (!str || typeof str !== 'string') return '';
+        return str
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#039;');
+    }
+
     async function init() {
         const container = document.getElementById('noticia-detalle');
         if (!container) return;
@@ -32,7 +43,12 @@
             // If someone lands here (e.g. via search engine), redirect to the PDF.
             var pdfMatch = post.contenido ? post.contenido.match(/\[pdf:([^\]]+)\]/) : null;
             if (post.categoria && post.categoria.toLowerCase() === 'newsletter' && pdfMatch) {
-                window.location.replace(pdfMatch[1]);
+                var pdfUrl = String(pdfMatch[1]).trim();
+                if (/^(https?:\/\/|\/|assets\/)/i.test(pdfUrl) && !/^javascript:/i.test(pdfUrl)) {
+                    window.location.replace(pdfUrl);
+                } else {
+                    console.warn('URL de PDF sospechosa o no válida:', pdfUrl);
+                }
                 return;
             }
 
@@ -98,11 +114,11 @@
                 var imgSrc = matchingAuthor.image && matchingAuthor.image !== "" ? matchingAuthor.image : "assets/img/logos_uc3m/uc3m_logo_sin_fondo.png";
                 authorHTML = `
                     <div class="blog-author-box">
-                        <img src="${imgSrc}" alt="${matchingAuthor.name}" class="author-avatar" loading="lazy">
+                        <img src="${sanitize(imgSrc)}" alt="${sanitize(matchingAuthor.name)}" class="author-avatar" loading="lazy">
                         <div class="author-details">
                             <span class="author-written-by">${isEnglish ? 'Written by' : 'Escrito por'}</span>
-                            <h4>${matchingAuthor.name}</h4>
-                            <span class="author-role">${matchingAuthor.role}</span>
+                            <h4>${sanitize(matchingAuthor.name)}</h4>
+                            <span class="author-role">${sanitize(matchingAuthor.role)}</span>
                         </div>
                     </div>
                 `;
@@ -114,9 +130,9 @@
             '<section class="' + heroCls + '"' + heroStyleAttr + '>' +
                 '<div class="ev-hero-content">' +
                     '<a href="' + (isEnglish ? 'blog-en.html' : 'blog.html') + '" class="sp-back">← Blog</a>' +
-                    '<span class="badge">' + post.categoria + '</span>' +
-                    '<h1>' + post.titulo + '</h1>' +
-                    '<p class="ev-hero-desc">' + post.extracto + '</p>' +
+                    '<span class="badge">' + sanitize(post.categoria) + '</span>' +
+                    '<h1>' + sanitize(post.titulo) + '</h1>' +
+                    '<p class="ev-hero-desc">' + sanitize(post.extracto) + '</p>' +
                 '</div>' +
             '</section>' +
 
@@ -125,7 +141,7 @@
                 '<div class="blog-meta-bar__inner">' +
                     '<div class="blog-meta-item">' +
                         '<i data-lucide="pen-tool" class="blog-meta-icon"></i>' +
-                        '<div><span class="blog-meta-label">' + (isEnglish ? 'Author' : 'Autor') + '</span><span class="blog-meta-value">' + post.autor + '</span></div>' +
+                        '<div><span class="blog-meta-label">' + (isEnglish ? 'Author' : 'Autor') + '</span><span class="blog-meta-value">' + sanitize(post.autor) + '</span></div>' +
                     '</div>' +
                     '<span class="blog-meta-sep" aria-hidden="true"></span>' +
                     '<div class="blog-meta-item">' +
@@ -135,7 +151,7 @@
                     '<span class="blog-meta-sep" aria-hidden="true"></span>' +
                     '<div class="blog-meta-item">' +
                         '<i data-lucide="folder" class="blog-meta-icon"></i>' +
-                        '<div><span class="blog-meta-label">' + (isEnglish ? 'Category' : 'Categoría') + '</span><span class="blog-meta-value">' + post.categoria + '</span></div>' +
+                        '<div><span class="blog-meta-label">' + (isEnglish ? 'Category' : 'Categoría') + '</span><span class="blog-meta-value">' + sanitize(post.categoria) + '</span></div>' +
                     '</div>' +
                 '</div>' +
             '</section>' +
@@ -152,6 +168,38 @@
             '</section>';
 
         if (window.lucide) { lucide.createIcons(); }
+    }
+
+    /**
+     * Parsea enlaces en formato markdown [texto](url) sanitizando el texto
+     * y verificando que la URL sea segura (sin javascript: ni caracteres extraños).
+     */
+    function formatInlineMarkdown(raw) {
+        if (!raw) return '';
+        var parts = [];
+        var lastIndex = 0;
+        var regex = /\[([^\]]+)\]\(([^)]+)\)/g;
+        var match;
+
+        while ((match = regex.exec(raw)) !== null) {
+            if (match.index > lastIndex) {
+                parts.push(sanitize(raw.substring(lastIndex, match.index)));
+            }
+            var linkText = sanitize(match[1]);
+            var linkUrl = match[2].trim();
+            if (/^javascript:/i.test(linkUrl) || /[\s"']/i.test(linkUrl)) {
+                parts.push(linkText);
+            } else {
+                parts.push('<a href="' + encodeURI(linkUrl) + '" target="_blank" rel="noopener noreferrer" class="blog-inline-a">' + linkText + '</a>');
+            }
+            lastIndex = regex.lastIndex;
+        }
+
+        if (lastIndex < raw.length) {
+            parts.push(sanitize(raw.substring(lastIndex)));
+        }
+
+        return parts.join('');
     }
 
     /**
@@ -179,44 +227,46 @@
                     html += '</section>';
                 }
                 html += '<section class="sp-text-block">';
-                html += '<div class="sp-section-label"><div class="sp-label-line"></div><h2>' + line.slice(3) + '</h2></div>';
+                html += '<div class="sp-section-label"><div class="sp-label-line"></div><h2>' + sanitize(line.slice(3).trim()) + '</h2></div>';
                 inSection = true;
             } else if (line.startsWith('[img:')) {
                 // Imagen inline: [img:ruta|alt text]
                 var matchImg = line.match(/^\[img:([^|]+)\|?([^\]]*)\]$/);
                 if (matchImg) {
-                    var src = matchImg[1];
-                    var alt = (matchImg[2] || '').trim();
-                    if (!alt) {
-                        alt = 'Ilustración del artículo — MOTO-MAQLAB-UC3M';
+                    var rawSrc = matchImg[1].trim();
+                    if (!/^javascript:/i.test(rawSrc)) {
+                        var alt = (matchImg[2] || '').trim();
+                        if (!alt) {
+                            alt = 'Ilustración del artículo — MOTO-MAQLAB-UC3M';
+                        }
+                        var safeAlt = sanitize(alt);
+                        html += '<figure class="blog-inline-img">';
+                        html += '<img src="' + encodeURI(rawSrc) + '" alt="' + safeAlt + '" loading="lazy" />';
+                        if (alt) {
+                            html += '<figcaption>' + safeAlt + '</figcaption>';
+                        }
+                        html += '</figure>';
                     }
-                    alt = alt.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
-                    html += '<figure class="blog-inline-img">';
-                    html += '<img src="' + encodeURI(src) + '" alt="' + alt + '" loading="lazy" />';
-                    if (alt) {
-                        html += '<figcaption>' + alt + '</figcaption>';
-                    }
-                    html += '</figure>';
                 }
             } else if (line.startsWith('[pdf:')) {
                 // PDF render: [pdf:ruta]
                 var matchPdf = line.match(/^\[pdf:([^\]]+)\]$/);
                 if (matchPdf) {
-                    var pdfUrl = matchPdf[1];
-                    if (!inSection) {
-                        html += '<section class="sp-text-block">';
-                        inSection = true;
+                    var pdfUrl = matchPdf[1].trim();
+                    if (!/^javascript:/i.test(pdfUrl)) {
+                        if (!inSection) {
+                            html += '<section class="sp-text-block">';
+                            inSection = true;
+                        }
+                        html += '<div class="pdf-viewer-block">';
+                        html += '<iframe src="' + encodeURI(pdfUrl) + '" class="pdf-viewer-frame" title="Documento PDF embebido"></iframe>';
+                        html += '<div class="pdf-viewer-actions"><a href="' + encodeURI(pdfUrl) + '" target="_blank" class="btn btn--primary pdf-viewer-open-tab">' + (isEnglish ? 'Open PDF in new tab' : 'Abrir PDF en otra pestaña') + '</a></div>';
+                        html += '</div>';
                     }
-                    html += '<div class="pdf-viewer-block">';
-                    html += '<iframe src="' + encodeURI(pdfUrl) + '" class="pdf-viewer-frame" title="Documento PDF embebido"></iframe>';
-                    html += '<div class="pdf-viewer-actions"><a href="' + encodeURI(pdfUrl) + '" target="_blank" class="btn btn--primary pdf-viewer-open-tab">' + (isEnglish ? 'Open PDF in new tab' : 'Abrir PDF en otra pestaña') + '</a></div>';
-                    html += '</div>';
                 }
             } else {
-                // Parse standard links inside text
-                var parsedLine = line.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer" class="blog-inline-a">$1</a>');
-
-                // Párrafo normal
+                // Párrafo normal con soporte seguro de markdown links
+                var parsedLine = formatInlineMarkdown(line);
                 if (!inSection) {
                     html += '<section class="sp-text-block">';
                     inSection = true;

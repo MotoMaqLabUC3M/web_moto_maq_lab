@@ -130,21 +130,28 @@ window.sanitize = function(str) {
         }
         */
 
+        function safeHref(url) {
+            if (!url || typeof url !== 'string') return '#';
+            var trimmed = url.trim();
+            if (/^(javascript:|data:text\/html)/i.test(trimmed)) return '#';
+            return trimmed;
+        }
+
         // Build nav links
         var navLinks = '';
         h.nav.forEach(function (item) {
             if (item.submenu) {
                 var submenuLinks = '';
                 item.submenu.forEach(function(sub) {
-                    var badgeHtml = sub.badge ? ' <span class="nav-badge-pulse">' + sub.badge + '</span>' : '';
-                    submenuLinks += '<a href="' + sub.href + '">' + sub.label + badgeHtml + '</a>';
+                    var badgeHtml = sub.badge ? ' <span class="nav-badge-pulse">' + window.sanitize(sub.badge) + '</span>' : '';
+                    submenuLinks += '<a href="' + safeHref(sub.href) + '">' + window.sanitize(sub.label) + badgeHtml + '</a>';
                 });
                 navLinks += '<div class="nav-dropdown">' +
-                                '<a href="javascript:void(0);" class="nav-dropdown-toggle">' + item.label + ' <i data-lucide="chevron-down" class="dropdown-icon"></i></a>' +
+                                '<a href="javascript:void(0);" class="nav-dropdown-toggle">' + window.sanitize(item.label) + ' <i data-lucide="chevron-down" class="dropdown-icon"></i></a>' +
                                 '<div class="nav-dropdown-content">' + submenuLinks + '</div>' +
                             '</div>';
             } else {
-                navLinks += '<a href="' + item.href + '">' + item.label + '</a>';
+                navLinks += '<a href="' + safeHref(item.href) + '">' + window.sanitize(item.label) + '</a>';
             }
         });
         
@@ -160,23 +167,23 @@ window.sanitize = function(str) {
         }
         
         var langSwitcher = '<div class="lang-switcher">' +
-                           '<a href="' + linkES + '" class="' + (!isEnglish ? 'active' : '') + '"><img src="https://flagcdn.com/w40/es.png" alt="ES" style="width:24px; height:16px; object-fit:cover; vertical-align:middle; margin-right:5px; border-radius:2px; box-shadow: 0 1px 2px rgba(0,0,0,0.5);"></a>' +
+                           '<a href="' + safeHref(linkES) + '" class="' + (!isEnglish ? 'active' : '') + '"><img src="https://flagcdn.com/w40/es.png" alt="ES" style="width:24px; height:16px; object-fit:cover; vertical-align:middle; margin-right:5px; border-radius:2px; box-shadow: 0 1px 2px rgba(0,0,0,0.5);"></a>' +
                            '<span class="separator">|</span>' +
-                           '<a href="' + linkEN + '" class="' + (isEnglish ? 'active' : '') + '"><img src="https://flagcdn.com/w40/gb.png" alt="EN" style="width:24px; height:16px; object-fit:cover; vertical-align:middle; margin-right:5px; border-radius:2px; box-shadow: 0 1px 2px rgba(0,0,0,0.5);"></a>' +
+                           '<a href="' + safeHref(linkEN) + '" class="' + (isEnglish ? 'active' : '') + '"><img src="https://flagcdn.com/w40/gb.png" alt="EN" style="width:24px; height:16px; object-fit:cover; vertical-align:middle; margin-right:5px; border-radius:2px; box-shadow: 0 1px 2px rgba(0,0,0,0.5);"></a>' +
                            '</div>';
 
         navLinks += langSwitcher;
-        navLinks += '<a href="' + h.cta.href + '" class="btn btn--primary">' + h.cta.label + '</a>';
+        navLinks += '<a href="' + safeHref(h.cta.href) + '" class="btn btn--primary">' + window.sanitize(h.cta.label) + '</a>';
 
         el.className = 'main-header';
         el.innerHTML =
-            '<a href="' + h.logo.href + '" class="logo">' +
+            '<a href="' + safeHref(h.logo.href) + '" class="logo">' +
             '<div class="logo-wrapper">' +
-            '<img src="' + h.logo.img + '" alt="' + h.logo.alt + '" />' +
+            '<img src="' + encodeURI(h.logo.img) + '" alt="' + window.sanitize(h.logo.alt) + '" />' +
             '</div>' +
-            '<div class="logo-text">' + h.logo.text.trim() + '<span>' + h.logo.highlight.trim() + '</span></div>' +
+            '<div class="logo-text">' + window.sanitize(h.logo.text.trim()) + '<span>' + window.sanitize(h.logo.highlight.trim()) + '</span></div>' +
             '</a>' +
-            '<button class="hamburger" aria-label="MenÃº">' +
+            '<button class="hamburger" aria-label="Menú">' +
             '<span></span><span></span><span></span>' +
             '</button>' +
             '<div class="enlaces-header mobile-menu">' +
@@ -185,24 +192,32 @@ window.sanitize = function(str) {
     }
 
     function renderFooter(el, f, h) {
+        function safeHref(url) {
+            if (!url || typeof url !== 'string') return '#';
+            var trimmed = url.trim();
+            if (/^(javascript:|data:text\/html)/i.test(trimmed)) return '#';
+            return trimmed;
+        }
+
         // Explorar links
         var explorarHTML = '';
         f.explorar.links.forEach(function (link) {
-            explorarHTML += '<li><a href="' + link.href + '">' + link.label + '</a></li>';
+            explorarHTML += '<li><a href="' + safeHref(link.href) + '">' + window.sanitize(link.label) + '</a></li>';
         });
 
         // Contacto links
         var contactoHTML = '';
         f.contacto.links.forEach(function (link) {
-            contactoHTML += '<li><a href="' + link.href + '"><span>' + link.icon + '</span>' + link.label + '</a></li>';
+            var iconHtml = link.icon ? '<span>' + window.sanitize(link.icon) + '</span>' : '';
+            contactoHTML += '<li><a href="' + safeHref(link.href) + '">' + iconHtml + window.sanitize(link.label) + '</a></li>';
         });
 
         // Social icons
         var socialHTML = '';
         f.social.links.forEach(function (link) {
             socialHTML +=
-                '<a href="' + link.href + '" target="_blank" aria-label="' + link.label + '">' +
-                '<img src="' + link.img + '" alt="' + link.label + '" />' +
+                '<a href="' + safeHref(link.href) + '" target="_blank" rel="noopener noreferrer" aria-label="' + window.sanitize(link.label) + '">' +
+                '<img src="' + encodeURI(link.img) + '" alt="' + window.sanitize(link.label) + '" />' +
                 '</a>';
         });
 
@@ -210,30 +225,30 @@ window.sanitize = function(str) {
         el.innerHTML =
             '<div class="footer-content">' +
             '<div class="footer-col brand-col">' +
-            '<a href="' + h.logo.href + '" class="logo">' +
+            '<a href="' + safeHref(h.logo.href) + '" class="logo">' +
             '<div class="logo-wrapper">' +
-            '<img src="' + h.logo.img + '" alt="' + h.logo.alt + '" />' +
+            '<img src="' + encodeURI(h.logo.img) + '" alt="' + window.sanitize(h.logo.alt) + '" />' +
             '</div>' +
-            h.logo.text + ' <span>' + h.logo.highlight + '</span>' +
+            window.sanitize(h.logo.text) + ' <span>' + window.sanitize(h.logo.highlight) + '</span>' +
             '</a>' +
-            '<p class="footer-desc">' + f.brand.desc + '</p>' +
+            '<p class="footer-desc">' + window.sanitize(f.brand.desc) + '</p>' +
             '</div>' +
             '<div class="footer-col">' +
-            '<h3>' + f.explorar.title + '</h3>' +
+            '<h3>' + window.sanitize(f.explorar.title) + '</h3>' +
             '<ul class="footer-links">' + explorarHTML + '</ul>' +
             '</div>' +
             '<div class="footer-col">' +
-            '<h3>' + f.contacto.title + '</h3>' +
+            '<h3>' + window.sanitize(f.contacto.title) + '</h3>' +
             '<ul class="footer-links">' + contactoHTML + '</ul>' +
             '<iframe class="footer-map" src="https://maps.google.com/maps?q=Universidad+Carlos+III+de+Madrid+Campus+de+LeganÃ©s&t=&z=15&ie=UTF8&iwloc=&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>' +
             '</div>' +
             '<div class="footer-col">' +
-            '<h3>' + f.social.title + '</h3>' +
+            '<h3>' + window.sanitize(f.social.title) + '</h3>' +
             '<div class="social-icons">' + socialHTML + '</div>' +
             '</div>' +
             '</div>' +
             '<div class="footer-bottom">' +
-            '<p>' + f.copy.replace('2025', new Date().getFullYear()) + '</p>' +
+            '<p>' + window.sanitize(f.copy.replace('2025', new Date().getFullYear())) + '</p>' +
             '</div>';
     }
 

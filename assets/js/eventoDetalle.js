@@ -83,119 +83,147 @@
         // Parse content
         const { intro, sections } = parseContenido(evento.contenido || evento.descripcion);
 
-        // Build sections HTML
-        let sectionsHTML = sections.map(sec => {
-            if (sec.type === 'features') {
-                const cards = sec.items.map((f, i) => `
-                    <div class="sp-feature-card">
-                        <span class="sp-feature-icon"><i data-lucide="${LIST_ICONS[i % LIST_ICONS.length]}"></i></span>
-                        <p>${f}</p>
-                    </div>
-                `).join('');
-                return `
-                    <section class="sp-features-section">
-                        <div class="sp-section-label"><div class="sp-label-line"></div><h2>${sec.title}</h2></div>
-                        <div class="sp-features-grid">${cards}</div>
-                    </section>
-                `;
+    function formatInlineMarkdown(raw) {
+        if (!raw) return '';
+        var parts = [];
+        var lastIndex = 0;
+        var regex = /\[([^\]]+)\]\(([^)]+)\)/g;
+        var match;
+
+        while ((match = regex.exec(raw)) !== null) {
+            if (match.index > lastIndex) {
+                parts.push(sanitize(raw.substring(lastIndex, match.index)));
+            }
+            var linkText = sanitize(match[1]);
+            var linkUrl = match[2].trim();
+            if (/^javascript:/i.test(linkUrl) || /[\s"']/i.test(linkUrl)) {
+                parts.push(linkText);
             } else {
-                return `
-                    <section class="sp-text-block">
-                        <div class="sp-section-label"><div class="sp-label-line"></div><h2>${sec.title}</h2></div>
-                        <div class="sp-text-content">${sec.paragraphs.map(p => `<p>${p}</p>`).join('')}</div>
-                    </section>
-                `;
+                parts.push('<a href="' + encodeURI(linkUrl) + '" target="_blank" rel="noopener noreferrer">' + linkText + '</a>');
             }
-        }).join('');
-
-        container.innerHTML = `
-            <!-- HERO -->
-            <section class="${heroClasses}"${heroBgAttr}>
-                <div class="ev-hero-content">
-                    <a href="eventos.html" class="sp-back">← Eventos</a>
-                    <span class="badge">${tipoLabel}</span>
-                    <h1>${sanitize(evento.titulo)}</h1>
-                    <p class="ev-hero-desc">${sanitize(evento.descripcion)}</p>
-                </div>
-            </section>
-
-            <!-- INFO BAR -->
-            <section class="ev-info-bar">
-                <div class="ev-info-card">
-                    <span class="ev-info-icon"><i data-lucide="calendar"></i></span>
-                    <div><span class="ev-info-label">Fecha</span><span class="ev-info-value">${fechaStr}</span></div>
-                </div>
-                <div class="ev-info-card">
-                    <span class="ev-info-icon"><i data-lucide="map-pin"></i></span>
-                    <div><span class="ev-info-label">Lugar</span><span class="ev-info-value">${sanitize(evento.lugar)}</span></div>
-                </div>
-                <div class="ev-info-card">
-                    <span class="ev-info-icon"><i data-lucide="clipboard-list"></i></span>
-                    <div><span class="ev-info-label">Tipo</span><span class="ev-info-value">${tipoLabel}</span></div>
-                </div>
-            </section>
-
-            <!-- CONTENT -->
-            <div class="ev-body">
-                ${intro ? `<p class="ev-intro">${intro}</p>` : ''}
-                ${evento.imagenDetalle ? `<img src="${sanitize(evento.imagenDetalle)}" alt="Detalle visual del evento ${sanitize(evento.titulo)} — MOTO-MAQLAB-UC3M" class="ev-body__detail-img" />` : ''}
-                ${sectionsHTML}
-            </div>
-
-            <!-- CTA -->
-            <section class="sp-cta-section">
-                <a href="eventos.html" class="btn btn--primary">← Ver todos los eventos</a>
-            </section>
-        `;
-        // Inicializar iconos
-        if (window.lucide) { lucide.createIcons(); }
-    }
-
-    /**
-     * Parse content line by line, grouping ## sections with their
-     * sub-content (text paragraphs or - list items).
-     */
-    function parseContenido(text) {
-        if (!text) return { intro: '', sections: [] };
-
-        const lines = text.split('\n');
-        let intro = '';
-        let sections = [];
-        let currentTitle = '';
-        let currentItems = [];
-        let currentParagraphs = [];
-
-        function flushSection() {
-            if (!currentTitle) return;
-            if (currentItems.length > 0) {
-                sections.push({ type: 'features', title: currentTitle, items: currentItems });
-            } else if (currentParagraphs.length > 0) {
-                sections.push({ type: 'text', title: currentTitle, paragraphs: currentParagraphs });
-            }
-            currentTitle = '';
-            currentItems = [];
-            currentParagraphs = [];
+            lastIndex = regex.lastIndex;
         }
 
-        lines.forEach(line => {
-            line = line.trim();
-            if (!line) return;
+        if (lastIndex < raw.length) {
+            parts.push(sanitize(raw.substring(lastIndex)));
+        }
 
-            if (line.startsWith('## ')) {
-                flushSection();
-                currentTitle = line.slice(3);
-            } else if (line.startsWith('- ')) {
-                currentItems.push(line.slice(2));
-            } else if (currentTitle) {
-                currentParagraphs.push(line);
-            } else {
-                intro += (intro ? ' ' : '') + line;
-            }
-        });
-
-        flushSection();
-        return { intro, sections };
+        return parts.join('');
     }
+
+    // Build sections HTML
+    let sectionsHTML = sections.map(sec => {
+        if (sec.type === 'features') {
+            const cards = sec.items.map((f, i) => `
+                <div class="sp-feature-card">
+                    <span class="sp-feature-icon"><i data-lucide="${LIST_ICONS[i % LIST_ICONS.length]}"></i></span>
+                    <p>${formatInlineMarkdown(f)}</p>
+                </div>
+            `).join('');
+            return `
+                <section class="sp-features-section">
+                    <div class="sp-section-label"><div class="sp-label-line"></div><h2>${sanitize(sec.title)}</h2></div>
+                    <div class="sp-features-grid">${cards}</div>
+                </section>
+            `;
+        } else {
+            return `
+                <section class="sp-text-block">
+                    <div class="sp-section-label"><div class="sp-label-line"></div><h2>${sanitize(sec.title)}</h2></div>
+                    <div class="sp-text-content">${sec.paragraphs.map(p => `<p>${formatInlineMarkdown(p)}</p>`).join('')}</div>
+                </section>
+            `;
+        }
+    }).join('');
+
+    container.innerHTML = `
+        <!-- HERO -->
+        <section class="${heroClasses}"${heroBgAttr}>
+            <div class="ev-hero-content">
+                <a href="eventos.html" class="sp-back">← Eventos</a>
+                <span class="badge">${sanitize(tipoLabel)}</span>
+                <h1>${sanitize(evento.titulo)}</h1>
+                <p class="ev-hero-desc">${sanitize(evento.descripcion)}</p>
+            </div>
+        </section>
+
+        <!-- INFO BAR -->
+        <section class="ev-info-bar">
+            <div class="ev-info-card">
+                <span class="ev-info-icon"><i data-lucide="calendar"></i></span>
+                <div><span class="ev-info-label">Fecha</span><span class="ev-info-value">${fechaStr}</span></div>
+            </div>
+            <div class="ev-info-card">
+                <span class="ev-info-icon"><i data-lucide="map-pin"></i></span>
+                <div><span class="ev-info-label">Lugar</span><span class="ev-info-value">${sanitize(evento.lugar)}</span></div>
+            </div>
+            <div class="ev-info-card">
+                <span class="ev-info-icon"><i data-lucide="clipboard-list"></i></span>
+                <div><span class="ev-info-label">Tipo</span><span class="ev-info-value">${sanitize(tipoLabel)}</span></div>
+            </div>
+        </section>
+
+        <!-- CONTENT -->
+        <div class="ev-body">
+            ${intro ? `<p class="ev-intro">${formatInlineMarkdown(intro)}</p>` : ''}
+            ${evento.imagenDetalle ? `<img src="${encodeURI(evento.imagenDetalle)}" alt="Detalle visual del evento ${sanitize(evento.titulo)} — MOTO-MAQLAB-UC3M" class="ev-body__detail-img" />` : ''}
+            ${sectionsHTML}
+        </div>
+
+        <!-- CTA -->
+        <section class="sp-cta-section">
+            <a href="eventos.html" class="btn btn--primary">← Ver todos los eventos</a>
+        </section>
+    `;
+    // Inicializar iconos
+    if (window.lucide) { lucide.createIcons(); }
+}
+
+/**
+ * Parse content line by line, grouping ## sections with their
+ * sub-content (text paragraphs or - list items).
+ */
+function parseContenido(text) {
+    if (!text) return { intro: '', sections: [] };
+
+    const lines = text.split('\n');
+    let intro = '';
+    let sections = [];
+    let currentTitle = '';
+    let currentItems = [];
+    let currentParagraphs = [];
+
+    function flushSection() {
+        if (!currentTitle) return;
+        if (currentItems.length > 0) {
+            sections.push({ type: 'features', title: currentTitle, items: currentItems });
+        } else if (currentParagraphs.length > 0) {
+            sections.push({ type: 'text', title: currentTitle, paragraphs: currentParagraphs });
+        }
+        currentTitle = '';
+        currentItems = [];
+        currentParagraphs = [];
+    }
+
+    lines.forEach(line => {
+        line = line.trim();
+        if (!line) return;
+
+        if (line.startsWith('## ')) {
+            flushSection();
+            currentTitle = line.slice(3).trim();
+        } else if (line.startsWith('- ')) {
+            currentItems.push(line.slice(2).trim());
+        } else if (currentTitle) {
+            currentParagraphs.push(line);
+        } else {
+            intro += (intro ? ' ' : '') + line;
+        }
+    });
+
+    flushSection();
+    return { intro, sections };
+}
 
     function renderError(container) {
         container.innerHTML = `
