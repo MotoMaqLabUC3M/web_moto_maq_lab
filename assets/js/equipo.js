@@ -78,7 +78,17 @@ function createSectionHTML(section) {
  * @returns {string} HTML string for the member card
  */
 function createMemberHTML(member, index) {
-    const placeholderClass = member.isPlaceholder ? ' class="placeholder-img"' : '';
+    const isPlaceholder = Boolean(
+        member.isPlaceholder ||
+        !member.image ||
+        (typeof member.image === 'string' && (
+            member.image.includes('uc3m_logo_sin_fondo') ||
+            member.image.includes('logos_uc3m') ||
+            member.image.includes('MMU_logo') ||
+            member.image.includes('placeholder')
+        ))
+    );
+    const placeholderClass = isPlaceholder ? ' class="placeholder-img"' : '';
     // First member of each section loads eagerly for better SEO discoverability
     const loadingAttr = index === 0 ? 'eager' : 'lazy';
 
