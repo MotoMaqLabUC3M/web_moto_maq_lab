@@ -4567,7 +4567,9 @@ section.section-container.join-team-callout {
     }
 }
 
-.fs-hero {`n    position: relative;`n    min-height: 100vh;
+.fs-hero {
+    position: relative;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;

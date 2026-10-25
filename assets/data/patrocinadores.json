@@ -157,13 +157,6 @@
                     "website": "https://www.solidworks.com/es"
                 },
                 {
-                    "id": "castrol",
-                    "name": "CASTROL",
-                    "logo": "assets/img/patrocinios/Castrol.webp",
-                    "description": "Castrol suministra lubricantes y asesoramiento para optimizar el rendimiento del motor.",
-                    "website": "https://www.castrol.com/es_es/spain/home.html"
-                },
-                {
                     "id": "bollhoff",
                     "name": "BOLLHOFF",
                     "logo": "assets/img/patrocinios/bollhof.webp",
