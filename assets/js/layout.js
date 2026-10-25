@@ -38,7 +38,8 @@ window.sanitize = function(str) {
         'patrocinador-altair.html': 'sponsor-altair.html',
         'patrocinador-maqlab.html': 'sponsor-maqlab.html',
         'patrocinador-retamal.html': 'sponsor-retamal.html',
-        'patrocinador.html': 'sponsor.html'
+        'patrocinador.html': 'sponsor.html',
+        'para-patrocinadores.html': 'for-sponsors.html'
     };
 
     const reverseRouteMap = {};

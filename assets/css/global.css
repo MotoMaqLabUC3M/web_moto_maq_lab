@@ -4557,7 +4557,9 @@ section.section-container.join-team-callout {
     }
 }
 
-.fs-hero {`n    position: relative;`n    min-height: 100vh;
+.fs-hero {
+    position: relative;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -4674,6 +4676,15 @@ section.section-container.join-team-callout {
     margin-bottom: 0.5rem;
 }
 
+
+.fs-stat__subdetail {
+    font-size: 0.72rem;
+    color: rgba(255, 255, 255, 0.55);
+    margin-top: 0.35rem;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+}
+
 .fs-stat__label {
     font-size: 0.95rem;
     font-weight: 600;
@@ -4775,33 +4786,33 @@ section.section-container.join-team-callout {
     transition: opacity 0.3s ease;
     z-index: -1;
     pointer-events: none;
-}`n.fs-tier-card__glow { display: none !important; }
+}
 
 .fs-tier-card:hover .fs-tier-card__glow {
     opacity: 0.15;
-}`n.fs-tier-card__glow { display: none !important; }
+}
 
 /* Bronce */
 .fs-tier-card--bronze { border-top: 4px solid #cd7f32; }
-.fs-tier-card--bronze .fs-tier-card__glow { background: radial-gradient(circle at 50% 0%, #cd7f32, transparent 70%); }`n.fs-tier-card__glow { display: none !important; }
+.fs-tier-card--bronze .fs-tier-card__glow { background: radial-gradient(circle at 50% 0%, #cd7f32, transparent 70%); }
 .fs-tier-card--bronze .fs-tier-card__name { color: #cd7f32; }
 
 /* Plata */
 .fs-tier-card--silver { border-top: 4px solid #c0c0c0; }
-.fs-tier-card--silver .fs-tier-card__glow { background: radial-gradient(circle at 50% 0%, #c0c0c0, transparent 70%); }`n.fs-tier-card__glow { display: none !important; }
+.fs-tier-card--silver .fs-tier-card__glow { background: radial-gradient(circle at 50% 0%, #c0c0c0, transparent 70%); }
 .fs-tier-card--silver .fs-tier-card__name { color: #c0c0c0; }
 
 /* Oro */
 .fs-tier-card--gold { border-top: 4px solid #ffd700; }
 .fs-tier-card--gold:hover { transform: scale(1.05) translateY(-8px); }
-.fs-tier-card--gold .fs-tier-card__glow { background: radial-gradient(circle at 50% 0%, #ffd700, transparent 70%); opacity: 0.1; }`n.fs-tier-card__glow { display: none !important; }
-.fs-tier-card--gold:hover .fs-tier-card__glow { opacity: 0.25; }`n.fs-tier-card__glow { display: none !important; }
+.fs-tier-card--gold .fs-tier-card__glow { background: radial-gradient(circle at 50% 0%, #ffd700, transparent 70%); opacity: 0.1; }
+.fs-tier-card--gold:hover .fs-tier-card__glow { opacity: 0.25; }
 .fs-tier-card--gold .fs-tier-card__name { color: #ffd700; }
 
 /* Platino */
 .fs-tier-card--platinum { border-top: 4px solid #e5e4e2; }
-.fs-tier-card--platinum .fs-tier-card__glow { background: radial-gradient(circle at 50% 0%, #e5e4e2, transparent 70%); opacity: 0.15; }`n.fs-tier-card__glow { display: none !important; }
-.fs-tier-card--platinum:hover .fs-tier-card__glow { opacity: 0.3; }`n.fs-tier-card__glow { display: none !important; }
+.fs-tier-card--platinum .fs-tier-card__glow { background: radial-gradient(circle at 50% 0%, #e5e4e2, transparent 70%); opacity: 0.15; }
+.fs-tier-card--platinum:hover .fs-tier-card__glow { opacity: 0.3; }
 .fs-tier-card--platinum .fs-tier-card__name { 
     background: linear-gradient(135deg, #e5e4e2, #b0c4de);
     -webkit-background-clip: text;
@@ -4818,7 +4829,7 @@ section.section-container.join-team-callout {
     transform: skewX(-20deg);
     animation: shimmer 4s infinite;
     z-index: -1;
-}`n.fs-tier-card__shimmer { display: none !important; }
+}
 
 @keyframes shimmer {
     100% { left: 200%; }

@@ -41,12 +41,16 @@ function initStatsCounters() {
                 // Easing out cube
                 const currentCount = Math.round(target * (1 - Math.pow(1 - progress, 3)));
 
-                numberEl.textContent = currentCount + suffix;
+                const isEn = document.documentElement.lang === 'en';
+                const formatted = target >= 1000 ? currentCount.toLocaleString(isEn ? 'en-US' : 'es-ES') : currentCount;
+                numberEl.textContent = formatted + suffix;
 
                 if (frame < totalFrames) {
                     requestAnimationFrame(updateCounter);
                 } else {
-                    numberEl.textContent = target + suffix;
+                    const isEn = document.documentElement.lang === 'en';
+                    const formatted = target >= 1000 ? target.toLocaleString(isEn ? 'en-US' : 'es-ES') : target;
+                    numberEl.textContent = formatted + suffix;
                 }
             };
 

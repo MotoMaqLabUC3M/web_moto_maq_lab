@@ -49,7 +49,17 @@
             },
             {
                 "label": "SPONSORS",
-                "href": "sponsors.html"
+                "href": "#",
+                "submenu": [
+                    {
+                        "label": "Our Sponsors",
+                        "href": "sponsors.html"
+                    },
+                    {
+                        "label": "Become a Sponsor",
+                        "href": "for-sponsors.html"
+                    }
+                ]
             },
             {
                 "label": "MEDIA",
@@ -61,8 +71,8 @@
             }
         ],
         "cta": {
-            "label": "CONTACT",
-            "href": "#main-footer"
+            "label": "SPONSOR US",
+            "href": "for-sponsors.html"
         }
     },
     "footer": {
@@ -95,6 +105,10 @@
                 {
                     "label": "Sponsors",
                     "href": "sponsors.html"
+                },
+                {
+                    "label": "Become a Sponsor",
+                    "href": "for-sponsors.html"
                 },
                 {
                     "label": "Join the team",
@@ -136,7 +150,7 @@
                 },
                 {
                     "label": "X",
-                    "href": "https://x.com/MOTO-MAQLABUC3M",
+                    "href": "https://x.com/MOTOMAQLABUC3M",
                     "img": "assets/img/social/x.webp"
                 },
                 {
