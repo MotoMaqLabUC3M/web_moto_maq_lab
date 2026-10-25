@@ -4677,13 +4677,6 @@ section.section-container.join-team-callout {
 }
 
 
-.fs-stat__subdetail {
-    font-size: 0.72rem;
-    color: rgba(255, 255, 255, 0.55);
-    margin-top: 0.35rem;
-    letter-spacing: 0.3px;
-    white-space: nowrap;
-}
 
 .fs-stat__label {
     font-size: 0.95rem;
