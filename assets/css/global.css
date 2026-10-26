@@ -60,8 +60,11 @@ a {
 
 /* --- Botones --- */
 .btn {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     padding: 0.75rem 1.5rem;
+    min-height: 44px;
     border-radius: 10px;
     font-weight: 700;
     font-size: 0.9rem;
@@ -91,16 +94,16 @@ a {
 /* --- Badges / Etiquetas --- */
 .badge {
     display: inline-block;
-    background-color: var(--c-red);
+    background-color: #d61322;
     color: #ffffff;
-    font-size: 0.72rem;
+    font-size: 0.8rem;
     font-weight: 800;
-    padding: 0.4rem 1.2rem;
+    padding: 0.45rem 1.25rem;
     border-radius: 4px;
     margin-bottom: 1.2rem;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    box-shadow: 0 4px 15px rgba(242, 25, 43, 0.3);
+    letter-spacing: 1.5px;
+    box-shadow: 0 4px 15px rgba(214, 19, 34, 0.35);
 }
 
 /* --- T?tulos de Secci?n (Global) --- */
@@ -3711,6 +3714,32 @@ section.section-container.join-team-callout {
         transform: none;
         transition: none;
     }
+
+    .fs-hero__content .badge,
+    .fs-hero__content h1,
+    .fs-hero__content p,
+    .fs-hero__cta {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+
+    .fs-hero__scroll-hint {
+        animation: none !important;
+    }
+
+    .fs-tier-card__shimmer {
+        animation: none !important;
+        display: none !important;
+    }
+
+    .fs-value-card,
+    .fs-tier-card,
+    .fs-contact-card,
+    .fs-form__submit {
+        transition: none !important;
+        transform: none !important;
+    }
 }
 
 /* =========================================
@@ -4559,7 +4588,7 @@ section.section-container.join-team-callout {
 
 .fs-hero {
     position: relative;
-    min-height: 100vh;
+    min-height: 100dvh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -4584,79 +4613,47 @@ section.section-container.join-team-callout {
 .fs-hero__content {
     position: relative;
     z-index: 2;
-    max-width: 800px;
+    max-width: 820px;
     padding: 0 5%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.fs-hero__content .badge {
-    margin-bottom: 1.5rem;
-    animation: fadeInDown 0.8s ease backwards;
-}
-
 .fs-hero__content h1 {
-    font-size: clamp(3rem, 6vw, 5.5rem);
-    line-height: 1.1;
+    font-size: clamp(2.8rem, 6vw, 5rem);
+    line-height: 1.05;
     margin-bottom: 1.5rem;
     font-weight: 800;
-    animation: fadeInUp 0.8s ease 0.2s backwards;
-}
-
-.fs-hero__content h1 span {
-    color: var(--c-red);
+    letter-spacing: 0.5px;
 }
 
 .fs-hero__content p {
-    font-size: clamp(1.1rem, 2vw, 1.3rem);
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
     opacity: 0.9;
-    max-width: 650px;
+    max-width: 680px;
     margin-bottom: 2.5rem;
-    animation: fadeInUp 0.8s ease 0.4s backwards;
+    line-height: 1.6;
 }
 
 .fs-hero__cta {
     display: flex;
-    gap: 1rem;
+    gap: 1.25rem;
     flex-wrap: wrap;
     justify-content: center;
-    animation: fadeInUp 0.8s ease 0.6s backwards;
 }
 
-.fs-hero__scroll-hint {
-    position: absolute;
-    bottom: 2rem;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 2;
-    animation: bounce 2s infinite;
-}
-
-.fs-hero__scroll-hint span {
-    display: block;
-    width: 2px;
-    height: 40px;
-    background: linear-gradient(to bottom, var(--c-red), transparent);
-}
-
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
-    40% { transform: translateY(-15px) translateX(-50%); }
-    60% { transform: translateY(-7px) translateX(-50%); }
-}
-
-/* --- ESTAD+�STICAS (STATS BAR) --- */
+/* --- ESTADÍSTICAS (STATS BAR) --- */
 .fs-stats-row {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 2rem;
+    gap: 2.5rem;
     margin: 3rem 0;
     padding: 2.5rem;
     background: var(--bg-card);
     border-radius: 16px;
-    border: 1px solid var(--border-color);
+    border: 1px solid rgba(255, 255, 255, 0.07);
 }
 
 .fs-stat {
@@ -4676,73 +4673,74 @@ section.section-container.join-team-callout {
     margin-bottom: 0.5rem;
 }
 
-
-
 .fs-stat__label {
     font-size: 0.95rem;
     font-weight: 600;
     color: var(--c-light);
-    opacity: 0.8;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    opacity: 0.85;
 }
 
-/* --- VALUE GRID (PROPUESTA DE VALOR) --- */
-.fs-value-grid {
+/* --- PILARES DE COLABORACIÓN (ESTILO FILOSOFÍA) --- */
+.fs-pillars-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 3rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.8rem;
+    max-width: 1320px;
+    margin: 3rem auto 0;
 }
 
-.fs-value-card {
+.fs-pillar-card {
     background: var(--bg-card);
-    padding: 2.5rem;
-    border-radius: 12px;
-    border: 1px solid var(--border-color);
-    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.fs-value-card:hover {
-    transform: translateY(-5px);
-    border-color: rgba(242, 25, 43, 0.3);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-}
-
-.fs-value-card__icon {
-    width: 60px;
-    height: 60px;
-    background: rgba(242, 25, 43, 0.1);
-    color: var(--c-red);
-    border-radius: 12px;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 1.5rem;
-    transition: transform 0.3s ease, background 0.3s ease;
+    flex-direction: column;
 }
 
-.fs-value-card:hover .fs-value-card__icon {
-    transform: scale(1.1);
-    background: var(--c-red);
-    color: #fff;
+.fs-pillar-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+    border-color: var(--c-red);
 }
 
-.fs-value-card__icon svg {
-    width: 28px;
-    height: 28px;
+.fs-pillar-card__img-wrap {
+    position: relative;
+    height: 240px;
+    overflow: hidden;
 }
 
-.fs-value-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
+.fs-pillar-card__img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.fs-pillar-card:hover .fs-pillar-card__img-wrap img {
+    transform: scale(1.05);
+}
+
+.fs-pillar-card__body {
+    padding: 2rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.fs-pillar-card__body h3 {
+    font-size: 1.35rem;
+    margin-bottom: 0.75rem;
     font-weight: 700;
+    color: var(--c-light);
 }
 
-.fs-value-card p {
-    font-size: 1rem;
+.fs-pillar-card__body p {
+    font-size: 0.95rem;
     opacity: 0.8;
     line-height: 1.6;
+    margin: 0;
 }
 
 /* --- TIER CARDS (RANGOS) --- */
@@ -4750,96 +4748,41 @@ section.section-container.join-team-callout {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
-    margin-top: 4rem;
+    margin-top: 3.5rem;
 }
 
 .fs-tier-card {
     position: relative;
-    background: rgba(20, 20, 20, 0.6);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: var(--bg-card);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 16px;
     padding: 2.5rem 2rem;
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    z-index: 1;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .fs-tier-card:hover {
-    transform: translateY(-8px);
-    z-index: 2;
-}
-
-.fs-tier-card__glow {
-    position: absolute;
-    inset: 0;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    z-index: -1;
-    pointer-events: none;
-}
-
-.fs-tier-card:hover .fs-tier-card__glow {
-    opacity: 0.15;
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
 }
 
 /* Bronce */
 .fs-tier-card--bronze { border-top: 4px solid #cd7f32; }
-.fs-tier-card--bronze .fs-tier-card__glow { background: radial-gradient(circle at 50% 0%, #cd7f32, transparent 70%); }
 .fs-tier-card--bronze .fs-tier-card__name { color: #cd7f32; }
 
 /* Plata */
 .fs-tier-card--silver { border-top: 4px solid #c0c0c0; }
-.fs-tier-card--silver .fs-tier-card__glow { background: radial-gradient(circle at 50% 0%, #c0c0c0, transparent 70%); }
 .fs-tier-card--silver .fs-tier-card__name { color: #c0c0c0; }
 
 /* Oro */
 .fs-tier-card--gold { border-top: 4px solid #ffd700; }
-.fs-tier-card--gold:hover { transform: scale(1.05) translateY(-8px); }
-.fs-tier-card--gold .fs-tier-card__glow { background: radial-gradient(circle at 50% 0%, #ffd700, transparent 70%); opacity: 0.1; }
-.fs-tier-card--gold:hover .fs-tier-card__glow { opacity: 0.25; }
 .fs-tier-card--gold .fs-tier-card__name { color: #ffd700; }
 
 /* Platino */
 .fs-tier-card--platinum { border-top: 4px solid #e5e4e2; }
-.fs-tier-card--platinum .fs-tier-card__glow { background: radial-gradient(circle at 50% 0%, #e5e4e2, transparent 70%); opacity: 0.15; }
-.fs-tier-card--platinum:hover .fs-tier-card__glow { opacity: 0.3; }
-.fs-tier-card--platinum .fs-tier-card__name { 
-    background: linear-gradient(135deg, #e5e4e2, #b0c4de);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.fs-tier-card__shimmer {
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 50%;
-    height: 100%;
-    background: linear-gradient(to right, transparent, rgba(255,255,255,0.1), transparent);
-    transform: skewX(-20deg);
-    animation: shimmer 4s infinite;
-    z-index: -1;
-}
-
-@keyframes shimmer {
-    100% { left: 200%; }
-}
-
-.fs-tier-card__badge-popular {
-    position: absolute;
-    top: 1rem;
-    right: -2rem;
-    background: #ffd700;
-    color: #000;
-    font-size: 0.75rem;
-    font-weight: 800;
-    padding: 0.3rem 2.5rem;
-    transform: rotate(45deg);
-    letter-spacing: 1px;
-}
+.fs-tier-card--platinum .fs-tier-card__name { color: #ffffff; }
 
 .fs-tier-card__header {
     text-align: center;
@@ -4931,9 +4874,12 @@ section.section-container.join-team-callout {
 .fs-tier-card--gold .fs-tier-card__benefits svg { color: #ffd700; }
 
 .fs-tier-card__cta {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    padding: 1rem;
+    padding: 0.85rem 1rem;
+    min-height: 44px;
     border-radius: 8px;
     background: rgba(255, 255, 255, 0.05);
     color: var(--c-light);
@@ -5031,19 +4977,21 @@ section.section-container.join-team-callout {
 .fs-contact-card__email {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 0.5rem;
     color: var(--c-light);
     text-decoration: none;
     font-size: 0.9rem;
     background: rgba(255, 255, 255, 0.05);
-    padding: 0.5rem 1rem;
+    padding: 0.75rem 1.25rem;
+    min-height: 44px;
     border-radius: 999px;
-    transition: background 0.2s ease;
+    transition: background 0.2s ease, color 0.2s ease;
 }
 
 .fs-contact-card__email:hover {
-    background: rgba(242, 25, 43, 0.15);
-    color: var(--c-red);
+    background: var(--c-red);
+    color: #ffffff;
 }
 
 .fs-contact-card__email svg {
@@ -5078,14 +5026,11 @@ section.section-container.join-team-callout {
 }
 
 .fs-form-intro h2 {
-    font-size: 3rem;
-    line-height: 1.1;
-    margin: 1rem 0 1.5rem;
-    font-weight: 800;
-}
-
-.fs-form-intro h2 span {
-    color: var(--c-red);
+    font-family: var(--font-heading);
+    font-size: 2.75rem;
+    line-height: 1.15;
+    margin: 0 0 1.25rem;
+    font-weight: 700;
 }
 
 .fs-form-intro p {
@@ -5244,6 +5189,49 @@ section.section-container.join-team-callout {
     font-size: 1.8rem;
     margin-bottom: 1rem;
     color: #22c55e;
+}
+
+.fs-form-error {
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    padding: 2.5rem 2rem;
+    border-radius: 16px;
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.fs-form-error__icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(239, 68, 68, 0.2);
+    color: #ef4444;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.25rem;
+}
+
+.fs-form-error__icon svg {
+    width: 30px;
+    height: 30px;
+}
+
+.fs-form-error h3 {
+    font-size: 1.6rem;
+    margin-bottom: 0.75rem;
+    color: #ef4444;
+}
+
+.fs-form-error p {
+    font-size: 0.95rem;
+    opacity: 0.9;
+    line-height: 1.5;
+}
+
+.fs-form-error a {
+    color: var(--c-light);
+    text-decoration: underline;
 }
 
 /* --- RESPONSIVE FOR SPONSORS --- */
