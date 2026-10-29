@@ -84,16 +84,28 @@ window.sanitize = function(str) {
                 renderFooter(footerEl, data.footer, data.header);
             }
 
-            // Inicializar o cargar iconos de Lucide dinÃ¡micamente si no existieran
+            // Inicializar o cargar iconos de Lucide dinámicamente si no existieran
+            function initIcons() {
+                if (window.lucide && typeof window.lucide.createIcons === 'function') {
+                    window.lucide.createIcons();
+                }
+            }
+
             if (window.lucide) {
-                lucide.createIcons();
-            } else if (!document.querySelector('script[src*="lucide"]')) {
-                const script = document.createElement('script');
-                script.src = 'https://unpkg.com/lucide@1.7.0/dist/umd/lucide.min.js';
-                script.integrity = 'sha384-CykfT8/c0napBs4OEPBYSNzMhNhJUvjNEulxWZVAK+p2D3vEfYGg9zyOd8bzqyNO';
-                script.crossOrigin = 'anonymous';
-                script.onload = () => lucide.createIcons();
-                document.head.appendChild(script);
+                initIcons();
+            } else {
+                const existingScript = document.querySelector('script[src*="lucide"]');
+                if (existingScript) {
+                    existingScript.addEventListener('load', initIcons);
+                    window.addEventListener('load', initIcons);
+                } else {
+                    const script = document.createElement('script');
+                    script.src = 'https://unpkg.com/lucide@1.7.0/dist/umd/lucide.min.js';
+                    script.integrity = 'sha384-CykfT8/c0napBs4OEPBYSNzMhNhJUvjNEulxWZVAK+p2D3vEfYGg9zyOd8bzqyNO';
+                    script.crossOrigin = 'anonymous';
+                    script.onload = initIcons;
+                    document.head.appendChild(script);
+                }
             }
 
             // Notify other scripts that layout is ready
@@ -208,7 +220,11 @@ window.sanitize = function(str) {
         // Contacto links
         var contactoHTML = '';
         f.contacto.links.forEach(function (link) {
-            var iconHtml = link.icon ? '<span>' + window.sanitize(link.icon) + '</span>' : '';
+            var iconHtml = '';
+            if (link.icon) {
+                var trimmedIcon = link.icon.trim();
+                iconHtml = '<span>' + (trimmedIcon.startsWith('<') ? trimmedIcon : '<i data-lucide="' + window.sanitize(trimmedIcon) + '"></i>') + '</span>';
+            }
             contactoHTML += '<li><a href="' + safeHref(link.href) + '">' + iconHtml + window.sanitize(link.label) + '</a></li>';
         });
 
@@ -240,7 +256,7 @@ window.sanitize = function(str) {
             '<div class="footer-col">' +
             '<h3>' + window.sanitize(f.contacto.title) + '</h3>' +
             '<ul class="footer-links">' + contactoHTML + '</ul>' +
-            '<iframe class="footer-map" src="https://maps.google.com/maps?q=Universidad+Carlos+III+de+Madrid+Campus+de+LeganÃ©s&t=&z=15&ie=UTF8&iwloc=&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>' +
+            '<iframe class="footer-map" src="https://maps.google.com/maps?q=Universidad+Carlos+III+de+Madrid+Campus+de+Legan%C3%A9s&t=&z=15&ie=UTF8&iwloc=&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>' +
             '</div>' +
             '<div class="footer-col">' +
             '<h3>' + window.sanitize(f.social.title) + '</h3>' +
