@@ -90,6 +90,12 @@
                     "name": "Iván García Martín",
                     "role": "Miembro de Estructural",
                     "image": "assets/img/equipo/estructual/ivan_garcia_martin.webp"
+                },
+                {
+                    "name": "Marcello Alessandro Ulloa Lambruschini",
+                    "role": "Miembro de Estructural",
+                    "image": "assets/img/logos_uc3m/uc3m_logo_sin_fondo.webp",
+                    "isPlaceholder": true
                 }
             ]
         },
@@ -149,6 +155,12 @@
                     "name": "Pablo Morata García",
                     "role": "Miembro de Aerodinámica",
                     "image": "assets/img/equipo/aerodinamica/pablo_morata_garcia.webp"
+                },
+                {
+                    "name": "Alejandro Vogel Peralta",
+                    "role": "Miembro de Aerodinámica",
+                    "image": "assets/img/logos_uc3m/uc3m_logo_sin_fondo.webp",
+                    "isPlaceholder": true
                 }
             ]
         },
@@ -211,6 +223,30 @@
                     "name": "Rafael Pérez de Lema Carmona",
                     "role": "Miembro de Electrónica",
                     "image": "assets/img/equipo/electronica/rafael_perez_de_lema.webp"
+                },
+                {
+                    "name": "Dario Castro Vila",
+                    "role": "Miembro de Electrónica",
+                    "image": "assets/img/logos_uc3m/uc3m_logo_sin_fondo.webp",
+                    "isPlaceholder": true
+                },
+                {
+                    "name": "Ignacio Tamargo Toribio",
+                    "role": "Miembro de Electrónica",
+                    "image": "assets/img/logos_uc3m/uc3m_logo_sin_fondo.webp",
+                    "isPlaceholder": true
+                },
+                {
+                    "name": "Javier García Martín",
+                    "role": "Miembro de Electrónica",
+                    "image": "assets/img/logos_uc3m/uc3m_logo_sin_fondo.webp",
+                    "isPlaceholder": true
+                },
+                {
+                    "name": "Srinandhini Saravanan",
+                    "role": "Miembro de Electrónica",
+                    "image": "assets/img/logos_uc3m/uc3m_logo_sin_fondo.webp",
+                    "isPlaceholder": true
                 }
             ]
         },
@@ -227,6 +263,18 @@
                     "name": "Nora Uribe Iribar",
                     "role": "Miembro de Patrocinadores",
                     "image": "assets/img/equipo/patrocinadores/nora_uribe_iribar.webp"
+                },
+                {
+                    "name": "Francisco Pablo de la Flor Santaella",
+                    "role": "Miembro de Patrocinadores",
+                    "image": "assets/img/logos_uc3m/uc3m_logo_sin_fondo.webp",
+                    "isPlaceholder": true
+                },
+                {
+                    "name": "Sara Zagrean Moldovan",
+                    "role": "Miembro de Patrocinadores",
+                    "image": "assets/img/logos_uc3m/uc3m_logo_sin_fondo.webp",
+                    "isPlaceholder": true
                 }
             ]
         },
@@ -289,6 +337,18 @@
                     "name": "Carlos Calles Gómez",
                     "role": "Head of Organization",
                     "image": "assets/img/equipo/patrocinadores/carlos_calles_gomez.webp"
+                },
+                {
+                    "name": "Hugo Tello Recatalá",
+                    "role": "Miembro de Organización",
+                    "image": "assets/img/logos_uc3m/uc3m_logo_sin_fondo.webp",
+                    "isPlaceholder": true
+                },
+                {
+                    "name": "Jaime Mingote Lladó",
+                    "role": "Miembro de Organización",
+                    "image": "assets/img/logos_uc3m/uc3m_logo_sin_fondo.webp",
+                    "isPlaceholder": true
                 }
             ]
         },
