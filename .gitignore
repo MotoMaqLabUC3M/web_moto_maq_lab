@@ -7,7 +7,6 @@ Thumbs.db
 
 # Entornos virtuales de python (si usas scripts)
 venv/
-.env
 __pycache__/
 
 # Archivos temporales de desarrollo
@@ -15,3 +14,4 @@ branch_structure.json
 temp_auto_push.bat
 temp_interactive_push.bat
 .gitignore
+config.bat

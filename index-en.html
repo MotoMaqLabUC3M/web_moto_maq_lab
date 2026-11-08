@@ -103,7 +103,19 @@
 <body>
     <header id="main-header"></header>
     <main>
-        <section class="hero">
+        <section class="hero hero--video" id="heroSection">
+            <!-- Background video: autoplay muted (plays once, then smoothly transitions to hero image) -->
+            <video
+                id="heroVideo"
+                class="hero__video"
+                autoplay muted playsinline
+                poster="assets/media/video-portada-poster.webp"
+                preload="auto"
+            >
+                <source src="assets/media/video-portada.mp4" type="video/mp4" />
+            </video>
+            <div class="hero__overlay"></div>
+
             <div class="hero-content">
                 <span class="badge">2025-2027 SEASON</span>
                 <h1>BORN TO BE <br /><span>ENGINEERS</span> <span class="sr-only">— MOTO-MAQLAB-UC3M, MotoStudent
@@ -114,6 +126,29 @@
                     <a href="about-us.html#nuestra-historia" class="btn btn--primary">OUR HISTORY</a>
                     <a href="about-us.html#palmarés" class="btn btn--outline">OUR ACHIEVEMENTS</a>
                 </div>
+            </div>
+
+            <!-- Video controls (sound and replay) -->
+            <div class="hero__controls">
+                <button class="hero__ctrl-btn hero__sound-toggle" id="heroSoundToggle" aria-label="Enable video sound">
+                    <svg class="hero__sound-icon hero__sound-icon--off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+                        <line x1="23" y1="9" x2="17" y2="15"/>
+                        <line x1="17" y1="9" x2="23" y2="15"/>
+                    </svg>
+                    <svg class="hero__sound-icon hero__sound-icon--on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="display:none">
+                        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+                        <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+                        <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+                    </svg>
+                </button>
+
+                <button class="hero__ctrl-btn hero__replay-btn" id="heroReplayBtn" aria-label="Replay video">
+                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"/>
+                    </svg>
+                    <span>Replay video</span>
+                </button>
             </div>
         </section>
 
@@ -194,6 +229,7 @@
     <script src="assets/js/layout.js"></script>
     <script src="assets/js/mobileMenu.js"></script>
     <script src="assets/js/sponsorsMarquee.js"></script>
+    <script src="assets/js/videoShowcase.js"></script>
     <script src="assets/js/eventos.js"></script>
     <script src="assets/js/blog.js"></script>
 
