@@ -52,13 +52,20 @@
 
         // --- Video ended event: transition to static hero image & show replay button ---
         function onVideoEnded() {
+            if (heroSection.classList.contains('is-ended')) return;
             heroSection.classList.add('is-ended');
+            video.pause();
             // Mute video so if it loops unexpectedly it won't play sound
             video.muted = true;
             updateSoundIcons();
         }
 
         video.addEventListener('ended', onVideoEnded);
+        video.addEventListener('timeupdate', function () {
+            if (video.duration && video.currentTime >= video.duration - 0.25) {
+                onVideoEnded();
+            }
+        });
 
         // --- Replay button click: restart video from start ---
         if (replayBtn) {
