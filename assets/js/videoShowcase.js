@@ -25,6 +25,10 @@
 
         if (!video || !heroSection) return;
 
+        // Ensure inline playback on mobile WebKit browsers
+        video.setAttribute('playsinline', '');
+        video.setAttribute('webkit-playsinline', '');
+
         const isEnglish = document.documentElement.lang === 'en';
         const iconOff = soundBtn ? soundBtn.querySelector('.hero__sound-icon--off') : null;
         const iconOn  = soundBtn ? soundBtn.querySelector('.hero__sound-icon--on') : null;
